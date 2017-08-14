@@ -1,0 +1,63 @@
+﻿.sort-icon {
+	font-size: 9px;
+	margin-left: 5px;
+}
+
+th {
+	cursor:pointer;
+}
+.row.vdivide [class*='col-']:not(:last-child):after
+	{
+		background: #e0e0e0;
+		width:1px;
+		content:"";
+		display:block;
+		position:absolute;
+		top:0;
+		bottom:0;
+		right:0;
+		min-height: 70px;
+	}
+
+.txt-corto {
+	width:35px;
+}
+.skin-green-light .main-header li.user-header{
+  background-color: #393f4c !important;
+}
+.GridPager a, .GridPager span{
+	display: block;
+	height: 30px;
+	width: 30px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+}
+.GridPager a{
+	background-color: #d2d6de;
+	color: #969696;
+	border: 1px solid #969696;
+}
+.GridPager span{
+	background-color: #A1DCF2;
+	color: #000;
+	border: 1px solid #3AC0F2;
+}
+
+/*ajax autocompletar*/
+.completionList {
+	border: solid 1px Gray;
+	margin: 0px;
+	padding: 3px;
+	height: 120px;
+	overflow: auto;
+	background-color: #FFFFFF;
+}
+
+.listItem {
+	color: #191919;
+}
+
+.itemHighlighted {
+	background-color: #ADD6FF;
+}
