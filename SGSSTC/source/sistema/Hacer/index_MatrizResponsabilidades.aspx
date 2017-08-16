@@ -262,7 +262,7 @@
 
 		<div class="row" align="center">
 			<div class="col-md-3 col-md-offset-3">
-				<asp:imagebutton id="btnGuardar" runat="server" imageurl="~\ico\print.png" onclick="GenerarDocumento" 
+				<asp:ImageButton alt="-" id="btnGuardar" runat="server" imageurl="~\ico\print.png" onclick="GenerarDocumento" 
 					ValidationGroup="ValidationAdd"/>
 				<h4>Generar Documento</h4>
 			</div>

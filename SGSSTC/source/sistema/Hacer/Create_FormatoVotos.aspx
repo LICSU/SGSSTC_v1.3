@@ -61,7 +61,7 @@
 							</td>
 
 							<td align="center">
-								<asp:Image runat="server" alt="" id="Image1" class="img-circle" width="128" height="128"/>
+								<asp:Image alt="-" runat="server" id="Image1" class="img-circle" width="128" height="128"/>
 							</td>
 							<td>
 
@@ -74,7 +74,7 @@
 							</td>
 
 							<td align="center">
-								<asp:Image runat="server" alt="" id="Image2" class="img-circle" width="128" height="128"/>
+								<asp:Image alt="-" runat="server" id="Image2" class="img-circle" width="128" height="128"/>
 							</td>
 							<td>
 
@@ -87,7 +87,7 @@
 							</td>
 
 							<td align="center">
-								<asp:Image runat="server" alt="" id="Image3" class="img-circle" width="128" height="128"/>
+								<asp:Image alt="-" runat="server" id="Image3" class="img-circle" width="128" height="128"/>
 							</td>
 							<td>
 
@@ -100,7 +100,7 @@
 							</td>
 
 							<td align="center">
-								<asp:Image runat="server" alt="" id="Image4" class="img-circle" width="128" height="128"/>
+								<asp:Image alt="-" runat="server" id="Image4" class="img-circle" width="128" height="128"/>
 							</td>
 							<td>
 
@@ -116,7 +116,7 @@
 		<div class="row" align="center">
 
 			<div class="col-md-4 col-md-offset-4">
-				<asp:imagebutton id="btnPrint" runat="server" imageurl="~\ico\print.png"
+				<asp:ImageButton alt="-" id="btnPrint" runat="server" imageurl="~\ico\print.png"
 					onclick="GenerarDocumento" validationgroup="ValidationAdd"/>
 				<h4>Generar Documento</h4>
 			</div>

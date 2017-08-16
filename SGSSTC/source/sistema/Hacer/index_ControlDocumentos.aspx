@@ -738,7 +738,7 @@
         <div class="row" align="center">
 
             <div class="col-md-4 col-md-offset-2">
-                <asp:imagebutton id="btnPrint" runat="server" imageurl="~\ico\print.png"
+                <asp:ImageButton alt="-" id="btnPrint" runat="server" imageurl="~\ico\print.png"
                     onclick="GenerarDocumento"/>
                 <h4>Generar Documento</h4>
             </div>

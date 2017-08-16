@@ -65,7 +65,7 @@
                 
                     <div class="row" align="center">
                         <div class="col-md-4 col-md-offset-4">
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
                             <h4>Nueva Empresa</h4>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                         
             <div class="row">
                 <div class="col-md-4 col-md-offset-4" align="center">
-                    <asp:Image runat="server" id="imgLogo" CssClass="thumbnail" ImageUrl="~/source/archivos/LogosEmpresas/LICSU.jpg"/>
+                    <asp:Image alt="-" runat="server" id="imgLogo" CssClass="thumbnail" ImageUrl="~/source/archivos/LogosEmpresas/LICSU.jpg"/>
                 </div>
             </div>
             

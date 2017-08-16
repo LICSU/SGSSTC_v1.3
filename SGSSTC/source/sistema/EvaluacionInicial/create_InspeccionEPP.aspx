@@ -64,7 +64,7 @@
                         
                         <asp:PlaceHolder runat="server" id="phGenerarDocumento" Visible="False">
                             <div class="col-md-3 col-md-offset-1">
-                                <asp:ImageButton id="btnDocumento" runat="server" ImageUrl="~\ico\print.png" 
+                                <asp:ImageButton alt="-" id="btnDocumento" runat="server" ImageUrl="~\ico\print.png" 
                                     OnClick="GenerarDocumento"/>
                                 <h4>Generar Documento</h4>
                             </div>
@@ -75,7 +75,7 @@
                         </asp:PlaceHolder>
 
                         <div class="col-md-3">
-                            <asp:ImageButton id="btnGenerar" runat="server" ImageUrl="~\ico\calculator.png" 
+                            <asp:ImageButton alt="-" id="btnGenerar" runat="server" ImageUrl="~\ico\calculator.png" 
                                 OnClick="btnGenerar_Click"/>
                             <h4>Generar Resultados</h4>
                         </div>

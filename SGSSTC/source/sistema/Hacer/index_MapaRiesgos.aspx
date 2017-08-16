@@ -112,11 +112,11 @@
             <asp:PlaceHolder runat="server" id="phAgregar">
             <div class="row" align="center"> 
                 <div class="col-md-3 col-md-offset-3">
-                    <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalAgregar"/>
+                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalAgregar"/>
                     <h4>Nuevo Mapa</h4>
                 </div>
                 <div class="col-md-3">
-                    <asp:ImageButton id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" OnClick="MostrarModalImprimir"/>
+                    <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" OnClick="MostrarModalImprimir"/>
                     <h4>Descargar Lista</h4>
                 </div> 
             </div>

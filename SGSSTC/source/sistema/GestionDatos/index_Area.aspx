@@ -183,7 +183,7 @@
 
                     <div class="col-md-3 col-md-offset-3">
                         <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
                                 OnClick="AgregarRegistroModal"
                                 data-toggle="tooltip" data-placement="bottom" title="Presione para Registrar un Área"/>
                             <h4>Nueva Área</h4>
@@ -191,7 +191,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <asp:ImageButton id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
+                        <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
                             OnClick="MostrarModalImprimir" 
                             data-toggle="tooltip" data-placement="bottom" title="Presione para Imprimir la lista de Áreas"/>
                         <h4>Descargar Lista</h4>

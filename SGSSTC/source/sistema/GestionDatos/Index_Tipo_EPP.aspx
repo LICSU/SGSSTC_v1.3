@@ -230,7 +230,7 @@
                                         <h4 class="text-center">Imagen Señal: </h4>
                                     </div>
                                     <div class="col-md-8">
-                                        <asp:Image id="imgSenal" runat="server" ClientIDMode="Static"></asp:Image>
+                                        <asp:Image alt="-"id="imgSenal" runat="server" ClientIDMode="Static"></asp:Image>
                                     </div>
                                 </div><br/>
 
@@ -321,7 +321,7 @@
                 <asp:updatepanel id="UpdatePanel3" runat="server">
                         <ContentTemplate>
                             <div class="modal-body text-center">
-                                <asp:Image id="imgVer" runat="server" ClientIDMode="Static"></asp:Image>
+                                <asp:Image alt="-"id="imgVer" runat="server" ClientIDMode="Static"></asp:Image>
                             </div>
                             
                             <div class="modal-footer">

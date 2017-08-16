@@ -243,14 +243,14 @@
         <div class="row" align="center">
 
             <div class="col-md-4">
-                <asp:ImageButton  runat="server" ImageUrl="~\ico\descargar.png" OnClick="GenerarDocumentoGeneral" 
+                <asp:ImageButton alt="-"  runat="server" ImageUrl="~\ico\descargar.png" OnClick="GenerarDocumentoGeneral" 
                     ValidationGroup="ValidationAdd"/>
                 <h4>Descargar Formato</h4>
             </div>
 
             <asp:placeholder id="phBtnPrint" runat="server">
                 <div class="col-md-4">
-                    <asp:ImageButton id="btnPrint" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento" 
+                    <asp:ImageButton alt="-" id="btnPrint" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento" 
                         ValidationGroup="ValidationAdd"/>
                     <h4>Generar Documento</h4>
                 </div>

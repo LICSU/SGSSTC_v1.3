@@ -500,7 +500,7 @@
                 <div class="row" align="center">
                     
                     <div class="col-md-4 col-md-offset-4">
-                        <asp:ImageButton id="btnGuardar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="GuardarRegistro" 
+                        <asp:ImageButton alt="-" id="btnGuardar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="GuardarRegistro" 
                             ValidationGroup="ValidationAdd"/>
                         <h4>Guardar</h4>
                     </div>

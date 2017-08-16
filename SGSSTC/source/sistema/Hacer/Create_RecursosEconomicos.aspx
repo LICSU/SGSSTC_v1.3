@@ -297,14 +297,14 @@
                 <div class="row" align="center">
 
                     <div class="col-md-4">
-                        <asp:imagebutton id="btnGenerar" runat="server" imageurl="~\ico\view.png"
+                        <asp:ImageButton alt="-" id="btnGenerar" runat="server" imageurl="~\ico\view.png"
                             onclick="btnGenerar_Onclick"/>
                         <h4>Generar Resultados</h4>
                     </div>
 
                     <asp:placeholder id="phGuardar" runat="server" visible="false">
                         <div class="col-md-4">
-                            <asp:ImageButton id="btnPrint" runat="server" ImageUrl="~\ico\print.png"
+                            <asp:ImageButton alt="-" id="btnPrint" runat="server" ImageUrl="~\ico\print.png"
                                 OnClick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
                             <h4>Imprimir Informe</h4>
                         </div>

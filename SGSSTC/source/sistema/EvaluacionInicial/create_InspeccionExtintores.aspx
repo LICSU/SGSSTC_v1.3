@@ -249,13 +249,13 @@
                     <div class="row" align="center">
                         <asp:PlaceHolder runat="server" id="phBotones" Visible="false">
                         <div class="col-md-4">
-                            <asp:ImageButton id="btnDescargar" runat="server" ImageUrl="~\ico\descargar.png" 
+                            <asp:ImageButton alt="-" id="btnDescargar" runat="server" ImageUrl="~\ico\descargar.png" 
                                 OnClick="btnDescargar_Onclick"/><br />
                             <h4>Descargar Formato de Inspecciones</h4>
                         </div>
 
                         <div class="col-md-4">
-                                <asp:ImageButton id="btnGuardar" runat="server" ImageUrl="~\ico\print.png" 
+                                <asp:ImageButton alt="-" id="btnGuardar" runat="server" ImageUrl="~\ico\print.png" 
                                     OnClick="GenerarDocumento"/>
                                 <h4>Generar Documento</h4>
                             </div>

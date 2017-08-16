@@ -451,7 +451,7 @@
 
         <div class="col-md-12" align="center">
             <div class="col-md-4 col-md-offset-4">
-                <asp:imagebutton id="btnActualizar" runat="server" imageurl="~\ico\save.png" onclick="EditarRegistro" validationgroup="ValidationEdit"/>
+                <asp:ImageButton alt="-" id="btnActualizar" runat="server" imageurl="~\ico\save.png" onclick="EditarRegistro" validationgroup="ValidationEdit"/>
                 <h4>Actualizar</h4>
             </div>
 

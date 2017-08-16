@@ -256,10 +256,10 @@
  </div>
  <div class=""> 
 	 <div class="col-md-6">
-		 <asp:image runat="server" id="fuFoto"></asp:image>
+		 <asp:Image alt="-" runat="server" id="fuFoto"></asp:image>
 	 </div>
 	 <div class="col-md-6">
-		 <asp:image runat="server" id="Image1"></asp:image>
+		 <asp:Image alt="-" runat="server" id="Image1"></asp:image>
 	 </div>
  </div>
 										</div><br />

@@ -95,7 +95,7 @@
     <div class="row" align="center">
         <asp:placeholder runat="server" id="phAgregar">
             <div class="col-md-4 col-md-offset-4">
-                <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
+                <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
                 <h4>Nueva Descripcion SocioDemografica</h4>
             </div>
         </asp:placeholder>

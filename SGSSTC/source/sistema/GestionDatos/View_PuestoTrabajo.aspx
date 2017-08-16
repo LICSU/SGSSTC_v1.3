@@ -147,7 +147,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
 						<h4 class="text-left">Soporte fotográfico</h4>
-						<asp:Image runat="server" id="ImgFoto" CssClass="img-thumbnail"/>
+						<asp:Image alt="-" runat="server" id="ImgFoto" CssClass="img-thumbnail"/>
 					</div>
 				</div>
 

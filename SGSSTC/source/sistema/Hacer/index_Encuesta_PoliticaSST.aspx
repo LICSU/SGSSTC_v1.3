@@ -129,17 +129,17 @@
             <div class="row" align="center">
 
                 <div class="col-md-4">
-                    <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
+                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
                     <h4>Crear Encuesta Conocimiento Politica SST</h4>
                 </div>
                 
                 <div class="col-md-4">
-                    <asp:imagebutton runat="server" ImageUrl="~\ico\agregar.png" OnClick="btnAgregarObj_Click"/>
+                    <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\agregar.png" OnClick="btnAgregarObj_Click"/>
                     <h4>Crear Encuesta Conocimiento Objetivos Politica SST</h4>
                 </div>
                 
                 <div class="col-md-4">
-                        <asp:ImageButton id="btnDescargar" runat="server" ImageUrl="~\ico\descargar.png"
+                        <asp:ImageButton alt="-" id="btnDescargar" runat="server" ImageUrl="~\ico\descargar.png"
                             OnClick="btnDescargar_Onclick"/>
                         <h4>Crear Comunicado</h4>
                 </div>

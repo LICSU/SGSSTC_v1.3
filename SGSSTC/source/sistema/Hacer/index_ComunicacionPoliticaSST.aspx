@@ -107,7 +107,7 @@
 
             <div class="row" align="center">
                 <div class="col-md-4 col-md-offset-4">
-                        <asp:ImageButton id="btnComunicado" runat="server" ImageUrl="~\ico\agregar.png"
+                        <asp:ImageButton alt="-" id="btnComunicado" runat="server" ImageUrl="~\ico\agregar.png"
                             OnClick="btnComunicado_Onclick"/>
                         <h4>Crear Comunicado</h4>
                 </div>

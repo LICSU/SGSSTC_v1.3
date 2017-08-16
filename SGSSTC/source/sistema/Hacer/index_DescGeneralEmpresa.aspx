@@ -221,7 +221,7 @@
 
         <div class="row" align="center">
             <div class="col-md-4 col-md-offset-4">
-                <asp:imagebutton id="btnSave" runat="server" imageurl="~\ico\agregar.png"
+                <asp:ImageButton alt="-" id="btnSave" runat="server" imageurl="~\ico\agregar.png"
                     onclick="AgregarRegistro"/>
                 <h4>Guardar y/o Actualizar</h4>
             </div>

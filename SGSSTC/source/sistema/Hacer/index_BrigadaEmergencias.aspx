@@ -359,42 +359,42 @@
 
 											<tr>
 												<td align="left">
-													<asp:image runat="server" imageurl="~/ico/eme1.png"/>
+													<asp:Image alt="-" runat="server" imageurl="~/ico/eme1.png"/>
 													EMERGENCIAS MÉDICAS</td>
 												<td align="center">112</td>
 											</tr>
 
 											<tr>
 												<td align="left">
-													<asp:image runat="server" imageurl="~/ico/eme2.png"/>
+													<asp:Image alt="-" runat="server" imageurl="~/ico/eme2.png"/>
 													BOMBEROS</td>
 												<td align="center">119</td>
 											</tr>
 
 											<tr>
 												<td align="left">
-													<asp:image runat="server" imageurl="~/ico/eme3.png"/>
+													<asp:Image alt="-" runat="server" imageurl="~/ico/eme3.png"/>
 													DEFENSA CIVIL</td>
 												<td align="center">144</td>
 											</tr>
 
 											<tr>
 												<td align="left">
-													<asp:image runat="server" imageurl="~/ico/eme4.png"/>
+													<asp:Image alt="-" runat="server" imageurl="~/ico/eme4.png"/>
 													LÍNEA NACIONAL DE TOXICOLOGÍA</td>
 												<td align="center">018000-916012</td>
 											</tr>
 
 											<tr>
 												<td align="left">
-													<asp:image runat="server" imageurl="~/ico/eme5.png"/>
+													<asp:Image alt="-" runat="server" imageurl="~/ico/eme5.png"/>
 													CRUZ ROJA</td>
 												<td align="center">132</td>
 											</tr>
 
 											<tr>
 												<td align="left">
-													<asp:image runat="server" imageurl="~/ico/eme6.png"/>
+													<asp:Image alt="-" runat="server" imageurl="~/ico/eme6.png"/>
 													POLICÍA NACIONAL</td>
 												<td align="center">123</td>
 											</tr>

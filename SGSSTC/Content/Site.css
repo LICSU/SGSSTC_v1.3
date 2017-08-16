@@ -237,3 +237,7 @@ html, body {
     padding: 0 !important;
     font: inherit;
 }
+
+.container-fluid > .navbar-header > a {
+    color: #FFFFFF;
+}

@@ -149,13 +149,13 @@
                 <asp:PlaceHolder runat="server" id="phAgregar">
                     <div class="row" align="center">
                         <div class="col-md-4 col-md-offset-2">
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
                                 OnClick="AgregarRegistro"/>
                             <h4>Nuevo Trabajador</h4>
                         </div>
 
                         <div class="col-md-4 ">
-                            <asp:ImageButton id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
+                            <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
                                 OnClick="btDescargar_Click"/>
                             <h4>Descargar Lista</h4>
                         </div>
@@ -353,7 +353,7 @@
                             
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-4">
-                                    <asp:Image runat="server" id="imgLogo" CssClass="thumbnail" 
+                                    <asp:Image alt="-" runat="server" id="imgLogo" CssClass="thumbnail" 
                                         ImageUrl="~/source/archivos/LogosEmpresas/LICSU.jpg"/>
                                 </div>
                             </div>

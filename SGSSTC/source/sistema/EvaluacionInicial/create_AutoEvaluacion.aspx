@@ -466,7 +466,7 @@
                 
                 <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-4">
-                        <asp:ImageButton id="btnGuardar" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento" 
+                        <asp:ImageButton alt="-" id="btnGuardar" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento" 
                             ValidationGroup="ValidationAdd" data-toggle="tooltip" data-placement="bottom" 
                             title="Presione para generar el documento de Auto-Evaluación"/>
                         <h4>Generar Documento</h4>

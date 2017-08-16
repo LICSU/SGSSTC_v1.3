@@ -413,7 +413,7 @@
                         <div id="piechart" runat="server"></div>
                     </div>
                     <asp:placeholder runat="server" visible="false">
-                            <asp:image id="ImgChart" runat="server"/>
+                            <asp:Image alt="-"id="ImgChart" runat="server"/>
                         </asp:placeholder>
                     <asp:hiddenfield id="rutaImg" runat="server"></asp:hiddenfield>
                 </div>
@@ -424,14 +424,14 @@
         <div class="row" align="center">
 
             <div class="col-md-4">
-                <asp:imagebutton id="btnGenerar" runat="server" imageurl="~\ico\view.png"
+                <asp:ImageButton alt="-" id="btnGenerar" runat="server" imageurl="~\ico\view.png"
                     onclick="btnGenerar_Onclick"/>
                 <h4>Generar Resultados</h4>
             </div>
 
             <asp:placeholder id="phGuardar" runat="server" visible="false">
                 <div class="col-md-4">
-                    <asp:ImageButton id="btnGuardar" runat="server" ImageUrl="~\ico\agregar.png"
+                    <asp:ImageButton alt="-" id="btnGuardar" runat="server" ImageUrl="~\ico\agregar.png"
                         OnClick="Guardar" ValidationGroup="ValidationAdd"/>
                     <h4>Guardar Registro</h4>
                 </div>

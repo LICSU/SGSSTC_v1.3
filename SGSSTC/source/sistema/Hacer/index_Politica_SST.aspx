@@ -79,13 +79,13 @@
         <div class="row" align="center">
 
             <div class="col-md-4 col-md-offset-2">
-                <asp:imagebutton id="btnSave" runat="server" imageurl="~\ico\agregar.png"
+                <asp:ImageButton alt="-" id="btnSave" runat="server" imageurl="~\ico\agregar.png"
                     onclick="btnSave_Click"/>
                 <h4>Guardar y/o Actualizar</h4>
             </div>
 
             <div class="col-md-4">
-                <asp:imagebutton id="btnPrint" runat="server" imageurl="~\ico\print.png"
+                <asp:ImageButton alt="-" id="btnPrint" runat="server" imageurl="~\ico\print.png"
                     onclick="GenerarDocumento"/>
                 <h4>Generar Documento</h4>
             </div>

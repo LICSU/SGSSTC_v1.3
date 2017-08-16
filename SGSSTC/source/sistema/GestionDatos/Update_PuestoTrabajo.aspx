@@ -140,7 +140,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<asp:Image runat="server" id="ImgFoto" CssClass="img-thumbnail"/>
+						<asp:Image alt="-" runat="server" id="ImgFoto" CssClass="img-thumbnail"/>
 						<h4 class="text-left">Soporte fotográfico</h4>
 						<asp:FileUpload runat="server" id="fuAnexo"/>
 					</div>

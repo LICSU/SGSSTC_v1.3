@@ -83,12 +83,12 @@
             
             <div class="row" align="center">
                 <div class="col-md-4 col-md-offset-2">
-                    <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalCrear"/>
+                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalCrear"/>
                     <h4>Crear Acta</h4>
                 </div>
 
                 <div class="col-md-4">
-                    <asp:ImageButton id="btnSubir" runat="server" ImageUrl="~\ico\upload.png" OnClick="btnSubir_Click"/>
+                    <asp:ImageButton alt="-" id="btnSubir" runat="server" ImageUrl="~\ico\upload.png" OnClick="btnSubir_Click"/>
                     <h4>Subir Acta</h4>
                 </div>
             </div>

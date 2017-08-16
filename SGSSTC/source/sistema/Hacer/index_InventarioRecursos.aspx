@@ -561,7 +561,7 @@
         </div>
 
         <asp:placeholder runat="server" visible="false">
-                <asp:image id="ImgChart" runat="server"/>
+                <asp:Image alt="-"id="ImgChart" runat="server"/>
             </asp:placeholder>
 
         <asp:hiddenfield id="rutaImg" runat="server"></asp:hiddenfield>
@@ -569,14 +569,14 @@
 
     <div class="row" align="center">
         <div class="col-md-4 col-md-offset-2">
-            <asp:imagebutton id="btnCalculate" runat="server" imageurl="~\ico\calculator.png"
+            <asp:ImageButton alt="-" id="btnCalculate" runat="server" imageurl="~\ico\calculator.png"
                 onclick="btnCalculate_Onclick"/>
             <h4>Calcular Resultados</h4>
         </div>
 
         <asp:placeholder id="phBtnPrint" runat="server" visible="false">
             <div class="col-md-4">
-                <asp:ImageButton id="btnPrint" runat="server" ImageUrl="~\ico\print.png" ValidationGroup="ValidationAdd"
+                <asp:ImageButton alt="-" id="btnPrint" runat="server" ImageUrl="~\ico\print.png" ValidationGroup="ValidationAdd"
                     OnClick="GenerarDocumento"/>
                 <h4>Generar Documento</h4>
             </div>

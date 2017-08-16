@@ -102,7 +102,7 @@
             <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-2">
                         <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
-                            <asp:ImageButton id="btnAgregar" alt="" runat="server" ImageUrl="~\ico\agregar.png" 
+                            <asp:ImageButton alt="-" id="btnAgregar" alt="-" runat="server" ImageUrl="~\ico\agregar.png" 
                                 OnClick="btnCrear_Onclick"
                                 data-toggle="tooltip" data-placement="bottom" 
                                 title="Presione para crear un nuevo documento de Auto-Evaluación"/>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-md-4">
                         <asp:PlaceHolder Visible="true" id="PlaceHolder1" runat="server">
-                            <asp:imagebutton runat="server" ImageUrl="~\ico\upload.png" OnClick="MostrarModalAgregar"
+                            <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\upload.png" OnClick="MostrarModalAgregar"
                                 data-toggle="tooltip" data-placement="bottom" 
                                 title="Presione para subir un nuevo documento de Auto-Evaluación"/>
                             <h4>Subir Documento</h4>

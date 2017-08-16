@@ -87,7 +87,7 @@
 		    <div class="row text-center form-group">
 
 			    <div class="col-md-4 col-md-offset-4">
-				    <asp:imagebutton id="btnPrint" runat="server" imageurl="~\ico\print.png"
+				    <asp:ImageButton alt="-" id="btnPrint" runat="server" imageurl="~\ico\print.png"
 					    onclick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
 				    <h4>Generar Documento</h4>
 			    </div>

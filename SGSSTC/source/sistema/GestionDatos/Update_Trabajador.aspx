@@ -411,7 +411,7 @@
                         <div class="col-md-4">
                             <h4 class="text-left">Foto</h4>
 
-                            <asp:Image runat="server" id="ImgFoto" CssClass="img-thumbnail"/>
+                            <asp:Image alt="-" runat="server" id="ImgFoto" CssClass="img-thumbnail"/>
 
                             <asp:FileUpload runat="server" id="fuFoto"/>
 

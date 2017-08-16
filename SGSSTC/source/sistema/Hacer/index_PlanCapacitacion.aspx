@@ -2242,7 +2242,7 @@
 					<div class="row" align="center">	
 					
 						<div class="col-md-4 col-md-offset-4">
-							<asp:ImageButton id="btnDocumento" runat="server" ImageUrl="~\ico\print.png" 
+							<asp:ImageButton alt="-" id="btnDocumento" runat="server" ImageUrl="~\ico\print.png" 
 									OnClick="GenerarDocumento"/>
 								<h4>Generar Documento</h4>
 						 </div>

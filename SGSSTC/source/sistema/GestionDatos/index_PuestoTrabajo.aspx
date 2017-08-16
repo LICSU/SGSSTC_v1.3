@@ -140,7 +140,7 @@
                 <asp:PlaceHolder runat="server" id="phAgregar">
                     <div class="row" align="center">
                         <div class="col-md-4 col-md-offset-4">
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
                                 OnClick="AgregarRegistro"/>
                             <h4>Nuevo Puesto de Trabajo</h4>
                         </div>

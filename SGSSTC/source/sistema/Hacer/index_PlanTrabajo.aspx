@@ -435,19 +435,19 @@
                     <div class="row" align="center">
 
                         <div class="col-md-3 col-md-offset-1">
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
                                 OnClick="MostrarModalAgregar" />
                             <h4>Nueva Actividad</h4>
                         </div>
 
                         <div class="col-md-3">
-                            <asp:ImageButton id="btnImprimirG" runat="server" ImageUrl="~\ico\print.png" 
+                            <asp:ImageButton alt="-" id="btnImprimirG" runat="server" ImageUrl="~\ico\print.png" 
                                 OnClick="GenerarDocumentoG" ValidationGroup="ValidationAdd"/>
                             <h4>Generar Documento General</h4>
                         </div>
 
                         <div class="col-md-3">
-                            <asp:ImageButton id="btnImprimirE" runat="server" ImageUrl="~\ico\print.png" 
+                            <asp:ImageButton alt="-" id="btnImprimirE" runat="server" ImageUrl="~\ico\print.png" 
                                 OnClick="GenerarDocumentoE" ValidationGroup="ValidationAdd"/>
                             <h4>Generar Documento Especifico</h4>
                         </div>

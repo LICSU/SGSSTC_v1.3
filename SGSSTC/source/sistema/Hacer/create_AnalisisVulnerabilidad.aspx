@@ -1075,7 +1075,7 @@
 
         <div class="row" align="center">
             <div class="col-md-4 col-md-offset-4">
-                <asp:imagebutton id="btnGuardar" runat="server" imageurl="~\ico\print.png" onclick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
+                <asp:ImageButton alt="-" id="btnGuardar" runat="server" imageurl="~\ico\print.png" onclick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
                 <h4>Generar Documento</h4>
             </div>
         </div>

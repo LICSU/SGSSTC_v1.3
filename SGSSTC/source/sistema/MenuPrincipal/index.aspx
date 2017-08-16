@@ -195,7 +195,7 @@
                                 </table>
                             </div>
                             
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
                                 data-toggle="modal" data-target="#addModal"/>
                             <h4>Nueva Pregunta</h4>
                         </div>
@@ -219,7 +219,7 @@
                 </div>
 
                 <div class="box-body no-padding">
-                        <asp:Panel runat="server" id="pTrabajadores"></asp:Panel>
+                        <asp:Panel alt="-" runat="server" id="pTrabajadores"></asp:Panel>
                     </div>
 
                 <div class="box-footer text-center">

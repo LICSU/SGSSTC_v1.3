@@ -26,7 +26,7 @@
                 
                 <div class="row">
                     <div class="col-md-4 text-left">
-                        <asp:Image runat="server" id="imgLogo" CssClass="thumbnail" 
+                        <asp:Image alt="-" runat="server" id="imgLogo" CssClass="thumbnail" 
                             ImageUrl="~/source/archivos/LogosEmpresas/LICSU.jpg"/>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                 
                 <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-4">
-                        <asp:ImageButton id="btnActualizar" runat="server" ImageUrl="~\ico\editar.png" 
+                        <asp:ImageButton alt="-" id="btnActualizar" runat="server" ImageUrl="~\ico\editar.png" 
                             OnClick="EditarRegistro" ValidationGroup="ValidationAdd"/>
 
                         <h4>Actualizar</h4>

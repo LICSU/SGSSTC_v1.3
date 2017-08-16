@@ -1379,7 +1379,7 @@
             
                 <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-2">
-                        <asp:ImageButton id="btnPrint" alt="" runat="server" ImageUrl="~\ico\print.png" 
+                        <asp:ImageButton alt="-" id="btnPrint" alt="-" runat="server" ImageUrl="~\ico\print.png" 
                             OnClick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
                         <h4>Generar Documento</h4>
                     </div>

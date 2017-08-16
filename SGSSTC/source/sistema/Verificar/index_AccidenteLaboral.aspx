@@ -165,13 +165,13 @@
                 <div class="row" align="center">
                     <asp:PlaceHolder runat="server" id="phAgregar">
                         <div class="col-md-3 col-md-offset-3">
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="btn_Agregar"/>
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="btn_Agregar"/>
                             <h4>Nuevo Accidente Laboral</h4>
                         </div>
                     </asp:PlaceHolder>
 
                     <div class="col-md-3">
-                        <asp:ImageButton id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" OnClick="MostrarModalImprimir"/>
+                        <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" OnClick="MostrarModalImprimir"/>
                         <h4>Descargar Lista</h4>
                     </div>
                 </div>

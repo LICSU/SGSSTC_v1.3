@@ -2786,26 +2786,26 @@
                 <div id="piechart" runat="server"></div>
             </div>
             <asp:placeholder runat="server" visible="false">
-                   <asp:image id="ImgChart" runat="server"/>
+                   <asp:Image alt="-"id="ImgChart" runat="server"/>
                </asp:placeholder>
             <asp:hiddenfield id="rutaImg" runat="server"></asp:hiddenfield>
         </div>
 
         <div class="row" align="center">
             <div class="col-md-3">
-                <asp:imagebutton id="btnGuardar" runat="server" imageurl="~\ico\calculator.png" onclick="Guardar"/>
+                <asp:ImageButton alt="-" id="btnGuardar" runat="server" imageurl="~\ico\calculator.png" onclick="Guardar"/>
                 <h4>Generar Resultados</h4>
             </div>
 
             <div class="col-md-3">
-                <asp:ImageButton  runat="server" ImageUrl="~\ico\descargar.png" OnClick="GenerarDocumentoGeneral"
+                <asp:ImageButton alt="-"  runat="server" ImageUrl="~\ico\descargar.png" OnClick="GenerarDocumentoGeneral"
                     ValidationGroup="ValidationAdd"/>
                 <h4>Descargar Formato</h4>
             </div>
 
             <asp:placeholder id="phBtnPrint" runat="server" visible="false">
                 <div class="col-md-3">
-                    <asp:ImageButton id="btnPrint" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento" 
+                    <asp:ImageButton alt="-" id="btnPrint" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento" 
                         ValidationGroup="ValidationAdd"/>
                     <h4>Generar Documento</h4>
                 </div>

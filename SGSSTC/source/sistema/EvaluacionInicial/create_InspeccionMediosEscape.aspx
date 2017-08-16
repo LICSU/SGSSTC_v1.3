@@ -187,7 +187,7 @@
 
                         <div class="row" align="center">                        
                             <div class="col-md-4 col-md-offset-2">
-                                <asp:ImageButton id="btnGuardar" runat="server" ImageUrl="~\ico\print.png" 
+                                <asp:ImageButton alt="-" id="btnGuardar" runat="server" ImageUrl="~\ico\print.png" 
                                     OnClick="GenerarDocumento"/>
                                 <h4>Generar Documento</h4>
                             </div>
