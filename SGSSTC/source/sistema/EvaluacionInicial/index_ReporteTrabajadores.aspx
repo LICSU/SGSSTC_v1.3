@@ -67,7 +67,7 @@
                             <Columns>
                                 <asp:TemplateField visible="false">
                                     <ItemTemplate>
-                                        <asp:Label id="id_reportes" runat="server" Text='<%# Eval("id_reporte") %>'/>
+                                        <asp:Label id="id_reportes" runat="server" Text='<%# Eval("id_documento") %>'/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GrupoLiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GrupoLiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="afp">
           <Key>
             <PropertyRef Name="id_afp" />
@@ -805,16 +805,6 @@
           <Property Name="actividad_ppal" Type="int" />
           <Property Name="actividad_sec" Type="int" />
           <Property Name="actividad_otra" Type="int" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="tipo_documento">
           <Key>
@@ -2098,7 +2088,6 @@
           <EntitySet Name="sistema" EntityType="Self.sistema" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="soporte" EntityType="Self.soporte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_epp" EntityType="Self.tipo_epp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" Schema="dbo" store:Type="Tables" />
@@ -2445,8 +2434,7 @@
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GrupoLiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3242,10 +3230,10 @@
           <Property Name="cuerpo_pregunta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
-          <Property Name="estatus" Type="Int32" />
           <NavigationProperty Name="usuario" Relationship="Self.FK_Pregunta_usuario" FromRole="Pregunta" ToRole="usuario" />
           <NavigationProperty Name="Respuesta" Relationship="Self.FK_Respuesta_Pregunta" FromRole="Pregunta" ToRole="Respuesta" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="estatus" Type="Int32" />
         </EntityType>
         <EntityType Name="procedimiento_comunicacion">
           <Key>
@@ -3309,8 +3297,8 @@
           <Property Name="cuerpo_respuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="id_pregunta" Type="Int32" />
           <Property Name="calificacion" Type="Int32" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Pregunta" Relationship="Self.FK_Respuesta_Pregunta" FromRole="Respuesta" ToRole="Pregunta" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="riesgos_item">
           <Key>
@@ -3387,16 +3375,6 @@
           <NavigationProperty Name="norma_sucursal" Relationship="Self.FK_normas_sucursal_sucursal1" FromRole="sucursal" ToRole="norma_sucursal" />
           <NavigationProperty Name="plan" Relationship="Self.FK_planes_sucursal" FromRole="sucursal" ToRole="plan" />
           <NavigationProperty Name="tipo_documento" Relationship="Self.FK_tipo_documento_sucursal" FromRole="sucursal" ToRole="tipo_documento" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tipo_documento">
           <Key>
@@ -4711,7 +4689,6 @@
           <EntitySet Name="sistema" EntityType="Self.sistema" />
           <EntitySet Name="soporte" EntityType="Self.soporte" />
           <EntitySet Name="sucursal" EntityType="Self.sucursal" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
           <EntitySet Name="tipo_epp" EntityType="Self.tipo_epp" />
           <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" />
@@ -5795,12 +5772,12 @@
           <EntitySetMapping Name="Pregunta">
             <EntityTypeMapping TypeName="GrupoLiModel.Pregunta">
               <MappingFragment StoreEntitySet="Pregunta">
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
                 <ScalarProperty Name="cuerpo_pregunta" ColumnName="cuerpo_pregunta" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="titulo" ColumnName="titulo" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="estatus" ColumnName="estatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5855,12 +5832,12 @@
           <EntitySetMapping Name="Respuesta">
             <EntityTypeMapping TypeName="GrupoLiModel.Respuesta">
               <MappingFragment StoreEntitySet="Respuesta">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="cuerpo_respuesta" ColumnName="cuerpo_respuesta" />
                 <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
                 <ScalarProperty Name="calificacion" ColumnName="calificacion" />
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5924,17 +5901,6 @@
                 <ScalarProperty Name="actividad_ppal" ColumnName="actividad_ppal" />
                 <ScalarProperty Name="actividad_sec" ColumnName="actividad_sec" />
                 <ScalarProperty Name="actividad_otra" ColumnName="actividad_otra" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="GrupoLiModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

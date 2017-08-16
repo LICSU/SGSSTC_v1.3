@@ -121,13 +121,13 @@
                 <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-2">
                         <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
-                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalCrear"/>
+                            <asp:ImageButton id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" data-toggle="modal" data-target="#createModal"/>
                             <h4>Crear Documento</h4>
                         </asp:PlaceHolder>
                     </div>
                     <div class="col-md-4">
                         <asp:PlaceHolder Visible="true" id="PlaceHolder1" runat="server">
-                            <asp:imagebutton runat="server" ImageUrl="~\ico\upload.png" OnClick="MostrarModalAgregar"/>
+                            <asp:imagebutton runat="server" ImageUrl="~\ico\upload.png" data-toggle="modal" data-target="#addModal"/>
                             <h4>Subir Documento</h4>
                         </asp:PlaceHolder>
                     </div>

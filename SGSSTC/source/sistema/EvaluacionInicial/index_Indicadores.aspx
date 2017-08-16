@@ -54,8 +54,7 @@
                     
                             <!-- Primer Panel -->
                             <div class="panel panel-default">
-                        
-                                <div class="panel-heading bg-teal color-palette">
+                                <div class="panel-heading bg-aqua color-palette">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">INDICADOR DE ESTRUCTURA</a>
                                     </h4>
@@ -515,7 +514,7 @@
                             <!-- Segundo Panel -->
                             <div class="panel">
                         
-                                <div class="panel-heading bg-purple color-palette">
+                                <div class="panel-heading bg-aqua color-palette">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INDICADOR DE PROCESO</a>
                                     </h4>
@@ -914,7 +913,7 @@
                             <!-- Tercer Panel -->
                             <div class="panel">
 
-                                <div class="panel-heading bg-orange color-palette">
+                                <div class="panel-heading bg-aqua color-palette">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">INDICADOR DE RESULTADO</a>
                                     </h4>

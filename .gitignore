@@ -1,0 +1,12 @@
+SGSSTC/packages/
+SGSSTC/bin/
+packages/
+*.config
+*.config
+*.csproj
+*.edmx
+Capa_Datos/ModeloGrupoLi.edmx.diagram
+Capa_Datos/obj/Debug/Capa_Datos.csproj.FileListAbsolute.txt
+*.ssdl
+*.msl
+*.csdl

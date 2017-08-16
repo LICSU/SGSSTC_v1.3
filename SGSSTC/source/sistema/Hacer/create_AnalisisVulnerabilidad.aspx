@@ -49,7 +49,7 @@
 
                     <!-- Primer Panel -->
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">AREA DE EVALUACION</a></h4>
                         </div>
 
@@ -62,7 +62,7 @@
 
                     <!-- Segundo Panel -->
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">OBJETIVO DE LA EVALUACION</a></h4>
                         </div>
 
@@ -75,7 +75,7 @@
 
                     <!-- Tercer Panel -->
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">ALCANCE DE LA EVALUACION</a></h4>
                         </div>
 
@@ -88,7 +88,7 @@
 
                     <!-- Cuarto Panel -->
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESULTADOS DE LA EVALUACION INTERNA</a></h4>
                         </div>
 
@@ -796,10 +796,10 @@
                                                         <td class="col-md-1 text-center"><asp:Label id="PuntajeF54" runat="server" Text="---"></asp:Label></td>
                                                     </tr>
                                 
-                                                    <!-- 19 LOS OCUPANTES DEL EDIFIO SON -->
+                                                    <!-- 19 LOS OCUPANTES DEL EDIFICIO SON -->
                                                     <tr class="bg-aqua color-palette">
                                                         <td class="col-md-1 text-center">19</td>
-                                                        <td class="col-md-7  text-left"colspan="3">LOS OCUPANTES DEL EDIFIO SON</td>
+                                                        <td class="col-md-7  text-left"colspan="3">LOS OCUPANTES DEL EDIFICIO SON</td>
                                                         <td class="col-md-3">OPCIONES</td>
                                                         <td class="col-md-1 text-center">PUNTAJE</td>
                                                     </tr>
