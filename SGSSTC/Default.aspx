@@ -9,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SGSSTC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="splash/css/animate.css">
+    <link rel="stylesheet" href="splash/css/animate.css"/>
     <link rel="stylesheet" href="splash/css/icomoon.css">
-    <link rel="stylesheet" href="splash/css/themify-icons.css">
-    <link rel="stylesheet" href="splash/css/bootstrap.css">
-    <link rel="stylesheet" href="splash/css/magnific-popup.css">
-    <link rel="stylesheet" href="splash/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="splash/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="splash/css/style.css">
+    <link rel="stylesheet" href="splash/css/themify-icons.css"/>
+    <link rel="stylesheet" href="splash/css/bootstrap.css"/>
+    <link rel="stylesheet" href="splash/css/magnific-popup.css"/>
+    <link rel="stylesheet" href="splash/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="splash/css/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="splash/css/style.css"/>
     <script src="splash/js/modernizr-2.6.2.min.js"></script>
 </head>
 
