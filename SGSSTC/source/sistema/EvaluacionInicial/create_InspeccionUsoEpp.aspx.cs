@@ -13,10 +13,6 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     public partial class create_InspeccionUsoEpp : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
-        Table _table;
-        TextBox _textbox;
-        Label _label;
-        RadioButton _radio;
         List<Model_CEPP> eppTrab;
         int intContInspecciones = 0;
         Tuple<bool, bool> BoolEmpSuc;
@@ -111,7 +107,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             intContInspecciones = Convert.ToInt32(cantInspecciones.Value);
             eppTrab = Getter.Epp(Convert.ToInt32(ddlPuesto.SelectedValue));
-            ControlesDinamicos.Add_Fila_InspeccionUsoEpp(_table, pnDatos, intContInspecciones, _label, eppTrab, _radio, _textbox);
+            ControlesDinamicos.Add_Fila_InspeccionUsoEpp(pnDatos, intContInspecciones, eppTrab);
         }
 
         #endregion

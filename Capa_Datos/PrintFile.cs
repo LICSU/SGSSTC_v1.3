@@ -478,7 +478,7 @@ namespace Capa_Datos
             #endregion
         }
 
-        public static void PrintDocumento_InspeccionEPP(Panel _Panel, DropDownList ddlArea, DropDownList ddlPuesto, Table _table, TextBox _textbox, RadioButton _radio)
+        public static void PrintDocumento_InspeccionEPP(Panel _Panel, DropDownList ddlArea, DropDownList ddlPuesto, Table _table,  RadioButton _radio)
         {
             TableRow row = new TableRow();
             row = (TableHeaderRow)_Panel.FindControl("EPPFaltante");

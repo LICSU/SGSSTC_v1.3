@@ -10,16 +10,16 @@
 	<script type="text/javascript" src="//www.google.com/jsapi"></script>
 
 	<div class="container" style="width: 100%;">
-        
-        <ol class="breadcrumb">
-            <li><a href="#">Fase: Evaluación Inicial</a></li>
-            <li><a href="../EvaluacionInicial/index_Inspecciones.aspx">Inspecciones</a></li>
-            <li><a href="#">Crear Cronograma de Inspecciones</a></li>
-        </ol>
+		
+		<ol class="breadcrumb">
+			<li><a href="#">Fase: Evaluación Inicial</a></li>
+			<li><a href="../EvaluacionInicial/index_Inspecciones.aspx">Inspecciones</a></li>
+			<li><a href="#">Crear Cronograma de Inspecciones</a></li>
+		</ol>
 
-        <div class="page-header">
-            <h1 class="text-center">Cronograma de Inspecciones</h1>
-        </div>
+		<div class="page-header">
+			<h1 class="text-center">Cronograma de Inspecciones</h1>
+		</div>
 
 		<asp:hiddenfield runat="server" id="cantInspecciones" value="0"></asp:hiddenfield>
 
@@ -44,7 +44,7 @@
 		<asp:placeholder runat="server" id="phInformacion" Visible="false">
 			 <div class="row">
 				  <div class="col-md-12">
-                      <table class="table table-condensed">
+					  <table class="table table-condensed">
 							  <tbody>
 								  <tr class="bg-aqua color-palette">
 									  <th class="col-md-2 text-center">Area</th>

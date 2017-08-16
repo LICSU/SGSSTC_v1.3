@@ -106,8 +106,10 @@ namespace Capa_Datos
             miDropDownList.Items.Insert(6, new ListItem("Inspección de Equipos de Protección", "InspeccionEpp"));
         }
 
-        public static void Crear_Tabla_InspeccionEpp(Panel _panel, DropDownList ddlArea, DropDownList ddlPuesto, Table _table, TextBox _textbox, RadioButton _radio)
+        public static void Crear_Tabla_InspeccionEpp(Panel _panel, DropDownList ddlArea, DropDownList ddlPuesto, Table _table,  RadioButton _radio)
         {
+            TextBox _textbox;
+
             _table = new Table();
             _table.CssClass = "table";
             TableHeaderRow _header_row = new TableHeaderRow();
@@ -297,11 +299,15 @@ namespace Capa_Datos
 
         }
 
-        public static void calcularDif(WebControl myControl, Panel pnDatosA, Panel pnDatosB, Panel pnDatosC, Table _table, TextBox _textbox, DropDownList _drop, Label _label)
+        public static void calcularDif(WebControl myControl, Panel pnDatosA, Panel pnDatosB, Panel pnDatosC)
         {
+            TextBox _textbox;
+            Label _label;
+
             string idElemento = myControl.ID.ToString();
             string panel = idElemento.Substring(3, 1);
             string num_fila = idElemento.Substring(7, idElemento.Length - 7);
+
             if (panel == "A")
             {
                 _label = (Label)pnDatosA.FindControl("lblACant" + num_fila);
@@ -332,7 +338,7 @@ namespace Capa_Datos
                 _textbox = (TextBox)pnDatosB.FindControl("txtBDif" + num_fila);
                 _textbox.Text = "" + diferencia;
             }
-            else if (panel == "C")
+            else 
             {
                 _label = (Label)pnDatosC.FindControl("lblCCant" + num_fila);
                 int cantidad = Convert.ToInt32(_label.Text.Trim());
@@ -1055,8 +1061,14 @@ namespace Capa_Datos
             return valores;
         }
 
-        public static void Add_Fila_InspeccionUsoEpp(Table _table, Panel pnDatos, int intContInspecciones, Label _label, List<Model_CEPP> eppTrab, RadioButton _radio, TextBox _textbox)
+        public static void Add_Fila_InspeccionUsoEpp(Panel pnDatos, int intContInspecciones,  List<Model_CEPP> eppTrab)
         {
+            Table _table;
+            RadioButton _radio;
+            TextBox _textbox;
+            Label _label;
+
+
             _table = (Table)pnDatos.FindControl("tb_datos");
 
             for (int i = 0; i < intContInspecciones; i++)

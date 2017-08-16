@@ -11,10 +11,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     public partial class create_InspeccionEPP : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
-        Table _table;
-        TextBox _textbox;
         RadioButton _radio;
         Tuple<bool, bool> BoolEmpSuc;
+        Table _table;
 
         #region acciones
 
@@ -71,14 +70,14 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         protected void crearTabla()
         {
-            ControlesDinamicos.Crear_Tabla_InspeccionEpp(pnEpp, ddlArea, ddlPuesto, _table, _textbox, _radio);
+            ControlesDinamicos.Crear_Tabla_InspeccionEpp(pnEpp, ddlArea, ddlPuesto, _table, _radio);
 
             ViewState["controlsadded"] = true;
         }
 
         protected void GenerarDocumento(object sender, EventArgs e)
         {
-            PrintFile.PrintDocumento_InspeccionEPP(pnEpp, ddlArea, ddlPuesto, _table, _textbox, _radio);           
+            PrintFile.PrintDocumento_InspeccionEPP(pnEpp, ddlArea, ddlPuesto, _table, _radio);           
 
             Imprimir();
         }

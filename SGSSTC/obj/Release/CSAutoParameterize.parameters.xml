@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="GrupoLiEntities-Web.config Connection String" description="GrupoLiEntities Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/ModeloGrupoLi.csdl|res://*/ModeloGrupoLi.ssdl|res://*/ModeloGrupoLi.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=asael.colombiahosting.com.co\MSSQLSERVER2012;initial catalog=grupolicom_sgsst;persist security info=True;user id=grupolicom_SGSST;password=Lut637w_;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jezuz\\\.Nimi\ Places\\Containers\\Repositorio\\SGSSTC\\SGSSTC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GrupoLiEntities']/@connectionString" />
-  </parameter>
-</parameters>

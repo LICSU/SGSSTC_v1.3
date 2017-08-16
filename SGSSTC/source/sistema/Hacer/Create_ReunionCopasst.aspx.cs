@@ -9,7 +9,6 @@ namespace SGSSTC.source.sistema.Hacer
     public partial class Create_ReunionCopasst : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {

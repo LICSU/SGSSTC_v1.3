@@ -10,11 +10,6 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     public partial class create_InspeccionPrimAux : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
-        Table _table;
-        TextBox _textbox;
-        DropDownList _drop;
-        Label _label;
-        int intContInspecciones = 0;
         Tuple<bool, bool> BoolEmpSuc;
 
         #region Index
@@ -147,7 +142,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         protected void calcularDif(object sender, EventArgs e)
         {
             WebControl myControl = sender as WebControl;
-            ControlesDinamicos.calcularDif(myControl,pnDatosA,pnDatosB,pnDatosC,_table,_textbox,_drop,_label);
+            ControlesDinamicos.calcularDif(myControl,pnDatosA,pnDatosB,pnDatosC);
         }
 
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)

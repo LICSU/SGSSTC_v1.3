@@ -12,15 +12,15 @@
 
 	<div class="container" style="width: 100%;">
 
-        <ol class="breadcrumb">
-            <li><a href="#">Fase: Evaluación Inicial</a></li>
-            <li><a href="../EvaluacionInicial/index_Inspecciones.aspx">Inspecciones</a></li>
-            <li><a href="#">Crear Inspección de Botiquín</a></li>
-        </ol>
+		<ol class="breadcrumb">
+			<li><a href="#">Fase: Evaluación Inicial</a></li>
+			<li><a href="../EvaluacionInicial/index_Inspecciones.aspx">Inspecciones</a></li>
+			<li><a href="#">Crear Inspección de Botiquín</a></li>
+		</ol>
 
-        <div class="page-header">
-             <h1 class="text-center">Botiquín de Primeros Auxilios</h1>
-         </div>
+		<div class="page-header">
+			 <h1 class="text-center">Botiquín de Primeros Auxilios</h1>
+		 </div>
 
 		<asp:updatepanel id="MyUpdatePanel" runat="server" updatemode="Always">
 			<ContentTemplate>

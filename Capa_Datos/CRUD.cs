@@ -1069,7 +1069,7 @@ namespace Capa_Datos
             {
                 contexto.SaveChanges();
             }
-            catch (Exception e)
+            catch 
             {
                 DeleteSucursal(ObjUsuario, id_sucursal);
                 return false;

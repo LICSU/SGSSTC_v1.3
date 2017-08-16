@@ -224,7 +224,7 @@ namespace Capa_Datos
                 }
                 return enviarCorreo(mail);
             }
-            catch (Exception ex)
+            catch 
             {
                 return false;
             }
@@ -254,7 +254,7 @@ namespace Capa_Datos
                 }
                 return enviarCorreo(mail);
             }
-            catch (Exception ex)
+            catch 
             {
                 return false;
             }
@@ -284,7 +284,7 @@ namespace Capa_Datos
                 }
                 return enviarCorreo(mail);
             }
-            catch (Exception ex)
+            catch 
             {
                 return false;
             }
@@ -304,7 +304,7 @@ namespace Capa_Datos
                 mail.Dispose();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
@@ -335,7 +335,7 @@ namespace Capa_Datos
                 }
                 return enviarCorreo(mail);
             }
-            catch (Exception ex)
+            catch 
             {
                 return false;
             }

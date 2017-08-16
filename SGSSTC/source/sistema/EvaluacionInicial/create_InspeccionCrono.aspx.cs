@@ -10,7 +10,6 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     public partial class create_InspeccionCrono : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
-        DropDownList miDropDownList;
         Tuple<bool, bool> BoolEmpSuc;
 
         #region Acciones
@@ -136,6 +135,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
 
+            DropDownList miDropDownList = new DropDownList();
+
             ControlesDinamicos.CrearDropDownList(id, _panel, miDropDownList);
 
             Listas.Area_Sucursal(miDropDownList, IdSucursal);
@@ -145,6 +146,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         public void CrearDropDownListTipo(string id, Panel _panel)
         {
+            DropDownList miDropDownList = new DropDownList();
+
             ControlesDinamicos.CrearDropDownList(id, _panel, miDropDownList);
 
             ControlesDinamicos.Llenar_DropdownList_Inspecciones(miDropDownList);

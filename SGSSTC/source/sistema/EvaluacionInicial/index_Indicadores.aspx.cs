@@ -1,8 +1,4 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
-using Capa_Datos;
-
-using Capa_Datos;
+﻿using Capa_Datos;
 using System;
 using System.Collections.Generic;
 using System.Web;
