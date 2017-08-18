@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_AutoEvaluacion.aspx.cs" Inherits="SGSSTC.source.sistema.EvaluacionInicial.index_AutoEvaluacion" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
@@ -102,7 +104,7 @@
             <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-2">
                         <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
-                            <asp:ImageButton alt="-" id="btnAgregar" alt="-" runat="server" ImageUrl="~\ico\agregar.png" 
+                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
                                 OnClick="btnCrear_Onclick"
                                 data-toggle="tooltip" data-placement="bottom" 
                                 title="Presione para crear un nuevo documento de Auto-Evaluación"/>

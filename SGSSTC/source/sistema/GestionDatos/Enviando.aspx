@@ -1,30 +1,27 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Enviando.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.Enviando" %>
 
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="container" style="width: 100%;">
-
-        <script>
-       function DeleteKartItems() {     
-                 $.ajax({
-                 type: "POST",
-                 url: 'Enviando.aspx/SaveData',
-                 data: "",
-                 contentType: "application/json; charset=utf-8",
-                 dataType: "json",
-                 success: function (msg) {
-                     alert(msg.d);
-                     window.location = "index_Sucursal.aspx";
-                 },
-                 error: function (e) {
-                 }
-             });
-       }
-       window.onload = DeleteKartItems;
+    
+    <script>
+        function DeleteKartItems()
+        {
+            $.ajax(
+                {
+                    type: "POST",
+                    url: 'Enviando.aspx/SaveData',
+                    data: "",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        alert(msg.d);
+                        window.location = "index_Sucursal.aspx";
+                    },
+                    error: function (e) { }
+                });
+        }
+        window.onload = DeleteKartItems;
         </script>
         
         <div class="page-header">
@@ -33,10 +30,9 @@
         
         <div class="row"> 
             <div class="col-md-10 col-md-offset-1">
+                <hr />
                 <br />
-                <br />
-                <br />
-
+                
                 <div class="box box-warning box-solid">
                     <div class="box-header">
                         <h3 class="box-title">Enviando Datos...</h3>
@@ -54,5 +50,4 @@
                 </div>
             </div> 
         </div>
-    </div>
 </asp:Content>

@@ -2,23 +2,24 @@
 
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
-    <div class="container" style="width: 100%;">
-        
-       <ol class="breadcrumb">
-           <li><a href="#">Fase: Hacer</a></li>
-           <li><a href="#">Matriz de Responsabilidades</a></li>
-       </ol>
+	
+	<div class="container" style="width: 100%;">
+		
+	   <ol class="breadcrumb">
+		   <li><a href="#">Fase: Hacer</a></li>
+		   <li><a href="#">Matriz de Responsabilidades</a></li>
+	   </ol>
 
-        <div class="page-header">
+		<div class="page-header">
 			<h1 class="text-center">Matriz de Responsabilidades</h1>
-        </div>
+		</div>
 
 		<div class="row form-group">			
 			<asp:PlaceHolder runat="server" id="phEmpresa">

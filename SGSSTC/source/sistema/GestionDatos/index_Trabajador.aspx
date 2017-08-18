@@ -1,168 +1,163 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Trabajador.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Trabajador" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
-    
 
     <asp:updatepanel id="upTrabajador1" runat="server">
         <ContentTemplate>
             
-            
+            <ol class="breadcrumb">
+                <li><a href="#">Gestión de Datos</a></li>
+                <li><a href="#">Trabajador</a></li>
+            </ol>
 
-                <ol class="breadcrumb">
-                    <li><a href="#">Gestión de Datos</a></li>
-                    <li><a href="#">Trabajador</a></li>
-                </ol>
+            <div class="page-header">
+                <h1 class="text-center">Trabajador</h1>
+            </div>
 
-                <div class="page-header">
-                    <h1 class="text-center">Trabajador</h1>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-3">
+                    <asp:TextBox id="txtBuscar" runat="server" class="form-control" PlaceHolder="Ingrese el trabajador a buscar"
+                        data-toggle="tooltip" data-placement="bottom" title="Ingrese el texto a buscar"></asp:TextBox>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-3">
-                        <asp:TextBox id="txtBuscar" runat="server" class="form-control" PlaceHolder="Ingrese el trabajador a buscar"
-                            data-toggle="tooltip" data-placement="bottom" title="Ingrese el texto a buscar"></asp:TextBox>
-                    </div>
-                  
-                    <div class="col-md-2">
-                        <asp:Button id="btnBuscar" data-toggle="tooltip" data-placement="bottom" title="Presione para buscar" 
-                            runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"/>
-                    </div>
+              
+                <div class="col-md-2">
+                    <asp:Button id="btnBuscar" data-toggle="tooltip" data-placement="bottom" title="Presione para buscar" 
+                        runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"/>
                 </div>
-                
-                <br />
+            </div>
             
-                <div class="row">
-                    <asp:PlaceHolder runat="server" id="phEmpresa">
-                        <div class="col-md-3 text-center">
-                            <label>Filtrar por empresa</label>
-                            <asp:DropDownList runat="server" id="ddlEmpresasFiltro" CssClass="form-control" AutoPostBack="true" 
-                                OnSelectedIndexChanged="ddlEmpresasFiltro_SelectedIndexChanged"></asp:DropDownList>
-                        </div>
-                    </asp:PlaceHolder>
-
-                    <asp:PlaceHolder runat="server" id="phSucursal" Visible="false">
-                        <div class="col-md-3 text-center">
-                            <label>Filtrar por sucursal</label>
-                            <asp:DropDownList runat="server" id="ddlSucursalFiltro" CssClass="form-control" AutoPostBack="true" 
-                                OnSelectedIndexChanged="ddlSucursalFiltro_SelectedIndexChanged"></asp:DropDownList>
-                        </div>
-                    </asp:PlaceHolder>
-                
+            <br />
+            
+            <div class="row">
+                <asp:PlaceHolder runat="server" id="phEmpresa">
                     <div class="col-md-3 text-center">
-                        <label>Filtrar por area</label>
-                        <asp:DropDownList runat="server" id="ddlAreaFiltro" CssClass="form-control" AutoPostBack="true" 
-                            OnSelectedIndexChanged="ddlAreaFiltro_SelectedIndexChanged"></asp:DropDownList>
-                    </div>
-                
-                    <div class="col-md-3 text-center">
-                        <label>Filtrar por Estatus</label>
-                        <asp:DropDownList runat="server" id="ddlEstatusFiltro" CssClass="form-control" AutoPostBack="true" 
-                            OnSelectedIndexChanged="ddlEstatusFiltro_SelectedIndexChanged"></asp:DropDownList>
-                    </div>
-                </div>
-                
-                <br />
-            
-                <div class="row">
-                    <div class="box-body">
-                        <div class="dataTables_wrapper form-inline dt-bootstrap">
-                            <ucpag:pagination runat="server" id="pagination"/>
-                        
-                            <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server" 
-                                AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
-                                onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
-                                EmptyDataText="No existen Registros">
-                                <rowstyle  HorizontalAlign="Center"/>
-                                
-                                <Columns>
-                                    <asp:TemplateField HeaderText="Cédula" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:HiddenField id="id_empresa" runat="server" Visible="false" Value='<%# Eval("empresa") %>'/>
-                                            <asp:Label id="id_trabajador" runat="server" Visible="false" Text='<%# Eval("id_trabajador") %>'/>
-                                            <asp:Label id="cedula" runat="server" Text='<%# Eval("cedula") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Nombre(s)" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="nombres" runat="server" Text='<%# Eval("nombres") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Apellido(s)" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="apellidos" runat="server" Text='<%# Eval("apellidos") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Sucursal" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="sucursal" runat="server" Text='<%# Eval("sucursal") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Area" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:HiddenField id="id_area" runat="server" Visible="false" Value='<%# Eval("id_area") %>' ></asp:HiddenField>
-                                            <asp:Label id="area" runat="server" Text='<%# Eval("area") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Estatus" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="estatus" runat="server" Text='<%# Eval("Nomestatus") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:ButtonField CommandName="agregarReposo" HeaderText="Agregar Reposo" ButtonType="Image" 
-                                        ImageUrl="~\ico\checklist.png" HeaderStyle-CssClass="text-center">
-                                        <ControlStyle></ControlStyle>
-                                    </asp:ButtonField>
-
-                                    <asp:ButtonField HeaderText="Consultar" CommandName="Ver" ButtonType="Image" 
-                                        ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
-                                        <ControlStyle></ControlStyle>
-                                    </asp:ButtonField> 
-                        
-                                    <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" 
-                                        ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
-                                        <ControlStyle></ControlStyle>
-                                    </asp:ButtonField>
-                    
-                                    <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png" HeaderStyle-CssClass="text-center">
-                                        <ControlStyle></ControlStyle>
-                                    </asp:ButtonField>
-                                </Columns>
-                            </asp:GridView>
-                        </div>
-                    </div>
-                </div>
-                
-                <br />
-            
-                <asp:PlaceHolder runat="server" id="phAgregar">
-                    <div class="row" align="center">
-                        <div class="col-md-4 col-md-offset-2">
-                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
-                                OnClick="AgregarRegistro"/>
-                            <h4>Nuevo Trabajador</h4>
-                        </div>
-
-                        <div class="col-md-4 ">
-                            <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
-                                OnClick="btDescargar_Click"/>
-                            <h4>Descargar Lista</h4>
-                        </div>
+                        <label>Filtrar por empresa</label>
+                        <asp:DropDownList runat="server" id="ddlEmpresasFiltro" CssClass="form-control" AutoPostBack="true" 
+                            OnSelectedIndexChanged="ddlEmpresasFiltro_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
 
+                <asp:PlaceHolder runat="server" id="phSucursal" Visible="false">
+                    <div class="col-md-3 text-center">
+                        <label>Filtrar por sucursal</label>
+                        <asp:DropDownList runat="server" id="ddlSucursalFiltro" CssClass="form-control" AutoPostBack="true" 
+                            OnSelectedIndexChanged="ddlSucursalFiltro_SelectedIndexChanged"></asp:DropDownList>
+                    </div>
+                </asp:PlaceHolder>
+            
+                <div class="col-md-3 text-center">
+                    <label>Filtrar por area</label>
+                    <asp:DropDownList runat="server" id="ddlAreaFiltro" CssClass="form-control" AutoPostBack="true" 
+                        OnSelectedIndexChanged="ddlAreaFiltro_SelectedIndexChanged"></asp:DropDownList>
+                </div>
+            
+                <div class="col-md-3 text-center">
+                    <label>Filtrar por Estatus</label>
+                    <asp:DropDownList runat="server" id="ddlEstatusFiltro" CssClass="form-control" AutoPostBack="true" 
+                        OnSelectedIndexChanged="ddlEstatusFiltro_SelectedIndexChanged"></asp:DropDownList>
+                </div>
             </div>
+            
+            <br />
+            
+            <div class="row">
+                <div class="box-body">
+                    <div class="dataTables_wrapper form-inline dt-bootstrap">
+                        <ucpag:pagination runat="server" id="pagination"/>
+                    
+                        <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server" 
+                            AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
+                            onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
+                            EmptyDataText="No existen Registros">
+                            <rowstyle  HorizontalAlign="Center"/>
+                            
+                            <Columns>
+                                <asp:TemplateField HeaderText="Cédula" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:HiddenField id="id_empresa" runat="server" Visible="false" Value='<%# Eval("empresa") %>'/>
+                                        <asp:Label id="id_trabajador" runat="server" Visible="false" Text='<%# Eval("id_trabajador") %>'/>
+                                        <asp:Label id="cedula" runat="server" Text='<%# Eval("cedula") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Nombre(s)" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="nombres" runat="server" Text='<%# Eval("nombres") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Apellido(s)" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="apellidos" runat="server" Text='<%# Eval("apellidos") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Sucursal" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="sucursal" runat="server" Text='<%# Eval("sucursal") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Area" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:HiddenField id="id_area" runat="server" Visible="false" Value='<%# Eval("id_area") %>' ></asp:HiddenField>
+                                        <asp:Label id="area" runat="server" Text='<%# Eval("area") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Estatus" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="estatus" runat="server" Text='<%# Eval("Nomestatus") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:ButtonField CommandName="agregarReposo" HeaderText="Agregar Reposo" ButtonType="Image" 
+                                    ImageUrl="~\ico\checklist.png" HeaderStyle-CssClass="text-center">
+                                    <ControlStyle></ControlStyle>
+                                </asp:ButtonField>
+
+                                <asp:ButtonField HeaderText="Consultar" CommandName="Ver" ButtonType="Image" 
+                                    ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
+                                    <ControlStyle></ControlStyle>
+                                </asp:ButtonField> 
+                    
+                                <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" 
+                                    ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+                                    <ControlStyle></ControlStyle>
+                                </asp:ButtonField>
+                
+                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png" HeaderStyle-CssClass="text-center">
+                                    <ControlStyle></ControlStyle>
+                                </asp:ButtonField>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+            </div>
+            
+            <br />
+            
+            <asp:PlaceHolder runat="server" id="phAgregar">
+                <div class="row" align="center">
+                    <div class="col-md-4 col-md-offset-2">
+                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            OnClick="AgregarRegistro"/>
+                        <h4>Nuevo Trabajador</h4>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
+                            OnClick="btDescargar_Click"/>
+                        <h4>Descargar Lista</h4>
+                    </div>
+                </div>
+            </asp:PlaceHolder>
         
         </ContentTemplate>
     </asp:updatepanel>

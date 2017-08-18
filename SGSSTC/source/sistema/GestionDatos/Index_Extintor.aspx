@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Index_Extintor.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.Index_Extintor" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
@@ -10,126 +12,126 @@
     <asp:updatepanel id="updatePanelPrinicpal" runat="server">
         <ContentTemplate>
             
+            <ol class="breadcrumb">
+                <li><a href="#">Gestión de Datos</a></li>
+                <li><a href="#">Extintor</a></li>
+            </ol>
             
+            <div class="page-header">
+                <h1 class="text-center">Extintores</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 col-md-offset-3">
+                    <asp:TextBox id="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" 
+                        runat="server" class="form-control" PlaceHolder="Ingrese el Extintor a buscar"></asp:TextBox>
 
-                <ol class="breadcrumb">
-                    <li><a href="#">Gestión de Datos</a></li>
-                    <li><a href="#">Extintor</a></li>
-                </ol>
-
-                <div class="page-header">
-                    <h1 class="text-center">Extintores</h1>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-3">
-                        <asp:TextBox id="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" 
-                            runat="server" class="form-control" PlaceHolder="Ingrese el Extintor a buscar"></asp:TextBox>
-                    </div>
-                  
-                    <div class="col-md-2">
-                        <asp:Button id="btnSearch" data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar" 
-                            runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"/>
-                    </div>
                 </div>
                 
-                <br />
+                <div class="col-md-2">
+                    <asp:Button id="btnSearch" data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar" 
+                        runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"/>
 
-                <div class="row">
-                    <asp:PlaceHolder runat="server" id="phEmpresa">
-                        <div class="col-md-3">
-                            <h4 class="text-center">Empresa</h4>
-                            <asp:DropDownList runat="server" id="ddlEmpresa" class="form-control" AutoPostBack="true"
-                                data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa"                                  
-                                OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
-                        </div>
-                    </asp:PlaceHolder>
+                </div>
 
-                    <asp:PlaceHolder runat="server" id="phSucursal" Visible="false">
-                        <div class="col-md-3">
-                            <h4 class="text-center">Sucursal</h4>
-                            <asp:DropDownList runat="server" id="ddlSucursal" class="form-control" AutoPostBack="true"
-                                data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal"                                  
-                                OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
-                        </div>
-                    </asp:PlaceHolder>
+            </div>
+                
+            <br />
 
+            <div class="row">
+                <asp:PlaceHolder runat="server" id="phEmpresa">
                     <div class="col-md-3">
-                        <h4 class="text-center">Área</h4>
-                        <asp:DropDownList runat="server" id="ddlArea" class="form-control" AutoPostBack="true"
-                            data-toggle="tooltip" data-placement="bottom" title="Seleccione un Área" 
-                            OnSelectedIndexChanged="ddlArea_SelectedIndexChanged"></asp:DropDownList>
+                        <h4 class="text-center">Empresa</h4>
+                        <asp:DropDownList runat="server" id="ddlEmpresa" class="form-control" AutoPostBack="true" 
+                            data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa"                                  
+                            OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
                     </div>
+                </asp:PlaceHolder>
+
+                <asp:PlaceHolder runat="server" id="phSucursal" Visible="false">
+                    <div class="col-md-3">
+                        <h4 class="text-center">Sucursal</h4>
+                        <asp:DropDownList runat="server" id="ddlSucursal" class="form-control" AutoPostBack="true" 
+                            data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal"                                  
+                            OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
+                    </div>
+                </asp:PlaceHolder>
+
+                <div class="col-md-3">
+                    <h4 class="text-center">Área</h4>
+                    <asp:DropDownList runat="server" id="ddlArea" class="form-control" AutoPostBack="true" data-toggle="tooltip" 
+                        data-placement="bottom" title="Seleccione un Área" OnSelectedIndexChanged="ddlArea_SelectedIndexChanged"></asp:DropDownList>
                 </div>
+            </div>
+            
+            <br />
+
+            <div class="row">
+                <div class="box-body">
+                    <div class="dataTables_wrapper form-inline dt-bootstrap">
+                        <ucpag:pagination runat="server" id="pagination"/>
+                        
+                        <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server"
+                            AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
+                            onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
+                            EmptyDataText="No existen Registros">
+                            <rowstyle  HorizontalAlign="Center"/>
+                        
+                            <Columns>
+                                <asp:TemplateField HeaderText="ID" visible="false">
+                                    <ItemTemplate>
+                                        <asp:Label id="extintor_id" runat="server" Text='<%# Eval("id_extintor") %>'/> 
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Serial" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="serial_extintor" runat="server" Text='<%# Eval("serial_extintor") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Ultima Recarga" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="fecha_ultima_recarga" runat="server" Text='<%# Eval("fecha_ultima_recarga", "{0:dd/MM/yyyy}") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Proxima Recarga" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="fecha_proxima_recarga" runat="server" Text='<%# Eval("fecha_proxima_recarga", "{0:dd/MM/yyyy}") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                 
-                <br />
-
-                <div class="row">
-                    <div class="box-body">
-                        <div class="dataTables_wrapper form-inline dt-bootstrap">
-                            <ucpag:pagination runat="server" id="pagination"/>
-                            <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server"
-                                AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
-                                onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
-                                EmptyDataText="No existen Registros">
-                                <rowstyle  HorizontalAlign="Center"/>
-                            
-                                <Columns>
-                                    <asp:TemplateField HeaderText="ID" visible="false">
-                                        <ItemTemplate>
-                                            <asp:Label id="extintor_id" runat="server" Text='<%# Eval("id_extintor") %>'/> 
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Serial" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="serial_extintor" runat="server" Text='<%# Eval("serial_extintor") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Ultima Recarga" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="fecha_ultima_recarga" runat="server" Text='<%# Eval("fecha_ultima_recarga", "{0:dd/MM/yyyy}") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Proxima Recarga" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="fecha_proxima_recarga" runat="server" Text='<%# Eval("fecha_proxima_recarga", "{0:dd/MM/yyyy}") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                    
-                                    <asp:TemplateField HeaderText="Area" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="area_id" runat="server" Text='<%# Eval("id_area") %>' Visible="false"/>
-                                            <asp:Label id="area" runat="server" Text='<%# Eval("area") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField> 
-                    
-                                <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
-                                    <ControlStyle></ControlStyle>
-                                </asp:ButtonField>
-                    
-                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png" HeaderStyle-CssClass="text-center">
-                                    <ControlStyle></ControlStyle>
-                                </asp:ButtonField>
-                            </Columns>
-                        </asp:GridView>
-                    </div>
+                                <asp:TemplateField HeaderText="Area" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label id="area_id" runat="server" Text='<%# Eval("id_area") %>' Visible="false"/>
+                                        <asp:Label id="area" runat="server" Text='<%# Eval("area") %>'/>
+                                    </ItemTemplate>
+                                </asp:TemplateField> 
+                
+                            <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+                                <ControlStyle></ControlStyle>
+                            </asp:ButtonField>
+                
+                            <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png" HeaderStyle-CssClass="text-center">
+                                <ControlStyle></ControlStyle>
+                            </asp:ButtonField>
+                        </Columns>
+                    </asp:GridView>
                 </div>
-                </div>
-                <br />
+            </div>
+            </div>
 
-                <div class="row" align="center">
-                    <div class="col-md-4 col-md-offset-4">
-                        <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
-                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
-                                OnClick="AgregarRegistroModal"/>
-                            <h4>Nuevo Extintor</h4>
-                        </asp:PlaceHolder>
-                    </div>
-                </div>
+            <br />
 
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
+                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            OnClick="AgregarRegistroModal"/>
+                        <h4>Nuevo Extintor</h4>
+                    </asp:PlaceHolder>
+                </div>
             </div>
 
         </ContentTemplate>

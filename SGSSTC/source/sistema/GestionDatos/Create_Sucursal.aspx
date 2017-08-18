@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Create_Sucursal.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.Create_Sucursal" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
@@ -197,40 +198,5 @@
             <asp:PostBackTrigger Controlid="btnGuardar"/>
         </Triggers>
     </asp:updatepanel>
-
-    <div class="modal fade" id="Msjmodal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
-                    </button>
-
-                    <h4 class="modal-title">
-                        <label id="lblMsjTitle1"></label>
-                    </h4>
-                </div>
-
-                <div class="modal-body form-group">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <span id="icoModal1" class="fa fa-times fa-2x text-danger"></span>
-                        </div>
-
-                        <div class="col-md-11">
-                            <label id="lblMsjModal1"></label>
-                        </div>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </asp:Content>

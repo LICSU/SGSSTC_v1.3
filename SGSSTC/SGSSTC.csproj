@@ -45,7 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="BuildTasks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\BuildTasks.1.0.0.0\lib\net451\BuildTasks.dll</HintPath>
     </Reference>

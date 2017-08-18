@@ -13,15 +13,6 @@ namespace SGSSTC.source.sistema.GestionDatos {
     public partial class index_Sucursal {
         
         /// <summary>
-        /// Control ScriptManager1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
         /// Control phSucursal1.
         /// </summary>
         /// <remarks>
@@ -274,15 +265,6 @@ namespace SGSSTC.source.sistema.GestionDatos {
         protected global::System.Web.UI.WebControls.HiddenField hdfSucursalEditID;
         
         /// <summary>
-        /// Control txtNombreEdit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreEdit;
-        
-        /// <summary>
         /// Control phEmpresaEdit.
         /// </summary>
         /// <remarks>
@@ -299,6 +281,15 @@ namespace SGSSTC.source.sistema.GestionDatos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEmpresaEdit;
+        
+        /// <summary>
+        /// Control txtNombreEdit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombreEdit;
         
         /// <summary>
         /// Control ddlRegionEdit.

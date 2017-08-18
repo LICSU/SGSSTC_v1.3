@@ -2,8 +2,8 @@
 
 <%@ Register Src="~/source/WebUserControl/ucHeader.ascx" TagPrefix="uch" TagName="ucHeader" %>
 <%@ Register Src="~/source/WebUserControl/ucFooter.ascx" TagPrefix="ucf" TagName="ucFooter" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+
+
 
 <uch:ucHeader runat="server" id="ucHeader"/>
 <form id="form1" runat="server">

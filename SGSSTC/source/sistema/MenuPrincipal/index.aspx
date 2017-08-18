@@ -1,7 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="SGSSTC.source.sistema.MenuPrincipal.index" %>
 
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>    
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
@@ -9,99 +13,118 @@
     
     <!-- porcentaje fases-->
     <div class="row">
-            
-            <div class="col-md-12 col-sm-12">
-                  <div class="box box-solid"> 
-                      <div class="box-header with-border">
-                          <h4 class="box-title">Porcentaje de Cumplimiento de las Fases</h4><br />
-                      </div>
-                  </div>
-                </div> 
+
+        <div class="col-md-12 col-sm-12">
+            <div class="box box-solid"> 
+                <div class="box-header with-border">
+                    <h4 class="box-title">Porcentaje de Cumplimiento de las Fases</h4><br />
+
+                </div>
+            </div>
+        </div> 
                 
-                <div class="col-md-3 col-sm-4">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3><asp:label runat="server" text="0" id="evaini"/></h3>
-                            <p>Evaluación Inicial</p>
-                        </div>
-                        
-                        <div class="icon">
-                            <i class="fa fa-file-text-o"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Mas información<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+        <div class="col-md-3 col-sm-4">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3><asp:label runat="server" text="0" id="evaini"/></h3>
+                    <p>Evaluación Inicial</p>
                 </div>
                 
-                <div class="col-md-2 col-sm-4">
-                      <!-- small box -->
-                      <div class="small-box bg-purple">
-                        <div class="inner">
-                          <h3><asp:label runat="server" text="0" id="lbTrabajadores"/></h3>
-                          <p>Planear</p>
-                        </div>
-                        <div class="icon">
-                          <i class="fa fa-fw fa-calendar"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Mas información<i class="fa fa-arrow-circle-right"></i></a>
-                      </div>
-                    </div>
+                <div class="icon">
+                    <i class="fa fa-file-text-o"></i>
+                </div>
+                <a href="#" class="small-box-footer">Mas información<i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="col-md-2 col-sm-4">
+            <!-- small box -->
+            <div class="small-box bg-purple">
+                <div class="inner">
+                    <h3>
+                        <asp:label runat="server" text="0" id="lbTrabajadores"/>
+                    </h3>
+                    <p>Planear</p>
+                </div>
+                
+                <div class="icon">
+                    <i class="fa fa-fw fa-calendar"></i>
 
-                <div class="col-md-2 col-sm-4">
-                      <!-- small box -->
-                      <div class="small-box bg-green">
-                        <div class="inner">
-                          <h3><asp:label runat="server" text="0" id="hacer"/><sup style="font-size: 20px">%</sup></h3>
-                          <p>Hacer</p>
-                        </div>
-                        <div class="icon">
-                          <i class="fa fa-tasks"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-                      </div>
-                    </div>
+                </div>
                 
-                <div class="col-md-2 col-sm-4">
-                      <!-- small box -->
-                      <div class="small-box bg-yellow">
-                        <div class="inner">
-                          <h3><asp:label runat="server" text="0" id="lbEstMatRie"/><sup style="font-size: 20px">%</sup></h3>
-                          <p>Verificar</p>
-                        </div>
-                        <div class="icon">
-                          <i class="fa fa-search"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-                      </div>
-                    </div>
-                
-                <div class="col-md-3 col-sm-4">
-                      <!-- small box -->
-                      <div class="small-box bg-red">
-                        <div class="inner">
-                          <h3><asp:label runat="server" text="0" id="actuar"/></h3>
-                          <p>Actuar</p>
-                        </div>
-                        <div class="icon">
-                          <i class="fa fa-cogs"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-                      </div>
-                    </div>
+                <a href="#" class="small-box-footer">Mas información<i class="fa fa-arrow-circle-right"></i></a>
 
             </div>
+        </div>
+        
+        <div class="col-md-2 col-sm-4">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>
+                        <asp:label runat="server" text="0" id="hacer"/><sup style="font-size: 20px">%</sup>
+                    </h3>
+                    <p>Hacer</p>
+                </div>
+
+                <div class="icon">
+                    <i class="fa fa-tasks"></i>
+                </div>
+
+                <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="col-md-2 col-sm-4">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>
+                        <asp:label runat="server" text="0" id="lbEstMatRie"/><sup style="font-size: 20px">%</sup>
+                    </h3>
+                    <p>Verificar</p>
+                </div>
+                
+                <div class="icon">
+                    <i class="fa fa-search"></i>
+                </div>
+                
+                <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="col-md-3 col-sm-4">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>
+                        <asp:label runat="server" text="0" id="actuar"/>
+                    </h3>
+                    <p>Actuar</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-cogs"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    Mas información <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
         
     <!-- actividades pendientes y finalizadas-->
     <div class="row">
-                <div class="col-md-6">
-                  <div class="box">
 
-                    <div class="box-header label-primary">
-                      <h3 class="box-title">Actividades pendientes</h3>
-                    </div>
-
-                    <div class="box-body table-responsive no-padding">
-                      <table class="table table-hover">
+        <div class="col-md-6">
+            <div class="box">
+                
+                <div class="box-header label-primary">
+                    <h3 class="box-title">Actividades pendientes</h3>
+                </div>
+                
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
                         <tbody>
                             <tr>
                               <th>Actividad</th>
@@ -113,20 +136,19 @@
 
                         </tbody>
                       </table>
-                    </div>
-
-                  </div>
                 </div>
-            
-                <div class="col-md-6">
-                  <div class="box">
-
-                    <div class="box-header label-success">
-                      <h3 class="box-title">Actividades finalizadas</h3>
-                    </div>
-
-                    <div class="box-body table-responsive no-padding">
-                      <table class="table table-hover">
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="box">
+                
+                <div class="box-header label-success">
+                    <h3 class="box-title">Actividades finalizadas</h3>
+                </div>
+                
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
                         <tbody>
                             <tr>
                               <th>Actividad</th>
@@ -139,96 +161,89 @@
 
                         </tbody>
                       </table>
-                    </div>
-
-                  </div>
                 </div>
             </div>
+        </div>
+    </div>
     
     <asp:updatepanel id="updatePanelMensajes" runat="server">
-            <ContentTemplate>
-
-                <div class="row text-center">
-                    
-                    <div class="col-md-6">
-                        <div class="box">
-                            <div class="box-header label-primary">
-                                <h3 class="box-title">Preguntas de mis Pares</h3>
-                            </div>
+        <ContentTemplate>
+            
+            <div class="row text-center">
                 
+                <div class="col-md-6">
+                    <div class="box">
+                        <div class="box-header label-primary">
+                            <h3 class="box-title">Preguntas de mis Pares</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th class="col-md-7 text-left">Pregunta</th>
+                                    <th class="col-md-2 text-center">Fecha</th>
+                                    <th class="col-md-1 text-center">Respuestas</th>
+                                    <th class="col-md-2"> </th>
+                                </tr>
+                                <asp:Panel runat="server" id="pSusPreguntas"></asp:Panel>
+                            </tbody>
+                            </table>
+                        </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="box">
+                        
+                        <div class="box-header label-primary">
+                            <h3 class="box-title">Mis Preguntas</h3>
                         </div>
                         
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover">
                                 <tbody>
                                     <tr>
-                                      <th  class="col-md-7 text-left">Pregunta</th>
-                                      <th  class="col-md-2 text-center">Fecha</th>
-                                      <th  class="col-md-1 text-center">Respuestas</th>
-                                      <th  class="col-md-2"> </th>
+                                        <th class="col-md-9 text-left">Pregunta</th>
+                                        <th class="col-md-2 text-center">Fecha</th>
+                                        <th class="col-md-1 text-center">Respuestas</th>
                                     </tr>
-
-                                    <asp:Panel runat="server" id="pSusPreguntas"></asp:Panel>
-
+                                    <asp:Panel runat="server" id="panelMisPreguntas"></asp:Panel>
                                 </tbody>
                             </table>
                         </div>
+                        
+                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" data-toggle="modal" 
+                            data-target="#addModal"/>
+                        <h4>Nueva Pregunta</h4>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="box">
-                            <div class="box-header label-primary">
-                                <h3 class="box-title">Mis Preguntas</h3>
-                            </div>
-                            
-                            <div class="box-body table-responsive no-padding">
-                                <table class="table table-hover">
-                                    <tbody>
-                                        <tr>
-                                          <th class="col-md-9 text-left">Pregunta</th>
-                                          <th class="col-md-2 text-center">Fecha</th>
-                                          <th class="col-md-1 text-center">Respuestas</th>
-                                        </tr>
-                                        <asp:Panel runat="server" id="panelMisPreguntas"></asp:Panel>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                            <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
-                                data-toggle="modal" data-target="#addModal"/>
-                            <h4>Nueva Pregunta</h4>
-                        </div>
-                    </div>
-
                 </div>
-
-            </ContentTemplate>
-        </asp:updatepanel>
+            </div>
+        
+        </ContentTemplate>
+    </asp:updatepanel>
     
     <hr />
 
     <!-- trabajadores-->
     <div class="row">
-            <div class="col-md-12">
-
-              <div class="box box-danger">
+        <div class="col-md-12">
+            
+            <div class="box box-danger">
                 <div class="box-header with-border">
-                      <h3 class="box-title">Ultimos Trabajadores Ingresados</h3>
-
+                    <h3 class="box-title">Ultimos Trabajadores Ingresados</h3>
                 </div>
 
                 <div class="box-body no-padding">
-                        <asp:Panel alt="-" runat="server" id="pTrabajadores"></asp:Panel>
-                    </div>
+                    <asp:Panel alt="-" runat="server" id="pTrabajadores"></asp:Panel>
+                </div>
 
                 <div class="box-footer text-center">
-                      <a href="../GestionDatos/index_Trabajador.aspx" class="uppercase">Ver todos los trabajadores</a>
-                    </div>
-              </div>
-
+                    <a href="../GestionDatos/index_Trabajador.aspx" class="uppercase">Ver todos los trabajadores</a>
+                </div>
             </div>
         </div>
+    </div>
         
     <!-- Modal Añadir una pregunta -->
     <div id="addModal" class="modal">
