@@ -1,22 +1,23 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Update_MedidasMatrizLegal.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.Update_MedidasMatrizLegal" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+	Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 	<div class="container" style="width: 100%;">
-        
-        <ol class="breadcrumb">
-            <li><a href="#">Fase: Hacer</a></li>
-            <li><a href="../Hacer/index_MatrizLegal.aspx">Matriz Legal</a></li>
-            <li><a href="#">Seguimiento de Medidas de la Norma</a></li>
-        </ol>
+		
+		<ol class="breadcrumb">
+			<li><a href="#">Fase: Hacer</a></li>
+			<li><a href="../Hacer/index_MatrizLegal.aspx">Matriz Legal</a></li>
+			<li><a href="#">Seguimiento de Medidas de la Norma</a></li>
+		</ol>
 
-        <div class="page-header">
-            <h1 class="text-center">Seguimiento de las Medidas de la Norma</h1>
-        </div>
+		<div class="page-header">
+			<h1 class="text-center">Seguimiento de las Medidas de la Norma</h1>
+		</div>
 
 		<div class="row">
 			<h2 class="text-info text-left">Documento:
@@ -106,8 +107,8 @@
 		<div class="row">
 			<div class="col-md-2 col-md-offset-5">
 				<asp:button text="Guardar Cambios" id="btnGuardar" runat="server" onclick="GuardarRegistro" 
-                    class="btn btn-block btn-info" data-toggle="tooltip" data-placement="bottom" 
-                    title="Presiona para guardar el estatus de la medida"/>
+					class="btn btn-block btn-info" data-toggle="tooltip" data-placement="bottom" 
+					title="Presiona para guardar el estatus de la medida"/>
 			</div>
 		</div>
 		<br />

@@ -7,12 +7,10 @@
 		<meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		
-		<link rel="stylesheet" href="../../Content/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="../../Content/bootstrap.css">
-		<link rel="stylesheet" href="../../Content/bootstrap.min.css">
-		<link rel="stylesheet" href="../../Content/Site.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="../../Content/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../../Content/Site.css"/>
 		
 		<title>SGSST</title>
 
@@ -1026,7 +1024,7 @@
 				<ul class="nav navbar-nav navbar-right">
 						<li>
 							<div class="user-panel">
-								<div class="pull-left image">
+								<div class="pull-left image hidden-md">
 									<asp:Label style="color:white" runat="server" Text="Label" ID="lbNombreUsuario"></asp:Label>
 									<asp:Image alt="-" runat="server" ID="imgLogo" class="img-circle" />                                </div>
 							</div>
@@ -1062,13 +1060,12 @@
 		</div>
 		<br />
 	</footer>
-
-</div>
 	
+	<script src="../../../Scripts/hideShowPassword.min.js"></script>
+	<script src="../../../Scripts/jquery-3.1.1.slim.js"></script>
 	<script src="../../../Scripts/jquery-3.1.1.min.js"></script>
 	<script src="../../../Scripts/bootstrap.min.js"></script>
-	<script src="../../../Scripts/hideShowPassword.min.js"></script>
-	<!--<script src="../../../Scripts/jquery-3.1.1.slim.js"></script>-->
+
 
 </body>
 

@@ -1,10 +1,10 @@
-﻿using Capa_Datos;
-using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.Script.Services;
-using System.Web.Security;
+﻿using System.Web;
 using System.Web.Services;
+using System.Web.Script.Services;
+using System.Collections.Generic;
+using Capa_Datos;
+using System;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -1138,6 +1138,6 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
         #endregion
-        
+
     }
 }

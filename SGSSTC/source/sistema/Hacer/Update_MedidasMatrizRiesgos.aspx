@@ -1,23 +1,24 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Update_MedidasMatrizRiesgos.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.Update_MedidasMatrizRiesgos" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+	Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 	<div class="container" style="width: 100%;">
-        
-        <ol class="breadcrumb">
-            <li><a href="#">Fase: Hacer</a></li>
-            <li><a href="../Hacer/index_MatrizRiesgos.aspx">Matriz de Riesgos</a></li>
-            <li><a href="#">Seguimiento de Medidas de la Norma</a></li>
-        </ol>
-        
-        <div class="page-header">
-            <h1 class="text-center">Seguimiento de Medidas de los Riesgos</h1>
-        </div>
+		
+		<ol class="breadcrumb">
+			<li><a href="#">Fase: Hacer</a></li>
+			<li><a href="../Hacer/index_MatrizRiesgos.aspx">Matriz de Riesgos</a></li>
+			<li><a href="#">Seguimiento de Medidas de la Norma</a></li>
+		</ol>
+		
+		<div class="page-header">
+			<h1 class="text-center">Seguimiento de Medidas de los Riesgos</h1>
+		</div>
 
 		<div class="row">
 			<h2 class="text-info text-left">Tipo de Riesgo:
@@ -74,7 +75,7 @@
 
 			<div class="col-md-2 col-md-offset-5">
 				<asp:button text="Guardar Cambios" id="btnGuardar" runat="server" onclick="GuardarRegistro" 
-                    class="btn btn-block btn-info"/>
+					class="btn btn-block btn-info"/>
 			</div>
 
 		</div>

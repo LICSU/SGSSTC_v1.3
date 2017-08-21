@@ -1,16 +1,18 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Index_Tipo_EPP.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.Index_Tipo_EPP" %>
 
+
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
     <asp:updatepanel id="updatePanelPrinicpal" runat="server">
         <ContentTemplate>
-            
-            
 
                 <ol class="breadcrumb">
                     <li><a href="#">Gestión de Datos</a></li>
@@ -230,7 +232,7 @@
                                         <h4 class="text-center">Imagen Señal: </h4>
                                     </div>
                                     <div class="col-md-8">
-                                        <asp:Image alt="-"id="imgSenal" runat="server" ClientIDMode="Static"></asp:Image>
+                                        <asp:Image alt="-" id="imgSenal" runat="server" ClientIDMode="Static"></asp:Image>
                                     </div>
                                 </div><br/>
 
@@ -319,19 +321,19 @@
                     <h3>Ver Imagen</h3>
                 </div>
                 <asp:updatepanel id="UpdatePanel3" runat="server">
-                        <ContentTemplate>
-                            <div class="modal-body text-center">
-                                <asp:Image alt="-"id="imgVer" runat="server" ClientIDMode="Static"></asp:Image>
-                            </div>
-                            
-                            <div class="modal-footer">
+                    <ContentTemplate>
+                        <div class="modal-body text-center">
+                            <asp:Image id="imgVer" runat="server" ClientIDMode="Static"></asp:Image>
+
+                        </div>
+                        <div class="modal-footer">
                                 <div class="row">
                                     <div class="col-md-8"></div>
                                     <div class="col-md-4 text-right"><button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
                                 </div>
                             </div>
 
-                        </ContentTemplate>
+                    </ContentTemplate>
                         <Triggers>
                             <asp:AsyncPostBackTrigger Controlid="btnDelete" EventName="Click"/>
                         </Triggers>

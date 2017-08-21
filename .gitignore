@@ -10,3 +10,5 @@ Capa_Datos/obj/Debug/Capa_Datos.csproj.FileListAbsolute.txt
 *.ssdl
 *.msl
 *.csdl
+*.txt
+*.config
