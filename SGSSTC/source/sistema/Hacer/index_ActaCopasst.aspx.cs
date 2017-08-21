@@ -82,14 +82,6 @@ namespace SGSSTC.source.sistema.Hacer
                     break;
             }
         }
-        protected void MostrarModalCrear(object sender, EventArgs e)
-        {
-            Modal.registrarModal("createModal", "CreateModalScript", this);
-        }
-        protected void btnSubir_Click(object sender, EventArgs e)
-        {
-            Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
-        }
         protected void btnSubirArchivo(object sender, EventArgs e)
         {
             int IdEmpresa = ObjUsuario.Id_empresa;

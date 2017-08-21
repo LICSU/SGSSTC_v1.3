@@ -4,7 +4,6 @@
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -35,7 +34,7 @@
             <div class="panel-group" id="accordion">
 
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">COMPROMISO DE LA EMPRESA</a></h4>
                         </div>
 
@@ -47,7 +46,7 @@
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">EN TAL SENTIDO AL EMPRESA SE COMPROMETE A</a></h4>
                         </div>
 
@@ -60,7 +59,7 @@
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">ALCANCE DEL SST</a></h4>
                         </div>
 

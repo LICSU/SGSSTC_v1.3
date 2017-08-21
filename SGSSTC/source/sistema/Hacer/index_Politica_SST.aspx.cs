@@ -85,29 +85,14 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GenerarDocumento(object sender, EventArgs e)
         {
-            //int IdSucursal = ObjUsuario.Id_sucursal;
-            //Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
-            //  IdSucursal,
-            //  "PoliticaSST_",
-            //  "POLITICA DE SST",
-            //  this);
-
-            //#region cuerpo
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "AÑO"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "", "" + ddlYear.SelectedValue));
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "COMPROMISO DE LA EMPRESA"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, "1|1|1|1", 12, 1, txtCompromiso.Text));
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "EN TAL SENTIDO AL EMPRESA SE COMPROMETE A"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, "1|1|1|1", 12, 1, txtObjetivos.Text));
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "ALCANCE DEL SST"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, "1|1|1|1", 12, 1, txtAlcance.Text));
-            //#endregion
-
-            //ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, IdSucursal, this);
+            String[] valores = {
+                string.Empty + ObjUsuario.Id_sucursal,
+                ddlYear.SelectedValue,
+                txtCompromiso.Text,
+                txtObjetivos.Text,
+                txtAlcance.Text
+            };
+            PrintFile.PrintPoliticaSST(valores, this);
         }
     }
 }

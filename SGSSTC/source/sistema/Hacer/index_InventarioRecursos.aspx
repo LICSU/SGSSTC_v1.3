@@ -33,7 +33,7 @@
             </asp:PlaceHolder> 
             
             <asp:PlaceHolder runat="server" id="phSucursal">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-4">
                     <h4 class="text-center">Sucursal</h4>
                     <asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
                     
@@ -561,7 +561,7 @@
         </div>
 
         <asp:placeholder runat="server" visible="false">
-                <asp:Image alt="-"id="ImgChart" runat="server"/>
+                <asp:Image AlternateText="-" ID="ImgChart" runat="server"/>
             </asp:placeholder>
 
         <asp:hiddenfield id="rutaImg" runat="server"></asp:hiddenfield>

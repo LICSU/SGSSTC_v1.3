@@ -101,7 +101,8 @@
             
             <div class="row" align="center">
                 <div class="col-md-4 col-md-offset-4">
-                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalAgregar"/>
+                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                                     data-toggle="addModal" data-target="#EscaneadoModal"/>
                     <h4>Nuevo Tipo de Documento</h4>
                 </div>
             </div>

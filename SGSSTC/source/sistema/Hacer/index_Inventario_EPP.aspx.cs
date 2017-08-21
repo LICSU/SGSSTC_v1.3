@@ -107,9 +107,11 @@ namespace SGSSTC.source.sistema.Hacer
                     agregar_existencia(epps);
                     btnCalcular.Enabled = true;
                     phInformacion.Visible = true;
+                    phNoRegistros.Visible = false;
                 }
                 else
                 {
+                    phInformacion.Visible = false;
                     phNoRegistros.Visible = true;
                 }
             }

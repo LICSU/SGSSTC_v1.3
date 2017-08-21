@@ -120,8 +120,14 @@ namespace Capa_Datos
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var consulta = new usuario();
-            int id = contexto.politica_sst.Where(x => x.id_empresa == _id_empresa).Max(x => x.id_politica);
-            return id;
+            try
+            {
+                int id = contexto.politica_sst.Where(x => x.id_empresa == _id_empresa).Max(x => x.id_politica);
+                return id;
+            }
+            catch (Exception ex) {
+                return 0;
+            }              
         }
         public static int Sucursal()
         {

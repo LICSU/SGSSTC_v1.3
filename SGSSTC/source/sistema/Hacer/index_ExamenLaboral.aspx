@@ -112,7 +112,8 @@
                     </asp:PlaceHolder>
                 </div>
                 <div class="col-md-3">
-                    <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" OnClick="MostrarModalImprimir"/>
+                    <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
+                                     data-toggle="modal" data-target="#printModal"/>
                     <h4>Descargar Lista</h4>
                 </div>  
             </div>
@@ -211,41 +212,32 @@
                 <asp:updatepanel id="UpdatePanel3" runat="server">
                         <ContentTemplate> 
                             <div class="modal-body form-group">
-                    
-                                <div class="row">
-                                    <div>
-                                        <label class="col-md-4 control-label">Imprimir en Word: </label>
-                                        <div class="col-md-6">
- <asp:Button id="btnPrintWord" runat="server" Text="Imprimir" OnClick="btnExportWord_Click"></asp:Button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br/> 
-                                <div class="row">
-                                    <div>
-                                        <label class="col-md-4 control-label">Imprimir en Excel: </label>
-                                        <div class="col-md-6">
- <asp:Button id="btnPrintExcel" runat="server" Text="Imprimir" OnClick="btnExportExcel_Click"></asp:Button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br/>
 
-                                <div class="row">
-                                    <div>
-                                        <label class="col-md-4 control-label">Imprimir en PDF: </label>
-                                        <div class="col-md-6">
- <asp:Button id="btnPrintPdf" runat="server" Text="Imprimir" OnClick="btnExportPDF_Click"></asp:Button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br />
+                                <div class="row"> 
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <asp:Button id="btnPrintWord" runat="server" Text="Imprimir en Word" class="btn btn-block btn-primary" OnClick="btnExportWord_Click"></asp:Button>
+                                    </div> 
+                                </div><br/>
+
+                                <div class="row"> 
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <asp:Button id="btnPrintExcel" runat="server" Text="Imprimir en Excel" class="btn btn-block btn-success" OnClick="btnExportExcel_Click"></asp:Button>
+                                    </div> 
+                                </div><br/>
+                            
+                                <div class="row"> 
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <asp:Button id="btnPrintPdf" runat="server" Text="Imprimir en PDF" class="btn btn-block btn-danger" OnClick="btnExportPDF_Click"></asp:Button>
+                                    </div> 
+                                </div><br/>
                             </div>
 
                                 <div class="modal-footer">
-                                    <asp:Label id="Label5" Visible="false" runat="server"></asp:Label>
-                                    <asp:Button id="Button1" runat="server" Text="Agregar" CssClass="btn-default"/>
-                                    <button class="btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                   <div class="row">
+                                    <div class="col-md-4 col-md-offset-4">
+								    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+
+								    </div>
                                 </div>
 
                             </ContentTemplate>

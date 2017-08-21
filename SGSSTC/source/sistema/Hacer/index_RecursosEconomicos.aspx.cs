@@ -52,7 +52,7 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void btnSubir_Click(object sender, EventArgs e)
         {
-            Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
+            //Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
         }
         protected void btnSubirArchivo(object sender, EventArgs e)
         {

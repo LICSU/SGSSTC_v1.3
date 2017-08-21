@@ -119,11 +119,11 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField HeaderText="Acciones" HeaderStyle-CssClass="text-center" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
+                                <asp:ButtonField HeaderText="Editar" HeaderStyle-CssClass="text-center" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
-                                <asp:ButtonField CommandName="Ver" HeaderStyle-CssClass="text-center" ButtonType="Image" ImageUrl="~\ico\view.png">
+                                <asp:ButtonField HeaderText="Ver" CommandName="Ver" HeaderStyle-CssClass="text-center" ButtonType="Image" ImageUrl="~\ico\view.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
                     
@@ -147,12 +147,14 @@
 
             <div class="row" align="center">
                 <div class="col-md-3 col-md-offset-3">
-                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalAgregar"/>
+                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                                    data-toggle="modal" data-target="#IndexAddModal"/>
                     <h4>Nueva Gestión Laboral</h4>
                 </div>
 
                 <div class="col-md-3">
-                    <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" OnClick="MostrarModalImprimir"/>
+                    <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
+                                     data-toggle="modal" data-target="#printModal"/>
                     <h4>Descargar Lista</h4>
                 </div>
             </div>
@@ -182,19 +184,25 @@
                                 <div class="row"> 
                                     <div class="col-md-6 col-md-offset-3">
                                         <asp:Button id="btnEntrega" runat="server" Text="Entrega de Equipos" 
-                                            class="btn btn-block btn-success" OnClick="MostrarNuevoEntrega"></asp:Button></div>
+                                            class="btn btn-block btn-success" data-toggle="modal" data-target="#AddEntrega" OnClick="cerrarModalIndex"></asp:Button></div>
                                 </div><br />
                                 
                                 <div class="row">
-                                    <div class="col-md-6 col-md-offset-3"><asp:Button id="Button2" runat="server" Text="Capacitación" class="btn btn-block btn-warning" OnClick="MostrarNuevoCapacitacion"></asp:Button></div>
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <asp:Button id="Button2" runat="server" Text="Capacitación" 
+                                            class="btn btn-block btn-warning" data-toggle="modal" data-target="#AddCapacitacion" OnClick="cerrarModalIndex"></asp:Button></div>
                                 </div><br />
                                 
                                 <div class="row">
-                                    <div class="col-md-6 col-md-offset-3"><asp:Button id="btnJornada" runat="server" Text="Jornada de Examenes" class="btn btn-block btn-primary" OnClick="MostrarNuevoJornada"></asp:Button></div>
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <asp:Button id="btnJornada" runat="server" Text="Jornada de Examenes" 
+                                            class="btn btn-block btn-primary" data-toggle="modal" data-target="#AddJornada" OnClick="cerrarModalIndex"></asp:Button></div>
                                 </div><br />
                                 
                                 <div class="row">
-                                    <div class="col-md-6 col-md-offset-3"><asp:Button id="btnActividad" runat="server" Text="Actividad Recreativa" class="btn btn-block btn-danger" OnClick="MostrarNuevoActividad"></asp:Button></div>
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <asp:Button id="btnActividad" runat="server" Text="Actividad Recreativa" 
+                                            class="btn btn-block btn-danger" data-toggle="modal" data-target="#AddActividad" OnClick="cerrarModalIndex"></asp:Button></div>
                                 </div>
                             </div>
 
@@ -317,7 +325,7 @@
                                                <label class="col-md-6 control-label">Seleccione los trabajadores que asistiran a la Actividad: </label>
                                                <div class="col-md-6">
                                                    <asp:Button id="Button1" runat="server" Text="Lista de Trabajadores" 
-                                                       class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+                                                       class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal"/>
                                                </div>
 
                                            </div>
@@ -436,7 +444,8 @@
                                            <div>
     <label class="col-md-6 control-label">Seleccione los trabajadores que asistiran a la Actividad: </label>
     <div class="col-md-6">
-        <asp:Button id="Button8" runat="server" Text="Lista de Trabajadores" class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+        <asp:Button id="Button8" runat="server" Text="Lista de Trabajadores" class="btn btn-block btn-success" 
+            data-toggle="modal" data-target="#listaModal"/>
      </div>
                                            </div>
                                        </div>
@@ -597,7 +606,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <asp:Button  runat="server" Text="Lista de Trabajadores" 
-                                                class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+                                                class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal"/>
                                         </div>
                                     </div>
                                 </asp:PlaceHolder>
@@ -758,7 +767,7 @@
                                            </label>
                                            <div class="col-md-6">
                                                <asp:Button id="Button15" runat="server" Text="Lista de Trabajadores" 
-                                                   class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+                                                   class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal"/>
                                            </div>
                                        </div>
                                    </asp:PlaceHolder>
@@ -906,7 +915,7 @@
                                                
                                                <div class="col-md-4">
                                                    <asp:Button id="Button6" runat="server" Text="Lista de Trabajadores" 
-                                                       class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+                                                       class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal"/>
                                                </div>
                                            </div>
                                        </div>
@@ -1056,7 +1065,7 @@
                                                
                                                <div class="col-md-6">
                                                    <asp:Button id="Button13" runat="server" Text="Lista de Trabajadores" 
-                                                       class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+                                                       class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal"/>
                                                </div>
 
                                            </div>
@@ -1205,7 +1214,7 @@
                                                    Seleccione los trabajadores que asistiran a la Actividad: </label>
                                                <div class="col-md-4">
                                                    <asp:Button id="Button3" runat="server" Text="Lista de Trabajadores" 
-                                                       class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+                                                       class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal"/>
                                                </div>
                                            </div>
                                        </div>
@@ -1348,7 +1357,7 @@
                                                
                                                <div class="col-md-4">
                                                    <asp:Button id="Button9" runat="server" Text="Lista de Trabajadores" 
-                                                       class="btn btn-block btn-success" OnClick="MostrarModalLista"/>
+                                                       class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal"/>
                                                </div>
                                            </div>
 
@@ -1586,4 +1595,5 @@
         <!-- Msj Modal -->
         <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
     </div>
+
 </asp:Content>

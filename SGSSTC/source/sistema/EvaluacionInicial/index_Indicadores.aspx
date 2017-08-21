@@ -60,7 +60,7 @@
                                     </h4>
                                 </div>
                         
-                                <div id="collapse1" runat="server" class="panel-collapse collapse">
+                                <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body">                                
                                         <div class="box-body no-padding">                                    
                                             <table class="table table-condensed" style="overflow: scroll;">
@@ -520,7 +520,7 @@
                                     </h4>
                                 </div>
                         
-                                <div id="collapse2" runat="server" class="panel-collapse collapse">
+                                <div id="collapse2" class="panel-collapse collapse">
                                     <div class="panel-body">
                                 
                                         <div class="box-body no-padding">
@@ -919,7 +919,7 @@
                                     </h4>
                                 </div>
                             
-                                <div id="collapse3" runat="server" class="panel-collapse collapse">
+                                <div id="collapse3" class="panel-collapse collapse">
                                     <div class="panel-body">
                                 
                                         <div class="box-body no-padding">
@@ -1379,7 +1379,7 @@
             
                 <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-2">
-                        <asp:ImageButton alt="-" id="btnPrint" alt="-" runat="server" ImageUrl="~\ico\print.png" 
+                        <asp:ImageButton AlternateText="-" ID="btnPrint" runat="server" ImageUrl="~\ico\print.png" 
                             OnClick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
                         <h4>Generar Documento</h4>
                     </div>

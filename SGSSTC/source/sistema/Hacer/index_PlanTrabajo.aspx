@@ -9,9 +9,7 @@
     
     <asp:updatepanel runat="server">
         <ContentTemplate>
-            
-            
-                
+
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
                     <li><a href="#">Plan de Trabajo anual</a></li>
@@ -30,7 +28,7 @@
                         
                         <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
                             Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
-                            ControlToValidate="ddlYear" runat="server" ValidationGroup="ValidationAdd"/>
+                            ControlToValidate="ddlYear" runat="server" />
                     </div>
                 
                     <asp:PlaceHolder runat="server" id="phEmpresa">
@@ -48,12 +46,11 @@
 
                             <asp:DropDownList runat="server" id="ddlSucursal" class="form-control" AutoPostBack="true"
                                 data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal"  
-                                OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"
-                                ValidationGroup="ValidationAdd"></asp:DropDownList>
+                                OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                             
                             <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
                                 Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
-                                ControlToValidate="ddlSucursal" runat="server" ValidationGroup="ValidationAdd"/>
+                                ControlToValidate="ddlSucursal" runat="server"/>
                         </div>
                     </asp:PlaceHolder>
                 
@@ -76,8 +73,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="box-body">
-                            <div class="dataTables_wrapper form-inline dt-bootstrap" style="overflow:auto;">
-                                
+                            <div class="dataTables_wrapper form-inline dt-bootstrap" style="overflow:auto;">                            
                                 <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server"
                                     AutoGenerateColumns="false" AllowPaging="true" PageSize="10" EmptyDataText="No existen Registros"
                                     OnRowCommand="GridView1_RowCommand" OnRowDataBound="GridView1_RowDataBound" 
@@ -123,8 +119,8 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
-                                        <asp:ButtonField  HeaderText="Acciones" CommandName="Editar" ButtonType="Image"  HeaderStyle-CssClass="text-center"
-                                            ImageUrl="~\ico\editar.png">
+                                        <asp:ButtonField  HeaderText="Acciones" CommandName="Editar" ButtonType="Image"  
+                                            HeaderStyle-CssClass="text-center" ImageUrl="~\ico\editar.png">
                                             <ControlStyle></ControlStyle>
                                         </asp:ButtonField>
 
@@ -432,23 +428,23 @@
                 <br />
             
                 <asp:PlaceHolder runat="server" Visible="false" id="phAgregar">
-                    <div class="row" align="center">
+                    <div class="row text-center">
 
                         <div class="col-md-3 col-md-offset-1">
                             <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
-                                OnClick="MostrarModalAgregar" />
+                                data-toggle="modal" data-target="#addModal" />
                             <h4>Nueva Actividad</h4>
                         </div>
 
                         <div class="col-md-3">
                             <asp:ImageButton alt="-" id="btnImprimirG" runat="server" ImageUrl="~\ico\print.png" 
-                                OnClick="GenerarDocumentoG" ValidationGroup="ValidationAdd"/>
+                                OnClick="GenerarDocumentoG" />
                             <h4>Generar Documento General</h4>
                         </div>
 
                         <div class="col-md-3">
                             <asp:ImageButton alt="-" id="btnImprimirE" runat="server" ImageUrl="~\ico\print.png" 
-                                OnClick="GenerarDocumentoE" ValidationGroup="ValidationAdd"/>
+                                OnClick="GenerarDocumentoE" />
                             <h4>Generar Documento Especifico</h4>
                         </div>
                     </div>
@@ -525,7 +521,7 @@
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
                                         Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
                                         ControlToValidate="TxtSemanaIniAdd" runat="server" ValidationGroup="ValidationAdd"/>
-                                </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <h4>Semana Final</h4>
 
@@ -593,7 +589,6 @@
                                     </div>
                                 </div>
                                 <br/>
-                        </div>
                         </div>
 
                         <div class="modal-footer">
@@ -928,34 +923,5 @@
 
     <!-- Msj Modal -->
     <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
-
-    <div class="modal fade" id="Msjmodal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                    <h4 class="modal-title">
-                        <label id="lblMsjTitle1"></label>
-                    </h4>
-                </div>
-                <div class="modal-body form-group">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <span id="icoModal1" class="fa fa-times fa-2x text-danger"></span>
-                        </div>
-                        <div class="col-md-11">
-                            <label id="lblMsjModal1"></label>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <!-- /modal-body -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 </asp:Content>

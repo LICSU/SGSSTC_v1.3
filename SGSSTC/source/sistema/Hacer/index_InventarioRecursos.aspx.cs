@@ -47,8 +47,8 @@ namespace SGSSTC.source.sistema.Hacer
 
             for (int i = 1; i <= 33; i = i + 2)
             {
-                HtmlInputRadioButton miradio1 = (HtmlInputRadioButton)Master.FindControl("radio" + i);
-                HtmlInputRadioButton miradio2 = (HtmlInputRadioButton)Master.FindControl("radio" + (i + 1));
+                HtmlInputRadioButton miradio1 = (HtmlInputRadioButton)panel1.FindControl("radio" + i);
+                HtmlInputRadioButton miradio2 = (HtmlInputRadioButton)panel1.FindControl("radio" + (i + 1));
 
                 if (miradio1.Checked == true) { totalSI++; }
                 if (miradio2.Checked == true) { totalNO++; }

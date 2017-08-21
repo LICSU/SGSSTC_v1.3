@@ -59,7 +59,7 @@
                 <div class="panel-group" id="accordion">
 
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">MIEMBROS PRINCIPALES DEL COMITÉ</a></h4>
                         </div>
 
@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INVITADOS</a></h4>
                         </div>
 
@@ -142,7 +142,7 @@
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">SOLICITUDES DEL DÍA</a></h4>
                         </div>
 
@@ -155,7 +155,7 @@
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading bg-teal color-palette">
+                        <div class="panel-heading bg-aqua color-palette">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">ESTATUS DE LAS SOLICITUDES</a></h4>
                         </div>
 
