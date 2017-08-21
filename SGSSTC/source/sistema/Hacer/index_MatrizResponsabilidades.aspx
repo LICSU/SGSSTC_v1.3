@@ -50,7 +50,7 @@
 
 					<!-- Primer Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">ALTA GERENCIA, EMPLEADOR</a></h4>
 						</div>
 
@@ -87,7 +87,7 @@
 					
 					<!-- Segundo Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">COORDINADOR DE SEGURIDAD Y SALUD EN EL TRABAJO</a></h4>
 						</div>
 
@@ -114,7 +114,7 @@
 					
 					<!-- Tercer Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">JEFES DE ÁREA</a></h4>
 						</div>
 
@@ -137,7 +137,7 @@
 					
 					<!-- Cuarto Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESPONSABLE DE SALUD OCUPACIONAL</a></h4>
 						</div>
 
@@ -161,7 +161,7 @@
 					
 					<!-- Quinto Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">TRABAJADORES</a></h4>
 						</div>
 
@@ -188,7 +188,7 @@
 					
 					<!-- Sexto Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">COMITÉ PARITARIO DE SEGURIDAD Y SALUD EN EL TRABAJO</a></h4>
 						</div>
 
@@ -211,7 +211,7 @@
 					
 					<!-- Septimo Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">COMITÉ DE CONVIVENCIA</a></h4>
 						</div>
 
@@ -235,7 +235,7 @@
 					
 					<!-- Octavo Panel -->
 					<div class="panel panel-default">
-						<div class="panel-heading bg-teal color-palette">
+						<div class="panel-heading bg-aqua color-palette">
 							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse8">COORDINADOR DE ALTURAS</a></h4>
 						</div>
 

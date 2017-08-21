@@ -112,11 +112,11 @@ namespace SGSSTC.source.sistema.Hacer
         #region registrar modales
         protected void MostrarModalAgregar(object sender, EventArgs e)
         {
-            Modal.registrarModal("addModal", "AddModalScript", this);
+            //Modal.registrarModal("addModal", "AddModalScript", this);
         }
         protected void MostrarModalImprimir(object sender, EventArgs e)
         {
-            Modal.registrarModal("printModal", "printModalScript", this);
+            //Modal.registrarModal("printModal", "printModalScript", this);
         }
         #endregion
 

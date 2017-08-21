@@ -168,7 +168,8 @@ namespace SGSSTC.source.sistema.Hacer
 
                 CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-                Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                Modal.CerrarModal("editModal", "EditModalScript", this);
+                //Modal.Validacion(this, ObjUsuario.Error, "Edit");
             }
             LlenarGridView();
         }
@@ -176,7 +177,8 @@ namespace SGSSTC.source.sistema.Hacer
         {
             plan_trabajo tabla = new plan_trabajo();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
+            //Modal.Validacion(this, ObjUsuario.Error, "Delete");
             LlenarGridView();
         }
         protected void GenerarDocumentoG(object sender, EventArgs e)
@@ -400,13 +402,6 @@ namespace SGSSTC.source.sistema.Hacer
             }
             var result = firstThursday.AddDays(weekNum * 7);
             return result.AddDays(-3);
-        }
-        #endregion
-
-        #region registro de los modales
-        protected void MostrarModalAgregar(object sender, EventArgs e)
-        {
-            Modal.registrarModal("addModal", "AddModalScript", this);
         }
         #endregion
 

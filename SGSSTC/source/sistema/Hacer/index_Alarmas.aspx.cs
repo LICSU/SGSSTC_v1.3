@@ -98,7 +98,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             CargarListas();
 
-            Modal.registrarModal("addModal", "AddModalScript", this);
+            //Modal.registrarModal("addModal", "AddModalScript", this);
         }
         protected void MostrarModalImprimir(object sender, EventArgs e)
         {

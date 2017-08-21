@@ -90,7 +90,8 @@
                     </div>
 
                     <div class="col-md-4">
-                        <asp:ImageButton alt="-" id="btnSubir" runat="server" ImageUrl="~\ico\upload.png" OnClick="btnSubir_Click"/>
+                        <asp:ImageButton alt="-" id="btnSubir" runat="server" ImageUrl="~\ico\upload.png" 
+                                         data-toggle="modal" data-target="#EscaneadoModal"/>
                         <h4>Subir informe</h4>
                     </div>
                 </div>

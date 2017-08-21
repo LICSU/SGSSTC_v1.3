@@ -134,11 +134,13 @@
 
             <div class="row" align="center"> 
                 <div class="col-md-3 col-md-offset-3">
-                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalAgregar"/>
+                    <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                                     OnClick="MostrarModalAgregar" data-toggle="modal" data-target="#addModal"/>
                     <h4>Nueva Alarma</h4>
                 </div>
                 <div class="col-md-3">
-                    <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" OnClick="MostrarModalImprimir"/>
+                    <asp:ImageButton alt="-" id="btnDesLista" runat="server" ImageUrl="~\ico\descargar.png" 
+                                     data-toggle="modal" data-target="#printModal"/>
                     <h4>Descargar Lista</h4>
                 </div> 
             </div>

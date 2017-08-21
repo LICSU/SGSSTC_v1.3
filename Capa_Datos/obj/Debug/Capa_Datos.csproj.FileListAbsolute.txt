@@ -14,5 +14,27 @@ C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\bin\De
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\obj\Debug\Capa_Datos.dll
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\obj\Debug\Capa_Datos.pdb
+<<<<<<< HEAD
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Capa_Datos.dll.config
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Capa_Datos.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Capa_Datos.pdb
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\AjaxControlToolkit.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\CkEditor.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\CKEditor.NET.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\EntityFramework.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\itextsharp.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\LinqToExcel.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Remotion.Data.Linq.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Remotion.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Remotion.Interfaces.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\EntityFramework.xml
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\obj\Debug\Capa_Datos.csprojResolveAssemblyReference.cache
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\obj\Debug\Capa_Datos.dll
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\obj\Debug\Capa_Datos.pdb
+C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\obj\Debug\Capa_Datos.csproj.CoreCompileInputs.cache
+=======
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\obj\Debug\Capa_Datos.csprojResolveAssemblyReference.cache
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\bin\Debug\AjaxControlToolkit.dll
+>>>>>>> be8b8fa92191f498981690b74973821efd05f98f

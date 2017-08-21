@@ -47,7 +47,7 @@
 
 				<!-- Primer Panel -->
 				<div class="panel panel-default">
-					<div class="panel-heading bg-teal color-palette">
+					<div class="panel-heading bg-aqua color-palette">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">ESTRUCTURA INTERNA DE LA BRIGADA DE EMERGENCIAS</a></h4>
 					</div>
 
@@ -88,7 +88,7 @@
 
 				<!-- Segundo Panel -->
 				<div class="panel panel-default">
-					<div class="panel-heading bg-teal color-palette">
+					<div class="panel-heading bg-aqua color-palette">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">FUNCIONES DE LOS BRIGADISTAS</a></h4>
 					</div>
 
@@ -132,7 +132,7 @@
 
 				<!-- Tercer Panel -->
 				<div class="panel panel-default">
-					<div class="panel-heading bg-teal color-palette">
+					<div class="panel-heading bg-aqua color-palette">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">BRIGADA DE COMUNICACIÓN</a></h4>
 					</div>
 
@@ -249,7 +249,7 @@
 
 				<!-- Cuarto Panel -->
 				<div class="panel panel-default">
-					<div class="panel-heading bg-teal color-palette">
+					<div class="panel-heading bg-aqua color-palette">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">BRIGADA DE PRIMEROS AUXILIOS</a></h4>
 					</div>
 
@@ -276,7 +276,7 @@
 
 				<!-- Quinto Panel -->
 				<div class="panel panel-default">
-					<div class="panel-heading bg-teal color-palette">
+					<div class="panel-heading bg-aqua color-palette">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">BRIGADA CONTRA INCENDIOS</a></h4>
 					</div>
 
@@ -309,7 +309,7 @@
 
 				<!-- Sexto Panel -->
 				<div class="panel panel-default">
-					<div class="panel-heading bg-teal color-palette">
+					<div class="panel-heading bg-aqua color-palette">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">BRIGADA DE EVACUACIÓN</a></h4>
 					</div>
 
@@ -340,7 +340,7 @@
 
 				<!-- Septimo Panel -->
 				<div class="panel panel-default">
-					<div class="panel-heading bg-teal color-palette">
+					<div class="panel-heading bg-aqua color-palette">
 						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">DIRECTORIO DE EMERGENCIAS EXTERNO</a></h4>
 					</div>
 

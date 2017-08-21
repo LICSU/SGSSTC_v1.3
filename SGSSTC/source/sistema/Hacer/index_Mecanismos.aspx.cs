@@ -41,10 +41,6 @@ namespace SGSSTC.source.sistema.Hacer
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             Tabla.TipoDocumento(GridView1, IdSucursal, IdEmpresa);
         }
-        protected void MostrarModalAgregar(object sender, EventArgs e)
-        {
-            Modal.registrarModal("addModal", "AddModalScript", this);
-        }
 
         #region  aciones de editar insertar y eliminar
         protected void Guardar(object sender, EventArgs e)

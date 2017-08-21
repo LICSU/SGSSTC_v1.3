@@ -45,7 +45,7 @@
 								 <asp:Panel runat="server" id="pnDatos">
 									 <div class="panel-group" id="accordion">
 										<div class="panel panel-default">
-										  <div class="panel-heading">
+										  <div class="panel-heading bg-aqua color-palette bg-aqua color-palette">
 											<h4 class="panel-title">
 											  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">TIPO DE RIESGO: Mecánicos</a>
 											</h4>
@@ -244,7 +244,7 @@
 										  </div>
 										</div>
 										<div class="panel panel-default">
-										  <div class="panel-heading">
+										  <div class="panel-heading bg-aqua color-palette">
 											<h4 class="panel-title">
 											  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">TIPO DE RIESGO: Físicos</a>
 											</h4>
@@ -339,7 +339,7 @@
 										  </div>
 										</div>
 										 <div class="panel panel-default">
-											  <div class="panel-heading">
+											  <div class="panel-heading bg-aqua color-palette">
 												<h4 class="panel-title">
 												  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">TIPO DE RIESGO: Disergonómicos</a>
 												</h4>
@@ -551,7 +551,7 @@
 											  </div>
 										  </div>
 										 <div class="panel panel-default">
-											  <div class="panel-heading">
+											  <div class="panel-heading bg-aqua color-palette">
 												<h4 class="panel-title">
 												  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">TIPO DE RIESGO: Químicos</a>
 												</h4>
@@ -724,7 +724,7 @@
 											  </div>
 										 </div>
 										 <div class="panel panel-default">
-											  <div class="panel-heading">
+											  <div class="panel-heading bg-aqua color-palette">
 												<h4 class="panel-title">
 												  <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">TIPO DE RIESGO: Eléctricos</a>
 												</h4>
@@ -806,7 +806,7 @@
 											  </div>
 										  </div>
 										 <div class="panel panel-default">
-											  <div class="panel-heading">
+											  <div class="panel-heading bg-aqua color-palette">
 												<h4 class="panel-title">
 												  <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">TIPO DE RIESGO: Psicosocial Desarrollo Conductual</a>
 												</h4>
@@ -1499,7 +1499,7 @@
 											  </div>
 										  </div>
 										 <div class="panel panel-default">
-											  <div class="panel-heading">
+											  <div class="panel-heading bg-aqua color-palette">
 												<h4 class="panel-title">
 												  <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">TIPO DE RIESGO: Prevención de Emergencias</a>
 												</h4>
@@ -1867,7 +1867,7 @@
 											  </div>
 										  </div>
 										 <div class="panel panel-default">
-											  <div class="panel-heading">
+											  <div class="panel-heading bg-aqua color-palette">
 												<h4 class="panel-title">
 												  <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">TIPO DE RIESGO: Generales</a>
 												</h4>

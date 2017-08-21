@@ -89,7 +89,7 @@ namespace SGSSTC.source.sistema.Hacer
                 txtPlanInduccion.Text
             };
 
-            PrintFile.PrintIdentificacionAccidente(valores, this);
+            PrintFile.PrintPlanInduccion(valores, this);
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {

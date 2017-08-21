@@ -269,33 +269,9 @@ namespace SGSSTC.source.sistema.Hacer
         #endregion
 
         #region  registro de los modales
-        protected void MostrarModalAgregar(object sender, EventArgs e)
+        protected void cerrarModalIndex(object sender, EventArgs e)
         {
-            Modal.registrarModal("IndexAddModal", "AddModalScript", this);
-        }
-        protected void MostrarNuevoEntrega(object sender, EventArgs e)
-        {
-            Modal.registrarModal("AddEntrega", "AddModalScript", this);
-        }
-        protected void MostrarNuevoCapacitacion(object sender, EventArgs e)
-        {
-            Modal.registrarModal("AddCapacitacion", "AddModalScript", this);
-        }
-        protected void MostrarNuevoJornada(object sender, EventArgs e)
-        {
-            Modal.registrarModal("AddJornada", "AddModalScript", this);
-        }
-        protected void MostrarNuevoActividad(object sender, EventArgs e)
-        {
-            Modal.registrarModal("AddActividad", "AddModalScript", this);
-        }
-        protected void MostrarModalImprimir(object sender, EventArgs e)
-        {
-            Modal.registrarModal("printModal", "printModalScript", this);
-        }
-        protected void MostrarModalLista(object sender, EventArgs e)
-        {
-            Modal.registrarModal("listaModal", "listaModalScript", this);
+            Modal.CerrarModal("IndexAddModal", "AddModalScript", this);
         }
         #endregion
 
@@ -345,6 +321,7 @@ namespace SGSSTC.source.sistema.Hacer
                         ObjUsuario.Error = CRUD.Add_Fila(nuevoTG, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
                     }
                 }
+                Modal.CerrarModal("AddEntrega", "AddModalScript", this);
                 Modal.Validacion(this, ObjUsuario.Error, "Add");
                 LlenarGridView();
             }

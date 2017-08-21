@@ -80,7 +80,7 @@
                     <div class="row" align="center">
                         <div class="col-md-4 col-md-offset-4">
                             <asp:Button id="btnDocumento" runat="server" Text="Generar Documento"
-                                    OnClick="GenerarDocumento"/>
+                                    OnClick="GenerarDocumento" CssClass="btn btn-block btn-info"/>
                          </div>
                     </div>
                 </asp:PlaceHolder>

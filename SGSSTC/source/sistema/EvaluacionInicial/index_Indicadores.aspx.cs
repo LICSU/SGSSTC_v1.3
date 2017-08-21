@@ -535,10 +535,10 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 double resultado = ((Convert.ToDouble(Textbox1.Text) / Convert.ToDouble(Label1.Text)) * 100);
                 resultado3.Text = resultado.ToString("#.##") + " %";
             }
-
+            /*
             collapse1.Attributes.Add("class", "panel-collapse collapse in");
             collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            collapse3.Attributes.Add("class", "panel-collapse collapse");*/
         }
         protected void Textbox2_TextChanged(object sender, EventArgs e)
         {
@@ -547,10 +547,10 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 double resultado = ((Convert.ToDouble(Textbox2.Text) / Convert.ToDouble(Label2.Text)) * 100);
                 resultado4.Text = resultado.ToString("#.##") + " %";
             }
-
+/*
             collapse1.Attributes.Add("class", "panel-collapse collapse in");
             collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            collapse3.Attributes.Add("class", "panel-collapse collapse");*/
         }
         protected void Textbox3_TextChanged(object sender, EventArgs e)
         {
@@ -559,10 +559,10 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 double resultado = ((Convert.ToDouble(Textbox3.Text) / Convert.ToDouble(Textbox4.Text)) * 100);
                 resultado7.Text = resultado.ToString("#.##") + " %";
             }
-
+/*
             collapse1.Attributes.Add("class", "panel-collapse collapse in");
             collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            collapse3.Attributes.Add("class", "panel-collapse collapse");*/
         }
         protected void Textbox5_TextChanged(object sender, EventArgs e)
         {
@@ -570,9 +570,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             resultado11.Text = resultado.ToString("#.##") + " %";
 
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse in");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox6_TextChanged(object sender, EventArgs e)
         {
@@ -589,9 +589,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             resultado13.Text = resultado.ToString("#.##") + " %";
 
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse in");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox8_TextChanged(object sender, EventArgs e)
         {
@@ -606,9 +606,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 resultado16.Text = resultado.ToString("#.##") + " %";
             }
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse in");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox9_TextChanged(object sender, EventArgs e)
         {
@@ -623,9 +623,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 resultado17.Text = resultado.ToString("#.##") + " %";
             }
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse in");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
 
         //panel 2
@@ -643,9 +643,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox10.Text) / Convert.ToDouble(Textbox11.Text)) * 100);
             resultado18.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox12_TextChanged(object sender, EventArgs e)
         {
@@ -661,9 +661,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox12.Text) / Convert.ToDouble(Textbox13.Text)) * 100);
             resultado19.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox14_TextChanged(object sender, EventArgs e)
         {
@@ -679,9 +679,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox14.Text) / Convert.ToDouble(Textbox15.Text)) * 100);
             resultado20.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox16_TextChanged(object sender, EventArgs e)
         {
@@ -697,9 +697,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox16.Text) / Convert.ToDouble(Textbox17.Text)) * 100);
             resultado21.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox18_TextChanged(object sender, EventArgs e)
         {
@@ -715,9 +715,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox18.Text) / Convert.ToDouble(Textbox19.Text)) * 100);
             resultado22.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox20_TextChanged(object sender, EventArgs e)
         {
@@ -733,9 +733,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox20.Text) / Convert.ToDouble(Textbox21.Text)) * 100);
             resultado23.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox22_TextChanged(object sender, EventArgs e)
         {
@@ -751,9 +751,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox22.Text) / Convert.ToDouble(Textbox23.Text)) * 100);
             resultado24.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox24_TextChanged(object sender, EventArgs e)
         {
@@ -769,9 +769,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox24.Text) / Convert.ToDouble(Textbox25.Text)) * 100);
             resultado25.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox26_TextChanged(object sender, EventArgs e)
         {
@@ -787,9 +787,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox26.Text) / Convert.ToDouble(Textbox27.Text)) * 100);
             resultado26.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox28_TextChanged(object sender, EventArgs e)
         {
@@ -805,9 +805,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox28.Text) / Convert.ToDouble(Textbox29.Text)) * 100);
             resultado27.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
         protected void Textbox30_TextChanged(object sender, EventArgs e)
         {
@@ -823,9 +823,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox30.Text) / Convert.ToDouble(Textbox31.Text)) * 100);
             resultado28.Text = resultado.ToString("#.##") + " %";
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse in");
-            collapse3.Attributes.Add("class", "panel-collapse collapse");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse");
         }
 
         //panel 3
@@ -843,9 +843,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox32.Text) / Convert.ToDouble(Textbox33.Text)) * K);
             resultado29.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox34_TextChanged(object sender, EventArgs e)
         {
@@ -861,9 +861,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox34.Text) / Convert.ToDouble(Textbox35.Text)) * K);
             resultado30.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox36_TextChanged(object sender, EventArgs e)
         {
@@ -879,9 +879,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox36.Text) / Convert.ToDouble(Textbox37.Text)) * 100);
             resultado31.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox38_TextChanged(object sender, EventArgs e)
         {
@@ -893,9 +893,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox38.Text) / Convert.ToDouble(Label5.Text)) * 100);
             resultado32.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox39_TextChanged(object sender, EventArgs e)
         {
@@ -911,9 +911,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox39.Text) / Convert.ToDouble(Textbox40.Text)) * 100);
             resultado33.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox41_TextChanged(object sender, EventArgs e)
         {
@@ -929,9 +929,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox41.Text) / Convert.ToDouble(Textbox42.Text)) * 100);
             resultado34.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox43_TextChanged(object sender, EventArgs e)
         {
@@ -947,9 +947,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox43.Text) / Convert.ToDouble(Textbox44.Text)) * 100);
             resultado35.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox45_TextChanged(object sender, EventArgs e)
         {
@@ -965,9 +965,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox45.Text) / Convert.ToDouble(Textbox46.Text)) * 100);
             resultado36.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox47_TextChanged(object sender, EventArgs e)
         {
@@ -983,9 +983,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox47.Text) / Convert.ToDouble(Textbox48.Text)) * 100);
             resultado37.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox49_TextChanged(object sender, EventArgs e)
         {
@@ -1001,9 +1001,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox49.Text) / Convert.ToDouble(Textbox50.Text)) * 100);
             resultado38.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox51_TextChanged(object sender, EventArgs e)
         {
@@ -1019,9 +1019,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox51.Text) / Convert.ToDouble(Textbox52.Text)) * 100);
             resultado39.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox53_TextChanged(object sender, EventArgs e)
         {
@@ -1037,9 +1037,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox53.Text) / Convert.ToDouble(Textbox54.Text)) * 100);
             resultado40.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         protected void Textbox55_TextChanged(object sender, EventArgs e)
         {
@@ -1055,9 +1055,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             double resultado = ((Convert.ToDouble(Textbox55.Text) / Convert.ToDouble(Textbox56.Text)) * 100);
             resultado41.Text = resultado.ToString("#.##");
 
-            collapse1.Attributes.Add("class", "panel-collapse collapse");
-            collapse2.Attributes.Add("class", "panel-collapse collapse");
-            collapse3.Attributes.Add("class", "panel-collapse collapse in");
+            //collapse1.Attributes.Add("class", "panel-collapse collapse");
+            //collapse2.Attributes.Add("class", "panel-collapse collapse");
+            //collapse3.Attributes.Add("class", "panel-collapse collapse in");
         }
         #endregion
 
