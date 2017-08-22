@@ -7,154 +7,153 @@ using System.Web.UI;
 
 namespace SGSSTC.source.sistema.Verificar
 {
-    public partial class Create_InvestigacionIncidente : System.Web.UI.Page
-    {
-        Utilidades objUtilidades = new Utilidades();
-        Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+	public partial class Create_InvestigacionIncidente : System.Web.UI.Page
+	{
+		Utilidades objUtilidades = new Utilidades();
+		Model_UsuarioSistema ObjUsuario;
+		Tuple<bool, bool> BoolEmpSuc;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            Page.Form.Attributes.Add("enctype", "multipart/form-data");
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
-            BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
+			BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
-            if (!IsPostBack)
-            {
-                cargarDatos();
-            }
-        }
-        private void cargarDatos()
-        {
-            int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+			if (!IsPostBack)
+			{
+				cargarDatos();
+			}
+		}
+		private void cargarDatos()
+		{
+			int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
+			List<at_it_el_pa> ListaAccidente = new List<at_it_el_pa>();
+			ListaAccidente = Getter.Accidente(idAccidente);
 
-            List<at_it_el_pa> ListaAccidente = new List<at_it_el_pa>();
-            ListaAccidente = Getter.Accidente(idAccidente);
+			foreach (var item in ListaAccidente)
+			{
+				txtSucursal.Text = item.trabajador.puesto_trabajo.area.sucursal.nombre;
+				txtLugarEvento.Text = item.sitio;
+				txtTrabajador.Text = item.trabajador.primer_nombre + " " + item.trabajador.primer_apellido;
+				txtCedula.Text = item.trabajador.cedula;
+				txtFechaIngreso.Text = Convert.ToDateTime(item.trabajador.fecha_ingreso).ToString("dd/MM/yyyy");
+				txtDescAccidente.Text = item.descripcion;
 
-            foreach (var item in ListaAccidente)
-            {
-                txtSucursal.Text = item.trabajador.puesto_trabajo.area.sucursal.nombre;
-                txtLugarEvento.Text = item.sitio;
-                txtTrabajador.Text = item.trabajador.primer_nombre + " " + item.trabajador.primer_apellido;
-                txtCedula.Text = item.trabajador.cedula;
-                txtFechaIngreso.Text = Convert.ToDateTime(item.trabajador.fecha_ingreso).ToString("dd/MM/yyyy");
-                txtDescAccidente.Text = item.descripcion;
+				txtTipoVinculacion.Text = item.trabajador.tipo_vinculacion;
+				txtCargo.Text = item.trabajador.cno.ocupacion;
+				ddlMano.Text = Convert.ToString(item.trabajador.mano_dominante);
+				txtSalario.Text = Convert.ToString(item.trabajador.salario);
+			}
+		}
+		protected void btPrintSave_Click(object sender, EventArgs e)
+		{
+			int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
-                txtTipoVinculacion.Text = item.trabajador.tipo_vinculacion;
-                txtCargo.Text = item.trabajador.cno.ocupacion;
-                ddlMano.Text = Convert.ToString(item.trabajador.mano_dominante);
-                txtSalario.Text = Convert.ToString(item.trabajador.salario);
-            }
-        }
-        protected void btPrintSave_Click(object sender, EventArgs e)
-        {
-            int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+			#region delete investigacion existente
+			investigacion_ac_in tabla = new investigacion_ac_in();
+			List<investigacion_ac_in> consulta = new List<investigacion_ac_in>();
+			consulta = Getter.InvestigacionAccidente(idAccidente);
 
-            #region delete investigacion existente
-            investigacion_ac_in tabla = new investigacion_ac_in();
-            List<investigacion_ac_in> consulta = new List<investigacion_ac_in>();
-            consulta = Getter.InvestigacionAccidente(idAccidente);
+			foreach (var item in consulta)
+			{
+				ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(item.id_inv_ac_in), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+			}
+			#endregion
 
-            foreach (var item in consulta)
-            {
-                ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(item.id_inv_ac_in), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            }
-            #endregion
+			DateTime? fecha1 = null;
+			fecha1 = txtfecha1.Text == string.Empty ? fecha1 : Convert.ToDateTime(txtfecha1.Text);
 
-            DateTime? fecha1 = null;
-            fecha1 = txtfecha1.Text == string.Empty ? fecha1 : Convert.ToDateTime(txtfecha1.Text);
+			DateTime? fecha2 = null;
+			fecha2 = txtFecha2.Text == string.Empty ? fecha2 : Convert.ToDateTime(txtFecha2.Text);
 
-            DateTime? fecha2 = null;
-            fecha2 = txtFecha2.Text == string.Empty ? fecha2 : Convert.ToDateTime(txtFecha2.Text);
+			DateTime? fecha3 = null;
+			fecha3 = txtFecha3.Text == string.Empty ? fecha3 : Convert.ToDateTime(txtFecha3.Text);
 
-            DateTime? fecha3 = null;
-            fecha3 = txtFecha3.Text == string.Empty ? fecha3 : Convert.ToDateTime(txtFecha3.Text);
+			investigacion_ac_in nuevo = new investigacion_ac_in
+			{
+				id_at_it_el_pa = idAccidente,
+				tipo = "Incidente",
+				fecha_evento = Convert.ToDateTime(txtFechaEvento.Text),
+				hora_evento = Convert.ToDateTime(txtHoraEvento.Text),
+				dia_semana = ddlDiaSemana.SelectedValue,
+				antiguedad = Convert.ToInt32(txtAntiguedad.Text),
+				actividad_realizaba = txtActRealizaba.Text,
+				adiestramiento = txtAdiestramiento.Text,
+				costo_transporte = txtCostoTransporte.Text,
+				costo_atencion = txtCostoAtencionMedica.Text,
+				costo_tratamiento = txtCostoTratamiento.Text,
+				costo_indemizacion = txtCostoIndemnización.Text,
+				costo_reemplazo = txtCostoReemplazo.Text,
+				costo_reposo = txtCostoReposoMedico.Text,
+				costo_materiales = txtCostoDanhosMateriales.Text,
+				costo_produccion = txtCostoProdDiferida.Text,
+				porque1 = txtPorque1.Text,
+				respuesta1 = txtRespuesta1.Text,
+				porque2 = txtPorque2.Text,
+				respuesta2 = txtRespuesta2.Text,
+				porque3 = txtPorque3.Text,
+				respuesta3 = txtRespuesta3.Text,
+				porque4 = txtPorque4.Text,
+				respuesta4 = txtRespuesta4.Text,
+				porque5 = txtPorque5.Text,
+				respuesta5 = txtRespuesta5.Text,
+				que = txtQue.Text,
+				respuesta_que = txtRespuestaQue.Text,
+				quien = txtQuien.Text,
+				respuesta_quien = txtrespuestaQuien.Text,
+				donde = txtDonde.Text,
+				respuesta_donde = txtrespuestaDonde.Text,
+				cuando = txtCuando.Text,
+				respuesta_cuando = txtrespuestaCuando.Text,
+				como = txtComo.Text,
+				respuesta_como = txtrespuestaComo.Text,
+				cuanto = txtCuanto.Text,
+				respuesta_cuanto = txtrespuestaCuanto.Text,
+				porque = txtPorque.Text,
+				respuesta_porque = txtRespuestaPorque.Text,
+				tipo_accidente = ddlTipoAccidente.SelectedValue,
+				medida1 = txtAccion1.Text,
+				responsable1 = txtResponsable1.Text,
+				fecha_medida1 = fecha1,
+				medida2 = txtAccion2.Text,
+				responsable2 = txtResponsable2.Text,
+				fecha_medida2 = fecha2,
+				medida3 = txtAccion3.Text,
+				responsable3 = txtResponsable3.Text,
+				fecha_medida3 = fecha3,
+				nota = txtNota.Text,
+				supervisor = txtSupervisor.Text,
+				tiempo_cargo = txtTiempoCargo.Text,
+				actividad = txtActividad.Text
+			};
 
-            investigacion_ac_in nuevo = new investigacion_ac_in
-            {
-                id_at_it_el_pa = idAccidente,
-                tipo = "Incidente",
-                fecha_evento = Convert.ToDateTime(txtFechaEvento.Text),
-                hora_evento = Convert.ToDateTime(txtHoraEvento.Text),
-                dia_semana = ddlDiaSemana.SelectedValue,
-                antiguedad = Convert.ToInt32(txtAntiguedad.Text),
-                actividad_realizaba = txtActRealizaba.Text,
-                adiestramiento = txtAdiestramiento.Text,
-                costo_transporte = txtCostoTransporte.Text,
-                costo_atencion = txtCostoAtencionMedica.Text,
-                costo_tratamiento = txtCostoTratamiento.Text,
-                costo_indemizacion = txtCostoIndemnización.Text,
-                costo_reemplazo = txtCostoReemplazo.Text,
-                costo_reposo = txtCostoReposoMedico.Text,
-                costo_materiales = txtCostoDanhosMateriales.Text,
-                costo_produccion = txtCostoProdDiferida.Text,
-                porque1 = txtPorque1.Text,
-                respuesta1 = txtRespuesta1.Text,
-                porque2 = txtPorque2.Text,
-                respuesta2 = txtRespuesta2.Text,
-                porque3 = txtPorque3.Text,
-                respuesta3 = txtRespuesta3.Text,
-                porque4 = txtPorque4.Text,
-                respuesta4 = txtRespuesta4.Text,
-                porque5 = txtPorque5.Text,
-                respuesta5 = txtRespuesta5.Text,
-                que = txtQue.Text,
-                respuesta_que = txtRespuestaQue.Text,
-                quien = txtQuien.Text,
-                respuesta_quien = txtrespuestaQuien.Text,
-                donde = txtDonde.Text,
-                respuesta_donde = txtrespuestaDonde.Text,
-                cuando = txtCuando.Text,
-                respuesta_cuando = txtrespuestaCuando.Text,
-                como = txtComo.Text,
-                respuesta_como = txtrespuestaComo.Text,
-                cuanto = txtCuanto.Text,
-                respuesta_cuanto = txtrespuestaCuanto.Text,
-                porque = txtPorque.Text,
-                respuesta_porque = txtRespuestaPorque.Text,
-                tipo_accidente = ddlTipoAccidente.SelectedValue,
-                medida1 = txtAccion1.Text,
-                responsable1 = txtResponsable1.Text,
-                fecha_medida1 = fecha1,
-                medida2 = txtAccion2.Text,
-                responsable2 = txtResponsable2.Text,
-                fecha_medida2 = fecha2,
-                medida3 = txtAccion3.Text,
-                responsable3 = txtResponsable3.Text,
-                fecha_medida3 = fecha3,
-                nota = txtNota.Text,
-                supervisor = txtSupervisor.Text,
-                tiempo_cargo = txtTiempoCargo.Text,
-                actividad = txtActividad.Text
-            };
+			ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+			if (ObjUsuario.Error)
+			{
+				if (fuAnexo.HasFile)
+				{
+					int i = 0;
+					foreach (var archivo in fuAnexo.PostedFiles)
+					{
+						i++;
+						string ruta = Utilidades.GuardarArchivo(archivo, "InvIncidente_" + idAccidente + "_" + i, "~/source/archivos/incidentes/");
 
-            if (ObjUsuario.Error)
-            {
-                if (fuAnexo.HasFile)
-                {
-                    int i = 0;
-                    foreach (var archivo in fuAnexo.PostedFiles)
-                    {
-                        i++;
-                        string ruta = Utilidades.GuardarArchivo(archivo, "InvIncidente_" + idAccidente + "_" + i, "~/source/archivos/incidentes/");
+						soporte nuevoFA = new soporte()
+						{
+							url = ruta,
+							id_tabla = idAccidente
+						};
+						ObjUsuario.Error = CRUD.Add_Fila(nuevoFA, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-                        soporte nuevoFA = new soporte()
-                        {
-                            url = ruta,
-                            id_tabla = idAccidente
-                        };
-                        ObjUsuario.Error = CRUD.Add_Fila(nuevoFA, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+					}
+				}
+			}
 
-                    }
-                }
-            }
-
-        }
+		}
 		
-    }
+	}
 }

@@ -35,7 +35,7 @@ namespace Capa_Datos
                 else if (_nuevo.GetType() == typeof(alarma)) { contexto.alarma.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(Pregunta)) { contexto.Pregunta.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(Respuesta)) { contexto.Respuesta.Add(_nuevo); }
-                else if (_nuevo.GetType() == typeof(at_it_el_pa)) { contexto.at_it_el_pa.Add(_nuevo); }
+                else if (_nuevo.GetType() == typeof(Respuesta)) { contexto.at_it_el_pa.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(area)) { contexto.area.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(brigada_emergencia)) { contexto.brigada_emergencia.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(categoria)) { contexto.categoria.Add(_nuevo); }
@@ -231,6 +231,12 @@ namespace Capa_Datos
                     var Eliminar = new plan_trabajo { id_plan_trabajo = _id };
                     contexto.plan_trabajo.Attach(Eliminar);
                     contexto.plan_trabajo.Remove(Eliminar);
+                }
+                else if (tabla.GetType() == typeof(Pregunta))
+                {
+                    var Eliminar = new Pregunta { id_pregunta = _id };
+                    contexto.Pregunta.Attach(Eliminar);
+                    contexto.Pregunta.Remove(Eliminar);
                 }
                 else if (tabla.GetType() == typeof(politica_sst))
                 {

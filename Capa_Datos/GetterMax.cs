@@ -25,7 +25,7 @@ namespace Capa_Datos
         public static int Accidentes()
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
-            var consulta = new at_it_el_pa();
+            var consulta = new Respuesta();
             int id = contexto.at_it_el_pa.Max(x => x.id_at_it_el_pa);
             return id;
         }

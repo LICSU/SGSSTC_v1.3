@@ -80,7 +80,7 @@ namespace SGSSTC.source.sistema.Verificar
         }
         protected void EliminarRegistro(object sender, EventArgs e)
         {
-            at_it_el_pa tabla = new at_it_el_pa();
+            Respuesta tabla = new Respuesta();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             LlenarGridView();

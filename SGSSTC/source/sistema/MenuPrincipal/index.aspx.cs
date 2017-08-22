@@ -430,12 +430,14 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             foreach (var item in consulta)
             {
-                string _Respuesta = item.cuerpo_respuesta;
-                _Respuesta = _Respuesta.Length > 50 ? item.cuerpo_respuesta.Substring(0, 47) + "..." : item.cuerpo_respuesta;
+                string _Respuesta = item.usuario;
+                _Respuesta = _Respuesta.Length > 50 ? item.usuario.Substring(0, 47) + "..." : item.usuario;
 
                 ControlesDinamicos.CrearLiteral("<tr><td class='text-left'>", pVerRespuestas);
 
-                ControlesDinamicos.CrearButtonModal("lk_VerRespuesta_" + item.id_respuesta, pVerRespuestas, VerRespuestaEspecificaModal, _Respuesta, "Ver_Res_Esp_Modal");
+                string idRespuesta = objUtilidades.cifrarCadena(Convert.ToString(item.id_respuesta));
+
+                ControlesDinamicos.CrearHyperLink("lk_VerRespuesta_" + item.id_respuesta, pVerRespuestas, "VerRespuesta.aspx?rs=" + idRespuesta, _Respuesta);
 
                 ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td>", pVerRespuestas);
 
@@ -580,6 +582,11 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                     ControlesDinamicos.CrearLiteral("</td></tr>", pSusPreguntas);
                 }
             }
+
+
+            ControlesDinamicos.CrearLiteral("<tr><td class='text-left'>", pSusPreguntas);
+            ControlesDinamicos.CrearHyperLink("ViewPreguntasPares", pSusPreguntas, "ViewPreguntasPares.aspx", "Ver Todas...");
+            ControlesDinamicos.CrearLiteral("</td><td></td><td></td></tr>", pSusPreguntas);
         }
 
         protected void MostrarMisPreguntas()
@@ -612,6 +619,11 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                     ControlesDinamicos.CrearLiteral("</tr>", panelMisPreguntas);
                 }
             }
+
+            ControlesDinamicos.CrearLiteral("<tr><td class='text-left'>", panelMisPreguntas);
+            ControlesDinamicos.CrearHyperLink("ViewMisPreguntas", panelMisPreguntas, "ViewMisPreguntas.aspx", "Ver Todas...");
+            ControlesDinamicos.CrearLiteral("</td><td></td><td></td></tr>", panelMisPreguntas);
+
         }
 
 

@@ -86,7 +86,17 @@ namespace Capa_Datos
             _panel.Controls.Add(miLinkButton);
         }
 
-        
+        public static void CrearHyperLink(string id, Panel _panel, string _ruta, string _texto)
+        {
+            HyperLink miHyperLink;
+            miHyperLink = new HyperLink();
+            miHyperLink.ID = id;
+            miHyperLink.Text = _texto;
+            miHyperLink.NavigateUrl += _ruta;
+            miHyperLink.Target = "_blank";
+
+            _panel.Controls.Add(miHyperLink);
+        }
 
         public static void CrearDropDownList(string id, Panel _panel, DropDownList _DropDownList)
         {

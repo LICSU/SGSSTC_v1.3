@@ -1,0 +1,158 @@
+﻿using Capa_Datos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI.WebControls;
+
+namespace SGSSTC.source.sistema.MenuPrincipal
+{
+    public partial class ViewMisPreguntas : System.Web.UI.Page
+    {
+        protected static Model_UsuarioSistema ObjUsuario;
+        Tuple<bool, bool> BoolEmpSuc;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+
+            BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
+
+            if (!IsPostBack)
+            {
+                DateTime fechaActual = DateTime.Now;
+                ViewState["FechaInicio"] = fechaActual.ToString("dd-MM-yyy");
+                ViewState["FechaFin"] = fechaActual.AddMonths(1).ToString("dd-MM-yyy");
+
+                txtFechaInicio.Text = fechaActual.ToString("yyyy-MM-dd");
+                txtFechaFin.Text = fechaActual.AddMonths(1).ToString("yyyy-MM-dd");
+
+                LlenarGridView();
+            }
+        }
+        protected void LlenarGridView()
+        {
+
+            Tabla.MisPreguntas(GridView1, ObjUsuario.Id_usuario, string.Empty + ViewState["FechaInicio"], string.Empty + ViewState["FechaFin"]);
+        }
+        protected void EditarRegistro(object sender, EventArgs e)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            int idPregunta = Convert.ToInt32(hdfPreguntaEdit.Value);
+
+            Pregunta Edit = contexto.Pregunta.SingleOrDefault(b => b.id_pregunta == idPregunta);
+            if (Edit != null)
+            {
+                Edit.fecha = Convert.ToDateTime(txtFechaEdit.Text);
+                Edit.titulo = txtTituloEdit.Text;
+                Edit.cuerpo_pregunta = txtPreguntaEdit.Text;
+            }
+
+            ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+
+            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            LlenarGridView();
+
+        }
+        protected void EliminarRegistro(object sender, EventArgs e)
+        {
+            Pregunta tabla = new Pregunta();
+
+            ObjUsuario.Error = CRUD.Delete_Fila(
+                tabla,
+                Convert.ToInt32(hdfObligacionIDDel.Value),
+                ObjUsuario.Id_usuario,
+                HttpContext.Current.Request.Url.AbsoluteUri);
+
+            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            LlenarGridView();
+        }
+
+
+        #region acciones grid
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            LlenarGridView();
+        }
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("Editar"))
+            {
+                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
+                GridViewRow gvrow = GridView1.Rows[RowIndex];
+
+                hdfPreguntaEdit.Value = (gvrow.FindControl("id_pregunta") as Label).Text;
+
+                List<Pregunta> ListaPregunta = new List<Pregunta>();
+                ListaPregunta = Getter.Pregunta(Convert.ToInt32(hdfPreguntaEdit.Value));
+
+                foreach (var item in ListaPregunta)
+                {
+                    txtTituloEdit.Text = item.titulo;
+                    txtPreguntaEdit.Text = item.cuerpo_pregunta;
+                    txtFechaEdit.Text = Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd");
+                }
+
+                Modal.registrarModal("editModal", "EditModalScript", this);
+            }
+            else if (e.CommandName.Equals("Ver"))
+            {
+                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
+                GridViewRow gvrow = GridView1.Rows[RowIndex];
+
+                hdfVerPregunta.Value = (gvrow.FindControl("id_pregunta") as Label).Text;
+
+                List<Pregunta> ListaPregunta = new List<Pregunta>();
+                ListaPregunta = Getter.Pregunta(Convert.ToInt32(hdfVerPregunta.Value));
+
+                foreach (var item in ListaPregunta)
+                {
+                    txtViewTitulo.Text = item.titulo;
+                    txtViewPregunta.Text = item.cuerpo_pregunta;
+                    txtViewFecha.Text = Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy");
+                }
+
+                Modal.registrarModal("viewModal", "viewModalScript", this);
+            }
+            else if (e.CommandName.Equals("Eliminar"))
+            {
+                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
+                GridViewRow gvrow = GridView1.Rows[RowIndex];
+
+                hdfObligacionIDDel.Value = (gvrow.FindControl("id_pregunta") as Label).Text;
+                Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+            }
+        }
+        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+        }
+        #endregion
+
+        protected void txtFechaInicio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFechaInicio.Text != string.Empty)
+            {
+                ViewState["FechaInicio"] = txtFechaInicio.Text;
+            }
+            else
+            {
+                ViewState["FechaInicio"] = "";
+            }
+            LlenarGridView();
+        }
+        protected void txtFechaFin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFechaFin.Text != string.Empty)
+            {
+                ViewState["FechaFin"] = txtFechaFin.Text;
+            }
+            else
+            {
+                ViewState["FechaFin"] = "";
+            }
+            LlenarGridView();
+        }
+    }
+}

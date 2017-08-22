@@ -156,9 +156,9 @@ namespace SGSSTC.source.sistema.Hacer
 
                     txtDescEdit.Text = Convert.ToString(item.descripcion);
                     txtAccionesEdit.Text = Convert.ToString(item.acciones);
-
-                    Modal.registrarModal("editModal", "EditModalScript", this);
                 }
+
+                Modal.registrarModal("editModal", "EditModalScript", this);
             }
             else if (e.CommandName.Equals("Ver"))
             {

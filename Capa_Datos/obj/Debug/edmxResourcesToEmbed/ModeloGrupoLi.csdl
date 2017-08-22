@@ -792,10 +792,10 @@
     <Property Name="cuerpo_pregunta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="id_usuario" Type="Int32" />
     <Property Name="titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="usuario" Relationship="Self.FK_Pregunta_usuario" FromRole="Pregunta" ToRole="usuario" />
-    <NavigationProperty Name="Respuesta" Relationship="Self.FK_Respuesta_Pregunta" FromRole="Pregunta" ToRole="Respuesta" />
     <Property Name="fecha" Type="DateTime" Precision="0" />
     <Property Name="estatus" Type="Int32" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_Pregunta_usuario" FromRole="Pregunta" ToRole="usuario" />
+    <NavigationProperty Name="Respuesta" Relationship="Self.FK_Respuesta_Pregunta" FromRole="Pregunta" ToRole="Respuesta" />
   </EntityType>
   <EntityType Name="procedimiento_comunicacion">
     <Key>
@@ -859,8 +859,8 @@
     <Property Name="cuerpo_respuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="id_pregunta" Type="Int32" />
     <Property Name="calificacion" Type="Int32" />
-    <NavigationProperty Name="Pregunta" Relationship="Self.FK_Respuesta_Pregunta" FromRole="Respuesta" ToRole="Pregunta" />
     <Property Name="fecha" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Pregunta" Relationship="Self.FK_Respuesta_Pregunta" FromRole="Respuesta" ToRole="Pregunta" />
   </EntityType>
   <EntityType Name="riesgos_item">
     <Key>
@@ -937,6 +937,16 @@
     <NavigationProperty Name="norma_sucursal" Relationship="Self.FK_normas_sucursal_sucursal1" FromRole="sucursal" ToRole="norma_sucursal" />
     <NavigationProperty Name="plan" Relationship="Self.FK_planes_sucursal" FromRole="sucursal" ToRole="plan" />
     <NavigationProperty Name="tipo_documento" Relationship="Self.FK_tipo_documento_sucursal" FromRole="sucursal" ToRole="tipo_documento" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="tipo_documento">
     <Key>
@@ -2251,6 +2261,7 @@
     <EntitySet Name="sistema" EntityType="Self.sistema" />
     <EntitySet Name="soporte" EntityType="Self.soporte" />
     <EntitySet Name="sucursal" EntityType="Self.sucursal" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
     <EntitySet Name="tipo_epp" EntityType="Self.tipo_epp" />
     <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" />

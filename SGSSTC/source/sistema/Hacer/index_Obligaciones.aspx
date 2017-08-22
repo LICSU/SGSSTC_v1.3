@@ -1,30 +1,30 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Obligaciones.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_Obligaciones" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
+<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content><%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %><%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %><%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %><%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
 
     <asp:updatepanel runat="server">
         <ContentTemplate>
-            
-            <div class="container" style="width: 100%;">
-            
-                <ol class="breadcrumb">
+
+            <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
                     <li><a href="#">Obligaciones</a></li>
                 </ol>
-                
-                
-                <div class="page-header">
+            
+            
+            <div class="page-header">
                     <h1 class="text-center">Obligaciones</h1>
 
                 </div>
 
-                <div class="row">
+            <div class="row">
                     <div class="col-md-4 col-md-offset-3">
                         <asp:TextBox id="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" 
                             PlaceHolder="Ingrese la obligacion a buscar"></asp:TextBox>
@@ -35,10 +35,11 @@
                             OnClick="BuscarRegistro"/>
                     </div>
                 </div>
-                <br />
 
-                <!-- Filtro 1 -->
-                <div class="row">                
+            <br />
+
+            <!-- Filtro 1 -->
+            <div class="row">                
                     <asp:PlaceHolder runat="server" id="phEmpresa">
                         <div class="col-md-4">
                             <h4 class="text-center">Empresa</h4>
@@ -55,9 +56,10 @@
                         </div>
                     </asp:PlaceHolder>
                 </div>
-                <br />
 
-                <div class="row">                
+            <br />
+
+            <div class="row">                
                     <div class="col-md-3 col-md-offset-1">
                         <h4 class="text-center">Responsable</h4>
                         <asp:DropDownList runat="server" CssClass="form-control" id="ddlResponsable" AutoPostBack="true" 
@@ -81,111 +83,110 @@
                         </asp:DropDownList>
                     </div>
                 </div>
-                <br />
+
+            <br />
             
-                <!-- Filtro  2-->
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-1">
-                        <h4 class="text-center">Estatus</h4>
-                        <asp:DropDownList runat="server" CssClass="form-control" id="ddlEstatus" AutoPostBack="true" 
-                            OnSelectedIndexChanged="ddlEstatus_SelectedIndexChanged">
-                            <asp:ListItem Text="Seleccione un Valor" Value=""></asp:ListItem>
-                            <asp:ListItem Text="Iniciado" Value="Iniciado"></asp:ListItem>
-                            <asp:ListItem Text="En Proceso" Value="En Proceso"></asp:ListItem>
-                            <asp:ListItem Text="Terminado con Exito" Value="Terminado con Exito"></asp:ListItem>
-                            <asp:ListItem Text="Terminado sin Exito" Value="Terminado sin Exito"></asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                
-                    <div class="col-md-3">
-                        <h4 class="text-center">Fecha inicio: </h4>
-                        <asp:TextBox id="txtFechaInicio" runat="server" class="col-md-10" CssClass="form-control" TextMode="Date" 
-                          AutoPostBack="true" OnTextChanged="txtFechaInicio_TextChanged"></asp:TextBox>
-                    </div>
-
-                    <div class="col-md-3">
-                        <h4 class="text-center">Fecha fin: </h4>
-                        <asp:TextBox id="txtFechaFin" runat="server" class="col-md-10" CssClass="form-control" TextMode="Date" 
-                          AutoPostBack="true" OnTextChanged="txtFechaFin_TextChanged"></asp:TextBox>
-                    </div>
-
+            <!-- Filtro  2-->
+            <div class="row">
+                <div class="col-md-3 col-md-offset-1">
+                    <h4 class="text-center">Estatus</h4>
+                    <asp:DropDownList runat="server" CssClass="form-control" id="ddlEstatus" AutoPostBack="true" 
+                        OnSelectedIndexChanged="ddlEstatus_SelectedIndexChanged">
+                        <asp:ListItem Text="Seleccione un Valor" Value=""></asp:ListItem>
+                        <asp:ListItem Text="Iniciado" Value="Iniciado"></asp:ListItem>
+                        <asp:ListItem Text="En Proceso" Value="En Proceso"></asp:ListItem>
+                        <asp:ListItem Text="Terminado con Exito" Value="Terminado con Exito"></asp:ListItem>
+                        <asp:ListItem Text="Terminado sin Exito" Value="Terminado sin Exito"></asp:ListItem>
+                    </asp:DropDownList>
                 </div>
-                <br />
+            
+                <div class="col-md-3">
+                    <h4 class="text-center">Fecha inicio: </h4>
+                    <asp:TextBox id="txtFechaInicio" runat="server" class="col-md-10" CssClass="form-control" TextMode="Date" 
+                      AutoPostBack="true" OnTextChanged="txtFechaInicio_TextChanged"></asp:TextBox>
+                </div>
 
-                <div class="row">
-                    <div class="box-body">
-                        <div class="dataTables_wrapper form-inline dt-bootstrap">
-                            <ucpag:pagination runat="server" id="pagination"/>
+                <div class="col-md-3">
+                    <h4 class="text-center">Fecha fin: </h4>
+                    <asp:TextBox id="txtFechaFin" runat="server" class="col-md-10" CssClass="form-control" TextMode="Date" 
+                      AutoPostBack="true" OnTextChanged="txtFechaFin_TextChanged"></asp:TextBox>
+                </div>
+
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="box-body">
+                    <div class="dataTables_wrapper form-inline dt-bootstrap">
+                        <ucpag:pagination runat="server" id="pagination"/>
+                    
+                        <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server"
+                            AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
+                            onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
+                            EmptyDataText="No existen Registros">
                         
-                            <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server"
-                                AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
-                                onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
-                                EmptyDataText="No existen Registros">
-                            
-                                <Columns>
-                                    <asp:TemplateField HeaderText="ID" Visible="false">
+                            <Columns>
+                                <asp:TemplateField HeaderText="ID" Visible="false">
                                         <ItemTemplate>
                                             <asp:label id="id_responsable" runat="server" Text='<%# Eval("id_responsable") %>'/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="Id Obligacion" Visible="false">
+                                <asp:TemplateField HeaderText="Id Obligacion" Visible="false">
                                         <ItemTemplate>
                                             <asp:Label id="id_obligacion" runat="server" Text='<%# Eval("id_obligacion") %>'/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="Empresa" Visible="false">
+                                <asp:TemplateField HeaderText="Empresa" Visible="false">
                                         <ItemTemplate>
                                             <asp:HiddenField runat="server" id="id_empresa" Visible="false" Value='<%# Eval("id_empresa") %>'/>
                                             <asp:Label id="lbempresa" runat="server" Text='<%# Eval("empresa") %>'/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                     
-                                    <asp:TemplateField HeaderText="Descripción">
+                                <asp:TemplateField HeaderText="Descripción">
                                         <ItemTemplate><asp:Label id="descripcion" runat="server" Text='<%# Eval("descripcion") %>'/></ItemTemplate>
                                     </asp:TemplateField>
                     
-                                    <asp:TemplateField HeaderText="Fecha Entrega">
+                                <asp:TemplateField HeaderText="Fecha Entrega">
                                         <ItemTemplate><asp:Label id="FechaEntrega" runat="server" Text='<%# Eval("fecha_entrega","{0:dd/MM/yyyy}") %>'/></ItemTemplate>
                                     </asp:TemplateField>
                     
-                                    <asp:TemplateField HeaderText="Responsable">
+                                <asp:TemplateField HeaderText="Responsable">
                                         <ItemTemplate><asp:Label id="Responsable" runat="server" Text='<%# Eval("responsable") %>'/></ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="Estatus">
+                                <asp:TemplateField HeaderText="Estatus">
                                         <ItemTemplate><asp:Label id="Estatus" runat="server" Text='<%# Eval("estatus") %>'/></ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="Categoria">
+                                <asp:TemplateField HeaderText="Categoria">
                                         <ItemTemplate><asp:Label id="Categoria" runat="server" Text='<%# Eval("categoria") %>'/></ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="Prioridad">
+                                <asp:TemplateField HeaderText="Prioridad">
                                         <ItemTemplate><asp:Label id="Prioridad" runat="server" Text='<%# Eval("prioridad") %>'/></ItemTemplate>
                                     </asp:TemplateField>
                     
-                                    <asp:ButtonField HeaderText="Acciones" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png">
+                                <asp:ButtonField HeaderText="Acciones" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
                     
-                                    <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
+                                <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
 
-                                    <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
+                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
                     
-                                </Columns>
-                        
-                            </asp:GridView>
-                        </div>
+                            </Columns>
+                    
+                        </asp:GridView>
                     </div>
                 </div>
-                <br />
-
             </div>
 
         </ContentTemplate>
@@ -507,7 +508,6 @@
             </div>
         </div>
     </div>
-    <!--Delete Record Modal Ends here -->
 
     <!-- Msj Modal -->
     <ucm:ucMsjModal runat="server" id="ucMsjModal"/>

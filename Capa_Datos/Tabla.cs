@@ -1720,16 +1720,8 @@ namespace Capa_Datos
 
         #region obligaciones
         public static void Obligaciones(
-            GridView GridView1,
-            int _id_empresa = 0,
-            int _id_responsable = 0,
-            int _id_categoria = 0,
-            string _prioridad = "",
-            string _estatus = "",
-            string _fecha_ini = "",
-            string _fecha_fin = "",
-            string _descripcion = "",
-            int _id_sucursal = 0)
+            GridView GridView1, int _id_empresa = 0, int _id_responsable = 0, int _id_categoria = 0, string _prioridad = "",
+            string _estatus = "", string _fecha_ini = "", string _fecha_fin = "", string _descripcion = "", int _id_sucursal = 0)
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
 
@@ -2333,7 +2325,7 @@ namespace Capa_Datos
 
         #region preguntas y respuestas
 
-        public static void MisPreguntas(GridView GridView1, int _id_usuario)
+        public static void MisPreguntas(GridView GridView1, int _id_usuario, string _fecha_ini = "", string _fecha_fin = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -2341,11 +2333,15 @@ namespace Capa_Datos
                 where PR.id_usuario == _id_usuario
                 select new
                 {
+                    PR.id_pregunta,
                     PR.titulo,
                     PR.cuerpo_pregunta,
                     PR.id_usuario,
                     PR.fecha
                 }).ToList();
+
+            if (_fecha_ini != "") { query = query.Where(x => x.fecha >= Convert.ToDateTime(_fecha_ini)).ToList(); }
+            if (_fecha_fin != "") { query = query.Where(x => x.fecha <= Convert.ToDateTime(_fecha_fin)).ToList(); }
 
 
             GridView1.DataSource = query;
@@ -2353,21 +2349,27 @@ namespace Capa_Datos
             GridView1.DataBind();
         }
 
-        public static void SusPreguntas(GridView GridView1, int act1, int act2, int act3)
+        public static void SusPreguntas(GridView GridView1, int act1, int act2, int act3, string _fecha_ini = "", string _fecha_fin = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
                 from PR in contexto.Pregunta
-                join EC in contexto.empresa_itemdivision 
+                join EC in contexto.empresa_itemdivision
                 on PR.usuario.trabajador.puesto_trabajo.area.sucursal.id_empresa equals EC.id_empresa
                 where EC.id_clase_ciiu == act1 || EC.id_clase_ciiu == act2 || EC.id_clase_ciiu == act3
                 select new
                 {
+                    PR.id_pregunta,
                     PR.titulo,
                     PR.cuerpo_pregunta,
                     PR.id_usuario,
                     PR.fecha
                 }).ToList();
+
+
+
+            if (_fecha_ini != "") { query = query.Where(x => x.fecha >= Convert.ToDateTime(_fecha_ini)).ToList(); }
+            if (_fecha_fin != "") { query = query.Where(x => x.fecha <= Convert.ToDateTime(_fecha_fin)).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();

@@ -208,7 +208,9 @@
                                         <th class="col-md-2 text-center">Fecha</th>
                                         <th class="col-md-1 text-center">Respuestas</th>
                                     </tr>
+
                                     <asp:Panel runat="server" id="panelMisPreguntas"></asp:Panel>
+
                                 </tbody>
                             </table>
                         </div>

@@ -7,216 +7,171 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SGSSTC.source.sistema.Verificar {
+namespace SGSSTC.source.sistema.MenuPrincipal {
     
     
-    public partial class View_Incidente {
+    public partial class ViewMisPreguntas {
         
         /// <summary>
-        /// Control MyUpdatePanel.
+        /// Control txtFechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel MyUpdatePanel;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaInicio;
         
         /// <summary>
-        /// Control phEmpresa.
+        /// Control txtFechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phEmpresa;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaFin;
         
         /// <summary>
-        /// Control lbEmpresa.
+        /// Control pagination.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbEmpresa;
+        protected global::SGSSTC.source.WebUserControl.pagination1 pagination;
         
         /// <summary>
-        /// Control phSucursal.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phSucursal;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Control lbSucursal.
+        /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbSucursal;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control txtFechaAcc.
+        /// Control hdfVerPregunta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtFechaAcc;
+        protected global::System.Web.UI.WebControls.HiddenField hdfVerPregunta;
         
         /// <summary>
-        /// Control txtHoraAcc.
+        /// Control txtViewTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtHoraAcc;
+        protected global::System.Web.UI.WebControls.Label txtViewTitulo;
         
         /// <summary>
-        /// Control lbTrabajador.
+        /// Control txtViewPregunta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTrabajador;
+        protected global::System.Web.UI.WebControls.Label txtViewPregunta;
         
         /// <summary>
-        /// Control lbArea.
+        /// Control txtViewFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbArea;
+        protected global::System.Web.UI.WebControls.Label txtViewFecha;
         
         /// <summary>
-        /// Control lbPuestoTrabajo.
+        /// Control UpdatePanel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbPuestoTrabajo;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
-        /// Control txtSitioIncidente.
+        /// Control hdfPreguntaEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtSitioIncidente;
+        protected global::System.Web.UI.WebControls.HiddenField hdfPreguntaEdit;
         
         /// <summary>
-        /// Control txtDescTarea.
+        /// Control txtFechaEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDescTarea;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaEdit;
         
         /// <summary>
-        /// Control txtCondIns.
+        /// Control txtTituloEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtCondIns;
+        protected global::System.Web.UI.WebControls.TextBox txtTituloEdit;
         
         /// <summary>
-        /// Control txtActos.
+        /// Control txtPreguntaEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtActos;
+        protected global::CKEditor.NET.CKEditorControl txtPreguntaEdit;
         
         /// <summary>
-        /// Control txtFacTrab.
+        /// Control btnEditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtFacTrab;
+        protected global::System.Web.UI.WebControls.Button btnEditar;
         
         /// <summary>
-        /// Control txtFactPersonales.
+        /// Control upDel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtFactPersonales;
+        protected global::System.Web.UI.UpdatePanel upDel;
         
         /// <summary>
-        /// Control txtDiasIncapacidad.
+        /// Control hdfObligacionIDDel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDiasIncapacidad;
+        protected global::System.Web.UI.WebControls.HiddenField hdfObligacionIDDel;
         
         /// <summary>
-        /// Control txtDiasCargados.
+        /// Control btnDelete.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDiasCargados;
-        
-        /// <summary>
-        /// Control txtDiasPerdidosAusTrab.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDiasPerdidosAusTrab;
-        
-        /// <summary>
-        /// Control txtDiasPerdidosctRest.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDiasPerdidosctRest;
-        
-        /// <summary>
-        /// Control chkSinDias.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label chkSinDias;
-        
-        /// <summary>
-        /// Control lbTipoEnfermedad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTipoEnfermedad;
-        
-        /// <summary>
-        /// Control pSoportes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pSoportes;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
     }
 }

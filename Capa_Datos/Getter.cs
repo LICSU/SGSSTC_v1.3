@@ -1145,5 +1145,25 @@ namespace Capa_Datos
         }
         #endregion
 
+        #region respuestas y preguntas
+
+        public static List<Pregunta> Pregunta(int _id_pregunta)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            var consulta = new List<Pregunta>();
+            consulta = contexto.Pregunta.Where(x => x.id_pregunta == _id_pregunta).ToList();
+            return consulta;
+        }
+
+        public static List<Respuesta> Respuesta(int _id_respuesta)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            var consulta = new List<Respuesta>();
+            consulta = contexto.Respuesta.Where(x => x.id_respuesta == _id_respuesta).ToList();
+            return consulta;
+        }
+
+        #endregion
+
     }
 }
