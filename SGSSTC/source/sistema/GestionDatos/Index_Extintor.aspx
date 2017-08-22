@@ -75,7 +75,6 @@
                             AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
                             onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
                             EmptyDataText="No existen Registros">
-                            <rowstyle  HorizontalAlign="Center"/>
                         
                             <Columns>
                                 <asp:TemplateField HeaderText="ID" visible="false">
@@ -90,13 +89,13 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Ultima Recarga" HeaderStyle-CssClass="text-center">
+                                <asp:TemplateField HeaderText="Ultima Recarga" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                     <ItemTemplate>
                                         <asp:Label id="fecha_ultima_recarga" runat="server" Text='<%# Eval("fecha_ultima_recarga", "{0:dd/MM/yyyy}") %>'/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Proxima Recarga" HeaderStyle-CssClass="text-center">
+                                <asp:TemplateField HeaderText="Proxima Recarga" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                     <ItemTemplate>
                                         <asp:Label id="fecha_proxima_recarga" runat="server" Text='<%# Eval("fecha_proxima_recarga", "{0:dd/MM/yyyy}") %>'/>
                                     </ItemTemplate>
@@ -109,11 +108,13 @@
                                     </ItemTemplate>
                                 </asp:TemplateField> 
                 
-                            <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+                            <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" 
+                                 ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                 <ControlStyle></ControlStyle>
                             </asp:ButtonField>
                 
-                            <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png" HeaderStyle-CssClass="text-center">
+                            <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png" 
+                                HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                 <ControlStyle></ControlStyle>
                             </asp:ButtonField>
                         </Columns>
@@ -124,7 +125,7 @@
 
             <br />
 
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-4 col-md-offset-4">
                     <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
                         <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 

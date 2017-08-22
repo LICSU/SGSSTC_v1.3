@@ -66,7 +66,6 @@ namespace SGSSTC.source.sistema.GestionDatos
             {
                 IdSucursal = ObjUsuario.Id_sucursal;
             }
-
             List<puesto_trabajo> puesto = Getter.PuestoTrabajo_Nom_Suc(txtNombre.Text, IdSucursal);
 
             if (puesto.Count == 0)

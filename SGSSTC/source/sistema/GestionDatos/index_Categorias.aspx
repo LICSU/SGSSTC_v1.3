@@ -59,7 +59,7 @@
                             onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
                             EmptyDataText="No existen Registros">
 
-                            <rowstyle  HorizontalAlign="Center"/>
+                            
                         
                             <Columns>
                                 <asp:TemplateField HeaderText="Id Categoria" Visible="false" HeaderStyle-CssClass="text-center">
@@ -81,12 +81,13 @@
                                     </ItemTemplate>
                                 </asp:TemplateField> 
 
-                                <asp:ButtonField HeaderText="Acciones" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+                                <asp:ButtonField HeaderText="Acciones" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" 
+                                                 HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
                 
-                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
-                                    <ControlStyle></ControlStyle>
+                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png"
+                                                 HeaderStyle-CssClass="text-center" ItemStyle-HorizontalAlign="Center">
                                 </asp:ButtonField>
 
                             </Columns>
@@ -101,9 +102,9 @@
 
             <asp:PlaceHolder runat="server" id="phAgregarCat">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
-                            OnClick="MostrarModalAgregar"/>
+                    <div class="col-md-4 col-md-offset-4 text-center">
+                        <asp:ImageButton AlternateText="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                                         data-toggle="modal" data-target="#addModal"/>
                         <h4>Nueva Categoria</h4>
                     </div>
                 </div>
@@ -129,7 +130,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Nombre</h4>
+                                    <h4 class="text-left">Nombre</h4>
 
                                     <asp:TextBox id="txtNombre" MaxLength="100" runat="server" ClientIDMode="Static" 
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -143,7 +144,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Descripcion</h4>
+                                    <h4 class="text-left">Descripcion</h4>
 
                                     <asp:TextBox id="txtDescripcion" MaxLength="500" runat="server" ClientIDMode="Static" 
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -158,7 +159,7 @@
                             <asp:PlaceHolder runat="server" id="phEmpresaAdd" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-center">Empresa</h4>
+                                        <h4 class="text-left">Empresa</h4>
 
                                         <asp:DropDownList id="ddlEmpresaAdd" runat="server" ClientIDMode="Static" 
                                             CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -210,7 +211,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Nombre</h4>
+                                    <h4 class="text-left">Nombre</h4>
 
                                     <asp:TextBox id="txtNombreEdit" MaxLength="100" runat="server" ClientIDMode="Static" 
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -224,7 +225,7 @@
 
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Descripción</h4>
+                                    <h4 class="text-left">Descripción</h4>
 
                                     <asp:TextBox id="txtDescripcionEdit" MaxLength="500" runat="server" ClientIDMode="Static" 
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -239,7 +240,7 @@
                             <asp:PlaceHolder runat="server" id="phEmpresaEdit" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-center">Empresa</h4>
+                                        <h4 class="text-left">Empresa</h4>
 
                                         <asp:DropDownList id="ddlEmpresaEdit" data-toggle="tooltip" data-placement="bottom" 
                                             title="Seleccione una empresa" runat="server" ClientIDMode="Static" 

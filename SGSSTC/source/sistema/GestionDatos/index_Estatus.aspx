@@ -59,7 +59,7 @@
                             AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
                             onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
                             EmptyDataText="No existen Registros" OnRowDataBound="GridView1_RowDataBound">
-                            <rowstyle  HorizontalAlign="Center"/>
+                            
                             <Columns>
                                 <asp:TemplateField HeaderText="ID" visible="false" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
@@ -82,10 +82,12 @@
                                         <asp:Label id="Label1" runat="server" Text='<%# Eval("Empresa") %>'/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+                                <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" 
+                                                 ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
-                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png" HeaderStyle-CssClass="text-center">
+                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" 
+                                                 ImageUrl="~\ico\delete.png" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
                             </Columns>
@@ -97,10 +99,10 @@
             <br />
 
             <asp:PlaceHolder runat="server" id="phAgregar">
-                <div class="row" align="center">
+                <div class="row text-center">
                     <div class="col-md-4 col-md-offset-4">
-                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
-                            OnClick="AgregarRegistro"/>
+                        <asp:ImageButton AlternateText="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                                         data-toggle="modal" data-target="#addModal"/>
                         <h4>Nuevo Estatus</h4>
                     </div>
                 </div>
@@ -128,7 +130,7 @@
                             <asp:PlaceHolder runat="server" id="phEmpresaAdd" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-center">Empresa</h4>
+                                        <h4 class="text-left">Empresa</h4>
 
                                         <asp:DropDownList id="ddlEmpresaAdd" data-toggle="tooltip" data-placement="bottom" 
                                             title="Seleccione una Empresa" runat="server" ClientIDMode="Static" 
@@ -143,7 +145,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Nombre</h4>
+                                    <h4 class="text-left">Nombre</h4>
 
                                    <asp:TextBox id="txtNombreAdd" MaxLength="100" runat="server" ClientIDMode="Static" 
                                        CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -157,7 +159,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Descripcion</h4>
+                                    <h4 class="text-left">Descripcion</h4>
 
                                     <asp:TextBox id="txtDescripcionAdd" MaxLength="100" TextMode="MultiLine" Rows="3" runat="server"
                                         ClientIDMode="Static" CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -208,7 +210,7 @@
                             <asp:PlaceHolder runat="server" id="phEmpresaEdit" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-center">Empresa</h4>
+                                        <h4 class="text-left">Empresa</h4>
 
                                         <asp:DropDownList id="ddlEmpresaEdit" 
                                             data-toggle="tooltip" data-placement="bottom" title="Seleccione una empresa" 
@@ -223,7 +225,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Nombre</h4>
+                                    <h4 class="text-left">Nombre</h4>
 
                                     <asp:TextBox id="txtNombreEdit" MaxLength="100" runat="server" ClientIDMode="Static" 
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -239,7 +241,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Descripcion</h4>
+                                    <h4 class="text-left">Descripcion</h4>
 
                                     <asp:TextBox id="txtDescripcionEdit" MaxLength="100" runat="server" ClientIDMode="Static"
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 

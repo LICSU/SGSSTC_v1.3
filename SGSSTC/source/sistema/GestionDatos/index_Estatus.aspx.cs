@@ -117,7 +117,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones
         protected void AgregarRegistro(object sender, EventArgs e)
         {
-            Modal.registrarModal("addModal", "AddModalScript", this);
+            //Modal.registrarModal("addModal", "AddModalScript", this);
         }
         protected void GuardarRegistro(object sender, EventArgs e)
         {

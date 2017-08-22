@@ -127,9 +127,9 @@
             
             <asp:PlaceHolder runat="server" id="phAgregar">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
-                            OnClick="AgregarRegistroModal"/>
+                    <div class="col-md-4 col-md-offset-4 text-center">
+                        <asp:ImageButton AlternateText="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            OnClick="AgregarRegistroModal" />
                         <h4>Nuevo Usuario</h4>
                     </div>
                 </div>
@@ -237,7 +237,7 @@
                                     <h4>Clave</h4>
 
                                     <asp:TextBox id="txtClave" TextMode="Password" runat="server" ClientIDMode="Static" 
-                                        CssClass="form-control" MaxLength="500" data-toggle="tooltip" data-placement="bottom" 
+                                        CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
                                         title="Ingrese la contraseña del usuario, La Contraseña solo debe contener Letras Minúsculas,
                                         Mayúsculas y Números, debe contener de 4 a 16 caracteres"></asp:TextBox>
                                 
@@ -252,7 +252,7 @@
                                     <h4>Confirmar Clave</h4>
 
                                     <asp:TextBox id="txtClaveConf" TextMode="Password" runat="server" ClientIDMode="Static" 
-                                        MaxLength="500" CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
+                                        CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
                                         title="Ingrese de nuevo la contraseña"></asp:TextBox>
 
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 

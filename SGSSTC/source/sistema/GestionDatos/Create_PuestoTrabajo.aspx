@@ -160,11 +160,11 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<h4 class="text-left">Soporte fotográfico</h4>
-					<asp:FileUpload runat="server" id="fuAnexo" 
+					<asp:FileUpload runat="server" id="fuAnexo"  
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese imagenes y/o fotos relacionadas al Puesto de Trabajo"/>
 				</div>
 			</div>
-
+          
 			<!-- aceptar y cancelar-->
 			<br />
 			<div class="row">
@@ -177,9 +177,53 @@
 
 		</ContentTemplate>
 		<Triggers>
-			<asp:PostBackTrigger Controlid="btnAceptar"/>
+            <asp:PostBackTrigger ControlID="btnAceptar" />
 		</Triggers>
 	</asp:updatepanel>
+
+    <!-- Modal Exito -->
+     <div class="modal fade" id="modalExito" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                    <h4 class="modal-title"> Opciones </h4>
+                </div>
+                <div class="modal-body form-group">
+                    <div class="row">
+                        <div class="col-lg-12 form-group">
+                            <h4><strong>Puesto de Trabajo Agregado con Éxito!, Que desea hacer.? </strong></h4>
+                        </div>
+                        <div class="col-lg-4">
+                            &nbsp;
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="col-lg-12 form-group">
+                                <asp:Button runat="server" id="btnIraTrabajadores" Text="Ir al Listado" OnClick="btnSalir_Click" 
+                                    class="btn btn-block btn-info"
+                                    data-toggle="tooltip" data-placement="bottom" title="Presione para ir al listado de puestos de trabajo"></asp:Button>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <asp:Button runat="server" id="btnAgregarOtro" Text="Agregar Nuevo" OnClick="btnNuevo_Click" 
+                                    class="btn btn-block btn-info"
+                                    data-toggle="tooltip" data-placement="bottom" title="Presione para agregar un nuevo puesto de trabajo"></asp:Button>
+                            </div>
+                         
+                        </div>
+                        <div class="col-lg-4"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- /modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Msj Modal -->
+    <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
 
 </asp:Content>
 

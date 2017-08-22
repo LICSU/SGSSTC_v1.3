@@ -40,7 +40,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 LlenarGridView();
                 if (Request.QueryString["eu"] == "1")
                 {
-                    Modal.MostrarMsjModal(MensajeError.Exito_Edit_Trabajador.Value, "EXI", this);
+                    Modal.Validacion(this, ObjUsuario.Error, "Edit");
                 }
             }
 

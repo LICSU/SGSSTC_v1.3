@@ -25,7 +25,6 @@ namespace SGSSTC.source.sistema.GestionDatos
             phEmpresaEdit.Visible = BoolEmpSuc.Item1;
             phSucursal1.Visible = BoolEmpSuc.Item2;
             phSucursal2.Visible = !BoolEmpSuc.Item2;
-
             if (!IsPostBack)
             {
                 if (ObjUsuario.isAdm_Sucursal())
@@ -112,7 +111,6 @@ namespace SGSSTC.source.sistema.GestionDatos
                     Listas.Reg_Dpto_Mcpio(ddlMcpioEdit, "McpioDpto", Convert.ToInt32(item.municipio.id_departamento));
                     ddlMcpioEdit.SelectedValue = Convert.ToString(item.id_municpio);
                 }
-
                 Modal.registrarModal("editModal", "EditModalScript", this);
             }
             else if (e.CommandName.Equals("Eliminar"))
@@ -200,7 +198,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         protected void MostrarModalImprimir(object sender, EventArgs e)
         {
-            Modal.registrarModal("printModal", "printModalScript", this);
+            //Modal.registrarModal("printModal", "printModalScript", this);
         }
 
         protected void EditarRegistro(object sender, EventArgs e)
