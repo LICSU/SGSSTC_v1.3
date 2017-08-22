@@ -53,7 +53,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region registro de los modales
         protected void MostrarModalAgregar(object sender, EventArgs e)
         {
-            Modal.registrarModal("addModal", "AddModalScript", this);
+            //Modal.registrarModal("addModal", "AddModalScript", this);
         }
 
         protected void MostrarModalImprimir(object sender, EventArgs e)

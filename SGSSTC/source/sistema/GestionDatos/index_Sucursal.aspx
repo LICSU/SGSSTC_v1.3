@@ -33,7 +33,6 @@
                 </div>
                 
                 <br />
-                
                 <div class="row">
                     <asp:PlaceHolder runat="server" id="phEmpresa">
                         <div class="col-md-4">
@@ -507,5 +506,5 @@
 
     <!-- Msj Modal -->
     <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
-
+    
 </asp:Content>

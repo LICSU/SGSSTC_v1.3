@@ -59,7 +59,6 @@
                                 AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCreated="GridView1_RowCreated" 
                                 OnRowCommand="GridView1_RowCommand" onpageindexchanging="GridView1_PageIndexChanging"
                                 EmptyDataText="No existen Registros">
-                                <rowstyle  HorizontalAlign="Center"/>
                         <Columns>
 
                             <asp:TemplateField HeaderText="ID" Visible="false">
@@ -81,7 +80,8 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
 
-                            <asp:ButtonField HeaderText="Ver" CommandName="verImagen" ButtonType="Image" ImageUrl="~\ico\viewFile.png" HeaderStyle-CssClass="text-center">
+                            <asp:ButtonField HeaderText="Ver" CommandName="verImagen" ButtonType="Image" ImageUrl="~\ico\viewFile.png" 
+                                HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                                 <ControlStyle></ControlStyle>
                             </asp:ButtonField>
                         </Columns>

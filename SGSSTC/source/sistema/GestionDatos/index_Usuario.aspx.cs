@@ -241,6 +241,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                     txtLoginEdit.Text = itemUsuarios.login;
                     ddlRolEdit.SelectedValue = Convert.ToString(itemUsuarios.id_rol);
                     ddlEmpresaEdit.SelectedValue = Convert.ToString(itemUsuarios.trabajador.puesto_trabajo.area.sucursal.id_empresa);
+                    string claveA = objUtilidades.descifrarCadena2(itemUsuarios.clave);
+                    txtClaveActual.Attributes.Add("value", claveA);
 
                     Listas.Sucursal(ddlSucursalEdit, Convert.ToInt32(ddlEmpresaEdit.SelectedValue));
                     ddlSucursalEdit.SelectedValue = Convert.ToString(itemUsuarios.trabajador.puesto_trabajo.area.id_sucursal);
