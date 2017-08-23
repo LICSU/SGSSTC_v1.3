@@ -60,11 +60,11 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region registrar modales
         protected void MostrarModalAgregar(object sender, EventArgs e)
         {
-            Modal.registrarModal("addModal", "AddModalScript", this);
+            //Modal.registrarModal("addModal", "AddModalScript", this);
         }
         protected void MostrarModalCrear(object sender, EventArgs e)
         {
-            Modal.registrarModal("createModal", "CreateModalScript", this);
+           // Modal.registrarModal("createModal", "CreateModalScript", this);
         }
         #endregion
 
@@ -90,6 +90,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.Validacion(this, ObjUsuario.Error, "Delete");
             LlenarGridView();
         }

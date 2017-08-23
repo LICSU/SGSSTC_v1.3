@@ -12,8 +12,6 @@
     <asp:updatepanel id="updatePanelPrinicpal" runat="server">
         <ContentTemplate>
             
-            
-                
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Evaluación Inicial</a></li>
                     <li><a href="#">Analisis de Vulnerabilidad</a></li>

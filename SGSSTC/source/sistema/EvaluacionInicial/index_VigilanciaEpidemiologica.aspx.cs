@@ -91,6 +91,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             documento tabla = new documento();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.Validacion(this, ObjUsuario.Error, "Delete");
             LlenarGridView();
         }
@@ -106,7 +107,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             if (e.CommandName.Equals("Eliminar"))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_analisis");
+                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_documento");
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
         }

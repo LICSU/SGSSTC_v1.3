@@ -58,7 +58,7 @@
                             <Columns>
                                 <asp:TemplateField visible="false">
                                     <ItemTemplate>
-                                        <asp:Label id="id_vigilancia_epidemiologica" runat="server" Text='<%# Eval("id_vigilancia_epidemiologica") %>'/>
+                                        <asp:Label id="id_documento" runat="server" Text='<%# Eval("id_documento") %>'/>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 
@@ -141,7 +141,7 @@
                                 </div><br />
                                                         
                             <asp:PlaceHolder runat="server" id="phEmpresaAdd">
-                                <div class="row">
+                                <div class="row form-group">
                                     <div>
                                         <label class="col-md-4 control-label">Empresa: </label> 
                                         <div class="col-md-6">
@@ -156,7 +156,7 @@
                             </asp:PlaceHolder>
                             
                             <asp:PlaceHolder runat="server" id="phSucursalAdd">
-                                <div class="row">
+                                <div class="row form-group">
                                     <div>
                                         <label class="col-md-4 control-label">Sucursal: </label> 
                                         <div class="col-md-6">
@@ -234,6 +234,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Msj Modal -->
+    <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
 
 </asp:Content>
 

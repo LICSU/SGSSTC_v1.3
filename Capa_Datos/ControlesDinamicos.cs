@@ -1130,7 +1130,7 @@ namespace Capa_Datos
             }
         }
 
-        public static Double[] Calcular_ReporteTrabajadores_A_B(MasterPage form1, string tipo)
+        public static Double[] Calcular_ReporteTrabajadores_A_B(Panel form1, string tipo)
         {
             Double totalSi = 0;
             Double totalNo = 0;
@@ -1173,7 +1173,7 @@ namespace Capa_Datos
             return valores;
         }
 
-        public static Double[] Calcular_ReporteTrabajadoresB(MasterPage form1)
+        public static Double[] Calcular_ReporteTrabajadoresB(Panel form1)
         {
             Double totalSi = 0;
             Double totalNo = 0;

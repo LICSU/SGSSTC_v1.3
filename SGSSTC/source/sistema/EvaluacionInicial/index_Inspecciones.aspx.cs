@@ -64,12 +64,12 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region registrar modales
         protected void MostrarModalAgregar(object sender, EventArgs e)
         {
-            Modal.registrarModal("addModal", "AddModalScript", this);
+            //Modal.registrarModal("addModal", "AddModalScript", this);
         }
 
         protected void MostrarModalCrear(object sender, EventArgs e)
         {
-            Modal.registrarModal("createModal", "CreateModalScript", this);
+            //Modal.registrarModal("createModal", "CreateModalScript", this);
         }
         #endregion
 
@@ -132,6 +132,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             documento tabla = new documento();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.Validacion(this, ObjUsuario.Error, "Delete");
             LlenarGridView();
         }
@@ -147,7 +148,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (e.CommandName.Equals("Eliminar"))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                string valor = (GridView1.Rows[RowIndex].FindControl("id_inspeccion") as Label).Text;
+                string valor = (GridView1.Rows[RowIndex].FindControl("id_documento") as Label).Text;
                 hdfIDDel.Value = valor;
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);

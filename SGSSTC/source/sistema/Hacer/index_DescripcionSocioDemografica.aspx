@@ -73,11 +73,11 @@
                                     </ItemTemplate>
                                 </asp:TemplateField> 
                          
-                                <asp:ButtonField HeaderText="Acciones" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
+                                <asp:ButtonField HeaderText="Ver" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField> 
                                            
-                                <asp:ButtonField HeaderText="Editar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+                                <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
@@ -92,7 +92,7 @@
     </div>
     <br />
 
-    <div class="row" align="center">
+    <div class="row text-center">
         <asp:placeholder runat="server" id="phAgregar">
             <div class="col-md-4 col-md-offset-4">
                 <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
@@ -147,4 +147,5 @@
 
     <!-- Msj Modal -->
     <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
+
 </asp:Content>
