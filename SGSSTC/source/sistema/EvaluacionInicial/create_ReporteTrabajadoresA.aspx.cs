@@ -46,7 +46,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             phBtnPrint.Visible = true;
 
-            Double[] totales = ControlesDinamicos.Calcular_ReporteTrabajadores_A_B(Master, "A"); 
+            Double[] totales = ControlesDinamicos.Calcular_ReporteTrabajadores_A_B(panel1, "A"); 
             
             Double[] valores = { totales[0], totales[1] };
 

@@ -87,6 +87,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             Boolean Operacion = CRUD.DeleteAutoEvaluacion(hdfIDDel.Value, ObjUsuario);
 
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.Validacion(this, Operacion, "Delete");
 
             LlenarGridView();

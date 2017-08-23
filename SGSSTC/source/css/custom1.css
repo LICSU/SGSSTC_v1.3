@@ -546,3 +546,6 @@ th{
 .centrado{
   margin:0 auto;
 }
+.hideShowPassword-wrapper {
+    width:100% !important;
+}

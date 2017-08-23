@@ -234,3 +234,7 @@ html, body {
 .container-fluid > .navbar-header > a {
     color: #FFFFFF;
 }
+
+.button.hideShowPassword-toggle.hideShowPassword-toggle-show {
+    top: 12% !important;
+}

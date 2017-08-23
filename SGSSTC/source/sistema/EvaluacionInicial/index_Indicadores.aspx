@@ -1377,8 +1377,8 @@
                     </div>
                 </div>
             
-                <div class="row" align="center">
-                    <div class="col-md-4 col-md-offset-2">
+                <div class="row text-center">
+                    <div class="col-md-12">
                         <asp:ImageButton AlternateText="-" ID="btnPrint" runat="server" ImageUrl="~\ico\print.png" 
                             OnClick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
                         <h4>Generar Documento</h4>

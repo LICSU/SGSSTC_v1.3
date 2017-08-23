@@ -122,14 +122,16 @@
             <div class="row" align="center">
                 <div class="col-md-4 col-md-offset-2">
                     <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
-                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="MostrarModalCrear"/>
+                        <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 
+                            data-toggle="modal" data-target="#createModal" />
                         <h4>Crear Documento</h4>
                     </asp:PlaceHolder>
                 </div>
 
                 <div class="col-md-4">
                     <asp:PlaceHolder Visible="true" id="PlaceHolder1" runat="server">
-                        <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\upload.png" OnClick="MostrarModalAgregar"/>
+                        <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\upload.png" 
+                            data-toggle="modal" data-target="#addModal" />
                         <h4>Subir Documento</h4>
                     </asp:PlaceHolder>
                 </div>
@@ -164,7 +166,7 @@
                             </div><br />
                                                         
                             <asp:PlaceHolder runat="server" id="phEmpresaAdd">
-                                <div class="row">
+                                <div class="row form-group">
                                     <label class="col-md-4 control-label">Empresa: </label> 
                                     <div class="col-md-6">
                                         <asp:DropDownList id="ddlEmpresaAdd"  data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa"  runat="server" ClientIDMode="Static" 
@@ -180,7 +182,7 @@
                             </asp:PlaceHolder>
                             
                             <asp:PlaceHolder runat="server" id="phSucursalAdd">
-                                <div class="row">
+                                <div class="row form-group">
                                     <label class="col-md-4 control-label">Sucursal: </label> 
                                     <div class="col-md-6">
                                         <asp:DropDownList id="ddlSucursalAdd"  data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" runat="server" ClientIDMode="Static" 
@@ -264,7 +266,7 @@
                         
                         <div class="modal-body form-group">
 
-                            <div class="row">
+                            <div class="row form-group">
                                 <div class="col-md-8 col-md-offset-2">
                                     <asp:Button id="btnCrearRepTrab1" runat="server" 
                                         Text="Reporte de Trabajadores (Area Administrativa)" 
@@ -274,7 +276,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row form-group">
                                 <div class="col-md-8 col-md-offset-2">
                                     <asp:Button id="btnCrearRepTrab2" runat="server" 
                                         Text="Reporte de Trabajadores (Area Operativa)" 
@@ -284,7 +286,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row form-group">
                                 <div class="col-md-8 col-md-offset-2">
                                     <asp:Button id="btnCrearRepTrab3" runat="server" 
                                         Text="Reporte de Condiciones de Salud" class="btn btn-block btn-primary" 
