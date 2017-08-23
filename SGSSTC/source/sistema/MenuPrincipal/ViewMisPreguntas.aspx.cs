@@ -11,6 +11,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
     public partial class ViewMisPreguntas : System.Web.UI.Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
+        Utilidades objUtilidades = new Utilidades();
         Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -59,11 +60,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
         {
             Pregunta tabla = new Pregunta();
 
-            ObjUsuario.Error = CRUD.Delete_Fila(
-                tabla,
-                Convert.ToInt32(hdfObligacionIDDel.Value),
-                ObjUsuario.Id_usuario,
-                HttpContext.Current.Request.Url.AbsoluteUri);
+            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfPreguntaIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             Modal.Validacion(this, ObjUsuario.Error, "Delete");
             LlenarGridView();
@@ -97,7 +94,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
             }
-            else if (e.CommandName.Equals("Ver"))
+            else if (e.CommandName.Equals("VerPre"))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -116,12 +113,43 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                 Modal.registrarModal("viewModal", "viewModalScript", this);
             }
+            else if (e.CommandName.Equals("VerRes"))
+            {
+                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
+                GridViewRow gvrow = GridView1.Rows[RowIndex];
+
+                hdfRespuestas.Value = (gvrow.FindControl("id_pregunta") as Label).Text;
+                int idPregunta = Convert.ToInt32(hdfRespuestas.Value);
+
+                List<Respuesta> consulta = new List<Respuesta>();
+
+                GrupoLiEntities contexto = new GrupoLiEntities();
+                consulta = contexto.Respuesta.Where(x => x.id_pregunta == idPregunta).ToList();
+
+                foreach (var item in consulta)
+                {
+                    string _Respuesta = item.usuario;
+                    _Respuesta = _Respuesta.Length > 50 ? item.usuario.Substring(0, 47) + "..." : item.usuario;
+
+                    ControlesDinamicos.CrearLiteral("<tr><td class='text-left'>", pVerRespuestas);
+
+                    string idRespuesta = objUtilidades.cifrarCadena(Convert.ToString(item.id_respuesta));
+
+                    ControlesDinamicos.CrearHyperLink("lk_VerRespuesta_" + item.id_respuesta, pVerRespuestas, "VerRespuesta.aspx?rs=" + idRespuesta, _Respuesta);
+
+                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td>", pVerRespuestas);
+
+                    ControlesDinamicos.CrearLiteral("<td class='text-center'>" + item.calificacion + "</td></tr>", pVerRespuestas);
+                }
+
+                Modal.registrarModal("viewRespuestasModal", "viewRespuestasModalScript", this);
+            }
             else if (e.CommandName.Equals("Eliminar"))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                hdfObligacionIDDel.Value = (gvrow.FindControl("id_pregunta") as Label).Text;
+                hdfPreguntaIDDel.Value = (gvrow.FindControl("id_pregunta") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
         }

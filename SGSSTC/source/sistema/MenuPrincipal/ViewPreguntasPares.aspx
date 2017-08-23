@@ -60,7 +60,7 @@
 									<ItemTemplate><asp:Label id="fecha" runat="server" Text='<%# Eval("fecha","{0:dd/MM/yyyy}") %>'/></ItemTemplate>
 								</asp:TemplateField>
 
-								<asp:ButtonField HeaderText="Ver" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png">
+								<asp:ButtonField HeaderText="Ver Pregunta" CommandName="VerPre" ButtonType="Image" ImageUrl="~\ico\view.png">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>
 

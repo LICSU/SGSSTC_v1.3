@@ -61,7 +61,11 @@
 									<ItemTemplate><asp:Label id="fecha" runat="server" Text='<%# Eval("fecha","{0:dd/MM/yyyy}") %>'/></ItemTemplate>
 								</asp:TemplateField>
 
-								<asp:ButtonField HeaderText="Ver" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png">
+								<asp:ButtonField HeaderText="Ver Pregunta" CommandName="VerPre" ButtonType="Image" ImageUrl="~\ico\view.png">
+									<ControlStyle></ControlStyle>
+								</asp:ButtonField>
+								
+								<asp:ButtonField HeaderText="Ver Respuestas" CommandName="VerRes" ButtonType="Image" ImageUrl="~\ico\view.png">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>
 
@@ -145,7 +149,6 @@
 			</div>
 		</div>
 	</div>
-
 	
 	<!-- Edit Modal -->
 	<div id="editModal" class="modal fade">
@@ -236,12 +239,11 @@
 				</div>
 				<asp:updatepanel id="upDel" runat="server">
 					<ContentTemplate>
-						
+						<asp:HiddenField id="hdfPreguntaIDDel" runat="server"/>
 						<div class="modal-body form-group">
 							<div class="row">
 								<h4 class="text-center">¿Seguro desea eliminar este registro?</h4>
 							</div>
-							<asp:HiddenField id="hdfObligacionIDDel" runat="server"/>
 						</div>
 						
 						<div class="modal-footer">
@@ -261,6 +263,61 @@
 					<Triggers>
 						<asp:AsyncPostBackTrigger Controlid="btnDelete" EventName="Click"/>
 					</Triggers>
+				</asp:updatepanel>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal Ver Las Respuestas de una pregunta  -->
+	<div id="viewRespuestasModal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3>Ver Respuestas</h3>
+				</div>
+
+				<asp:updatepanel id="UpdatePanel4" runat="server">
+					<ContentTemplate>
+						
+						<div class="modal-body form-group text-left">
+							
+							<asp:HiddenField id="hdfRespuestas" runat="server"/>
+
+							<div class="row">
+								<div class="col-md-12">
+									<h4>
+										<asp:Label ID="lbTitulo_VerRespuestas" runat="server" ClientIDMode="Static"></asp:Label>
+									</h4>
+								</div>
+								
+								<hr />
+								
+								<div class="col-md-12">
+									<div class="box">
+										<div class="box-header label-primary">
+											<h3 class="box-title">Respuestas</h3>
+										</div>
+										
+										<div class="box-body table-responsive no-padding">
+											<table class="table table-hover">
+												<tbody>
+													<tr>
+														<th class="col-md-9">Respuesta</th>
+														<th class="col-md-2">Fecha</th>
+														<th class="col-md-1">Calificación</th>
+													</tr>
+													<asp:Panel runat="server" id="pVerRespuestas"></asp:Panel>
+												</tbody>
+											</table>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</ContentTemplate>
+					<Triggers></Triggers>
 				</asp:updatepanel>
 			</div>
 		</div>

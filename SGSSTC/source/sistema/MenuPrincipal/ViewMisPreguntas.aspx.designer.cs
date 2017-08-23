@@ -157,13 +157,13 @@ namespace SGSSTC.source.sistema.MenuPrincipal {
         protected global::System.Web.UI.UpdatePanel upDel;
         
         /// <summary>
-        /// Control hdfObligacionIDDel.
+        /// Control hdfPreguntaIDDel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfObligacionIDDel;
+        protected global::System.Web.UI.WebControls.HiddenField hdfPreguntaIDDel;
         
         /// <summary>
         /// Control btnDelete.
@@ -173,5 +173,41 @@ namespace SGSSTC.source.sistema.MenuPrincipal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDelete;
+        
+        /// <summary>
+        /// Control UpdatePanel4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
+        
+        /// <summary>
+        /// Control hdfRespuestas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfRespuestas;
+        
+        /// <summary>
+        /// Control lbTitulo_VerRespuestas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTitulo_VerRespuestas;
+        
+        /// <summary>
+        /// Control pVerRespuestas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pVerRespuestas;
     }
 }
