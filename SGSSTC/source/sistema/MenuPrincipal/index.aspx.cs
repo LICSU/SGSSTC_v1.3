@@ -409,7 +409,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
         // Muestra el modal para ver las respuestas de una pregunta
         protected void VerRespuestasModal(object sender, EventArgs e)
         {
-            Button boton = sender as Button;
+            LinkButton boton = sender as LinkButton;
 
             int idPregunta = 0;
 
@@ -426,10 +426,17 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             List<Respuesta> consulta = new List<Respuesta>();
 
-            consulta = contexto.Respuesta.Where(x => x.id_pregunta == idPregunta).ToList();
+            consulta = contexto.Respuesta.Where(x => x.id_pregunta == idPregunta).OrderByDescending(x => x.calificacion).ToList();
+
+            string Calificacion = string.Empty;
 
             foreach (var item in consulta)
             {
+                Calificacion = item.calificacion == 0 ? "Sin Calificar" :
+                                       item.calificacion == 1 ? "Mala" :
+                                       item.calificacion == 2 ? "Buena" :
+                                       item.calificacion == 3 ? "Regular" : "Excelente";
+
                 string _Respuesta = item.usuario;
                 _Respuesta = _Respuesta.Length > 50 ? item.usuario.Substring(0, 47) + "..." : item.usuario;
 
@@ -441,9 +448,10 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                 ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td>", pVerRespuestas);
 
-                ControlesDinamicos.CrearLiteral("<td class='text-center'>" + item.calificacion + "</td></tr>", pVerRespuestas);
+                ControlesDinamicos.CrearLiteral("<td class='text-center'>" + Calificacion + "</td></tr>", pVerRespuestas);
             }
 
+            Modal.registrarModal("viewRespuestasModal", "viewRespuestasModalScript", this);
         }
 
         //Muestra el modal para ver una respuesta en especifica
@@ -573,7 +581,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                     ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td><td>", pSusPreguntas);
 
-                    ControlesDinamicos.CrearButtonModal("lk_SP_Respuesta_" + item.id_pregunta, pSusPreguntas, VerRespuestasModal, "" + item.TotalRespuestas, "viewRespuestasModal");
+                    ControlesDinamicos.CrearLinkButton("lk_SP_Respuesta_" + item.id_pregunta, pSusPreguntas, VerRespuestasModal, "" + item.TotalRespuestas);
 
                     ControlesDinamicos.CrearLiteral("</td><td>", pSusPreguntas);
 

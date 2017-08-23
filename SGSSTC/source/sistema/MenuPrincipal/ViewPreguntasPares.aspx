@@ -64,7 +64,7 @@
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>
 
-								<asp:ButtonField HeaderText="Responder" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+								<asp:ButtonField HeaderText="Responder" CommandName="Responder" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>
 
@@ -79,5 +79,115 @@
 		</ContentTemplate>
 		<Triggers></Triggers>
 	</asp:updatepanel>
+	
+	<!-- Modal Ver una pregunta-->
+	<div id="viewModal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3>Ver Pregunta</h3>
+				</div>
+
+				<asp:updatepanel id="UpdatePanel1" runat="server">
+					<ContentTemplate>
+						<asp:HiddenField id="hdfPreguntaID" runat="server"/>
+						
+						<div class="modal-body form-group text-left">
+							
+								<div class="row">
+									<div class="col-md-12">
+										<h4>
+											<asp:Label ID="lbTitulo" runat="server" ClientIDMode="Static"></asp:Label>
+										</h4>
+									</div>
+									
+									<hr />
+									<div class="col-md-12">
+										<asp:Label ID="lbPregunta" runat="server" ClientIDMode="Static"></asp:Label>
+									</div>
+									<hr />
+									<div class="col-md-12">
+										<asp:Label ID="txtViewFecha" runat="server" ClientIDMode="Static"></asp:Label>
+									</div>
+								</div>
+
+							</div>
+
+					</ContentTemplate>
+					<Triggers>
+					</Triggers>
+				</asp:updatepanel>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal Añadir una respuesta a una pregunta  -->
+	<div id="RespuestaModal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3>Responder Pregunta</h3>
+				</div>
+
+				<asp:updatepanel id="UpdatePanel3" runat="server">
+					<ContentTemplate>
+						<asp:HiddenField id="hdfResponderPregunta" runat="server"/>
+
+						<div class="modal-body form-group text-left">
+							
+								<div class="row">
+
+									<div class="col-md-12">
+										<h4>
+											<asp:Label ID="lbTituloPregunta_Responder" runat="server" ClientIDMode="Static"></asp:Label>
+										</h4>
+										<asp:Label ID="lbPregunta_Responder" runat="server" ClientIDMode="Static"></asp:Label>
+									</div>
+
+									<hr />
+								
+									<div class="col-md-12 text-left">
+										<h2><strong>Respuesta:</strong></h2>
+
+										<CKEditor:CKEditorControl id="CKRespuesta" BasePath="/ckeditor/" runat="server"></CKEditor:CKEditorControl>
+
+										<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
+											setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+											Font-Bold="true" ControlToValidate="CKRespuesta" runat="server" 
+											ValidationGroup="ValidationResponder"/>
+									</div>
+								</div>
+
+							</div>
+
+						<div class="modal-footer">
+							<div class="row">
+
+								<div class="col-md-4 col-md-offset-2">
+									<asp:Button id="btnResponder" runat="server" Text="Responder" class="btn btn-block btn-info" 
+										OnClick="ResponderPregunta" ValidationGroup="ValidationResponder"/>
+								</div>
+
+								<div class="col-md-4">
+									<button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+							</div>
+						</div>
+
+					</ContentTemplate>
+					<Triggers>
+							<asp:AsyncPostBackTrigger Controlid="btnResponder" EventName="Click"/>
+					</Triggers>
+				</asp:updatepanel>
+
+					</ContentTemplate>
+					<Triggers>
+					</Triggers>
+				</asp:updatepanel>
+			</div>
+		</div>
+	</div>
 </asp:Content>

@@ -1024,7 +1024,8 @@ namespace Capa_Datos
         #endregion
 
         #region Usuario
-        public static List<usuario> Usuario(int _id_usuario = 0, int _idSucursal = 0, string email = "", string _login = "", string _clave = "")
+        public static List<usuario> Usuario(int _id_usuario = 0, int _idSucursal = 0, 
+            string email = "", string _login = "", string _clave = "")
         {
             Utilidades objUtilidades = new Utilidades();
             GrupoLiEntities contexto = new GrupoLiEntities();

@@ -14,6 +14,8 @@ namespace SGSSTC.source.sistema.MenuPrincipal
         Utilidades objUtilidades = new Utilidades();
         Tuple<bool, bool> BoolEmpSuc;
 
+        #region acciones
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
@@ -66,6 +68,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             LlenarGridView();
         }
 
+        #endregion
 
         #region acciones grid
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -124,10 +127,17 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 List<Respuesta> consulta = new List<Respuesta>();
 
                 GrupoLiEntities contexto = new GrupoLiEntities();
-                consulta = contexto.Respuesta.Where(x => x.id_pregunta == idPregunta).ToList();
+                consulta = contexto.Respuesta.Where(x => x.id_pregunta == idPregunta).OrderByDescending(x => x.calificacion).ToList();
+
+                string Calificacion = string.Empty;
 
                 foreach (var item in consulta)
                 {
+                    Calificacion = item.calificacion == 0 ? "Sin Calificar" :
+                                    item.calificacion == 1 ? "Mala" :
+                                    item.calificacion == 2 ? "Buena" :
+                                    item.calificacion == 3 ? "Regular" : "Excelente";
+
                     string _Respuesta = item.usuario;
                     _Respuesta = _Respuesta.Length > 50 ? item.usuario.Substring(0, 47) + "..." : item.usuario;
 
@@ -139,7 +149,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                     ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td>", pVerRespuestas);
 
-                    ControlesDinamicos.CrearLiteral("<td class='text-center'>" + item.calificacion + "</td></tr>", pVerRespuestas);
+                    ControlesDinamicos.CrearLiteral("<td class='text-center'>" + Calificacion + "</td></tr>", pVerRespuestas);
                 }
 
                 Modal.registrarModal("viewRespuestasModal", "viewRespuestasModalScript", this);
@@ -157,6 +167,8 @@ namespace SGSSTC.source.sistema.MenuPrincipal
         {
         }
         #endregion
+
+        #region filtros
 
         protected void txtFechaInicio_TextChanged(object sender, EventArgs e)
         {
@@ -181,6 +193,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 ViewState["FechaFin"] = "";
             }
             LlenarGridView();
-        }
+        } 
+        #endregion
     }
 }

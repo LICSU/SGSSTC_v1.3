@@ -2357,6 +2357,7 @@ namespace Capa_Datos
                 join EC in contexto.empresa_itemdivision
                 on PR.usuario.trabajador.puesto_trabajo.area.sucursal.id_empresa equals EC.id_empresa
                 where EC.id_clase_ciiu == act1 || EC.id_clase_ciiu == act2 || EC.id_clase_ciiu == act3
+                
                 select new
                 {
                     PR.id_pregunta,
@@ -2366,12 +2367,13 @@ namespace Capa_Datos
                     PR.fecha
                 }).ToList();
 
-
-
             if (_fecha_ini != "") { query = query.Where(x => x.fecha >= Convert.ToDateTime(_fecha_ini)).ToList(); }
             if (_fecha_fin != "") { query = query.Where(x => x.fecha <= Convert.ToDateTime(_fecha_fin)).ToList(); }
 
-            GridView1.DataSource = query;
+            var Distinto = query.Distinct().ToList();
+
+
+            GridView1.DataSource = Distinto;
             GridView1.DataBind();
         }
 
