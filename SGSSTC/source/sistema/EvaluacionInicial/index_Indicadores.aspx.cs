@@ -33,18 +33,32 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         public void cargarDatos()
         {
             List<trabajador> ListaTrabajador = new List<trabajador>();
+            if (!BoolEmpSuc.Item2)
+            {
+                ListaTrabajador = Getter.Trabajador(0, 0, ObjUsuario.Id_sucursal);
 
-            ListaTrabajador = Getter.Trabajador(0, ObjUsuario.Id_empresa);
+                Label1.Text = string.Empty + ListaTrabajador.Count;
+                Label2.Text = string.Empty + ListaTrabajador.Count;
+                Label3.Text = string.Empty + ListaTrabajador.Count;
+                Label5.Text = string.Empty + ListaTrabajador.Count;
 
-            Label1.Text = string.Empty + ListaTrabajador.Count;
-            Label2.Text = string.Empty + ListaTrabajador.Count;
-            Label3.Text = string.Empty + ListaTrabajador.Count;
-            Label5.Text = string.Empty + ListaTrabajador.Count;
+                List<area> ListaArea = new List<area>();
+                ListaArea = Getter.Area(ObjUsuario.Id_empresa, 0, "");
+                Label4.Text = string.Empty + ListaArea.Count;
+            }
+            else
+            {
+                ListaTrabajador = Getter.Trabajador(0, ObjUsuario.Id_empresa);
 
-            List<area> ListaArea = new List<area>();
-            ListaArea = Getter.Area(ObjUsuario.Id_empresa, 0, "");
-            Label4.Text = string.Empty + ListaArea.Count;
+                Label1.Text = string.Empty + ListaTrabajador.Count;
+                Label2.Text = string.Empty + ListaTrabajador.Count;
+                Label3.Text = string.Empty + ListaTrabajador.Count;
+                Label5.Text = string.Empty + ListaTrabajador.Count;
 
+                List<area> ListaArea = new List<area>();
+                ListaArea = Getter.Area(ObjUsuario.Id_empresa, 0, "");
+                Label4.Text = string.Empty + ListaArea.Count;
+            }
         }
         private void CargarListas()
         {

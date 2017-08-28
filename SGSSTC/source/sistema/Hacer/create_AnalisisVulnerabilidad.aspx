@@ -53,7 +53,7 @@
                     <!-- Primer Panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading bg-aqua color-palette">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">AREA DE EVALUACION</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">ÁREA DE EVALUACIÓN</a></h4>
                         </div>
 
                         <div id="collapse1" class="panel-collapse collapse">
@@ -66,7 +66,7 @@
                     <!-- Segundo Panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading bg-aqua color-palette">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">OBJETIVO DE LA EVALUACION</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">OBJETIVO DE LA EVALUACIÓN</a></h4>
                         </div>
 
                         <div id="collapse2" class="panel-collapse collapse">
@@ -79,7 +79,7 @@
                     <!-- Tercer Panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading bg-aqua color-palette">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">ALCANCE DE LA EVALUACION</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">ALCANCE DE LA EVALUACIÓN</a></h4>
                         </div>
 
                         <div id="collapse3" class="panel-collapse collapse">
@@ -92,7 +92,7 @@
                     <!-- Cuarto Panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading bg-aqua color-palette">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESULTADOS DE LA EVALUACION INTERNA</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESULTADOS DE LA EVALUACIÓN INTERNA</a></h4>
                         </div>
 
                         <div id="collapse4" class="panel-collapse collapse">
@@ -954,7 +954,7 @@
                                                     <!-- 23 ESTRUCTURA Y TIPO DE CONSTRUCCION -->
                                                     <tr class="bg-aqua color-palette">
                                                         <td class="col-md-1 text-center">23</td>
-                                                        <td class="col-md-7  text-left"colspan="3">ESTRUCTURA Y TIPO DE CONSTRUCCION</td>
+                                                        <td class="col-md-7  text-left"colspan="3">ESTRUCTURA Y TIPO DE CONSTRUCCIÓN</td>
                                                         <td class="col-md-3">OPCIONES</td>
                                                         <td class="col-md-1 text-center">PUNTAJE</td>
                                                     </tr>

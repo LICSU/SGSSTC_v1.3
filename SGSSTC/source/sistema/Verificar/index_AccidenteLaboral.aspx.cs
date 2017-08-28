@@ -23,7 +23,7 @@ namespace SGSSTC.source.sistema.Verificar
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
-            phAgregar.Visible = BoolEmpSuc.Item2;
+            //phAgregar.Visible = BoolEmpSuc.Item2;
             phEmpresa.Visible = BoolEmpSuc.Item1;
             phSucursal.Visible = BoolEmpSuc.Item2;
 
