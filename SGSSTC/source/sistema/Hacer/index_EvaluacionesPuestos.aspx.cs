@@ -93,7 +93,7 @@ namespace SGSSTC.source.sistema.Hacer
             //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 6, 1, "azul", "Responsable del SGSST"));
             //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 6, 1, "azul", "Fecha de Evaluación"));
             //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 6, 1, "", itemEvaRiesgo.nombre_responsable));
-            //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 6, 1, "", Convert.ToDateTime(itemEvaRiesgo.fecha_evaluacion).ToString("dd/MM/yyyy")));
+            //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 6, 1, "", Convert.ToDateTime(itemEvaRiesgo.fecha_evaluacion).ToString("yyyy-MM-dd")));
 
             //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 4, 1, "azul", "Nivel de Deficiencia"));
             //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 8, 1, "azul", "Interpretación del Nivel de Deficiencia"));
@@ -249,7 +249,7 @@ namespace SGSSTC.source.sistema.Hacer
 
 
             //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 6, 1, "azul", "Fecha de Ejecucion"));
-            //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 6, 1, "", Convert.ToDateTime(itemEvaRiesgo.fecha_ejecucion).ToString("dd/MM/yyyy")));
+            //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 6, 1, "", Convert.ToDateTime(itemEvaRiesgo.fecha_ejecucion).ToString("yyyy-MM-dd")));
 
 
             //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "EQUIPOS DE PROTECCIÓN PERSONAL DEL PUESTO DE TRABAJO"));

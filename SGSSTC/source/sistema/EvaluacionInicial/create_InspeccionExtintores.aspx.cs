@@ -58,9 +58,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             lblAgenteExt.Text = extintor.ElementAt(0).tipo_extintor;
             lblNroExtintor.Text = extintor.ElementAt(0).serial_extintor;
             DateTime fecha_ultima = extintor.ElementAt(0).fecha_ultima_recarga.Value;
-            lblFechaUltimaRecarga.Text = fecha_ultima.Date.ToString("dd/MM/yyyy");
+            lblFechaUltimaRecarga.Text = fecha_ultima.Date.ToString("yyyy-MM-dd");
             DateTime fecha_proxima = extintor.ElementAt(0).fecha_proxima_recarga.Value;
-            lblFechaProximaRecarga.Text = fecha_proxima.Date.ToString("dd/MM/yyyy");
+            lblFechaProximaRecarga.Text = fecha_proxima.Date.ToString("yyyy-MM-dd");
         }
 
         protected void GenerarDocumento(object sender, EventArgs e)

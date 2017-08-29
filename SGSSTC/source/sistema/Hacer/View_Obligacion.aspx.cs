@@ -35,7 +35,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             foreach (var item in ListaObligacion)
             {
-                txtFechaEntrega.Text = Convert.ToDateTime(item.fecha_entrega).ToString("dd/MM/yyyy");
+                txtFechaEntrega.Text = Convert.ToDateTime(item.fecha_entrega).ToString("yyyy-MM-dd");
                 txtResponsable.Text = item.usuario.login;
                 txtCategoria.Text = item.categoria.nombre;
                 txtPrioridad.Text = item.prioridad;

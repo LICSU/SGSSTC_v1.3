@@ -105,7 +105,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void btnGenerarActa_OnClick(object sender, EventArgs e)
         {
-            lblFecha.Text = "" + DateTime.Today.Date.ToString("dd/MM/yyyy");
+            lblFecha.Text = "" + DateTime.Today.Date.ToString("yyyy-MM-dd");
             lblEmpresa.Text = ddlSucursal.SelectedItem.Text;
             lblEmpresaSel.Text = ddlSucursal.SelectedItem.Text;
             lblEmpleado.Text = txtTrabajador.Text;

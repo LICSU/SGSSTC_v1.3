@@ -67,7 +67,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                             ControlesDinamicos.CrearLiteral("<li>" +
                                "<img src='" + ruta + "' width='128' height='128'> " +
                                "<a class='users-list-name'>" + item.primer_nombre + " " + item.primer_apellido + "</a>" +
-                               "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("dd/MM/yyyy") + "</span>" +
+                               "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("yyyy-MM-dd") + "</span>" +
                                "</li>"
                                , pTrabajadores);
                         }
@@ -205,7 +205,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                         ControlesDinamicos.CrearLiteral("<li>" +
                            "<img src='" + ruta + "' width='128' height='128'> " +
                            "<a class='users-list-name' href='#'>" + item.primer_nombre + " " + item.primer_apellido + "</a>" +
-                           "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("dd/MM/yyyy") + "</span>" +
+                           "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("yyyy-MM-dd") + "</span>" +
                            "</li>"
                            , pTrabajadores);
                     }
@@ -446,7 +446,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                 ControlesDinamicos.CrearHyperLink("lk_VerRespuesta_" + item.id_respuesta, pVerRespuestas, "VerRespuesta.aspx?rs=" + idRespuesta, _Respuesta);
 
-                ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td>", pVerRespuestas);
+                ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd") + "</td>", pVerRespuestas);
 
                 ControlesDinamicos.CrearLiteral("<td class='text-center'>" + Calificacion + "</td></tr>", pVerRespuestas);
             }
@@ -467,7 +467,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             foreach (var item in consulta)
             {
                 lbUsuario_Respuesta.Text = item.usuario;
-                lbFecha_respuesta.Text = Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy");
+                lbFecha_respuesta.Text = Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd");
                 lbVerCuerpoRespuesta.Text = item.cuerpo_respuesta;
                 lbCalificacion_Respuesta.Text = Convert.ToString(item.calificacion);
             }
@@ -579,7 +579,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                     ControlesDinamicos.CrearLinkButton("lk_SP_Pregunta_" + item.id_pregunta, pSusPreguntas, VerRegistroModal, titulo);
 
-                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td><td>", pSusPreguntas);
+                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd") + "</td><td>", pSusPreguntas);
 
                     ControlesDinamicos.CrearLinkButton("lk_SP_Respuesta_" + item.id_pregunta, pSusPreguntas, VerRespuestasModal, "" + item.TotalRespuestas);
 
@@ -618,7 +618,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                     ControlesDinamicos.CrearLinkButton("lk_MP_Pregunta_" + item.id_pregunta, panelMisPreguntas, VerRegistroModal, titulo);
 
-                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td><td>", panelMisPreguntas);
+                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd") + "</td><td>", panelMisPreguntas);
 
                     ControlesDinamicos.CrearLinkButton("lk_MP_Respuesta_" + item.id_pregunta, panelMisPreguntas, VerRespuestasModal, "" + item.Respuesta.Count());
 
