@@ -121,15 +121,6 @@ namespace SGSSTC.source.sistema.MenuPrincipal {
         protected global::System.Web.UI.WebControls.ImageButton btnAgregar;
         
         /// <summary>
-        /// Control pTrabajadores.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pTrabajadores;
-        
-        /// <summary>
         /// Control UpdatePanel2.
         /// </summary>
         /// <remarks>

@@ -48,35 +48,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 else if (porcentaje < 0) { evaini.Text = "0%"; }
                 else { evaini.Text = porcentaje + "%"; }
                 #endregion
-
-                #region ultimos trabajadores
-                ListTrabajador = Getter.Trabajador(0, ObjUsuario.Id_empresa);
-                ListTrabajador = ListTrabajador.OrderByDescending(x => x.fecha_ingreso).ToList();
-                int cantidad = 1;
-
-                ControlesDinamicos.CrearLiteral("<ul class='users-list clearfix'>", pTrabajadores);
-                foreach (var item in ListTrabajador)
-                {
-                    if (item.id_trabajador != 0)
-                    {
-                        string ruta = item.foto;
-                        ruta = ruta.Replace("~/source", "../..");
-
-                        if (cantidad < 9)
-                        {
-                            ControlesDinamicos.CrearLiteral("<li>" +
-                               "<img src='" + ruta + "' width='128' height='128'> " +
-                               "<a class='users-list-name'>" + item.primer_nombre + " " + item.primer_apellido + "</a>" +
-                               "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("yyyy-MM-dd") + "</span>" +
-                               "</li>"
-                               , pTrabajadores);
-                        }
-                        cantidad++;
-                    }
-                }
-                ControlesDinamicos.CrearLiteral("</ul>", pTrabajadores);
-                #endregion
-
+                
                 #region actualizar lista al año en curso
                 GrupoLiEntities contexto = new GrupoLiEntities();
 
@@ -188,32 +160,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                     evaini.Text = "0%";
                 }
                 #endregion
-
-                #region ultimos trabajadores
-                ListTrabajador = Getter.Trabajador(0, 0, ObjUsuario.Id_sucursal);
-                ListTrabajador = ListTrabajador.OrderByDescending(x => x.fecha_ingreso).ToList();
-                int cantidad = 1;
-
-                ControlesDinamicos.CrearLiteral("<ul class='users-list clearfix'>", pTrabajadores);
-                foreach (var item in ListTrabajador)
-                {
-                    string ruta = item.foto;
-                    ruta = ruta.Replace("~/source", "../..");
-
-                    if (cantidad < 9)
-                    {
-                        ControlesDinamicos.CrearLiteral("<li>" +
-                           "<img src='" + ruta + "' width='128' height='128'> " +
-                           "<a class='users-list-name' href='#'>" + item.primer_nombre + " " + item.primer_apellido + "</a>" +
-                           "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("yyyy-MM-dd") + "</span>" +
-                           "</li>"
-                           , pTrabajadores);
-                    }
-                    cantidad++;
-                }
-                ControlesDinamicos.CrearLiteral("</ul>", pTrabajadores);
-                #endregion
-
+                
                 #region actualizar lista al año en curso
                 GrupoLiEntities contexto = new GrupoLiEntities();
                 lista_actividad Edit = contexto.lista_actividad.SingleOrDefault(
@@ -305,8 +252,6 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 }
                 #endregion
             }
-
-
 
             string valor = Convert.ToString(Request.QueryString["date"]);
             if (valor != null)
