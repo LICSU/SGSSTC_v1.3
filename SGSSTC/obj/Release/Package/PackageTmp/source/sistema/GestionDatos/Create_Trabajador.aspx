@@ -132,7 +132,7 @@
 					<h4 class="text-left">Fecha de Nacimiento</h4>
 					
 					<asp:TextBox runat="server" id="txtFechadeNacimiento" CssClass="form-control" TextMode="Date" 
-						placeholder="dd/mm/yyyy" data-toggle="tooltip" data-placement="bottom" 
+						placeholder="yyyy-MM-dd" data-toggle="tooltip" data-placement="bottom" 
 						title="Ingrese la fecha de nacimiento del trabajador(a)"></asp:TextBox>
 					
 					<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" Display="Dynamic" 
@@ -387,7 +387,7 @@
 				<div class="col-md-4">
 					<h4 class="text-left">Fecha de Ingreso</h4>
 					
-					<asp:TextBox runat="server" id="txtFechaIngreso" CssClass="form-control" TextMode="Date" placeholder="dd/mm/yyyy"
+					<asp:TextBox runat="server" id="txtFechaIngreso" CssClass="form-control" TextMode="Date" placeholder="yyyy-MM-dd"
 						data-toggle="tooltip" data-placement="bottom" 
 						title="Ingrese la fecha de ingreso del trabajador(a) a la empresa"></asp:TextBox>
 					

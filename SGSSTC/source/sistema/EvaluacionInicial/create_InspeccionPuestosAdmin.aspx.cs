@@ -936,7 +936,15 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (ddlPuesto.SelectedValue != string.Empty)
             {
                 ViewState["puesto"] = ddlPuesto.SelectedValue;
-                IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
+                if (!BoolEmpSuc.Item2)
+                {
+                    IdSucursal = ObjUsuario.Id_sucursal;
+                }
+                else
+                {
+                    IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
+                }
+                
                 IdPuesto = Convert.ToInt32(ddlPuesto.SelectedValue);
                 phInformacion.Visible = true;
                 phTrabajdor.Visible = true;

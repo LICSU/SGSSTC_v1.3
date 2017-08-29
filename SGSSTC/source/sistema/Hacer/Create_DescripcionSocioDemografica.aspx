@@ -158,7 +158,7 @@
                 <div class="row">
 
                             <div class="col-md-4 text-left">
-                                5) ¿Con quién reparte la responsabilidad económica de su familia?
+                                5) ¿Con quién comparte la responsabilidad económica de su familia?
                                 <asp:DropDownList runat="server" id="rblResponsabilidad" CssClass="form-control">
                                     <asp:ListItem Text="Con Nadie" Value="Con Nadie"></asp:ListItem>
                                     <asp:ListItem Text="Con el Conyugue" Value="Con el Conyugue"></asp:ListItem>

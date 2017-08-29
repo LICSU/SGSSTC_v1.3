@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-6">
                 <label class="text-left col-md-4 ">Fecha</label>
-                <asp:TextBox runat="server" id="txtFecha" CssClass="col-md-8" PlaceHolder="dd/mm/yyyy"></asp:TextBox>
+                <asp:TextBox runat="server" id="txtFecha" CssClass="col-md-8" PlaceHolder="yyyy-MM-dd"></asp:TextBox>
                 <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
                         setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
                         Font-Bold="true" ControlToValidate="txtFecha" runat="server" 

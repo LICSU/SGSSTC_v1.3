@@ -59,13 +59,13 @@
 
                     <div class="col-md-3">
                         <label>Fecha Inicio</label>
-                        <asp:TextBox runat="server" id="txtFechaInicio" CssClass="form-control" TextMode="Date" placeholder="dd/mm/yyyy" 
+                        <asp:TextBox runat="server" id="txtFechaInicio" CssClass="form-control" TextMode="Date" placeholder="yyyy-MM-dd" 
                           AutoPostBack="true" OnTextChanged="txtFechaInicio_TextChanged"></asp:TextBox>
                     </div>
 
                     <div class="col-md-3">
                         <label>Fecha Fin</label>
-                        <asp:TextBox runat="server" id="txtFechaFin" CssClass="form-control" TextMode="Date" placeholder="dd/mm/yyyy" 
+                        <asp:TextBox runat="server" id="txtFechaFin" CssClass="form-control" TextMode="Date" placeholder="yyyy-MM-dd" 
                           AutoPostBack="true" OnTextChanged="txtFechaFin_TextChanged"></asp:TextBox>
                     </div>
 

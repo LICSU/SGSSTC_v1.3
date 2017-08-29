@@ -247,7 +247,7 @@ namespace SGSSTC.source.sistema.Hacer
         [WebMethod]
         public static List<string> SearchTrabajador(string prefixText, int count)
         {
-            GrupoLiEntities _contexto = new GrupoLiEntities();
+            /*GrupoLiEntities _contexto = new GrupoLiEntities();
 
             var Consulta = (
                 from c in _contexto.trabajador
@@ -264,6 +264,8 @@ namespace SGSSTC.source.sistema.Hacer
                 listTrabajadores.Add(item.nombre);
             }
 
+            return listTrabajadores;*/
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador);
             return listTrabajadores;
         }
 

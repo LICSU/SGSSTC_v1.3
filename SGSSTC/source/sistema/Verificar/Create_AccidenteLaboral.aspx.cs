@@ -48,7 +48,8 @@ namespace SGSSTC.source.sistema.Verificar
 
 			if (!BoolEmpSuc.Item2)
 			{
-				IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
+				IdSucursal = Convert.ToInt32(ObjUsuario.Id_sucursal);
+                Listas.Trabajadores_Sucursal(ddlTrabajador, IdSucursal);
 				Listas.Area_Sucursal(ddlArea, ObjUsuario.Id_sucursal);
 				Listas.PuestoTrabajo(ddlProcesoTrabajo, "Sucursal", ObjUsuario.Id_sucursal);
 			}

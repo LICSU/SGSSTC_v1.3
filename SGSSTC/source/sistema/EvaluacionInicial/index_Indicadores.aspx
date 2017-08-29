@@ -442,7 +442,7 @@
                                                    <tr>
                                                        <th><asp:label runat="server" text="Plan de emergencias" Font-Size="Smaller"></asp:label></th>
                                                        <th><asp:label runat="server" text="Existencia de un plan para prevención y atención de emergencias en la organización ( y en sus sedes si aplica)" Font-Size="Smaller"></asp:label></th>
-                                                       <th><asp:label runat="server" text=" (N° de sedes con plan de emergencia/Nro. total de Áreas) x 100" Font-Size="Smaller"></asp:label></th>
+                                                       <th><asp:label runat="server" text=" (N° de sedes con plan de emergencia/Nro. total de Sedes) x 100" Font-Size="Smaller"></asp:label></th>
                                                        <th><asp:label runat="server" text="SG-SST" Font-Size="Smaller"></asp:label></th>
                                                        <th><asp:label runat="server" text="Coordinador de SST Comité de emergencias" Font-Size="Smaller"></asp:label></th>
                                                        <th><asp:label runat="server" text="Anual " Font-Size="Smaller"></asp:label></th>
