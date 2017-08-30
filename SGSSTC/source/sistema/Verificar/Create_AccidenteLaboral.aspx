@@ -13,18 +13,18 @@
 	<asp:updatepanel id="MyUpdatePanel" runat="server">
 		<ContentTemplate>
 
-		    <ol class="breadcrumb">
+			<ol class="breadcrumb">
 					<li><a href="#">Fase: Verificar</a></li>
 					<li><a href="../Verificar/index_AccidenteLaboral.aspx">Accidentes Laborales</a></li>
 					<li><a href="#">Crear Accidente Laboral</a></li>
 				</ol>
-		    
-		    <div class="page-header">
+			
+			<div class="page-header">
 					<h1 class="text-center">Nuevo Accidente Laboral</h1>
 
 				</div>
-		    		
-		    <div class="row">
+					
+			<div class="row">
 				
 					<div class="col-md-10 col-md-offset-1">                   
 					
@@ -89,19 +89,25 @@
 							<h3>Información de la Persona Afectada</h3>
 
 							<div class="col-md-4">
-								<h4 class="text-left">Trabajador</h4>
-							
-								<asp:dropdownlist   runat="server" id="ddlTrabajador" CssClass="form-control">
-									<asp:ListItem Text="Seleccione un Valor" Value=""></asp:ListItem>
-								</asp:DropDownList>
+								
+							    <h4>Trabajador</h4>
+								<asp:TextBox id="txtTrabajador" runat="server" CssClass="form-control" Placeholder="Ingrese el Trabajador"></asp:TextBox>
+								<cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1" 
+									CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+									TargetControlid="txtTrabajador" id="AutoCompleteExtender1" runat="server" 
+									FirstRowSelected = "false" 
+									CompletionListCssClass="completionList"
+									CompletionListItemCssClass="listItem"
+									CompletionListHighlightedItemCssClass="itemHighlighted">
+								</cc1:AutoCompleteExtender>
 
 								<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
 									Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
-									ControlToValidate="ddlTrabajador" runat="server" ValidationGroup="ValidationAdd"/>
+									ControlToValidate="txtTrabajador" runat="server" ValidationGroup="ValidationAdd"/>
 							</div>
 
 							<div class="col-md-4">
-								<h4 class="text-left">Area</h4>
+								<h4>Area</h4>
 
 								<asp:dropdownlist   runat="server" id="ddlArea" data-toggle="tooltip" data-placement="bottom" title="Seleccione un Área" CssClass="form-control"></asp:DropDownList>
 							
@@ -112,7 +118,7 @@
 							</div>
 
 							<div class="col-md-4">
-								<h4 class="text-left">Puesto de Trabajo</h4>
+								<h4>Puesto de Trabajo</h4>
 					
 								<asp:dropdownlist   runat="server" id="ddlProcesoTrabajo" CssClass="form-control">
 									<asp:ListItem Text="Seleccione un Valor" Value=""></asp:ListItem>
@@ -125,7 +131,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<h4 class="text-left">Sitio donde se presentó el caso.</h4>
+								<h4>Sitio donde se presentó el caso.</h4>
 								<asp:textbox id="txtSitioAccidente" MaxLength="5000" runat="server" TextMode="multiline" class="form-control" 
 									Rows="5">
 								</asp:textbox>
@@ -135,7 +141,7 @@
 									ControlToValidate="txtSitioAccidente" runat="server" ValidationGroup="ValidationAdd"/>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">Breve descripción de los hechos</h4>
+								<h4>Breve descripción de los hechos</h4>
 							
 								<asp:textbox id="txtDescTarea" MaxLength="5000" runat="server" TextMode="multiline" Rows="5" class="form-control"></asp:textbox>
 							

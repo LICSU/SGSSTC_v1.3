@@ -29,6 +29,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             if (!IsPostBack)
             {
+                ViewState["area"] = "0";
                 LlenarGridView();
                 CargarListas();
             }

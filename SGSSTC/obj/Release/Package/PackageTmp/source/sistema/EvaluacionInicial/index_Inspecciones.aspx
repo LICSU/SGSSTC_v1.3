@@ -271,15 +271,15 @@
                             </div><br/>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <asp:Button id="Button4" runat="server" Text="Puestos de Trabajo Operativo" class="btn btn-block btn-primary" OnClick="btnCrearInsPuestos_Click"></asp:Button>
+                                    <asp:Button id="Button5" runat="server" Text="Puestos de Trabajo Administrativo" class="btn btn-block btn-primary" OnClick="btnCrearInsPuestosAdmin_Click"></asp:Button>                                    
                                 </div>
                                 <div class="col-md-6">
-                                    <asp:Button id="Button5" runat="server" Text="Puestos de Trabajo Administrativo" class="btn btn-block btn-primary" OnClick="btnCrearInsPuestosAdmin_Click"></asp:Button>
+                                    <asp:Button id="Button6" runat="server" Text="Inspección Equipos de Protección" class="btn btn-block btn-primary" OnClick="btnCrearInsEquipoProt_Click"></asp:Button>
                                 </div>
                             </div><br/>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <asp:Button id="Button6" runat="server" Text="Inspección Equipos de Protección" class="btn btn-block btn-primary" OnClick="btnCrearInsEquipoProt_Click"></asp:Button>
+                                    <asp:Button id="Button4" runat="server" Text="Puestos de Trabajo Operativo" class="btn btn-block btn-primary" OnClick="btnCrearInsPuestos_Click"></asp:Button>                                    
                                 </div>
                                 <div class="col-md-6">
                                     <asp:Button id="Button9" runat="server" Text="Botiquin de Primeros Auxilios" class="btn btn-block btn-primary" OnClick="btnCrearInsPrimAux_Click"></asp:Button>

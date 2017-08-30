@@ -1,6 +1,13 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Create_DescripcionSocioDemografica.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.Create_DescripcionSocioDemografica" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content><%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %><%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %><%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %><%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
+<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
+
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:updatepanel id="MyUpdatePanel" runat="server" updatemode="Always">
@@ -11,11 +18,11 @@
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
                     <li><a href="../Hacer/index_DescripcionSocioDemografica.aspx">Descripción SocioDemográfica</a></li>
-                    <li><a href="#">Crear Descripción SocioDemografica</a></li>
+                    <li><a href="#">Crear Descripción SocioDemográfica</a></li>
                 </ol>
 
                 <div class="page-header">
-                    <h1 class="text-center">Nueva Descripción SocioDemografica</h1>
+                    <h1 class="text-center">Nueva Descripción SocioDemográfica</h1>
                 </div>
                 
                 <!-- empresa y sucursal-->
@@ -180,7 +187,7 @@
                             </div>
                             
                             <div class="col-md-4 text-left">
-                                7) ¿Socialmente en que condición se encuentra usted?
+                                7) ¿Socialmente en que condición se encuentra usted?<br />
                                 <asp:RadioButtonList runat="server" id="rblCondicion" CssClass="radio-inline" AutoPostBack="true" 
                                     OnSelectedIndexChanged="rblCondicion_SelectedIndexChanged">
                                     <asp:ListItem Text="Desplazado" Value="Desplazado"></asp:ListItem>

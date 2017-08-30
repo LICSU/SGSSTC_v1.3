@@ -247,24 +247,6 @@ namespace SGSSTC.source.sistema.Hacer
         [WebMethod]
         public static List<string> SearchTrabajador(string prefixText, int count)
         {
-            /*GrupoLiEntities _contexto = new GrupoLiEntities();
-
-            var Consulta = (
-                from c in _contexto.trabajador
-                where (
-                c.puesto_trabajo.area.sucursal.id_sucursal == IdSucursal &&
-                (c.primer_nombre.Contains(prefixText) || c.primer_apellido.Contains(prefixText)))
-                select new { c.id_trabajador, nombre = c.primer_nombre + " " + c.primer_apellido }).ToList();
-
-            List<string> listTrabajadores = new List<string>();
-
-            foreach (var item in Consulta)
-            {
-                IdTrabajador = Convert.ToInt32(item.id_trabajador);
-                listTrabajadores.Add(item.nombre);
-            }
-
-            return listTrabajadores;*/
             List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador);
             return listTrabajadores;
         }
