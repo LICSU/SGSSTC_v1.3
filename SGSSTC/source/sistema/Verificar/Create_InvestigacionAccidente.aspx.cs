@@ -39,7 +39,7 @@ namespace SGSSTC.source.sistema.Verificar
 				txtLugarEvento.Text = item.sitio;
 				txtTrabajador.Text = item.trabajador.primer_nombre + " " + item.trabajador.primer_apellido;
 				txtCedula.Text = item.trabajador.cedula;
-				txtFechaIngreso.Text = Convert.ToDateTime(item.trabajador.fecha_ingreso).ToString("dd/MM/yyyy");
+				txtFechaIngreso.Text = Convert.ToDateTime(item.trabajador.fecha_ingreso).ToString("yyyy-MM-dd");
 				txtDescAccidente.Text = item.descripcion;
 
 				txtTipoVinculacion.Text = item.trabajador.tipo_vinculacion;

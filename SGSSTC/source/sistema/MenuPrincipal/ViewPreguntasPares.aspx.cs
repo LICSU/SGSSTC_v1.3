@@ -106,7 +106,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 {
                     lbTitulo.Text = item.titulo;
                     lbPregunta.Text = item.cuerpo_pregunta;
-                    txtViewFecha.Text = Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy");
+                    txtViewFecha.Text = Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd");
                 }
 
                 Modal.registrarModal("viewModal", "viewModalScript", this);

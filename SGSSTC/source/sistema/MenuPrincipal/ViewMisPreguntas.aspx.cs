@@ -111,7 +111,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 {
                     txtViewTitulo.Text = item.titulo;
                     txtViewPregunta.Text = item.cuerpo_pregunta;
-                    txtViewFecha.Text = Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy");
+                    txtViewFecha.Text = Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd");
                 }
 
                 Modal.registrarModal("viewModal", "viewModalScript", this);
@@ -147,7 +147,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                     ControlesDinamicos.CrearHyperLink("lk_VerRespuesta_" + item.id_respuesta, pVerRespuestas, "VerRespuesta.aspx?rs=" + idRespuesta, _Respuesta);
 
-                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td>", pVerRespuestas);
+                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd") + "</td>", pVerRespuestas);
 
                     ControlesDinamicos.CrearLiteral("<td class='text-center'>" + Calificacion + "</td></tr>", pVerRespuestas);
                 }

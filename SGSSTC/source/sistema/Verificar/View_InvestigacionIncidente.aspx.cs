@@ -38,7 +38,7 @@ namespace SGSSTC.source.sistema.Verificar
 				txtLugarEvento.Text = item.sitio;
 				txtTrabajador.Text = item.trabajador.primer_nombre + " " + item.trabajador.primer_apellido;
 				txtCedula.Text = item.trabajador.cedula;
-				txtFechaIngreso.Text = Convert.ToDateTime(item.trabajador.fecha_ingreso).ToString("dd/MM/yyyy");
+				txtFechaIngreso.Text = Convert.ToDateTime(item.trabajador.fecha_ingreso).ToString("yyyy-MM-dd");
 				txtDescAccidente.Text = item.descripcion;
 
 				txtTipoVinculacion.Text = item.trabajador.tipo_vinculacion;
@@ -48,7 +48,7 @@ namespace SGSSTC.source.sistema.Verificar
 
 				foreach (var item2 in item.investigacion_ac_in)
 				{
-					txtFechaEvento.Text = Convert.ToDateTime(item2.fecha_evento).ToString("dd/MM/yyyy");
+					txtFechaEvento.Text = Convert.ToDateTime(item2.fecha_evento).ToString("yyyy-MM-dd");
 					txtHoraEvento.Text = Convert.ToDateTime(item2.hora_evento).ToString("HH:mm:ss");
 					ddlDiaSemana.Text = item2.dia_semana;
 					txtAntiguedad.Text = Convert.ToString(item2.antiguedad);
@@ -89,13 +89,13 @@ namespace SGSSTC.source.sistema.Verificar
 					ddlTipoAccidente.Text = item2.tipo_accidente;
 					txtAccion1.Text = item2.medida1;
 					txtResponsable1.Text = item2.responsable1;
-					txtfecha1.Text = Convert.ToDateTime(item2.fecha_medida1).ToString("dd/MM/yyyy");
+					txtfecha1.Text = Convert.ToDateTime(item2.fecha_medida1).ToString("yyyy-MM-dd");
 					txtAccion2.Text = item2.medida2;
 					txtResponsable2.Text = item2.responsable2;
-					txtFecha2.Text = Convert.ToDateTime(item2.fecha_medida2).ToString("dd/MM/yyyy");
+					txtFecha2.Text = Convert.ToDateTime(item2.fecha_medida2).ToString("yyyy-MM-dd");
 					txtAccion3.Text = item2.medida3;
 					txtResponsable3.Text = item2.responsable3;
-					txtFecha3.Text = Convert.ToDateTime(item2.fecha_medida3).ToString("dd/MM/yyyy");
+					txtFecha3.Text = Convert.ToDateTime(item2.fecha_medida3).ToString("yyyy-MM-dd");
 					txtNota.Text = item2.nota;
 					txtSupervisor.Text = item2.supervisor;
 					txtTiempoCargo.Text = item2.tiempo_cargo;

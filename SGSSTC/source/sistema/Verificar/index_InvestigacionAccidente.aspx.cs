@@ -111,7 +111,7 @@ namespace SGSSTC.source.sistema.Verificar
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 4, 1, "azul", "Hora:"));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 4, 1, "azul", "Dia de la Semana"));
 
-            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_evento).ToString("dd/MM/yyyy")));
+            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_evento).ToString("yyyy-MM-dd")));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.hora_evento).ToString("HH:mm:ss tt")));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.dia_semana));
 
@@ -147,7 +147,7 @@ namespace SGSSTC.source.sistema.Verificar
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 4, 1, "azul", "Tiempo en el cargo:"));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 4, 1, "azul", "Salario devengado:"));
 
-            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemAccidente.trabajador.fecha_ingreso).ToString("dd/MM/yyyy")));
+            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemAccidente.trabajador.fecha_ingreso).ToString("yyyy-MM-dd")));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.tiempo_cargo));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemAccidente.trabajador.salario.ToString()));
 
@@ -174,7 +174,7 @@ namespace SGSSTC.source.sistema.Verificar
 
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.reposo));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToString(itemInvestigacionAccidente.dias_reposo)));
-            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_reintegro).ToString("dd/MM/yyyy")));
+            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_reintegro).ToString("yyyy-MM-dd")));
 
             //        #endregion
 
@@ -270,19 +270,19 @@ namespace SGSSTC.source.sistema.Verificar
 
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.medida1));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.responsable1));
-            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida1).ToString("dd/MM/yyyy")));
+            //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida1).ToString("yyyy-MM-dd")));
 
             //        if (itemInvestigacionAccidente.medida2 != string.Empty)
             //        {
             //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.medida2));
             //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.responsable2));
-            //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida2).ToString("dd/MM/yyyy")));
+            //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida2).ToString("yyyy-MM-dd")));
             //        }
             //        if (itemInvestigacionAccidente.medida3 != string.Empty)
             //        {
             //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.medida3));
             //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", itemInvestigacionAccidente.responsable3));
-            //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida3).ToString("dd/MM/yyyy")));
+            //            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 4, 1, "", Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida3).ToString("yyyy-MM-dd")));
             //        }
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 6, 1, "azul", "Nota"));
             //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "L", "1|1|1|1", 6, 1, "", itemInvestigacionAccidente.nota));

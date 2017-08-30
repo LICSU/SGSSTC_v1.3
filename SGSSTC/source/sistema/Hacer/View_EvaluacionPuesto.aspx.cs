@@ -55,7 +55,7 @@ namespace SGSSTC.source.sistema.Hacer
                 txtControlMedio.Text = itemEvaRiesgo.control_medio;
                 txtControlIndividuo.Text = itemEvaRiesgo.control_individuo;
                 txtResponsableSGSST.Text = itemEvaRiesgo.nombre_responsable;
-                txtFechaEvaluacion.Text = Convert.ToDateTime(itemEvaRiesgo.fecha_evaluacion).ToString("dd/MM/yyyy");
+                txtFechaEvaluacion.Text = Convert.ToDateTime(itemEvaRiesgo.fecha_evaluacion).ToString("yyyy-MM-dd");
 
                 if (itemEvaRiesgo.nivel_deficiencia == "10")
                 {
@@ -141,7 +141,7 @@ namespace SGSSTC.source.sistema.Hacer
                 txtSustitución.Text = string.Empty + itemEvaRiesgo.sustitución;
                 txtIngenieria.Text = string.Empty + itemEvaRiesgo.controles_ingenieria;
                 txtAdministrativos.Text = string.Empty + itemEvaRiesgo.controles_administrativos;
-                txtFechaEjecucion.Text = Convert.ToDateTime(itemEvaRiesgo.fecha_ejecucion).ToString("dd/MM/yyyy");
+                txtFechaEjecucion.Text = Convert.ToDateTime(itemEvaRiesgo.fecha_ejecucion).ToString("yyyy-MM-dd");
 
 
 

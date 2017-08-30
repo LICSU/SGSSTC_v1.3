@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web.UI.WebControls;
@@ -2352,12 +2353,25 @@ namespace Capa_Datos
         public static void SusPreguntas(GridView GridView1, int act1, int act2, int act3, string _fecha_ini = "", string _fecha_fin = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
+            int Div1=0, Div2=0, Div3=0;
+
+            var ListaCodCiiu = contexto.claseCiiu.Where(x =>x.id_clase_ciiu == act1 ).SingleOrDefault();
+            Div1 = ListaCodCiiu.grupoCiiu.divisionCiiu.id_division;
+
+            ListaCodCiiu = contexto.claseCiiu.Where(x => x.id_clase_ciiu == act2).SingleOrDefault();
+            Div2 = ListaCodCiiu.grupoCiiu.divisionCiiu.id_division;
+
+            ListaCodCiiu = contexto.claseCiiu.Where(x => x.id_clase_ciiu == act3).SingleOrDefault();
+            Div3 = ListaCodCiiu.grupoCiiu.divisionCiiu.id_division;
+
             var query = (
                 from PR in contexto.Pregunta
                 join EC in contexto.empresa_itemdivision
                 on PR.usuario.trabajador.puesto_trabajo.area.sucursal.id_empresa equals EC.id_empresa
-                where EC.id_clase_ciiu == act1 || EC.id_clase_ciiu == act2 || EC.id_clase_ciiu == act3
-                
+                where   EC.claseCiiu.grupoCiiu.divisionCiiu.id_division == Div1 || 
+                        EC.claseCiiu.grupoCiiu.divisionCiiu.id_division == Div2 ||
+                        EC.claseCiiu.grupoCiiu.divisionCiiu.id_division == Div3
+
                 select new
                 {
                     PR.id_pregunta,

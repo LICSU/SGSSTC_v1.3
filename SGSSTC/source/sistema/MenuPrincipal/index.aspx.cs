@@ -48,35 +48,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 else if (porcentaje < 0) { evaini.Text = "0%"; }
                 else { evaini.Text = porcentaje + "%"; }
                 #endregion
-
-                #region ultimos trabajadores
-                ListTrabajador = Getter.Trabajador(0, ObjUsuario.Id_empresa);
-                ListTrabajador = ListTrabajador.OrderByDescending(x => x.fecha_ingreso).ToList();
-                int cantidad = 1;
-
-                ControlesDinamicos.CrearLiteral("<ul class='users-list clearfix'>", pTrabajadores);
-                foreach (var item in ListTrabajador)
-                {
-                    if (item.id_trabajador != 0)
-                    {
-                        string ruta = item.foto;
-                        ruta = ruta.Replace("~/source", "../..");
-
-                        if (cantidad < 9)
-                        {
-                            ControlesDinamicos.CrearLiteral("<li>" +
-                               "<img src='" + ruta + "' width='128' height='128'> " +
-                               "<a class='users-list-name'>" + item.primer_nombre + " " + item.primer_apellido + "</a>" +
-                               "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("dd/MM/yyyy") + "</span>" +
-                               "</li>"
-                               , pTrabajadores);
-                        }
-                        cantidad++;
-                    }
-                }
-                ControlesDinamicos.CrearLiteral("</ul>", pTrabajadores);
-                #endregion
-
+                
                 #region actualizar lista al año en curso
                 GrupoLiEntities contexto = new GrupoLiEntities();
 
@@ -188,32 +160,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                     evaini.Text = "0%";
                 }
                 #endregion
-
-                #region ultimos trabajadores
-                ListTrabajador = Getter.Trabajador(0, 0, ObjUsuario.Id_sucursal);
-                ListTrabajador = ListTrabajador.OrderByDescending(x => x.fecha_ingreso).ToList();
-                int cantidad = 1;
-
-                ControlesDinamicos.CrearLiteral("<ul class='users-list clearfix'>", pTrabajadores);
-                foreach (var item in ListTrabajador)
-                {
-                    string ruta = item.foto;
-                    ruta = ruta.Replace("~/source", "../..");
-
-                    if (cantidad < 9)
-                    {
-                        ControlesDinamicos.CrearLiteral("<li>" +
-                           "<img src='" + ruta + "' width='128' height='128'> " +
-                           "<a class='users-list-name' href='#'>" + item.primer_nombre + " " + item.primer_apellido + "</a>" +
-                           "<span class='users-list-date'>" + Convert.ToDateTime(item.fecha_ingreso).ToString("dd/MM/yyyy") + "</span>" +
-                           "</li>"
-                           , pTrabajadores);
-                    }
-                    cantidad++;
-                }
-                ControlesDinamicos.CrearLiteral("</ul>", pTrabajadores);
-                #endregion
-
+                
                 #region actualizar lista al año en curso
                 GrupoLiEntities contexto = new GrupoLiEntities();
                 lista_actividad Edit = contexto.lista_actividad.SingleOrDefault(
@@ -305,8 +252,6 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 }
                 #endregion
             }
-
-
 
             string valor = Convert.ToString(Request.QueryString["date"]);
             if (valor != null)
@@ -446,7 +391,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                 ControlesDinamicos.CrearHyperLink("lk_VerRespuesta_" + item.id_respuesta, pVerRespuestas, "VerRespuesta.aspx?rs=" + idRespuesta, _Respuesta);
 
-                ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td>", pVerRespuestas);
+                ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd") + "</td>", pVerRespuestas);
 
                 ControlesDinamicos.CrearLiteral("<td class='text-center'>" + Calificacion + "</td></tr>", pVerRespuestas);
             }
@@ -467,7 +412,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             foreach (var item in consulta)
             {
                 lbUsuario_Respuesta.Text = item.usuario;
-                lbFecha_respuesta.Text = Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy");
+                lbFecha_respuesta.Text = Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd");
                 lbVerCuerpoRespuesta.Text = item.cuerpo_respuesta;
                 lbCalificacion_Respuesta.Text = Convert.ToString(item.calificacion);
             }
@@ -579,7 +524,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                     ControlesDinamicos.CrearLinkButton("lk_SP_Pregunta_" + item.id_pregunta, pSusPreguntas, VerRegistroModal, titulo);
 
-                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td><td>", pSusPreguntas);
+                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd") + "</td><td>", pSusPreguntas);
 
                     ControlesDinamicos.CrearLinkButton("lk_SP_Respuesta_" + item.id_pregunta, pSusPreguntas, VerRespuestasModal, "" + item.TotalRespuestas);
 
@@ -618,7 +563,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                     ControlesDinamicos.CrearLinkButton("lk_MP_Pregunta_" + item.id_pregunta, panelMisPreguntas, VerRegistroModal, titulo);
 
-                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("dd/MM/yyyy") + "</td><td>", panelMisPreguntas);
+                    ControlesDinamicos.CrearLiteral("</td><td>" + Convert.ToDateTime(item.fecha).ToString("yyyy-MM-dd") + "</td><td>", panelMisPreguntas);
 
                     ControlesDinamicos.CrearLinkButton("lk_MP_Respuesta_" + item.id_pregunta, panelMisPreguntas, VerRespuestasModal, "" + item.Respuesta.Count());
 

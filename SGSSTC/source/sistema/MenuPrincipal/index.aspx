@@ -182,8 +182,8 @@
                         <table class="table table-hover">
                             <tbody>
                                 <tr>
-                                    <th class="col-md-7 text-left">Pregunta</th>
-                                    <th class="col-md-2 text-center">Fecha</th>
+                                    <th class="col-md-6 text-left">Pregunta</th>
+                                    <th class="col-md-3 text-center">Fecha</th>
                                     <th class="col-md-1 text-center">Respuestas</th>
                                     <th class="col-md-2"> </th>
                                 </tr>
@@ -204,8 +204,8 @@
                             <table class="table table-hover">
                                 <tbody>
                                     <tr>
-                                        <th class="col-md-9 text-left">Pregunta</th>
-                                        <th class="col-md-2 text-center">Fecha</th>
+                                        <th class="col-md-7 text-left">Pregunta</th>
+                                        <th class="col-md-4 text-center">Fecha</th>
                                         <th class="col-md-1 text-center">Respuestas</th>
                                     </tr>
 
@@ -226,26 +226,6 @@
     </asp:updatepanel>
     
     <hr />
-
-    <!-- trabajadores-->
-    <div class="row">
-        <div class="col-md-12">
-            
-            <div class="box box-danger">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Ultimos Trabajadores Ingresados</h3>
-                </div>
-
-                <div class="box-body no-padding">
-                    <asp:Panel alt="-" runat="server" id="pTrabajadores"></asp:Panel>
-                </div>
-
-                <div class="box-footer text-center">
-                    <a href="../GestionDatos/index_Trabajador.aspx" class="uppercase">Ver todos los trabajadores</a>
-                </div>
-            </div>
-        </div>
-    </div>
         
     <!-- Modal Añadir una pregunta -->
     <div id="addModal" class="modal">

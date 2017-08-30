@@ -331,7 +331,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             String[] valores = {
                  string.Empty + IdEmpSuc.Item2,
                  "Área a Inspeccionar: " + ddlArea.SelectedItem.Text,
-                 "Fecha: " + DateTime.Today.Date.ToString("dd/MM/yyyy"),
+                 "Fecha: " + DateTime.Today.Date.ToString("yyyy-MM-dd"),
                  "Datos del Trabajador: " + txtTrabajador.Text,
                  "Cargo: " + ddlPuesto.SelectedItem.Text,
                  "N°",
