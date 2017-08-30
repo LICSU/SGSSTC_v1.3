@@ -2227,18 +2227,13 @@ namespace Capa_Datos
                 }
             }
 
-            miCelda27.Texto = "Observaciones Generales";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
-
-            miCelda27.Texto = "Firma del Vigía";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+            miCelda29.Texto = "Observaciones Generales";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda29));
 
             TextBox _textbox = (TextBox)_panel.FindControl("txtObsGenerales");
-            miCelda27.Texto = _textbox.Text;
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+            miCelda29.Texto = _textbox.Text;
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda29));
 
-            miCelda27.Texto = "";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
             #endregion
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
         }
@@ -2250,17 +2245,12 @@ namespace Capa_Datos
 
             String valor = string.Empty;
             #region contenido
-            miCelda12.Texto = "Cronograma de Inspecciones";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda16.Texto = valores[1];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda16));
+            miCelda27.Texto = valores[1];
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
 
-            miCelda16.Texto = valores[2];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda16));
-
-            miCelda16.Texto = valores[3];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda16));
+            miCelda27.Texto = valores[2];
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
 
             miCelda10.Texto = "EQUIPO DE PROTECCION PERSONAL";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda10));
@@ -2326,7 +2316,7 @@ namespace Capa_Datos
                                                        String[] obsAccPasi, String[] obsAusPasi, Page _page)
         {
             Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(Convert.ToInt32(valores[0]),
-                                      "InspeccionMedosEscape_", "INSPECCIÓN DE LOS MEDIOS DE ESCAPE", _page);
+                                      "InspeccionMediosEscape_", "INSPECCIÓN DE LOS MEDIOS DE ESCAPE", _page);
 
             #region contenido
 

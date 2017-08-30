@@ -734,8 +734,8 @@ namespace Capa_Datos
             if (Radios[307].Checked) { valores[1]++; }
             if (Radios[308].Checked) { valores[0]++; }
             if (Radios[309].Checked) { valores[1]++; }
-            if (Radios[310].Checked) { valores[0]++; }
-            if (Radios[311].Checked) { valores[1]++; }
+            //if (Radios[310].Checked) { valores[0]++; }
+            //if (Radios[311].Checked) { valores[1]++; }
             #endregion
 
             return valores;

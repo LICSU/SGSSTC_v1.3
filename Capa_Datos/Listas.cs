@@ -64,13 +64,22 @@ namespace Capa_Datos
             DropDownList1.DataBind();
             DropDownList1.Items.Insert(0, new ListItem("Todos", ""));
         }
-        public static void Area_Sucursal(DropDownList DropDownList1, int _id_sucursal, string valor = "")
+        public static void Area_Sucursal(DropDownList DropDownList1, int _id_sucursal, string valor = "", string tipo = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
 
             var Consulta = (
                 from c in contexto.area.Where(x => x.sucursal.id_sucursal == _id_sucursal)
-                select new { c.id_area, c.nombre }).ToList();
+                select new { c.id_area, c.nombre, c.tipo }).ToList();
+            if (tipo == "Operativa")
+            {
+                Consulta = Consulta.Where(x => x.tipo == "Operativa").ToList();
+            }
+
+            if (tipo == "Administrativa")
+            {
+                Consulta = Consulta.Where(x => x.tipo == "Administrativa").ToList();
+            }
 
             DropDownList1.DataValueField = "id_area";
             DropDownList1.DataTextField = "nombre";

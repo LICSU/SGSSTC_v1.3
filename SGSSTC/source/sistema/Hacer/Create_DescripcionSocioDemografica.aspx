@@ -11,11 +11,11 @@
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
                     <li><a href="../Hacer/index_DescripcionSocioDemografica.aspx">Descripción SocioDemográfica</a></li>
-                    <li><a href="#">Crear Descripción SocioDemografica</a></li>
+                    <li><a href="#">Crear Descripción SocioDemográfica</a></li>
                 </ol>
 
                 <div class="page-header">
-                    <h1 class="text-center">Nueva Descripción SocioDemografica</h1>
+                    <h1 class="text-center">Nueva Descripción SocioDemográfica</h1>
                 </div>
                 
                 <!-- empresa y sucursal-->
@@ -180,7 +180,7 @@
                             </div>
                             
                             <div class="col-md-4 text-left">
-                                7) ¿Socialmente en que condición se encuentra usted?
+                                7) ¿Socialmente en que condición se encuentra usted?<br />
                                 <asp:RadioButtonList runat="server" id="rblCondicion" CssClass="radio-inline" AutoPostBack="true" 
                                     OnSelectedIndexChanged="rblCondicion_SelectedIndexChanged">
                                     <asp:ListItem Text="Desplazado" Value="Desplazado"></asp:ListItem>

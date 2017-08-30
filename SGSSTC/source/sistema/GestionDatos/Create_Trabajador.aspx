@@ -210,11 +210,11 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Télefono Casa</h4>
+					<h4 class="text-left">Teléfono Casa</h4>
 
 					<asp:TextBox runat="server" MaxLength="15" id="txtTelCasa" CssClass="form-control" placeholder="Casa" 
 						TextMode="Number" data-toggle="tooltip" data-placement="bottom" 
-						title="Ingrese el número de telefono de casa del trabajador(a)"></asp:TextBox>
+						title="Ingrese el número de Teléfono de casa del trabajador(a)"></asp:TextBox>
 
 					<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" Display="Dynamic" 
 						ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="txtTelCasa" runat="server" 
@@ -222,11 +222,11 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Télefono Movil</h4>
+					<h4 class="text-left">Teléfono Móvil</h4>
 
 					<asp:TextBox runat="server" MaxLength="15" id="txtTelCelular" CssClass="form-control" placeholder="Celular" 
 						TextMode="Number" data-toggle="tooltip" data-placement="bottom" 
-						title="Ingrese el número de teléfono movil del trabajador(a)"></asp:TextBox>
+						title="Ingrese el número de Teléfono móvil del trabajador(a)"></asp:TextBox>
 					
 					<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" Display="Dynamic" 
 						ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="txtTelCelular" runat="server" 
@@ -326,7 +326,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Tipo Vinculacion Laboral</h4>
+					<h4 class="text-left">Tipo Vinculación Laboral</h4>
 					
 					<asp:DropDownList runat="server" id="ddlTipoVinculacion" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Seleccione el tipo de vinculación laboral del trabajador(a) con la empresa">

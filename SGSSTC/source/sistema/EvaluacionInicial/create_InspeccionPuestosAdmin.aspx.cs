@@ -910,7 +910,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (ddlSucursal.SelectedValue != string.Empty)
             {
                 ViewState["sucursal"] = ddlSucursal.SelectedValue;
-                Listas.Area_Sucursal(ddlArea, Convert.ToInt32(ddlSucursal.SelectedValue));
+                Listas.Area_Sucursal(ddlArea, Convert.ToInt32(ddlSucursal.SelectedValue), "", "Administrativa");
             }
             else
             {

@@ -179,11 +179,13 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (ObjUsuario.Error)
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Exito_Edit_Asistencia.Value, "EXI", this);
+                //Modal.MostrarMsjModal(MensajeError.Exito_Edit_Asistencia.Value, "EXI", this);
+                Modal.Validacion(this, ObjUsuario.Error, "Edit");
             }
             else
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Fallo_Edit_Asistencia.Value, "ERR", this);
+                //Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Asistencia.Value, "ERR", this);
+                Modal.Validacion(this, ObjUsuario.Error, "Edit");
             }
 
         }

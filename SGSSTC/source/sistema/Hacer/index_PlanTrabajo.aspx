@@ -11,7 +11,7 @@
         <ContentTemplate>
 
                 <ol class="breadcrumb">
-                    <li><a href="#">Fase: Hacer</a></li>
+                    <li><a href="#">Fase: Planear</a></li>
                     <li><a href="#">Plan de Trabajo anual</a></li>
                 </ol>
 

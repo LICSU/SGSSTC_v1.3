@@ -146,39 +146,39 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                     
-                                <asp:TemplateField HeaderText="Descripción">
+                                <asp:TemplateField HeaderText="Descripción" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate><asp:Label id="descripcion" runat="server" Text='<%# Eval("descripcion") %>'/></ItemTemplate>
                                     </asp:TemplateField>
                     
-                                <asp:TemplateField HeaderText="Fecha Entrega">
+                                <asp:TemplateField HeaderText="Fecha Entrega" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate><asp:Label id="FechaEntrega" runat="server" Text='<%# Eval("fecha_entrega","{0:dd/MM/yyyy}") %>'/></ItemTemplate>
                                     </asp:TemplateField>
                     
-                                <asp:TemplateField HeaderText="Responsable">
+                                <asp:TemplateField HeaderText="Responsable" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate><asp:Label id="Responsable" runat="server" Text='<%# Eval("responsable") %>'/></ItemTemplate>
                                     </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Estatus">
+                                <asp:TemplateField HeaderText="Estatus" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate><asp:Label id="Estatus" runat="server" Text='<%# Eval("estatus") %>'/></ItemTemplate>
                                     </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Categoria">
+                                <asp:TemplateField HeaderText="Categoria" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate><asp:Label id="Categoria" runat="server" Text='<%# Eval("categoria") %>'/></ItemTemplate>
                                     </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Prioridad">
+                                <asp:TemplateField HeaderText="Prioridad" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate><asp:Label id="Prioridad" runat="server" Text='<%# Eval("prioridad") %>'/></ItemTemplate>
                                     </asp:TemplateField>
                     
-                                <asp:ButtonField HeaderText="Acciones" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png">
+                                <asp:ButtonField HeaderText="Acciones" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
                     
-                                <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
+                                <asp:ButtonField HeaderText="Editar"  HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
 
-                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
+                                <asp:ButtonField HeaderText="Eliminar"  HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
                     

@@ -657,7 +657,7 @@ namespace Capa_Datos
                 miCelda1.Texto = "AUTORIZADO POR: Comité Paritario";
                 tablaPDF = AddCelda(tablaPDF, miCelda1);
 
-                miCelda1.Texto = "COMITÉ PARITARIO del SST";
+                miCelda1.Texto = "COMITÉ PARITARIO de SST";
                 tablaPDF = AddCelda(tablaPDF, miCelda1);
                 
                 tablaPDF = AddCelda(tablaPDF, miCelda2);

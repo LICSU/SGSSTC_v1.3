@@ -13,15 +13,6 @@ namespace SGSSTC.source.sistema.Hacer {
     public partial class Update_AsistenciaCapacitacion {
         
         /// <summary>
-        /// Control ScriptManager1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
         /// Control MyUpdatePanel.
         /// </summary>
         /// <remarks>
@@ -58,12 +49,12 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.Button btPrintSave;
         
         /// <summary>
-        /// Control btVolver.
+        /// Control ucMsjModal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btVolver;
+        protected global::SGSSTC.source.WebUserControl.ucMsjModal ucMsjModal;
     }
 }

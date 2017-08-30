@@ -102,7 +102,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
                 ControlesDinamicos.CrearLiteral("<td>", pTabla);
                 CrearDropDownListArea("ddlArea" + i, pTabla);
-                ControlesDinamicos.CrearRequiredFieldValidator("ddlArea" + i, pTabla, "ValidationAdd");
+                //ControlesDinamicos.CrearRequiredFieldValidator("ddlArea" + i, pTabla, "ValidationAdd");
                 ControlesDinamicos.CrearLiteral("</td>", pTabla);
 
                 ControlesDinamicos.CrearLiteral("<td>", pTabla);
@@ -137,6 +137,10 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             DropDownList miDropDownList = new DropDownList();
 
+            miDropDownList.CssClass = "form-control";
+
+            miDropDownList.ID = id;
+
             ControlesDinamicos.CrearDropDownList(id, _panel, miDropDownList);
 
             Listas.Area_Sucursal(miDropDownList, IdSucursal);
@@ -147,6 +151,10 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         public void CrearDropDownListTipo(string id, Panel _panel)
         {
             DropDownList miDropDownList = new DropDownList();
+
+            miDropDownList.CssClass = "form-control";
+
+            miDropDownList.ID = id;
 
             ControlesDinamicos.CrearDropDownList(id, _panel, miDropDownList);
 

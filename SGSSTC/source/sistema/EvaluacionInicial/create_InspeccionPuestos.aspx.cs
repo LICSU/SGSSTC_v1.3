@@ -504,7 +504,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 "Si se trabaja con manipulación de productos origen animal, laboratorios biológicos y clínicos, hospitales, sanitarios, etc.: ¿Están los aseos, los comedores etc., aislados de la zona de trabajo?",
                 "¿Se mantienen los lugares de trabajo, vestuarios, baños, comedores, etc., en perfectas condiciones de limpieza y desinfección?",
                 "¿Se mantienen condiciones mínimas de higiene personal? (lavarse las manos antes de comer, no ingresar alimentos al área operativa, cambiarse de ropa al salir del trabajo, etc.)",
-                "Los esfuerzos realizados en el desarrollo de la labor están adecuados al trabajador (a) respecto a:",
+                //"Los esfuerzos realizados en el desarrollo de la labor están adecuados al trabajador (a) respecto a:",
                 "¿Su capacidad física?",
                 "¿A la temperatura ambiental?",
                 "¿A su edad?",
@@ -581,7 +581,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 "RADIACIONES",
                 "CONTAMINANTES QUÍMICOS",
                 "CONTAMINANTES BIOLÓGICOS",
-                "FATIGA FÍSICA",
+                "FATIGA FÍSICA, Los esfuerzos realizados en el desarrollo de la labor están adecuados al trabajador (a) respecto a:",
                 "DAÑOS A LA SALUD",
                 "EQUIPOS DE PROTECCIÓN PERSONAL",
                 "CAPACITACIÓN O INFORMACIÓN",
@@ -1101,7 +1101,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (ddlSucursal.SelectedValue != string.Empty)
             {
                 ViewState["sucursal"] = ddlSucursal.SelectedValue;
-                Listas.Area_Sucursal(ddlArea, Convert.ToInt32(ddlSucursal.SelectedValue));
+                Listas.Area_Sucursal(ddlArea, Convert.ToInt32(ddlSucursal.SelectedValue), "", "Operativa");
             }
             else
             {
