@@ -34,6 +34,8 @@ namespace SGSSTC.source.sistema.Verificar
 				CargarListas();
 			}
 		}
+
+
 		public void CargarListas()
 		{
 			if (BoolEmpSuc.Item1)
@@ -49,7 +51,6 @@ namespace SGSSTC.source.sistema.Verificar
 			if (!BoolEmpSuc.Item2)
 			{
 				IdSucursal = Convert.ToInt32(ObjUsuario.Id_sucursal);
-                Listas.Trabajadores_Sucursal(ddlTrabajador, IdSucursal);
 				Listas.Area_Sucursal(ddlArea, ObjUsuario.Id_sucursal);
 				Listas.PuestoTrabajo(ddlProcesoTrabajo, "Sucursal", ObjUsuario.Id_sucursal);
 			}
@@ -60,7 +61,7 @@ namespace SGSSTC.source.sistema.Verificar
 			DateTime? myDate = null;
 			myDate = txtFechaMuerte.Text == string.Empty ? myDate : Convert.ToDateTime(txtFechaMuerte.Text);
 
-            at_it_el_pa nuevo = new at_it_el_pa()
+			at_it_el_pa nuevo = new at_it_el_pa()
 			{
 				fecha_accidente = Convert.ToDateTime(txtFechaAcc.Text),
 				hora_accidente = Convert.ToDateTime(txtHoraAcc.Text),

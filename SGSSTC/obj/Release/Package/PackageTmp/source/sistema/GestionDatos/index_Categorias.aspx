@@ -143,7 +143,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Descripcion</h4>
+                                    <h4 class="text-left">Descripción</h4>
 
                                     <asp:TextBox id="txtDescripcion" MaxLength="500" runat="server" ClientIDMode="Static" 
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 

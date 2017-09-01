@@ -656,7 +656,7 @@ namespace Capa_Datos
         {
             sucursal nuevo = new sucursal()
             {
-                nombre = "Sede Principal - " + valores[0],
+                nombre = valores[0],
                 id_municpio = Convert.ToInt32(valores[1]),
                 id_empresa = Convert.ToInt32(valores[2]),
                 direccion = valores[3],
@@ -675,7 +675,7 @@ namespace Capa_Datos
         {
             area nuevo = new area()
             {
-                nombre = "Área Default " + valores[0],
+                nombre = valores[0],
                 id_sucursal = Convert.ToInt32(valores[1]),
                 id_area_padre = 0,
                 nivel = 1,

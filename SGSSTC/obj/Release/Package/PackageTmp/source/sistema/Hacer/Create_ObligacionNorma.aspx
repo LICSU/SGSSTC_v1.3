@@ -113,7 +113,7 @@
                 <!-- controles-->
                 <div class="row text-center">
                     <div class="col-md-3">
-                        <h4>Categoria</h4>
+                        <h4>Categoría</h4>
                         <asp:dropdownlist runat="server" cssclass="form-control" id="ddlCategoria"
                             data-toggle="tooltip" data-placement="bottom" 
                             title="Seleccione una categoría para la obligación"></asp:dropdownlist>

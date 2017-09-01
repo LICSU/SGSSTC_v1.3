@@ -458,7 +458,7 @@ namespace Capa_Datos
             GridView GridView1,
             int empresa = 0,
             int sucursal = 0,
-            string area = "",
+            string area = "0",
             string num1 = "",
             string num2 = "",
             string sWhere = "")
@@ -486,7 +486,7 @@ namespace Capa_Datos
 
             if (empresa != 0) { query = query.Where(x => x.id_empresa == empresa).ToList(); }
             if (sucursal != 0) { query = query.Where(x => x.id_sucursal == sucursal).ToList(); }
-            if (area != string.Empty) { query = query.Where(x => x.id_area == Convert.ToInt32(area)).ToList(); }
+            if (area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(area)).ToList(); }
             if (num1 != string.Empty) { query = query.Where(x => x.Num >= Convert.ToInt32(num1) && x.Num < Convert.ToInt32(num2)).ToList(); }
             if (sWhere != string.Empty) { query = query.Where(x => x.nombre.ToLower().Contains(sWhere.ToLower())).ToList(); }
 
@@ -527,7 +527,7 @@ namespace Capa_Datos
             GridView GridView1,
             int MiTrabajador = 0,
             int _id_empresa = 0,
-            string _id_area = "",
+            string _id_area = "0",
             string _id_estatus_actual = "",
             string buscar = "",
             int _id_sucursal = 0)
@@ -555,7 +555,7 @@ namespace Capa_Datos
 
             if (_id_empresa != 0) { query = query.Where(x => x.empresa == _id_empresa).ToList(); }
 
-            if (_id_area != string.Empty) { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
+            if (_id_area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
 
             if (_id_estatus_actual != string.Empty) { query = query.Where(x => x.id_estatus_actual == Convert.ToInt32(_id_estatus_actual)).ToList(); }
 

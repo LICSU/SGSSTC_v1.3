@@ -9,7 +9,7 @@
     
     
         <ol class="breadcrumb">
-            <li><a href="#">Fase: Hacer</a></li>
+            <li><a href="#">Fase: Evaluación Inicial</a></li>
             <li><a href="#">Descripción SocioDemográfica</a></li>
         </ol>
     
@@ -96,7 +96,7 @@
         <asp:placeholder runat="server" id="phAgregar">
             <div class="col-md-4 col-md-offset-4">
                 <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro"/>
-                <h4>Nueva Descripcion SocioDemografica</h4>
+                <h4>Nueva Descripcion SocioDemográfica</h4>
             </div>
         </asp:placeholder>
 

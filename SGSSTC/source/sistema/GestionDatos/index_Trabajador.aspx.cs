@@ -36,6 +36,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             if (!IsPostBack)
             {
+                ViewState["area"] = "0";
                 cargarListas();
                 LlenarGridView();
                 if (Request.QueryString["eu"] == "1")
