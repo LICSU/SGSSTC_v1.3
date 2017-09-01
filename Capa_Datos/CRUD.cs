@@ -434,6 +434,24 @@ namespace Capa_Datos
             return Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
         }
 
+        public static bool AddIndicadores(Tuple<int, int> IdEmpSuc, Model_UsuarioSistema ObjUsuario, String[] valores, FileUpload flpArchivo)
+        {
+            int IdEmpresa = IdEmpSuc.Item1;
+            int IdSucursal = IdEmpSuc.Item2;
+
+            string ruta = Utilidades.GuardarArchivo(flpArchivo, IdEmpresa + valores[0], Paginas.Archivos_Indicadores.Value);
+
+            documento nuevo = new documento()
+            {
+                nombre = valores[0],
+                fecha_subida = DateTime.Today.Date,
+                id_tabla = IdSucursal,
+                tipo = valores[1],
+                ruta = ruta
+            };
+            return Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+        }
+
         public static bool AddEmpresa(Model_UsuarioSistema ObjUsuario, String[] valores, FileUpload fuLogoEmpresa)
         {
             string ruta = Utilidades.GuardarImagen(fuLogoEmpresa, valores[0], Paginas.Archivos_LogosEmpresas.Value);

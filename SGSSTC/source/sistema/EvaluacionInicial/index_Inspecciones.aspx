@@ -120,7 +120,7 @@
                 </div>
                 <br />
 
-                <div class="row" align="center">
+                <div class="row text-center">
                     <div class="col-md-4 col-md-offset-2">
                         <asp:PlaceHolder Visible="true" id="phAgregar" runat="server">
                             <asp:ImageButton alt="-" id="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" 

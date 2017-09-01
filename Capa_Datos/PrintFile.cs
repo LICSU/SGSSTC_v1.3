@@ -81,7 +81,8 @@ namespace Capa_Datos
         public static Model_Celda miCelda62 = new Model_Celda(1, "H3", "C", "0|0|0|0", 8, 1, "azul", "");
 
         public static Model_Celda miCelda48 = new Model_Celda(1, "H4", "C", "1|1|1|1", 9, 1, "azul", "");
-        
+        public static Model_Celda miCelda71 = new Model_Celda(1, "H4", "C", "1|1|1|1", 9, 1, "", "");
+
         public static Model_Celda miCelda31 = new Model_Celda(1, "H4", "L", "1|1|1|1", 10, 1, "azul", "");
         public static Model_Celda miCelda40 = new Model_Celda(1, "H4", "L", "1|1|1|1", 10, 1, "", "");
         public static Model_Celda miCelda39 = new Model_Celda(1, "H4", "L", "1|1|1|1", 10, 2, "", "");
@@ -2238,7 +2239,297 @@ namespace Capa_Datos
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
         }
 
-        public static void PrintInspeccionUsoEpp(String[] valores, Page _page, Panel _panel)
+        public static void PrintEvaluacionPuestos(String[] valores, Page _page)
+        {
+            
+            #region contenido
+            List<evaluacion_riesgo> Lista_EvaRiesgo = new List<evaluacion_riesgo>();
+            Lista_EvaRiesgo = Getter.EvaluacionRiesgo(Convert.ToInt32(valores[1]));
+
+            foreach (var itemEvaRiesgo in Lista_EvaRiesgo)
+            {
+                Tuple<Document, PdfPTable> DocumentoPDF =
+                                         ManageFiles.PdfParte1(itemEvaRiesgo.identificacion_puesto.puesto_trabajo.area.id_sucursal,
+                                         "EvaluacionRiesgos_", " ", _page);
+
+                int id_puesto = Convert.ToInt32(itemEvaRiesgo.identificacion_puesto.id_puesto);
+
+                miCelda11.Texto = "Puesto de Trabajo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda11.Texto = "Área";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda25.Texto = "Descripción del Puesto";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+
+                miCelda3.Texto = itemEvaRiesgo.identificacion_puesto.puesto_trabajo.nombre;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda3.Texto = itemEvaRiesgo.identificacion_puesto.puesto_trabajo.area.nombre;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda27.Texto = itemEvaRiesgo.identificacion_puesto.puesto_trabajo.descripcion;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                miCelda12.Texto = "IDENTIFICACIÓN DEL PELIGRO";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                foreach (var itemFactor in itemEvaRiesgo.identificacion_puesto.identificacion_peligro.factor_identificacion)
+                {
+                    miCelda25.Texto = "Tipo de Riesgo";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Factor de Riesgo";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+
+                    miCelda27.Texto = itemFactor.factor_riesgo.tipo_riesgo.nombre;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemFactor.factor_riesgo.nombre;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda25.Texto = "Posibles Consecuencias";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Tiempo de Exposición";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+
+                    miCelda27.Texto = itemFactor.consecuencias;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemFactor.tiempo_exposicion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                }
+
+                miCelda12.Texto = "EVALUACIÓN DEL RIESGO";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                miCelda14.Texto = "Medidas en la Fuente";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Medidas en el Medio";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Medidas en el Individuo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                miCelda4.Texto = itemEvaRiesgo.control_fuente;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = itemEvaRiesgo.control_medio;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = itemEvaRiesgo.control_individuo;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                miCelda25.Texto = "Responsable del SGSST";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda25.Texto = "Fecha de Evaluación";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+
+                miCelda27.Texto = itemEvaRiesgo.nombre_responsable;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                miCelda27.Texto = Convert.ToDateTime(itemEvaRiesgo.fecha_evaluacion).ToString("yyyy-MM-dd");
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                miCelda14.Texto = "Nivel de Deficiencia";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda62.Texto = "Interpretación del Nivel de Deficiencia";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda62));
+
+                string nivel = string.Empty;
+                string interpretacion = string.Empty;
+
+                #region nivel deficiencia
+                if (itemEvaRiesgo.nivel_deficiencia == "10")
+                {
+                    nivel = "Muy alto";
+                    interpretacion = "Se ha(n) detectado peligro(s) que determina(n) como posible la generación de incidentes, o la eficacia del conjunto de medidas preventivas existentes respecto al riesgo es nula no existe, o ambos";
+                }
+                else if (itemEvaRiesgo.nivel_deficiencia == "6")
+                {
+                    nivel = "Alto";
+                    interpretacion = "Se ha(n) detectado algún(os) peligro(s) que puede(n) dar lugar a consecuencias significativa(s) o la eficacia del conjunto de medidas preventivas existentes es baja, o ambos";
+                }
+                else if (itemEvaRiesgo.nivel_deficiencia == "2")
+                {
+                    nivel = "Medio";
+                    interpretacion = "Se han detectado peligros que pueden dar lugar a consecuencias poco significativa(s) o de menor importancia, o la eficacia del conjunto de medidas preventivas existentes es moderada, o ambos.";
+                }
+                else if (itemEvaRiesgo.nivel_deficiencia == "0")
+                {
+                    nivel = "Bajo";
+                    interpretacion = "No se ha destacado anomalía destacable alguna, o la eficacia del conjunto de medidas preventivas existentes es alta, o ambos. El riesgo esta controlado.";
+                }
+                miCelda4.Texto = nivel;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda30.Texto = interpretacion;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda30));
+                #endregion
+
+                #region nivel exposicion
+                miCelda14.Texto = "Nivel de Exposición";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda62.Texto = "Interpretacion del Nivel de Exposición";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda62));
+                if (itemEvaRiesgo.nivel_exposicion == "4")
+                {
+                    nivel = "Continua";
+                    interpretacion = "La situación de exposición se presenta sin interrupción o varias veces con tiempo prolongado durante la jornada laboral.";
+                }
+                else if (itemEvaRiesgo.nivel_exposicion == "3")
+                {
+                    nivel = "Frecuente";
+                    interpretacion = "La situación de exposición se presenta varias veces durante la jornada laboral por tiempos cortos.";
+                }
+                else if (itemEvaRiesgo.nivel_exposicion == "2")
+                {
+                    nivel = "Ocasional";
+                    interpretacion = "La situación de exposición se presenta alguna vez durante la jornada laboral y por un periodo de tiempo corto.";
+                }
+                else if (itemEvaRiesgo.nivel_exposicion == "1")
+                {
+                    nivel = "Esporádica";
+                    interpretacion = "La situación de exposición se presenta de manera eventual.";
+                }
+                miCelda4.Texto = nivel;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda30.Texto = interpretacion;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda30));
+                #endregion
+
+                miCelda11.Texto = "Nivel de Probabilidad";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda48.Texto = "Interpretacion del Nivel de Probabilidad";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda48));
+
+                int probabilidad = Convert.ToInt32(itemEvaRiesgo.nivel_probabilidad);
+
+                if (probabilidad >= 24 && probabilidad <= 40) { interpretacion = "Situación deficiente con exposición continua.Normalmente la materialización del riesgo ocurre con frecuencia"; }
+                else if (probabilidad >= 10 && probabilidad <= 20) { interpretacion = "Situación deficiente con exposición frecuente u ocasional, o bien situación muy deficiente con exposición ocasional o esporádica.La materialización del riesgo es posible que suceda varias veces durante la vida laboral "; }
+                else if (probabilidad >= 6 && probabilidad <= 8) { interpretacion = "Situación deficiente con exposición esporádica, o bien situación mejorable con exposición continuada o frecuente. Es posible que suceda el daño alguna vez."; }
+                else if (probabilidad >= 2 && probabilidad <= 4) { interpretacion = "Situación mejorable con exposición ocasional o esporádica, o situación sin anomalía destacable con cualquier nivel de exposición.No es esperable que se materialice el riesgo, aunque puede ser concebible."; }
+                else if (probabilidad == 0) { interpretacion = "No se ha destacado anomalía destacable alguna, o la eficacia del conjunto de medidas preventivas existentes es alta, o ambos. El riesgo esta controlado."; }
+
+                miCelda3.Texto = itemEvaRiesgo.nivel_probabilidad;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda71.Texto = interpretacion;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda71));
+
+                #region nivel consecuencia
+                miCelda11.Texto = "Nivel de Consecuencia";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda48.Texto = "Interpretación del Nivel de Consecuencia";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda48));
+                if (itemEvaRiesgo.nivel_consecuencia == "100")
+                {
+                    nivel = "Mortal o catastrófico(M)";
+                    interpretacion = "Muerte(s)";
+                }
+                else if (itemEvaRiesgo.nivel_consecuencia == "60")
+                {
+                    nivel = "Muy grave (MG)";
+                    interpretacion = "Lesiones o enfermedades graves irreparables (incapacidad permanente, parcial o invalidez).";
+                }
+                else if (itemEvaRiesgo.nivel_consecuencia == "25")
+                {
+                    nivel = "Grave (G)";
+                    interpretacion = "Lesiones o enfermedades con incapacidad laboral temporal (ILT).";
+                }
+                else if (itemEvaRiesgo.nivel_consecuencia == "10")
+                {
+                    nivel = "Leve (L)";
+                    interpretacion = "Lesiones o enfermedades que no requieren incapacidad.";
+                }
+                miCelda3.Texto = itemEvaRiesgo.nivel_consecuencia;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda71.Texto = interpretacion;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda71));
+                #endregion
+
+                #region nivel riesgo
+                miCelda11.Texto = "Nivel de Riesgo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda48.Texto = "Interpretacion del Nivel de Riesgo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda48));
+                miCelda3.Texto = itemEvaRiesgo.nivel_riesgo;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda71.Texto = itemEvaRiesgo.interpretacion_nivel_riesgo;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda71));
+                #endregion
+
+                miCelda12.Texto = "Aceptabilidad de Riesgo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                miCelda49.Texto = itemEvaRiesgo.aceptabilidad_riesgo;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                miCelda12.Texto = "CRITERIOS PARA ESTABLECER CONTROLES";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                miCelda11.Texto = "Planta";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda11.Texto = "Contratista";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda11.Texto = "Visitantes";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                miCelda11.Texto = "Total";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+
+                miCelda3.Texto = itemEvaRiesgo.planta.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda3.Texto = itemEvaRiesgo.contratistas.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda3.Texto = itemEvaRiesgo.visitantes.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda3.Texto = itemEvaRiesgo.total.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+
+                miCelda25.Texto = "Peor Consecuencia";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda25.Texto = "Existencia Requisito Legal";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda27.Texto = itemEvaRiesgo.peor_consecuencia.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                miCelda27.Texto = ""+itemEvaRiesgo.existencia_requisito_legal;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                miCelda12.Texto = "MEDIDAS DE INTERVENCIÓN";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                miCelda25.Texto = "Eliminación";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda25.Texto = "Sustitución";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda27.Texto = itemEvaRiesgo.eliminación.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                miCelda27.Texto = itemEvaRiesgo.sustitución.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                miCelda25.Texto = "Controles de Ingeniería";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda25.Texto = "Controles Administrativos";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda27.Texto = itemEvaRiesgo.controles_ingenieria.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                miCelda27.Texto = itemEvaRiesgo.controles_administrativos.ToString();
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                miCelda25.Texto = "Fecha de Ejecucion";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda27.Texto = Convert.ToDateTime(itemEvaRiesgo.fecha_ejecucion).ToString("yyyy-MM-dd");
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                miCelda12.Texto = "EQUIPOS DE PROTECCIÓN PERSONAL DEL PUESTO DE TRABAJO";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                int contadorEpp = 1;
+                foreach (var itemEpp in itemEvaRiesgo.identificacion_puesto.puesto_trabajo.puesto_trabajo_epp)
+                {
+                    miCelda4.Texto = "Epp N° " + contadorEpp;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = "Nombre: " + itemEpp.epp.nombre;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = "Tipo de Epp: " + itemEpp.epp.tipo_epp.nombre;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    contadorEpp++;
+                }
+
+                ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, itemEvaRiesgo.identificacion_puesto.puesto_trabajo.area.id_sucursal, _page);
+            }
+
+            #endregion
+        }
+
+            public static void PrintInspeccionUsoEpp(String[] valores, Page _page, Panel _panel)
         {
             Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(Convert.ToInt32(valores[0]),
                                         "InspeccionUsoEpp_", "INSPECCIÓN USO EPP", _page);

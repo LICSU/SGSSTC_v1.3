@@ -2466,6 +2466,7 @@
     <Folder Include=".vs\SGSST-v1.2\v15\" />
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="source\archivos\indicadores\" />
     <Folder Include="source\archivos\vigilancia\" />
   </ItemGroup>
   <ItemGroup>
