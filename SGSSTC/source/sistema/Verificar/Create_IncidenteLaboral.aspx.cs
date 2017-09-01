@@ -56,6 +56,8 @@ namespace SGSSTC.source.sistema.Verificar
 		}
 		protected void btPrintSave_Click(object sender, EventArgs e)
 		{
+			IdTrabajador = Getter.TrabajadorAutocomplete(txtTrabajador.Text);
+
 			at_it_el_pa nuevo = new at_it_el_pa()
 			{
 				fecha_accidente = Convert.ToDateTime(txtFechaAcc.Text),

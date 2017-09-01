@@ -36,6 +36,7 @@ namespace SGSSTC.source.sistema.Verificar
             {
                 txtFechaInicio.Text = fechaActual.ToString("yyyy-MM-dd");
                 txtFechaFin.Text = fechaActual.AddMonths(1).ToString("yyyy-MM-dd");
+                ViewState["area"] = "0";
                 LlenarGridView();
                 CargarListas();
             }

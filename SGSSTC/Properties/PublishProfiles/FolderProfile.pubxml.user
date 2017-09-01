@@ -11,7 +11,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   </PropertyGroup>
   <ItemGroup>
     <File Include=".vs/config/applicationhost.config">
-      <publishTime>08/29/2017 15:38:07</publishTime>
+      <publishTime>01/09/2017 14:18:06</publishTime>
     </File>
     <File Include=".vs/ProjectSettings.json">
       <publishTime>07/11/2017 10:11:31</publishTime>
@@ -47,13 +47,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/07/2015 14:12:54</publishTime>
     </File>
     <File Include="bin/Capa_Datos.dll">
-      <publishTime>08/30/2017 17:31:53</publishTime>
+      <publishTime>09/01/2017 17:01:31</publishTime>
     </File>
     <File Include="bin/Capa_Datos.dll.config">
-      <publishTime>08/30/2017 15:33:49</publishTime>
+      <publishTime>01/09/2017 14:17:28</publishTime>
     </File>
     <File Include="bin/Capa_Datos.pdb">
-      <publishTime>08/30/2017 17:31:53</publishTime>
+      <publishTime>09/01/2017 17:01:31</publishTime>
     </File>
     <File Include="bin/CkEditor.dll">
       <publishTime>02/08/2017 14:31:31</publishTime>
@@ -224,10 +224,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/27/2016 14:50:24</publishTime>
     </File>
     <File Include="bin/SGSSTC.dll">
-      <publishTime>08/30/2017 17:32:06</publishTime>
+      <publishTime>09/01/2017 17:08:16</publishTime>
     </File>
     <File Include="bin/SGSSTC.pdb">
-      <publishTime>08/30/2017 17:32:06</publishTime>
+      <publishTime>09/01/2017 17:08:16</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>02/08/2017 14:32:19</publishTime>
@@ -3734,10 +3734,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/18/2017 16:02:06</publishTime>
     </File>
     <File Include="source/sistema/EvaluacionInicial/create_InspeccionPrimAux.aspx">
-      <publishTime>08/18/2017 16:11:54</publishTime>
+      <publishTime>01/09/2017 14:21:05</publishTime>
     </File>
     <File Include="source/sistema/EvaluacionInicial/create_InspeccionPuestos.aspx">
-      <publishTime>08/30/2017 17:37:03</publishTime>
+      <publishTime>08/31/2017 14:44:52</publishTime>
     </File>
     <File Include="source/sistema/EvaluacionInicial/create_InspeccionPuestosAdmin.aspx">
       <publishTime>08/17/2017 16:54:25</publishTime>
@@ -3764,10 +3764,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/18/2017 15:40:50</publishTime>
     </File>
     <File Include="source/sistema/EvaluacionInicial/index_Indicadores.aspx">
-      <publishTime>08/29/2017 15:27:20</publishTime>
+      <publishTime>01/09/2017 14:17:28</publishTime>
     </File>
     <File Include="source/sistema/EvaluacionInicial/index_Inspecciones.aspx">
-      <publishTime>08/30/2017 09:22:04</publishTime>
+      <publishTime>01/09/2017 14:17:28</publishTime>
     </File>
     <File Include="source/sistema/EvaluacionInicial/index_PorcentajeCapacitacion.aspx">
       <publishTime>08/18/2017 16:13:27</publishTime>
@@ -3785,7 +3785,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/30/2017 15:39:27</publishTime>
     </File>
     <File Include="source/sistema/GestionDatos/Create_PuestoTrabajo.aspx">
-      <publishTime>08/22/2017 17:17:44</publishTime>
+      <publishTime>09/01/2017 15:32:18</publishTime>
     </File>
     <File Include="source/sistema/GestionDatos/Create_Sucursal.aspx">
       <publishTime>08/17/2017 17:09:36</publishTime>
@@ -3836,7 +3836,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/22/2017 17:17:44</publishTime>
     </File>
     <File Include="source/sistema/GestionDatos/Update_Empresa.aspx">
-      <publishTime>08/17/2017 16:54:26</publishTime>
+      <publishTime>09/01/2017 15:49:01</publishTime>
     </File>
     <File Include="source/sistema/GestionDatos/Update_PuestoTrabajo.aspx">
       <publishTime>08/17/2017 18:46:56</publishTime>
@@ -3851,7 +3851,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/17/2017 16:54:26</publishTime>
     </File>
     <File Include="source/sistema/Hacer/create_AnalisisVulnerabilidad.aspx">
-      <publishTime>08/29/2017 15:27:20</publishTime>
+      <publishTime>08/30/2017 17:49:35</publishTime>
     </File>
     <File Include="source/sistema/Hacer/Create_AperturaElecciones.aspx">
       <publishTime>08/17/2017 16:54:26</publishTime>
@@ -3863,7 +3863,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/17/2017 16:54:26</publishTime>
     </File>
     <File Include="source/sistema/Hacer/Create_DescripcionSocioDemografica.aspx">
-      <publishTime>08/30/2017 16:40:37</publishTime>
+      <publishTime>09/01/2017 16:39:46</publishTime>
     </File>
     <File Include="source/sistema/Hacer/Create_DesignacionVigia.aspx">
       <publishTime>08/17/2017 16:54:26</publishTime>
@@ -4013,10 +4013,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/21/2017 07:38:31</publishTime>
     </File>
     <File Include="source/sistema/Hacer/Update_AsistenciaCapacitacion.aspx">
-      <publishTime>08/30/2017 09:22:04</publishTime>
+      <publishTime>01/09/2017 14:17:28</publishTime>
     </File>
     <File Include="source/sistema/Hacer/Update_DescripcionSocioDemografica.aspx">
-      <publishTime>08/17/2017 16:54:27</publishTime>
+      <publishTime>09/01/2017 15:49:02</publishTime>
     </File>
     <File Include="source/sistema/Hacer/Update_MedidasMatrizLegal.aspx">
       <publishTime>08/18/2017 15:42:59</publishTime>
@@ -4031,7 +4031,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/17/2017 16:54:27</publishTime>
     </File>
     <File Include="source/sistema/Hacer/View_GestionLaboral.aspx">
-      <publishTime>08/17/2017 16:54:27</publishTime>
+      <publishTime>09/01/2017 15:49:02</publishTime>
     </File>
     <File Include="source/sistema/Hacer/View_IdentificacionPeligros.aspx">
       <publishTime>08/17/2017 16:54:27</publishTime>
@@ -4100,7 +4100,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/17/2017 16:54:28</publishTime>
     </File>
     <File Include="source/sistema/Verificar/View_Accidente.aspx">
-      <publishTime>08/17/2017 16:54:28</publishTime>
+      <publishTime>09/01/2017 17:04:34</publishTime>
     </File>
     <File Include="source/sistema/Verificar/View_Incidente.aspx">
       <publishTime>08/21/2017 15:29:43</publishTime>
@@ -4121,7 +4121,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/21/2017 14:36:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/30/2017 17:44:25</publishTime>
+      <publishTime>01/09/2017 14:17:28</publishTime>
     </File>
     <File Include="website.publishproj">
       <publishTime>01/01/0001 00:00:00</publishTime>

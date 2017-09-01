@@ -64,7 +64,7 @@
         <br />
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 2) Años aprobados en ese último nivel
                 <asp:textbox runat="server" id="txtAnhosApro" cssclass="form-control" placeholder="Años Aprobados"></asp:textbox>
                 <hr />
@@ -74,7 +74,7 @@
                     validationgroup="ValidationEdit"/>
             </div>
 
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 3) ¿Es usted cabeza de familia?<br />
                 <asp:radiobuttonlist runat="server" id="rdlCabeza" cssclass="radio-inline">
                     <asp:ListItem Text="Si" Value="SI"></asp:ListItem>
@@ -87,7 +87,7 @@
                     validationgroup="ValidationEdit"/>
             </div>
 
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 4) ¿Cuantos hijos tiene?<br />
                 <asp:dropdownlist runat="server" id="ddlHijos" cssclass="form-control">
                     <asp:ListItem Text="0" Value="0"></asp:ListItem>
@@ -111,7 +111,7 @@
         <br />
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 5) ¿Con quién reparte la responsabilidad económica de su familia?<br />
 
                 <asp:dropdownlist runat="server" id="rblResponsabilidad" cssclass="form-control">
@@ -126,7 +126,7 @@
                     font-bold="true" controltovalidate="rblResponsabilidad" runat="server" validationgroup="ValidationEdit"/>
             </div>
 
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 6) ¿Cuantos menores dependen económicamente de ud?
                 <asp:dropdownlist runat="server" id="ddlMenores" cssclass="form-control">
                     <asp:ListItem Text="0" Value="0"></asp:ListItem>
@@ -149,7 +149,7 @@
 
             </div>
 
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 7) ¿Socialmente en que condición se encuentra usted?<br />
                 <asp:radiobuttonlist runat="server" id="rblCondicion" cssclass="radio-inline" autopostback="true"
                     onselectedindexchanged="rblCondicion_SelectedIndexChanged">
@@ -169,7 +169,7 @@
 
         <div class="row">
             <asp:placeholder id="phDesplazado" runat="server" visible="false">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                     7.1) ¿Cual fue el motivo del desplazamiento?<br />
                     <asp:DropDownList runat="server" id="rblMotivo" CssClass="form-control" AutoPostBack="true" 
                         OnSelectedIndexChanged="rblMotivo_SelectedIndexChanged">
@@ -188,7 +188,7 @@
                         Font-Bold="true" ControlToValidate="txtOtroMotivo" runat="server" ValidationGroup="ValidationEdit"/>
             </div>
             </asp:placeholder>
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 8) La vivienda donde habita es:<br />
 
                 <asp:dropdownlist runat="server" id="dblVivienda" cssclass="form-control" autopostback="true" onselectedindexchanged="dblVivienda_SelectedIndexChanged">
@@ -205,7 +205,7 @@
                 <asp:textbox runat="server" id="txtOtroVivienda" MaxLength="450" cssclass="form-control" visible="false" placeholder="Otra Vivienda"></asp:textbox>
                 <hr />
             </div>
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 9) Seleccione con cuales servicios públicos cuenta su vivienda<br />
                 <asp:checkboxlist runat="server" id="cblServicios" cssclass="checkbox-inline" repeatcolumns="1">
                     <asp:ListItem Text="Energia Electrica" Value="Energia Electrica"></asp:ListItem>
@@ -223,7 +223,7 @@
         <br />
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 10) Su vivienda es:<br />
                 <asp:radiobuttonlist runat="server" id="dblTipoVivienda" cssclass="radio-inline" autopostback="true" onselectedindexchanged="dblTipoVivienda_SelectedIndexChanged">
                     <asp:ListItem Text="Apartamento" Value="Apartamento"></asp:ListItem>
@@ -239,7 +239,7 @@
                 <asp:textbox runat="server" id="txtTipoVivienda" MaxLength="450" cssclass="form-control" visible="false" placeholder="Otra Vivienda"></asp:textbox>
                 <hr />
             </div>
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 11) Esta Cerca de Industrias<br />
 
                 <asp:radiobuttonlist runat="server" id="rblIndustria" cssclass="radio-inline">
@@ -252,7 +252,7 @@
                     forecolor="#B50128" font-size="10" font-bold="true" controltovalidate="rblIndustria" runat="server"
                     validationgroup="ValidationEdit"/>
             </div>
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 12) Hay mucho ruido:<br />
 
                 <asp:radiobuttonlist runat="server" id="rblRuido" cssclass="radio-inline">
@@ -268,7 +268,7 @@
         <br />
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 13) Hay Mucha Contaminación<br />
                 <asp:radiobuttonlist runat="server" id="rblContaminacion" cssclass="radio-inline">
                     <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
@@ -293,7 +293,7 @@
         <br />
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 14) Se encuentra afiliado al sistema de seguridad social en salud<br />
                 <asp:radiobuttonlist runat="server" id="dblSeguridad" cssclass="radio-inline" autopostback="true" onselectedindexchanged="dblSeguridad_SelectedIndexChanged">
                     <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
@@ -308,7 +308,7 @@
             </div>
 
             <asp:placeholder id="phRegimen" runat="server" visible="false">
-                <div class="col-md-4 text-left">
+                <div class="col-md-4">
                     14.1) Régimen de Afiliación<br />
                     <asp:RadioButtonList runat="server" id="rblRegimen" CssClass="checkbox-inline" AutoPostBack="true" OnSelectedIndexChanged="rblRegimen_SelectedIndexChanged">
                         <asp:ListItem Text="Contributivo" Value="Contributivo"></asp:ListItem>
@@ -322,7 +322,7 @@
             </asp:placeholder>
 
             <asp:placeholder id="phRegimen2" runat="server" visible="false">
-                <div class="col-md-4 text-left">
+                <div class="col-md-4">
                     14.1.1) Nivel de SISBEN<br />
                     
                     <asp:RadioButtonList runat="server" id="rblNivelSisben" CssClass="radio-inline" RepeatColumns="2">
@@ -346,7 +346,7 @@
 
         <div class="row">
             <asp:placeholder id="phRegimen3" runat="server" visible="false">
-                <div class="col-md-4 text-left">
+                <div class="col-md-4">
                     14.2) ¿A qué EPS pertenece?<br />
                     
                     <asp:DropDownList runat="server" id="ddlEps" CssClass="form-control"></asp:DropDownList>
@@ -357,7 +357,7 @@
                 </div>
             </asp:placeholder>
 
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 15) Se encuentra afiliado al sistema de seguridad social en pensiones<br />
 
                 <asp:radiobuttonlist runat="server" id="rblPensiones" cssclass="radio-inline" autopostback="true" onselectedindexchanged="rblPensiones_SelectedIndexChanged">
@@ -372,7 +372,7 @@
             </div>
 
             <asp:placeholder id="phPensiones1" runat="server" visible="false">
-                <div class="col-md-4 text-left">
+                <div class="col-md-4">
                     15.1) ¿A qué fondo pertenece?<br />
                     <asp:DropDownList runat="server" id="ddlFondo" CssClass="form-control"></asp:DropDownList>
                         
@@ -386,7 +386,7 @@
         <br />
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 17) ¿Cual es el estrato que registran sus facturas de los servicios públicos de la vivienda donde reside?<br />
 
                 <asp:radiobuttonlist runat="server" id="rblEstrato" cssclass="radio-inline" repeatcolumns="1">

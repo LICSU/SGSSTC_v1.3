@@ -179,14 +179,6 @@
                                 <asp:Panel id="pSoportes" runat="server"></asp:Panel>
                             </div>
                         </div>
-
-                        <!-- Boton-->
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4">
-                                <asp:Button runat="server" id="Button1" Text="Volver" class="btn btn-block btn-default" 
-                                    OnClick="Volver"></asp:Button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

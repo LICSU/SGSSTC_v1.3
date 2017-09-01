@@ -25,7 +25,7 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-4 text-left">
+                    <div class="col-md-4">
                         <asp:Image alt="-" runat="server" id="imgLogo" CssClass="thumbnail" 
                             ImageUrl="~/source/archivos/LogosEmpresas/LICSU.jpg"/>
                     </div>

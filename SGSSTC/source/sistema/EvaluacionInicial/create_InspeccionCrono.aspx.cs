@@ -41,7 +41,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                                 fila++;
                                 crearCampos(fila);
                             }
-                            if (c.ClientID.Contains("btnDocumento"))
+                            else if (c.ClientID.Contains("btnDocumento"))
                             {
                                 int fila = Convert.ToInt32(cantInspecciones.Value);
                                 crearCampos(fila);

@@ -951,7 +951,7 @@
                                                         <td class="col-md-1 text-center"><asp:Label id="PuntajeF66" runat="server" Text="---"></asp:Label></td>
                                                     </tr>
                                 
-                                                    <!-- 23 ESTRUCTURA Y TIPO DE CONSTRUCCION -->
+                                                    <!-- 23 ESTRUCTURA Y TIPO DE CONSTRUCCIÓN -->
                                                     <tr class="bg-aqua color-palette">
                                                         <td class="col-md-1 text-center">23</td>
                                                         <td class="col-md-7  text-left"colspan="3">ESTRUCTURA Y TIPO DE CONSTRUCCIÓN</td>

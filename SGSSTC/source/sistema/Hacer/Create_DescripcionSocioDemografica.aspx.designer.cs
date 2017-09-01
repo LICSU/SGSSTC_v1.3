@@ -292,24 +292,6 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.RadioButtonList rblRegimen;
         
         /// <summary>
-        /// Control phRegimen2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phRegimen2;
-        
-        /// <summary>
-        /// Control rblNivelSisben.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblNivelSisben;
-        
-        /// <summary>
         /// Control phRegimen3.
         /// </summary>
         /// <remarks>
@@ -326,6 +308,24 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEps;
+        
+        /// <summary>
+        /// Control phRegimen2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phRegimen2;
+        
+        /// <summary>
+        /// Control rblNivelSisben.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblNivelSisben;
         
         /// <summary>
         /// Control rblPensiones.

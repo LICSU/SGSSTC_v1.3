@@ -965,6 +965,13 @@ namespace Capa_Datos
                 return 1;
         }
 
+        public static int TrabajadorAutocomplete(string valor)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            var consulta = contexto.trabajador.Where(c => c.primer_nombre + " " + c.primer_apellido + " " + c.cedula == valor).SingleOrDefault();
+            return consulta.id_trabajador;
+        }
+
         #endregion
 
         #region trabajador_gestion

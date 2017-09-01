@@ -1378,12 +1378,18 @@
                 </div>
             
                 <div class="row text-center">
-                    <div class="col-md-12">
+                    <div class="col-md-4 col-md-offset-2">
                         <asp:ImageButton AlternateText="-" ID="btnPrint" runat="server" ImageUrl="~\ico\print.png" 
                             OnClick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
                         <h4>Generar Documento</h4>
                     </div>
-
+                    <div class="col-md-4">
+                        <asp:PlaceHolder Visible="true" id="PlaceHolder1" runat="server">
+                            <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\upload.png" 
+                                data-toggle="modal" data-target="#addModal"/>
+                            <h4>Subir Documento</h4>
+                        </asp:PlaceHolder>
+                    </div>
                 </div>
             </div>
         
@@ -1392,5 +1398,85 @@
             <asp:PostBackTrigger Controlid="btnPrint"/>
         </Triggers>
     </asp:updatepanel>
+
+    <!-- Add Modal -->
+    <div id="addModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                    <h3>Subir Documento</h3>
+                </div>
+
+                <asp:updatepanel id="UpdatePanel1" runat="server">
+                    <ContentTemplate> 
+                                            
+                        <div class="modal-body form-group">
+                            <div class="row">
+                                <label class="col-md-4 control-label">Nombre: </label>
+                                <div class="col-md-6"> 
+                                        <asp:TextBox id="txtNombre" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
+                                            setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="txtNombre" runat="server" 
+                                            ValidationGroup="ValidationAdd1"/>
+                                         </div>
+                            </div><br />
+                                                        
+                            <asp:PlaceHolder runat="server" id="phEmpresaAdd">
+                                <div class="row">
+                                    <label class="col-md-4 control-label">Empresa: </label> 
+                                    <div class="col-md-6">
+                                            <asp:DropDownList id="ddlEmpresaAdd"  data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa"  runat="server" ClientIDMode="Static" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresaAdd_SelectedIndexChanged"></asp:DropDownList>
+                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
+                                                setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                                Font-Bold="true" ControlToValidate="ddlEmpresaAdd" runat="server" 
+                                                ValidationGroup="ValidationAdd1"/>
+                                        </div>
+                                </div><br/>
+                            </asp:PlaceHolder>
+                            
+                            <asp:PlaceHolder runat="server" id="phSucursalAdd">
+                                <div class="row">
+                                    <label class="col-md-4 control-label">Sucursal: </label> 
+                                    <div class="col-md-6">
+                                            <asp:DropDownList id="ddlSucursalAdd"  data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
+                                                setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                                Font-Bold="true" ControlToValidate="ddlSucursalAdd" runat="server" 
+                                                ValidationGroup="ValidationAdd1"/>
+                                        </div>
+                                </div><br/>
+                            </asp:PlaceHolder>
+
+                            <div class="row">
+                                <label class="col-md-4 control-label">Archivo: </label>
+                                <div class="col-md-6">
+                                        <asp:FileUpload id="flpArchivo" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
+                                            setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="flpArchivo" runat="server" 
+                                            ValidationGroup="ValidationAdd1"/>
+                                    </div>
+                            </div><br/>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-2"><asp:Button id="btnAdd" runat="server" Text="Agregar" class="btn btn-block btn-info" OnClick="Guardar" ValidationGroup="ValidationAdd1"/></div>
+                                <div class="col-md-4"><button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                            </div>
+                        </div>
+                    
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:PostBackTrigger Controlid="btnAdd"/>
+                    </Triggers>
+                </asp:updatepanel>
+
+            </div>
+        </div>
+    </div>
 
 </asp:Content>

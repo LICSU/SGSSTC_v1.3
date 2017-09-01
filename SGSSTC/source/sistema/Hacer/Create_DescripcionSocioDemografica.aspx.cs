@@ -148,6 +148,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (validarCampos() && IdTrabajador != 0)
             {
                 int id_fondo = 0, id_eps = 0;
+                IdTrabajador = Getter.TrabajadorAutocomplete(txtContactsSearch.Text);
 
                 if (ddlFondo.SelectedValue != string.Empty)
                 {

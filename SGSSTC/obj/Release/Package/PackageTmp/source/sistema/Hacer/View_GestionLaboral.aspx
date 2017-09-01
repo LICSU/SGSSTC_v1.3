@@ -28,7 +28,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 <h3>Empresa: </h3>
             </div>
             <div class="col-md-8 text-left">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 <h3>Fecha: </h3>
             </div>
             <div class="col-md-8 text-left">
@@ -52,7 +52,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 <h3>Descripción: </h3>
             </div>
             <div class="col-md-8 text-left">
@@ -76,7 +76,7 @@
             </asp:placeholder>
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 <h3>Responsable: </h3>
             </div>
             <div class="col-md-8 text-left">
@@ -88,7 +88,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-4">
                 <h3>Soporte: </h3>
             </div>
             <div class="col-md-8 text-left">

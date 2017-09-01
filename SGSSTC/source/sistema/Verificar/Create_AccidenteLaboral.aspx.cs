@@ -34,8 +34,6 @@ namespace SGSSTC.source.sistema.Verificar
 				CargarListas();
 			}
 		}
-
-
 		public void CargarListas()
 		{
 			if (BoolEmpSuc.Item1)
@@ -60,6 +58,7 @@ namespace SGSSTC.source.sistema.Verificar
 		{
 			DateTime? myDate = null;
 			myDate = txtFechaMuerte.Text == string.Empty ? myDate : Convert.ToDateTime(txtFechaMuerte.Text);
+			IdTrabajador = Getter.TrabajadorAutocomplete(txtTrabajador.Text);
 
 			at_it_el_pa nuevo = new at_it_el_pa()
 			{
@@ -76,10 +75,10 @@ namespace SGSSTC.source.sistema.Verificar
 				factores_personales = txtFactPersonales.Text,
 				tipo_evento = "1",
 				fecha_muerte = myDate,
-				dias_incapacidad = Convert.ToInt32(txtDiasIncapacidad.Text),
-				dias_cargados = Convert.ToInt32(txtDiasCargados.Text),
-				dias_perdidos_ausencia = Convert.ToInt32(txtDiasPerdidosAusTrab.Text),
-				dias_perdidos_restingido = Convert.ToInt32(txtDiasPerdidosctRest.Text),
+				dias_incapacidad = txtDiasIncapacidad.Text == string.Empty ? 0: Convert.ToInt32(txtDiasIncapacidad.Text),
+				dias_cargados = txtDiasCargados.Text == string.Empty ? 0 : Convert.ToInt32(txtDiasCargados.Text),
+				dias_perdidos_ausencia = txtDiasPerdidosAusTrab.Text == string.Empty ? 0 : Convert.ToInt32(txtDiasPerdidosAusTrab.Text),
+				dias_perdidos_restingido = txtDiasPerdidosctRest.Text == string.Empty ? 0 : Convert.ToInt32(txtDiasPerdidosctRest.Text),
 				dias_no_perdidos = chkSinDias.Checked == true ? "true" : "false",
 				tipo_enfermedad = ddlTipoEnfermedad.SelectedValue
 			};
