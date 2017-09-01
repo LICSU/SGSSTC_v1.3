@@ -794,7 +794,7 @@
 													</asp:TableRow>
 													<asp:TableRow>
 														<asp:TableCell>81</asp:TableCell>
-														<asp:TableCell>¿Se realizan evaluaciones médicas periódicas deacuerdo al riesgo al que está expuesto el trabajador?</asp:TableCell>
+														<asp:TableCell>¿Se realizan evaluaciones médicas periódicas deacuerdo al riesgo al que está expuesto el trabajador?<strong>(abstenerse de realizar la selección si no existe el riesgo de radiación)</strong></asp:TableCell>
 														<asp:TableCell><asp:RadioButton runat="server" id="chkSi81" GroupName="chk81"></asp:RadioButton></asp:TableCell>
 														<asp:TableCell><asp:RadioButton runat="server" id="chkNo81" GroupName="chk81"></asp:RadioButton></asp:TableCell>
 														<asp:TableCell><asp:TextBox runat="server" id="txt81" CssClass="form-control"></asp:TextBox></asp:TableCell>
