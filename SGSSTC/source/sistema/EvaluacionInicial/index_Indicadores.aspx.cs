@@ -65,15 +65,40 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (BoolEmpSuc.Item1)
             {
                 Listas.Empresa(ddlEmpresa);
+                Listas.Empresa(ddlEmpresaAdd);
             }
             if (BoolEmpSuc.Item2)
             {
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
+                Listas.Sucursal(ddlSucursalAdd, ObjUsuario.Id_empresa);
             }
         }
         #endregion
 
         #region acciones
+
+        protected void Guardar(object sender, EventArgs e)
+        {
+            Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresaAdd, ddlSucursalAdd);
+
+            String[] valores = {
+                txtNombre.Text,
+                "Indicadores"
+            };
+
+            ObjUsuario.Error = CRUD.AddIndicadores(IdEmpSuc, ObjUsuario, valores, flpArchivo);
+
+            Modal.CerrarModal("printModal", "printModalScript", this);
+            Modal.Validacion(this, ObjUsuario.Error, "Add");
+        }
+
+        protected void ddlEmpresaAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlEmpresaAdd.SelectedValue != string.Empty)
+            {
+                Listas.Sucursal(ddlSucursalAdd, Convert.ToInt32(ddlEmpresaAdd.SelectedValue));
+            }
+        }
 
 
         protected void GenerarDocumento(object sender, EventArgs e)

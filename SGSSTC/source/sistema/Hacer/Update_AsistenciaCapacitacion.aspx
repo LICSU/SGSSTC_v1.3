@@ -53,7 +53,7 @@
 
         </ContentTemplate>
         <Triggers>
-            <asp:PostBackTrigger ControlID = "btPrintSave"/>
+            
         </Triggers>
     </asp:updatepanel>
 
