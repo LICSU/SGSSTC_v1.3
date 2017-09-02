@@ -888,6 +888,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             String[] xCadenas = { "SI", "NO" };
             graficaPie.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
             graficaPie.Series["seriesPie"].Points.DataBindXY(xCadenas, yAsistencias);
+            graficaPie.SaveImage(HttpContext.Current.Server.MapPath("~/source/archivos/images_graf/graficaInspPA.jpg"));
         }
         #endregion
 

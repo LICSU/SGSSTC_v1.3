@@ -558,11 +558,11 @@ namespace Capa_Datos
             miCelda3.Texto = "DIRECCIÓN:";
             tabla = AddCelda(tabla, miCelda3);
 
-            miCelda1.Texto = "NUMERO DE CONTACTO:";
-            tabla = AddCelda(tabla, miCelda1);
-
-            miCelda2.Texto = "N° DE TRABAJADORES";
+            miCelda2.Texto = "N° CONTACTO:";
             tabla = AddCelda(tabla, miCelda2);
+
+            miCelda1.Texto = "N° DE TRAB:";
+            tabla = AddCelda(tabla, miCelda1);
             #endregion
 
             #region membrete fila 5
@@ -572,11 +572,11 @@ namespace Capa_Datos
             miCelda3_1.Texto = direccion;
             tabla = AddCelda(tabla, miCelda3_1);
 
-            miCelda1_1.Texto = telefono;
-            tabla = AddCelda(tabla, miCelda1_1);
-
-            miCelda2_1.Texto = NumTrab;
+            miCelda2_1.Texto = telefono;
             tabla = AddCelda(tabla, miCelda2_1);
+
+            miCelda1_1.Texto = NumTrab;
+            tabla = AddCelda(tabla, miCelda1_1);
             #endregion
 
 

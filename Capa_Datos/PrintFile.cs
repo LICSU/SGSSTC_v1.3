@@ -2974,6 +2974,9 @@ namespace Capa_Datos
             miCelda3.Texto = "Las respuestas Negativas (NO) , indican condiciones de trabajo que pueden estar asociadas a alto riesgo de lesión o enfermedad.";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
 
+            miCelda49.Texto = "~/source/archivos/images_graf/graficaInspPA.jpg";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaImage(DocumentoPDF.Item2, miCelda49));
+
             #endregion
 
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
@@ -5386,19 +5389,19 @@ namespace Capa_Datos
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
             miCelda69.Texto = valores[2];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda69));
 
             miCelda12.Texto = "EN TAL SENTIDO AL EMPRESA SE COMPROMETE A";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
             miCelda69.Texto = valores[3];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda69));
 
             miCelda12.Texto = "ALCANCE DEL SST";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
             miCelda69.Texto = valores[4];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda69));
 
             #endregion
 

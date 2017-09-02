@@ -52,29 +52,24 @@
                                     Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
                                     ControlToValidate="ddlPuesto" runat="server" ValidationGroup="ValidationAdd"/>
                             </div>
+                            <asp:PlaceHolder runat="server" id="phTrabajdor" Visible="False">
+                                <div class="col-md-3">
+                                    <h4 class="text-center">Trabajador</h4>
+                                    <asp:TextBox id="txtTrabajador" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1" 
+                                        CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                        TargetControlid="txtTrabajador" id="AutoCompleteExtender1" runat="server" 
+                                        FirstRowSelected = "false" 
+                                        CompletionListCssClass="completionList"
+                                        CompletionListItemCssClass="listItem"
+                                        CompletionListHighlightedItemCssClass="itemHighlighted">
+                                    </cc1:AutoCompleteExtender>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
+                                        Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
+                                        ControlToValidate="txtTrabajador" runat="server" ValidationGroup="ValidationAdd"/>
+                                </div>
+                            </asp:PlaceHolder>
                         </div>
-                    
-                    <div class="row form-group">
-                    <div class="col-md-1"></div>
-                        <asp:PlaceHolder runat="server" id="phTrabajdor" Visible="False">
-                        <div class="col-md-3">
-                            <h4 class="text-center">Trabajador</h4>
-                            <asp:TextBox id="txtTrabajador" runat="server" CssClass="form-control"></asp:TextBox>
-                            <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1" 
-                                CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
-                                TargetControlid="txtTrabajador" id="AutoCompleteExtender1" runat="server" 
-                                FirstRowSelected = "false" 
-                                CompletionListCssClass="completionList"
-                                CompletionListItemCssClass="listItem"
-                                CompletionListHighlightedItemCssClass="itemHighlighted">
-                            </cc1:AutoCompleteExtender>
-                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
-                                Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
-                                ControlToValidate="txtTrabajador" runat="server" ValidationGroup="ValidationAdd"/>
-                        </div>
-                         </asp:PlaceHolder>
-                    </div>
-
                         
                      <asp:PlaceHolder runat="server" id="phInformacion" Visible="False">
                         <div class="row">

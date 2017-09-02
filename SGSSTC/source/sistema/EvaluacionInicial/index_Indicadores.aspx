@@ -459,7 +459,7 @@
                                                         </th>
                                                         <th>
                                                             <div class="external-event bg-green">
-                                                                Número total de Áreas<br />
+                                                                Número total de Sedes<br />
                                                                 <asp:label id="Label3" runat="server" text="---"></asp:label>
                                                             </div>
                                                         </th>
