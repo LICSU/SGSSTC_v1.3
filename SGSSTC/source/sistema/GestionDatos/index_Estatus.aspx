@@ -130,7 +130,7 @@
                             <asp:PlaceHolder runat="server" id="phEmpresaAdd" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-left">Empresa</h4>
+                                        <h4>Empresa</h4>
 
                                         <asp:DropDownList id="ddlEmpresaAdd" data-toggle="tooltip" data-placement="bottom" 
                                             title="Seleccione una Empresa" runat="server" ClientIDMode="Static" 
@@ -145,7 +145,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Nombre</h4>
+                                    <h4>Nombre</h4>
 
                                    <asp:TextBox id="txtNombreAdd" MaxLength="100" runat="server" ClientIDMode="Static" 
                                        CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -159,7 +159,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Descripcion</h4>
+                                    <h4>Descripcion</h4>
 
                                     <asp:TextBox id="txtDescripcionAdd" MaxLength="100" TextMode="MultiLine" Rows="3" runat="server"
                                         ClientIDMode="Static" CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -210,7 +210,7 @@
                             <asp:PlaceHolder runat="server" id="phEmpresaEdit" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-left">Empresa</h4>
+                                        <h4>Empresa</h4>
 
                                         <asp:DropDownList id="ddlEmpresaEdit" 
                                             data-toggle="tooltip" data-placement="bottom" title="Seleccione una empresa" 
@@ -225,7 +225,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Nombre</h4>
+                                    <h4>Nombre</h4>
 
                                     <asp:TextBox id="txtNombreEdit" MaxLength="100" runat="server" ClientIDMode="Static" 
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 
@@ -241,7 +241,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Descripcion</h4>
+                                    <h4>Descripcion</h4>
 
                                     <asp:TextBox id="txtDescripcionEdit" MaxLength="100" runat="server" ClientIDMode="Static"
                                         CssClass="form-control" data-toggle="tooltip" data-placement="bottom" 

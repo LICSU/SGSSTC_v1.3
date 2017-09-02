@@ -1337,25 +1337,25 @@
     <Content Include="source\css\custom1.css" />
     <Content Include="source\sistema\Consulta\create.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\create_AutoEvaluacion.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionCrono.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionEPP.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionExtintores.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionMediosEscape.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionPrimAux.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionPuestos.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionPuestosAdmin.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_InspeccionUsoEpp.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresA.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresB.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresC.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\create_VigilanciaEpidemiologica.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionCrono.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionEPP.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionExtintores.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionMediosEscape.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionPrimAux.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionPuestos.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionPuestosAdmin.aspx" />
+    <Content Include="source\sistema\Hacer\create_InspeccionUsoEpp.aspx" />
+    <Content Include="source\sistema\Hacer\create_ReporteTrabajadoresA.aspx" />
+    <Content Include="source\sistema\Hacer\create_ReporteTrabajadoresB.aspx" />
+    <Content Include="source\sistema\Hacer\create_ReporteTrabajadoresC.aspx" />
+    <Content Include="source\sistema\Hacer\create_VigilanciaEpidemiologica.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_AnalisisVulnerabilidad.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_AutoEvaluacion.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\index_Indicadores.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\index_Inspecciones.aspx" />
+    <Content Include="source\sistema\Verificar\index_Indicadores.aspx" />
+    <Content Include="source\sistema\Hacer\index_Inspecciones.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_PorcentajeCapacitacion.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\index_ReporteAccidentes.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\index_ReporteTrabajadores.aspx" />
+    <Content Include="source\sistema\Hacer\index_IndiceAccidentalidad.aspx" />
+    <Content Include="source\sistema\Hacer\index_ReporteTrabajadores.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_VigilanciaEpidemiologica.aspx" />
     <Content Include="source\sistema\GestionDatos\Create_Empresa.aspx" />
     <Content Include="source\sistema\GestionDatos\Create_PuestoTrabajo.aspx" />
@@ -1453,20 +1453,20 @@
     <Content Include="source\sistema\MenuPrincipal\ViewMisPreguntas.aspx" />
     <Content Include="source\sistema\MenuPrincipal\ViewPreguntasPares.aspx" />
     <Content Include="source\sistema\Registro\index.aspx" />
-    <Content Include="source\sistema\Verificar\Create_AccidenteLaboral.aspx" />
-    <Content Include="source\sistema\Verificar\Create_IncidenteLaboral.aspx" />
-    <Content Include="source\sistema\Verificar\Create_InvestigacionAccidente.aspx" />
-    <Content Include="source\sistema\Verificar\Create_InvestigacionIncidente.aspx" />
-    <Content Include="source\sistema\Verificar\index_AccidenteLaboral.aspx" />
-    <Content Include="source\sistema\Verificar\index_IncidenteLaboral.aspx" />
-    <Content Include="source\sistema\Verificar\index_InvestigacionAccidente.aspx" />
-    <Content Include="source\sistema\Verificar\index_InvestigacionIncidente.aspx" />
-    <Content Include="source\sistema\Verificar\Update_Accidentes.aspx" />
-    <Content Include="source\sistema\Verificar\Update_Incidentes.aspx" />
-    <Content Include="source\sistema\Verificar\View_Accidente.aspx" />
-    <Content Include="source\sistema\Verificar\View_Incidente.aspx" />
-    <Content Include="source\sistema\Verificar\View_InvestigacionAccidente.aspx" />
-    <Content Include="source\sistema\Verificar\View_InvestigacionIncidente.aspx" />
+    <Content Include="source\sistema\Hacer\Create_AccidenteLaboral.aspx" />
+    <Content Include="source\sistema\Hacer\Create_IncidenteLaboral.aspx" />
+    <Content Include="source\sistema\Hacer\Create_InvestigacionAccidente.aspx" />
+    <Content Include="source\sistema\Hacer\Create_InvestigacionIncidente.aspx" />
+    <Content Include="source\sistema\Hacer\index_AccidenteLaboral.aspx" />
+    <Content Include="source\sistema\Hacer\index_IncidenteLaboral.aspx" />
+    <Content Include="source\sistema\Hacer\index_InvestigacionAccidente.aspx" />
+    <Content Include="source\sistema\Hacer\index_InvestigacionIncidente.aspx" />
+    <Content Include="source\sistema\Hacer\Update_Accidentes.aspx" />
+    <Content Include="source\sistema\Hacer\Update_Incidentes.aspx" />
+    <Content Include="source\sistema\Hacer\View_Accidente.aspx" />
+    <Content Include="source\sistema\Hacer\View_Incidente.aspx" />
+    <Content Include="source\sistema\Hacer\View_InvestigacionAccidente.aspx" />
+    <Content Include="source\sistema\Hacer\View_InvestigacionIncidente.aspx" />
     <Content Include="source\WebUserControl\pagination.ascx" />
     <Content Include="source\WebUserControl\ucMsjModal.ascx" />
     <Content Include="Web.config">
@@ -1543,88 +1543,88 @@
     <Compile Include="source\sistema\EvaluacionInicial\create_AutoEvaluacion.aspx.designer.cs">
       <DependentUpon>create_AutoEvaluacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionCrono.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionCrono.aspx.cs">
       <DependentUpon>create_InspeccionCrono.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionCrono.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionCrono.aspx.designer.cs">
       <DependentUpon>create_InspeccionCrono.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionEPP.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionEPP.aspx.cs">
       <DependentUpon>create_InspeccionEPP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionEPP.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionEPP.aspx.designer.cs">
       <DependentUpon>create_InspeccionEPP.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionExtintores.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionExtintores.aspx.cs">
       <DependentUpon>create_InspeccionExtintores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionExtintores.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionExtintores.aspx.designer.cs">
       <DependentUpon>create_InspeccionExtintores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionMediosEscape.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionMediosEscape.aspx.cs">
       <DependentUpon>create_InspeccionMediosEscape.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionMediosEscape.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionMediosEscape.aspx.designer.cs">
       <DependentUpon>create_InspeccionMediosEscape.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionPrimAux.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionPrimAux.aspx.cs">
       <DependentUpon>create_InspeccionPrimAux.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionPrimAux.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionPrimAux.aspx.designer.cs">
       <DependentUpon>create_InspeccionPrimAux.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionPuestos.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionPuestos.aspx.cs">
       <DependentUpon>create_InspeccionPuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionPuestos.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionPuestos.aspx.designer.cs">
       <DependentUpon>create_InspeccionPuestos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionPuestosAdmin.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionPuestosAdmin.aspx.cs">
       <DependentUpon>create_InspeccionPuestosAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionPuestosAdmin.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionPuestosAdmin.aspx.designer.cs">
       <DependentUpon>create_InspeccionPuestosAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionUsoEpp.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionUsoEpp.aspx.cs">
       <DependentUpon>create_InspeccionUsoEpp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_InspeccionUsoEpp.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_InspeccionUsoEpp.aspx.designer.cs">
       <DependentUpon>create_InspeccionUsoEpp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresA.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_ReporteTrabajadoresA.aspx.cs">
       <DependentUpon>create_ReporteTrabajadoresA.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresA.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_ReporteTrabajadoresA.aspx.designer.cs">
       <DependentUpon>create_ReporteTrabajadoresA.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresB.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_ReporteTrabajadoresB.aspx.cs">
       <DependentUpon>create_ReporteTrabajadoresB.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresB.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_ReporteTrabajadoresB.aspx.designer.cs">
       <DependentUpon>create_ReporteTrabajadoresB.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresC.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_ReporteTrabajadoresC.aspx.cs">
       <DependentUpon>create_ReporteTrabajadoresC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_ReporteTrabajadoresC.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_ReporteTrabajadoresC.aspx.designer.cs">
       <DependentUpon>create_ReporteTrabajadoresC.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_VigilanciaEpidemiologica.aspx.cs">
+    <Compile Include="source\sistema\Hacer\create_VigilanciaEpidemiologica.aspx.cs">
       <DependentUpon>create_VigilanciaEpidemiologica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\create_VigilanciaEpidemiologica.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\create_VigilanciaEpidemiologica.aspx.designer.cs">
       <DependentUpon>create_VigilanciaEpidemiologica.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\EvaluacionInicial\index_AnalisisVulnerabilidad.aspx.cs">
@@ -1641,18 +1641,18 @@
     <Compile Include="source\sistema\EvaluacionInicial\index_AutoEvaluacion.aspx.designer.cs">
       <DependentUpon>index_AutoEvaluacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_Indicadores.aspx.cs">
+    <Compile Include="source\sistema\Verificar\index_Indicadores.aspx.cs">
       <DependentUpon>index_Indicadores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_Indicadores.aspx.designer.cs">
+    <Compile Include="source\sistema\Verificar\index_Indicadores.aspx.designer.cs">
       <DependentUpon>index_Indicadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_Inspecciones.aspx.cs">
+    <Compile Include="source\sistema\Hacer\index_Inspecciones.aspx.cs">
       <DependentUpon>index_Inspecciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_Inspecciones.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\index_Inspecciones.aspx.designer.cs">
       <DependentUpon>index_Inspecciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\EvaluacionInicial\index_PorcentajeCapacitacion.aspx.cs">
@@ -1662,18 +1662,18 @@
     <Compile Include="source\sistema\EvaluacionInicial\index_PorcentajeCapacitacion.aspx.designer.cs">
       <DependentUpon>index_PorcentajeCapacitacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_ReporteAccidentes.aspx.cs">
-      <DependentUpon>index_ReporteAccidentes.aspx</DependentUpon>
+    <Compile Include="source\sistema\Hacer\index_IndiceAccidentalidad.aspx.cs">
+      <DependentUpon>index_IndiceAccidentalidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_ReporteAccidentes.aspx.designer.cs">
-      <DependentUpon>index_ReporteAccidentes.aspx</DependentUpon>
+    <Compile Include="source\sistema\Hacer\index_IndiceAccidentalidad.aspx.designer.cs">
+      <DependentUpon>index_IndiceAccidentalidad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_ReporteTrabajadores.aspx.cs">
+    <Compile Include="source\sistema\Hacer\index_ReporteTrabajadores.aspx.cs">
       <DependentUpon>index_ReporteTrabajadores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_ReporteTrabajadores.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\index_ReporteTrabajadores.aspx.designer.cs">
       <DependentUpon>index_ReporteTrabajadores.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\EvaluacionInicial\index_VigilanciaEpidemiologica.aspx.cs">
@@ -2349,102 +2349,102 @@
     <Compile Include="source\sistema\Registro\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_AccidenteLaboral.aspx.cs">
+    <Compile Include="source\sistema\Hacer\Create_AccidenteLaboral.aspx.cs">
       <DependentUpon>Create_AccidenteLaboral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_AccidenteLaboral.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Create_AccidenteLaboral.aspx.designer.cs">
       <DependentUpon>Create_AccidenteLaboral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_IncidenteLaboral.aspx.cs">
+    <Compile Include="source\sistema\Hacer\Create_IncidenteLaboral.aspx.cs">
       <DependentUpon>Create_IncidenteLaboral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_IncidenteLaboral.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Create_IncidenteLaboral.aspx.designer.cs">
       <DependentUpon>Create_IncidenteLaboral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_InvestigacionAccidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\Create_InvestigacionAccidente.aspx.cs">
       <DependentUpon>Create_InvestigacionAccidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_InvestigacionAccidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Create_InvestigacionAccidente.aspx.designer.cs">
       <DependentUpon>Create_InvestigacionAccidente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_InvestigacionIncidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\Create_InvestigacionIncidente.aspx.cs">
       <DependentUpon>Create_InvestigacionIncidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Create_InvestigacionIncidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Create_InvestigacionIncidente.aspx.designer.cs">
       <DependentUpon>Create_InvestigacionIncidente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_AccidenteLaboral.aspx.cs">
+    <Compile Include="source\sistema\Hacer\index_AccidenteLaboral.aspx.cs">
       <DependentUpon>index_AccidenteLaboral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_AccidenteLaboral.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\index_AccidenteLaboral.aspx.designer.cs">
       <DependentUpon>index_AccidenteLaboral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_IncidenteLaboral.aspx.cs">
+    <Compile Include="source\sistema\Hacer\index_IncidenteLaboral.aspx.cs">
       <DependentUpon>index_IncidenteLaboral.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_IncidenteLaboral.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\index_IncidenteLaboral.aspx.designer.cs">
       <DependentUpon>index_IncidenteLaboral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_InvestigacionAccidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\index_InvestigacionAccidente.aspx.cs">
       <DependentUpon>index_InvestigacionAccidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_InvestigacionAccidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\index_InvestigacionAccidente.aspx.designer.cs">
       <DependentUpon>index_InvestigacionAccidente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_InvestigacionIncidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\index_InvestigacionIncidente.aspx.cs">
       <DependentUpon>index_InvestigacionIncidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\index_InvestigacionIncidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\index_InvestigacionIncidente.aspx.designer.cs">
       <DependentUpon>index_InvestigacionIncidente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Update_Accidentes.aspx.cs">
+    <Compile Include="source\sistema\Hacer\Update_Accidentes.aspx.cs">
       <DependentUpon>Update_Accidentes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Update_Accidentes.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Update_Accidentes.aspx.designer.cs">
       <DependentUpon>Update_Accidentes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Update_Incidentes.aspx.cs">
+    <Compile Include="source\sistema\Hacer\Update_Incidentes.aspx.cs">
       <DependentUpon>Update_Incidentes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\Update_Incidentes.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Update_Incidentes.aspx.designer.cs">
       <DependentUpon>Update_Incidentes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_Accidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\View_Accidente.aspx.cs">
       <DependentUpon>View_Accidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_Accidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\View_Accidente.aspx.designer.cs">
       <DependentUpon>View_Accidente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_Incidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\View_Incidente.aspx.cs">
       <DependentUpon>View_Incidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_Incidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\View_Incidente.aspx.designer.cs">
       <DependentUpon>View_Incidente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_InvestigacionAccidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\View_InvestigacionAccidente.aspx.cs">
       <DependentUpon>View_InvestigacionAccidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_InvestigacionAccidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\View_InvestigacionAccidente.aspx.designer.cs">
       <DependentUpon>View_InvestigacionAccidente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_InvestigacionIncidente.aspx.cs">
+    <Compile Include="source\sistema\Hacer\View_InvestigacionIncidente.aspx.cs">
       <DependentUpon>View_InvestigacionIncidente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Verificar\View_InvestigacionIncidente.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\View_InvestigacionIncidente.aspx.designer.cs">
       <DependentUpon>View_InvestigacionIncidente.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\WebUserControl\pagination.ascx.cs">

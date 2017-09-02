@@ -182,7 +182,7 @@ namespace Capa_Datos
                 where (
                 c.puesto_trabajo.area.sucursal.id_sucursal == IdSucursal &&
                 (c.primer_nombre.Contains(prefixText) || c.primer_apellido.Contains(prefixText)))
-                select new { c.id_puesto_trabajo, c.id_trabajador, nombre = c.primer_nombre + " " + c.primer_apellido }).ToList();
+                select new { c.id_puesto_trabajo, c.id_trabajador, nombre = c.primer_nombre + " " + c.primer_apellido +" "+c.cedula }).ToList();
 
             if (IdPuesto != 0)
             {

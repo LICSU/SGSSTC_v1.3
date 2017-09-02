@@ -32,3 +32,4 @@ C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\LinqToExcel.dll
 C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Remotion.Data.Linq.dll
 C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Remotion.dll
 C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\Remotion.Interfaces.dll
+C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\obj\Debug\Capa_Datos.csprojResolveAssemblyReference.cache

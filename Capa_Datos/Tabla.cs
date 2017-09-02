@@ -20,7 +20,7 @@ namespace Capa_Datos
             GridView GridView1,
             int _id_empresa = 0,
             int _id_sucursal = 0,
-            string _id_area = "",
+            string _id_area = "0",
             string _search = "",
             string _fecha_ini = "",
             string _fecha_fin = "")
@@ -37,7 +37,7 @@ namespace Capa_Datos
                         AC.trabajador.puesto_trabajo.area.sucursal.id_empresa,
                         Afectado = AC.trabajador.primer_nombre + " " + AC.trabajador.primer_apellido,
                         area = AC.area.nombre != "0" ? "Ninguna" : " " + AC.area.nombre,
-                        id_sucursal = AC.puesto_trabajo.area.sucursal.id_sucursal != 0 ? "0" : " " + AC.puesto_trabajo.area.sucursal.id_sucursal,
+                        id_sucursal = AC.trabajador.puesto_trabajo.area.sucursal.id_sucursal,
                         consulta = AC.num_consultas != null ? "Con Consulta" : "Sin Consulta",
                         AC.reporte_accidente,
                         AC.documento_comunicado,
@@ -45,8 +45,8 @@ namespace Capa_Datos
                     }).ToList();
 
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
-            if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == Convert.ToString(_id_sucursal)).ToList(); }
-            if (_id_area != string.Empty) { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
+            if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
+            if (_id_area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
             if (_search != string.Empty) { query = query.Where(x => x.Afectado == _search).ToList(); }
             if (_fecha_ini != string.Empty) { query = query.Where(x => x.fecha_acc >= Convert.ToDateTime(_fecha_ini)).ToList(); }
             if (_fecha_fin != string.Empty) { query = query.Where(x => x.fecha_acc <= Convert.ToDateTime(_fecha_fin)).ToList(); }
@@ -59,7 +59,7 @@ namespace Capa_Datos
             GridView GridView1,
             int _id_empresa = 0,
             int _id_sucursal = 0,
-            string _id_area = "",
+            string _id_area = "0",
             string _search = "",
             string _fecha_ini = "",
             string _fecha_fin = "")
@@ -77,7 +77,7 @@ namespace Capa_Datos
                         AC.trabajador.puesto_trabajo.area.sucursal.id_empresa,
                         Afectado = AC.trabajador.primer_nombre + " " + AC.trabajador.primer_apellido,
                         area = AC.area.nombre != "0" ? "Ninguna" : " " + AC.area.nombre,
-                        id_sucursal = AC.puesto_trabajo.area.sucursal.id_sucursal != 0 ? "0" : " " + AC.puesto_trabajo.area.sucursal.id_sucursal,
+                        id_sucursal = AC.trabajador.puesto_trabajo.area.sucursal.id_sucursal,
                         consulta = AC.num_consultas != null ? "Con Consulta" : "Sin Consulta",
                         AC.reporte_accidente,
                         AC.documento_comunicado,
@@ -85,8 +85,8 @@ namespace Capa_Datos
                     }).ToList();
 
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
-            if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == Convert.ToString(_id_sucursal)).ToList(); }
-            if (_id_area != string.Empty) { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
+            if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
+            if (_id_area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
             if (_search != string.Empty) { query = query.Where(x => x.Afectado == _search).ToList(); }
             if (_fecha_ini != string.Empty) { query = query.Where(x => x.fecha_acc >= Convert.ToDateTime(_fecha_ini)).ToList(); }
             if (_fecha_fin != string.Empty) { query = query.Where(x => x.fecha_acc <= Convert.ToDateTime(_fecha_fin)).ToList(); }
@@ -328,7 +328,7 @@ namespace Capa_Datos
             GridView GridView1,
             int id_empresa = 0,
             int id_sucursal = 0,
-            string id_area = "",
+            string id_area = "0",
             string buscar = "")
         {
             try
@@ -354,7 +354,7 @@ namespace Capa_Datos
                     }).ToList();
                     if (id_empresa != 0) { query = query.Where(x => x.id_empresa == id_empresa).ToList(); }
                     if (id_sucursal != 0) { query = query.Where(x => x.id_sucursal == id_sucursal).ToList(); }
-                    if (!string.IsNullOrEmpty(id_area)) { query = query.Where(x => x.id_area == Convert.ToInt32(id_area)).ToList(); }
+                    if (id_area!="0") { query = query.Where(x => x.id_area == Convert.ToInt32(id_area)).ToList(); }
                     if (!string.IsNullOrEmpty(buscar)) { query = query.Where(x => x.serial_extintor.ToLower().Contains(buscar.ToLower())).ToList(); }
                     GridView1.DataSource = query;
                     GridView1.DataBind();
@@ -377,7 +377,7 @@ namespace Capa_Datos
         public static void Estatus(
             GridView GridView1,
             int _id_sucursal = 0,
-            string _id_area = "",
+            string _id_area = "0",
             string _nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
@@ -396,7 +396,7 @@ namespace Capa_Datos
                     }).ToList();
 
             if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
-            if (_id_area != string.Empty) { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
+            if (_id_area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(_id_area)).ToList(); }
             if (_nombre != string.Empty) { query = query.Where(x => x.nombre.ToLower().Contains(_nombre.ToLower())).ToList(); }
 
             GridView1.DataSource = query;

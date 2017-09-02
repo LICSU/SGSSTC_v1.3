@@ -11,8 +11,6 @@
     <asp:updatepanel id="updatePanelPrinicpal" runat="server">
         
         <ContentTemplate>
-            
-            <div class="container" style="width: 100%;">
                 
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
@@ -81,7 +79,9 @@
                         </asp:GridView>
                     </div>
                 </div>
-            </div><br />
+            </div>
+            
+            <br />
             
                 <div class="row" align="center">
                     <div class="col-md-4 col-md-offset-2">
@@ -96,7 +96,6 @@
                     </div>
                 </div>
 
-            </div>
 
         </ContentTemplate>
         <Triggers></Triggers>

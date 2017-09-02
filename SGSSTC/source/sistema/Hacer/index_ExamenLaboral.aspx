@@ -34,25 +34,25 @@
             <div class="row">
                 <asp:PlaceHolder runat="server" id="phEmpresa">
                     <div class="col-md-3">
-                        <h4 class="text-left">Empresa</h4>
+                        <h4>Empresa</h4>
                         <asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
                 
                 <div class="col-md-3">
-                    <h4 class="text-left">Tipo de Examen</h4>
+                    <h4>Tipo de Examen</h4>
                     <asp:DropDownList runat="server" id="ddlTipoExamen" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoExamen_SelectedIndexChanged"></asp:DropDownList>
                 </div>
 
                 <div class="col-md-3">
-                    <h4 class="text-left">Fecha Inicio</h4>
+                    <h4>Fecha Inicio</h4>
                     <asp:TextBox runat="server" id="txtFechaInicio" TextMode="Date" AutoPostBack="true" 
                         class="form-control" OnTextChanged="txtFechaInicio_TextChanged"></asp:TextBox>
                 </div>
                 
                 <div class="col-md-3">
-                    <h4 class="text-left">Fecha Fin</h4>
+                    <h4>Fecha Fin</h4>
                     <asp:TextBox runat="server" id="txtFechaFin" TextMode="Date" AutoPostBack="true" 
                         class="form-control" OnTextChanged="txtFechaFin_TextChanged"></asp:TextBox>
                 </div>

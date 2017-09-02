@@ -1969,7 +1969,7 @@ namespace Capa_Datos
                                         "InspeccionDePuestos_", "INSPECCIÓN DE LOS PUESTOS DE TRABAJO", _page);
 
             #region contenido
-            miCelda12.Texto = "INSPECCION PUESTO OPERATIVO";
+            miCelda12.Texto = "INSPECCIÓN PUESTO OPERATIVO";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
             miCelda11.Texto = valores[1];
@@ -2612,7 +2612,7 @@ namespace Capa_Datos
             #region contenido
 
             #region encabezado
-            miCelda12.Texto = "INSPECCION DE LOS MEDIOS DE ESCAPE";
+            miCelda12.Texto = "INSPECCIÓN DE LOS MEDIOS DE ESCAPE";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
             miCelda16.Texto = "Nombre del inspector";
@@ -2882,7 +2882,7 @@ namespace Capa_Datos
                                         "InspeccionPuestoTrabajoAdmin_", "INSPECCIÓN PUESTO DE TRABAJO ADMINISTRATIVO", _page);
 
             #region contenido
-            miCelda12.Texto = "INSPECCION PUESTO DE TRABAJO ADMINISTRATIVO";
+            miCelda12.Texto = "INSPECCIÓN PUESTO DE TRABAJO ADMINISTRATIVO";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
             miCelda3.Texto = valores[1];

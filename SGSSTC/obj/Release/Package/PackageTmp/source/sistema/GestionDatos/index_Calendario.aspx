@@ -1,9 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Calendario.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Calendario" %>
 
-
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content><%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %><%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %><%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %><%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
+    PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
+<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
@@ -11,7 +13,6 @@
     <asp:updatepanel id="updatePanelPrinicpal" runat="server">
         <ContentTemplate>
 
-            <div class="container" style="width:100%;">
 
                 <ol class="breadcrumb">
                     <li><a href="#">Gestión de Datos</a></li>
@@ -73,7 +74,6 @@
                     </div>
                 </div>
 
-            </div>
             
             <script src="../../../resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
             <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>

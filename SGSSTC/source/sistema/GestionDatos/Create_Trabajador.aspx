@@ -27,7 +27,7 @@
 				<div class="row">
 					
 					<div class="col-md-4  col-md-offset-4">
-						<h4 class="text-left">Empresa</h4>
+						<h4>Empresa</h4>
 						
 						<asp:DropDownList runat="server" id="ddlEmpresas" data-toggle="tooltip" data-placement="bottom" 
 							title="Seleccione una empresa" CssClass="form-control" AutoPostBack="true" 
@@ -43,7 +43,7 @@
 			<asp:PlaceHolder runat="server" id="phSucursal1" Visible="false">
 				<div class="row">
 					<div class="col-md-4  col-md-offset-4">
-						<h4 class="text-left">Sucursal</h4>
+						<h4>Sucursal</h4>
 						
 						<asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" 
 							title="Seleccione una Sucursal" CssClass="form-control" AutoPostBack="true" 
@@ -58,7 +58,7 @@
 				
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Primer Nombre</h4>
+					<h4>Primer Nombre</h4>
 					
 					<asp:TextBox runat="server" MaxLength="50" id="txtNombre1" CssClass="form-control" placeholder="Primer Nombre"
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese el primer nombre del trabajador(a)"></asp:TextBox>
@@ -69,7 +69,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Segundo Nombre</h4>
+					<h4>Segundo Nombre</h4>
 					<asp:TextBox runat="server" MaxLength="50" id="txtNombre2" CssClass="form-control" placeholder="Segundo Nombre"
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese el segundo nombre del trabajador(a)"></asp:TextBox>
 
@@ -78,7 +78,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Primer Apellido</h4>
+					<h4>Primer Apellido</h4>
 					
 					<asp:TextBox runat="server" MaxLength="50" id="txtApellido1" CssClass="form-control" placeholder="Primer Apellido"
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese el primer apellido del trabajador(a)"></asp:TextBox>
@@ -89,7 +89,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<h4 class="text-left">Segundo Apellido</h4>
+					<h4>Segundo Apellido</h4>
 					
 					<asp:TextBox runat="server" MaxLength="50" id="txtApellido2" CssClass="form-control" 
 						placeholder="Segundo Apellido" data-toggle="tooltip" data-placement="bottom" 
@@ -103,7 +103,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Estatus</h4>
+					<h4>Estatus</h4>
 					
 					<asp:DropDownList runat="server" id="ddlEstatus" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" 
@@ -115,7 +115,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Documento de Identidad</h4> 
+					<h4>Documento de Identidad</h4> 
 					
 					<asp:TextBox runat="server" MaxLength="15" id="txtCedula" CssClass="form-control" placeholder="Cédula" 
 						TextMode="Number" data-toggle="tooltip" data-placement="bottom" 
@@ -129,7 +129,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Fecha de Nacimiento</h4>
+					<h4>Fecha de Nacimiento</h4>
 					
 					<asp:TextBox runat="server" id="txtFechadeNacimiento" CssClass="form-control" TextMode="Date" 
 						placeholder="yyyy-MM-dd" data-toggle="tooltip" data-placement="bottom" 
@@ -141,7 +141,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<h4 class="text-left">Email</h4>
+					<h4>Email</h4>
 					
 					<asp:TextBox runat="server" MaxLength="50" id="txtEmail" CssClass="form-control" placeholder="Email" 
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese el correo electronico del trabajador(a)"></asp:TextBox>
@@ -151,7 +151,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Puesto de Trabajo</h4>
+					<h4>Puesto de Trabajo</h4>
 					
 					<asp:DropDownList runat="server" id="ddlPuestoTrabajo" data-toggle="tooltip" data-placement="bottom" 
 						title="Seleccione el Puesto de Trabajo del trabajador(a)" CssClass="form-control"></asp:DropDownList>
@@ -162,7 +162,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Sexo</h4> 
+					<h4>Sexo</h4> 
 					
 					<asp:DropDownList runat="server" id="ddlSexo" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Ingrese el sexo del trabajador(a)">
@@ -180,7 +180,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Estado Civil</h4>
+					<h4>Estado Civil</h4>
 
 					<asp:DropDownList runat="server" id="ddlEdoCivil" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Ingrese el estado civil del trabajador(a)">
@@ -197,7 +197,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Cargo</h4>
+					<h4>Cargo</h4>
 
 					<asp:DropDownList runat="server" id="ddlCargo" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Seleccione el cargo del trabajador(a)"></asp:DropDownList>
@@ -210,7 +210,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Teléfono Casa</h4>
+					<h4>Teléfono Casa</h4>
 
 					<asp:TextBox runat="server" MaxLength="15" id="txtTelCasa" CssClass="form-control" placeholder="Casa" 
 						TextMode="Number" data-toggle="tooltip" data-placement="bottom" 
@@ -222,7 +222,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Teléfono Móvil</h4>
+					<h4>Teléfono Móvil</h4>
 
 					<asp:TextBox runat="server" MaxLength="15" id="txtTelCelular" CssClass="form-control" placeholder="Celular" 
 						TextMode="Number" data-toggle="tooltip" data-placement="bottom" 
@@ -236,7 +236,7 @@
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Dirección</h4>
+					<h4>Dirección</h4>
 					<asp:TextBox runat="server" MaxLength="100" id="txtDireccion" CssClass="form-control" TextMode="MultiLine" 
 						Columns="3" data-toggle="tooltip" data-placement="bottom" title="Ingrese la dirección del trabajador(a)"></asp:TextBox>
 
@@ -248,7 +248,7 @@
 
 			<div class="row">
 				<div class="col-md-3 col-md-offset-1">
-					<h4 class="text-left">Región donde Reside</h4>
+					<h4>Región donde Reside</h4>
 					
 					<asp:DropDownList runat="server" id="ddlRegion" CssClass="form-control" AutoPostBack="true" 
 						OnSelectedIndexChanged="ddlRegion_SelectedIndexChanged" data-toggle="tooltip" data-placement="bottom" 
@@ -260,7 +260,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<h4 class="text-left">Departamento donde Reside</h4>
+					<h4>Departamento donde Reside</h4>
 					
 					<asp:DropDownList runat="server" id="ddlDepartamento" CssClass="form-control" AutoPostBack="true" 
 						OnSelectedIndexChanged="ddlDepartamento_SelectedIndexChanged" data-toggle="tooltip" data-placement="bottom" 
@@ -272,7 +272,7 @@
 				</div>
 
 				<div class="col-md-3">
-					<h4 class="text-left">Municipio donde Reside</h4>
+					<h4>Municipio donde Reside</h4>
 					
 					<asp:DropDownList runat="server" id="ddlMunicipio" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Seleccione el municipio  donde reside el trabajador(a)"></asp:DropDownList>
@@ -286,7 +286,7 @@
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
 					
-					<h4 class="text-left">¿Es Discapacitado?</h4>
+					<h4>¿Es Discapacitado?</h4>
 					
 					<asp:DropDownList runat="server" id="ddlDiscapacitado" CssClass="form-control" AutoPostBack="true" 
 						OnSelectedIndexChanged="ddlDiscapacitado_SelectedIndexChanged" data-toggle="tooltip" data-placement="bottom"
@@ -312,7 +312,7 @@
 			
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Mano Dominante</h4>
+					<h4>Mano Dominante</h4>
 					
 					<asp:DropDownList runat="server" id="ddlManodominante" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Seleccione la mano dominante del trabajador(a)">
@@ -326,7 +326,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Tipo Vinculación Laboral</h4>
+					<h4>Tipo Vinculación Laboral</h4>
 					
 					<asp:DropDownList runat="server" id="ddlTipoVinculacion" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Seleccione el tipo de vinculación laboral del trabajador(a) con la empresa">
@@ -346,7 +346,7 @@
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
 					
-					<h4 class="text-left">Tipo de Horario</h4>
+					<h4>Tipo de Horario</h4>
 
 					<asp:DropDownList runat="server" id="ddlTipoHorario" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Seleccione el tipo de horario del trabajador(a)">
@@ -361,7 +361,7 @@
 				</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Horario</h4>
+					<h4>Horario</h4>
 					
 					<asp:DropDownList runat="server" id="ddlHorario" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Seleccione el horario del trabajador(a)"></asp:DropDownList>
@@ -374,7 +374,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Salario</h4>
+					<h4>Salario</h4>
 					
 					<asp:TextBox runat="server" MaxLength="15" id="txtSalario" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" title="Ingrese el salario (en pesos colombianos) del trabajador(a)"></asp:TextBox>
@@ -385,7 +385,7 @@
 					</div>
 				
 				<div class="col-md-4">
-					<h4 class="text-left">Fecha de Ingreso</h4>
+					<h4>Fecha de Ingreso</h4>
 					
 					<asp:TextBox runat="server" id="txtFechaIngreso" CssClass="form-control" TextMode="Date" placeholder="yyyy-MM-dd"
 						data-toggle="tooltip" data-placement="bottom" 
@@ -399,7 +399,7 @@
 				
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Caja de Compensación Familiar</h4>
+					<h4>Caja de Compensación Familiar</h4>
 					
 					<asp:DropDownList runat="server" id="ddlCcf" CssClass="form-control" data-toggle="tooltip" 
 						data-placement="bottom" 
@@ -411,7 +411,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<h4 class="text-left">Foto</h4>
+					<h4>Foto</h4>
 					
 					<asp:FileUpload runat="server" id="fuFoto" data-toggle="tooltip" data-placement="bottom" 
 						title="Seleccione la foto del trabajador(a)"/>
@@ -439,49 +439,49 @@
 			<asp:PostBackTrigger Controlid="btnAceptar"/>
 		</Triggers>
 	</asp:updatepanel>
-        <!-- Modal Exito -->
-     <div class="modal fade" id="modalExito" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                    <h4 class="modal-title"> Opciones </h4>
-                </div>
-                <div class="modal-body form-group">
-                    <div class="row">
-                        <div class="col-lg-12 form-group">
-                            <h4><strong>Puesto de Trabajo Agregado con Éxito!, Que desea hacer.? </strong></h4>
-                        </div>
-                        <div class="col-lg-4">
-                            &nbsp;
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="col-lg-12 form-group">
-                                <asp:Button runat="server" id="btnIraTrabajadores" Text="Ir al Listado" OnClick="btnSalir_Click" 
-                                    class="btn btn-block btn-info"
-                                    data-toggle="tooltip" data-placement="bottom" title="Presione para ir al listado de puestos de trabajo"></asp:Button>
-                            </div>
-                            <div class="col-lg-12 form-group">
-                                <asp:Button runat="server" id="btnAgregarOtro" Text="Agregar Nuevo" OnClick="btnNuevo_Click" 
-                                    class="btn btn-block btn-info"
-                                    data-toggle="tooltip" data-placement="bottom" title="Presione para agregar un nuevo puesto de trabajo"></asp:Button>
-                            </div>
-                         
-                        </div>
-                        <div class="col-lg-4"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <!-- /modal-body -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- Modal Exito -->
+	 <div class="modal fade" id="modalExito" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+					<h4 class="modal-title"> Opciones </h4>
+				</div>
+				<div class="modal-body form-group">
+					<div class="row">
+						<div class="col-lg-12 form-group">
+							<h4><strong>Puesto de Trabajo Agregado con Éxito!, Que desea hacer.? </strong></h4>
+						</div>
+						<div class="col-lg-4">
+							&nbsp;
+						</div>
+						<div class="col-lg-4">
+							<div class="col-lg-12 form-group">
+								<asp:Button runat="server" id="btnIraTrabajadores" Text="Ir al Listado" OnClick="btnSalir_Click" 
+									class="btn btn-block btn-info"
+									data-toggle="tooltip" data-placement="bottom" title="Presione para ir al listado de puestos de trabajo"></asp:Button>
+							</div>
+							<div class="col-lg-12 form-group">
+								<asp:Button runat="server" id="btnAgregarOtro" Text="Agregar Nuevo" OnClick="btnNuevo_Click" 
+									class="btn btn-block btn-info"
+									data-toggle="tooltip" data-placement="bottom" title="Presione para agregar un nuevo puesto de trabajo"></asp:Button>
+							</div>
+						 
+						</div>
+						<div class="col-lg-4"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!-- /modal-body -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- Msj Modal -->
-    <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
-    
+	<!-- Msj Modal -->
+	<ucm:ucMsjModal runat="server" id="ucMsjModal"/>
+	
 </asp:Content>
 

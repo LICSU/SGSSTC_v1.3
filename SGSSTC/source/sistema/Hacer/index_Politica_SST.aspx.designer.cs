@@ -31,15 +31,6 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::CKEditor.NET.CKEditorControl txtCompromiso;
         
         /// <summary>
-        /// Control txtObjetivos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::CKEditor.NET.CKEditorControl txtObjetivos;
-        
-        /// <summary>
         /// Control txtAlcance.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::CKEditor.NET.CKEditorControl txtAlcance;
+        
+        /// <summary>
+        /// Control txtObjetivos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::CKEditor.NET.CKEditorControl txtObjetivos;
         
         /// <summary>
         /// Control btnSave.

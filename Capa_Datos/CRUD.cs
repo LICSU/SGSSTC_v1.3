@@ -33,9 +33,9 @@ namespace Capa_Datos
             {
                 if (_nuevo.GetType() == typeof(lista_actividad)) { contexto.lista_actividad.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(alarma)) { contexto.alarma.Add(_nuevo); }
+                else if (_nuevo.GetType() == typeof(at_it_el_pa)) { contexto.at_it_el_pa.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(Pregunta)) { contexto.Pregunta.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(Respuesta)) { contexto.Respuesta.Add(_nuevo); }
-                else if (_nuevo.GetType() == typeof(Respuesta)) { contexto.at_it_el_pa.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(area)) { contexto.area.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(brigada_emergencia)) { contexto.brigada_emergencia.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(categoria)) { contexto.categoria.Add(_nuevo); }
