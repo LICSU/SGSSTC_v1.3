@@ -28,7 +28,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
-                //LlenarGridView();
+                LlenarGridView();
                 CargarListas();
             }
         }

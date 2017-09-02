@@ -47,9 +47,10 @@ namespace SGSSTC.source.sistema.Hacer
         {
             desc_socio tabla = new desc_socio();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfPerfilIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.Validacion(this, ObjUsuario.Error, "Delete");
             LlenarGridView();
+
+            Modal.Validacion(this, ObjUsuario.Error, "Delete");
         }
         protected void crearPDF(string id_desc_socio)
         {

@@ -15,12 +15,12 @@
 
         <ol class="breadcrumb">
             <li><a href="#">Fase: Evaluación Inicial</a></li>
-            <li><a href="../EvaluacionInicial/index_VigilanciaEpidemiologica.aspx">Vigilancia Epidemiológica</a></li>
-            <li><a href="#">Crear Vigilancia Epidemiológica</a></li>
+            <li><a href="../EvaluacionInicial/index_VigilanciaEpidemiologica.aspx">Vigilancia Epidemiologica</a></li>
+            <li><a href="#">Crear Vigilancia Epidemiologica</a></li>
         </ol>
 
         <div class="page-header">
-            <h1 class="text-center">Vigilancia Epidemiológica</h1>
+            <h1 class="text-center">Vigilancia Epidemiologica</h1>
         </div>
 
         <asp:updatepanel runat="server">
