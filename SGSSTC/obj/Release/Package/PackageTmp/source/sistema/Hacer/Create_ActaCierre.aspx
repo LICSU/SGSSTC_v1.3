@@ -1,24 +1,27 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Create_ActaCierre.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.Create_ActaCierre" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
+    PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
+<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content><%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %><%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %><%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %><%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-	<div class="container" style="width: 100%;">
 
-        <ol class="breadcrumb">
-            <li><a href="#">Fase: Hacer</a></li>
-            <li><a href="../Hacer/index_ActaCopasst.aspx">Actas Copasst</a></li>
-            <li><a href="#">Acta de cierre</a></li>
-        </ol>
-        
-        <div class="page-header">
+
+		<ol class="breadcrumb">
+			<li><a href="#">Fase: Hacer</a></li>
+			<li><a href="../Hacer/index_ActaCopasst.aspx">Actas Copasst</a></li>
+			<li><a href="#">Acta de cierre</a></li>
+		</ol>
+		
+		<div class="page-header">
 			<h1 class="text-center">Acta de cierre de las votaciones para elección de los candidatos al comité 
 				paritario de seguridad y salud en el trabajo</h1>
-        </div>
+		</div>
 
 		<div class="row">
 			<asp:placeholder runat="server" id="phEmpresa">
@@ -192,6 +195,5 @@
 
 		</div>
 
-	</div>
 
 </asp:Content>

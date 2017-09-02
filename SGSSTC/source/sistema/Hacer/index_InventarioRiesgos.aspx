@@ -1,14 +1,17 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_InventarioRiesgos.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_InventarioRiesgos" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
+	PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <asp:Panel runat="server" ID="panel1">
-
         
         <div class="container" style="width: 100%;">
 
@@ -1609,10 +1612,9 @@
             </div>
 
         </div>
-
-    </div>
-
-    <div class="box-body no-padding">
+        
+        
+        <div class="box-body no-padding">
         <table class="table table-condensed">
             <tbody>
                 <!-- fila 18 -->

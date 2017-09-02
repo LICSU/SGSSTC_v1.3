@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="create_AnalisisVulnerabilidad.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.create_AnalisisVulnerabilidad" %>
 
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
-
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
@@ -11,7 +10,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
-    <div class="container" style="width: 100%;">
         
         <ol class="breadcrumb">
             <li><a href="#">Fase: Hacer</a></li>
@@ -1083,6 +1081,5 @@
             </div>
         </div>
 
-    </div>
 
 </asp:Content>

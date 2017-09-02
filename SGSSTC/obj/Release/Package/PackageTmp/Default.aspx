@@ -21,7 +21,6 @@
 	<link rel="stylesheet" href="splash/css/style.css"/>
 	<script src="splash/js/modernizr-2.6.2.min.js"></script>
 </head>
-
 <body>
 
 	<form id="form2" runat="server" class="form-signin">

@@ -26,7 +26,7 @@
 			<div class="row">
 				<asp:PlaceHolder runat="server" id="phEmpresa1">
 					<div class="col-md-4 col-md-offset-2">
-						<h4 class="text-left">Empresa</h4>
+						<h4>Empresa</h4>
 						
 						<asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" 
 							title="Seleccione una Empresa" CssClass="form-control" AutoPostBack="true" 
@@ -40,7 +40,7 @@
 					
 				<asp:PlaceHolder runat="server" id="phSucursal1" Visible="false">
 					<div class="col-md-4 col-md-offset-2">
-						<h4 class="text-left">Sucursal</h4>
+						<h4>Sucursal</h4>
 						<asp:DropDownList runat="server" id="ddlSucursal" 
 							data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" 
 							CssClass="form-control" AutoPostBack="true" 
@@ -57,13 +57,13 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-2">
-					<h4 class="text-left">Nombre del puesto de trabajo:</h4>
+					<h4>Nombre del puesto de trabajo:</h4>
 					<asp:TextBox id="txtNombre" runat="server" class="form-control"
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese el nombre del Puesto de Trabajo" ></asp:TextBox>
 				</div>
 
 				<div class="col-md-4">
-					<h4 class="text-left">Area</h4>
+					<h4>Area</h4>
 					
 					<asp:DropDownList runat="server" id="ddlArea" 
 						data-toggle="tooltip" data-placement="bottom" title="Seleccione un Área" 
@@ -78,7 +78,7 @@
 
 			<div class="row">
 				<div class="col-md-8 col-sm-8 col-md-offset-2">
-					<h4 class="text-left">Descripción del Proceso:</h4>
+					<h4>Descripción del Proceso:</h4>
 					<asp:TextBox id="txtDescripcion" runat="server" class="form-control" TextMode="MultiLine" Rows="3"
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese una breve descripción de lo que se realiza en este Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -86,7 +86,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Recurso Humano: </h4>
+					<h4>Recurso Humano: </h4>
 					<asp:TextBox id="txtRecursoHumano" runat="server" class="form-control" TextMode="MultiLine" Rows="3" 
 						data-toggle="tooltip" data-placement="bottom" title="Especifique el personal humano que hace uso del Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -94,7 +94,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Objeto de Trabajo:</h4>
+					<h4>Objeto de Trabajo:</h4>
 					<asp:TextBox id="txtObjetoTrabajo" runat="server" class="form-control" TextMode="MultiLine" Rows="3"
 						data-toggle="tooltip" data-placement="bottom" title="Especifique el objeto de trabajo relacionado al Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -102,7 +102,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Insumos:</h4>
+					<h4>Insumos:</h4>
 					<asp:TextBox id="txtInsumos" runat="server" class="form-control" TextMode="MultiLine" Rows="3"
 						data-toggle="tooltip" data-placement="bottom" title="Especifique los insumos que consume el Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -110,7 +110,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Máquinas/Equipos:</h4>
+					<h4>Máquinas/Equipos:</h4>
 					<asp:TextBox id="txtMaquinas" runat="server" class="form-control" TextMode="MultiLine" Rows="3"                            
 						data-toggle="tooltip" data-placement="bottom" title="Especifique la maquinaria y/o equipos que se utilizan en este Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -118,7 +118,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Herramientas: </h4>
+					<h4>Herramientas: </h4>
 					<asp:TextBox id="txtHerramientas" runat="server" class="form-control" TextMode="MultiLine" Rows="3"
 						data-toggle="tooltip" data-placement="bottom" title="Especifique las herramientas que se usan en el Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -126,7 +126,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Emisiones: </h4>
+					<h4>Emisiones: </h4>
 					<asp:TextBox id="txtEmisiones" runat="server" class="form-control" TextMode="MultiLine" Rows="3"
 						data-toggle="tooltip" data-placement="bottom" title="Especifique las emisiones producidas por el Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -134,7 +134,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Desechos Sólidos/ Líquidos: </h4>
+					<h4>Desechos Sólidos/ Líquidos: </h4>
 					<asp:TextBox id="txtDesechos" runat="server" class="form-control" TextMode="MultiLine" Rows="3"
 						data-toggle="tooltip" data-placement="bottom" title="Especifique los desechos generados solidos y liquidos por el Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -142,7 +142,7 @@
 			
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Productos o servicios:</h4>
+					<h4>Productos o servicios:</h4>
 					<asp:TextBox id="txtProductos" runat="server" class="form-control" TextMode="MultiLine" Rows="3"
 						data-toggle="tooltip" data-placement="bottom" title="Especifique los Productos o servicios generados por el Puesto de Trabajo"></asp:TextBox>
 				</div>
@@ -150,7 +150,7 @@
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Equipos de Protección Personal</h4>
+					<h4>Equipos de Protección Personal</h4>
 					<asp:ListBox id="ddlEpp" runat="server" SelectionMode="Multiple" ClientIDMode="Static" 
 						CssClass="form-control" Rows="10"
 						data-toggle="tooltip" data-placement="bottom" title="Seleccione de la lista los Equipos de Protección Personal usados por el Puesto de Trabajo"></asp:ListBox>
@@ -159,7 +159,7 @@
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h4 class="text-left">Soporte fotográfico</h4>
+					<h4>Soporte fotográfico</h4>
 					<asp:FileUpload runat="server" id="fuAnexo"  
 						data-toggle="tooltip" data-placement="bottom" title="Ingrese imagenes y/o fotos relacionadas al Puesto de Trabajo"/>
 				</div>

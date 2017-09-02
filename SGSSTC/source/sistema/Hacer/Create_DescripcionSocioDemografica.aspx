@@ -78,15 +78,14 @@
                 <div class="col-md-4">
                     <h5>Lugar de Nacimiento</h5>
                     <asp:TextBox runat="server" id="txtLugar" MaxLength="1000" CssClass="form-control" placeholder="Lugar de Nacimiento"></asp:TextBox>
-                    
                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
                         setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
                         Font-Bold="true" ControlToValidate="txtLugar" runat="server" 
                         ValidationGroup="ValidationAdd"/>
                 </div>
             </div>
-                 
-            <div class="row">                
+
+            <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     <h5>1) Seleccione el Nivel de escolaridad</h5>
                     <asp:DropDownList  runat="server" id="rblNivel" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="rblNivel_SelectedIndexChanged">
@@ -128,7 +127,7 @@
             <br />
 
             <!-- Años aprobados en ese último nivel,Es usted cabeza de familia,¿Cuantos hijos tiene? -->
-            <div class="row">                        
+            <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     3) ¿Es usted cabeza de familia?<br />
                     <asp:RadioButtonList runat="server" id="rdlCabeza" CssClass="radio-inline">
@@ -152,7 +151,7 @@
                 </div>
             </div>
 
-            <div class="row">                
+            <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     <h5>5) ¿Con quién comparte la responsabilidad económica de su familia?</h4>
                     <asp:DropDownList runat="server" id="rblResponsabilidad" CssClass="form-control">
@@ -178,7 +177,6 @@
             </div>
             
             <br />
-
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-2">

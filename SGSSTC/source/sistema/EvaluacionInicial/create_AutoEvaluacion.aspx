@@ -12,11 +12,10 @@
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
+
     <asp:updatepanel id="MyUpdatePanel" runat="server" updatemode="Always">
 
         <ContentTemplate>
-            
-            <div class="container" style="width:100%;">
                 
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Evaluación Inicial</a></li>
@@ -474,8 +473,6 @@
                         <h4>Generar Documento</h4>
                     </div>
                 </div>
-
-            </div>
             
         </ContentTemplate>
         

@@ -53,22 +53,22 @@
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-2">
-                    <h4 class="text-left">Prioridad</h4>
+                    <h4>Prioridad</h4>
                     <asp:DropDownList id="ddlPrioridadIndex" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlPrioridadIndex_SelectedIndexChanged"></asp:DropDownList>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="text-left">Categoria</h4>
+                    <h4>Categoria</h4>
                     <asp:DropDownList id="ddlCategoriaIndex" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlCategoriaIndex_SelectedIndexChanged"></asp:DropDownList>
                 </div>
             </div><br />
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-2">
-                    <h4 class="text-left">Fecha inicio</h4>
+                    <h4>Fecha inicio</h4>
                     <asp:TextBox id="txtFechaInicio" runat="server" AutoPostBack="true" class="col-md-10" CssClass="form-control" TextMode="Date" OnTextChanged="txtFechaInicio_TextChanged"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="text-left">Fecha fin</h4>
+                    <h4>Fecha fin</h4>
                     <asp:TextBox id="txtFechaFin" runat="server" AutoPostBack="true" class="col-md-10" CssClass="form-control" TextMode="Date" OnTextChanged="txtFechaFin_TextChanged"></asp:TextBox>
                 </div>
             </div><br/>

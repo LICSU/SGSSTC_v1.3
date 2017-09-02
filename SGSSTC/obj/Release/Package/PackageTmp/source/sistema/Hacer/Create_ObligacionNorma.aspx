@@ -11,8 +11,6 @@
 
     <asp:updatepanel id="updatePanelPrinicpal" runat="server">
         <ContentTemplate>
-            
-            <div class="container" style="width: 100%;">
                 
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
@@ -196,8 +194,6 @@
                             title="Presione para volver a las medidas"/>
                     </div>
                 </div>
-    
-            </div>
 
         </ContentTemplate>
     </asp:updatepanel>

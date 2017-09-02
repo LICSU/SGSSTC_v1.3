@@ -25,7 +25,7 @@
 			<div class="row">
 				<asp:PlaceHolder runat="server" id="phEmpresa1">
 					<div class="col-md-4">
-						<h4 class="text-left">Empresa</h4>
+						<h4>Empresa</h4>
 						<asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" CssClass="form-control" AutoPostBack="true" 
 							OnSelectedIndexChanged="ddlEmpresas_SelectedIndexChanged"></asp:DropDownList>
 						
@@ -37,7 +37,7 @@
 				
 				<asp:PlaceHolder runat="server" id="phSucursal1" Visible="false">
 					<div class="col-md-4">
-						<h4 class="text-left">Sucursal</h4>
+						<h4>Sucursal</h4>
 						<asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" CssClass="form-control" AutoPostBack="true" 
 							OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
 						
@@ -51,12 +51,12 @@
 
 			<div class="row">
 				<div class="col-md-8">
-					<h4 class="text-left">Nombre del puesto de trabajo:</h4>
+					<h4>Nombre del puesto de trabajo:</h4>
 					<asp:TextBox id="txtNombre" runat="server" class="form-control"></asp:TextBox>
 				</div>
 
 				<div class="col-md-4">
-					<h4 class="text-left">Area</h4>
+					<h4>Area</h4>
 					
 					<asp:DropDownList runat="server" id="ddlArea" data-toggle="tooltip" data-placement="bottom" title="Seleccione un Área" CssClass="form-control"></asp:DropDownList>
 						
@@ -69,70 +69,70 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Descripción del Proceso:</h4>
+					<h4>Descripción del Proceso:</h4>
 					<asp:TextBox id="txtDescripcion" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Recurso Humano: </h4>
+					<h4>Recurso Humano: </h4>
 					<asp:TextBox id="txtRecursoHumano" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Objeto de Trabajo:</h4>
+					<h4>Objeto de Trabajo:</h4>
 					<asp:TextBox id="txtObjetoTrabajo" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Insumos:</h4>
+					<h4>Insumos:</h4>
 					<asp:TextBox id="txtInsumos" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Máquinas/Equipos:</h4>
+					<h4>Máquinas/Equipos:</h4>
 					<asp:TextBox id="txtMaquinas" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Herramientas: </h4>
+					<h4>Herramientas: </h4>
 					<asp:TextBox id="txtHerramientas" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Emisiones: </h4>
+					<h4>Emisiones: </h4>
 					<asp:TextBox id="txtEmisiones" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Desechos Sólidos/ Líquidos: </h4>
+					<h4>Desechos Sólidos/ Líquidos: </h4>
 					<asp:TextBox id="txtDesechos" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Productos o servicios:</h4>
+					<h4>Productos o servicios:</h4>
 					<asp:TextBox id="txtProductos" runat="server" class="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-left">Equipos de Protección Personal</h4>
+					<h4>Equipos de Protección Personal</h4>
 					<asp:ListBox id="ddlEpp" runat="server" SelectionMode="Multiple" ClientIDMode="Static" 
 						CssClass="form-control" Rows="10"></asp:ListBox>
 				</div>
@@ -141,7 +141,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<asp:Image alt="-" runat="server" id="ImgFoto" CssClass="img-thumbnail"/>
-					<h4 class="text-left">Soporte fotográfico</h4>
+					<h4>Soporte fotográfico</h4>
 					<asp:FileUpload runat="server" id="fuAnexo"/>
 				</div>
 			</div>
@@ -160,4 +160,8 @@
 			<asp:PostBackTrigger Controlid="btnAceptar"/>
 		</Triggers>
 	</asp:updatepanel>
+    
+    <!-- Msj Modal -->
+    <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
+
 </asp:Content>

@@ -1,17 +1,19 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_IdentificacionPeligros.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_IdentificacionPeligros" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
+	PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
+<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content><%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %><%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %><%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %><%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     
     <asp:updatepanel id="updatePanelPrinicpal" runat="server">
         <ContentTemplate>
-            
-            <div class="container" style ="width:100%;">
+
                 
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
@@ -26,7 +28,7 @@
 
                     <asp:PlaceHolder runat="server" id="phEmpresa">
                         <div class="col-md-4">
-                            <h4 class="text-left">Seleccione una Empresa</h4> 
+                            <h4>Seleccione una Empresa</h4> 
                             <asp:DropDownList runat="server" AutoPostBack="true" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" CssClass="form-control" 
                                 OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
                         </div>
@@ -34,7 +36,7 @@
 
                     <asp:PlaceHolder runat="server" id="phSucursal">
                         <div class="col-md-3">
-                            <h4 class="text-left">Seleccione una Sucursal</h4>
+                            <h4>Seleccione una Sucursal</h4>
                             <asp:DropDownList runat="server" CssClass="form-control" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" AutoPostBack="true" 
                                 OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                         </div>
@@ -102,7 +104,6 @@
 
                 </div>
 
-            </div>
         
         </ContentTemplate>
         <Triggers></Triggers>

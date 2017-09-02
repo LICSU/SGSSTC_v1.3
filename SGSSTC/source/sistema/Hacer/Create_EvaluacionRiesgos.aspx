@@ -12,7 +12,6 @@
     <asp:updatepanel id="MyUpdatePanel" runat="server">
         <ContentTemplate>
             
-            <div class="container" style="width:100%;">
                 
                 <ol class="breadcrumb">
                     <li><a href="#">Fase: Hacer</a></li>
@@ -26,12 +25,12 @@
                 
                 <div class="row">
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Sucursal</h4>
+                        <h4>Sucursal</h4>
                         <asp:Label runat="server" id="txtSucursal"></asp:Label>
                     </div>
                     
                     <div class="col-md-4">
-                        <h4 class="text-left">Área</h4>
+                        <h4>Área</h4>
                         <asp:Label runat="server" id="txtArea"></asp:Label>
                     </div>
 
@@ -39,12 +38,12 @@
 
                 <div class="row">
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Puesto de Trabajo</h4>
+                        <h4>Puesto de Trabajo</h4>
                         <asp:Label runat="server" id="txtPuestos"></asp:Label>
                     </div>
                     
                     <div class="col-md-4">
-                        <h4 class="text-left">Descripción Puesto de Trabajo</h4>
+                        <h4>Descripción Puesto de Trabajo</h4>
                         <asp:Label runat="server" id="txtDescripcionPuesto"></asp:Label>
                     </div>
                 </div>
@@ -59,27 +58,27 @@
 
                 <div class="row">
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Tipo de Riesgo</h4>
+                        <h4>Tipo de Riesgo</h4>
                         <asp:Label id="txtTipoRiesgo" runat="server"></asp:Label>
 
                     </div>
 
                     <div class="col-md-4">
-                        <h4 class="text-left">Factor de Riesgo</h4>
+                        <h4>Factor de Riesgo</h4>
                         <asp:Label id="txtFactorRiesgo" type="date" runat="server"></asp:Label>
                     </div>
                 </div>  
                 
                 <div class="row">
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Posibles Consecuencias</h4>
+                        <h4>Posibles Consecuencias</h4>
                         <asp:Label id="txtConsecuencias" runat="server"
                             data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese las posibles consecuencias que tiene este Riesgo"></asp:Label>
                     </div>
 
                     <div class="col-md-4">
-                        <h4 class="text-left">Tiempo de Exposición</h4>
+                        <h4>Tiempo de Exposición</h4>
                         <asp:Label id="txtTiempoExposicion" runat="server"
                             data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese el tiempo de exposición que tiene este Riesgo"></asp:Label>
@@ -96,19 +95,19 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <h4 class="text-left">Medidas en la Fuente</h4>
+                        <h4>Medidas en la Fuente</h4>
                         <asp:textbox id="txtControlFuente" MaxLength="5000" runat="server" TextMode="multiline" class="form-control" 
                             Rows="8" data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese las medidas en la fuente para este Riesgo"></asp:TextBox>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="text-left">Medidas en el Medio</h4>
+                        <h4>Medidas en el Medio</h4>
                         <asp:textbox id="txtControlMedio" MaxLength="5000" runat="server" TextMode="multiline" class="form-control" 
                             Rows="8" data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese las medidas en el medio para este Riesgo"></asp:TextBox>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="text-left">Medidas en el Individuo</h4>
+                        <h4>Medidas en el Individuo</h4>
                         <asp:textbox id="txtControlIndividuo" MaxLength="5000" runat="server" TextMode="multiline" class="form-control" 
                             Rows="8" data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese las medidas en el individuo para este Riesgo"></asp:TextBox>
@@ -118,7 +117,7 @@
 
                 <div class="row">
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Responsable del SGSST</h4>
+                        <h4>Responsable del SGSST</h4>
                         <asp:TextBox id="txtResponsableSGSST" CssClass="form-control" runat="server"
                             data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese el responsable de la evaluacion de este Riesgo"></asp:TextBox>
@@ -130,7 +129,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h4 class="text-left">Fecha de Evaluación</h4>
+                        <h4>Fecha de Evaluación</h4>
                         <asp:TextBox id="txtFechaEvaluacion" type="date" CssClass="form-control" runat="server"
                             data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese la fecha de la evaluacion de este Riesgo"></asp:TextBox>
@@ -144,7 +143,7 @@
 
                 <div class="row">
                     <div class="col-md-2 col-md-offset-2">
-                        <h4 class="text-left">Nivel de Deficiencia</h4>
+                        <h4>Nivel de Deficiencia</h4>
                         
                         <asp:dropdownlist   runat="server" id="ddlNivelDeficiencia" CssClass="form-control"
                             AutoPostBack="true" OnSelectedIndexChanged="CalculoProbabilidad_SelectedIndexChanged"
@@ -172,7 +171,7 @@
                 
                 <div class="row">
                     <div class="col-md-2 col-md-offset-2">
-                        <h4 class="text-left">Nivel de Exposición</h4>
+                        <h4>Nivel de Exposición</h4>
                         
                         <asp:dropdownlist   runat="server" id="ddlNivelExposicion" CssClass="form-control" AutoPostBack="true" 
                             OnSelectedIndexChanged="CalculoProbabilidad_SelectedIndexChanged"
@@ -201,7 +200,7 @@
 
                 <div class="row">
                     <div class="col-md-2 col-md-offset-2">
-                        <h4 class="text-left">Nivel de Probabilidad</h4>
+                        <h4>Nivel de Probabilidad</h4>
                         <asp:Label id="txtNivelProbabilidad" runat="server" Text="Sin Calcular"></asp:Label>
                     </div>
 
@@ -214,7 +213,7 @@
 
                 <div class="row">
                     <div class="col-md-2 col-md-offset-2">
-                        <h4 class="text-left">Nivel de Consecuencia</h4>
+                        <h4>Nivel de Consecuencia</h4>
                         
                         <asp:dropdownlist   runat="server" id="ddlNivelConsecuencia" CssClass="form-control"
                             AutoPostBack="true" OnSelectedIndexChanged="CalculoNivelRiesgo_SelectedIndexChanged"
@@ -241,12 +240,12 @@
 
                 <div class="row">
                     <div class="col-md-1 col-md-offset-2">
-                        <h4 class="text-left">Nivel de Riesgo</h4>
+                        <h4>Nivel de Riesgo</h4>
                         
                         <asp:Label id="txtNivelRiesgo" runat="server" Text="Sin Calcular"></asp:Label>
                     </div>
                     <div class="col-md-2">
-                        <h4 class="text-left">Valor del Nivel de Riesgo</h4>
+                        <h4>Valor del Nivel de Riesgo</h4>
                         
                         <asp:Label id="txtValorNivelRiesgo" runat="server" Text="Sin Calcular"></asp:Label>
                     </div>
@@ -259,7 +258,7 @@
 
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h4 class="text-left">Aceptabilidad de Riesgo</h4>
+                        <h4>Aceptabilidad de Riesgo</h4>
                         
                         <asp:Label id="txtAceptabilidadRiesgo" runat="server" Text="Sin Calcular"></asp:Label>
                     </div>
@@ -277,7 +276,7 @@
                 <div class ="row">
                     <h3 class="text-center">N° Personal Expuesto</h3>
                     <div class="col-md-4 col-md-offset-2">                        
-                        <h4 class="text-left">Trabajadores</h4>
+                        <h4>Trabajadores</h4>
                         <asp:TextBox id="txtPlanta" type="number" CssClass="form-control" runat="server" AutoPostBack="true" 
                             OnTextChanged="txtPersonalExpuesto_TextChanged"
                             data-toggle="tooltip" data-placement="bottom" 
@@ -288,7 +287,7 @@
                             ControlToValidate="txtPlanta" runat="server" ValidationGroup="ValidationAdd"/>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="text-left">Contratistas</h4>
+                        <h4>Contratistas</h4>
                         <asp:TextBox id="txtContratistas" type="number" CssClass="form-control" runat="server" AutoPostBack="true" 
                             OnTextChanged="txtPersonalExpuesto_TextChanged"
                             data-toggle="tooltip" data-placement="bottom" 
@@ -299,7 +298,7 @@
 
                 <div class ="row">
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Visitantes</h4>
+                        <h4>Visitantes</h4>
                         <asp:TextBox id="txtVisitantes" type="number" CssClass="form-control" runat="server" AutoPostBack="true" 
                             OnTextChanged="txtPersonalExpuesto_TextChanged"
                             data-toggle="tooltip" data-placement="bottom" 
@@ -308,7 +307,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h4 class="text-left">Total</h4>
+                        <h4>Total</h4>
                         <asp:Label id="txtTotalPersonalExpuesto" runat="server" Text="Sin Calcular"
                             data-toggle="tooltip" data-placement="bottom" 
                             title="Este es el totoal de personas expuestas de este Riesgo"></asp:Label>
@@ -318,7 +317,7 @@
                 
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h4 class="text-left">Peor Consecuencia</h4>
+                        <h4>Peor Consecuencia</h4>
                         <asp:TextBox id="txtPeorConsecuencia" CssClass="form-control" runat="server"
                             data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese la peor consecuencia que podría tener este Riesgo"></asp:TextBox>
@@ -339,7 +338,7 @@
                 <div class="row">
 
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Eliminación</h4>
+                        <h4>Eliminación</h4>
 
                         <asp:TextBox id="txtEliminación" CssClass="form-control" runat="server" MaxLength="5000"  
                             TextMode="multiline" Rows="8" data-toggle="tooltip" data-placement="bottom" 
@@ -347,7 +346,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h4 class="text-left">Sustitución</h4>
+                        <h4>Sustitución</h4>
                         <asp:TextBox id="txtSustitución" CssClass="form-control" runat="server" MaxLength="5000"  
                             TextMode="multiline" Rows="8" data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese las medidas de sustitución de este Riesgo"></asp:TextBox>
@@ -357,14 +356,14 @@
 
                 <div class="row">
                     <div class="col-md-4 col-md-offset-2">
-                        <h4 class="text-left">Controles de Ingeniería</h4>
+                        <h4>Controles de Ingeniería</h4>
                         <asp:TextBox id="txtIngenieria" CssClass="form-control" runat="server" MaxLength="5000"  
                             TextMode="multiline" Rows="8" data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese los controles de ingeniería de este Riesgo"></asp:TextBox>
                     </div>
                     
                     <div class="col-md-4">
-                        <h4 class="text-left">Controles Administrativos</h4>
+                        <h4>Controles Administrativos</h4>
                         <asp:TextBox id="txtAdministrativos" CssClass="form-control" runat="server" MaxLength="5000"  
                             TextMode="multiline" Rows="8" data-toggle="tooltip" data-placement="bottom" 
                             title="Ingrese los controles administrativos de este Riesgo"></asp:TextBox>
@@ -405,9 +404,6 @@
                     </div>
                 </div>
                 <br />
-
-            </div>
-
         </ContentTemplate>
     </asp:updatepanel>
 </asp:Content>

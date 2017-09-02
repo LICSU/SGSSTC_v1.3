@@ -39,13 +39,13 @@
                     </div>
 
                     <div class="box-body">
-                        <h4 class="text-left">Por favor espere mientras guardamos la informacion!</h4>
+                        <h4>Por favor espere mientras guardamos la informacion!</h4>
                         <br />
-                        <h4 class="text-left">Generando Puestos de Trabajos y Areas...</h4>
+                        <h4>Generando Puestos de Trabajos y Areas...</h4>
                         <br />
-                        <h4 class="text-left">Generando Matriz legal para esta sucursal...</h4>
+                        <h4>Generando Matriz legal para esta sucursal...</h4>
                         <br />
-                        <h4 class="text-left">Generando Matriz de riesgos para esta sucursal...</h4>
+                        <h4>Generando Matriz de riesgos para esta sucursal...</h4>
                         <br />
                         <h5>Este proceso puede durar varios minutos.</h5>
                     </div>

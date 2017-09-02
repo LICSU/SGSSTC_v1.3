@@ -11,8 +11,6 @@
     <asp:updatepanel id="MyUpdatePanel" runat="server">
         <ContentTemplate>
 
-            <div class="container" style="width:100%;">
-
                 <ol class="breadcrumb">
                     <li><a href="#">Gestión de Datos</a></li>
                     <li><a href="../GestionDatos/index_Sucursal.aspx">Sucursal</a></li>
@@ -190,13 +188,11 @@
                         <h4>Registrar</h4>
                     </div>
                 </div>
-
-            </div>
         
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger Controlid="btnGuardar"/>
         </Triggers>
     </asp:updatepanel>
-
+    
 </asp:Content>

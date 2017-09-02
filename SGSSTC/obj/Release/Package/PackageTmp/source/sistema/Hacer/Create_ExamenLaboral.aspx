@@ -1,56 +1,62 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Create_ExamenLaboral.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.Create_ExamenLaboral" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
+	PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
+<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content><%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %><%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %><%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %><%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
 
-    <asp:updatepanel id="MyUpdatePanel" runat="server">
+	<asp:updatepanel id="MyUpdatePanel" runat="server">
 		<ContentTemplate>
 			<script>
-                $(function () {
-                    $("#accordion").accordion({
-                        collapsible: true
-                    });
-                });
+				$(function () {
+					$("#accordion").accordion({
+						collapsible: true
+					});
+				});
 
-                function redireccionar() {
-                    window.location = "index.aspx";
-                }
+				function redireccionar() {
+					window.location = "index.aspx";
+				}
 				</script>
 			
 			
-            <ol class="breadcrumb">
-                <li><a href="#">Fase: Hacer</a></li>
-                <li><a href="../Hacer/index_ExamenLaboral.aspx">Examen Laboral</a></li>
-                <li><a href="#">Crear Examen Laboral</a></li>
-            </ol>
+			<ol class="breadcrumb">
+				<li><a href="#">Fase: Hacer</a></li>
+				<li><a href="../Hacer/index_ExamenLaboral.aspx">Examen Laboral</a></li>
+				<li><a href="#">Crear Examen Laboral</a></li>
+			</ol>
 
-            <div class="page-header">
-                <h1 class="text-center">Nuevo Examen Laboral</h1>
-            </div>
+			<div class="page-header">
+				<h1 class="text-center">Nuevo Examen Laboral</h1>
+			</div>
 			
 			<!-- Empresa -->
 			<div class="row">
-				<asp:PlaceHolder runat="server" id="phEmpresa">
-				<div class="col-md-3">
-					<asp:Label runat="server" Text="Empresa"></asp:Label> 
-					<asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" CssClass="form-control" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged" AutoPostBack="True">
-						<asp:ListItem Text="Seleccione un Valor" Value="0"></asp:ListItem>
-					</asp:DropDownList>
-				</div>
+                <asp:PlaceHolder runat="server" id="phEmpresa">
+                    <div class="col-md-3">
+                        <asp:Label runat="server" Text="Empresa"></asp:Label> 
+                        <asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom"
+                            title="Seleccione una Empresa" CssClass="form-control" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged" AutoPostBack="True">
+                            <asp:ListItem Text="Seleccione un Valor" Value="0"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
 				</asp:PlaceHolder>
 				
 				<asp:PlaceHolder runat="server" id="phSucursal">
-				<div class="col-md-3">
-					<asp:Label runat="server" Text="Sucursal"></asp:Label> 
-					<asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" CssClass="form-control" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" AutoPostBack="True">
-						<asp:ListItem Text="Seleccione un Valor" Value="0"></asp:ListItem>
-					</asp:DropDownList>
-				</div>
+                    <div class="col-md-3">
+                        <asp:Label runat="server" Text="Sucursal"></asp:Label> 
+                        <asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip"
+                            data-placement="bottom" title="Seleccione una Sucursal" CssClass="form-control" 
+                            OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" AutoPostBack="True">
+                            <asp:ListItem Text="Seleccione un Valor" Value="0"></asp:ListItem>
+
+                        </asp:DropDownList>
+                    </div>
 				</asp:PlaceHolder>
 
 				<div class="col-md-4">
@@ -64,7 +70,9 @@
 					<br />
 					<asp:Label runat="server" id="lbNumHistoria" Text="----"></asp:Label>
 				</div>
-			</div><hr />
+			</div>
+            
+            <hr />
 			
 			<!-- Tipo Examen -->
 			<div class="row">
@@ -89,7 +97,9 @@
 						<asp:ListItem Text="Seleccione un Valor" Value="0"></asp:ListItem>
 					</asp:DropDownList>
 				</div>
-			</div><hr />
+			</div>
+            
+            <hr />
 			
 			<!-- datos del trabajador  -->
 			<div class="accordion" id="accordion2"> 
@@ -99,32 +109,33 @@
 								<h3>Datos Personales</h3>
 							</a>
 						</div>
+
 					<div id="collapseOne" class="accordion-body collapse">
 						<div>
 							<div class="col-md-12 text-center"><h3>Información del Trabajador</h3></div><br />
 					
 							<!-- 1er nombre -->
 							<div class="row">
- <div class="col-md-12 text-left">
-	 <asp:Label runat="server" id="Label28" Text="Primer Nombre" Font-Bold="True"></asp:Label>
- </div>
- <div class="">
-	 <div class="col-md-6">
-		 <asp:Label runat="server" id="txtNombre1" Text="----"></asp:Label>
-	 </div>
- </div>
-										</div><br />
+                                 <div class="col-md-12 text-left">
+	                                 <asp:Label runat="server" id="Label28" Text="Primer Nombre" Font-Bold="True"></asp:Label>
+                                 </div>
+                                 <div class="">
+	                                 <div class="col-md-6">
+		                                 <asp:Label runat="server" id="txtNombre1" Text="----"></asp:Label>
+	                                 </div>
+                                 </div>
+                            </div><br />
 					
 							<!-- 2do nombre -->
 							<div class="row">
- <div class="col-md-12 text-left">
-	 <asp:Label runat="server" id="Label15" Text="Segundo Nombre" Font-Bold="True"></asp:Label>
- </div>
- <div class="">
-	 <div class="col-md-6">
-		 <asp:Label runat="server" id="txtNombre2" Text="----"></asp:Label>
-	 </div>
- </div>
+                             <div class="col-md-12 text-left">
+	                             <asp:Label runat="server" id="Label15" Text="Segundo Nombre" Font-Bold="True"></asp:Label>
+                             </div>
+                             <div class="">
+	                             <div class="col-md-6">
+		                             <asp:Label runat="server" id="txtNombre2" Text="----"></asp:Label>
+	                             </div>
+                             </div>
 										</div><br />
 					
 							<!-- Apellidos -->
@@ -288,11 +299,11 @@
 						<!-- Lugar de Nacimiento/nivel escolaridad -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">Lugar de Nacimiento</h4>
+								<h4>Lugar de Nacimiento</h4>
 								<asp:Label runat="server" id="txtLugarNac" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">Nivel de Escolaridad</h4>
+								<h4>Nivel de Escolaridad</h4>
 								<asp:Label runat="server" id="txtNivelEsc" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -300,11 +311,11 @@
 						<!-- Años aprobados/cabeza de familia -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">Años aprobados en ese último nivel</h4>
+								<h4>Años aprobados en ese último nivel</h4>
 								<asp:Label runat="server" id="txtAñosAprob" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">¿Es usted cabeza de familia?</h4>
+								<h4>¿Es usted cabeza de familia?</h4>
 								<asp:Label runat="server" id="txtCabezaFlia" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -312,11 +323,11 @@
 						<!-- Cuantos hijos/responsabilidad económica -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">¿Cuantos hijos tiene?</h4>
+								<h4>¿Cuantos hijos tiene?</h4>
 								<asp:Label runat="server" id="txtCantHijos" Text="----"></asp:Label>
 							 </div>
 							<div class="col-md-6">
-								<h4 class="text-left">¿Con quién reparte la responsabilidad económica de su familia?</h4>
+								<h4>¿Con quién reparte la responsabilidad económica de su familia?</h4>
 								<asp:Label runat="server" id="txtRespEco" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -324,11 +335,11 @@
 						<!-- MenoresDependen/Condicion Social -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">¿Cuantos menores dependen económicamente de ud?</h4>
+								<h4>¿Cuantos menores dependen económicamente de ud?</h4>
 									<asp:Label runat="server" id="txtDependen" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">¿Socialmente en que condición se encuentra usted?</h4>
+								<h4>¿Socialmente en que condición se encuentra usted?</h4>
 									<asp:Label runat="server" id="txtCondSocio" Text="----"></asp:Label>
 								</div>
 						</div><br />
@@ -336,11 +347,11 @@
 						<!-- Motivo Desplazamiento/tipo de vivienda -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">¿Cual fue el motivo del desplazamiento?</h4>
+								<h4>¿Cual fue el motivo del desplazamiento?</h4>
 								<asp:Label runat="server" id="txtMotivoDespl" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">La vivienda donde habita es:</h4>
+								<h4>La vivienda donde habita es:</h4>
 								<asp:Label runat="server" id="txtTipoVivienda" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -348,11 +359,11 @@
 						<!-- Servicios públicos / tipo de vivienda -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">Servicios públicos de su vivienda</h4>
+								<h4>Servicios públicos de su vivienda</h4>
 								<asp:Label runat="server" id="txtServicioPublico" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">Tipo de Vivienda</h4>
+								<h4>Tipo de Vivienda</h4>
 								<asp:Label runat="server" id="txtVivienda" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -360,11 +371,11 @@
 						<!-- Cerca de Industrias / Hay mucho ruido -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">Cerca de Industrias</h4>
+								<h4>Cerca de Industrias</h4>
 								<asp:Label runat="server" id="txtCercaIndustria" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">Hay mucho ruido</h4>
+								<h4>Hay mucho ruido</h4>
 								<asp:Label runat="server" id="txtRuido" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -372,11 +383,11 @@
 						<!-- Hay Mucha Contaminación / Hay mucho ruido -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">Hay Mucha Contaminación</h4>
+								<h4>Hay Mucha Contaminación</h4>
 								<asp:Label runat="server" id="txtContaminacion" Text="----"></asp:Label>
 							 </div>
 							<div class="col-md-6">
-								<h4 class="text-left">Descripcion el techo, paredes y piso</h4>
+								<h4>Descripcion el techo, paredes y piso</h4>
 								<asp:Label runat="server" id="txtDescripcion" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -384,11 +395,11 @@
 						<!--  afiliado al sistema de seguridad social / Régimen de Afiliación -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">Se encuentra afiliado al sistema de seguridad social en salud</h4>
+								<h4>Se encuentra afiliado al sistema de seguridad social en salud</h4>
 								<asp:Label runat="server" id="txtAfiliado" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">Régimen de Afiliación</h4>
+								<h4>Régimen de Afiliación</h4>
 								<asp:Label runat="server" id="txtRegimenAfiliacion" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -396,11 +407,11 @@
 						<!--  ¿A qué EPS pertenece? / Nivel de SISBEN -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">¿A qué EPS pertenece?</h4>
+								<h4>¿A qué EPS pertenece?</h4>
 								<asp:Label runat="server" id="txtEPS1" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">Nivel de SISBEN</h4>
+								<h4>Nivel de SISBEN</h4>
 								<asp:Label runat="server" id="txtNivelSISBEN" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -408,11 +419,11 @@
 						<!--  Sistea seg pensiones / ¿A qué fondo pertenece? -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">Se encuentra afiliado al sistema de seguridad social en pensiones</h4>
+								<h4>Se encuentra afiliado al sistema de seguridad social en pensiones</h4>
 								<asp:Label runat="server" id="txtSistSocial" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">¿A qué fondo pertenece?</h4>
+								<h4>¿A qué fondo pertenece?</h4>
 								<asp:Label runat="server" id="txtFondoPensiones" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -420,11 +431,11 @@
 						<!--  afiliado a riesgos profe / ¿A qué ARP pertenece? -->
 						<div class="row">
 							<div class="col-md-6 text-left">
-								<h4 class="text-left">¿A qué ARP pertenece?</h4>
+								<h4>¿A qué ARP pertenece?</h4>
 								<asp:Label runat="server" id="txtARP" Text="----"></asp:Label>
 							</div>
 							<div class="col-md-6">
-								<h4 class="text-left">Se encuentra afiliado a riesgos profesionales</h4>
+								<h4>Se encuentra afiliado a riesgos profesionales</h4>
 								<asp:Label runat="server" id="txtRiesgosProf" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -432,7 +443,7 @@
 						<!--  Estrato / ¿A qué ARP pertenece? -->
 						<div class="row">
 							<div class="col-md-12 text-left">
-								<h4 class="text-left">¿Cual es el estrato que registran sus facturas de los servicios públicos de la vivienda donde reside?</h4>
+								<h4>¿Cual es el estrato que registran sus facturas de los servicios públicos de la vivienda donde reside?</h4>
 								<asp:Label runat="server" id="txtEstrato" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -444,22 +455,22 @@
 					
 						<div class="row">
 							<div class="col-md-2 text-left">
-								<h4 class="text-left">Empresa</h4>
+								<h4>Empresa</h4>
 							</div>
 							<div class="col-md-2 text-left">
-								<h4 class="text-left">Área</h4>
+								<h4>Área</h4>
 							</div>
 							<div class="col-md-2 text-left">
-								<h4 class="text-left">Cargo u Oficio</h4>
+								<h4>Cargo u Oficio</h4>
 							</div>
 							<div class="col-md-2 text-left">
-								<h4 class="text-left">Años</h4>
+								<h4>Años</h4>
 							</div>
 							<div class="col-md-2 text-left">
-								<h4 class="text-left">Meses</h4>
+								<h4>Meses</h4>
 							</div>
 							<div class="col-md-2 text-left">
-								<h4 class="text-left">Enfermedades adquiridas en el cargo</h4>
+								<h4>Enfermedades adquiridas en el cargo</h4>
 							</div>
 						</div>
 						
@@ -552,7 +563,7 @@
 						<!-- Nombre -->
 						<div class="row">
 							<div class="col-md-12 text-left">
-								<h4 class="text-left">Nombre del Puesto</h4>
+								<h4>Nombre del Puesto</h4>
 								<asp:Label runat="server" id="txtNombrePuesto" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -560,7 +571,7 @@
 						<!-- Descripcion -->
 						<div class="row">
 							<div class="col-md-12 text-left">
-								<h4 class="text-left">Descripcion del Puesto</h4>
+								<h4>Descripcion del Puesto</h4>
 								<asp:Label runat="server" id="txtDescPuesto" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -568,7 +579,7 @@
 						<!-- Area -->
 						<div class="row">
 							<div class="col-md-12 text-left">
-								<h4 class="text-left">Area del Puesto</h4>
+								<h4>Area del Puesto</h4>
 								<asp:Label runat="server" id="txtAreaPuesto" Text="----"></asp:Label>
 							</div>
 						</div><br />
@@ -806,7 +817,9 @@
 					</div>
 				</div>
 
-			</div><br />
+			</div>
+            
+            <br />
 			
 			<!-- tabs  -->
 			<div class="row">
@@ -2672,16 +2685,15 @@
 				</div>
 			</div>
 
-
 			<!-- Impresion  -->
 			<div class="container" id="zonaPrint" style="opacity:0; width:100%;">
 				<script>
-                    function imprimir() {
-                        w = window.open();
-                        w.document.write($('#zonaPrint').html());
-                        w.print();
-                        w.close();
-                    }
+					function imprimir() {
+						w = window.open();
+						w.document.write($('#zonaPrint').html());
+						w.print();
+						w.close();
+					}
 					</script>
 				
 				<!-- Tab1-->
@@ -4427,4 +4439,5 @@
 			</div>
 		</ContentTemplate>
 	</asp:updatepanel>
+
 </asp:Content>

@@ -78,15 +78,14 @@
                 <div class="col-md-4">
                     <h5>Lugar de Nacimiento</h5>
                     <asp:TextBox runat="server" id="txtLugar" MaxLength="1000" CssClass="form-control" placeholder="Lugar de Nacimiento"></asp:TextBox>
-                    
                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
                         setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
                         Font-Bold="true" ControlToValidate="txtLugar" runat="server" 
                         ValidationGroup="ValidationAdd"/>
                 </div>
             </div>
-                 
-            <div class="row">                
+
+            <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     <h5>1) Seleccione el Nivel de escolaridad</h5>
                     <asp:DropDownList  runat="server" id="rblNivel" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="rblNivel_SelectedIndexChanged">
@@ -128,7 +127,7 @@
             <br />
 
             <!-- Años aprobados en ese último nivel,Es usted cabeza de familia,¿Cuantos hijos tiene? -->
-            <div class="row">                        
+            <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     3) ¿Es usted cabeza de familia?<br />
                     <asp:RadioButtonList runat="server" id="rdlCabeza" CssClass="radio-inline">
@@ -152,7 +151,7 @@
                 </div>
             </div>
 
-            <div class="row">                
+            <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     <h5>5) ¿Con quién comparte la responsabilidad económica de su familia?</h4>
                     <asp:DropDownList runat="server" id="rblResponsabilidad" CssClass="form-control">
@@ -178,7 +177,6 @@
             </div>
             
             <br />
-
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-2">
@@ -239,17 +237,17 @@
                 </div>
                 
                 <div class="col-md-4">
-                        <h5>9) Seleccione con cuales servicios públicos cuenta su vivienda</h4><br />
-                        <asp:CheckBoxList runat="server" id="cblServicios" CssClass="checkbox-inline" RepeatColumns="1">
-                            <asp:ListItem Text="Energia Electrica" Value="Energia Electrica"></asp:ListItem>
-                            <asp:ListItem Text="Agua" Value="Agua"></asp:ListItem>
-                            <asp:ListItem Text="Alcantarillado" Value="Alcantarillado"></asp:ListItem>
-                            <asp:ListItem Text="Teléfono Fijo" Value="Telefono Fijo"></asp:ListItem>
-                            <asp:ListItem Text="Teléfono Móvil" Value="Teléfono Móvil"></asp:ListItem>
-                            <asp:ListItem Text="Gas" Value="Gas"></asp:ListItem>
-                            <asp:ListItem Text="Internet" Value="Internet"></asp:ListItem>
-                            <asp:ListItem Text="Ninguno" Value="Ninguno"></asp:ListItem>
-                        </asp:CheckBoxList>
+                    <h5>9) Seleccione con cuales servicios públicos cuenta su vivienda</h4><br />
+                    <asp:CheckBoxList runat="server" id="cblServicios" CssClass="checkbox-inline" RepeatColumns="1">
+                        <asp:ListItem Text="Energia Electrica" Value="Energia Electrica"></asp:ListItem>
+                        <asp:ListItem Text="Agua" Value="Agua"></asp:ListItem>
+                        <asp:ListItem Text="Alcantarillado" Value="Alcantarillado"></asp:ListItem>
+                        <asp:ListItem Text="Teléfono Fijo" Value="Telefono Fijo"></asp:ListItem>
+                        <asp:ListItem Text="Teléfono Móvil" Value="Teléfono Móvil"></asp:ListItem>
+                        <asp:ListItem Text="Gas" Value="Gas"></asp:ListItem>
+                        <asp:ListItem Text="Internet" Value="Internet"></asp:ListItem>
+                        <asp:ListItem Text="Ninguno" Value="Ninguno"></asp:ListItem>
+                    </asp:CheckBoxList>
                 </div>
 
             </div>
@@ -258,7 +256,7 @@
 
             <!-- Su vivienda es:Esta Cerca de IndustriasHay mucho ruido:-->
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-4 col-md-offset-2">
                     <h5>10) Su vivienda es:</h4><br />
                     <asp:RadioButtonList runat="server" id="dblTipoVivienda" CssClass="radio-inline" AutoPostBack="true" OnSelectedIndexChanged="dblTipoVivienda_SelectedIndexChanged">
                         <asp:ListItem Text="Apartamento" Value="Apartamento"></asp:ListItem>
@@ -291,7 +289,7 @@
             
             <!-- Hay Mucha Contaminación Describa el techo, paredes y piso -->
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-4 col-md-offset-2">
                     <h5>12) Hay mucho ruido:</h4><br />
                     <asp:RadioButtonList runat="server" id="rblRuido" CssClass="radio-inline">
                         <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
@@ -319,7 +317,7 @@
             <br />
 
             <div class="row">                
-                <div class="col-md-8 col-md-offset-4">
+                <div class="col-md-8 col-md-offset-2">
                     13) Describa el techo, paredes y piso:<br />
                     <asp:TextBox runat="server" id="txtDescripcion" MaxLength="1000" TextMode="MultiLine" Rows="3" 
                         CssClass="form-control"></asp:TextBox>
@@ -336,7 +334,7 @@
                  14.1) Régimen de Afiliación
                  14.1.1) Nivel de SISBEN -->
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-4 col-md-offset-2">
                     <h5>14) Se encuentra afiliado al sistema de seguridad social en salud</h4><br />
                     <asp:RadioButtonList runat="server" id="dblSeguridad" CssClass="radio-inline" AutoPostBack="true"
                         OnSelectedIndexChanged="dblSeguridad_SelectedIndexChanged">
@@ -353,7 +351,7 @@
 
             <div class="row">
                 <asp:PlaceHolder id="phRegimen" runat="server" Visible="false">
-                    <div class="col-md-4 col-md-offset-4">
+                    <div class="col-md-4 col-md-offset-2">
                         <h5>14.1) Régimen de Afiliación</h4><br />
                         <asp:RadioButtonList runat="server" id="rblRegimen" CssClass="checkbox-inline" 
                             AutoPostBack="true" 
@@ -368,9 +366,20 @@
                     </div>
                 </asp:PlaceHolder>
                 
+                
+                <asp:PlaceHolder id="phRegimen3" runat="server" Visible="false">
+                    <div class="col-md-4">
+                        <h5>14.2) ¿A qué EPS pertenece?</h5><br />
+                        <asp:DropDownList runat="server" id="ddlEps" CssClass="form-control"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
+                            setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                            Font-Bold="true" ControlToValidate="ddlEps" runat="server" ValidationGroup="ValidationAdd"/>
+                    </div>
+                </asp:PlaceHolder>
+
                 <asp:PlaceHolder id="phRegimen2" runat="server" Visible="false">
                     <div class="col-md-4">
-                        <h5>14.1.1) Nivel de SISBEN</h4><br />
+                        <h5>14.3) Nivel de SISBEN</h4><br />
                         <asp:RadioButtonList runat="server" id="rblNivelSisben" TextAlign="Right" RepeatDirection="Vertical" RepeatLayout="Table" CssClass="radio-inline">
                             <asp:ListItem Text="Nivel 0" Value="0"></asp:ListItem>
                             <asp:ListItem Text="Nivel 1" Value="1"></asp:ListItem>
@@ -386,27 +395,14 @@
                             Font-Bold="true" ControlToValidate="rblNivelSisben" runat="server" ValidationGroup="ValidationAdd"/>
                     </div>
                 </asp:PlaceHolder>
+                
 
             </div>
             
             <br />
 
-            <!--  14.2) ¿A qué EPS pertenece
-                        ?15) Se encuentra afiliado al sistema de seguridad social en pensiones
-                        15.1) ¿A qué fondo pertenece?-->
-            <div class="row">
-                
-                <asp:PlaceHolder id="phRegimen3" runat="server" Visible="false">
-                    <div class="col-md-4 col-md-offset-2">
-                        <h5>14.2) ¿A qué EPS pertenece?</h5><br />
-                        <asp:DropDownList runat="server" id="ddlEps" CssClass="form-control"></asp:DropDownList>
-                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
-                            setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                            Font-Bold="true" ControlToValidate="ddlEps" runat="server" ValidationGroup="ValidationAdd"/>
-                    </div>
-                </asp:PlaceHolder>
-                
-                <div class="col-md-4">
+            <div class="row">                
+                <div class="col-md-4 col-md-offset-2">
                     <h5>15) Se encuentra afiliado al sistema de seguridad social en pensiones</h5><br />
                     <asp:RadioButtonList runat="server" id="rblPensiones" CssClass="radio-inline" AutoPostBack="true" 
                         OnSelectedIndexChanged="rblPensiones_SelectedIndexChanged">
@@ -419,23 +415,24 @@
                         Font-Bold="true" ControlToValidate="rblPensiones" runat="server" ValidationGroup="ValidationAdd"/>
 
                 </div>
+                
+                <asp:PlaceHolder id="phPensiones1" runat="server" Visible="false">
+                    <div class="col-md-4">
+                    <h5>15.1) ¿A qué fondo pertenece?</h5><br />
+                    <asp:DropDownList runat="server" id="ddlFondo" CssClass="form-control"></asp:DropDownList>
+                    
+                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
+                        setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                        Font-Bold="true" ControlToValidate="ddlFondo" runat="server" ValidationGroup="ValidationAdd"/>
+                 </div>
+
+                </asp:PlaceHolder>
             </div> 
 
             <br />
             
-            <div class="row">     
-                <div class="col-md-4 col-md-offset-5">
-                    <asp:PlaceHolder id="phPensiones1" runat="server" Visible="false">
-                        <h5>15.1) ¿A qué fondo pertenece?</h5><br />
-                        <asp:DropDownList runat="server" id="ddlFondo" CssClass="form-control"></asp:DropDownList>
-                        
-                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
-                            setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                            Font-Bold="true" ControlToValidate="ddlFondo" runat="server" ValidationGroup="ValidationAdd"/>
-                    </asp:PlaceHolder>
-                </div>
-                
-                <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
                     <h5>16) ¿Cual es el estrato que registran sus facturas de los servicios públicos de la vivienda donde reside?</h5><br />
                     <asp:RadioButtonList runat="server" id="rblEstrato" CssClass="radio-inline" RepeatColumns="1">
                         <asp:ListItem Text="Estrato 1" Value="Estrato 1"></asp:ListItem>

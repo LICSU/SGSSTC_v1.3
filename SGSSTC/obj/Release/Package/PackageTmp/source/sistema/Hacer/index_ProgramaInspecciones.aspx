@@ -11,9 +11,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-	
-	
-	<div class="container" style="width: 100%;">
 
 		<ol class="breadcrumb">
 			<li><a href="#">Fase: Hacer</a></li>
@@ -196,7 +193,5 @@
 					<h4 class="text-center">Debe seleccionar la empresa y sucursal.</h4>
 				</div>
 		</asp:PlaceHolder>
-
-	</div>
 
 </asp:Content>

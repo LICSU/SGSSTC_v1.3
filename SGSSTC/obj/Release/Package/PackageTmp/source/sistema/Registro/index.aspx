@@ -51,11 +51,11 @@
 
             <div class="row"> 
                 <div class="col-md-4 col-md-offset-2">
-                    <h4 class="text-left">Fecha inicio</h4>
+                    <h4>Fecha inicio</h4>
                     <asp:TextBox id="txtFechaInicio" runat="server" AutoPostBack="true" class="col-md-10" CssClass="form-control" TextMode="Date" OnTextChanged="txtFechaInicio_TextChanged"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="text-left">Fecha fin</h4>
+                    <h4>Fecha fin</h4>
                     <asp:TextBox id="txtFechaFin" runat="server" AutoPostBack="true" class="col-md-10" CssClass="form-control" TextMode="Date" OnTextChanged="txtFechaFin_TextChanged"></asp:TextBox>
                 </div> 
             </div><br/>

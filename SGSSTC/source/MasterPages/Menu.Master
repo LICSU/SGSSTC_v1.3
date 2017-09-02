@@ -17,8 +17,8 @@
 		<asp:ContentPlaceHolder ID="head" runat="server">
 		</asp:ContentPlaceHolder>
 </head>
-
-<body>
+	
+	<body>
 	<style>
 		.dropdown-submenu {
 			position: relative;
@@ -70,199 +70,145 @@
 		<nav class="navbar navbar-fixed-top" style="margin-left: 0px;">
 			<div class="container-fluid">
 				<div class="navbar-header">
-						<a href="../MenuPrincipal/index.aspx" class="navbar-brand">SGSSTC</a>
-					</div>
+					<a href="../MenuPrincipal/index.aspx" class="navbar-brand">SGSSTC</a>
+				</div>
 				
 				<ul class="nav navbar-nav">
-					  
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa  fa-gears"></i>
-								<span>Gestión</span>
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-							  <li>
-								<a href="../GestionDatos/index_Calendario.aspx">
-									<i class="fa fa-circle-o"></i>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa  fa-gears"></i>
+							<span>Gestión</span><span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="../GestionDatos/index_Calendario.aspx"><i class="fa fa-circle-o"></i>
 									<span>Calendario</span>
 								</a>
 							</li>
 
 							<li>
-								<a href="../GestionDatos/index_Empresa.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Empresa.aspx"><i class="fa fa-circle-o"></i>
 									<span>Empresa</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_Sucursal.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Sucursal.aspx"><i class="fa fa-circle-o"></i>
 									<span>Sucursal</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_Area.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Area.aspx"><i class="fa fa-circle-o"></i>
 									<span>Área</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_PuestoTrabajo.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_PuestoTrabajo.aspx"><i class="fa fa-circle-o"></i>
 									<span>Puesto de Trabajo</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_Horarios.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Horarios.aspx"><i class="fa fa-circle-o"></i>
 									<span>Horarios</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_Trabajador.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Trabajador.aspx"><i class="fa fa-circle-o"></i>
 									<span>Trabajador</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_Usuario.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Usuario.aspx"><i class="fa fa-circle-o"></i>
 									<span>Usuario</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_Categorias.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Categorias.aspx"><i class="fa fa-circle-o"></i>
 									<span>Categorias</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_Estatus.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_Estatus.aspx"><i class="fa fa-circle-o"></i>
 									<span>Estatus Trabajador</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/Index_Extintor.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/Index_Extintor.aspx"><i class="fa fa-circle-o"></i>
 									<span>Extintores</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/Index_Tipo_EPP.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/Index_Tipo_EPP.aspx"><i class="fa fa-circle-o"></i>
 									<span>Tipo de EPP</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../GestionDatos/index_EPP.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../GestionDatos/index_EPP.aspx"><i class="fa fa-circle-o"></i>
 									<span>EPP</span>
 								</a>
 							</li>
-							</ul>
-						</li>
+						</ul>
+					</li>
 
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-bar-chart-o"></i>
-								<span>Evaluación Inicial</span>
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li>
-								<a href="../EvaluacionInicial/index_AutoEvaluacion.aspx">
-									<i class="fa fa-circle-o"></i>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bar-chart-o"></i>
+							<span>Evaluación Inicial</span><span class="caret"></span>
+						</a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="../EvaluacionInicial/index_AutoEvaluacion.aspx"><i class="fa fa-circle-o"></i>
 									<span>Documento de Autoevaluación</span>
 								</a>
 							</li>							
 							<li>
-								<a href="../Hacer/index_MatrizLegal.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../Hacer/index_MatrizLegal.aspx"><i class="fa fa-circle-o"></i>
 									<span>Matriz Legal</span>
 								</a>
 							</li>
 							<li>
-								<a href="../Hacer/index_MatrizRiesgos.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../Hacer/index_MatrizRiesgos.aspx"><i class="fa fa-circle-o"></i>
 									<span>Matriz de Riesgos</span>
 								</a>
 							</li>
 							
 							<li>
-								<a href="../EvaluacionInicial/index_AnalisisVulnerabilidad.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../EvaluacionInicial/index_AnalisisVulnerabilidad.aspx"><i class="fa fa-circle-o"></i>
 									<span>Análisis de vulnerabilidad</span>
 								</a>
 							</li>
 							<li>
-								<a href="../EvaluacionInicial/index_Inspecciones.aspx">
-									<i class="fa fa-circle-o"></i>
-									<span>Inspecciones de seguridad</span>
-								</a>
-							</li>
-							<li>
-								<a href="../EvaluacionInicial/index_PorcentajeCapacitacion.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../EvaluacionInicial/index_PorcentajeCapacitacion.aspx"><i class="fa fa-circle-o"></i>
 									<span>Porcentaje de cumplimiento de Capacitaciones</span>
 								</a>
 							</li>
-							<li>
-								<a href="../EvaluacionInicial/index_VigilanciaEpidemiologica.aspx">
-									<i class="fa fa-circle-o"></i>
-									<span>Vigilancia Epidemiológica</span>
-								</a>
-							</li>
 							
 							<li>
-								<a href="../Hacer/index_DescripcionSocioDemografica.aspx">
-									<i class="fa fa-circle-o"></i>
-									<span>Descripción Sociodemográfica</span>
-								</a>
-							</li>
-							
-							<li>
-								<a href="../EvaluacionInicial/index_Indicadores.aspx">
-									<i class="fa fa-circle-o"></i>
-									<span>Indicadores de la Empresa</span>
-								</a>
-							</li>
-							<li>
-								<a href="../EvaluacionInicial/index_ReporteAccidentes.aspx">
-									<i class="fa fa-circle-o"></i>
-									<span>Índices de Accidentalidad</span>
-								</a>
-							</li>
-							
-							<li>
-								<a href="../EvaluacionInicial/index_ReporteTrabajadores.aspx">
-									<i class="fa fa-circle-o"></i>
+								<a href="../EvaluacionInicial/index_ReporteTrabajadores.aspx"><i class="fa fa-circle-o"></i>
 									<span>Reportes de los trabajadores</span>
 								</a>
 							</li>
-							</ul>
-						</li>
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-calendar-check-o"></i>
+							<span>Planear</span>
+							<span class="caret"></span>
+						</a>
 						
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-calendar-check-o"></i>
-								<span>Planear</span>
-								<span class="caret"></span>
-							</a>
-							
-							<ul class="dropdown-menu dropdown-menu-right">
+						<ul class="dropdown-menu dropdown-menu-right">
 								
 								<li class="dropdown-submenu">
 									<!-- Liderazgo y compromiso -->
@@ -441,6 +387,14 @@
 											<span>Matriz de Riesgos</span>
 										</a>
 									</li>
+									
+									<li>
+										<a href="#">
+											<i class="fa fa-circle-o"></i>
+											<span>Estructura para identificación de peligros</span>
+											<span class="label bg-yellow">Fase desarrollo</span>
+										</a>
+									</li>
 								</ul>
 							</li>
 
@@ -468,25 +422,23 @@
 								</ul>
 							</li>
 						</ul>
-						</li>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-list-ol"></i>
+							<span>Hacer</span> 
+							<span class="caret"></span>
+						</a>
 						
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-list-ol"></i>
-								<span>Hacer</span> 
-								<span class="caret"></span>
-							</a>
-							
-							<ul class="dropdown-menu dropdown-menu-right">
+						<ul class="dropdown-menu dropdown-menu-right">
+							<!-- Gestiones Laborales  -->
+							<li class="dropdown-submenu">
+								<a href="#"><i class="fa fa-circle-o"></i>
+									<span>Gestiones Laborales</span>
+								</a>
 								
-								<!-- Gestiones Laborales  -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Gestiones Laborales</span>
-									</a>
-									
-									<ul class="dropdown-menu">	
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="../Hacer/index_GestionLaboral.aspx">
 												<i class="fa fa-files-o"></i>
@@ -495,16 +447,15 @@
 											</a>
 										</li>
 									</ul>
-								</li>
-								
-								<!-- Control Operacional  -->							
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Control Operacional</span>
-									</a>
-								
-									<ul class="dropdown-menu">	
+							</li>
+							
+							<!-- Control Operacional  -->
+							<li class="dropdown-submenu">
+								<a href="#"><i class="fa fa-circle-o"></i>
+									<span>Control Operacional</span>
+								</a>
+							
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="#">
 												<i class="fa fa-circle-o"></i>
@@ -513,25 +464,48 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
+							
+							<li class="dropdown-submenu">
+								<a href="../Hacer/index_DescripcionSocioDemografica.aspx"><i class="fa fa-circle-o"></i>
+									<span>Descripción Sociodemográfica</span>
+								</a>
+							</li>
+							
+							<!-- Indicadores de la Empresa -->
+							<li class="dropdown-submenu">
+								<a href="#"><i class="fa fa-circle-o"></i>
+									<span>Inspecciones de seguridad</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
 
-								<!-- Seguridad y Salud en el Trabajo -->
-								<li class="dropdown-submenu">
-									<a href="#"><i class="fa fa-circle-o"></i><span>Seguridad y Salud en el Trabajo</span> <i class="fa fa-angle-left pull-right"></i></a>
-									
-									<ul class="dropdown-menu">	
+								<ul class="dropdown-menu">
+										<li>
+											<a href="../Hacer/index_Inspecciones.aspx"><i class="fa fa-circle-o"></i>
+												<span>Inspecciones</span>
+											</a>
+										</li>
+										<li>
+											<a href="../Hacer/index_ProgramaInspecciones.aspx"><i class="fa fa-circle-o"></i>
+												<span>Programa de Inspecciones</span>
+											</a>
+										</li>
+									</ul>
+							</li>
+
+							<!-- Seguridad y Salud en el Trabajo -->
+							<li class="dropdown-submenu">
+								<a href="#"><i class="fa fa-circle-o"></i>
+									<span>Seguridad y Salud en el Trabajo</span> 
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								
+								<ul class="dropdown-menu">	
 									
 										<li>
 											<a href="../Hacer/index_PlanTrabajo.aspx">
 												<i class="fa fa-circle-o"></i>
 												<span>Plan Anual de Trabajo</span>
-											</a>
-										</li>
-									
-										<li>
-											<a href="../Hacer/index_ProgramaInspecciones.aspx">
-												<i class="fa fa-circle-o"></i>
-												<span>Programa de Inspecciones</span>
 											</a>
 										</li>
 									
@@ -603,16 +577,120 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
+							
+							<!-- Gestión de la Salud -->
+							<li class="dropdown-submenu">
+								<a href="#"><i class="fa fa-circle-o"></i>
+									<span>Gestión de la Salud </span>
+								</a>
+							
+								<ul class="dropdown-menu">	
+									<li>
+										<a href="../Hacer/index_ExamenLaboral.aspx">
+											<i class="fa fa-circle-o"></i>
+											<span>Exámenes Laborales  </span>
+											<span class="label bg-green">Fase Beta</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href="../Hacer/index_VigilanciaEpidemiologica.aspx"><i class="fa fa-circle-o"></i>
+											<span>Vigilancia Epidemiológica</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#"><i class="fa fa-circle-o"></i>
+											<span>Perfiles de Cargo</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#"><i class="fa fa-circle-o"></i>
+											<span>Documento de Reubicación </span>
+										</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-circle-o"></i>
+											<span>Readaptación Laboral</span>
+										</a>
+									</li>
+								</ul>
+							</li>
 
-								<!-- Comunicación, Participación y Consulta  -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Comunicación, Participación y Consulta</span>
-									</a>
+							<!-- Investigación de Inc Acc y enf Lab  -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Accidentes, incidentes<br />y enfermedades Laborales</span>
+								</a>
 								
-									<ul class="dropdown-menu">	
+								<ul class="dropdown-menu">	
+								
+									<li>
+										<a href="#">
+											<i class="fa fa-circle-o"></i>
+											<span>Procedimiento de investigación de Accidentes<br />e Incidentes  </span>
+											<span class="label bg-yellow">Fase En Desarrollo</span>
+										</a>
+									</li>
+								
+									<li>
+										<a href="../Hacer/index_InvestigacionAccidente.aspx">
+											<i class="fa fa-circle-o"></i>
+											<span>Investigación de Accidente Laboral</span>
+										</a>
+									</li>
+								
+									<li>
+										<a href="../Hacer/index_AccidenteLaboral.aspx">
+											<i class="fa fa-circle-o"></i>
+											<span>Registro de Accidentes Laborales</span>
+										</a>
+									</li>
+
+									<li>
+										<a href="../Hacer/index_InvestigacionIncidente.aspx">
+											<i class="fa fa-circle-o"></i>
+											<span>Investigación de Incidente Laborales</span>
+										</a>
+									</li>
+								
+									<li>
+										<a href="../Hacer/index_IncidenteLaboral.aspx">
+											<i class="fa fa-circle-o"></i>
+											<span>Registro de Incidentes Laborales</span>
+										</a>
+									</li>
+								
+							
+									<li>
+										<a href="../Hacer/index_IndiceAccidentalidad.aspx">
+											<i class="fa fa-circle-o"></i>
+											<span>Índices de Accidentalidad</span>
+										</a>
+									</li>
+
+									<li>
+										<a href="#">
+											<i class="fa fa-circle-o"></i>
+											<span>Lecciones aprendidas  </span>
+											<span class="label bg-yellow">Fase En Desarrollo</span>
+										</a>
+
+									</li>
+								</ul>
+							</li>
+
+							<!-- Comunicación, Participación y Consulta  -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Comunicación, Participación y Consulta</span>
+								</a>
+							
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="#">
 												<i class="fa fa-circle-o"></i>
@@ -628,16 +706,16 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
 
-								<!--  Prevención, preparación y Respuesta ante emergencias -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Prevención y respuesta ante emergencias</span>
-									</a>
-								
-									<ul class="dropdown-menu">	
+							<!--  Prevención, preparación y Respuesta ante emergencias -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Prevención y respuesta ante emergencias</span>
+								</a>
+							
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="../Hacer/index_DescGeneralEmpresa.aspx">
 												<i class="fa fa-circle-o"></i>
@@ -703,16 +781,16 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
 
-								<!-- Gestión del cambio  -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Gestión del cambio</span>
-									</a>
-								
-									<ul class="dropdown-menu">	
+							<!-- Gestión del cambio  -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Gestión del cambio</span>
+								</a>
+							
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="#">
 												<i class="fa fa-circle-o"></i>
@@ -721,16 +799,16 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
 
-								<!-- Adquisiciones  -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Adquisiciones</span>
-									</a>
-								
-									<ul class="dropdown-menu">	
+							<!-- Adquisiciones  -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Adquisiciones</span>
+								</a>
+							
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="#">
 												<i class="fa fa-circle-o"></i>
@@ -739,15 +817,15 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
 
-								<!--  Administración de contratistas -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Administración de contratistas</span> 
-									</a>
-									<ul class="dropdown-menu">	
+							<!--  Administración de contratistas -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Administración de contratistas</span> 
+								</a>
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="#">
 												<i class="fa fa-circle-o"></i>
@@ -756,16 +834,16 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
 
-								<!--  Obligaciones -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Obligaciones</span>
-									</a>
+							<!--  Obligaciones -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Obligaciones</span>
+								</a>
 
-									<ul class="dropdown-menu">	
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="../Hacer/index_Obligaciones.aspx">
 												<i class="fa fa-navicon"></i>
@@ -773,15 +851,15 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
 
-								<!-- Alarmas  -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Alarmas</span>
-									</a>
-									<ul class="dropdown-menu">	
+							<!-- Alarmas  -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Alarmas</span>
+								</a>
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="../Hacer/index_Alarmas.aspx">
 												<i class="fa fa-bell"></i>
@@ -789,33 +867,16 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+							</li>
 
-								<!-- Exámenes Laborales  -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Exámenes Laborales</span> 
-									</a>
-									<ul class="dropdown-menu">	
-										<li>
-											<a href="../Hacer/index_ExamenLaboral.aspx">
-												<i class="fa fa-stethoscope"></i>
-												<span>Exámenes Laborales  </span>
-												<span class="label bg-green">Fase Beta</span>
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<!-- Mapa de Riesgos -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Mapa de Riesgos</span>
-									</a>
-									
-									<ul class="dropdown-menu">	
+							<!-- Mapa de Riesgos -->
+							<li class="dropdown-submenu">
+								<a href="#">
+									<i class="fa fa-circle-o"></i>
+									<span>Mapa de Riesgos</span>
+								</a>
+								
+								<ul class="dropdown-menu">	
 										<li>
 											<a href="../Hacer/index_MapaRiesgos.aspx">
 												<i class="fa fa-map-o"></i>
@@ -824,17 +885,25 @@
 
 										</li>
 									</ul>
-								</li>
-							</ul>
-						</li>
-						
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-check-square-o"></i>
-								<span>Verificar</span> 
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu dropdown-menu-right">
+							</li>
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-check-square-o"></i>
+							<span>Verificar</span> 
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right">
+							
+							<!--Indicadores de la Empresa  -->
+								<li class="dropdown-submenu">
+								<a href="../Verificar/index_Indicadores.aspx"><i class="fa fa-circle-o"></i>
+									<span>Indicadores de la Empresa</span>
+								</a>
+							</li>
+
 								<!-- Auditoria de cumplimiento del SGSST  -->
 								<li class="dropdown-submenu">
 									<a href="#">
@@ -878,62 +947,6 @@
 									</ul>
 								</li>
 
-								<!-- Investigación de Inc Acc y enf Lab  -->
-								<li class="dropdown-submenu">
-									<a href="#">
-										<i class="fa fa-circle-o"></i>
-										<span>Accidentes, incidentes<br />y enfermedades Laborales</span>
-									</a>
-									
-									<ul class="dropdown-menu">	
-									
-										<li>
-											<a href="#">
-												<i class="fa fa-circle-o"></i>
-												<span>Procedimiento de investigación de Accidentes<br />e Incidentes  </span>
-												<span class="label bg-yellow">Fase En Desarrollo</span>
-											</a>
-										</li>
-									
-										<li>
-											<a href="../Verificar/index_InvestigacionAccidente.aspx">
-												<i class="fa fa-circle-o"></i>
-												<span>Investigación de Accidente Laboral</span>
-											</a>
-										</li>
-									
-										<li>
-											<a href="../Verificar/index_AccidenteLaboral.aspx">
-												<i class="fa fa-circle-o"></i>
-												<span>Registro de Accidentes Laborales</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="../Verificar/index_InvestigacionIncidente.aspx">
-												<i class="fa fa-circle-o"></i>
-												<span>Investigación de Incidente Laborales</span>
-											</a>
-										</li>
-									
-										<li>
-											<a href="../Verificar/index_IncidenteLaboral.aspx">
-												<i class="fa fa-circle-o"></i>
-												<span>Registro de Incidentes Laborales</span>
-											</a>
-										</li>
-									
-										<li>
-											<a href="#">
-												<i class="fa fa-circle-o"></i>
-												<span>Lecciones aprendidas  </span>
-												<span class="label bg-yellow">Fase En Desarrollo</span>
-											</a>
-
-										</li>
-									</ul>
-								</li>
-
 								<!-- Registro -->
 								<li class="dropdown-submenu">
 									<a href="../Registro/index.aspx">
@@ -943,15 +956,15 @@
 									</a>
 								</li>
 							</ul>
-						</li>
-						
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="fa fa-repeat"></i>
-								<span>Actuar</span>
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu dropdown-menu-right">
+					</li>
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-repeat"></i>
+							<span>Actuar</span>
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right">
 								<li class="dropdown-submenu">
 									<a href="#">
 										<i class="fa fa-circle-o"></i>
@@ -1018,8 +1031,8 @@
 									</ul>
 								</li>
 							</ul>
-						</li>
-					</ul> 
+					</li>
+				</ul> 
 				
 				<ul class="nav navbar-nav navbar-right">
 						<li>
@@ -1035,14 +1048,14 @@
 					</ul>
 			</div>
 		</nav>
-	</header>
-	
+	</header>	
 	
 	<div id="wrap">
 	  <div id="main" class="container clear-top">
 		<form id="form1" runat="server">
 			<asp:scriptmanager id="ScriptManager1" runat="server"/>
-			<div class ="container" style="width:100%;">
+			<div class ="container">
+
 				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
 				</asp:ContentPlaceHolder>

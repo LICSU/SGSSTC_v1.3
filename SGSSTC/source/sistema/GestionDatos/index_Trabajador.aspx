@@ -180,7 +180,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">¿Tuvo reposo?</h4>
+                                    <h4>¿Tuvo reposo?</h4>
                                     <asp:RadioButtonList id="rblReposo" RepeatColumns="2" AutoPostBack="true" runat="server"
                                         data-toggle="tooltip" data-placement="bottom" title="Seleccione si hubo reposo"
                                         OnSelectedIndexChanged="rblReposo_SelectedIndexChanged" >
@@ -193,7 +193,7 @@
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <asp:PlaceHolder runat="server" id="phDiasReposo" Visible="false">
-                                        <h4 class="text-left">Días de Reposo</h4>
+                                        <h4>Días de Reposo</h4>
                                         <asp:TextBox runat="server" CssClass="form-control" TextMode="Number" min="1" Text="1" 
                                             id="txtDiasReposo"
                                             data-toggle="tooltip" data-placement="bottom" title="Ingrese los numeros de dias de reposo"></asp:TextBox>
@@ -205,7 +205,7 @@
 
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Motivo</h4>
+                                    <h4>Motivo</h4>
                                     <asp:DropDownList id="rblDiagnostico" CssClass="form-control" 
                                         OnSelectedIndexChanged="rblDiagnostico_SelectedIndexChanged" AutoPostBack="true" runat="server"
                                         data-toggle="tooltip" data-placement="bottom" title="Seleccione el motivo del reposo">
@@ -223,7 +223,7 @@
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <asp:PlaceHolder runat="server" id="phOtroDiagnostico" Visible="false">
-                                        <h4 class="text-left">Causa</h4>
+                                        <h4>Causa</h4>
                                         <asp:TextBox runat="server" CssClass="form-control" id="txtOtroDiagnostico" MaxLength="300"
                                             data-toggle="tooltip" data-placement="bottom" title="Ingrese la causa del reposo"></asp:TextBox>
                                     </asp:PlaceHolder>
@@ -235,7 +235,7 @@
                             <asp:PlaceHolder runat="server" id="phAccidenteComun" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-left"><asp:Label runat="server" id="lbAcc" Text=""></asp:Label></h4>
+                                        <h4><asp:Label runat="server" id="lbAcc" Text=""></asp:Label></h4>
                                         <asp:TextBox TextMode="Multiline" Rows="2" runat="server" CssClass="form-control" 
                                             id="txtAccidenteComun"></asp:TextBox>
                                     </div>
@@ -245,7 +245,7 @@
                             <asp:PlaceHolder runat="server" id="phEnfermedadLaboral" Visible="false">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-left">
+                                        <h4>
                                             <asp:Label runat="server" id="lblEnfermedad" Text=""></asp:Label></h4>
                                         <asp:DropDownList id="ddlEnfermedadReposo" CssClass="form-control" runat="server" 
                                             ClientIDMode="Static" AutoPostBack="true"></asp:DropDownList><br />
@@ -254,7 +254,7 @@
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-left">Seleccione el Sistema Afectado</h4>
+                                        <h4>Seleccione el Sistema Afectado</h4>
                                         <asp:DropDownList id="ddlSistemaReposo" CssClass="form-control" runat="server" AutoPostBack="true" ClientIDMode="Static" 
                                             data-toggle="tooltip" data-placement="bottom" title="Seleccione el Sistema Afectado"></asp:DropDownList>
                                     </div>
@@ -264,7 +264,7 @@
                             <asp:PlaceHolder runat="server" id="phPEE" Visible="false">
                                 <div class="row">
                                    <div class="col-md-8 col-md-offset-2">
-                                        <h4 class="text-left"><asp:Label runat="server" id="lbll" 
+                                        <h4><asp:Label runat="server" id="lbll" 
                                             Text="Posible Enfermedad Laboral"></asp:Label></h4>
                                         <asp:DropDownList id="ddlEnfermedadLaboral" CssClass="form-control" runat="server" 
                                             ClientIDMode="Static"
@@ -277,7 +277,7 @@
 
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Fecha de la Constancia</h4>
+                                    <h4>Fecha de la Constancia</h4>
 
                                     <asp:TextBox id="txtFechaConstancia" CssClass="form-control" TextMode="Date" runat="server" 
                                         ClientIDMode="Static"
@@ -290,7 +290,7 @@
                             
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Motivo</h4>
+                                    <h4>Motivo</h4>
 
                                     <asp:TextBox id="txtMotivoRep" CssClass="form-control" MaxLength="300" TextMode="Multiline" Rows="2" 
                                         runat="server" ClientIDMode="Static"
@@ -302,7 +302,7 @@
 
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-left">Agregar Constancia</h4>
+                                    <h4>Agregar Constancia</h4>
                                     <asp:FileUpload id="fuConstancia" runat="server" 
                                         data-toggle="tooltip" data-placement="bottom" title="Seleccione el soporte fotográfico de la constancia"/>
                                 </div>

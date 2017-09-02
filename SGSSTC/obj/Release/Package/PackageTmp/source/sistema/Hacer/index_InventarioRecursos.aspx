@@ -8,8 +8,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Panel runat="server" ID="panel1">
 
-        
-        <div class="container" style="width: 100%;">
 
             <ol class="breadcrumb">
                 <li><a href="#">Fase: Hacer</a></li>
@@ -521,8 +519,6 @@
             </div>
 
         </div>
-
-    </div>
 
     <div class="box-body no-padding">
         <table class="table table-condensed">

@@ -2,23 +2,25 @@
 
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
+	PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
+<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content><%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %><%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %><%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %><%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-	
-    
-    <div class="container" style="width: 100%;">
-        
-            <ol class="breadcrumb">
-                <li><a href="#">Fase: Hacer</a></li>
-                <li><a href="#">Brigadas de Emergencia</a></li>
-            </ol>
-            
-            <div class="page-header">
+
+		
+			<ol class="breadcrumb">
+				<li><a href="#">Fase: Hacer</a></li>
+				<li><a href="#">Brigadas de Emergencia</a></li>
+			</ol>
+			
+			<div class="page-header">
 				<h1 class="text-center">Brigadas de Emergencia</h1>
-            </div>
+			</div>
 
 			<div class="row form-group">
 
@@ -42,7 +44,7 @@
 			</asp:PlaceHolder>
 		</div>
 
-            <asp:PlaceHolder runat="server" id="chEditor" Visible="false">
+			<asp:PlaceHolder runat="server" id="chEditor" Visible="false">
 			<div class="panel-group" id="accordion">
 
 				<!-- Primer Panel -->
@@ -69,7 +71,7 @@
 										<li><h3>Motivar y mantener en alto la moral de la brigada</h3></li>
 									</ul>                                    
 									<h3>Perfil de Los Brigadistas</h3>
-                                    <a style="opacity:1;">#NOBORRAR#</a>
+									<a style="opacity:1;">#NOBORRAR#</a>
 									<ul>
 										<li><h3>Manifestar condiciones mentales, emocionales y físicas aptas para servir en las brigadas</h3></li>
 										<li><h3>Poseer o adquirir conocimientos en emergencias</h3></li>
@@ -80,7 +82,7 @@
 										<li><h3>Ser ágil, ordenado , responsable y con criterio</h3></li>
 										<li><h3>Tener autodominio, ingenio, persistencia, serenidad y prudencia</h3></li>
 									</ul>
-                                   
+								   
 							</CKEditor:CKEditorControl>
 						</div>
 					</div>
@@ -111,7 +113,7 @@
 										<li><h3>Con base en los hallazgos de las inspecciones tomar las medidas correctivas y preventivas para controlar y minimizar la ocurrencia de emergencias o disminuir la vulnerabilidad frente a ellas.</h3></li>
 										<li><h3>Conocer los riesgos generales y particulares que se presentan en los diferentes sitios y actividades que se desarrollan en el área que labora</h3></li>
 									</ul>
-                                    <a style="opacity:1;">#NOBORRAR#</a>
+									<a style="opacity:1;">#NOBORRAR#</a>
 									<h3>Durante de la Emergencia</h3>
 									<ul>
 										<li><h3>Actuar prontamente cuando se informe de una emergencia en su área (o si es requerido por otra área), usar el equipo que tenga a disposición según el evento</h3></li>
@@ -409,7 +411,7 @@
 				</div>
 
 			</div>
-            <div class="row" align="center">
+			<div class="row" align="center">
 				<div class="col-md-4 col-md-offset-2">
 					<asp:button id="btnPrint" runat="server" cssclass="btn btn-success"
 						onclick="GenerarDocumento" text="Generar Documento" validationgroup="ValidationAdd"/>
@@ -421,13 +423,11 @@
 				</div>
 
 			</div>
-            </asp:PlaceHolder>
-            <asp:PlaceHolder runat="server" id="chEditorNo">
-                <div class="row">
-                    <h4 class="text-center">Debe seleccionar la empresa y sucursal.</h4>
-                </div>
-            </asp:PlaceHolder>
-
-	</div>
+			</asp:PlaceHolder>
+			<asp:PlaceHolder runat="server" id="chEditorNo">
+				<div class="row">
+					<h4 class="text-center">Debe seleccionar la empresa y sucursal.</h4>
+				</div>
+			</asp:PlaceHolder>
 
 </asp:Content>
