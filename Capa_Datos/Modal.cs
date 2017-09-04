@@ -11,6 +11,26 @@ namespace Capa_Datos
 
         public static void MostrarMsjModal(string msj, string tipo, Page _page)
         {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append(@"<script type='text/javascript'>");
+            sb.Append("function MostrarMsjModal(message, title, ccsclas) {" +
+                "var vIcoModal = document.getElementById('icoModal');" +
+                "vIcoModal.className = ccsclas;" +
+                "$('#lblMsjTitle').html(title);" +
+                "$('#lblMsjModal').html(message);" +
+                "$('#Msjmodal').modal('show');" +
+                "return true;" +
+                "}" +
+                "function MostrarMsjModalExito()" +
+                "{" +
+                "$('#modalExito').modal('show');" +
+                "return true;" +
+                "}");
+            sb.Append(@"</script>");
+            ScriptManager.RegisterClientScriptBlock(_page, typeof(Page), "myScriptModal", sb.ToString(), false);
+
+
+
             string sTitulo = "Información";
             string sCcsClase = "fa fa-check fa-2x text-info";
             switch (tipo)
@@ -29,31 +49,6 @@ namespace Capa_Datos
                     break;
             }
             ScriptManager.RegisterStartupScript(_page, typeof(Page), "MostrarMsjModal", "MostrarMsjModal('" + msj.Replace("'", "").Replace("\r\n", " ") + "','" + sTitulo + "','" + sCcsClase + "');", true);
-        }
-        public static void MostrarMsjModalExito(Page _page)
-        {
-            ScriptManager.RegisterStartupScript(_page, typeof(Page), "MostrarMsjModalExito", "MostrarMsjModalExito();", true);
-        }
-        public static void MostrarMsjModalEspecifico(string msj, string tipo, Page _page)
-        {
-            string sTitulo = "Información";
-            string sCcsClase = "fa fa-check fa-2x text-info";
-            switch (tipo)
-            {
-                case "ERR":
-                    sTitulo = "ERROR";
-                    sCcsClase = "fa fa-times fa-2x text-danger";
-                    break;
-                case "ADV":
-                    sTitulo = "ADVERTENCIA"; //
-                    sCcsClase = "fa fa-exclamation-triangle fa-2x text-warning";
-                    break;
-                case "EXI":
-                    sTitulo = "ÉXITO";
-                    sCcsClase = "fa fa-check fa-2x text-success";
-                    break;
-            }
-            ScriptManager.RegisterStartupScript(_page, typeof(Page), "MostrarMsjModal1", "MostrarMsjModal1('" + msj.Replace("'", "").Replace("\r\n", " ") + "','" + sTitulo + "','" + sCcsClase + "');", true);
         }
 
         public static void registrarModal(string nombreModal, string nombreScript, Page _page)

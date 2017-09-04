@@ -3,60 +3,62 @@
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+
+
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-		
-	   <ol class="breadcrumb">
-		   <li><a href="#">Fase: Hacer</a></li>
-		   <li><a href="#">Matriz de Responsabilidades</a></li>
-	   </ol>
 
-		<div class="page-header">
-			<h1 class="text-center">Matriz de Responsabilidades</h1>
-		</div>
+    <ol class="breadcrumb">
+        <li><a href="#">Fase: Hacer</a></li>
+        <li><a href="#">Matriz de Responsabilidades</a></li>
+    </ol>
 
-		<div class="row form-group">			
-			<asp:PlaceHolder runat="server" id="phEmpresa">
-				<div class="col-md-4">
-					<h4 class="text-center">Empresa</h4>
-					<asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" 
-						OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
-				</div>
-			</asp:PlaceHolder> 
-		
-			<asp:PlaceHolder runat="server" id="phSucursal">
-				<div class="col-md-4 col-md-offset-4">
-					<h4 class="text-center">Sucursal</h4>
-					<asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true" 
-						OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
+    <div class="page-header">
+        <h1 class="text-center">Matriz de Responsabilidades</h1>
+    </div>
 
-					<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
-						Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal" 
-						runat="server" ValidationGroup="ValidationAdd"/>
-				</div>
-			</asp:PlaceHolder>
-		</div>
-		
-		<asp:PlaceHolder runat="server" id="phTabla" visible="false">
-			<div class="row text-center">
-			<div class="box">
-				<div class="panel-group" id="accordion">
+    <div class="row form-group">
+        <asp:PlaceHolder runat="server" ID="phEmpresa">
+            <div class="col-md-4">
+                <h4 class="text-center">Empresa</h4>
+                <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true"
+                    OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged">
+                </asp:DropDownList>
+            </div>
+        </asp:PlaceHolder>
 
-					<!-- Primer Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">ALTA GERENCIA, EMPLEADOR</a></h4>
-						</div>
+        <asp:PlaceHolder runat="server" ID="phSucursal">
+            <div class="col-md-4 col-md-offset-4">
+                <h4 class="text-center">Sucursal</h4>
+                <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
+                    OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+                </asp:DropDownList>
 
-						<div id="collapse1" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt1" BasePath="/ckeditor/" runat="server">
+                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+                    Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
+                    runat="server" ValidationGroup="ValidationAdd" />
+            </div>
+        </asp:PlaceHolder>
+    </div>
+
+    <asp:PlaceHolder runat="server" ID="phTabla" Visible="false">
+        <div class="row text-center">
+            <div class="box">
+                <div class="panel-group" id="accordion">
+
+                    <!-- Primer Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">ALTA GERENCIA, EMPLEADOR</a></h4>
+                        </div>
+
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt1" BasePath="/ckeditor/" runat="server">
 									
 									<ul>
 										<li type="disc">Definir, firmar y divulgar la política de Seguridad y Salud en el Trabajo a través de un  documento escrito</li>
@@ -79,21 +81,21 @@
 										<li type="disc">Suministrar al personal de manera gratuita los equipos de protección personal y especificar el deber y la forma correcta de utilizarlos desarrollando las acciones necesarias para que el trabajador utilice los implementos de protección</li>
 
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Segundo Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">COORDINADOR DE SEGURIDAD Y SALUD EN EL TRABAJO</a></h4>
-						</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-						<div id="collapse2" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt2" BasePath="/ckeditor/" runat="server">
+                    <!-- Segundo Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">COORDINADOR DE SEGURIDAD Y SALUD EN EL TRABAJO</a></h4>
+                        </div>
+
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt2" BasePath="/ckeditor/" runat="server">
 									
 									<ul>
 										<li type="disc">Planear, organizar, dirigir, desarrollar y aplicar el Sistema de Gestión de la Seguridad y Salud en el Trabajo SG-SST, y como mínimo una (1) vez al año, realizar su evaluación</li>
@@ -106,21 +108,21 @@
 										<li type="disc">Implementar las acciones preventivas y correctivas necesarias, con base en los resultados de la supervisión y  difundirlas a todos los niveles pertinentes</li>
 										<li type="disc">Reportar los accidentes y las enfermedades diagnosticadas como laborales dentro de los dos días hábiles siguientes a la ocurrencia del evento </li>
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Tercer Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">JEFES DE ÁREA</a></h4>
-						</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-						<div id="collapse3" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt3" BasePath="/ckeditor/" runat="server">
+                    <!-- Tercer Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">JEFES DE ÁREA</a></h4>
+                        </div>
+
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt3" BasePath="/ckeditor/" runat="server">
 									<ul>
 										<li type="disc">Participar en la actualización del panorama de factores de riesgo</li>
 										<li type="disc">Participar en la construcción y ejecución de planes de acción</li>
@@ -129,21 +131,21 @@
 										<li type="disc">Participar en la investigación de los incidentes y accidentes de trabajo,  conformando un equipo investigador del área donde ocurrió el accidente</li>
 										<li type="disc">Participar en las inspecciones de seguridad</li>
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Cuarto Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESPONSABLE DE SALUD OCUPACIONAL</a></h4>
-						</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-						<div id="collapse4" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt4" BasePath="/ckeditor/" runat="server">									
+                    <!-- Cuarto Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESPONSABLE DE SALUD OCUPACIONAL</a></h4>
+                        </div>
+
+                        <div id="collapse4" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt4" BasePath="/ckeditor/" runat="server">									
 									<ul>
 										<li type="disc">Coordinar con los jefes de las áreas, la elaboración y actualización del panorama de factores de riesgos y hacer la priorización para focalizar la intervención</li>
 										<li type="disc">Realizar la vigilancia epidemiológica de la salud de los trabajadores, evaluaciones médicas de ingreso, egreso y periódicas</li>
@@ -153,21 +155,21 @@
 										<li type="disc">Apoyar la investigación de los accidentes e incidentes de trabajo.</li>
 										<li type="disc">Implementación y seguimiento del SG-SST.</li>
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Quinto Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">TRABAJADORES</a></h4>
-						</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-						<div id="collapse5" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt5" BasePath="/ckeditor/" runat="server">
+                    <!-- Quinto Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">TRABAJADORES</a></h4>
+                        </div>
+
+                        <div id="collapse5" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt5" BasePath="/ckeditor/" runat="server">
 									<ul>
 										<li type="disc">Procurar el cuidado integral de su salud</li>
 										<li type="disc">Conocer y tener clara la política de SG-SST</li>
@@ -180,21 +182,21 @@
 										<li type="disc">Reportar inmediatamente todo accidente de trabajo o incidente</li>
 										<li type="disc">Hacer uso de los Equipos de Protección Personal y Responsabilizarse por el cuidado de los mismos</li>
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Sexto Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">COMITÉ PARITARIO DE SEGURIDAD Y SALUD EN EL TRABAJO</a></h4>
-						</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-						<div id="collapse6" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt6" BasePath="/ckeditor/" runat="server">
+                    <!-- Sexto Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">COMITÉ PARITARIO DE SEGURIDAD Y SALUD EN EL TRABAJO</a></h4>
+                        </div>
+
+                        <div id="collapse6" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt6" BasePath="/ckeditor/" runat="server">
 									<ul>
 										<li type="disc">Proponer a las directivas las actividades relacionadas con la salud y la seguridad de los trabajadores</li>
 										<li type="disc">Analizar las causas de accidentes y enfermedades.</li>
@@ -203,21 +205,21 @@
 										<li type="disc">Servir de punto de coordinación entre las directivas y los trabajadores para las situaciones relacionadas con SSL</li>
 										<li type="disc">Participar en las Reuniones ordinarias y extraordinarias</li>
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Septimo Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">COMITÉ DE CONVIVENCIA</a></h4>
-						</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-						<div id="collapse7" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt7" BasePath="/ckeditor/" runat="server">									
+                    <!-- Septimo Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">COMITÉ DE CONVIVENCIA</a></h4>
+                        </div>
+
+                        <div id="collapse7" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt7" BasePath="/ckeditor/" runat="server">									
 									<ul>
 										<li type="disc">Recibir y dar trámite a las quejas presentadas en las que se describan situaciones que puedan constituir acoso laboral, así como las pruebas que las soportan </li>
 										<li type="disc">Examinar de manera confidencial los casos específicos o puntuales en los que se formule queja o reclamo, que pudieran tipificar conductas o circunstancias de acoso laboral, al interior de la entidad pública o empresa privada. </li>
@@ -227,21 +229,21 @@
 										<li type="disc">Presentar a la alta dirección de la entidad pública o la empresa privada las recomendaciones para el desarrollo efectivo de las medidas preventivas y correctivas del acoso laboral </li>
 										<li type="disc">Elaborar informes trimestrales sobre la gestión del Comité que incluya estadísticas de las quejas, seguimiento de los casos y recomendaciones. </li>
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Octavo Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading bg-aqua color-palette">
-							<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse8">COORDINADOR DE ALTURAS</a></h4>
-						</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-						<div id="collapse8" class="panel-collapse collapse">
-							<div class="panel-body">
-								<h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
-								<CKEditor:CKEditorControl id="txt8" BasePath="/ckeditor/" runat="server">
+                    <!-- Octavo Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading bg-aqua color-palette">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse8">COORDINADOR DE ALTURAS</a></h4>
+                        </div>
+
+                        <div id="collapse8" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h3 class="text-center">RESPONSABILIDADES ESPECIFICAS EN SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+                                <CKEditor:CKEditorControl ID="txt8" BasePath="/ckeditor/" runat="server">
 									
 									<ul>
 										<li type="disc">Identificar los Riesgos en el sitio en donde se realizan trabajos en alturas y adoptar las medidas correctivas y preventivas necesarias</li>
@@ -250,28 +252,28 @@
 										<li type="disc">Avalar la selección y uso específicos de cada sistema de acceso para trabajo en alturas, y de los sistemas de prevención y protección contra caídas aplicables</li>
 										<li type="disc">Verificar la instalación de los sistemas de protección contra caídas.</li>
 									</ul>
-								</CKEditor:CKEditorControl>
-							</div>
-						</div>
-					</div>
+                                </CKEditor:CKEditorControl>
+                            </div>
+                        </div>
+                    </div>
 
-				</div>
-			</div>
-		</div>
-		</asp:PlaceHolder>
+                </div>
+            </div>
+        </div>
+    </asp:PlaceHolder>
 
-		<div class="row" align="center">
-			<div class="col-md-3 col-md-offset-3">
-				<asp:ImageButton alt="-" id="btnGuardar" runat="server" imageurl="~\ico\print.png" onclick="GenerarDocumento" 
-					ValidationGroup="ValidationAdd"/>
-				<h4>Generar Documento</h4>
-			</div>
-			
-			<div class="col-md-3">
-				<asp:button id="Button1" runat="server" cssclass="btn btn-primary" onclick="GuardarRegistro" 
-					ValidationGroup="ValidationAdd" text="Guardar y/o Actualizar Datos"/>
-			</div>
-		</div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+            <asp:ImageButton alt="-" ID="btnGuardar" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento"
+                ValidationGroup="ValidationAdd" />
+            <h4>Generar Documento</h4>
+        </div>
+
+        <div class="col-md-3">
+            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" OnClick="GuardarRegistro"
+                ValidationGroup="ValidationAdd" Text="Guardar y/o Actualizar Datos" />
+        </div>
+    </div>
 
 
 

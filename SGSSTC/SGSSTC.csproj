@@ -330,7 +330,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include=".vs\config\applicationhost.config" />
@@ -345,6 +344,7 @@
     <Content Include="bin\Remotion.dll.refresh" />
     <Content Include="bin\Remotion.Interfaces.dll.refresh" />
     <Content Include="ckeditor\.htaccess" />
+    <Content Include="favicon.ico" />
     <Content Include="ico\calculator.png" />
     <Content Include="ico\eme1.png" />
     <Content Include="ico\eme2.png" />
@@ -1246,6 +1246,7 @@
     <Content Include="libreria\itextsharp.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Custom.js" />
     <Content Include="Scripts\hideShowPassword.min.js" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -1356,7 +1357,7 @@
     <Content Include="source\sistema\EvaluacionInicial\index_PorcentajeCapacitacion.aspx" />
     <Content Include="source\sistema\Hacer\index_IndiceAccidentalidad.aspx" />
     <Content Include="source\sistema\Hacer\index_ReporteTrabajadores.aspx" />
-    <Content Include="source\sistema\EvaluacionInicial\index_VigilanciaEpidemiologica.aspx" />
+    <Content Include="source\sistema\Hacer\index_VigilanciaEpidemiologica.aspx" />
     <Content Include="source\sistema\GestionDatos\Create_Empresa.aspx" />
     <Content Include="source\sistema\GestionDatos\Create_PuestoTrabajo.aspx" />
     <Content Include="source\sistema\GestionDatos\Create_Sucursal.aspx" />
@@ -1676,11 +1677,11 @@
     <Compile Include="source\sistema\Hacer\index_ReporteTrabajadores.aspx.designer.cs">
       <DependentUpon>index_ReporteTrabajadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_VigilanciaEpidemiologica.aspx.cs">
+    <Compile Include="source\sistema\Hacer\index_VigilanciaEpidemiologica.aspx.cs">
       <DependentUpon>index_VigilanciaEpidemiologica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\EvaluacionInicial\index_VigilanciaEpidemiologica.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\index_VigilanciaEpidemiologica.aspx.designer.cs">
       <DependentUpon>index_VigilanciaEpidemiologica.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\GestionDatos\Create_Empresa.aspx.cs">

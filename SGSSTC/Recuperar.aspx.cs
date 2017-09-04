@@ -26,13 +26,13 @@ namespace SGSSTC
 
                     if (!envio)
                     {
-                        Modal.MostrarMsjModalEspecifico("Error! el correo no se pudo enviar", "ERR", this);
+                        Modal.MostrarMsjModal("Error! el correo no se pudo enviar", "ERR", this);
                     }
-                    Modal.MostrarMsjModalEspecifico("Contraseña Enviado al correo", "EXI", this);
+                    Modal.MostrarMsjModal("Contraseña Enviado al correo", "EXI", this);
                 }
                 else
                 {
-                    Modal.MostrarMsjModalEspecifico("El email no esta asociado a ningun usuario", "ERR", this);
+                    Modal.MostrarMsjModal("El email no esta asociado a ningun usuario", "ERR", this);
                 }
             }
         }

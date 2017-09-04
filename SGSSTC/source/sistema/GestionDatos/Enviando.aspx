@@ -1,12 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Enviando.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.Enviando" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
     <script>
-        function DeleteKartItems()
-        {
+        function DeleteKartItems() {
             $.ajax(
                 {
                     type: "POST",
@@ -22,38 +21,38 @@
                 });
         }
         window.onload = DeleteKartItems;
-        </script>
-        
-        <div class="page-header">
-            <h1 class="text-center">Enviando Información ...</h1>
-        </div>
-        
-        <div class="row"> 
-            <div class="col-md-10 col-md-offset-1">
-                <hr />
-                <br />
-                
-                <div class="box box-warning box-solid">
-                    <div class="box-header">
-                        <h3 class="box-title">Enviando Datos...</h3>
-                    </div>
+    </script>
 
-                    <div class="box-body">
-                        <h4>Por favor espere mientras guardamos la informacion!</h4>
-                        <br />
-                        <h4>Generando Puestos de Trabajos y Areas...</h4>
-                        <br />
-                        <h4>Generando Matriz legal para esta sucursal...</h4>
-                        <br />
-                        <h4>Generando Matriz de riesgos para esta sucursal...</h4>
-                        <br />
-                        <h5>Este proceso puede durar varios minutos.</h5>
-                    </div>
+    <div class="page-header">
+        <h1 class="text-center">Enviando Información ...</h1>
+    </div>
 
-                    <div class="overlay">
-                        <i class="fa fa-refresh fa-spin"></i>
-                    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <hr />
+            <br />
+
+            <div class="box box-warning box-solid">
+                <div class="box-header">
+                    <h3 class="box-title">Enviando Datos...</h3>
                 </div>
-            </div> 
+
+                <div class="box-body">
+                    <h4>Por favor espere mientras guardamos la informacion!</h4>
+                    <br />
+                    <h4>Generando Puestos de Trabajos y Areas...</h4>
+                    <br />
+                    <h4>Generando Matriz legal para esta sucursal...</h4>
+                    <br />
+                    <h4>Generando Matriz de riesgos para esta sucursal...</h4>
+                    <br />
+                    <h5>Este proceso puede durar varios minutos.</h5>
+                </div>
+
+                <div class="overlay">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+            </div>
         </div>
+    </div>
 </asp:Content>

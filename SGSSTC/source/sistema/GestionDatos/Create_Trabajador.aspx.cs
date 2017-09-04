@@ -100,17 +100,17 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                  if (CRUD.Add_Trabajador(ObjUsuario, valores, fuFoto))
                  {
-                    Modal.MostrarMsjModalExito(this);
-                 }
+                    Modal.MostrarMsjModal(MensajeError.Exito_Add_Trabajador.Value, "ERR", this);
+                }
                  else
                  {
-                     Modal.MostrarMsjModalEspecifico(MensajeError.Fallo_Add_Trabajador.Value, "ERR", this);
+                     Modal.MostrarMsjModal(MensajeError.Fallo_Add_Trabajador.Value, "ERR", this);
                  }
              }
              else
              {
                  txtCedula.BorderColor = System.Drawing.Color.Red;
-                 Modal.MostrarMsjModalEspecifico(MensajeError.Error_Existe_Trabajador_Cedula.Value, "ERR", this);
+                 Modal.MostrarMsjModal(MensajeError.Error_Existe_Trabajador_Cedula.Value, "ERR", this);
              }
 
         }

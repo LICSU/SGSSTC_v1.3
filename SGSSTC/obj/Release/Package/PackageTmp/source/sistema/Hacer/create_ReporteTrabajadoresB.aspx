@@ -56,7 +56,7 @@
             <div id="collapse1" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 1 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">JORNADA LABORAL</th>
@@ -65,20 +65,20 @@
                                 <th class="col-md-5 text-center">OBSERVACIONES</th>
                             </tr>
 
-                            <tr>
+                            <tr class="text-center">
                                 <td class="text-left">¿Consideras adecuada la distribución de:
                                 </td>
 
-                                <td>
-                                    <input id="radio1" type="radio" name="rbf1" value="1" runat="server">
+                                <td >
+                                    <input id="radio1" type="radio" visible="false" name="rbf1" value="1" runat="server">
                                 </td>
 
                                 <td>
-                                    <input id="radio2" type="radio" name="rbf1" value="2" runat="server">
+                                    <input id="radio2" type="radio" visible="false" name="rbf1" value="2" runat="server">
                                 </td>
 
                                 <td>
-                                    <asp:textbox runat="server" id="txtf1" class="col-md-12"></asp:textbox>
+                                    <asp:textbox runat="server" visible="false" id="txtf1" class="col-md-12"></asp:textbox>
                                 </td>
                             </tr>
                             <tr>
@@ -204,7 +204,7 @@
             <div id="collapse2" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 2 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">INFORMACIÓN GENERAL</th>
@@ -394,7 +394,7 @@
             <div id="collapse3" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 3 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">MÁQUINAS Y EQUIPOS</th>
@@ -549,7 +549,7 @@
             <div id="collapse4" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 4 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">HERRAMIENTAS</th>
@@ -688,7 +688,7 @@
             <div id="collapse5" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 5 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">ESPACIOS, SEÑALIZACIÓN</th>
@@ -923,7 +923,7 @@
             <div id="collapse6" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 6 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">MANIPULACIÓN Y TRANSPORTE</th>
@@ -1222,7 +1222,7 @@
             <div id="collapse7" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 7 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">VIBRACIONES</th>
@@ -1313,7 +1313,7 @@
             <div id="collapse8" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 8 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">ILUMINACIÓN</th>
@@ -1468,7 +1468,7 @@
             <div id="collapse9" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 9 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">CONDICIONES TERMOHIGROMÉTRICAS</th>
@@ -1607,7 +1607,7 @@
             <div id="collapse10" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 10 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">RADIACIONES</th>
@@ -1698,7 +1698,7 @@
             <div id="collapse11" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 11 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">CONTAMINANTES QUÍMICOS (Si no se emplean productos químicos abstenerse de responder estas preguntas)</th>
@@ -1869,7 +1869,7 @@
             <div id="collapse12" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 12 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">CONTAMINANTES BIOLÓGICOS</th>
@@ -1960,7 +1960,7 @@
             <div id="collapse13" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 13 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">FATIGA FÍSICA</th>
@@ -1974,15 +1974,15 @@
                                 </td>
 
                                 <td>
-                                    <input id="radio199" type="radio" name="rbf100" value="1" runat="server">
+                                    <input id="radio199" type="radio" name="rbf100" value="1" visible="false" runat="server">
                                 </td>
 
                                 <td>
-                                    <input id="radio200" type="radio" name="rbf100" value="2" runat="server">
+                                    <input id="radio200" type="radio" name="rbf100" value="2" visible="false" runat="server">
                                 </td>
 
                                 <td>
-                                    <asp:textbox runat="server" id="txtf100" class="col-md-12"></asp:textbox>
+                                    <asp:textbox runat="server" id="txtf100" Visible="false" class="col-md-12"></asp:textbox>
                                 </td>
                             </tr>
                             <tr>
@@ -2115,7 +2115,7 @@
             <div id="collapse14" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 14 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">DAÑOS A LA SALUD</th>
@@ -2270,7 +2270,7 @@
             <div id="collapse15" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 15 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">EQUIPOS DE PROTECCIÓN PERSONAL</th>
@@ -2393,7 +2393,7 @@
             <div id="collapse16" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 16 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">CAPACITACIÓN E INFORMACIÓN</th>
@@ -2564,7 +2564,7 @@
             <div id="collapse17" class="panel-collapse collapse">
                 <div class="panel-body">
                     <table class="table table-condensed">
-                        <tbody>
+                        <tbody class="text-center">
                             <!-- fila 17 -->
                             <tr class="bg-aqua color-palette">
                                 <th class="col-md-5 text-center">OTRAS CONDICIONES</th>
@@ -2748,7 +2748,7 @@
 
         <div class="box-body no-padding">
             <table class="table table-condensed">
-                <tbody>
+                <tbody class="text-center">
                     <!-- fila 18 -->
                     <tr class="bg-aqua color-palette">
                         <th class="col-md-5 text-center">TOTAL DE CONDICIONES</th>

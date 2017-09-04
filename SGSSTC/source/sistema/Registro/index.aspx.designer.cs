@@ -13,15 +13,6 @@ namespace SGSSTC.source.sistema.Registro {
     public partial class index {
         
         /// <summary>
-        /// Control ScriptManager1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
         /// Control updatePanelPrinicpal.
         /// </summary>
         /// <remarks>
@@ -110,15 +101,6 @@ namespace SGSSTC.source.sistema.Registro {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaFin;
-        
-        /// <summary>
-        /// Control pagination.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::SGSSTC.source.WebUserControl.pagination1 pagination;
         
         /// <summary>
         /// Control GridView1.

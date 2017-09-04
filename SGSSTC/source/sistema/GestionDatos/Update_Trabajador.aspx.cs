@@ -149,7 +149,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             else
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Fallo_Edit_Trabajador.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Trabajador.Value, "ERR", this);
             }
         }
         #endregion

@@ -161,11 +161,11 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             if (ObjUsuario.Error)
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Exito_Edit_PuestoTrabajo.Value, "EXI", this);
+                Modal.MostrarMsjModal(MensajeError.Exito_Edit_PuestoTrabajo.Value, "EXI", this);
             }
             else
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Fallo_Edit_PuestoTrabajo.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Fallo_Edit_PuestoTrabajo.Value, "ERR", this);
             }
 
         }

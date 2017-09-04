@@ -112,11 +112,11 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (añoIni != añoFin)
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Validacion_Semanas_Año.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Validacion_Semanas_Año.Value, "ERR", this);
             }
             else if (Convert.ToInt32(SemIni) > Convert.ToInt32(SemFin))
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Validacion_SemanaIni_Menor_SemanaFin.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Validacion_SemanaIni_Menor_SemanaFin.Value, "ERR", this);
             }
             else
             {
@@ -144,11 +144,11 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (añoIni != añoFin)
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Validacion_Semanas_Año.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Validacion_Semanas_Año.Value, "ERR", this);
             }
             else if (Convert.ToInt32(SemIni) > Convert.ToInt32(SemFin))
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Validacion_SemanaIni_Menor_SemanaFin.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Validacion_SemanaIni_Menor_SemanaFin.Value, "ERR", this);
             }
             else
             {

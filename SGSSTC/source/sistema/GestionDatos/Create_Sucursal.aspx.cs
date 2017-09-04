@@ -104,7 +104,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 txtNombreAdd.BorderColor = Color.Red;
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Existe_Sucursal.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Existe_Sucursal.Value, "ERR", this);
             }
         }
         #endregion

@@ -143,7 +143,7 @@ namespace SGSSTC.source.sistema.Verificar
 			}
 			else
 			{
-				Modal.MostrarMsjModalEspecifico(MensajeError.Fallo_Edit_Incidente.Value, "ERR", this);
+				Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Incidente.Value, "ERR", this);
 			}
 		}
 		

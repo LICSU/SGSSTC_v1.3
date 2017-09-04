@@ -118,7 +118,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             {
                 Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
 
-                Modal.MostrarMsjModalEspecifico(MensajeError.Fallo_Delete_Horario_Usuario.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Fallo_Delete_Horario_Usuario.Value, "ERR", this);
             }
 
         }

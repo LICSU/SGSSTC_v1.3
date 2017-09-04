@@ -3,319 +3,320 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
-	PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+	PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-	<asp:Panel runat="server" id="panel1">
-			
-			<ol class="breadcrumb">
-			<li><a href="#">Fase: Hacer</a></li>
-			<li><a href="../Hacer/index_RecursosEconomicos.aspx">Recursos Económicos Aprobados</a></li>
-			<li><a href="#">Crear Documento</a></li>
-		</ol>
-			
-			<div class="page-header">
-			<h3 class="text-center">Recursos Económicos Aprobados Por La Alta Gerencia</h3>
-		</div>
-			
-			<div class="box">
 
-				<div class="row">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
-					<asp:placeholder runat="server" id="phSucursal" visible="false">
-						<div class="col-md-4 col-md-offset-4">
-							<h4 class="text-center">Sucursal</h4>
-							<asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
-							
-							<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" 
-									setfocusonerror="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-									Font-Bold="true" ControlToValidate="ddlSucursal" runat="server" 
-									ValidationGroup="ValidationAdd"/>
-						</div>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:Panel runat="server" ID="panel1">
 
-						</asp:placeholder>
-				</div>
-				<br />
+        <ol class="breadcrumb">
+            <li><a href="#">Fase: Hacer</a></li>
+            <li><a href="../Hacer/index_RecursosEconomicos.aspx">Recursos Económicos Aprobados</a></li>
+            <li><a href="#">Crear Documento</a></li>
+        </ol>
 
-				<div class="box-body no-padding">
-					<table class="table table-condensed">
-						<tbody>
+        <div class="page-header">
+            <h3 class="text-center">Recursos Económicos Aprobados Por La Alta Gerencia</h3>
+        </div>
 
-							<tr>
-								<th class="bg-aqua color-palette text-center" colspan="5">FICHA DE SOLICITUDES</th>
-								<th class="bg-teal color-palette text-center">CANTIDAD</th>
-							</tr>
+        <div class="box">
 
-							<tr class="bg-aqua color-palette">
-								<th class="col-md-3 text-center">DESCRIPCION DE LA SOLICITUD</th>
-								<th class="col-md-2 text-center">CANTIDAD</th>
-								<th class="col-md-1 text-center">UNIDAD</th>
-								<th class="col-md-2 text-center">PROVEEDOR</th>
-								<th class="col-md-1 text-center">COSTO</th>
-								<th class="col-md-2 text-center bg-teal color-palette">CANTIDAD APROBADA</th>
-							</tr>
+            <div class="row">
 
-							<tr>
-								<td>
-									<asp:label runat="server" text="1" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox1" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox2" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox3" runat="server" type="number" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox4" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox5" runat="server" type="number" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox6" runat="server" type="number" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="2" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox7" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox8" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox9" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox10" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox11" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox12" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="3" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox13" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox14" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox15" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox16" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox17" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox18" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="4" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox19" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox20" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox21" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox22" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox23" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox24" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="5" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox25" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox26" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox27" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox28" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox29" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox30" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="6" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox31" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox32" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox33" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox34" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox35" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox36" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="7" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox37" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox38" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox39" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox40" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox41" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox42" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="8" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox43" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox44" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox45" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox46" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox47" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox48" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="9" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox49" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox50" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox51" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox52" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox53" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox54" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<asp:label runat="server" text="10" class="col-md-1"></asp:label>
-									<asp:textbox id="Textbox55" runat="server" class="col-md-10"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox56" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox57" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox58" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox59" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-								<td>
-									<asp:textbox id="Textbox60" type="number" runat="server" class="col-md-12"></asp:textbox>
-								</td>
-							</tr>
+                <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
+                    <div class="col-md-4 col-md-offset-4">
+                        <h4 class="text-center">Sucursal</h4>
+                        <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
 
-							<!-- resultados -->
-							<tr>
-								<th class="col-md-3 text-center"></th>
-								<th class="col-md-2 text-center"></th>
-								<th class="col-md-1 text-center"></th>
-								<th class="col-md-2 text-center"></th>
-								<th class="bg-aqua color-palette col-md-2 text-center">TOTAL REQUERIDO</th>
-								<th class="bg-teal color-palette col-md-2 text-center">TOTAL APROBADO</th>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td>
-									<asp:label id="lbRequerido" runat="server" text="---"></asp:label>
-								</td>
-								<td class="bg-teal color-palette">
-									<asp:label id="lbAprobado" runat="server" text="---"></asp:label>
-								</td>
-							</tr>
+                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                            Font-Bold="true" ControlToValidate="ddlSucursal" runat="server"
+                            ValidationGroup="ValidationAdd" />
+                    </div>
 
-						</tbody>
-					</table>
-				</div>
+                </asp:PlaceHolder>
+            </div>
+            <br />
 
-				<br />
-				<div class="row" align="center">
+            <div class="box-body no-padding">
+                <table class="table table-condensed">
+                    <tbody>
 
-					<div class="col-md-4">
-						<asp:ImageButton alt="-" id="btnGenerar" runat="server" imageurl="~\ico\view.png"
-							onclick="btnGenerar_Onclick"/>
-						<h4>Generar Resultados</h4>
-					</div>
+                        <tr>
+                            <th class="bg-aqua color-palette text-center" colspan="5">FICHA DE SOLICITUDES</th>
+                            <th class="bg-teal color-palette text-center">CANTIDAD</th>
+                        </tr>
 
-					<asp:placeholder id="phGuardar" runat="server" visible="false">
-						<div class="col-md-4">
-							<asp:ImageButton alt="-" id="btnPrint" runat="server" ImageUrl="~\ico\print.png"
-								OnClick="GenerarDocumento" ValidationGroup="ValidationAdd"/>
-							<h4>Imprimir Informe</h4>
-						</div>
-					</asp:placeholder>
-						
+                        <tr class="bg-aqua color-palette">
+                            <th class="col-md-3 text-center">DESCRIPCION DE LA SOLICITUD</th>
+                            <th class="col-md-2 text-center">CANTIDAD</th>
+                            <th class="col-md-1 text-center">UNIDAD</th>
+                            <th class="col-md-2 text-center">PROVEEDOR</th>
+                            <th class="col-md-1 text-center">COSTO</th>
+                            <th class="col-md-2 text-center bg-teal color-palette">CANTIDAD APROBADA</th>
+                        </tr>
 
-				</div>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="1" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox1" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox2" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox3" runat="server" type="number" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox4" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox5" runat="server" type="number" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox6" runat="server" type="number" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="2" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox7" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox8" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox9" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox10" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox11" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox12" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="3" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox13" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox14" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox15" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox16" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox17" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox18" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="4" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox19" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox20" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox21" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox22" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox23" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox24" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="5" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox25" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox26" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox27" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox28" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox29" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox30" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="6" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox31" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox32" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox33" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox34" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox35" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox36" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="7" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox37" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox38" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox39" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox40" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox41" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox42" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="8" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox43" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox44" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox45" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox46" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox47" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox48" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="9" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox49" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox50" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox51" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox52" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox53" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox54" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server" Text="10" class="col-md-1"></asp:Label>
+                                <asp:TextBox ID="Textbox55" runat="server" class="col-md-10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox56" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox57" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox58" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox59" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Textbox60" type="number" runat="server" class="col-md-12"></asp:TextBox>
+                            </td>
+                        </tr>
 
-			</div>
-</asp:Panel>
+                        <!-- resultados -->
+                        <tr>
+                            <th class="col-md-3 text-center"></th>
+                            <th class="col-md-2 text-center"></th>
+                            <th class="col-md-1 text-center"></th>
+                            <th class="col-md-2 text-center"></th>
+                            <th class="bg-aqua color-palette col-md-2 text-center">TOTAL REQUERIDO</th>
+                            <th class="bg-teal color-palette col-md-2 text-center">TOTAL APROBADO</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <asp:Label ID="lbRequerido" runat="server" Text="---"></asp:Label>
+                            </td>
+                            <td class="bg-teal color-palette">
+                                <asp:Label ID="lbAprobado" runat="server" Text="---"></asp:Label>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <br />
+            <div class="row">
+
+                <div class="col-md-4">
+                    <asp:ImageButton alt="-" ID="btnGenerar" runat="server" ImageUrl="~\ico\view.png"
+                        OnClick="btnGenerar_Onclick" />
+                    <h4>Generar Resultados</h4>
+                </div>
+
+                <asp:PlaceHolder ID="phGuardar" runat="server" Visible="false">
+                    <div class="col-md-4">
+                        <asp:ImageButton alt="-" ID="btnPrint" runat="server" ImageUrl="~\ico\print.png"
+                            OnClick="GenerarDocumento" ValidationGroup="ValidationAdd" />
+                        <h4>Imprimir Informe</h4>
+                    </div>
+                </asp:PlaceHolder>
+
+
+            </div>
+
+        </div>
+    </asp:Panel>
 </asp:Content>

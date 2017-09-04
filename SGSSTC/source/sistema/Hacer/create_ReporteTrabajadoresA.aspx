@@ -2,12 +2,13 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
-    PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
+    PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:Panel runat="server" ID="panel1">
 
         <ol class="breadcrumb">
@@ -17,26 +18,27 @@
         </ol>
 
         <div class="page-header">
-             <h1 class="text-center">Reporte De Condiciones De Trabajo</h1>
-         </div>
+            <h1 class="text-center">Reporte De Condiciones De Trabajo</h1>
+        </div>
 
-        <div class="row form-group"> 
+        <div class="row form-group">
 
-            <asp:PlaceHolder runat="server" id="phEmpresa">
+            <asp:PlaceHolder runat="server" ID="phEmpresa">
                 <div class="col-md-4 col-md-offset-4">
                     <h4 class="text-center">Empresa</h4>
-                    <asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" 
-                        OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true"
+                        OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged">
+                    </asp:DropDownList>
                 </div>
-            </asp:PlaceHolder> 
-            
-            <asp:PlaceHolder runat="server" id="phSucursal">
+            </asp:PlaceHolder>
+
+            <asp:PlaceHolder runat="server" ID="phSucursal">
                 <div class="col-md-4">
                     <h4 class="text-center">Sucursal</h4>
-                    <asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
-                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
-                        Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" 
-                        ControlToValidate="ddlSucursal" runat="server" ValidationGroup="ValidationAdd"/>
+                    <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
+                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+                        Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
+                        ControlToValidate="ddlSucursal" runat="server" ValidationGroup="ValidationAdd" />
                 </div>
             </asp:PlaceHolder>
         </div>
@@ -78,7 +80,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf1" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf1" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -93,7 +95,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf2" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf2" class="col-md-12"></asp:TextBox>
                                             </td>
 
                                         </tr>
@@ -108,7 +110,7 @@
                                                 <input id="radio6" type="radio" name="rbf3" value="2" runat="server">
                                             </td>
                                             <td>
-                                                <asp:textbox runat="server" id="txtf3" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf3" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -122,7 +124,7 @@
                                                 <input id="radio8" type="radio" name="rbf4" value="2" runat="server">
                                             </td>
                                             <td>
-                                                <asp:textbox runat="server" id="txtf4" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf4" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -136,7 +138,7 @@
                                                 <input id="radio10" type="radio" name="rbf5" value="2" runat="server">
                                             </td>
                                             <td>
-                                                <asp:textbox runat="server" id="txtf5" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf5" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -150,7 +152,7 @@
                                                 <input id="radio12" type="radio" name="rbf6" value="2" runat="server">
                                             </td>
                                             <td>
-                                                <asp:textbox runat="server" id="txtf6" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf6" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
 
@@ -195,7 +197,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <asp:textbox runat="server" id="txtf7" class="col-md-12"></asp:textbox>
+                                                    <asp:TextBox runat="server" ID="txtf7" class="col-md-12"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -211,7 +213,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <asp:textbox runat="server" id="txtf8" class="col-md-12"></asp:textbox>
+                                                    <asp:TextBox runat="server" ID="txtf8" class="col-md-12"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -227,7 +229,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <asp:textbox runat="server" id="txtf9" class="col-md-12"></asp:textbox>
+                                                    <asp:TextBox runat="server" ID="txtf9" class="col-md-12"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -243,7 +245,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <asp:textbox runat="server" id="txtf10" class="col-md-12"></asp:textbox>
+                                                    <asp:TextBox runat="server" ID="txtf10" class="col-md-12"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -259,12 +261,12 @@
                                                 </td>
 
                                                 <td>
-                                                    <asp:textbox runat="server" id="txtf11" class="col-md-12"></asp:textbox>
+                                                    <asp:TextBox runat="server" ID="txtf11" class="col-md-12"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="text-left">
-                                                    <asp:textbox class="col-md-12" runat="server" id="txtInfGral" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                    <asp:TextBox class="col-md-12" runat="server" ID="txtInfGral" placeholder="Otra condición por reportar;"></asp:TextBox>
                                                 </td>
 
                                                 <td>
@@ -276,7 +278,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <asp:textbox runat="server" id="txtf12" class="col-md-12"></asp:textbox>
+                                                    <asp:TextBox runat="server" ID="txtf12" class="col-md-12"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -321,7 +323,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf13" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf13" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -337,7 +339,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf14" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf14" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -353,7 +355,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf15" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf15" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -369,7 +371,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf16" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf16" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -385,7 +387,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf17" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf17" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -401,7 +403,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf18" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf18" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -417,7 +419,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf19" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf19" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -433,7 +435,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf20" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf20" class="col-md-12"></asp:TextBox>
 
                                             </td>
 
@@ -451,7 +453,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf21" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf21" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -467,12 +469,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf22" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf22" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtSupTrab" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtSupTrab" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -484,7 +486,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf23" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf23" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -530,7 +532,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf24" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf24" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -546,7 +548,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf25" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf25" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -562,7 +564,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf26" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf26" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -578,7 +580,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf27" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf27" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
 
@@ -594,12 +596,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf28" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf28" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtSupAsi" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtSupAsi" placeholder="Otra condición por reportar;"></asp:TextBox>
 
                                             </td>
 
@@ -612,7 +614,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf29" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf29" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -658,7 +660,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf30" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf30" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -674,7 +676,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf31" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf31" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -690,7 +692,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf32" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf32" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -706,12 +708,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf33" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf33" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtMonitor" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtMonitor" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -723,7 +725,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf34" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf34" class="col-md-12"></asp:TextBox>
                                             </td>
 
                                         </tr>
@@ -769,7 +771,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf35" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf35" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -785,7 +787,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf36" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf36" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -801,12 +803,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf37" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf37" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtEspSilla" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtEspSilla" placeholder="Otra condición por reportar;"></asp:TextBox>
 
                                             </td>
 
@@ -819,7 +821,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf38" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf38" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -864,7 +866,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf39" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf39" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -880,7 +882,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf40" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf40" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -896,7 +898,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf41" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf41" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -912,7 +914,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf42" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf42" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -928,7 +930,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf43" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf43" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -944,7 +946,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf44" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf44" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -960,12 +962,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf45" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf45" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtCondErgBrazos" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtCondErgBrazos" placeholder="Otra condición por reportar;"></asp:TextBox>
 
                                             </td>
 
@@ -978,7 +980,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf46" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf46" class="col-md-12"></asp:TextBox>
                                             </td>
 
                                         </tr>
@@ -1023,7 +1025,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf47" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf47" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1039,7 +1041,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf48" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf48" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1055,7 +1057,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf49" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf49" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1071,7 +1073,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf50" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf50" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1087,7 +1089,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf51" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf51" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1103,12 +1105,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf52" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf52" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtcondErgPiernas" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtcondErgPiernas" placeholder="Otra condición por reportar;"></asp:TextBox>
 
                                             </td>
 
@@ -1121,7 +1123,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf53" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf53" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1167,7 +1169,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf54" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf54" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1183,7 +1185,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf55" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf55" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1199,7 +1201,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf56" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf56" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1215,12 +1217,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf57" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf57" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtsoporte" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtsoporte" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1232,7 +1234,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf58" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf58" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1278,7 +1280,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf59" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf59" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1294,7 +1296,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf60" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf60" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1310,12 +1312,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf61" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf61" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtTeclado" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtTeclado" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1327,7 +1329,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf62" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf62" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1372,7 +1374,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf63" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf63" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1388,12 +1390,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf64" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf64" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtMouse" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtMouse" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1405,7 +1407,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf65" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf65" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1450,7 +1452,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf66" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf66" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1466,7 +1468,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf67" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf67" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1482,7 +1484,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf68" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf68" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1498,7 +1500,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf69" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf69" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1514,12 +1516,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf70" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf70" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtIluminacion" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtIluminacion" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1531,7 +1533,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf71" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf71" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1576,7 +1578,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf72" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf72" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1592,7 +1594,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf73" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf73" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1608,7 +1610,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf74" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf74" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1624,7 +1626,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf75" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf75" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1640,12 +1642,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf76" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf76" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtTemperatura" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtTemperatura" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1657,7 +1659,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf77" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf77" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1702,7 +1704,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf78" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf78" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1718,12 +1720,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf79" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf79" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtVibracion" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtVibracion" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1735,7 +1737,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf80" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf80" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1780,7 +1782,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf81" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf81" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1796,7 +1798,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf82" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf82" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1812,12 +1814,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf83" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf83" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtRuido" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtRuido" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1829,7 +1831,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf84" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf84" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1874,12 +1876,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf85" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf85" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtVentilacion" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtVentilacion" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -1891,7 +1893,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf86" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf86" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1936,7 +1938,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf87" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf87" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1952,7 +1954,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf88" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf88" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1968,7 +1970,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf89" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf89" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1984,7 +1986,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf90" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf90" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2000,12 +2002,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf91" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf91" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtFatigaFisica" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtFatigaFisica" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -2017,7 +2019,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf92" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf92" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -2062,7 +2064,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf93" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf93" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2078,12 +2080,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf94" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf94" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtVision" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtVision" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -2095,7 +2097,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf95" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf95" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -2140,7 +2142,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf96" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf96" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2156,7 +2158,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf97" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf97" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2172,7 +2174,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf98" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf98" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2188,7 +2190,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf99" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf99" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2204,7 +2206,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf100" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf100" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2220,7 +2222,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf101" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf101" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2236,7 +2238,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf102" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf102" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2252,7 +2254,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf103" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf103" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2268,7 +2270,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf104" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf104" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2284,12 +2286,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf105" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf105" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtCapInf" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtCapInf" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -2301,7 +2303,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf106" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf106" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -2346,7 +2348,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf107" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf107" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2362,7 +2364,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf108" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf108" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2378,7 +2380,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf109" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf109" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2394,7 +2396,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf110" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf110" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2410,7 +2412,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf111" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf111" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2426,12 +2428,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf112" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf112" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtDañosSalud" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtDañosSalud" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -2443,7 +2445,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf113" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf113" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -2488,7 +2490,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf114" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf114" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2504,7 +2506,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf115" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf115" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2520,7 +2522,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf116" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf116" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2536,12 +2538,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf117" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf117" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtAspPsico" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtAspPsico" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -2553,7 +2555,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf118" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf118" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -2598,7 +2600,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf119" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf119" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2614,7 +2616,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf120" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf120" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2630,7 +2632,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf121" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf121" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2646,7 +2648,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf122" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf122" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2662,7 +2664,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf123" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf123" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2678,7 +2680,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf124" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf124" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2694,7 +2696,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf125" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf125" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
@@ -2710,12 +2712,12 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf126" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf126" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">
-                                                <asp:textbox class="col-md-12" runat="server" id="txtOtraCond" placeholder="Otra condición por reportar;"></asp:textbox>
+                                                <asp:TextBox class="col-md-12" runat="server" ID="txtOtraCond" placeholder="Otra condición por reportar;"></asp:TextBox>
                                             </td>
 
                                             <td>
@@ -2727,7 +2729,7 @@
                                             </td>
 
                                             <td>
-                                                <asp:textbox runat="server" id="txtf127" class="col-md-12"></asp:textbox>
+                                                <asp:TextBox runat="server" ID="txtf127" class="col-md-12"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -2756,15 +2758,15 @@
                                     </td>
 
                                     <td>
-                                        <asp:label id="lbTotalSi" runat="server" text="---"></asp:label>
+                                        <asp:Label ID="lbTotalSi" runat="server" Text="---"></asp:Label>
                                     </td>
 
                                     <td>
-                                        <asp:label id="lbTotalNo" runat="server" text="---"></asp:label>
+                                        <asp:Label ID="lbTotalNo" runat="server" Text="---"></asp:Label>
                                     </td>
 
                                     <td>
-                                        <asp:label id="lbObservaciones" runat="server" text="---"></asp:label>
+                                        <asp:Label ID="lbObservaciones" runat="server" Text="---"></asp:Label>
                                     </td>
 
                                 </tr>
@@ -2781,13 +2783,13 @@
 
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                            <asp:literal id="ltReporte" runat="server"></asp:literal>
+                            <asp:Literal ID="ltReporte" runat="server"></asp:Literal>
                             <div id="piechart" runat="server"></div>
                         </div>
-                        <asp:placeholder runat="server" visible="false">
-                                <asp:Image alt="-" id="ImgChart" runat="server"/>
-                            </asp:placeholder>
-                        <asp:hiddenfield id="rutaImg" runat="server"></asp:hiddenfield>
+                        <asp:PlaceHolder runat="server" Visible="false">
+                            <asp:Image alt="-" ID="ImgChart" runat="server" />
+                        </asp:PlaceHolder>
+                        <asp:HiddenField ID="rutaImg" runat="server"></asp:HiddenField>
                     </div>
 
                 </div>
@@ -2795,30 +2797,30 @@
         </div>
 
 
-        <div class="row" align="center">
+        <div class="row">
 
 
             <div class="col-md-3">
-                <asp:ImageButton alt="-" id="btnGuardar" runat="server" imageurl="~\ico\calculator.png"
-                    onclick="Guardar"/>
+                <asp:ImageButton alt="-" ID="btnGuardar" runat="server" ImageUrl="~\ico\calculator.png"
+                    OnClick="Guardar" />
                 <h4>Generar Resultados</h4>
             </div>
 
             <div class="col-md-3">
-                <asp:ImageButton alt="-"  runat="server" ImageUrl="~\ico\descargar.png" OnClick="GenerarDocumentoGeneral"
-                    ValidationGroup="ValidationAdd"/>
+                <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\descargar.png" OnClick="GenerarDocumentoGeneral"
+                    ValidationGroup="ValidationAdd" />
                 <h4>Descargar Formato</h4>
             </div>
 
-            <asp:placeholder id="phBtnPrint" runat="server" visible="false">
+            <asp:PlaceHolder ID="phBtnPrint" runat="server" Visible="false">
                 <div class="col-md-3">
-                    <asp:ImageButton alt="-" id="btnPrint" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento" 
-                        ValidationGroup="ValidationAdd"/>
+                    <asp:ImageButton alt="-" ID="btnPrint" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento"
+                        ValidationGroup="ValidationAdd" />
                     <h4>Generar Documento</h4>
                 </div>
-                </asp:placeholder>
-            
+            </asp:PlaceHolder>
+
         </div>
 
-</asp:Panel>
+    </asp:Panel>
 </asp:Content>

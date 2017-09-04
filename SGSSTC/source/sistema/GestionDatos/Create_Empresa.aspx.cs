@@ -52,7 +52,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             else
             {
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Empresa.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Empresa.Value, "ERR", this);
             }
 
         }
@@ -75,7 +75,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Ciiu.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Ciiu.Value, "ERR", this);
             }
         }
 
@@ -90,7 +90,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Categoria.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Categoria.Value, "ERR", this);
             }
         }
 
@@ -105,7 +105,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Estatus.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Estatus.Value, "ERR", this);
             }
         }
 
@@ -118,7 +118,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_TipoEpp.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_TipoEpp.Value, "ERR", this);
             }
         }
 
@@ -131,7 +131,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Epp.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Epp.Value, "ERR", this);
             }
         }
 
@@ -154,7 +154,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Sucursal.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Sucursal.Value, "ERR", this);
             }
 
         }
@@ -175,7 +175,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Area.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Area.Value, "ERR", this);
             }
         }
 
@@ -192,7 +192,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_PuestoTrabajo.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_PuestoTrabajo.Value, "ERR", this);
             }
         }
 
@@ -209,7 +209,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Horario.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Horario.Value, "ERR", this);
             }
         }
 
@@ -226,7 +226,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Trabajador.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Trabajador.Value, "ERR", this);
             }
         }
 
@@ -252,7 +252,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_Usuario.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_Usuario.Value, "ERR", this);
             }
         }
 
@@ -269,12 +269,12 @@ namespace SGSSTC.source.sistema.GestionDatos
                 string clave = objUtilidades.descifrarCadena2(Convert.ToString(ViewState["clave"].ToString()));
                 Utilidades.enviarEmpresa(txtEmail.Text, txtNomEmpresa.Text, ViewState["login"].ToString(), clave);
 
-                Modal.MostrarMsjModalEspecifico(MensajeError.EXito_Add_Empresa.Value, "EXI", this);
+                Modal.MostrarMsjModal(MensajeError.EXito_Add_Empresa.Value, "EXI", this);
             }
             else
             {
                 CRUD.DeleteEmpresa(ObjUsuario, IdEmpresa);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Add_Default_TipoDocumento.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Add_Default_TipoDocumento.Value, "ERR", this);
             }
 
         }

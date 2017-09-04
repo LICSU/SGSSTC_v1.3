@@ -130,7 +130,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 txtNombre.BorderColor = Color.Red;
-                Modal.MostrarMsjModalEspecifico(MensajeError.Error_Existe_Area_Nombre.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Error_Existe_Area_Nombre.Value, "ERR", this);
             }
         }
 
@@ -208,7 +208,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             else
             {
                 Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-                Modal.MostrarMsjModalEspecifico(MensajeError.Fallo_Delete_Area_Usuario.Value, "ERR", this);
+                Modal.MostrarMsjModal(MensajeError.Fallo_Delete_Area_Usuario.Value, "ERR", this);
             }
         }
         #endregion

@@ -89,7 +89,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                  
                 if (CRUD.Add_PuestoTrabajo(ObjUsuario,valores,fuAnexo,ddlEpp))
                 {
-                    Modal.MostrarMsjModalExito(this);
+                    Modal.MostrarMsjModal(MensajeError.Exito_Add_PuestoTrabajo.Value, "EXI", this);
                 }
                 else
                 {

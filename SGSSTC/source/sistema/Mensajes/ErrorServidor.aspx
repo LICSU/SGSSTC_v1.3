@@ -1,11 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeFile="ErrorServidor.aspx.cs" Inherits="source_sistema_Mensajes_ErrorServidor" %>
 
-<%@ Register Src="~/source/WebUserControl/ucHeader.ascx" TagPrefix="uch" TagName="ucHeader" %>
-<%@ Register Src="~/source/WebUserControl/ucFooter.ascx" TagPrefix="ucf" TagName="ucFooter" %>
 
-
-
-<uch:ucHeader runat="server" id="ucHeader"/>
 <form id="form1" runat="server">
 
     <div class="error-page">
@@ -21,5 +16,3 @@
     <!-- /.error-page -->
 
 </form>
-
-<ucf:ucFooter runat="server" id="ucFooter"/>

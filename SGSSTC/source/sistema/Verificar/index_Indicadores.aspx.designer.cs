@@ -58,6 +58,15 @@ namespace SGSSTC.source.sistema.EvaluacionInicial {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
         
         /// <summary>
+        /// Control collapse1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapse1;
+        
+        /// <summary>
         /// Control resultado1.
         /// </summary>
         /// <remarks>
@@ -326,6 +335,15 @@ namespace SGSSTC.source.sistema.EvaluacionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label resultado17;
+        
+        /// <summary>
+        /// Control collapse2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapse2;
         
         /// <summary>
         /// Control Textbox10.
@@ -623,6 +641,15 @@ namespace SGSSTC.source.sistema.EvaluacionInicial {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label resultado28;
+        
+        /// <summary>
+        /// Control collapse3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapse3;
         
         /// <summary>
         /// Control Textbox32.
