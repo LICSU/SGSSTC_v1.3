@@ -58,7 +58,7 @@
                         <div id="collapse1" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody  class="text-center">
                                         <!-- fila 1 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">JORNADA LABORAL</th>
@@ -68,20 +68,12 @@
                                         </tr>
 
                                         <tr>
-                                            <td class="text-left">¿Consideras adecuada la distribución de:
+                                            <td class="text-left">
+                                                Consideras adecuada la distribución de:
                                             </td>
-
-                                            <td>
-                                                <input id="radio1" type="radio" name="rbf1" value="1" runat="server">
-                                            </td>
-
-                                            <td>
-                                                <input id="radio2" type="radio" name="rbf1" value="2" runat="server">
-                                            </td>
-
-                                            <td>
-                                                <asp:TextBox runat="server" ID="txtf1" class="col-md-12"></asp:TextBox>
-                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">¿El Horario de trabajo?</td>
@@ -175,7 +167,7 @@
                             <div class="panel-body">
                                 <div class="panel-body">
                                     <table class="table table-condensed">
-                                        <tbody>
+                                        <tbody class="text-center">
 
                                             <tr class="bg-aqua color-palette">
                                                 <th class="col-md-5 text-center">INFORMACIÓN GENERAL</th>
@@ -300,7 +292,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
 
                                         <!-- fila 3 -->
                                         <tr class="bg-aqua color-palette">
@@ -509,7 +501,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
 
                                         <!-- fila 4 -->
                                         <tr class="bg-aqua color-palette">
@@ -637,7 +629,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
 
                                         <!-- fila 5 -->
                                         <tr class="bg-aqua color-palette">
@@ -749,7 +741,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 6 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">ESPALDAR DE LA SILLA</th>
@@ -844,7 +836,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 7 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">CONDICIONES ERGONÓMICAS PARA LOS BRAZOS</th>
@@ -1003,7 +995,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 8 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">CONDICIONES ERGONÓMICAS PARA PIERNAS Y PIES</th>
@@ -1146,7 +1138,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
 
                                         <!-- fila 9 -->
                                         <tr class="bg-aqua color-palette">
@@ -1253,11 +1245,11 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">TECLADO</a></h4>
                         </div>
 
-                        <div id="collapse12" class="panel-collapse collapse">
+                        <div id="collapse10" class="panel-collapse collapse">
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
 
                                         <!-- fila 10 -->
                                         <tr class="bg-aqua color-palette">
@@ -1352,7 +1344,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 11 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">MOUSE</th>
@@ -1430,7 +1422,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 12 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">ILUMINACIÓN</th>
@@ -1556,7 +1548,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 13 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">TEMPERATURA</th>
@@ -1682,7 +1674,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 14 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">VIBRACIÓN</th>
@@ -1760,7 +1752,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 15 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">RUIDO (en caso de que no exista ruido significativo abstenerse de responder)</th>
@@ -1854,7 +1846,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 16 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">VENTILACIÓN</th>
@@ -1916,7 +1908,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 17 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">FATIGA FÍSICA</th>
@@ -2042,7 +2034,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 18 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">VISIÓN</th>
@@ -2120,7 +2112,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 19 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">CAPACITACIÓN E INFORMACIÓN</th>
@@ -2326,7 +2318,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 20 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">DAÑOS A LA SALUD</th>
@@ -2468,7 +2460,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 21 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">ASPECTOS PSICOSOCIALES</th>
@@ -2578,7 +2570,7 @@
                             <div class="panel-body">
 
                                 <table class="table table-condensed">
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <!-- fila 22 -->
                                         <tr class="bg-aqua color-palette">
                                             <th class="col-md-5 text-center">OTRAS CONDICIONES</th>
@@ -2744,7 +2736,7 @@
                     <div class="panel-body">
 
                         <table class="table table-condensed">
-                            <tbody>
+                            <tbody class="text-center">
                                 <!-- fila 23 -->
                                 <tr class="bg-aqua color-palette">
                                     <th class="col-md-5 text-center">TOTAL DE CONDICIONES</th>

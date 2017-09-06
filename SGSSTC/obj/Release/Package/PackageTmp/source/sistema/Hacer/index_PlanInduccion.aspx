@@ -3,48 +3,49 @@
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+
+
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-		 <ol class="breadcrumb">
-			 <li><a href="#">Fase: Hacer</a></li>
-			 <li><a href="#">Plan de Inducción</a></li>
-		 </ol>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <ol class="breadcrumb">
+        <li><a href="#">Fase: Hacer</a></li>
+        <li><a href="#">Plan de Inducción</a></li>
+    </ol>
 
-		<div class="page-header">
-			<h1 class="text-center">Plan de Inducción</h1>
-		</div>
+    <div class="page-header">
+        <h1 class="text-center">Plan de Inducción</h1>
+    </div>
 
-		<div class="row form-group">
+    <div class="row form-group">
 
-			<asp:PlaceHolder runat="server" id="phEmpresa">
-				<div class="col-md-4">
-					<h4 class="text-center">Empresa</h4>
-					<asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
-				</div>
-			</asp:PlaceHolder> 
-			
-			<asp:PlaceHolder runat="server" id="phSucursal">
-				<div class="col-md-4 col-md-offset-4">
-					<h4 class="text-center">Sucursal</h4>
-					<asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true" 
-						OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
-					
-					<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" setfocusonerror="true" 
-						Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal" 
-						runat="server" ValidationGroup="ValidationAdd"/>
-				</div>
-			</asp:PlaceHolder>
-		</div>
-		
-		<asp:PlaceHolder runat="server" id="phCkeditor" Visible="false">
-			<div class="row">
+        <asp:PlaceHolder runat="server" ID="phEmpresa">
+            <div class="col-md-4">
+                <h4 class="text-center">Empresa</h4>
+                <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
+            </div>
+        </asp:PlaceHolder>
 
-				<CKEditor:CKEditorControl Height="1000" id="txtPlanInduccion" BasePath="~/ckeditor/" runat="server">
+        <asp:PlaceHolder runat="server" ID="phSucursal">
+            <div class="col-md-4 col-md-offset-4">
+                <h4 class="text-center">Sucursal</h4>
+                <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
+                    OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+                </asp:DropDownList>
+
+                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+                    Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
+                    runat="server" ValidationGroup="ValidationAdd" />
+            </div>
+        </asp:PlaceHolder>
+    </div>
+
+    <asp:PlaceHolder runat="server" ID="phCkeditor" Visible="false">
+        <div class="row">
+
+            <CKEditor:CKEditorControl Height="1000" ID="txtPlanInduccion" BasePath="~/ckeditor/" runat="server">
 					<h3>Meta </h3>
 					<br />
 					Realizar inducción a la persona seleccionada para desempeñar un cargo en la organización, informándole con carácter previo al inicio de sus labores; 
@@ -171,29 +172,29 @@
 					Los programas de reinducción se impartirán a todos los empleados por lo menos en el momento en que se produzcan cambios, e incluirán un proceso de actualización 
 					acerca de las normas de seguridad y salud en el trabajo, para garantizar a través del seguimiento del comportamiento,  la retroalimentación por parte del nuevo trabajador. 
 					Empleando para ello el formato que se anexa a continuación:
-				</CKEditor:CKEditorControl>
+            </CKEditor:CKEditorControl>
 
-			</div>
-			<br />
+        </div>
+        <br />
 
-			<div class="row" align="center">
-				<div class="col-md-4 col-md-offset-2">
-					<asp:button id="btnPrint" runat="server" cssclass="btn btn-success"
-						onclick="GenerarDocumento" text="Generar Documento" validationgroup="ValidationAdd"/>
-				</div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <asp:Button ID="btnPrint" runat="server" CssClass="btn btn-success"
+                    OnClick="GenerarDocumento" Text="Generar Documento" ValidationGroup="ValidationAdd" />
+            </div>
 
-				<div class="col-md-4">
-					<asp:button id="btnGuardar" runat="server" cssclass="btn btn-primary"
-						onclick="btnGuardar_Click" text="Guardar y/o Actualizar Datos" validationgroup="ValidationAdd"/>
-				</div>
+            <div class="col-md-4">
+                <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary"
+                    OnClick="btnGuardar_Click" Text="Guardar y/o Actualizar Datos" ValidationGroup="ValidationAdd" />
+            </div>
 
-			</div>
-		</asp:PlaceHolder>
-		
-		<asp:PlaceHolder runat="server" id="phCkeditorno">
-			<div class="row">
-					<h4 class="text-center">Debe seleccionar la empresa y sucursal.</h4>
-				</div>
-		</asp:PlaceHolder>
+        </div>
+    </asp:PlaceHolder>
+
+    <asp:PlaceHolder runat="server" ID="phCkeditorno">
+        <div class="row">
+            <h4 class="text-center">Debe seleccionar la empresa y sucursal.</h4>
+        </div>
+    </asp:PlaceHolder>
 
 </asp:Content>

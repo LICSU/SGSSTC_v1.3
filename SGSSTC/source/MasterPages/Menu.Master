@@ -217,56 +217,49 @@
 
 								<ul class="dropdown-menu">
 									<li>
-										<a href="../Hacer/index_PlanTrabajo.aspx">
+										<a href="../Planear/index_PlanTrabajo.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Plan de trabajo anual</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_Politica_SST.aspx">
+										<a href="../Planear/index_Politica_SST.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Política SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_ComunicacionPoliticaSST.aspx">
+										<a href="../Planear/index_ComunicacionPoliticaSST.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Comunicación de la Política SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_Encuesta_PoliticaSST.aspx">
+										<a href="../Planear/index_Encuesta_PoliticaSST.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Encuesta de Conocimiento de la Política de SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_Encuesta_PoliticaSST.aspx">
+										<a href="#">
 											<i class="fa fa-circle-o"></i>
 											<span>Encuesta de Conocimiento de los Objetivos de SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../EvaluacionInicial/index_Indicadores.aspx">
-											<i class="fa fa-circle-o"></i>
-											<span>Indicadores definidos por la Empresa</span>
-										</a>
-									</li>
-
-									<li>
-										<a href="../Hacer/index_RecursosEconomicos.aspx">
+										<a href="../Planear/index_RecursosEconomicos.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Recursos Económicos aprobados por la Gerencia</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_ActaCopasst.aspx">
+										<a href="../Planear/index_ActaCopasst.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Acta del Copasst</span>
 										</a>

@@ -2,8 +2,8 @@
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -186,7 +186,7 @@
                             </div>
                         </div>
 
-                        <div class="row" align="center">                        
+                        <div class="row text-center>                        
                             <div class="col-md-4 col-md-offset-2">
                                 <asp:ImageButton alt="-" id="btnGuardar" runat="server" ImageUrl="~\ico\print.png" 
                                     OnClick="GenerarDocumento"/>
@@ -199,7 +199,7 @@
                     <asp:PlaceHolder runat="server" id="phNoRegistros" Visible="false">
                         <div class="row form-group">
                             <div class="col-md-8 col-md-offset-2 text-center">
-                                <strong><h4>No existen trabajadores con reposos registrados.</h4></strong>
+                                <h4><strong>No existen trabajadores con reposos registrados.</strong></h4>
                             </div>
                         </div>
                     </asp:PlaceHolder>

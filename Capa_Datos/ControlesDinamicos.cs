@@ -1147,7 +1147,7 @@ namespace Capa_Datos
 
             if (tipo.Equals("A"))
             {
-                for (int i = 1; i <= 254; i = i + 2)
+                for (int i = 3; i <= 254; i = i + 2)
                 {
                     HtmlInputRadioButton miradio1 = (HtmlInputRadioButton)form1.FindControl("radio" + i);
                     HtmlInputRadioButton miradio2 = (HtmlInputRadioButton)form1.FindControl("radio" + (i + 1));

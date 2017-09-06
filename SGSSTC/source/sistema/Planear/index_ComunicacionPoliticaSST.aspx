@@ -1,28 +1,27 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Encuesta_PoliticaSST.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_Encuesta_PoliticaSST" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
+﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_ComunicacionPoliticaSST.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_ComunicacionPoliticaSST" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <asp:UpdatePanel ID="updatePanelPrinicpal" runat="server">
         <ContentTemplate>
 
-
             <ol class="breadcrumb">
-                <li><a href="#">Fase: Hacer</a></li>
-                <li><a href="#">Encuesta De Conocimiento</a></li>
+                <li><a href="#">Fase: Planear</a></li>
+                <li><a href="#">Comunicado de Politica SST</a></li>
             </ol>
 
             <div class="page-header">
-                <h1 class="text-center">Encuesta sobre conocimiento de la politica de SST</h1>
+                <h1 class="text-center">Comunicado de Politica SST</h1>
             </div>
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-2">
-                    <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese la encuesta a buscar"></asp:TextBox>
+                    <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese el comunicado a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -32,9 +31,8 @@
             <br />
 
             <div class="row">
-
-                <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-4">
+                <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
+                    <div class="col-md-4 col-md-offset-2">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
@@ -48,7 +46,6 @@
                         OnSelectedIndexChanged="ddlTrabajador_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
-
             </div>
 
             <div class="row">
@@ -70,13 +67,19 @@
                             <Columns>
                                 <asp:TemplateField Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_encuesta" runat="server" Text='<%# Eval("id_encuesta") %>' />
+                                        <asp:Label ID="id_comunicado" runat="server" Text='<%# Eval("id_comunicado") %>' />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Nombre" HeaderStyle-CssClass="text-center">
+                                    <ItemTemplate>
+                                        <asp:Label ID="nombre" runat="server" Text='<%# Eval("nombre") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="Trabajador" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="trabajador" runat="server" Text='<%# Eval("NomTrabajador") %>' />
+                                        <asp:Label ID="NomTrabajador" runat="server" Text='<%# Eval("NomTrabajador") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -86,41 +89,13 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="% SI" HeaderStyle-CssClass="text-center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="si" runat="server" Text='<%# Eval("si") %>' />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
-                                <asp:TemplateField HeaderText="% NO" HeaderStyle-CssClass="text-center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="no" runat="server" Text='<%# Eval("no") %>' />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
-                                <asp:TemplateField HeaderText="Soporte" HeaderStyle-CssClass="text-center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="soporte" runat="server" Text='<%# Eval("archivo") %>' />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
-                                <asp:TemplateField HeaderText="Tipo" HeaderStyle-CssClass="text-center">
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("tipo") %>' />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-
                                 <asp:TemplateField HeaderText="Consultar" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
                                         <asp:HyperLink runat="server" ImageUrl="~\ico\view.png" NavigateUrl='<%# Eval("ruta") %>' Target="_blank">Descargar</asp:HyperLink>
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField HeaderText="Subir Escaneado" HeaderStyle-CssClass="text-center" CommandName="Subir" ButtonType="Image" ImageUrl="~\ico\upload.png">
-                                    <ControlStyle></ControlStyle>
-                                </asp:ButtonField>
-
-                                <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" HeaderStyle-CssClass="text-center" ButtonType="Image" ImageUrl="~\ico\delete.png">
+                                <asp:ButtonField HeaderText="Eliminar" HeaderStyle-CssClass="text-center" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
                             </Columns>
@@ -131,22 +106,12 @@
             <br />
 
             <div class="row text-center">
-
-                <div class="col-md-4">
-                    <asp:ImageButton alt="-" ID="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro" />
-                    <h4>Crear Encuesta Conocimiento Politica SST</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\agregar.png" OnClick="btnAgregarObj_Click" />
-                    <h4>Crear Encuesta Conocimiento Objetivos Politica SST</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <asp:ImageButton alt="-" ID="btnDescargar" runat="server" ImageUrl="~\ico\descargar.png"
-                        OnClick="btnDescargar_Onclick" />
+                <div class="col-md-4 col-md-offset-4">
+                    <asp:ImageButton alt="-" ID="btnComunicado" runat="server" ImageUrl="~\ico\agregar.png"
+                        OnClick="btnComunicado_Onclick" />
                     <h4>Crear Comunicado</h4>
                 </div>
+
             </div>
 
         </ContentTemplate>
@@ -159,7 +124,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                    <h3>Descargar Formato</h3>
+                    <h3>Agregar Gestión Laboral</h3>
                 </div>
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
@@ -174,7 +139,8 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <asp:Button ID="btnEntrega" runat="server" Text="Por Sucursal" class="btn btn-block btn-success" OnClick="btnAgregarGral_Onclick"></asp:Button></div>
+                                    <asp:Button ID="btnEntrega" runat="server" Text="Por Sucursal" class="btn btn-block btn-success" OnClick="btnAgregarGral_Onclick"></asp:Button>
+                                </div>
                             </div>
                             <br />
                             <asp:PlaceHolder runat="server" ID="phGeneral" Visible="false">
@@ -208,7 +174,8 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <asp:Button ID="Button2" runat="server" Text="Por Trabajador" class="btn btn-block btn-warning" OnClick="btnAgregarEsp_Onclick"></asp:Button></div>
+                                    <asp:Button ID="Button2" runat="server" Text="Por Trabajador" class="btn btn-block btn-warning" OnClick="btnAgregarEsp_Onclick"></asp:Button>
+                                </div>
                             </div>
                             <br />
                             <asp:PlaceHolder runat="server" ID="phEspecifico" Visible="false">
@@ -249,109 +216,106 @@
                                     <br />
 
                                     <div class="row">
-                                        <div class="col-md-4 col-md-offset-4">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
                                             <asp:Button ID="btnEspecifico" runat="server" Text="Crear" class="btn btn-block btn-info" OnClick="Guardar" ValidationGroup="ValidationAdd" />
                                         </div>
                                     </div>
                                 </div>
                             </asp:PlaceHolder>
+
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <asp:Button ID="Button1" runat="server" Text="Subir Comunicado" class="btn btn-block btn-danger" OnClick="btnSubir_Onclick"></asp:Button>
+                                </div>
+                            </div>
+                            <br />
+
+                            <asp:PlaceHolder runat="server" ID="phSubir" Visible="false">
+                                <div class="modal-body form-group">
+
+                                    <div class="row">
+                                        <div>
+                                            <label class="col-md-4 control-label">Nombre: </label>
+                                            <div class="col-md-6">
+                                                <asp:TextBox ID="txtNombreSubir" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                                    SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                                    Font-Bold="true" ControlToValidate="txtNombreSubir" runat="server"
+                                                    ValidationGroup="ValidationAdd" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <asp:PlaceHolder runat="server" ID="phSucursalSubir">
+                                        <div class="row">
+                                            <div>
+                                                <label class="col-md-4 control-label">Sucursal: </label>
+                                                <div class="col-md-6">
+                                                    <asp:DropDownList ID="ddlSucursalSubir" runat="server" ClientIDMode="Static"
+                                                        CssClass="form-control" AutoPostBack="true"
+                                                        OnSelectedIndexChanged="ddlSucursalSubir_SelectedIndexChanged">
+                                                    </asp:DropDownList>
+
+                                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                                        Font-Bold="true" ControlToValidate="ddlSucursalSubir" runat="server"
+                                                        ValidationGroup="ValidationAdd" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </asp:PlaceHolder>
+                                    <br />
+
+                                    <div class="row">
+                                        <div>
+                                            <label class="col-md-4 control-label">Trabajador: </label>
+                                            <div class="col-md-6">
+                                                <asp:DropDownList ID="ddlTrabajadorSubir" runat="server" ClientIDMode="Static"
+                                                    CssClass="form-control">
+                                                </asp:DropDownList>
+
+                                                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                                    SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                                    Font-Bold="true" ControlToValidate="ddlTrabajadorSubir" runat="server"
+                                                    ValidationGroup="ValidationAdd" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+                                        <div>
+                                            <label class="col-md-4 control-label">Archivo: </label>
+                                            <div class="col-md-6">
+                                                <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
+                                                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                                    SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                                    Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
+                                                    ValidationGroup="ValidationAdd" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-4">
+                                            <asp:Button ID="btnSubirComunicado" runat="server" Text="Crear"
+                                                class="btn btn-block btn-info" OnClick="btnSubirComunicado_OnClick"
+                                                ValidationGroup="ValidationAdd" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </asp:PlaceHolder>
+
                         </div>
                     </ContentTemplate>
                     <Triggers>
                         <asp:PostBackTrigger ControlID="btnEspecifico" />
                         <asp:PostBackTrigger ControlID="btnGeneral" />
-                    </Triggers>
-                </asp:UpdatePanel>
-            </div>
-        </div>
-    </div>
-
-    <!-- Escaneado Modal -->
-    <div id="EscaneadoModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                    <h3>Subir Archivo Escaneado</h3>
-                </div>
-
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-
-                        <div class="modal-body form-group">
-                            <asp:HiddenField ID="hdfIDEsc" runat="server" />
-
-                            <asp:PlaceHolder runat="server" ID="phSucursalSubir">
-                                <div class="row">
-                                    <div>
-                                        <label class="col-md-4 control-label">Sucursal: </label>
-
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlSucursalSubir" runat="server" ClientIDMode="Static"
-                                                CssClass="form-control" AutoPostBack="true"
-                                                OnSelectedIndexChanged="ddlSucursalSubir_SelectedIndexChanged">
-                                            </asp:DropDownList>
-
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlSucursalSubir" runat="server"
-                                                ValidationGroup="ValidationAdd" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </asp:PlaceHolder>
-                            <br />
-
-                            <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Trabajador: </label>
-
-                                    <div class="col-md-6">
-                                        <asp:DropDownList ID="ddlTrabajadorSubir" runat="server" ClientIDMode="Static"
-                                            CssClass="form-control">
-                                        </asp:DropDownList>
-
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="ddlTrabajadorSubir" runat="server"
-                                            ValidationGroup="ValidationAdd" />
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-
-                            <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Archivo: </label>
-                                    <div class="col-md-6">
-                                        <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
-                                            ValidationGroup="ValidationAdd" />
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <div class="row">
-                                <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnEscaneado" runat="server" Text="Subir Archivo" class="btn btn-block btn-info"
-                                        OnClick="btnSubirArchivo" />
-                                </div>
-                                <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </ContentTemplate>
-                    <Triggers>
-                        <asp:PostBackTrigger ControlID="btnEscaneado" />
+                        <asp:PostBackTrigger ControlID="btnSubirComunicado" />
                     </Triggers>
                 </asp:UpdatePanel>
             </div>
@@ -359,12 +323,11 @@
     </div>
 
     <!-- Delete Modal -->
-    <div id="deleteModal" class="modal">
+    <div id="deleteModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h3>Eliminar Registro</h3>
                 </div>
 
@@ -373,7 +336,6 @@
 
                         <div class="modal-body form-group">
                             <asp:HiddenField ID="hdfIDDel" runat="server" />
-
                             <div class="row">
                                 <h4 class="text-center">¿Seguro desea eliminar este registro?</h4>
                             </div>
@@ -382,14 +344,11 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info"
-                                        OnClick="EliminarRegistro" />
+                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" OnClick="EliminarRegistro" />
                                 </div>
-
                                 <div class="col-md-4">
                                     <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
                                 </div>
-
                             </div>
                         </div>
                     </ContentTemplate>
@@ -400,5 +359,8 @@
             </div>
         </div>
     </div>
+
+
+
 
 </asp:Content>

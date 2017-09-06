@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <ol class="breadcrumb">
-        <li><a href="#">Fase: Hacer</a></li>
+        <li><a href="#">Fase: Planear</a></li>
         <li><a href="#">Política SST</a></li>
     </ol>
 

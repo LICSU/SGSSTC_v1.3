@@ -58,33 +58,6 @@ namespace SGSSTC.source.sistema.EvaluacionInicial {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
         
         /// <summary>
-        /// Control radio1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton radio1;
-        
-        /// <summary>
-        /// Control radio2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton radio2;
-        
-        /// <summary>
-        /// Control txtf1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtf1;
-        
-        /// <summary>
         /// Control radio3.
         /// </summary>
         /// <remarks>

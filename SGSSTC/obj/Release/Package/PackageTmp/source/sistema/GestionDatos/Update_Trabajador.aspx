@@ -2,8 +2,8 @@
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" 
 	Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
@@ -439,6 +439,6 @@
 		</Triggers>
 	</asp:updatepanel>
 	
-    <!-- Msj Modal -->
-    <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
+	
+	
 </asp:Content>

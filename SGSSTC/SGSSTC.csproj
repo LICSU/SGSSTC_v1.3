@@ -1401,15 +1401,15 @@
     <Content Include="source\sistema\Hacer\Create_RegistroVotantes.aspx" />
     <Content Include="source\sistema\Hacer\Create_ResultadoVotos.aspx" />
     <Content Include="source\sistema\Hacer\Create_ReunionCopasst.aspx" />
-    <Content Include="source\sistema\Hacer\index_ActaCopasst.aspx" />
+    <Content Include="source\sistema\Planear\index_ActaCopasst.aspx" />
     <Content Include="source\sistema\Hacer\index_Alarmas.aspx" />
     <Content Include="source\sistema\Hacer\index_AsignacionResponsable.aspx" />
     <Content Include="source\sistema\Hacer\index_BrigadaEmergencias.aspx" />
-    <Content Include="source\sistema\Hacer\index_ComunicacionPoliticaSST.aspx" />
+    <Content Include="source\sistema\Planear\index_ComunicacionPoliticaSST.aspx" />
     <Content Include="source\sistema\Hacer\index_ControlDocumentos.aspx" />
     <Content Include="source\sistema\Hacer\index_DescGeneralEmpresa.aspx" />
     <Content Include="source\sistema\Hacer\index_DescripcionSocioDemografica.aspx" />
-    <Content Include="source\sistema\Hacer\index_Encuesta_PoliticaSST.aspx" />
+    <Content Include="source\sistema\Planear\index_Encuesta_PoliticaSST.aspx" />
     <Content Include="source\sistema\Hacer\index_EstructuraPHVA.aspx" />
     <Content Include="source\sistema\Hacer\index_EvaluacionesPuestos.aspx" />
     <Content Include="source\sistema\Hacer\index_EvaluacionRiesgo.aspx" />
@@ -1429,12 +1429,12 @@
     <Content Include="source\sistema\Hacer\index_PlanCapacitacion.aspx" />
     <Content Include="source\sistema\Hacer\index_PlanillaEntregaEpp.aspx" />
     <Content Include="source\sistema\Hacer\index_PlanInduccion.aspx" />
-    <Content Include="source\sistema\Hacer\index_PlanTrabajo.aspx" />
+    <Content Include="source\sistema\Planear\index_PlanTrabajo.aspx" />
     <Content Include="source\sistema\Hacer\index_Plan_Emergencias.aspx" />
     <Content Include="source\sistema\Hacer\index_Plan_Evacuacion.aspx" />
-    <Content Include="source\sistema\Hacer\index_Politica_SST.aspx" />
+    <Content Include="source\sistema\Planear\index_Politica_SST.aspx" />
     <Content Include="source\sistema\Hacer\index_ProgramaInspecciones.aspx" />
-    <Content Include="source\sistema\Hacer\index_RecursosEconomicos.aspx" />
+    <Content Include="source\sistema\Planear\index_RecursosEconomicos.aspx" />
     <Content Include="source\sistema\Hacer\Update_AsistenciaCapacitacion.aspx" />
     <Content Include="source\sistema\Hacer\Update_DescripcionSocioDemografica.aspx" />
     <Content Include="source\sistema\Hacer\Update_MedidasMatrizLegal.aspx" />
@@ -1985,11 +1985,11 @@
     <Compile Include="source\sistema\Hacer\Create_ReunionCopasst.aspx.designer.cs">
       <DependentUpon>Create_ReunionCopasst.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_ActaCopasst.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_ActaCopasst.aspx.cs">
       <DependentUpon>index_ActaCopasst.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_ActaCopasst.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_ActaCopasst.aspx.designer.cs">
       <DependentUpon>index_ActaCopasst.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_Alarmas.aspx.cs">
@@ -2013,11 +2013,11 @@
     <Compile Include="source\sistema\Hacer\index_BrigadaEmergencias.aspx.designer.cs">
       <DependentUpon>index_BrigadaEmergencias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_ComunicacionPoliticaSST.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_ComunicacionPoliticaSST.aspx.cs">
       <DependentUpon>index_ComunicacionPoliticaSST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_ComunicacionPoliticaSST.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_ComunicacionPoliticaSST.aspx.designer.cs">
       <DependentUpon>index_ComunicacionPoliticaSST.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_ControlDocumentos.aspx.cs">
@@ -2041,11 +2041,11 @@
     <Compile Include="source\sistema\Hacer\index_DescripcionSocioDemografica.aspx.designer.cs">
       <DependentUpon>index_DescripcionSocioDemografica.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_Encuesta_PoliticaSST.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_Encuesta_PoliticaSST.aspx.cs">
       <DependentUpon>index_Encuesta_PoliticaSST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_Encuesta_PoliticaSST.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_Encuesta_PoliticaSST.aspx.designer.cs">
       <DependentUpon>index_Encuesta_PoliticaSST.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_EstructuraPHVA.aspx.cs">
@@ -2181,11 +2181,11 @@
     <Compile Include="source\sistema\Hacer\index_PlanInduccion.aspx.designer.cs">
       <DependentUpon>index_PlanInduccion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_PlanTrabajo.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_PlanTrabajo.aspx.cs">
       <DependentUpon>index_PlanTrabajo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_PlanTrabajo.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_PlanTrabajo.aspx.designer.cs">
       <DependentUpon>index_PlanTrabajo.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_Plan_Emergencias.aspx.cs">
@@ -2202,11 +2202,11 @@
     <Compile Include="source\sistema\Hacer\index_Plan_Evacuacion.aspx.designer.cs">
       <DependentUpon>index_Plan_Evacuacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_Politica_SST.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_Politica_SST.aspx.cs">
       <DependentUpon>index_Politica_SST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_Politica_SST.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_Politica_SST.aspx.designer.cs">
       <DependentUpon>index_Politica_SST.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_ProgramaInspecciones.aspx.cs">
@@ -2216,11 +2216,11 @@
     <Compile Include="source\sistema\Hacer\index_ProgramaInspecciones.aspx.designer.cs">
       <DependentUpon>index_ProgramaInspecciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_RecursosEconomicos.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_RecursosEconomicos.aspx.cs">
       <DependentUpon>index_RecursosEconomicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_RecursosEconomicos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_RecursosEconomicos.aspx.designer.cs">
       <DependentUpon>index_RecursosEconomicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\Update_AsistenciaCapacitacion.aspx.cs">

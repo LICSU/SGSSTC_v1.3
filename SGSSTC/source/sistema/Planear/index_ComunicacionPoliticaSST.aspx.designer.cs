@@ -10,7 +10,7 @@
 namespace SGSSTC.source.sistema.Hacer {
     
     
-    public partial class index_Encuesta_PoliticaSST {
+    public partial class index_ComunicacionPoliticaSST {
         
         /// <summary>
         /// Control updatePanelPrinicpal.
@@ -67,15 +67,6 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.DropDownList ddlTrabajador;
         
         /// <summary>
-        /// Control pagination.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::SGSSTC.source.WebUserControl.pagination1 pagination;
-        
-        /// <summary>
         /// Control GridView1.
         /// </summary>
         /// <remarks>
@@ -85,22 +76,13 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Control btnAgregar.
+        /// Control btnComunicado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnAgregar;
-        
-        /// <summary>
-        /// Control btnDescargar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnDescargar;
+        protected global::System.Web.UI.WebControls.ImageButton btnComunicado;
         
         /// <summary>
         /// Control btnEntrega.
@@ -202,22 +184,31 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.Button btnEspecifico;
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control hdfIDEsc.
+        /// Control phSubir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfIDEsc;
+        protected global::System.Web.UI.WebControls.PlaceHolder phSubir;
+        
+        /// <summary>
+        /// Control txtNombreSubir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSubir;
         
         /// <summary>
         /// Control phSucursalSubir.
@@ -256,13 +247,13 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.FileUpload flpArchivo;
         
         /// <summary>
-        /// Control btnEscaneado.
+        /// Control btnSubirComunicado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEscaneado;
+        protected global::System.Web.UI.WebControls.Button btnSubirComunicado;
         
         /// <summary>
         /// Control upDel.

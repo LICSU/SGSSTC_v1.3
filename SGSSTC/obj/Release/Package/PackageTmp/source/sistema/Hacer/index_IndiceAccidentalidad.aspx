@@ -2,133 +2,130 @@
 
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+
+
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">  
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-        
-        <ol class="breadcrumb">
-            <li><a href="#">Fase: Hacer</a></li>
-            <li><a href="#">Índices de Accidentalidad</a></li>
-        </ol> 
 
-        <div class="page-header">
-            <h1 class="text-center">Índices de Accidentalidad </h1>
-        </div>
+    <ol class="breadcrumb">
+        <li><a href="#">Fase: Hacer</a></li>
+        <li><a href="#">Índices de Accidentalidad</a></li>
+    </ol>
 
-        <div class="row">
-            <asp:placeholder runat="server" id="phEmpresa" visible="true">
-                    <div class="col-md-4 text-center">
-                        <label>Empresa</label>
-                        <asp:DropDownList runat="server" id="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
-                    </div>
-                </asp:placeholder>
-        </div>
-        <br />
+    <div class="page-header">
+        <h1 class="text-center">Índices de Accidentalidad </h1>
+    </div>
 
-        <div class="row">
-            <asp:placeholder runat="server" id="phSucursal" visible="true">
-                    <div class="col-md-4 text-center">
-                        <label>Sucursal</label>
-                        <asp:DropDownList runat="server" id="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
-                    </div>
-                </asp:placeholder>
-
-            <asp:placeholder runat="server" id="phAnho" visible="true"> 
-                <div class="col-md-4 text-center">
-                    <label>Año</label>
-                    <asp:DropDownList runat="server" id="ddlAnho" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlAnho_SelectedIndexChanged"></asp:DropDownList>
-                </div>
-                </asp:placeholder>
-
+    <div class="row">
+        <asp:PlaceHolder runat="server" ID="phEmpresa" Visible="true">
             <div class="col-md-4 text-center">
-                <label>Tipo de Periodo</label>
-                <asp:dropdownlist runat="server" id="ddlPeriodo" cssclass="form-control" autopostback="true" onselectedindexchanged="ddlPeriodo_SelectedIndexChanged">
-                        <asp:ListItem Text="Seleccione Uno" Value=""/>
-                        <asp:ListItem Text="Mensual" Value="1"/>
-                        <asp:ListItem Text="Trimestral" Value="2"/>
-                        <asp:ListItem Text="Semestral" Value="3"/>
-                        <asp:ListItem Text="Anual" Value="4"/>
-                    </asp:dropdownlist>
+                <label>Empresa</label>
+                <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
             </div>
+        </asp:PlaceHolder>
+    </div>
+    <br />
+
+    <div class="row">
+        <asp:PlaceHolder runat="server" ID="phSucursal" Visible="true">
+            <div class="col-md-4 text-center">
+                <label>Sucursal</label>
+                <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
+            </div>
+        </asp:PlaceHolder>
+
+        <asp:PlaceHolder runat="server" ID="phAnho" Visible="true">
+            <div class="col-md-4 text-center">
+                <label>Año</label>
+                <asp:DropDownList runat="server" ID="ddlAnho" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlAnho_SelectedIndexChanged"></asp:DropDownList>
+            </div>
+        </asp:PlaceHolder>
+
+        <div class="col-md-4 text-center">
+            <label>Tipo de Periodo</label>
+            <asp:DropDownList runat="server" ID="ddlPeriodo" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlPeriodo_SelectedIndexChanged">
+                <asp:ListItem Text="Seleccione Uno" Value="" />
+                <asp:ListItem Text="Mensual" Value="1" />
+                <asp:ListItem Text="Trimestral" Value="2" />
+                <asp:ListItem Text="Semestral" Value="3" />
+                <asp:ListItem Text="Anual" Value="4" />
+            </asp:DropDownList>
         </div>
-        <br />
+    </div>
+    <br />
 
-        <div class="row" style="overflow: auto;">
-            <div class="box-body">
-                <div class="dataTables_wrapper form-inline dt-bootstrap">
-                    <ucpag:pagination runat="server" id="pagination"/>
+    <div class="row" style="overflow: auto;">
+        <div class="box-body">
+            <div class="dataTables_wrapper form-inline dt-bootstrap">
+                
 
-                    <asp:placeholder runat="server" id="phMensual" visible="false">
-                        <asp:GridView id="GridView1" 
-                            class="table table-bordered table-hover dataTable"
-                            runat="server">
-                        </asp:GridView>
-                        </asp:placeholder>
+                <asp:PlaceHolder runat="server" ID="phMensual" Visible="false">
+                    <asp:GridView ID="GridView1"
+                        class="table table-bordered table-hover dataTable"
+                        runat="server">
+                    </asp:GridView>
+                </asp:PlaceHolder>
 
-                    <asp:placeholder runat="server" id="phSemestral" visible="false">
-                        <asp:GridView id="GridView2" 
-                            class="table table-bordered table-hover dataTable"
-                            runat="server">
-                        </asp:GridView>
-                        </asp:placeholder>
+                <asp:PlaceHolder runat="server" ID="phSemestral" Visible="false">
+                    <asp:GridView ID="GridView2"
+                        class="table table-bordered table-hover dataTable"
+                        runat="server">
+                    </asp:GridView>
+                </asp:PlaceHolder>
 
-                    <asp:placeholder runat="server" id="phTrimestral" visible="false"> 
-                        <asp:GridView id="GridView3" 
-                            class="table table-bordered table-hover dataTable"
-                            runat="server">
-                        </asp:GridView>
-                        </asp:placeholder>
+                <asp:PlaceHolder runat="server" ID="phTrimestral" Visible="false">
+                    <asp:GridView ID="GridView3"
+                        class="table table-bordered table-hover dataTable"
+                        runat="server">
+                    </asp:GridView>
+                </asp:PlaceHolder>
 
-                    <asp:placeholder runat="server" id="phAnual" visible="false"> 
-                        <asp:GridView id="GridView4" 
-                            class="table table-bordered table-hover dataTable"
-                            runat="server">
-                        </asp:GridView>
-                        </asp:placeholder>
+                <asp:PlaceHolder runat="server" ID="phAnual" Visible="false">
+                    <asp:GridView ID="GridView4"
+                        class="table table-bordered table-hover dataTable"
+                        runat="server">
+                    </asp:GridView>
+                </asp:PlaceHolder>
 
-                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
-                    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+                <script type="text/javascript" src="//www.google.com/jsapi"></script>
 
 
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <asp:literal id="ltIF" runat="server"></asp:literal>
-                            <div id="chartIF"></div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <asp:Literal ID="ltIF" runat="server"></asp:Literal>
+                        <div id="chartIF"></div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <asp:literal id="ltIS" runat="server"></asp:literal>
-                            <div id="chartIS"></div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <asp:literal id="ltIDP" runat="server"></asp:literal>
-                            <div id="chartIDP"></div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <asp:literal id="ltILI" runat="server"></asp:literal>
-                            <div id="chartILI"></div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <asp:Literal ID="ltIS" runat="server"></asp:Literal>
+                        <div id="chartIS"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <asp:Literal ID="ltIDP" runat="server"></asp:Literal>
+                        <div id="chartIDP"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <asp:Literal ID="ltILI" runat="server"></asp:Literal>
+                        <div id="chartILI"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <br />
-
-    <!-- Msj Modal -->
-    <ucm:ucMsjModal runat="server" id="ucMsjModal"/>
+    </div>
+    <br />
 
 </asp:Content>

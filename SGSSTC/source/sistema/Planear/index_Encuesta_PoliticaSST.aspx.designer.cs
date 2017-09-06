@@ -10,7 +10,7 @@
 namespace SGSSTC.source.sistema.Hacer {
     
     
-    public partial class index_RecursosEconomicos {
+    public partial class index_Encuesta_PoliticaSST {
         
         /// <summary>
         /// Control updatePanelPrinicpal.
@@ -20,6 +20,24 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel updatePanelPrinicpal;
+        
+        /// <summary>
+        /// Control txtSearch.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
+        
+        /// <summary>
+        /// Control btnSearch.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// Control phSucursal.
@@ -40,13 +58,13 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
         
         /// <summary>
-        /// Control pagination.
+        /// Control ddlTrabajador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::SGSSTC.source.WebUserControl.pagination1 pagination;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajador;
         
         /// <summary>
         /// Control GridView1.
@@ -67,13 +85,112 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.ImageButton btnAgregar;
         
         /// <summary>
-        /// Control btnSubir.
+        /// Control btnDescargar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnSubir;
+        protected global::System.Web.UI.WebControls.ImageButton btnDescargar;
+        
+        /// <summary>
+        /// Control btnEntrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEntrega;
+        
+        /// <summary>
+        /// Control phGeneral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phGeneral;
+        
+        /// <summary>
+        /// Control phSucursal3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phSucursal3;
+        
+        /// <summary>
+        /// Control ddlSucursalGral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSucursalGral;
+        
+        /// <summary>
+        /// Control btnGeneral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGeneral;
+        
+        /// <summary>
+        /// Control Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Control phEspecifico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phEspecifico;
+        
+        /// <summary>
+        /// Control phSucursalAdd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phSucursalAdd;
+        
+        /// <summary>
+        /// Control ddlSucursalAdd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSucursalAdd;
+        
+        /// <summary>
+        /// Control ddlTrabajadorEsp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajadorEsp;
+        
+        /// <summary>
+        /// Control btnEspecifico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEspecifico;
         
         /// <summary>
         /// Control UpdatePanel1.
@@ -85,13 +202,13 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control txtNombreSubir.
+        /// Control hdfIDEsc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreSubir;
+        protected global::System.Web.UI.WebControls.HiddenField hdfIDEsc;
         
         /// <summary>
         /// Control phSucursalSubir.
@@ -112,6 +229,15 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursalSubir;
         
         /// <summary>
+        /// Control ddlTrabajadorSubir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajadorSubir;
+        
+        /// <summary>
         /// Control flpArchivo.
         /// </summary>
         /// <remarks>
@@ -119,15 +245,6 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload flpArchivo;
-        
-        /// <summary>
-        /// Control fuSoporte.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuSoporte;
         
         /// <summary>
         /// Control btnEscaneado.
@@ -164,32 +281,5 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDelete;
-        
-        /// <summary>
-        /// Control Updatepanel2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel Updatepanel2;
-        
-        /// <summary>
-        /// Control hdSoporte.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdSoporte;
-        
-        /// <summary>
-        /// Control pAnexo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pAnexo;
     }
 }

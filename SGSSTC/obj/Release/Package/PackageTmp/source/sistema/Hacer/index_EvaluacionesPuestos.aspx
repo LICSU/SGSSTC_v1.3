@@ -3,167 +3,166 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
-	PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-<%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
-<%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
+	PublicKeyToken=31bf3856ad364e35"
+	Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"></asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
-    <asp:updatepanel id="updatePanelPrinicpal" runat="server">
-        <ContentTemplate>
 
-                
-                <ol class="breadcrumb">
-                    <li><a href="#">Fase: Hacer</a></li>
-                    <li><a href="#">Evaluaciones del Puesto</a></li>
-                </ol>
-                
-                <div class="page-header">
-                    <h1 class="text-center">Evaluaciones del Puesto</h1>
-                </div>
-                
-                <div class="row" style="overflow:auto;">
-                    <div class="box-body">
-                        <div class="dataTables_wrapper form-inline dt-bootstrap">
-                            <ucpag:pagination runat="server" id="pagination"/>
-                        
-                            <asp:GridView id="GridView1" class="table table-bordered table-hover dataTable" runat="server"
-                                AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand" 
-                                onpageindexchanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated" 
-                                EmptyDataText="No existen Registros">
-                                <rowstyle  HorizontalAlign="Center"/>
-                            
-                                <Columns>
-                                    <asp:TemplateField HeaderText="ID" Visible="false">
-                                        <ItemTemplate>
-                                            <asp:Label id="id_evaluacion_riesgo" runat="server" Text='<%# Eval("id_evaluacion_riesgo") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    
-                                    <asp:TemplateField HeaderText="Fecha de Evaluación" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="fecha_evaluacion" runat="server" Text='<%# Eval("fecha_evaluacion", "{0:d}") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
-                                    <asp:TemplateField HeaderText="Nivel del Riesgo" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="nivel_riesgo" runat="server" Text='<%# Eval("nivel_riesgo") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    
-                                    <asp:TemplateField HeaderText="Aceptabilidad del Riesgos" HeaderStyle-CssClass="text-center">
-                                        <ItemTemplate>
-                                            <asp:Label id="aceptabilidad_riesgo" runat="server" Text='<%# Eval("aceptabilidad_riesgo") %>'/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    
-                                    <asp:ButtonField HeaderText="Imprimir" CommandName="print" ButtonType="Image" HeaderStyle-CssClass="text-center"
-                                        ImageUrl="~\ico\print.png">
-                                        <ControlStyle></ControlStyle>
-                                    </asp:ButtonField>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-                                    <asp:ButtonField HeaderText="Ver" CommandName="Ver" ButtonType="Image" HeaderStyle-CssClass="text-center"
-                                        ImageUrl="~\ico\view.png">
-                                        <ControlStyle></ControlStyle>
-                                    </asp:ButtonField>
+	<asp:UpdatePanel ID="updatePanelPrinicpal" runat="server">
+		<ContentTemplate>
 
-                                    <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" HeaderStyle-CssClass="text-center"
-                                        ImageUrl="~\ico\delete.png">
-                                        <ControlStyle></ControlStyle>
-                                    </asp:ButtonField>
-                                </Columns>
 
-                            </asp:GridView>
-                        </div>
-                    </div>
-                </div>
-                <br />
+			<ol class="breadcrumb">
+				<li><a href="#">Fase: Hacer</a></li>
+				<li><a href="#">Evaluaciones del Puesto</a></li>
+			</ol>
 
-        </ContentTemplate>
-        <Triggers></Triggers>
-    </asp:updatepanel>    
-    
-    <!-- print lista Modal-->
-    <div id="PrintListaModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                    <h3>Imprimir Registro</h3>
-                </div>
-                
-                <div class="modal-body form-group">
-                    <asp:HiddenField id="hImprimir" runat="server"/>
-                    
-                    <div class="row">
-                        <h4 class="text-center">¿Seguro desea imprimir este registro?</h4>
-                    </div>
-                </div>
-                    
-                <div class="modal-footer">
-                    <div class="row">
+			<div class="page-header">
+				<h1 class="text-center">Evaluaciones del Puesto</h1>
+			</div>
 
-                        <div class="col-md-4 col-md-offset-2">
-                            <asp:Button id="btPrint" runat="server" Text="Imprimir" AutoPostBack="true"
-                                class="btn btn-block btn-info" OnClick="btPrint_Click"/>
-                        </div>
+			<div class="row" style="overflow: auto;">
+				<div class="box-body">
+					<div class="dataTables_wrapper form-inline dt-bootstrap">
+					
 
-                        <div class="col-md-4">
-                            <button class="btn btn-block btn-default" data-dismiss="modal" 
-                            aria-hidden="true">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						<asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
+							AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
+							OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated"
+							EmptyDataText="No existen Registros">
+							<RowStyle HorizontalAlign="Center" />
 
-    <!-- Delete Modal -->
-    <div id="deleteModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                    <h3>Eliminar Registro</h3>
-                </div>
-                
-                <asp:updatepanel id="upDel" runat="server">
-                    <ContentTemplate>
-                        
-                        <div class="modal-body form-group">
-                            <asp:HiddenField id="hdfIDDel" runat="server"/>
-                            
-                            <div class="row">
-                                <h4 class="text-center">¿Seguro desea eliminar este registro?</h4>
-                            </div>
-                        </div>
-                        
-                        <div class="modal-footer">
-                            <div class="row">                                
-                                <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button id="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" 
-                                        OnClick="EliminarRegistro"/>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </ContentTemplate>
-                    <Triggers>
-                        <asp:AsyncPostBackTrigger Controlid="btnDelete" EventName="Click"/>
-                    </Triggers>
-                </asp:updatepanel>
-            </div>
-        </div>
-    </div>
+							<Columns>
+								<asp:TemplateField HeaderText="ID" Visible="false">
+									<ItemTemplate>
+										<asp:Label ID="id_evaluacion_riesgo" runat="server" Text='<%# Eval("id_evaluacion_riesgo") %>' />
+									</ItemTemplate>
+								</asp:TemplateField>
 
-    <!-- Msj Modal -->
-    <ucm:ucMsjModal runat="server" ID="ucMsjModal"/>
+								<asp:TemplateField HeaderText="Fecha de Evaluación" HeaderStyle-CssClass="text-center">
+									<ItemTemplate>
+										<asp:Label ID="fecha_evaluacion" runat="server" Text='<%# Eval("fecha_evaluacion", "{0:d}") %>' />
+									</ItemTemplate>
+								</asp:TemplateField>
+
+								<asp:TemplateField HeaderText="Nivel del Riesgo" HeaderStyle-CssClass="text-center">
+									<ItemTemplate>
+										<asp:Label ID="nivel_riesgo" runat="server" Text='<%# Eval("nivel_riesgo") %>' />
+									</ItemTemplate>
+								</asp:TemplateField>
+
+								<asp:TemplateField HeaderText="Aceptabilidad del Riesgos" HeaderStyle-CssClass="text-center">
+									<ItemTemplate>
+										<asp:Label ID="aceptabilidad_riesgo" runat="server" Text='<%# Eval("aceptabilidad_riesgo") %>' />
+									</ItemTemplate>
+								</asp:TemplateField>
+
+								<asp:ButtonField HeaderText="Imprimir" CommandName="print" ButtonType="Image" HeaderStyle-CssClass="text-center"
+									ImageUrl="~\ico\print.png">
+									<ControlStyle></ControlStyle>
+								</asp:ButtonField>
+
+								<asp:ButtonField HeaderText="Ver" CommandName="Ver" ButtonType="Image" HeaderStyle-CssClass="text-center"
+									ImageUrl="~\ico\view.png">
+									<ControlStyle></ControlStyle>
+								</asp:ButtonField>
+
+								<asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" ButtonType="Image" HeaderStyle-CssClass="text-center"
+									ImageUrl="~\ico\delete.png">
+									<ControlStyle></ControlStyle>
+								</asp:ButtonField>
+							</Columns>
+
+						</asp:GridView>
+					</div>
+				</div>
+			</div>
+			<br />
+
+		</ContentTemplate>
+		<Triggers></Triggers>
+	</asp:UpdatePanel>
+
+	<!-- print lista Modal-->
+	<div id="PrintListaModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+					<h3>Imprimir Registro</h3>
+				</div>
+
+				<div class="modal-body form-group">
+					<asp:HiddenField ID="hImprimir" runat="server" />
+
+					<div class="row">
+						<h4 class="text-center">¿Seguro desea imprimir este registro?</h4>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<div class="row">
+
+						<div class="col-md-4 col-md-offset-2">
+							<asp:Button ID="btPrint" runat="server" Text="Imprimir" AutoPostBack="true"
+								class="btn btn-block btn-info" OnClick="btPrint_Click" />
+						</div>
+
+						<div class="col-md-4">
+							<button class="btn btn-block btn-default" data-dismiss="modal"
+								aria-hidden="true">
+								Cerrar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Delete Modal -->
+	<div id="deleteModal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+					<h3>Eliminar Registro</h3>
+				</div>
+
+				<asp:UpdatePanel ID="upDel" runat="server">
+					<ContentTemplate>
+
+						<div class="modal-body form-group">
+							<asp:HiddenField ID="hdfIDDel" runat="server" />
+
+							<div class="row">
+								<h4 class="text-center">¿Seguro desea eliminar este registro?</h4>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-md-4 col-md-offset-2">
+									<asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info"
+										OnClick="EliminarRegistro" />
+								</div>
+
+								<div class="col-md-4">
+									<button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+								</div>
+							</div>
+						</div>
+					</ContentTemplate>
+					<Triggers>
+						<asp:AsyncPostBackTrigger ControlID="btnDelete" EventName="Click" />
+					</Triggers>
+				</asp:UpdatePanel>
+			</div>
+		</div>
+	</div>
 
 </asp:Content>

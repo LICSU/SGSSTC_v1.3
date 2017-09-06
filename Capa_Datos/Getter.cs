@@ -942,8 +942,7 @@ namespace Capa_Datos
             x.id_trabajador == _id_trabajador &&
             x.gestion_laboral.fecha >= fechaIni &&
             x.gestion_laboral.fecha <= fechaFin &&
-            x.gestion_laboral.tipo_gestion == 2 &&
-            x.asistencia != "-"
+            x.gestion_laboral.tipo_gestion == 2 
             ).ToList();
 
             return consulta;

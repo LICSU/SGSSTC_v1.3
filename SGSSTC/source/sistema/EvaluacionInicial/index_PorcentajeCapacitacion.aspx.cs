@@ -205,6 +205,14 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             _table.Rows.Add(_header_fila);
             #endregion
 
+            #region cantidad Horas
+            _header_celda = new TableHeaderCell();
+            _header_celda.Text = "CANTIDAD HORAS ACUMULADAS";
+            _header_celda.CssClass = "text-center";
+            _header_fila.Cells.Add(_header_celda);
+            _table.Rows.Add(_header_fila);
+            #endregion
+
             Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursal);
             IdEmpresa = IdEmpSuc.Item1;
             IdSucursal = IdEmpSuc.Item2;
@@ -224,50 +232,48 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 #endregion
 
             }
-
-            #region Cedula
-            _header_celda = new TableHeaderCell();
-            _header_celda.Text = "CANTIDAD HORAS ACUMULADAS";
-            _header_celda.CssClass = "text-center";
-            _header_fila.Cells.Add(_header_celda);
-            _table.Rows.Add(_header_fila);
-            #endregion
-
+            
             #endregion
 
             TableCell _fila = new TableCell();
             TableRow _columna = new TableRow();
-            int NumTrab = 1, gestion = 1, HorasAsistio = 0, inaJust = 0, InaInjust = 0,Asistencias=0;
+            int NumTrab = 1, gestion = 1, HorasAsistio = 0, inaJust = 0, InaInjust = 0, Asistencias = 0;
+            bool CantHoras = false;
 
             List<trabajador> List_Trab = Getter.Trabajador(0, 0, Convert.ToInt32(IdSucursal), 0);
 
             foreach (var item1 in List_Trab)
             {
                 HorasAsistio = 0;
-                #region datos trabajador
-                _columna = new TableRow();
-                _columna.ID = "columna" + NumTrab;
-                _fila = new TableCell();
-                _fila.Text = "" + (NumTrab);
-                _columna.Cells.Add(_fila);
-                _table.Rows.Add(_columna);
-
-                _fila = new TableCell();
-                _fila.Text = string.Empty + (item1.primer_nombre + ' ' + item1.primer_apellido);
-                _fila.Attributes.Add("style", "white-space: nowrap;");
-                _columna.Cells.Add(_fila);
-                _table.Rows.Add(_columna);
-
-                _fila = new TableCell();
-                _fila.Text = string.Empty + (item1.cedula);
-                _columna.Cells.Add(_fila);
-                _table.Rows.Add(_columna);
-                #endregion
+                CantHoras = false;
 
                 List<trabajador_gestion> trab_lista = Getter.Trabajadores_Capacitacion(item1.id_trabajador, fechaInicial, fechaFinal);
 
                 foreach (var item2 in trab_lista)
                 {
+                    if (HorasAsistio == 0)
+                    {
+                        #region datos trabajador
+                        _columna = new TableRow();
+                        _columna.ID = "columna" + NumTrab;
+                        _fila = new TableCell();
+                        _fila.Text = "" + (NumTrab);
+                        _columna.Cells.Add(_fila);
+                        _table.Rows.Add(_columna);
+
+                        _fila = new TableCell();
+                        _fila.Text = string.Empty + (item1.primer_nombre + ' ' + item1.primer_apellido);
+                        _fila.Attributes.Add("style", "white-space: nowrap;");
+                        _columna.Cells.Add(_fila);
+                        _table.Rows.Add(_columna);
+
+                        _fila = new TableCell();
+                        _fila.Text = string.Empty + (item1.cedula);
+                        _columna.Cells.Add(_fila);
+                        _table.Rows.Add(_columna);
+                        #endregion
+                    }
+
                     #region asistencias
                     _fila = new TableCell();
                     _fila.ID = "fila" + gestion + "_" + NumTrab;
@@ -275,7 +281,13 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                     {
                         _fila.Text = "Asistió";
                         HorasAsistio = HorasAsistio + Convert.ToInt32(item2.gestion_laboral.cant_horas);
+                        _fila.BackColor = System.Drawing.Color.MediumPurple;
                         Asistencias++;
+                    }
+                    else if (item2.asistencia.Contains("-"))
+                    {
+                        _fila.Text = "Sin Asistencia";
+                        _fila.BackColor = System.Drawing.Color.YellowGreen;
                     }
                     else
                     {
@@ -298,32 +310,36 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                     _fila.CssClass = "text-center";
                     _columna.Cells.Add(_fila);
                     gestion++;
+                    CantHoras = true;
                 }
 
+                if (CantHoras)
+                {
+                    _table.Rows.Add(_columna);
+                    _fila = new TableCell();
+                    _fila.Text = "" + HorasAsistio;
+                    _fila.CssClass = "text-center";
+                    _fila.BackColor = System.Drawing.Color.DarkSeaGreen;
+                    _columna.Cells.AddAt(3, _fila);
+                    _table.Rows.Add(_columna);
 
-                _table.Rows.Add(_columna);
-
-                _fila = new TableCell();
-                _fila.Text = "" + HorasAsistio;
-                _fila.CssClass = "text-center";
-                _fila.BackColor = System.Drawing.Color.DarkSeaGreen;
-                _columna.Cells.Add(_fila);
-                _table.Rows.Add(_columna);
-                NumTrab++;
-                pnTablaCapacitacion.Controls.Add(_table);
-
-                //Generar la grafica
-                int totalIna = inaJust + InaInjust;
-                lblTotalInasistencias.Text = totalIna.ToString();
-                lblTotalAsistencias.Text = ""+ Asistencias;
-                Double[] yAsistencias = { 0, 0 };
-                yAsistencias[0] = totalIna;
-                yAsistencias[1] = Asistencias;
-                String[] xCadenas = { "Inasistencia", "Asistencia" };
-                graficoAsistencia.Series["asistencias"].Label = "#PERCENT{P0}";
-                graficoAsistencia.Series["asistencias"].Points.DataBindXY(xCadenas, yAsistencias);
+                    NumTrab++;
+                    pnTablaCapacitacion.Controls.Add(_table);
+                }
 
             }
+            
+            #region  Generar la grafica
+            int totalIna = inaJust + InaInjust;
+            lblTotalInasistencias.Text = totalIna.ToString();
+            lblTotalAsistencias.Text = "" + Asistencias;
+            Double[] yAsistencias = { 0, 0 };
+            yAsistencias[0] = totalIna;
+            yAsistencias[1] = Asistencias;
+            String[] xCadenas = { "Inasistencia", "Asistencia" };
+            graficoAsistencia.Series["asistencias"].Label = "#PERCENT{P0}";
+            graficoAsistencia.Series["asistencias"].Points.DataBindXY(xCadenas, yAsistencias);
+            #endregion
 
         }
         #endregion

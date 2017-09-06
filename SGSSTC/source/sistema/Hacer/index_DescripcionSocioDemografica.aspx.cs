@@ -183,17 +183,15 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-
                 string id_trabajador = (gvrow.FindControl("id_desc_socio") as Label).Text;
-                id_trabajador = objUtilidades.cifrarCadena(Convert.ToString(id_trabajador));
 
+                id_trabajador = objUtilidades.cifrarCadena(Convert.ToString(id_trabajador));
                 Response.Redirect(Paginas.Update_DescripcionSocioDemografica.Value+"?id=" + id_trabajador);
             }
             if (e.CommandName.Equals("Ver"))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-
                 string id_trabajador = (gvrow.FindControl("id_desc_socio") as Label).Text;
                 id_trabajador = objUtilidades.cifrarCadena(Convert.ToString(id_trabajador));
                 
@@ -203,7 +201,6 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-
                 hdfPerfilIDDel.Value = (gvrow.FindControl("id_desc_socio") as Label).Text;
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
@@ -211,14 +208,10 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
-
             GridView1.PageIndex = e.NewPageIndex;
             LlenarGridView();
         }
-        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
-        {
-        }
+
         #endregion
 
         #region filtros
