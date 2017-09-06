@@ -10,7 +10,6 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.EvaluacionInicial
 {
-
     public partial class create_InspeccionPuestosAdmin : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
@@ -323,6 +322,14 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             phDocumento.Visible = true;
             phDocumento1.Visible = false;
             phGrafica.Visible = true;
+        }
+
+        private void generarGrafica(int TotalSi, int TotalNo)
+        {
+            Double[] yAsistencias = { TotalSi, TotalNo };
+            String[] xCadenas = { "SI", "NO" };
+            graficaPie.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
+            graficaPie.Series["seriesPie"].Points.DataBindXY(xCadenas, yAsistencias);
         }
 
         protected void GenerarDocumento(object sender, EventArgs e)
@@ -880,15 +887,6 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             };
 
             PrintFile.PrintInspeccionPuestosAdmin(valores, titulos, valoressi, valoresno, textos, encabezados, this);
-        }
-
-        private void generarGrafica(int TotalSi, int TotalNo)
-        {
-            Double[] yAsistencias = { TotalSi, TotalNo };
-            String[] xCadenas = { "SI", "NO" };
-            graficaPie.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
-            graficaPie.Series["seriesPie"].Points.DataBindXY(xCadenas, yAsistencias);
-            graficaPie.SaveImage(HttpContext.Current.Server.MapPath("~/source/archivos/images_graf/graficaInspPA.jpg"));
         }
         #endregion
 

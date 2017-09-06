@@ -262,7 +262,7 @@
         </div>
     </asp:PlaceHolder>
 
-    <div class="row">
+    <div class="row text-center">
         <div class="col-md-3 col-md-offset-3">
             <asp:ImageButton alt="-" ID="btnGuardar" runat="server" ImageUrl="~\ico\print.png" OnClick="GenerarDocumento"
                 ValidationGroup="ValidationAdd" />

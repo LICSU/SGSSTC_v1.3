@@ -162,7 +162,7 @@
             </div>
             <br />
 
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-3 col-md-offset-3">
                     <asp:ImageButton alt="-" ID="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png"
                         data-toggle="modal" data-target="#IndexAddModal" />

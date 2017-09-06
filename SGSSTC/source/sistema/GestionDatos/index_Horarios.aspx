@@ -3,8 +3,6 @@
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -112,7 +110,7 @@
             <br />
 
             <asp:PlaceHolder runat="server" ID="phAgregar" Visible="false">
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-md-4 col-md-offset-4">
                         <asp:ImageButton alt="-" ID="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png"
                             OnClick="AgregarRegistroModal" />

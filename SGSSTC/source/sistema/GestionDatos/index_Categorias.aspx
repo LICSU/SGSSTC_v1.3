@@ -103,7 +103,7 @@
             <br />
 
             <asp:PlaceHolder runat="server" ID="phAgregarCat">
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-md-4 col-md-offset-4 text-center">
                         <asp:ImageButton AlternateText="-" ID="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png"
                             data-toggle="modal" data-target="#addModal" />

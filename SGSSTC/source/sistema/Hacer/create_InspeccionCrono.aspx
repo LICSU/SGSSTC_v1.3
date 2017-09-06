@@ -118,7 +118,7 @@
 
         <div class="row">
             <div class="col-md-2 col-md-offset-10 text-right">
-                <asp:Button runat="server" ID="btnAgregar" Text="Agregar Inspección" ValidationGroup="ValidationAdd"
+                <asp:Button runat="server" ID="btnAgregar" Text="Agregar otra fila" ValidationGroup="ValidationAdd"
                     CssClass="btn btn-block btn-info" OnClick="Guardar" />
             </div>
         </div>

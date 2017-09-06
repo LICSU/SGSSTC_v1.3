@@ -1,29 +1,28 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="create_InspeccionPuestosAdmin.aspx.cs" Inherits="SGSSTC.source.sistema.EvaluacionInicial.create_InspeccionPuestosAdmin" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Fase: Hacer</a></li>
-        <li><a href="../Hacer/index_Inspecciones.aspx">Inspecciones</a></li>
-        <li><a href="#">Crear Inspección de Puesto de Trabajo Administrativo</a></li>
-    </ol>
-
-    <div class="page-header">
-        <h1 class="text-center">Inspección Puesto de Trabajo Administrativo</h1>
-    </div>
-
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
+            
+            <ol class="breadcrumb">
+                <li><a href="#">Fase: Hacer</a></li>
+                <li><a href="../Hacer/index_Inspecciones.aspx">Inspecciones</a></li>
+                <li><a href="#">Crear Inspección de Puesto de Trabajo Administrativo</a></li>
+            </ol>
+
+            <div class="page-header">
+                <h1 class="text-center">Inspección Puesto de Trabajo Administrativo</h1>
+            </div>
 
             <div class="row form-group">
-
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
                     <div class="col-md-3">
                         <h4 class="text-center">Empresa</h4>
@@ -32,7 +31,6 @@
                         </asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
-
                 <asp:PlaceHolder runat="server" ID="phSucursal">
                     <div class="col-md-3">
                         <h4 class="text-center">Sucursal</h4>
@@ -41,7 +39,6 @@
                         </asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
-
                 <div class="col-md-3">
                     <h4 class="text-center">Area</h4>
                     <asp:DropDownList runat="server" ID="ddlArea" data-toggle="tooltip" data-placement="bottom" title="Seleccione un Área" class="form-control" AutoPostBack="true"
@@ -57,6 +54,10 @@
                         Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
                         ControlToValidate="ddlPuesto" runat="server" ValidationGroup="ValidationAdd" />
                 </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-1"></div>
                 <asp:PlaceHolder runat="server" ID="phTrabajdor" Visible="False">
                     <div class="col-md-3">
                         <h4 class="text-center">Trabajador</h4>
@@ -69,9 +70,6 @@
                             CompletionListItemCssClass="listItem"
                             CompletionListHighlightedItemCssClass="itemHighlighted">
                         </cc1:AutoCompleteExtender>
-                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
-                            Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
-                            ControlToValidate="txtTrabajador" runat="server" ValidationGroup="ValidationAdd" />
                     </div>
                 </asp:PlaceHolder>
             </div>
@@ -1845,16 +1843,16 @@
                         </asp:Chart>
                     </div>
                 </asp:PlaceHolder>
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-md-3 col-md-offset-1">
-                        <asp:ImageButton alt="-" ID="btnGenerarResultados" runat="server" ImageUrl="~\ico\calculator.png"
-                            OnClick="btnGenerarResultados_Click" />
+                        <asp:ImageButton alt="-" ID="btnGenerarResultados" runat="server" 
+                            ImageUrl="~\ico\calculator.png" OnClick="btnGenerarResultados_Click" />
                         <h4>Generar Resultados</h4>
                     </div>
                     <asp:PlaceHolder runat="server" ID="phDocumento" Visible="false">
                         <div class="col-md-4">
                             <asp:ImageButton alt="-" ID="btnDocumento" runat="server" ImageUrl="~\ico\print.png"
-                                OnClick="GenerarDocumento" ValidationGroup="ValidationAdd" />
+                                OnClick="GenerarDocumento" />
                             <h4>Generar Documento</h4>
                         </div>
                     </asp:PlaceHolder>
@@ -1862,14 +1860,12 @@
                     <asp:PlaceHolder runat="server" ID="phDocumento1" Visible="true">
                         <div class="col-md-4"></div>
                     </asp:PlaceHolder>
+
                 </div>
-
-                <!--  Fin de Informacion -->
-
             </asp:PlaceHolder>
             <asp:PlaceHolder runat="server" ID="phNoRegistros" Visible="false">
                 <div class="row form-group">
-                    <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="col-md-8 text-center col-md-offset-2">
                         <h4><strong>No existen trabajadores con reposos registrados.</strong></h4>
                     </div>
                 </div>

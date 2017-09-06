@@ -2794,7 +2794,7 @@
             <asp:HiddenField ID="rutaImg" runat="server"></asp:HiddenField>
         </div>
 
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-3">
                 <asp:ImageButton alt="-" ID="btnGuardar" runat="server" ImageUrl="~\ico\calculator.png" OnClick="Guardar" />
                 <h4>Generar Resultados</h4>

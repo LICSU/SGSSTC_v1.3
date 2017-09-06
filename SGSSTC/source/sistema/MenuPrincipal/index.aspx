@@ -194,7 +194,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <div class="box">
 
                         <div class="box-header label-primary">

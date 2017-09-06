@@ -491,7 +491,7 @@
 
             <br />
 
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
                 <div class="col-md-4 col-md-offset-4">
                     <asp:ImageButton alt="-" ID="btnActualizar" runat="server" ImageUrl="~\ico\save.png" OnClick="EditarRegistro" ValidationGroup="ValidationEdit" />
                     <h4>

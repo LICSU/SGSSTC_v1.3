@@ -43,7 +43,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading bg-aqua color-palette">
-                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">ALCANCE DEL SST</a></h4>
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">ALCANCE</a></h4>
                 </div>
 
                 <div id="collapse3" class="panel-collapse collapse">
@@ -71,7 +71,7 @@
 
     </div>
 
-    <div class="row">
+    <div class="row text-center">
 
         <div class="col-md-4 col-md-offset-2">
             <asp:ImageButton alt="-" ID="btnSave" runat="server" ImageUrl="~\ico\agregar.png"

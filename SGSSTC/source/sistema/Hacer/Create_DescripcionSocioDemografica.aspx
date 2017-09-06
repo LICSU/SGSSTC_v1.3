@@ -4,8 +4,6 @@
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -94,7 +92,7 @@
                         <asp:ListItem Text="Ninguno" Value="Ninguno"></asp:ListItem>
                         <asp:ListItem Text="Universitaria" Value="Universitario"></asp:ListItem>
                         <asp:ListItem Text="Diplomado" Value="Diplomado"></asp:ListItem>
-                        <asp:ListItem Text="Tecnica" Value="Texnica"></asp:ListItem>
+                        <asp:ListItem Text="Técnica" Value="Técnica"></asp:ListItem>
                         <asp:ListItem Text="Maestría" Value="Maestria"></asp:ListItem>
                         <asp:ListItem Text="Doctorado" Value="Doctorado"></asp:ListItem>
                         <asp:ListItem Text="Primaria Incompleta" Value="Primaria Incompleta" Width="Auto"></asp:ListItem>
@@ -521,7 +519,7 @@
 
             <br />
 
-            <div class="row">
+            <div class="row text-center">
 
                 <div class="col-md-4 col-md-offset-4">
                     <asp:ImageButton alt="-" ID="btnGuardar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="GuardarRegistro"

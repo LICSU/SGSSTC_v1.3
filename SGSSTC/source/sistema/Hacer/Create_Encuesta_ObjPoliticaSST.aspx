@@ -428,7 +428,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row text-center">
 
         <div class="col-md-4">
             <asp:ImageButton alt="-" ID="btnGenerar" runat="server" ImageUrl="~\ico\view.png"

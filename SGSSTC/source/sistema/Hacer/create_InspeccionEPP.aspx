@@ -60,7 +60,7 @@
 
                 <asp:Label runat="server" ID="Label1"></asp:Label>
 
-                <div class="row">
+                <div class="row text-center">
 
                     <asp:PlaceHolder runat="server" ID="phGenerarDocumento" Visible="False">
                         <div class="col-md-3 col-md-offset-1">

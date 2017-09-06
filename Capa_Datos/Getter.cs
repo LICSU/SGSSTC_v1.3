@@ -933,26 +933,20 @@ namespace Capa_Datos
             return consulta;
         }
 
-        public static List<trabajador> TrabajadoresByCapacidad(int id_sucursal, DateTime fechaIni, DateTime fechaFin)
+        public static List<trabajador_gestion> Trabajadores_Capacitacion(int _id_trabajador, DateTime fechaIni, DateTime fechaFin)
         {
-            GrupoLiEntities contexto1 = new GrupoLiEntities();
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            
+            List<trabajador_gestion> consulta = new List<trabajador_gestion>();
+            consulta = contexto.trabajador_gestion.Where(x => 
+            x.id_trabajador == _id_trabajador &&
+            x.gestion_laboral.fecha >= fechaIni &&
+            x.gestion_laboral.fecha <= fechaFin &&
+            x.gestion_laboral.tipo_gestion == 2 &&
+            x.asistencia != "-"
+            ).ToList();
 
-            List<trabajador> query = (
-                  from T in contexto1.trabajador
-                  join TG in contexto1.trabajador_gestion on T.id_trabajador equals TG.id_trabajador
-                  join PT in contexto1.puesto_trabajo on T.id_puesto_trabajo equals PT.id_puesto_trabajo
-                  join A in contexto1.area on PT.id_area equals A.id_area
-                  join SU in contexto1.sucursal on A.id_sucursal equals SU.id_sucursal
-                  join GL in contexto1.gestion_laboral on TG.id_ges_lab equals GL.id_ges_lab
-
-                  where ((TG.gestion_laboral.tipo_gestion == 2
-                  && GL.fecha >= fechaIni
-                  && GL.fecha <= fechaFin
-                  && SU.id_sucursal == id_sucursal)
-                  && TG.asistencia != "-")
-                  select T).ToList();
-
-            return query.Distinct().ToList();
+            return consulta;
         }
 
         public static int TrabajadorByCedula(string cedula)

@@ -629,7 +629,7 @@
             <asp:HiddenField ID="rutaImg" runat="server"></asp:HiddenField>
         </div>
 
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-4 col-md-offset-2">
                 <asp:ImageButton alt="-" ID="btnCalculate" runat="server" ImageUrl="~\ico\calculator.png"
                     OnClick="btnCalculate_Onclick" />

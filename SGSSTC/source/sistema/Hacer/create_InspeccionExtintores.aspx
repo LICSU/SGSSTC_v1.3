@@ -256,7 +256,7 @@
                 </div>
             </asp:PlaceHolder>
 
-            <div class="row">
+            <div class="row text-center">
                 <asp:PlaceHolder runat="server" ID="phBotones" Visible="false">
                     <div class="col-md-4">
                         <asp:ImageButton alt="-" ID="btnDescargar" runat="server" ImageUrl="~\ico\descargar.png"

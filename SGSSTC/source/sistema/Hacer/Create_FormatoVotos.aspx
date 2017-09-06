@@ -113,7 +113,7 @@
     </div>
     <br />
 
-    <div class="row">
+    <div class="row text-center">
 
         <div class="col-md-4 col-md-offset-4">
             <asp:ImageButton alt="-" ID="btnPrint" runat="server" ImageUrl="~\ico\print.png"
