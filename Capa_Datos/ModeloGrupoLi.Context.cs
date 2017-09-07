@@ -72,6 +72,7 @@ namespace Capa_Datos
         public virtual DbSet<norma_claseciiu> norma_claseciiu { get; set; }
         public virtual DbSet<norma_sucursal> norma_sucursal { get; set; }
         public virtual DbSet<obligacion> obligacion { get; set; }
+        public virtual DbSet<perfil_cargo> perfil_cargo { get; set; }
         public virtual DbSet<plan> plan { get; set; }
         public virtual DbSet<plan_trabajo> plan_trabajo { get; set; }
         public virtual DbSet<politica_sst> politica_sst { get; set; }

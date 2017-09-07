@@ -1,56 +1,52 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_MetIdentificacionRiesgos.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_MetIdentificacionRiesgos" %>
 
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
-
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+	<ol class="breadcrumb">
+		<li><a href="#">Fase: Planear</a></li>
+		<li><a href="#">Metodología Para Evaluación De Riesgos</a></li>
+	</ol>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Fase: Hacer</a></li>
-        <li><a href="#">Metodología Para Evaluación De Riesgos</a></li>
-    </ol>
+	<div class="page-header">
+		<h1 class="text-center">Metodología Para La Evaluación De Riesgos</h1>
+	</div>
 
-    <div class="page-header">
-        <h1 class="text-center">Metodología Para La Evaluación De Riesgos</h1>
-    </div>
+	<div class="row form-group">
 
-    <div class="row form-group">
+		<asp:PlaceHolder runat="server" ID="phEmpresa">
+			<div class="col-md-4">
+				<h4 class="text-center">Empresa</h4>
+				<asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
+			</div>
+		</asp:PlaceHolder>
 
-        <asp:PlaceHolder runat="server" ID="phEmpresa">
-            <div class="col-md-4">
-                <h4 class="text-center">Empresa</h4>
-                <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
-            </div>
-        </asp:PlaceHolder>
+		<asp:PlaceHolder runat="server" ID="phSucursal">
+			<div class="col-md-4 col-md-offset-4">
+				<h4 class="text-center">Sucursal</h4>
+				<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
+					OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+				</asp:DropDownList>
 
-        <asp:PlaceHolder runat="server" ID="phSucursal">
-            <div class="col-md-4 col-md-offset-4">
-                <h4 class="text-center">Sucursal</h4>
-                <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
-                    OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
-                </asp:DropDownList>
+				<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+					Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
+					runat="server" ValidationGroup="ValidationAdd" />
+			</div>
+		</asp:PlaceHolder>
+	</div>
 
-                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
-                    Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
-                    runat="server" ValidationGroup="ValidationAdd" />
-            </div>
-        </asp:PlaceHolder>
-    </div>
+	<div class="row">
 
-    <div class="row">
-
-        <CKEditor:CKEditorControl Height="1000" ID="txtIdentificacionRiesgos" BasePath="~/ckeditor/" runat="server">
+		<CKEditor:CKEditorControl Height="1000" ID="txtIdentificacionRiesgos" BasePath="~/ckeditor/" runat="server">
 					<style>
-					    tr, td, th {
-					        position: relative;
-					        padding: 10px;
-					    }
+						tr, td, th {
+							position: relative;
+							padding: 10px;
+						}
 					</style>
 					<h3> Objetivo. </h3><br/>
 					La valoración de los riesgos derivados de las actividades laborales es la base para el Sistema de Gestión de Seguridad y Salud en el Trabajo, 
@@ -765,24 +761,24 @@
 							</ul>   
 						</li>
 					</ul>
-        </CKEditor:CKEditorControl>
+		</CKEditor:CKEditorControl>
 
-    </div>
+	</div>
 
-    <br />
+	<br />
 
-    <div class="row">
-        <div class="col-md-4 col-md-offset-2">
-            <asp:Button ID="btnPrint" runat="server" CssClass="btn btn-success"
-                OnClick="GenerarDocumento" Text="Generar Documento" ValidationGroup="ValidationAdd" />
-        </div>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-2">
+			<asp:Button ID="btnPrint" runat="server" CssClass="btn btn-success"
+				OnClick="GenerarDocumento" Text="Generar Documento" ValidationGroup="ValidationAdd" />
+		</div>
 
-        <div class="col-md-4">
-            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary"
-                OnClick="btnGuardar_Click" Text="Guardar y/o Actualizar Datos" ValidationGroup="ValidationAdd" />
-        </div>
+		<div class="col-md-4">
+			<asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary"
+				OnClick="btnGuardar_Click" Text="Guardar y/o Actualizar Datos" ValidationGroup="ValidationAdd" />
+		</div>
 
-    </div>
+	</div>
 
 
 </asp:Content>

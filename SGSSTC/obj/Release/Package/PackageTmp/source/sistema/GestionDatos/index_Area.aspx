@@ -267,15 +267,9 @@
 
                                     <asp:DropDownList runat="server" ID="ddlTipoAreaAdd" class="form-control"
                                         data-toggle="tooltip" data-placement="bottom" title="Seleccione un Tipo de Área">
-                                        <asp:ListItem Text="Seleccione el Tipo de Área" Value=""></asp:ListItem>
                                         <asp:ListItem Text="Administrativa" Value="Administrativa"></asp:ListItem>
                                         <asp:ListItem Text="Operativa" Value="Operativa"></asp:ListItem>
                                     </asp:DropDownList>
-
-                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                        Font-Bold="true" ControlToValidate="ddlTipoAreaAdd" runat="server"
-                                        ValidationGroup="ValidationAdd" />
                                 </div>
 
                                 <div class="col-md-4">

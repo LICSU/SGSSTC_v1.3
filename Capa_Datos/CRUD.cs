@@ -883,7 +883,7 @@ namespace Capa_Datos
                 fecha_ingreso = Convert.ToDateTime(valores[19]),
                 tipo_vinculacion = valores[20],
                 tipo_horario = valores[21],
-                id_cno = Convert.ToInt32(valores[22]),
+                id_perfil_cargo = Convert.ToInt32(valores[22]),
                 salario = Convert.ToInt32(valores[23]),
                 mano_dominante = valores[24]
             };

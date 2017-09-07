@@ -42,7 +42,7 @@ namespace SGSSTC.source.sistema.Verificar
 				txtDescAccidente.Text = item.descripcion;
 
 				txtTipoVinculacion.Text = item.trabajador.tipo_vinculacion;
-				txtCargo.Text = item.trabajador.cno.ocupacion;
+				txtCargo.Text = item.trabajador.perfil_cargo.cno.ocupacion;
 				ddlMano.Text = Convert.ToString(item.trabajador.mano_dominante);
 				txtSalario.Text = Convert.ToString(item.trabajador.salario);
 

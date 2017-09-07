@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <ol class="breadcrumb">
-        <li><a href="#">Fase: Hacer</a></li>
+        <li><a href="#">Fase: Planear</a></li>
         <li><a href="#">Política SST</a></li>
     </ol>
 
@@ -48,7 +48,14 @@
 
                 <div id="collapse3" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <CKEditor:CKEditorControl ID="txtAlcance" BasePath="/ckeditor/" runat="server"></CKEditor:CKEditorControl>
+                        <CKEditor:CKEditorControl ID="txtAlcance" BasePath="/ckeditor/" runat="server">
+                            <p><h3><strong>Compromiso de la Empresa</strong></h3><br />
+                            
+                            Establecer la postura de la Organización con respecto a la protección en materia de seguridad y
+                                salud de sus empleados, desarrollando todas las actividades operacionales en pro de preservar
+                                la integridad del personal, las instalaciones, la producción y el medio ambiente</p>
+
+                        </CKEditor:CKEditorControl>
                     </div>
 
                 </div>

@@ -217,56 +217,49 @@
 
 								<ul class="dropdown-menu">
 									<li>
-										<a href="../Hacer/index_PlanTrabajo.aspx">
+										<a href="../Planear/index_PlanTrabajo.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Plan de trabajo anual</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_Politica_SST.aspx">
+										<a href="../Planear/index_Politica_SST.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Política SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_ComunicacionPoliticaSST.aspx">
+										<a href="../Planear/index_ComunicacionPoliticaSST.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Comunicación de la Política SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_Encuesta_PoliticaSST.aspx">
+										<a href="../Planear/index_Encuesta_PoliticaSST.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Encuesta de Conocimiento de la Política de SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_Encuesta_PoliticaSST.aspx">
+										<a href="#">
 											<i class="fa fa-circle-o"></i>
 											<span>Encuesta de Conocimiento de los Objetivos de SST</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../EvaluacionInicial/index_Indicadores.aspx">
-											<i class="fa fa-circle-o"></i>
-											<span>Indicadores definidos por la Empresa</span>
-										</a>
-									</li>
-
-									<li>
-										<a href="../Hacer/index_RecursosEconomicos.aspx">
+										<a href="../Planear/index_RecursosEconomicos.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Recursos Económicos aprobados por la Gerencia</span>
 										</a>
 									</li>
 
 									<li>
-										<a href="../Hacer/index_ActaCopasst.aspx">
+										<a href="../Planear/index_ActaCopasst.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Acta del Copasst</span>
 										</a>
@@ -283,7 +276,7 @@
 								<ul class="dropdown-menu">
 
 									<li>
-										<a href="../Hacer/index_ControlDocumentos.aspx">
+										<a href="../Planear/index_ControlDocumentos.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Control de Documentos  </span>
 											<span class="label bg-yellow">Fase En Desarrollo</span>
@@ -291,7 +284,7 @@
 									</li>
 
 									<li>
-										<a href="../Hacer/index_Mecanismos.aspx">
+										<a href="../Planear/index_Mecanismos.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Mecanismos  </span>
 										</a>
@@ -307,7 +300,7 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="../Hacer/index_MatrizResponsabilidades.aspx">
+										<a href="../Planear/index_MatrizResponsabilidades.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Matriz de Responsabilidades y competencias</span>
 										</a>
@@ -322,7 +315,7 @@
 									</li>
 
 									<li>
-										<a href="../Hacer/index_AsignacionResponsable.aspx">
+										<a href="../Planear/index_AsignacionResponsable.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Acta de Asignación del Responsable del SGSST</span>
 											<span class="label bg-green">Fase Beta</span>
@@ -347,7 +340,7 @@
 									</li>
 
 									<li>
-										<a href="../Hacer/index_PlanCapacitacion.aspx">
+										<a href="../Planear/index_PlanCapacitacion.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Plan de Capacitación, Matriz de Capacitación</span>
 											<span class="label bg-green">Fase Beta</span>
@@ -355,7 +348,7 @@
 									</li>
 
 									<li>
-										<a href="../Hacer/index_PlanInduccion.aspx">
+										<a href="../Planear/index_PlanInduccion.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Programa de Inducción y reinducción  </span>
 											<span class="label bg-green">Fase Beta</span>
@@ -372,7 +365,7 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="../Hacer/index_MetIdentificacionRiesgos.aspx">
+										<a href="../Planear/index_MetIdentificacionRiesgos.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Metodología para la identificación de riesgos  </span>
 											<span class="label bg-green">Fase Beta</span>
@@ -380,7 +373,7 @@
 									</li>
 
 									<li>
-										<a href="../Hacer/index_MatrizRiesgos.aspx">
+										<a href="../Planear/index_MatrizRiesgos.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Matriz de Riesgos</span>
 										</a>
@@ -404,7 +397,7 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="../Hacer/index_MatrizLegal.aspx">
+										<a href="../Planear/index_MatrizLegal.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Matriz Legal</span>
 										</a>
@@ -597,7 +590,7 @@
 									</li>
 
 									<li>
-										<a href="#"><i class="fa fa-circle-o"></i>
+										<a href="../Hacer/index_PerfilCargo.aspx"><i class="fa fa-circle-o"></i>
 											<span>Perfiles de Cargo</span>
 										</a>
 									</li>

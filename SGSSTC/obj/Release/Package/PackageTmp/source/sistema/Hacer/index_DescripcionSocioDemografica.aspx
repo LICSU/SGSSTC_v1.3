@@ -3,8 +3,6 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -36,7 +34,6 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
 
                         <asp:GridView ID="GridView1"
                             class="table table-bordered table-hover dataTable"
@@ -46,13 +43,12 @@
                             PageSize="10"
                             OnRowCommand="GridView1_RowCommand"
                             OnPageIndexChanging="GridView1_PageIndexChanging"
-                            OnRowCreated="GridView1_RowCreated"
                             EmptyDataText="No existen Registros">
 
                             <RowStyle HorizontalAlign="Center" />
 
                             <Columns>
-                                <asp:TemplateField HeaderText="ID" HeaderStyle-CssClass="text-center">
+                                <asp:TemplateField HeaderText="ID" HeaderStyle-CssClass="text-center" Visible="false" >
                                     <ItemTemplate>
                                         <asp:Label ID="id_desc_socio" runat="server" Text='<%# Eval("id_desc_socio") %>' />
                                     </ItemTemplate>
@@ -106,47 +102,49 @@
             </div>
             <br />
 
-
-            <!-- Delete Modal -->
-            <div id="deleteModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h3>Eliminar Registro</h3>
-                        </div>
-
-                        <asp:UpdatePanel ID="upDel" runat="server">
-                            <ContentTemplate>
-
-                                <div class="modal-body form-group">
-                                    ¿Seguro desea eliminar este registro?
-                                <asp:HiddenField ID="hdfPerfilIDDel" runat="server" />
-                                </div>
-
-                                <div class="modal-footer">
-                                    <div class="row">
-                                        <div class="col-md-4 col-md-offset-2">
-                                            <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info"
-                                                OnClick="EliminarRegistro" />
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="btnDelete" EventName="Click" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                    </div>
-                </div>
-            </div>
         </ContentTemplate>
     </asp:UpdatePanel>
+
+
+    <!-- Delete Modal -->
+    <div id="deleteModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3>Eliminar Registro</h3>
+                </div>
+
+                <asp:UpdatePanel ID="upDel" runat="server">
+                    <ContentTemplate>
+
+                        <div class="modal-body form-group">
+                            ¿Seguro desea eliminar este registro?
+                                <asp:HiddenField ID="hdfPerfilIDDel" runat="server" />
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-2">
+                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info"
+                                        OnClick="EliminarRegistro" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="btnDelete" EventName="Click" />
+                    </Triggers>
+                </asp:UpdatePanel>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>

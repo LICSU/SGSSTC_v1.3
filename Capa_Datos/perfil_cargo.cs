@@ -12,19 +12,22 @@ namespace Capa_Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class cno
+    public partial class perfil_cargo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public cno()
+        public perfil_cargo()
         {
-            this.perfil_cargo = new HashSet<perfil_cargo>();
+            this.trabajador = new HashSet<trabajador>();
         }
     
-        public int id_cno { get; set; }
-        public string codigo { get; set; }
-        public string ocupacion { get; set; }
+        public int id_perfil_cargo { get; set; }
+        public string descripcion { get; set; }
+        public Nullable<int> id_cno { get; set; }
+        public Nullable<int> id_empresa { get; set; }
     
+        public virtual cno cno { get; set; }
+        public virtual empresa empresa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<perfil_cargo> perfil_cargo { get; set; }
+        public virtual ICollection<trabajador> trabajador { get; set; }
     }
 }

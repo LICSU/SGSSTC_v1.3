@@ -54,14 +54,13 @@ namespace Capa_Datos
         public string tipo_vinculacion { get; set; }
         public string codigo_independiente { get; set; }
         public string tipo_horario { get; set; }
-        public Nullable<int> id_cno { get; set; }
+        public Nullable<int> id_perfil_cargo { get; set; }
         public Nullable<double> salario { get; set; }
         public string mano_dominante { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<at_it_el_pa> at_it_el_pa { get; set; }
         public virtual ccf ccf { get; set; }
-        public virtual cno cno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<desc_socio> desc_socio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -71,6 +70,7 @@ namespace Capa_Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<historia_clinica_ocupacional> historia_clinica_ocupacional { get; set; }
         public virtual municipio municipio { get; set; }
+        public virtual perfil_cargo perfil_cargo { get; set; }
         public virtual puesto_trabajo puesto_trabajo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<trabajador_estatus> trabajador_estatus { get; set; }

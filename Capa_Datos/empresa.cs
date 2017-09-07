@@ -21,6 +21,7 @@ namespace Capa_Datos
             this.empresa_itemdivision = new HashSet<empresa_itemdivision>();
             this.estatus = new HashSet<estatus>();
             this.horario = new HashSet<horario>();
+            this.perfil_cargo = new HashSet<perfil_cargo>();
             this.politica_sst = new HashSet<politica_sst>();
             this.sucursal = new HashSet<sucursal>();
         }
@@ -54,6 +55,8 @@ namespace Capa_Datos
         public virtual ICollection<estatus> estatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<horario> horario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<perfil_cargo> perfil_cargo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<politica_sst> politica_sst { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

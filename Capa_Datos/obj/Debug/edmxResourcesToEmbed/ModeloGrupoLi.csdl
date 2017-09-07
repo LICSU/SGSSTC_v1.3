@@ -151,7 +151,7 @@
     <Property Name="id_cno" Type="Int32" Nullable="false" />
     <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ocupacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="trabajador" Relationship="Self.FK_trabajador_cno" FromRole="cno" ToRole="trabajador" />
+    <NavigationProperty Name="perfil_cargo" Relationship="Self.FK_perfil_cargo_cno" FromRole="cno" ToRole="perfil_cargo" />
   </EntityType>
   <EntityType Name="consulta">
     <Key>
@@ -280,6 +280,7 @@
     <NavigationProperty Name="empresa_itemdivision" Relationship="Self.FK_empresa_itemdivision_empresa" FromRole="empresa" ToRole="empresa_itemdivision" />
     <NavigationProperty Name="estatus" Relationship="Self.FK_estatus_empresa" FromRole="empresa" ToRole="estatus" />
     <NavigationProperty Name="horario" Relationship="Self.FK_horario_empresa" FromRole="empresa" ToRole="horario" />
+    <NavigationProperty Name="perfil_cargo" Relationship="Self.FK_perfil_cargo_empresa" FromRole="empresa" ToRole="perfil_cargo" />
     <NavigationProperty Name="politica_sst" Relationship="Self.FK_politica_sst_empresa1" FromRole="empresa" ToRole="politica_sst" />
     <NavigationProperty Name="sucursal" Relationship="Self.FK_sucursal_empresa" FromRole="empresa" ToRole="sucursal" />
   </EntityType>
@@ -746,6 +747,18 @@
     <NavigationProperty Name="usuario" Relationship="Self.FK_obligacion_usuario" FromRole="obligacion" ToRole="usuario" />
     <NavigationProperty Name="soporte" Relationship="Self.FK_soporte_obligacion" FromRole="obligacion" ToRole="soporte" />
   </EntityType>
+  <EntityType Name="perfil_cargo">
+    <Key>
+      <PropertyRef Name="id_perfil_cargo" />
+    </Key>
+    <Property Name="id_perfil_cargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="id_cno" Type="Int32" />
+    <Property Name="id_empresa" Type="Int32" />
+    <NavigationProperty Name="cno" Relationship="Self.FK_perfil_cargo_cno" FromRole="perfil_cargo" ToRole="cno" />
+    <NavigationProperty Name="empresa" Relationship="Self.FK_perfil_cargo_empresa" FromRole="perfil_cargo" ToRole="empresa" />
+    <NavigationProperty Name="trabajador" Relationship="Self.FK_trabajador_perfil_cargo" FromRole="perfil_cargo" ToRole="trabajador" />
+  </EntityType>
   <EntityType Name="plan">
     <Key>
       <PropertyRef Name="id_plan" />
@@ -1029,17 +1042,17 @@
     <Property Name="tipo_vinculacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="codigo_independiente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="tipo_horario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="id_cno" Type="Int32" />
+    <Property Name="id_perfil_cargo" Type="Int32" />
     <Property Name="salario" Type="Double" />
     <Property Name="mano_dominante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="at_it_el_pa" Relationship="Self.FK_at_it_el_pa_trabajador" FromRole="trabajador" ToRole="at_it_el_pa" />
     <NavigationProperty Name="ccf" Relationship="Self.FK_trabajador_ccf" FromRole="trabajador" ToRole="ccf" />
-    <NavigationProperty Name="cno" Relationship="Self.FK_trabajador_cno" FromRole="trabajador" ToRole="cno" />
     <NavigationProperty Name="desc_socio" Relationship="Self.FK_desc_socio_trabajador" FromRole="trabajador" ToRole="desc_socio" />
     <NavigationProperty Name="documento" Relationship="Self.FK_documentos_trabajador" FromRole="trabajador" ToRole="documento" />
     <NavigationProperty Name="encuesta_politica" Relationship="Self.FK_encuesta_politica_trabajador" FromRole="trabajador" ToRole="encuesta_politica" />
     <NavigationProperty Name="historia_clinica_ocupacional" Relationship="Self.FK_historia_clinica_ocupacional_trabajador" FromRole="trabajador" ToRole="historia_clinica_ocupacional" />
     <NavigationProperty Name="municipio" Relationship="Self.FK_trabajador_municipio" FromRole="trabajador" ToRole="municipio" />
+    <NavigationProperty Name="perfil_cargo" Relationship="Self.FK_trabajador_perfil_cargo" FromRole="trabajador" ToRole="perfil_cargo" />
     <NavigationProperty Name="puesto_trabajo" Relationship="Self.FK_trabajador_puesto_trabajo" FromRole="trabajador" ToRole="puesto_trabajo" />
     <NavigationProperty Name="trabajador_estatus" Relationship="Self.FK_trabajador_estatus_trabajador" FromRole="trabajador" ToRole="trabajador_estatus" />
     <NavigationProperty Name="trabajador_gestion" Relationship="Self.FK_trabajador_gestion_trabajador" FromRole="trabajador" ToRole="trabajador_gestion" />
@@ -1384,14 +1397,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_trabajador_cno">
+  <Association Name="FK_perfil_cargo_cno">
     <End Role="cno" Type="Self.cno" Multiplicity="0..1" />
-    <End Role="trabajador" Type="Self.trabajador" Multiplicity="*" />
+    <End Role="perfil_cargo" Type="Self.perfil_cargo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="cno">
         <PropertyRef Name="id_cno" />
       </Principal>
-      <Dependent Role="trabajador">
+      <Dependent Role="perfil_cargo">
         <PropertyRef Name="id_cno" />
       </Dependent>
     </ReferentialConstraint>
@@ -1560,6 +1573,20 @@
         <PropertyRef Name="id_empresa" />
       </Principal>
       <Dependent Role="horario">
+        <PropertyRef Name="id_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_perfil_cargo_empresa">
+    <End Role="empresa" Type="Self.empresa" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="perfil_cargo" Type="Self.perfil_cargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="id_empresa" />
+      </Principal>
+      <Dependent Role="perfil_cargo">
         <PropertyRef Name="id_empresa" />
       </Dependent>
     </ReferentialConstraint>
@@ -2040,6 +2067,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_trabajador_perfil_cargo">
+    <End Role="perfil_cargo" Type="Self.perfil_cargo" Multiplicity="0..1" />
+    <End Role="trabajador" Type="Self.trabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfil_cargo">
+        <PropertyRef Name="id_perfil_cargo" />
+      </Principal>
+      <Dependent Role="trabajador">
+        <PropertyRef Name="id_perfil_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_planes_sucursal">
     <End Role="sucursal" Type="Self.sucursal" Multiplicity="0..1" />
     <End Role="plan" Type="Self.plan" Multiplicity="*" />
@@ -2067,7 +2106,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Pregunta_usuario">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="usuario">
@@ -2079,7 +2120,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Respuesta_Pregunta">
-    <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="0..1" />
+    <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Respuesta" Type="Self.Respuesta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Pregunta">
@@ -2246,6 +2289,7 @@
     <EntitySet Name="norma_claseciiu" EntityType="Self.norma_claseciiu" />
     <EntitySet Name="norma_sucursal" EntityType="Self.norma_sucursal" />
     <EntitySet Name="obligacion" EntityType="Self.obligacion" />
+    <EntitySet Name="perfil_cargo" EntityType="Self.perfil_cargo" />
     <EntitySet Name="plan" EntityType="Self.plan" />
     <EntitySet Name="plan_trabajo" EntityType="Self.plan_trabajo" />
     <EntitySet Name="politica_sst" EntityType="Self.politica_sst" />
@@ -2359,9 +2403,9 @@
       <End Role="claseCiiu" EntitySet="claseCiiu" />
       <End Role="riesgos_item" EntitySet="riesgos_item" />
     </AssociationSet>
-    <AssociationSet Name="FK_trabajador_cno" Association="Self.FK_trabajador_cno">
+    <AssociationSet Name="FK_perfil_cargo_cno" Association="Self.FK_perfil_cargo_cno">
       <End Role="cno" EntitySet="cno" />
-      <End Role="trabajador" EntitySet="trabajador" />
+      <End Role="perfil_cargo" EntitySet="perfil_cargo" />
     </AssociationSet>
     <AssociationSet Name="FK_departamento_Region" Association="Self.FK_departamento_Region">
       <End Role="Region" EntitySet="Region" />
@@ -2414,6 +2458,10 @@
     <AssociationSet Name="FK_horario_empresa" Association="Self.FK_horario_empresa">
       <End Role="empresa" EntitySet="empresa" />
       <End Role="horario" EntitySet="horario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_perfil_cargo_empresa" Association="Self.FK_perfil_cargo_empresa">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="perfil_cargo" EntitySet="perfil_cargo" />
     </AssociationSet>
     <AssociationSet Name="FK_politica_sst_empresa1" Association="Self.FK_politica_sst_empresa1">
       <End Role="empresa" EntitySet="empresa" />
@@ -2558,6 +2606,10 @@
     <AssociationSet Name="FK_soporte_obligacion" Association="Self.FK_soporte_obligacion">
       <End Role="obligacion" EntitySet="obligacion" />
       <End Role="soporte" EntitySet="soporte" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trabajador_perfil_cargo" Association="Self.FK_trabajador_perfil_cargo">
+      <End Role="perfil_cargo" EntitySet="perfil_cargo" />
+      <End Role="trabajador" EntitySet="trabajador" />
     </AssociationSet>
     <AssociationSet Name="FK_planes_sucursal" Association="Self.FK_planes_sucursal">
       <End Role="sucursal" EntitySet="sucursal" />

@@ -1,27 +1,23 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Mecanismos.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_Mecanismos" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
-
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
 
     <asp:UpdatePanel ID="updatePanelPrinicpal" runat="server">
 
         <ContentTemplate>
 
             <ol class="breadcrumb">
-                <li><a href="#">Fase: Hacer</a></li>
+                <li><a href="#">Fase: Planear</a></li>
                 <li><a href="#">Mecanismos</a></li>
             </ol>
 
             <div class="page-header">
                 <h1 class="text-center">Mecanismo para recibir, documentar y responder a las comunicaciones</h1>
             </div>
-
 
             <asp:PlaceHolder runat="server" ID="phSucursal">
                 <div class="row">
@@ -38,7 +34,7 @@
             <div class="row" style="overflow: auto;">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
+
 
                         <asp:GridView ID="GridView1"
                             class="table table-bordered table-hover dataTable"
@@ -54,47 +50,56 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Id Categoria" Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="Num" runat="server" Text='<%# Eval("id_tipo_documento") %>' /></ItemTemplate>
+                                        <asp:Label ID="Num" runat="server" Text='<%# Eval("id_tipo_documento") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="TIPO DE DOCUMENTACIÓN" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="nombre" runat="server" Text='<%# Eval("nombre") %>' /></ItemTemplate>
+                                        <asp:Label ID="nombre" runat="server" Text='<%# Eval("nombre") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="COMUNICACIÓN DIRIGIDA A" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="dirigida" runat="server" Text='<%# Eval("dirigida") %>' /></ItemTemplate>
+                                        <asp:Label ID="dirigida" runat="server" Text='<%# Eval("dirigida") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="MODALIDAD DE COMUNICACIÓN" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="modalidad" runat="server" Text='<%# Eval("modalidad") %>' /></ItemTemplate>
+                                        <asp:Label ID="modalidad" runat="server" Text='<%# Eval("modalidad") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="FECHA" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="fecha" runat="server" Text='<%# Eval("fecha") %>' /></ItemTemplate>
+                                        <asp:Label ID="fecha" runat="server" Text='<%# Eval("fecha") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="RESPONSABLE" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="responsable" runat="server" Text='<%# Eval("responsable") %>' /></ItemTemplate>
+                                        <asp:Label ID="responsable" runat="server" Text='<%# Eval("responsable") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="APROBADO POR" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("aprobado") %>' /></ItemTemplate>
+                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("aprobado") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="ARCHIVADO O ALMACENADO" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("archivado") %>' /></ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("archivado") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="ESTATUS" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="estatus" runat="server" Text='<%# Eval("estatus") %>' /></ItemTemplate>
+                                        <asp:Label ID="estatus" runat="server" Text='<%# Eval("estatus") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
@@ -467,9 +472,11 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnEditar" runat="server" Text="Guardar" class="btn btn-block btn-info" OnClick="EditarRegistro" ValidationGroup="ValidationEdit" /></div>
+                                    <asp:Button ID="btnEditar" runat="server" Text="Guardar" class="btn btn-block btn-info" OnClick="EditarRegistro" ValidationGroup="ValidationEdit" />
+                                </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
 
@@ -504,9 +511,11 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" OnClick="EliminarRegistro" /></div>
+                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" OnClick="EliminarRegistro" />
+                                </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
 
@@ -518,7 +527,5 @@
             </div>
         </div>
     </div>
-
-
 
 </asp:Content>

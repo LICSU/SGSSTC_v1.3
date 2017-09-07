@@ -1352,6 +1352,7 @@
     <Content Include="source\sistema\Hacer\create_VigilanciaEpidemiologica.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_AnalisisVulnerabilidad.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_AutoEvaluacion.aspx" />
+    <Content Include="source\sistema\Hacer\index_PerfilCargo.aspx" />
     <Content Include="source\sistema\Verificar\index_Indicadores.aspx" />
     <Content Include="source\sistema\Hacer\index_Inspecciones.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_PorcentajeCapacitacion.aspx" />
@@ -1403,10 +1404,10 @@
     <Content Include="source\sistema\Hacer\Create_ReunionCopasst.aspx" />
     <Content Include="source\sistema\Planear\index_ActaCopasst.aspx" />
     <Content Include="source\sistema\Hacer\index_Alarmas.aspx" />
-    <Content Include="source\sistema\Hacer\index_AsignacionResponsable.aspx" />
+    <Content Include="source\sistema\Planear\index_AsignacionResponsable.aspx" />
     <Content Include="source\sistema\Hacer\index_BrigadaEmergencias.aspx" />
     <Content Include="source\sistema\Planear\index_ComunicacionPoliticaSST.aspx" />
-    <Content Include="source\sistema\Hacer\index_ControlDocumentos.aspx" />
+    <Content Include="source\sistema\Planear\index_ControlDocumentos.aspx" />
     <Content Include="source\sistema\Hacer\index_DescGeneralEmpresa.aspx" />
     <Content Include="source\sistema\Hacer\index_DescripcionSocioDemografica.aspx" />
     <Content Include="source\sistema\Planear\index_Encuesta_PoliticaSST.aspx" />
@@ -1420,15 +1421,15 @@
     <Content Include="source\sistema\Hacer\index_InventarioRiesgos.aspx" />
     <Content Include="source\sistema\Hacer\index_Inventario_EPP.aspx" />
     <Content Include="source\sistema\Hacer\index_MapaRiesgos.aspx" />
-    <Content Include="source\sistema\Hacer\index_MatrizLegal.aspx" />
-    <Content Include="source\sistema\Hacer\index_MatrizResponsabilidades.aspx" />
-    <Content Include="source\sistema\Hacer\index_MatrizRiesgos.aspx" />
-    <Content Include="source\sistema\Hacer\index_Mecanismos.aspx" />
-    <Content Include="source\sistema\Hacer\index_MetIdentificacionRiesgos.aspx" />
+    <Content Include="source\sistema\Planear\index_MatrizLegal.aspx" />
+    <Content Include="source\sistema\Planear\index_MatrizResponsabilidades.aspx" />
+    <Content Include="source\sistema\Planear\index_MatrizRiesgos.aspx" />
+    <Content Include="source\sistema\Planear\index_Mecanismos.aspx" />
+    <Content Include="source\sistema\Planear\index_MetIdentificacionRiesgos.aspx" />
     <Content Include="source\sistema\Hacer\index_Obligaciones.aspx" />
-    <Content Include="source\sistema\Hacer\index_PlanCapacitacion.aspx" />
+    <Content Include="source\sistema\Planear\index_PlanCapacitacion.aspx" />
     <Content Include="source\sistema\Hacer\index_PlanillaEntregaEpp.aspx" />
-    <Content Include="source\sistema\Hacer\index_PlanInduccion.aspx" />
+    <Content Include="source\sistema\Planear\index_PlanInduccion.aspx" />
     <Content Include="source\sistema\Planear\index_PlanTrabajo.aspx" />
     <Content Include="source\sistema\Hacer\index_Plan_Emergencias.aspx" />
     <Content Include="source\sistema\Hacer\index_Plan_Evacuacion.aspx" />
@@ -1641,6 +1642,13 @@
     </Compile>
     <Compile Include="source\sistema\EvaluacionInicial\index_AutoEvaluacion.aspx.designer.cs">
       <DependentUpon>index_AutoEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="source\sistema\Hacer\index_PerfilCargo.aspx.cs">
+      <DependentUpon>index_PerfilCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="source\sistema\Hacer\index_PerfilCargo.aspx.designer.cs">
+      <DependentUpon>index_PerfilCargo.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Verificar\index_Indicadores.aspx.cs">
       <DependentUpon>index_Indicadores.aspx</DependentUpon>
@@ -1999,11 +2007,11 @@
     <Compile Include="source\sistema\Hacer\index_Alarmas.aspx.designer.cs">
       <DependentUpon>index_Alarmas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_AsignacionResponsable.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_AsignacionResponsable.aspx.cs">
       <DependentUpon>index_AsignacionResponsable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_AsignacionResponsable.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_AsignacionResponsable.aspx.designer.cs">
       <DependentUpon>index_AsignacionResponsable.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_BrigadaEmergencias.aspx.cs">
@@ -2020,11 +2028,11 @@
     <Compile Include="source\sistema\Planear\index_ComunicacionPoliticaSST.aspx.designer.cs">
       <DependentUpon>index_ComunicacionPoliticaSST.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_ControlDocumentos.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_ControlDocumentos.aspx.cs">
       <DependentUpon>index_ControlDocumentos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_ControlDocumentos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_ControlDocumentos.aspx.designer.cs">
       <DependentUpon>index_ControlDocumentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_DescGeneralEmpresa.aspx.cs">
@@ -2118,39 +2126,39 @@
     <Compile Include="source\sistema\Hacer\index_MapaRiesgos.aspx.designer.cs">
       <DependentUpon>index_MapaRiesgos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MatrizLegal.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_MatrizLegal.aspx.cs">
       <DependentUpon>index_MatrizLegal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MatrizLegal.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_MatrizLegal.aspx.designer.cs">
       <DependentUpon>index_MatrizLegal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MatrizResponsabilidades.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_MatrizResponsabilidades.aspx.cs">
       <DependentUpon>index_MatrizResponsabilidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MatrizResponsabilidades.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_MatrizResponsabilidades.aspx.designer.cs">
       <DependentUpon>index_MatrizResponsabilidades.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MatrizRiesgos.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_MatrizRiesgos.aspx.cs">
       <DependentUpon>index_MatrizRiesgos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MatrizRiesgos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_MatrizRiesgos.aspx.designer.cs">
       <DependentUpon>index_MatrizRiesgos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_Mecanismos.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_Mecanismos.aspx.cs">
       <DependentUpon>index_Mecanismos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_Mecanismos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_Mecanismos.aspx.designer.cs">
       <DependentUpon>index_Mecanismos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MetIdentificacionRiesgos.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_MetIdentificacionRiesgos.aspx.cs">
       <DependentUpon>index_MetIdentificacionRiesgos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_MetIdentificacionRiesgos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_MetIdentificacionRiesgos.aspx.designer.cs">
       <DependentUpon>index_MetIdentificacionRiesgos.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_Obligaciones.aspx.cs">
@@ -2160,11 +2168,11 @@
     <Compile Include="source\sistema\Hacer\index_Obligaciones.aspx.designer.cs">
       <DependentUpon>index_Obligaciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_PlanCapacitacion.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_PlanCapacitacion.aspx.cs">
       <DependentUpon>index_PlanCapacitacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_PlanCapacitacion.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_PlanCapacitacion.aspx.designer.cs">
       <DependentUpon>index_PlanCapacitacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\index_PlanillaEntregaEpp.aspx.cs">
@@ -2174,11 +2182,11 @@
     <Compile Include="source\sistema\Hacer\index_PlanillaEntregaEpp.aspx.designer.cs">
       <DependentUpon>index_PlanillaEntregaEpp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_PlanInduccion.aspx.cs">
+    <Compile Include="source\sistema\Planear\index_PlanInduccion.aspx.cs">
       <DependentUpon>index_PlanInduccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\index_PlanInduccion.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\index_PlanInduccion.aspx.designer.cs">
       <DependentUpon>index_PlanInduccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Planear\index_PlanTrabajo.aspx.cs">

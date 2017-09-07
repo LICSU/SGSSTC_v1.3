@@ -260,6 +260,9 @@
       <DependentUpon>ModeloGrupoLi.tt</DependentUpon>
     </Compile>
     <Compile Include="Paginas.cs" />
+    <Compile Include="perfil_cargo.cs">
+      <DependentUpon>ModeloGrupoLi.tt</DependentUpon>
+    </Compile>
     <Compile Include="plan.cs">
       <DependentUpon>ModeloGrupoLi.tt</DependentUpon>
     </Compile>

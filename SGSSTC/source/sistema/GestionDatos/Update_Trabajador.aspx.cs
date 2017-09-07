@@ -88,7 +88,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 ddlCcf.SelectedValue = string.Empty + itemTrabajador.id_ccf;
 
                 Listas.Cno(ddlCargo);
-                ddlCargo.SelectedValue = Convert.ToString(itemTrabajador.id_cno);
+                ddlCargo.SelectedValue = Convert.ToString(itemTrabajador.perfil_cargo.id_cno);
 
                 ImgFoto.ImageUrl = itemTrabajador.foto;
                 ImgFoto.Width = 200; ImgFoto.Height = 200;
@@ -136,7 +136,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Edit.fecha_ingreso = Convert.ToDateTime(txtFechaIngreso.Text);
                 Edit.tipo_vinculacion = ddlTipoVinculacion.SelectedValue;
                 Edit.tipo_horario = ddlTipoHorario.SelectedValue;
-                Edit.id_cno = Convert.ToInt32(ddlCargo.SelectedValue);
+                Edit.id_perfil_cargo = Convert.ToInt32(ddlCargo.SelectedValue);
                 Edit.salario = Convert.ToInt32(txtSalario.Text);
                 Edit.mano_dominante = ddlManodominante.SelectedValue;
             }

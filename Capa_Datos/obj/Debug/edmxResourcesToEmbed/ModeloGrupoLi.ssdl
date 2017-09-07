@@ -644,6 +644,15 @@
     <Property Name="id_identificacion_peligro" Type="int" />
     <Property Name="id_actividad" Type="int" />
   </EntityType>
+  <EntityType Name="perfil_cargo">
+    <Key>
+      <PropertyRef Name="id_perfil_cargo" />
+    </Key>
+    <Property Name="id_perfil_cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar(max)" />
+    <Property Name="id_cno" Type="int" />
+    <Property Name="id_empresa" Type="int" />
+  </EntityType>
   <EntityType Name="plan">
     <Key>
       <PropertyRef Name="id_plan" />
@@ -887,7 +896,7 @@
     <Property Name="tipo_vinculacion" Type="varchar" MaxLength="50" />
     <Property Name="codigo_independiente" Type="varchar" MaxLength="50" />
     <Property Name="tipo_horario" Type="varchar" MaxLength="50" />
-    <Property Name="id_cno" Type="int" />
+    <Property Name="id_perfil_cargo" Type="int" />
     <Property Name="salario" Type="float" />
     <Property Name="mano_dominante" Type="varchar" MaxLength="50" />
   </EntityType>
@@ -1668,6 +1677,32 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_perfil_cargo_cno">
+    <End Role="cno" Type="Self.cno" Multiplicity="0..1" />
+    <End Role="perfil_cargo" Type="Self.perfil_cargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cno">
+        <PropertyRef Name="id_cno" />
+      </Principal>
+      <Dependent Role="perfil_cargo">
+        <PropertyRef Name="id_cno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_perfil_cargo_empresa">
+    <End Role="empresa" Type="Self.empresa" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="perfil_cargo" Type="Self.perfil_cargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="id_empresa" />
+      </Principal>
+      <Dependent Role="perfil_cargo">
+        <PropertyRef Name="id_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_plan_trabajo_usuario">
     <End Role="usuario" Type="Self.usuario" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -1707,7 +1742,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Pregunta_usuario">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="usuario">
@@ -1747,7 +1784,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Respuesta_Pregunta">
-    <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="0..1" />
+    <End Role="Pregunta" Type="Self.Pregunta" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Respuesta" Type="Self.Respuesta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Pregunta">
@@ -1888,18 +1927,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_trabajador_cno">
-    <End Role="cno" Type="Self.cno" Multiplicity="0..1" />
-    <End Role="trabajador" Type="Self.trabajador" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="cno">
-        <PropertyRef Name="id_cno" />
-      </Principal>
-      <Dependent Role="trabajador">
-        <PropertyRef Name="id_cno" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_trabajador_estatus_enfermedad">
     <End Role="enfermedad" Type="Self.enfermedad" Multiplicity="0..1" />
     <End Role="trabajador_estatus" Type="Self.trabajador_estatus" Multiplicity="*" />
@@ -1985,6 +2012,18 @@
       </Principal>
       <Dependent Role="trabajador">
         <PropertyRef Name="id_municipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_trabajador_perfil_cargo">
+    <End Role="perfil_cargo" Type="Self.perfil_cargo" Multiplicity="0..1" />
+    <End Role="trabajador" Type="Self.trabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfil_cargo">
+        <PropertyRef Name="id_perfil_cargo" />
+      </Principal>
+      <Dependent Role="trabajador">
+        <PropertyRef Name="id_perfil_cargo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2078,6 +2117,7 @@
     <EntitySet Name="norma_claseciiu" EntityType="Self.norma_claseciiu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="norma_sucursal" EntityType="Self.norma_sucursal" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="obligacion" EntityType="Self.obligacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="perfil_cargo" EntityType="Self.perfil_cargo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="plan" EntityType="Self.plan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="plan_trabajo" EntityType="Self.plan_trabajo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="politica_sst" EntityType="Self.politica_sst" Schema="dbo" store:Type="Tables" />
@@ -2327,6 +2367,14 @@
       <End Role="usuario" EntitySet="usuario" />
       <End Role="obligacion" EntitySet="obligacion" />
     </AssociationSet>
+    <AssociationSet Name="FK_perfil_cargo_cno" Association="Self.FK_perfil_cargo_cno">
+      <End Role="cno" EntitySet="cno" />
+      <End Role="perfil_cargo" EntitySet="perfil_cargo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_perfil_cargo_empresa" Association="Self.FK_perfil_cargo_empresa">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="perfil_cargo" EntitySet="perfil_cargo" />
+    </AssociationSet>
     <AssociationSet Name="FK_plan_trabajo_usuario" Association="Self.FK_plan_trabajo_usuario">
       <End Role="usuario" EntitySet="usuario" />
       <End Role="plan_trabajo" EntitySet="plan_trabajo" />
@@ -2395,10 +2443,6 @@
       <End Role="ccf" EntitySet="ccf" />
       <End Role="trabajador" EntitySet="trabajador" />
     </AssociationSet>
-    <AssociationSet Name="FK_trabajador_cno" Association="Self.FK_trabajador_cno">
-      <End Role="cno" EntitySet="cno" />
-      <End Role="trabajador" EntitySet="trabajador" />
-    </AssociationSet>
     <AssociationSet Name="FK_trabajador_estatus_enfermedad" Association="Self.FK_trabajador_estatus_enfermedad">
       <End Role="enfermedad" EntitySet="enfermedad" />
       <End Role="trabajador_estatus" EntitySet="trabajador_estatus" />
@@ -2425,6 +2469,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_trabajador_municipio" Association="Self.FK_trabajador_municipio">
       <End Role="municipio" EntitySet="municipio" />
+      <End Role="trabajador" EntitySet="trabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_trabajador_perfil_cargo" Association="Self.FK_trabajador_perfil_cargo">
+      <End Role="perfil_cargo" EntitySet="perfil_cargo" />
       <End Role="trabajador" EntitySet="trabajador" />
     </AssociationSet>
     <AssociationSet Name="FK_trabajador_puesto_trabajo" Association="Self.FK_trabajador_puesto_trabajo">

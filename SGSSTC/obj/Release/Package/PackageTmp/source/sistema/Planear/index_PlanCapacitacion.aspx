@@ -1,19 +1,17 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_PlanCapacitacion.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_PlanCapacitacion" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
-
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
 
-
     <ol class="breadcrumb">
-        <li><a href="#">Fase: Hacer</a></li>
+        <li><a href="#">Fase: Planear</a></li>
         <li><a href="#">Plan de Capacitación</a></li>
     </ol>
 
