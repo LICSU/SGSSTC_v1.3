@@ -1346,6 +1346,7 @@
     <Content Include="source\sistema\Hacer\create_InspeccionPuestos.aspx" />
     <Content Include="source\sistema\Hacer\create_InspeccionPuestosAdmin.aspx" />
     <Content Include="source\sistema\Hacer\create_InspeccionUsoEpp.aspx" />
+    <Content Include="source\sistema\Hacer\Create_PerfilCargo.aspx" />
     <Content Include="source\sistema\Hacer\create_ReporteTrabajadoresA.aspx" />
     <Content Include="source\sistema\Hacer\create_ReporteTrabajadoresB.aspx" />
     <Content Include="source\sistema\Hacer\create_ReporteTrabajadoresC.aspx" />
@@ -1353,6 +1354,7 @@
     <Content Include="source\sistema\EvaluacionInicial\index_AnalisisVulnerabilidad.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_AutoEvaluacion.aspx" />
     <Content Include="source\sistema\Hacer\index_PerfilCargo.aspx" />
+    <Content Include="source\sistema\Hacer\Update_PerfilCargo.aspx" />
     <Content Include="source\sistema\Verificar\index_Indicadores.aspx" />
     <Content Include="source\sistema\Hacer\index_Inspecciones.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_PorcentajeCapacitacion.aspx" />
@@ -1601,6 +1603,13 @@
     <Compile Include="source\sistema\Hacer\create_InspeccionUsoEpp.aspx.designer.cs">
       <DependentUpon>create_InspeccionUsoEpp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="source\sistema\Hacer\Create_PerfilCargo.aspx.cs">
+      <DependentUpon>Create_PerfilCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="source\sistema\Hacer\Create_PerfilCargo.aspx.designer.cs">
+      <DependentUpon>Create_PerfilCargo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="source\sistema\Hacer\create_ReporteTrabajadoresA.aspx.cs">
       <DependentUpon>create_ReporteTrabajadoresA.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1649,6 +1658,13 @@
     </Compile>
     <Compile Include="source\sistema\Hacer\index_PerfilCargo.aspx.designer.cs">
       <DependentUpon>index_PerfilCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="source\sistema\Hacer\Update_PerfilCargo.aspx.cs">
+      <DependentUpon>Update_PerfilCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="source\sistema\Hacer\Update_PerfilCargo.aspx.designer.cs">
+      <DependentUpon>Update_PerfilCargo.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Verificar\index_Indicadores.aspx.cs">
       <DependentUpon>index_Indicadores.aspx</DependentUpon>

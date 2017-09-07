@@ -1,6 +1,4 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Politica_SST.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_Politica_SST" %>
-
-
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
@@ -9,6 +7,7 @@
 
     <ol class="breadcrumb">
         <li><a href="#">Fase: Planear</a></li>
+                <li><a href="index_PerfilCargo.aspx">index Perfil de Cargo</a></li>
         <li><a href="#">Política SST</a></li>
     </ol>
 

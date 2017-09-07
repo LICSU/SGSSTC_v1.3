@@ -1,8 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Categorias.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Categorias" %>
-
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -79,7 +76,6 @@
 
                                 <asp:TemplateField HeaderText="Empresa" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:HiddenField runat="server" ID="HFid_empresa" Visible="false" Value='<%# Eval("id_empresa") %>' />
                                         <asp:Label ID="empresa" runat="server" Text='<%# Eval("empresa") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -319,7 +315,5 @@
             </div>
         </div>
     </div>
-
-
 
 </asp:Content>

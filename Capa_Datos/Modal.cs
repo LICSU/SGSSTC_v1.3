@@ -1,4 +1,6 @@
 ﻿using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 
 namespace Capa_Datos
 {
@@ -13,22 +15,15 @@ namespace Capa_Datos
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append(@"<script type='text/javascript'>");
-            sb.Append("function MostrarMsjModal(message, title, ccsclas) {" +
+            sb.Append("function MostrarMsjModal(message, title, ccsclass) {" +
                 "var vIcoModal = document.getElementById('icoModal');" +
-                "vIcoModal.className = ccsclas;" +
+                "vIcoModal.className = ccsclass;" +
                 "$('#lblMsjTitle').html(title);" +
                 "$('#lblMsjModal').html(message);" +
                 "$('#Msjmodal').modal('show');" +
-                "return true;" +
-                "}" +
-                "function MostrarMsjModalExito()" +
-                "{" +
-                "$('#modalExito').modal('show');" +
-                "return true;" +
                 "}");
             sb.Append(@"</script>");
             ScriptManager.RegisterClientScriptBlock(_page, typeof(Page), "myScriptModal", sb.ToString(), false);
-
 
 
             string sTitulo = "Información";
@@ -48,6 +43,7 @@ namespace Capa_Datos
                     sCcsClase = "fa fa-check fa-2x text-success";
                     break;
             }
+
             ScriptManager.RegisterStartupScript(_page, typeof(Page), "MostrarMsjModal", "MostrarMsjModal('" + msj.Replace("'", "").Replace("\r\n", " ") + "','" + sTitulo + "','" + sCcsClase + "');", true);
         }
 
@@ -141,6 +137,24 @@ namespace Capa_Datos
                 }
             }
 
+        }
+
+
+
+        public static void MostrarAlertaEdit(PlaceHolder phAlerta, HtmlGenericControl divAlerta, Label lbAlerta,bool bError)
+        {
+            phAlerta.Visible = true;
+
+            if (bError)
+            {
+                divAlerta.Attributes.Add("class", "alert alert-dismissable alert-success fade in");
+                lbAlerta.Text = "Se actualizó el registro exitosamente";
+            }
+            else
+            {
+                divAlerta.Attributes.Add("class", "alert alert-dismissable alert-danger fade in");
+                lbAlerta.Text = "No Se actualizó el registro";
+            }
         }
     }
 }

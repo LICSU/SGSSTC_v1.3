@@ -1166,5 +1166,10 @@ namespace Capa_Datos
 
         #endregion
 
+        public static perfil_cargo PerfilCargo(int _id_perfil)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            return contexto.perfil_cargo.Where(x => x.id_perfil_cargo == _id_perfil).SingleOrDefault();            
+        }
     }
 }

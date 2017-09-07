@@ -21,9 +21,5 @@ function load() {
         $('#Msjmodal').modal('show');
         return true;
     }
-    function MostrarMsjModalExito() {
-        $('#modalExito').modal('show');
-        return true;
-    }
     
 }
