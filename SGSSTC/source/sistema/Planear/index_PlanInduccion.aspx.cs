@@ -23,13 +23,17 @@ namespace SGSSTC.source.sistema.Hacer
             if (!IsPostBack)
             {
                 cargarListas();
-                if (BoolEmpSuc.Item2)
+                if (BoolEmpSuc.Item1)
+                {
+                    Listas.Empresa(ddlEmpresa);
+                }
+                else if (BoolEmpSuc.Item2)
                 {
                     Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
                 }
                 else
                 {
-                    cargarPlan();
+                   // cargarPlan();
                 }
             }
         }
@@ -59,7 +63,7 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 phCkeditor.Visible = true;
                 phCkeditorno.Visible = false;
-                cargarPlan();
+                //cargarPlan();
             }
         }
         public void cargarPlan()
