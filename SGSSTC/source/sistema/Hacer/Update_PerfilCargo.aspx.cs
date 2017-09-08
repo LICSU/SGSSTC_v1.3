@@ -8,9 +8,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Update_PerfilCargo : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
+        private  Utilidades objUtilidades = new Utilidades();
         int IDPerfil = 0;
-        protected static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
 
         protected void Page_Load(object sender, EventArgs e)
         {

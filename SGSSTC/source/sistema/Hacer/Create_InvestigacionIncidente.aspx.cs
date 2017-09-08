@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.Verificar
 {
 	public partial class Create_InvestigacionIncidente : System.Web.UI.Page
 	{
-		Utilidades objUtilidades = new Utilidades();
-		Model_UsuarioSistema ObjUsuario;
-		Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -26,6 +26,7 @@ namespace SGSSTC.source.sistema.Verificar
 				cargarDatos();
 			}
 		}
+
 		private void cargarDatos()
 		{
 			int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
@@ -48,6 +49,7 @@ namespace SGSSTC.source.sistema.Verificar
 				txtSalario.Text = Convert.ToString(item.trabajador.salario);
 			}
 		}
+
 		protected void btPrintSave_Click(object sender, EventArgs e)
 		{
 			int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);

@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_MatrizResponsabilidades : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
             }
         }
-        public void cargarMatriz()
+        private void cargarMatriz()
         {
             phTabla.Visible = true;
             int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);

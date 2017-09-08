@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
@@ -116,10 +115,12 @@ namespace Capa_Datos
             miDropDownList.Items.Insert(6, new ListItem("Inspección de Equipos de Protección", "InspeccionEpp"));
         }
 
-        public static void Crear_Tabla_InspeccionEpp(Panel _panel, DropDownList ddlArea, DropDownList ddlPuesto, Table _table,  RadioButton _radio)
+        public static void Crear_Tabla_InspeccionEpp(Panel _panel, DropDownList ddlArea, DropDownList ddlPuesto)
         {
             TextBox _textbox;
+            RadioButton _radio;
 
+            Table _table;
             _table = new Table();
             _table.CssClass = "table";
             TableHeaderRow _header_row = new TableHeaderRow();
@@ -2365,9 +2366,6 @@ namespace Capa_Datos
                 contalarmas++;
             }
         }
-
-
-
 
     }
 }

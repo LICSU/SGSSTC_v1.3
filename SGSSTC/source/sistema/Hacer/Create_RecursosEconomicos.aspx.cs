@@ -7,11 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-
     public partial class Create_RecursosEconomicos : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {

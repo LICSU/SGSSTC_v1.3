@@ -10,9 +10,9 @@ namespace SGSSTC.source.sistema.Verificar
 {
     public partial class index_InvestigacionIncidente : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace SGSSTC.source.sistema.Verificar
                 CargarListas();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -55,7 +55,7 @@ namespace SGSSTC.source.sistema.Verificar
                 Listas.Area_Sucursal(ddlArea, ObjUsuario.Id_sucursal);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));

@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_DescGeneralEmpresa : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,8 @@ namespace SGSSTC.source.sistema.Hacer
                 cargarDatos();
             }
         }
-        public void cargarDatos()
+
+        private void cargarDatos()
         {
             if (!BoolEmpSuc.Item2)
             {
@@ -122,6 +123,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
+
         protected void AgregarRegistro(object sender, EventArgs e)
         {
             GrupoLiEntities contexto = new GrupoLiEntities();

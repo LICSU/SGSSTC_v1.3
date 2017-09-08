@@ -9,10 +9,9 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Update_Trabajador : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        DateTime fechaActual = DateTime.Now;
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -32,7 +31,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 CargarUsuario();
             }
         }
-        protected void CargarUsuario()
+
+        private void CargarUsuario()
         {
             int idTrabajador = Convert.ToInt32(ViewState["TrabajadorID"]);
             List<trabajador> ListaTrabajador = new List<trabajador>();
@@ -98,11 +98,13 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region Acciones
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            DateTime fechaActual = DateTime.Now;
             string NombreArchivo = string.Empty;
             string ruta = string.Empty;
             if (fuFoto.HasFile)
-                ruta = Utilidades.GuardarImagen(fuFoto, txtCedula.Text + "_foto", "~/source/archivos/foto_perfil/");
-            // string ruta = Utilidades.GuardarArchivo(fuFoto, txtCedula.Text + "_foto", "~/source/archivos/foto_perfil/");
+            {
+                ruta = Utilidades.GuardarImagen(fuFoto, txtCedula.Text + "_foto", Paginas.Archivos_Foto_Perfil.Value);
+            }
 
             GrupoLiEntities contexto = new GrupoLiEntities();
             int idTrabajador = Convert.ToInt32(ViewState["TrabajadorID"]);
@@ -163,6 +165,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             Listas.Estatus_Empresa(ddlEstatus, _id);
             Listas.Horario_Empresa(ddlHorario, _id);
         }
+
         protected void ddlRegion_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlRegion.SelectedValue != string.Empty)
@@ -170,6 +173,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Reg_Dpto_Mcpio(ddlDepartamento, "RegionDpto", Convert.ToInt32(ddlRegion.SelectedValue));
             }
         }
+
         protected void ddlDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlDepartamento.SelectedValue != string.Empty)
@@ -177,9 +181,11 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Reg_Dpto_Mcpio(ddlMunicipio, "McpioDpto", Convert.ToInt32(ddlDepartamento.SelectedValue));
             }
         }
+
         protected void ddlArea_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
         protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSucursal.SelectedValue != string.Empty)

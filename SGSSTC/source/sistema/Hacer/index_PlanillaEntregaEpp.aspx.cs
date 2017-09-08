@@ -12,8 +12,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_PlanillaEntregaEpp : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
         static int IdSucursal = 0;
         static int IdTrabajador = 0;
 
@@ -40,7 +40,7 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarListas();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -53,7 +53,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));

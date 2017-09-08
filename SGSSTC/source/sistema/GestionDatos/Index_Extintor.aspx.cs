@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class Index_Extintor : System.Web.UI.Page
+    public partial class Index_Extintor : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +29,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 LlenarGridView();
             }
         }
-        protected void CargarControles()
+
+        private void CargarControles()
         {
             phAgregar.Visible = BoolEmpSuc.Item2;
 
@@ -46,7 +47,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 phAgregar.Visible = true;
             }
         }
-        protected void CargarListas()
+
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -69,7 +71,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Area_Sucursal(ddlAreasEdit, ObjUsuario.Id_sucursal);
             }
         }
-        protected void LlenarGridView()
+
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -161,10 +164,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+
+        private void incializarExports()
         {
             LlenarGridView();
         }
+
         protected void btnExportWord_Click(object sender, EventArgs e)
         {
             incializarExports();

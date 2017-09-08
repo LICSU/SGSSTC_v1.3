@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.Verificar
 {
 	public partial class View_Accidente : System.Web.UI.Page
 	{
-		Utilidades objUtilidades = new Utilidades();
-		protected static Model_UsuarioSistema ObjUsuario;
+		private  Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
 		protected static int idAccidente;
 		HyperLink HyperLink1;
 

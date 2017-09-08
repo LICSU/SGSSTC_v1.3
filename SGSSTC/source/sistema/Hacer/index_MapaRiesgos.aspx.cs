@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_MapaRiesgos : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarListas();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -52,7 +52,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursalEdit, ObjUsuario.Id_empresa);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
@@ -180,7 +180,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+        private void incializarExports()
         {
             LlenarGridView();
             GridView1.Columns[4].Visible = false;

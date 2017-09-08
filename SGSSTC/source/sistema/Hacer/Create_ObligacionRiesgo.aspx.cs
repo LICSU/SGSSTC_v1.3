@@ -7,16 +7,16 @@ using System.Web.UI;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class Create_ObligacionRiesgo : System.Web.UI.Page
+    public partial class Create_ObligacionRiesgo : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        int idRiesgo;
-        string medida;
-        int IdSucursal = 0;
-        int IdEmpresa;
-        Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private int idRiesgo;
+        private string medida;
+        private int IdSucursal = 0;
+        private int IdEmpresa;
+        private  Utilidades objUtilidades = new Utilidades();
 
-        #region acciones
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
@@ -44,7 +44,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void CargarDatos()
+        private void CargarDatos()
         {
             List<identificacion_peligro> ListaRiesgos = new List<identificacion_peligro>();
             ListaRiesgos = Getter.IdentificacionPeligro(Convert.ToInt32(idRiesgo));
@@ -72,7 +72,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Frecuencia(ddlFrecuencia);
             Listas.Categorias(ddlCategoria, IdEmpresa);
@@ -127,6 +127,6 @@ namespace SGSSTC.source.sistema.Hacer
             string Id_Sucursal = objUtilidades.cifrarCadena(IdSucursal.ToString());
             Response.Redirect(Paginas.Update_MedidasMatrizRiesgos.Value + "?id=" + id_Riesgos + "&suc=" + Id_Sucursal);
         }
-        #endregion
+
     }
 }

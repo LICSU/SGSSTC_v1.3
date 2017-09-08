@@ -5,22 +5,19 @@ using System.Web;
 using System.Web.Script.Services;
 using System.Web.Security;
 using System.Web.Services;
-using System.Web.UI.WebControls;
-using System.Linq;
 
 namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Create_DescripcionSocioDemografica : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        static int IdTrabajador = 0;
-        static int IdSucursal = 0;
-
-        public string MotivoDes { get; private set; }
-        public string Vivienda { get; private set; }
-        public string Servicios { get; private set; }
-        public string TipoVivienda { get; private set; }
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
+        public static int IdTrabajador = 0;
+        public static int IdSucursal = 0;
+        private string MotivoDes;
+        private string Vivienda;
+        private string Servicios;
+        private string TipoVivienda;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -34,11 +31,12 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
-                cargarlistas();
+                CargarListas();
             }
 
         }
-        public void cargarlistas()
+
+        private void CargarListas()
         {
             if (!BoolEmpSuc.Item1)
             {
@@ -54,7 +52,8 @@ namespace SGSSTC.source.sistema.Hacer
             Listas.EPS(ddlEps);
             Listas.AFP(ddlFondo);
         }
-        protected bool validarCampos()
+
+        private bool validarCampos()
         {
             bool resultado = true;
 
@@ -135,14 +134,15 @@ namespace SGSSTC.source.sistema.Hacer
 
             return resultado;
         }
+
         private void limpiarCampos()
         {
-            //txtLugar.Text = string.Empty;
             txtNivel.Text = string.Empty;
             txtAnhosApro.Text = string.Empty;
             ddlEps.SelectedValue = string.Empty;
             ddlFondo.SelectedValue = string.Empty;
         }
+
         protected void GuardarRegistro(object sender, EventArgs e)
         {
             if (validarCampos() && IdTrabajador != 0)

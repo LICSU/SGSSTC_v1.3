@@ -4,18 +4,13 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-
     public partial class Create_ComunicadoElecciones : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-#pragma warning disable CS0169 // The field 'Create_ComunicadoElecciones._textbox' is never used
-        TextBox _textbox;
-#pragma warning restore CS0169 // The field 'Create_ComunicadoElecciones._textbox' is never used
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,7 +35,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -77,7 +72,6 @@ namespace SGSSTC.source.sistema.Hacer
             };
             PrintFile.PrintComunicadoElecciones(valores, this);
         }
-
 
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {

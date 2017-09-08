@@ -8,8 +8,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class View_GestionLaboral : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
         protected static int idGestion = 0;
 
         #region acciones index

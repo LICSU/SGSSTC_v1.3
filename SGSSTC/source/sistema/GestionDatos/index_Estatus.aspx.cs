@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class index_Estatus : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,8 @@ namespace SGSSTC.source.sistema.GestionDatos
             LlenarGridView();
 
         }
-        protected void CargarListas()
+
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -40,7 +41,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Empresa(ddlEmpresaEdit);
             }
         }
-        protected void CargarControles()
+
+        private void CargarControles()
         {
             phAgregar.Visible = BoolEmpSuc.Item2;
             phEmpresa.Visible = BoolEmpSuc.Item1;
@@ -48,7 +50,8 @@ namespace SGSSTC.source.sistema.GestionDatos
             phEmpresaEdit.Visible = BoolEmpSuc.Item1;
 
         }
-        protected void LlenarGridView()
+
+        private void LlenarGridView()
         {
             int Idempresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 

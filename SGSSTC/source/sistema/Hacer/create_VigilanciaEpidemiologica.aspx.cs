@@ -13,27 +13,20 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     {
         #region variables
         public static string strTitulo = "- N° = ";
-        protected static GridView grid = new GridView();
-        protected static GridView gridEnfComun = new GridView();
-        protected static GridView gridEnfLab = new GridView();
-        protected static GridView gridSist = new GridView();
-        Table _table;
-        TableRow _tablerow;
-        TableCell _tablecell;
-        protected static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
 
         //Variables grafica principal
-        int cantAccTrab = 0, cantAccCom = 0, cantEnfCom = 0, cantEnfPOO, cantEnfOcu = 0, cantTrabDis = 0, cantTrab = 0, cantResEvaCli = 0, cantTrabRef = 0;
+        private int cantAccTrab = 0, cantAccCom = 0, cantEnfCom = 0, cantEnfPOO, cantEnfOcu = 0, cantTrabDis = 0, cantTrab = 0, cantResEvaCli = 0, cantTrabRef = 0;
 
         //Variables grafica resultados de evaluaciones clinicas
-        int cantEvPreEm = 0, cantEvaPreVac = 0, cantEvaPosVac = 0, cantEvaPer = 0, cantEvaEsp = 0, cantEvaPosEmp = 0, cantEvaAsi = 0;
+        private int cantEvPreEm = 0, cantEvaPreVac = 0, cantEvaPosVac = 0, cantEvaPer = 0, cantEvaEsp = 0, cantEvaPosEmp = 0, cantEvaAsi = 0;
 
         //Variables grafica Monitoreo Reposos medicos
-        int cantRep = 0, cantDiasRep = 0, cantRepEnfCom = 0, cantRepEnfOcu = 0, cantRepAccCom = 0;
+        private int cantRep = 0, cantDiasRep = 0, cantRepEnfCom = 0, cantRepEnfOcu = 0, cantRepAccCom = 0;
 
-        int id_sucursal = 0, id_empresa = 0;
+        private int id_sucursal = 0, id_empresa = 0;
 
-        Tuple<bool, bool> BoolEmpSuc;
+        private Tuple<bool, bool> BoolEmpSuc;
         #endregion
 
         #region metodos index
@@ -71,7 +64,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -116,7 +109,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         }
 
-        public DropDownList ListaAnho(DropDownList DropDownList1)
+        private DropDownList ListaAnho(DropDownList DropDownList1)
         {
             DateTime anho = DateTime.Now;
             int anhoActual = Convert.ToInt32(anho.Year);
@@ -136,6 +129,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         [WebMethod]
         public static List<Model_Data> GetDataVigilancia()
         {
+
+            GridView grid = new GridView();
             List<Model_Data> dataList = new List<Model_Data>();
 
             string cat = string.Empty;
@@ -153,6 +148,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         [WebMethod]
         public static List<Model_Data> GetDataEnfComun()
         {
+            GridView gridEnfComun = new GridView();
             List<Model_Data> dataList = new List<Model_Data>();
 
             string cat = string.Empty;
@@ -170,6 +166,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         [WebMethod]
         public static List<Model_Data> GetDataEnfLab()
         {
+            GridView gridEnfLab = new GridView();
             List<Model_Data> dataList = new List<Model_Data>();
 
             string cat = string.Empty;
@@ -187,6 +184,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         [WebMethod]
         public static List<Model_Data> GetDataSist()
         {
+            GridView gridSist = new GridView();
             List<Model_Data> dataList = new List<Model_Data>();
 
             string cat = string.Empty;
@@ -203,7 +201,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #endregion
 
         #region Cargar Informacion
-        protected void cargarInformacion()
+        private void cargarInformacion()
         {
             //Cantidad de trabajadores con reposos de enfermedades
             if (id_empresa > 0)
@@ -343,6 +341,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         private void cargarGraficaDiagnosticos()
         {
+            TableCell _tablecell;
+            TableRow _tablerow;
+            Table _table;
             Double[] yAsistencias = null;
             Double[] yAsistencias1 = null;
             String[] xCadenas = null;
@@ -410,6 +411,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         private void cargarGraficaSistemas()
         {
+            TableCell _tablecell;
+            TableRow _tablerow;
+            Table _table;
             Double[] yAsistencias = null;
             Double[] yAsistencias1 = null;
             String[] xCadenas = null;

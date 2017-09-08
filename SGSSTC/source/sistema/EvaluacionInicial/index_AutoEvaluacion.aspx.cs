@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class index_AutoEvaluacion : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -49,7 +49,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -102,11 +102,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_autoevaluacion");
-
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
         }

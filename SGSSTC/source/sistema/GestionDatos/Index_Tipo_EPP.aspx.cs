@@ -8,10 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class Index_Tipo_EPP : System.Web.UI.Page
+    public partial class Index_Tipo_EPP :Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,12 +28,12 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             if (!IsPostBack)
             {
-                cargarLista();
+                CargarListas();
                 LlenarGridView();
             }
 
         }
-        protected void cargarLista()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -42,7 +42,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Empresa(ddlEmpresaEdit);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             Tabla.TipoEpp(GridView1, string.Empty + ViewState["sWhere"]);
@@ -71,6 +71,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             Modal.Validacion(this, ObjUsuario.Error, "Add");
             LlenarGridView();
         }
+
         protected void EditarRegistro(object sender, EventArgs e)
         {
             string ruta = string.Empty;
@@ -95,6 +96,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             Modal.Validacion(this, ObjUsuario.Error, "Edit");
             LlenarGridView();
         }
+
         protected void EliminarRegistro(object sender, EventArgs e)
         {
             tipo_epp tabla = new tipo_epp();
@@ -117,6 +119,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             LlenarGridView();
         }
+
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlEmpresa.SelectedValue != string.Empty)
@@ -129,13 +132,16 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             LlenarGridView();
         }
+
         protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
         protected void ddlEmpresaAdd_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
         protected void ddlEmpresaEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
 

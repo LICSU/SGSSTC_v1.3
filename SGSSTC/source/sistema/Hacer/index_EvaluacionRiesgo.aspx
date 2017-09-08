@@ -83,7 +83,7 @@
 									</ItemTemplate>
 								</asp:TemplateField>
 
-								<asp:ButtonField HeaderText="Agregar Evaluación" CommandName="add" ButtonType="Image" HeaderStyle-CssClass="text-center"
+								<asp:ButtonField HeaderText="Agregar Evaluación" CommandName="Add" ButtonType="Image" HeaderStyle-CssClass="text-center"
 									ImageUrl="~\ico\agregar.png">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>

@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_EvaluacionesPuestos : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
         int id_Puesto;
 
         #region acciones index

@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 {
     public partial class VerRespuesta : System.Web.UI.Page
     {
-        Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
         int IdRespuesta = 0;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             }
         }
 
-        public void CargarDatos()
+        private void CargarDatos()
         {
             List<usuario> ListUsuario = new List<usuario>();
             ListUsuario = Getter.Usuario(ObjUsuario.Id_usuario);

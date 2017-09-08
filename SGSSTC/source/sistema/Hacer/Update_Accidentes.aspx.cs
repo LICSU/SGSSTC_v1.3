@@ -11,9 +11,9 @@ namespace SGSSTC.source.sistema.Verificar
 {
 	public partial class Update_Accidentes : System.Web.UI.Page
 	{
-		Model_UsuarioSistema ObjUsuario;
+		private Model_UsuarioSistema ObjUsuario;
 		Tuple<bool, bool> BoolEmpSuc;
-		Utilidades objUtilidades = new Utilidades();
+		private  Utilidades objUtilidades = new Utilidades();
 		int idAccidente;
 
 		#region acciones index
@@ -34,7 +34,7 @@ namespace SGSSTC.source.sistema.Verificar
 				CargarAccidente();
 			}
 		}
-		public void CargarListas()
+		private void CargarListas()
 		{
 			if (BoolEmpSuc.Item1)
 			{
@@ -53,7 +53,7 @@ namespace SGSSTC.source.sistema.Verificar
 				Listas.PuestoTrabajo(ddlProcesoTrabajo, "Sucursal", ObjUsuario.Id_sucursal);
 			}
 		}
-		public void CargarAccidente()
+		private void CargarAccidente()
 		{
 			idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 			List<at_it_el_pa> ListAccidentes = new List<at_it_el_pa>();

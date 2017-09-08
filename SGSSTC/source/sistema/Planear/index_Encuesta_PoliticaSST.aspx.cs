@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_Encuesta_PoliticaSST : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region index principal
         protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarListas();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
 
@@ -46,7 +46,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Trabajadores_Sucursal(ddlTrabajador, ObjUsuario.Id_sucursal);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));

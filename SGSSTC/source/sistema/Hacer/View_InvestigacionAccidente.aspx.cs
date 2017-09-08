@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Verificar
 {
 	public partial class View_InvestigacionAccidente : System.Web.UI.Page
 	{
-		Utilidades objUtilidades = new Utilidades();
-		Model_UsuarioSistema ObjUsuario;
+		private  Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
 		Tuple<bool, bool> BoolEmpSuc;
 
 		protected void Page_Load(object sender, EventArgs e)

@@ -33,7 +33,7 @@
                                 <Columns>
                                     <asp:TemplateField HeaderText="ID" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate>
-                                            <asp:Label ID="id_empresa" runat="server" Text='<%# Eval("id_empresa") %>' />
+                                            <asp:Label ID="id" runat="server" Text='<%# Eval("id_empresa") %>' />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 

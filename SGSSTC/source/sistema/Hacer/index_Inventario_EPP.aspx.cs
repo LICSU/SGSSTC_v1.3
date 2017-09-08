@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_Inventario_EPP : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
         TextBox _textbox;
         Label _label;
         TableRow _row;
@@ -67,7 +67,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Empresa(ddlEmpresa);
 

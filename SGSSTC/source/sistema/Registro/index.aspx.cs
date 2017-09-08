@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Registro
 {
     public partial class index : Page
     {
-        Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace SGSSTC.source.sistema.Registro
                 LlenarGridView();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             DateTime fechaActual = DateTime.Now;
             ViewState["FechaInicio"] = fechaActual.ToString("dd-MM-yyy");
@@ -54,7 +54,7 @@ namespace SGSSTC.source.sistema.Registro
             }
             Model_Bitacora.CargarListado_TipoEvento(ddlTipoEvento);
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));

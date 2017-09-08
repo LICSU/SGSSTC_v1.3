@@ -3,14 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
-using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Create_AperturaElecciones : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +34,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -66,7 +65,6 @@ namespace SGSSTC.source.sistema.Hacer
             };
             PrintFile.PrintAperturaElecciones(valores, this);
         }
-
 
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {

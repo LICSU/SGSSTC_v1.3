@@ -8,11 +8,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class Create_ExamenLaboral : System.Web.UI.Page
+    public partial class Create_ExamenLaboral : Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -32,11 +32,11 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             // Tabla.Accidente_General(GridView1, ObjUsuario.Id_empresa);
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Empresa(ddlEmpresa);
             Listas.TipoExamen(ddlTipoExamen);

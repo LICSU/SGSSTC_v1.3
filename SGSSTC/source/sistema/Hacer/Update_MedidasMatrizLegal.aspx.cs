@@ -11,8 +11,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Update_MedidasMatrizLegal : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
         protected static int idNorma, IdSucursal;
 
         #region metodos index
@@ -50,7 +50,7 @@ namespace SGSSTC.source.sistema.Hacer
             chkAplica.Items.Clear();
             listSeg.Items.Clear();
 
-            Utilidades objUtilidades = new Utilidades();
+            private  Utilidades objUtilidades = new Utilidades();
 
             List<norma_sucursal> ListaNormasSucursal = new List<norma_sucursal>();
             ListaNormasSucursal = Getter.Normas_Sucursal(Convert.ToInt32(IdSucursal), Convert.ToInt32(idNorma));

@@ -6,61 +6,63 @@
 
         public string Value { get; set; }
 
-        public static Paginas Enviando { get { return new Paginas("Enviando.aspx"); } }
-        public static Paginas index_Inventario_EPP { get { return new Paginas("index_Inventario_EPP.aspx"); } }
-        public static Paginas index_PlanCapacitacion { get { return new Paginas("index_PlanCapacitacion.aspx"); } }
-        public static Paginas index_DescGeneralEmpresa { get { return new Paginas("index_DescGeneralEmpresa.aspx"); } }
-        public static Paginas index_BrigadaEmergencias { get { return new Paginas("index_BrigadaEmergencias.aspx"); } }
-        public static Paginas index_AsignacionResponsable { get { return new Paginas("index_AsignacionResponsable.aspx"); } }
-        public static Paginas index_RecursosEconomicos { get { return new Paginas("index_RecursosEconomicos.aspx"); } }
-        public static Paginas index_PlanillaEntregaEpp { get { return new Paginas("index_PlanillaEntregaEpp.aspx"); } }
         public static Paginas MenuPrincipal { get { return new Paginas("../MenuPrincipal/index.aspx"); } }
+        public static Paginas Enviando { get { return new Paginas("Enviando.aspx"); } }
+
+        public static Paginas index_AsignacionResponsable { get { return new Paginas("index_AsignacionResponsable.aspx"); } }
         public static Paginas index_ActaCopasst { get { return new Paginas("index_ActaCopasst.aspx"); } }
         public static Paginas index_AutoEvaluacion { get { return new Paginas("index_AutoEvaluacion.aspx"); } }
         public static Paginas index_AccidenteLaboral { get { return new Paginas("index_AccidenteLaboral.aspx"); } }
-        public static Paginas index_DescripcionSocioDemografica { get { return new Paginas("index_DescripcionSocioDemografica.aspx"); } }
+        public static Paginas index_BrigadaEmergencias { get { return new Paginas("index_BrigadaEmergencias.aspx"); } }
         public static Paginas index_Empresa { get { return new Paginas("index_Empresa.aspx"); } }
         public static Paginas index_Encuesta_PoliticaSST { get { return new Paginas("index_Encuesta_PoliticaSST.aspx"); } }
-        public static Paginas index_Trabajador { get { return new Paginas("index_Trabajador.aspx"); } }
-        public static Paginas index_Inspecciones { get { return new Paginas("index_Inspecciones.aspx"); } }
-        public static Paginas index_Obligaciones { get { return new Paginas("index_Obligaciones.aspx"); } }
-        public static Paginas index_PuestoTrabajo { get { return new Paginas("index_PuestoTrabajo.aspx"); } }
-        public static Paginas index_ReporteTrabajadores { get { return new Paginas("index_ReporteTrabajadores.aspx"); } }
-        public static Paginas index_IncidenteLaboral { get { return new Paginas("index_IncidenteLaboral.aspx"); } }
-        public static Paginas index_IdentificacionRiesgos { get { return new Paginas("index_IdentificacionRiesgos.aspx"); } }
-        public static Paginas index_IdentificacionPeligros { get { return new Paginas("index_IdentificacionPeligros.aspx"); } }
-        public static Paginas index_InvestigacionAccidente { get { return new Paginas("index_InvestigacionAccidente.aspx"); } }
-        public static Paginas index_VigilanciaEpidemiologica { get { return new Paginas("index_VigilanciaEpidemiologica.aspx"); } }
-        public static Paginas index_EvaluacionRiesgo { get { return new Paginas("index_EvaluacionRiesgo.aspx"); } }
         public static Paginas index_EvaluacionesPuestos { get { return new Paginas("index_EvaluacionesPuestos.aspx"); } }
-        public static Paginas index_Plan_Evacuacion { get { return new Paginas("index_Plan_Evacuacion.aspx"); } }
-        public static Paginas index_Politica_SST { get { return new Paginas("index_Politica_SST.aspx"); } }
+        public static Paginas index_EvaluacionRiesgo { get { return new Paginas("index_EvaluacionRiesgo.aspx"); } }
+        public static Paginas index_DescGeneralEmpresa { get { return new Paginas("index_DescGeneralEmpresa.aspx"); } }
+        public static Paginas index_DescripcionSocioDemografica { get { return new Paginas("index_DescripcionSocioDemografica.aspx"); } }
         public static Paginas index_GestionLaboral { get { return new Paginas("index_GestionLaboral.aspx"); } }
+        public static Paginas index_Inventario_EPP { get { return new Paginas("index_Inventario_EPP.aspx"); } }
+        public static Paginas index_Inspecciones { get { return new Paginas("index_Inspecciones.aspx"); } }
+        public static Paginas index_IncidenteLaboral { get { return new Paginas("index_IncidenteLaboral.aspx"); } }
+        public static Paginas index_IdentificacionPeligros { get { return new Paginas("index_IdentificacionPeligros.aspx"); } }
+        public static Paginas index_IdentificacionRiesgos { get { return new Paginas("index_IdentificacionRiesgos.aspx"); } }
+        public static Paginas index_InvestigacionAccidente { get { return new Paginas("index_InvestigacionAccidente.aspx"); } }
+        public static Paginas index_InvestigacionIncidente { get { return new Paginas("index_InvestigacionIncidente.aspx"); } }
+        public static Paginas index_Obligaciones { get { return new Paginas("index_Obligaciones.aspx"); } }
+        public static Paginas index_PlanCapacitacion { get { return new Paginas("index_PlanCapacitacion.aspx"); } }
+        public static Paginas index_PuestoTrabajo { get { return new Paginas("index_PuestoTrabajo.aspx"); } }
+        public static Paginas index_PlanillaEntregaEpp { get { return new Paginas("index_PlanillaEntregaEpp.aspx"); } }
+        public static Paginas index_PerfilCargo { get { return new Paginas("index_PerfilCargo.aspx"); } }
+        public static Paginas index_ProgramaInspecciones { get { return new Paginas("index_ProgramaInspecciones.aspx"); } }
+        public static Paginas index_Politica_SST { get { return new Paginas("index_Politica_SST.aspx"); } }
+        public static Paginas index_Plan_Evacuacion { get { return new Paginas("index_Plan_Evacuacion.aspx"); } }
+        public static Paginas index_RecursosEconomicos { get { return new Paginas("index_RecursosEconomicos.aspx"); } }
+        public static Paginas index_ReporteTrabajadores { get { return new Paginas("index_ReporteTrabajadores.aspx"); } }
+        public static Paginas index_Trabajador { get { return new Paginas("index_Trabajador.aspx"); } }
         public static Paginas index_MatrizLegal { get { return new Paginas("index_MatrizLegal.aspx"); } }
         public static Paginas index_MatrizRiesgos { get { return new Paginas("index_MatrizRiesgos.aspx"); } }
-        public static Paginas index_InvestigacionIncidente { get { return new Paginas("index_InvestigacionIncidente.aspx"); } }
-        public static Paginas index_ProgramaInspecciones { get { return new Paginas("index_ProgramaInspecciones.aspx"); } }
-        public static Paginas index_PerfilCargo { get { return new Paginas("index_PerfilCargo.aspx"); } }
+        public static Paginas index_VigilanciaEpidemiologica { get { return new Paginas("index_VigilanciaEpidemiologica.aspx"); } }
 
-        public static Paginas Create_IdentificacionPeligro { get { return new Paginas("Create_IdentificacionPeligro.aspx"); } }
-        public static Paginas Create_Empresa { get { return new Paginas("Create_Empresa.aspx"); } }
-        public static Paginas Create_EncuestaPoliticaSST { get { return new Paginas("Create_EncuestaPoliticaSST.aspx"); } }
-        public static Paginas Create_Encuesta_ObjPoliticaSST { get { return new Paginas("Create_Encuesta_ObjPoliticaSST.aspx"); } }
-        public static Paginas Create_DescripcionSocioDemografica { get { return new Paginas("Create_DescripcionSocioDemografica.aspx"); } }
-        public static Paginas Create_FormatoVotos { get { return new Paginas("Create_FormatoVotos.aspx"); } }
+        public static Paginas create_AnalisisVulnerabilidad { get { return new Paginas("create_AnalisisVulnerabilidad.aspx"); } }
+        public static Paginas Create_AccidenteLaboral { get { return new Paginas("Create_AccidenteLaboral.aspx"); } }
         public static Paginas Create_AperturaElecciones { get { return new Paginas("Create_AperturaElecciones.aspx"); } }
         public static Paginas Create_ActaCierre { get { return new Paginas("Create_ActaCierre.aspx"); } }
-        public static Paginas Create_RegistroVotantes { get { return new Paginas("Create_RegistroVotantes.aspx"); } }
-        public static Paginas Create_ResultadoVotos { get { return new Paginas("Create_ResultadoVotos.aspx"); } }
-        public static Paginas Create_ConformacionCopasst { get { return new Paginas("Create_ConformacionCopasst.aspx"); } }
-        public static Paginas Create_InscripcionCandidatos { get { return new Paginas("Create_InscripcionCandidatos.aspx"); } }
-        public static Paginas Create_DesignacionVigia { get { return new Paginas("Create_DesignacionVigia.aspx"); } }
-        public static Paginas Create_ComunicadoElecciones { get { return new Paginas("Create_ComunicadoElecciones.aspx"); } }
-        public static Paginas Create_ReunionCopasst { get { return new Paginas("Create_ReunionCopasst.aspx"); } }
-        public static Paginas Create_Trabajador { get { return new Paginas("Create_Trabajador.aspx"); } }
-        public static Paginas Create_Sucursal { get { return new Paginas("Create_Sucursal.aspx"); } }
-        public static Paginas Create_PuestoTrabajo { get { return new Paginas("Create_PuestoTrabajo.aspx"); } }
         public static Paginas create_AutoEvaluacion { get { return new Paginas("create_AutoEvaluacion.aspx"); } }
+        public static Paginas Create_ComunicadoElecciones { get { return new Paginas("Create_ComunicadoElecciones.aspx"); } }
+        public static Paginas Create_ConformacionCopasst { get { return new Paginas("Create_ConformacionCopasst.aspx"); } }
+        public static Paginas Create_DescripcionSocioDemografica { get { return new Paginas("Create_DescripcionSocioDemografica.aspx"); } }
+        public static Paginas Create_DesignacionVigia { get { return new Paginas("Create_DesignacionVigia.aspx"); } }
+        public static Paginas Create_Empresa { get { return new Paginas("Create_Empresa.aspx"); } }
+        public static Paginas Create_EvaluacionRiesgos { get { return new Paginas("Create_EvaluacionRiesgos.aspx"); } }
+        public static Paginas Create_ExamenLaboral { get { return new Paginas("Create_ExamenLaboral.aspx"); } }
+        public static Paginas Create_EncuestaPoliticaSST { get { return new Paginas("Create_EncuestaPoliticaSST.aspx"); } }
+        public static Paginas Create_Encuesta_ObjPoliticaSST { get { return new Paginas("Create_Encuesta_ObjPoliticaSST.aspx"); } }
+        public static Paginas Create_FormatoVotos { get { return new Paginas("Create_FormatoVotos.aspx"); } }
+        public static Paginas Create_InscripcionCandidatos { get { return new Paginas("Create_InscripcionCandidatos.aspx"); } }
+        public static Paginas Create_IdentificacionPeligro { get { return new Paginas("Create_IdentificacionPeligro.aspx"); } }
+        public static Paginas Create_InvestigacionIncidente { get { return new Paginas("Create_InvestigacionIncidente.aspx"); } }
+        public static Paginas Create_IncidenteLaboral { get { return new Paginas("Create_IncidenteLaboral.aspx"); } }
+        public static Paginas Create_InvestigacionAccidente { get { return new Paginas("Create_InvestigacionAccidente.aspx"); } }
         public static Paginas create_InspeccionExtintores { get { return new Paginas("create_InspeccionExtintores.aspx"); } }
         public static Paginas create_InspeccionAreas { get { return new Paginas("create_InspeccionAreas.aspx"); } }
         public static Paginas create_InspeccionMediosEscape { get { return new Paginas("create_InspeccionMediosEscape.aspx"); } }
@@ -70,19 +72,18 @@
         public static Paginas create_InspeccionCrono { get { return new Paginas("create_InspeccionCrono.aspx"); } }
         public static Paginas create_InspeccionUsoEpp { get { return new Paginas("create_InspeccionUsoEpp.aspx"); } }
         public static Paginas create_InspeccionPrimAux { get { return new Paginas("create_InspeccionPrimAux.aspx"); } }
+        public static Paginas Create_RegistroVotantes { get { return new Paginas("Create_RegistroVotantes.aspx"); } }
+        public static Paginas Create_ResultadoVotos { get { return new Paginas("Create_ResultadoVotos.aspx"); } }
+        public static Paginas Create_ReunionCopasst { get { return new Paginas("Create_ReunionCopasst.aspx"); } }
+        public static Paginas Create_Sucursal { get { return new Paginas("Create_Sucursal.aspx"); } }
+        public static Paginas Create_Trabajador { get { return new Paginas("Create_Trabajador.aspx"); } }
         public static Paginas create_ReporteTrabajadoresA { get { return new Paginas("create_ReporteTrabajadoresA.aspx"); } }
         public static Paginas create_ReporteTrabajadoresB { get { return new Paginas("create_ReporteTrabajadoresB.aspx"); } }
         public static Paginas create_ReporteTrabajadoresC { get { return new Paginas("create_ReporteTrabajadoresC.aspx"); } }
-        public static Paginas create_VigilanciaEpidemiologica { get { return new Paginas("create_VigilanciaEpidemiologica.aspx"); } }
-        public static Paginas create_AnalisisVulnerabilidad { get { return new Paginas("create_AnalisisVulnerabilidad.aspx"); } }
-        public static Paginas Create_EvaluacionRiesgos { get { return new Paginas("Create_EvaluacionRiesgos.aspx"); } }
-        public static Paginas Create_ExamenLaboral { get { return new Paginas("Create_ExamenLaboral.aspx"); } }
-        public static Paginas create_PlanillaEntregaEpp { get { return new Paginas("create_PlanillaEntregaEpp.aspx"); } }
         public static Paginas Create_RecursosEconomicos { get { return new Paginas("Create_RecursosEconomicos.aspx"); } }
-        public static Paginas Create_AccidenteLaboral { get { return new Paginas("Create_AccidenteLaboral.aspx"); } }
-        public static Paginas Create_InvestigacionIncidente { get { return new Paginas("Create_InvestigacionIncidente.aspx"); } }
-        public static Paginas Create_IncidenteLaboral { get { return new Paginas("Create_IncidenteLaboral.aspx"); } }
-        public static Paginas Create_InvestigacionAccidente { get { return new Paginas("Create_InvestigacionAccidente.aspx"); } }
+        public static Paginas Create_PuestoTrabajo { get { return new Paginas("Create_PuestoTrabajo.aspx"); } }
+        public static Paginas create_PlanillaEntregaEpp { get { return new Paginas("create_PlanillaEntregaEpp.aspx"); } }
+        public static Paginas create_VigilanciaEpidemiologica { get { return new Paginas("create_VigilanciaEpidemiologica.aspx"); } }
 
 
         public static Paginas Update_Empresa { get { return new Paginas("Update_Empresa.aspx"); } }

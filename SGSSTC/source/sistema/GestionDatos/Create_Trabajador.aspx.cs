@@ -7,8 +7,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Create_Trabajador : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {

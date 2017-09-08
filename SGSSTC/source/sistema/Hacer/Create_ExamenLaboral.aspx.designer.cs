@@ -805,15 +805,6 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.Label txtAreaPuesto;
         
         /// <summary>
-        /// Control pagination.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::SGSSTC.source.WebUserControl.pagination1 pagination;
-        
-        /// <summary>
         /// Control GridView4.
         /// </summary>
         /// <remarks>
@@ -821,15 +812,6 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView4;
-        
-        /// <summary>
-        /// Control pagination0.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::SGSSTC.source.WebUserControl.pagination1 pagination0;
         
         /// <summary>
         /// Control GridView1.
@@ -841,15 +823,6 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Control pagination1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::SGSSTC.source.WebUserControl.pagination1 pagination1;
-        
-        /// <summary>
         /// Control GridView2.
         /// </summary>
         /// <remarks>
@@ -857,15 +830,6 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView2;
-        
-        /// <summary>
-        /// Control pagination2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::SGSSTC.source.WebUserControl.pagination1 pagination2;
         
         /// <summary>
         /// Control GridView3.

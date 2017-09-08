@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Update_DescripcionSocioDemografica : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
         protected static int idPerfil;
 
         #region string campos

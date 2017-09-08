@@ -8,10 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class index_Epp : System.Web.UI.Page
+    public partial class index_Epp : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             if (!IsPostBack)
             {
-                cargarLista();
+                CargarListas();
                 LlenarGridView();
             }
         }
@@ -38,7 +38,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             Modal.registrarModal("addModal", "AddModalScript", this);
         }
 
-        protected void cargarLista()
+        protected void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -53,7 +53,8 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             Listas.TipoEpp(ddlTipoEpp);
         }
-        protected void LlenarGridView()
+
+        private void LlenarGridView()
         {
             int Idempresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 
@@ -63,6 +64,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 string.Empty + ViewState["puesto"],
                 string.Empty + ViewState["sWhere"]);
         }
+
         protected void AgregarRegistro(object sender, EventArgs e)
         {
             epp nuevo = new epp()
@@ -171,7 +173,6 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             LlenarGridView();
         }
-
         #endregion
     }
 }

@@ -6,7 +6,7 @@ namespace Capa_Datos
         private MensajeError(string value) { Value = value; }
 
         public string Value { get; set; }
-
+        
         public static MensajeError EXito_Add_Empresa
         { get { return new MensajeError("Se Creó la Empresa correctamente"); } }
         public static MensajeError Error_Add_Empresa

@@ -99,7 +99,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Id" Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_area" runat="server" Text='<%# Eval("id_area") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_area") %>' />
                                         <asp:Label ID="id_area_padre" runat="server" Text='<%# Eval("id_area_padre") %>' />
                                         <asp:HiddenField ID="hdfAreaPadre" runat="server" Value='<%# Eval("id_area_padre") %>' />
                                     </ItemTemplate>

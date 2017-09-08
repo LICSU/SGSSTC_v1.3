@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_ActaCopasst : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -26,14 +26,14 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             Tabla.ReunionCopasst(GridView1, IdEmpresa, IdSucursal);
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
 

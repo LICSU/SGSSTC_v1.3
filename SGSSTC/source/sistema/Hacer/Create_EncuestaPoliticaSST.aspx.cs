@@ -5,15 +5,13 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Create_EncuestaPoliticaSST : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        static GridView grid = new GridView();
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +26,8 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarListas();
             }
         }
-        protected void CargarListas()
+
+        private void CargarListas()
         {
             Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
 
@@ -37,6 +36,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Trabajadores_Sucursal(ddlTrabajador, ObjUsuario.Id_sucursal);
             }
         }
+
         protected void btnGenerar_Onclick(object sender, EventArgs e)
         {
             phGuardar.Visible = true;
@@ -97,6 +97,7 @@ namespace SGSSTC.source.sistema.Hacer
             ltReporte.Text = Myscript;
             btnGenerar.Focus();
         }
+
         protected void Guardar(object sender, EventArgs e)
         {
             phGuardar.Visible = true;
@@ -140,6 +141,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Response.Redirect(Paginas.index_Encuesta_PoliticaSST.Value);
             }
         }
+
         protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSucursal.SelectedValue != string.Empty)

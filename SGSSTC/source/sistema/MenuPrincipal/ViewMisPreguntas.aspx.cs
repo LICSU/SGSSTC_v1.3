@@ -10,9 +10,9 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 {
     public partial class ViewMisPreguntas : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Utilidades objUtilidades = new Utilidades();
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones
 
@@ -34,7 +34,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 LlenarGridView();
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
 
             Tabla.MisPreguntas(GridView1, ObjUsuario.Id_usuario, string.Empty + ViewState["FechaInicio"], string.Empty + ViewState["FechaFin"]);

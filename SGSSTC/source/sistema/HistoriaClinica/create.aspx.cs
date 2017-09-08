@@ -7,7 +7,7 @@ namespace SGSSTC.source.sistema.HistoriaClinica
 {
     public partial class create : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
         string sSelectSQL = string.Empty;
 
         #region accion index
@@ -16,12 +16,12 @@ namespace SGSSTC.source.sistema.HistoriaClinica
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
             if (!IsPostBack)
             {
-                cargarListas();
+                CargarListas();
                 Tab1.CssClass = "Clicked";
                 MainView.ActiveViewIndex = 0;
             }
         }
-        private void cargarListas()
+        private void CargarListas()
         {
             // ObjUsuario.objModeloBD.CargarListado(ddlTrabajador, "Trabajador", ObjUsuario.Id_empresa);
             // ObjUsuario.objModeloBD.CargarListado(ddlTrabajador, "TipoExamen", ObjUsuario.Id_empresa);

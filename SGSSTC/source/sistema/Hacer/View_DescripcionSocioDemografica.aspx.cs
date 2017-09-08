@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.Hacer
     public partial class View_DescripcionSocioDemografica : System.Web.UI.Page
     {
         #region variables
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
         protected static int idPerfil;
         #endregion
 

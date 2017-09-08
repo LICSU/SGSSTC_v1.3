@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class index_Sucursal : System.Web.UI.Page
     {
-        Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void ConsultarSucursal(int id_sucursal)
+        private void ConsultarSucursal(int id_sucursal)
         {
             List<sucursal> ListaSucursal = new List<sucursal>();
             int IdSucursal = Convert.ToInt32(id_sucursal);
@@ -62,7 +62,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -72,7 +72,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             Listas.Reg_Dpto_Mcpio(ddlRegionEdit, "Region");
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -261,6 +261,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             LlenarGridView();
 
         }
+
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlEmpresa.SelectedValue != string.Empty)
@@ -279,6 +280,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             Listas.Reg_Dpto_Mcpio(ddlDptoEdit, "RegionDpto", Convert.ToInt32(ddlRegionEdit.SelectedValue));
         }
+
         protected void ddlDptoEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
             Listas.Reg_Dpto_Mcpio(ddlMcpioEdit, "McpioDpto", Convert.ToInt32(ddlDptoEdit.SelectedValue));

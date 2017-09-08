@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class index_Categorias : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -35,14 +35,14 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Empresa(ddlEmpresa);
             Listas.Empresa(ddlEmpresaAdd);
             Listas.Empresa(ddlEmpresaEdit);
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 

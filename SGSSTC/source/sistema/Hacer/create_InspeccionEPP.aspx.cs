@@ -10,10 +10,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class create_InspeccionEPP : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        RadioButton _radio;
-        Tuple<bool, bool> BoolEmpSuc;
-        Table _table;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones
 
@@ -51,7 +49,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -68,22 +66,24 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void crearTabla()
+        private void crearTabla()
         {
-            ControlesDinamicos.Crear_Tabla_InspeccionEpp(pnEpp, ddlArea, ddlPuesto, _table, _radio);
+            ControlesDinamicos.Crear_Tabla_InspeccionEpp(pnEpp, ddlArea, ddlPuesto);
 
             ViewState["controlsadded"] = true;
         }
 
         protected void GenerarDocumento(object sender, EventArgs e)
         {
-            PrintFile.PrintDocumento_InspeccionEPP(pnEpp, ddlArea, ddlPuesto, _table, _radio);           
+            PrintFile.PrintDocumento_InspeccionEPP(pnEpp, ddlArea, ddlPuesto);           
 
             Imprimir();
         }
 
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
+            RadioButton _radio;
+            Table _table;
             int contFal = 0;
             TableRow row = new TableRow();
             row = (TableHeaderRow)pnEpp.FindControl("EPPFaltante");
@@ -137,7 +137,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             phGenerarDocumento.Visible = true;
         }
 
-        protected void Imprimir()
+        private void Imprimir()
         {
             Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursal);
             String[] valores = {

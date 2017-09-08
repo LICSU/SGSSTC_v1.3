@@ -10,11 +10,9 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class index_Trabajador : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        protected static int id_enfermedad = 0, id_sistema = 0;
-        Utilidades objUtilidades = new Utilidades();
-        DateTime fechaActual = DateTime.Now;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index    
         protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +35,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             if (!IsPostBack)
             {
                 ViewState["area"] = "0";
-                cargarListas();
+                CargarListas();
                 LlenarGridView();
                 if (Request.QueryString["eu"] == "1")
                 {
@@ -46,7 +44,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
 
         }
-        private void cargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -65,7 +63,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Estatus_Empresa(ddlEstatusFiltro, ObjUsuario.Id_empresa);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -216,6 +214,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void btnGuardarReposo_Click(object sender, EventArgs e)
         {
+            DateTime fechaActual = DateTime.Now;
             string id_trabajador = hdfTrabajadorEstID.Value;
             string fecha_constancia = txtFechaConstancia.Text;
             int diasReposo = Convert.ToInt32(txtDiasReposo.Text);
@@ -277,7 +276,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+        private void incializarExports()
         {
             LlenarGridView();
             GridView1.Columns[6].Visible = false;

@@ -1,9 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_AutoEvaluacion.aspx.cs" Inherits="SGSSTC.source.sistema.EvaluacionInicial.index_AutoEvaluacion" %>
-
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
-
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -36,6 +32,7 @@
                     </div>
                 </asp:PlaceHolder>
             </div>
+
             <br />
 
             <div class="row">
@@ -57,7 +54,7 @@
                             <Columns>
                                 <asp:TemplateField Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_autoevaluacion" runat="server" Text='<%# Eval("id_documento") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_documento") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -99,6 +96,7 @@
                     </div>
                 </div>
             </div>
+
             <br />
 
             <div class="row text-center">
@@ -282,8 +280,5 @@
             </div>
         </div>
     </div>
-
-
-
 
 </asp:Content>

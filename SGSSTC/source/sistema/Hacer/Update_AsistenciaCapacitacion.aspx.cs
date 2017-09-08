@@ -11,8 +11,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Update_AsistenciaCapacitacion : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
         RadioButtonList miRadio;
         ListItem itemAsis;
         ListItem itemJust;

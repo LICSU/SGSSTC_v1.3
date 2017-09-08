@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_DescripcionSocioDemografica : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             Tabla.DescSocio(GridView1, string.Empty + ViewState["sWhere"]);
         }

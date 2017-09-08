@@ -8,8 +8,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_PlanInduccion : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
-                cargarListas();
+                CargarListas();
                 if (BoolEmpSuc.Item1)
                 {
                     Listas.Empresa(ddlEmpresa);
@@ -38,7 +38,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void cargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -66,7 +66,7 @@ namespace SGSSTC.source.sistema.Hacer
                 //cargarPlan();
             }
         }
-        public void cargarPlan()
+        private void cargarPlan()
         {
             int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
             int idPlan = GetterMax.Plan(IdSucursal);

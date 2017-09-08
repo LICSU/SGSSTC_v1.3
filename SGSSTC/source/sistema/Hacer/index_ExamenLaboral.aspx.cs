@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_ExamenLaboral : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -33,11 +33,11 @@ namespace SGSSTC.source.sistema.Hacer
                 txtFechaInicio.Text = fechaActual.ToString("yyyy-MM-dd");
                 txtFechaFin.Text = fechaActual.AddMonths(1).ToString("yyyy-MM-dd");
 
-                Cargarlistas();
+                CargarListas();
                 LlenarGridView();
             }
         }
-        protected void Cargarlistas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -51,7 +51,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 
@@ -81,7 +81,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+        private void incializarExports()
         {
             LlenarGridView();
             GridView1.Columns[3].Visible = false;

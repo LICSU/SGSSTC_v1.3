@@ -6,15 +6,13 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI.WebControls;
 
-
 namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Update_PuestoTrabajo : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        int idPuestos = 0;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,6 +31,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         private void CargarDatos()
         {
+            int idPuestos = 0;
             idPuestos = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
             List<puesto_trabajo> ListaPuestos = new List<puesto_trabajo>();
@@ -99,6 +98,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            int idPuestos = 0;
             idPuestos = objUtilidades.descifrarCadena(Request.QueryString["id"]);
             string ruta = Utilidades.GuardarImagen(fuAnexo, txtNombre.Text + "PuestoTrabajo", "~/source/archivos/puesto_trabajo/");
 
@@ -178,6 +178,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Epp(ddlEpp);
             }
         }
+
         protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSucursal.SelectedValue != string.Empty)

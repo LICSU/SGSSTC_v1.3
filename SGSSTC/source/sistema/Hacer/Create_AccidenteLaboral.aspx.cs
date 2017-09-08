@@ -12,10 +12,10 @@ namespace SGSSTC.source.sistema.Verificar
 {
     public partial class Create_AccidenteLaboral : Page
     {
-        Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        static int IdSucursal = 0;
-        static int IdTrabajador = 0;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
+        private static int IdSucursal = 0;
+        private static int IdTrabajador = 0;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace SGSSTC.source.sistema.Verificar
                 CargarListas();
             }
         }
-        public void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {

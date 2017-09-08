@@ -118,6 +118,7 @@
     <Compile Include="cno.cs">
       <DependentUpon>ModeloGrupoLi.tt</DependentUpon>
     </Compile>
+    <Compile Include="ComandosGrid.cs" />
     <Compile Include="consulta.cs">
       <DependentUpon>ModeloGrupoLi.tt</DependentUpon>
     </Compile>
@@ -344,6 +345,7 @@
       <DependentUpon>ModeloGrupoLi.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <Compile Include="Utilidades_GridView.cs" />
     <Compile Include="ValoresDefault.cs" />
     <Compile Include="NodosArbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

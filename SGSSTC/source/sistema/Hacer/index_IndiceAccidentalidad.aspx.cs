@@ -11,10 +11,10 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class index_IndiceAccidentalidad : Page
     {
-        public static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
         int IdEmpresa = 0;
         DateTime fechaActual;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones
 
@@ -40,7 +40,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         }
 
-        public void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -53,14 +53,14 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ListaAnho(ddlAnho);
         }
 
-        public void ListaAnho(DropDownList DropDownList1)
+        private void ListaAnho(DropDownList DropDownList1)
         {
             ControlesDinamicos.ListaUltimos10Anhos(DropDownList1);
         }
 
         #endregion
 
-        public void CargaMensual()
+        private void CargaMensual()
         {
             phMensual.Visible = true;
             int anhoActual = Convert.ToInt32(ViewState["Año"]);
@@ -71,7 +71,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ControlesDinamicos.CargaMensual_ReporteAccidentalidad(GridView1, anhoActual, MesActual, IdSucursal, IdEmpresa);
         }
 
-        public void CargaTrimestral()
+        private void CargaTrimestral()
         {
             phTrimestral.Visible = true;
 
@@ -83,7 +83,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ControlesDinamicos.CargaMensual_ReporteAccidentalidad(GridView3, anhoActual, MesActual, IdSucursal, IdEmpresa);
         }
 
-        public void CargarSemestral()
+        private void CargarSemestral()
         {
             phSemestral.Visible = true;
 
@@ -96,7 +96,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         }
 
-        public void CargaAnual()
+        private void CargaAnual()
         {
             phAnual.Visible = true;
             int IdSucursal = Convert.ToInt32(ViewState["Sucursal"]);
@@ -105,7 +105,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ControlesDinamicos.CargaAnual_ReporteAccidentalidad(GridView4, IdSucursal, IdEmpresa);
         }
 
-        public void CargaTabla()
+        private void CargaTabla()
         {
             string valor = "" + ViewState["tipo"];
             if (valor == "Mes")

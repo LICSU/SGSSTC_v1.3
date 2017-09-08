@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Create_PuestoTrabajo : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,12 +47,12 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Create_PuestoTrabajo.aspx");
+            Response.Redirect(Paginas.Create_PuestoTrabajo.Value);
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
-            Response.Redirect("index_PuestoTrabajo.aspx");
+            Response.Redirect(Paginas.index_PuestoTrabajo.Value);
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)

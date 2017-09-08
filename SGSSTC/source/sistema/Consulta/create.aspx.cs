@@ -9,7 +9,7 @@ namespace SGSSTC.source.sistema.Consulta
     public partial class create : Page
     {
         #region variables
-        protected static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
         string id = string.Empty;
         #endregion
 

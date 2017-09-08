@@ -13,9 +13,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_PlanTrabajo : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
         DateTime anho = DateTime.Now;
 
         #region metodos index
@@ -43,7 +43,7 @@ namespace SGSSTC.source.sistema.Hacer
                 ViewState["anho"] = string.Empty + Convert.ToInt32(anho.Year);
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -65,7 +65,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
@@ -87,7 +87,7 @@ namespace SGSSTC.source.sistema.Hacer
         #endregion
 
         #region acciones
-        public DropDownList ListaAnho(DropDownList DropDownList1)
+        private DropDownList ListaAnho(DropDownList DropDownList1)
         {
             int anhoActual = Convert.ToInt32(anho.Year);
 

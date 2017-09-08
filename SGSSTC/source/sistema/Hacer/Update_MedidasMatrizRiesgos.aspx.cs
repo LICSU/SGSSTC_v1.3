@@ -11,8 +11,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Update_MedidasMatrizRiesgos : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
         protected static int idRiesgo;
         protected static int IdSucursal;
 
@@ -48,7 +48,7 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void CargarMedidas()
         {
-            Utilidades objUtilidades = new Utilidades();
+            private  Utilidades objUtilidades = new Utilidades();
 
             List<identificacion_peligro> ListaRiesgos = new List<identificacion_peligro>();
             ListaRiesgos = Getter.IdentificacionPeligro(Convert.ToInt32(idRiesgo));

@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_PerfilCargo : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Utilidades objUtilidades = new Utilidades();
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 

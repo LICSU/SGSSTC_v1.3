@@ -12,9 +12,9 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class index_Area : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        int strNivel = 0;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private int strNivel = 0;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -66,7 +66,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -218,7 +218,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+        private void incializarExports()
         {
             LlenarGridView();
             GridView1.Columns[9].Visible = false;

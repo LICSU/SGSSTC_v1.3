@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class index_Horarios : System.Web.UI.Page
+    public partial class index_Horarios : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -33,11 +33,12 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             if (!IsPostBack)
             {
-                cargarLista();
+                CargarListas();
                 LlenarGridView();
             }
         }
-        protected void cargarLista()
+
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -46,7 +47,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Empresa(ddlEmpresaEdit);
             }
         }
-        protected void LlenarGridView()
+
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             Tabla.Horario(GridView1, IdEmpresa, string.Empty + ViewState["sWhere"]);

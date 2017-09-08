@@ -10,10 +10,10 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class View_EvaluacionPuesto : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
         int id_EvaRiesgo;
-        Utilidades objUtilidades = new Utilidades();
+        private  Utilidades objUtilidades = new Utilidades();
 
         protected void Page_Load(object sender, EventArgs e)
         {

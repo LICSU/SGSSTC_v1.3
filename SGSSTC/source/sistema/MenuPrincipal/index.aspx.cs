@@ -10,9 +10,9 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 {
     public partial class index : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
