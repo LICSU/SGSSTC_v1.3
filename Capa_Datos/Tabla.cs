@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web.UI.WebControls;
@@ -354,7 +353,7 @@ namespace Capa_Datos
                     }).ToList();
                     if (id_empresa != 0) { query = query.Where(x => x.id_empresa == id_empresa).ToList(); }
                     if (id_sucursal != 0) { query = query.Where(x => x.id_sucursal == id_sucursal).ToList(); }
-                    if (id_area!="0") { query = query.Where(x => x.id_area == Convert.ToInt32(id_area)).ToList(); }
+                    if (id_area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(id_area)).ToList(); }
                     if (!string.IsNullOrEmpty(buscar)) { query = query.Where(x => x.serial_extintor.ToLower().Contains(buscar.ToLower())).ToList(); }
                     GridView1.DataSource = query;
                     GridView1.DataBind();
@@ -2353,9 +2352,9 @@ namespace Capa_Datos
         public static void SusPreguntas(GridView GridView1, int act1, int act2, int act3, string _fecha_ini = "", string _fecha_fin = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
-            int Div1=0, Div2=0, Div3=0;
+            int Div1 = 0, Div2 = 0, Div3 = 0;
 
-            var ListaCodCiiu = contexto.claseCiiu.Where(x =>x.id_clase_ciiu == act1 ).SingleOrDefault();
+            var ListaCodCiiu = contexto.claseCiiu.Where(x => x.id_clase_ciiu == act1).SingleOrDefault();
             Div1 = ListaCodCiiu.grupoCiiu.divisionCiiu.id_division;
 
             ListaCodCiiu = contexto.claseCiiu.Where(x => x.id_clase_ciiu == act2).SingleOrDefault();
@@ -2368,7 +2367,7 @@ namespace Capa_Datos
                 from PR in contexto.Pregunta
                 join EC in contexto.empresa_itemdivision
                 on PR.usuario.trabajador.puesto_trabajo.area.sucursal.id_empresa equals EC.id_empresa
-                where   EC.claseCiiu.grupoCiiu.divisionCiiu.id_division == Div1 || 
+                where EC.claseCiiu.grupoCiiu.divisionCiiu.id_division == Div1 ||
                         EC.claseCiiu.grupoCiiu.divisionCiiu.id_division == Div2 ||
                         EC.claseCiiu.grupoCiiu.divisionCiiu.id_division == Div3
 
@@ -2392,6 +2391,30 @@ namespace Capa_Datos
         }
 
 
+        #endregion
+
+        #region PerfilCargo
+        public static void PerfilCargo(GridView GridView1, int id_empresa = 0, string _nombre = "")
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            var query = (
+                from CA in contexto.perfil_cargo
+                select new
+                {
+                    CA.id_perfil_cargo,
+                    CA.nombre,
+                    CA.id_empresa,
+                    CA.descripcion,
+                    empresa = CA.empresa.nombre,
+                    ocupacion = CA.cno.ocupacion
+                }).ToList();
+
+            if (id_empresa != 0) { query = query.Where(x => x.id_empresa == id_empresa).ToList(); }
+            if (_nombre != string.Empty) { query = query.Where(x => x.nombre.ToLower().Contains(_nombre.ToLower())).ToList(); }
+
+            GridView1.DataSource = query;
+            GridView1.DataBind();
+        }
         #endregion
     }
 }

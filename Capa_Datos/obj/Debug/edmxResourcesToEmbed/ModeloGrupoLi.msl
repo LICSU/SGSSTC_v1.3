@@ -695,6 +695,7 @@
     <EntitySetMapping Name="perfil_cargo">
       <EntityTypeMapping TypeName="GrupoLiModel.perfil_cargo">
         <MappingFragment StoreEntitySet="perfil_cargo">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="id_perfil_cargo" ColumnName="id_perfil_cargo" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="id_cno" ColumnName="id_cno" />

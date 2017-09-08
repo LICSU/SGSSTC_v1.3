@@ -13,3 +13,7 @@ Capa_Datos/obj/Debug/Capa_Datos.csproj.FileListAbsolute.txt
 *.txt
 *.config
 *.ide
+*.dll
+*.pdb
+*.pdb
+*.cache

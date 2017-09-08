@@ -40,6 +40,7 @@
         public static Paginas index_MatrizRiesgos { get { return new Paginas("index_MatrizRiesgos.aspx"); } }
         public static Paginas index_InvestigacionIncidente { get { return new Paginas("index_InvestigacionIncidente.aspx"); } }
         public static Paginas index_ProgramaInspecciones { get { return new Paginas("index_ProgramaInspecciones.aspx"); } }
+        public static Paginas index_PerfilCargo { get { return new Paginas("index_PerfilCargo.aspx"); } }
 
         public static Paginas Create_IdentificacionPeligro { get { return new Paginas("Create_IdentificacionPeligro.aspx"); } }
         public static Paginas Create_Empresa { get { return new Paginas("Create_Empresa.aspx"); } }

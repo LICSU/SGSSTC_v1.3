@@ -35,6 +35,7 @@ namespace Capa_Datos
                 else if (_nuevo.GetType() == typeof(alarma)) { contexto.alarma.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(at_it_el_pa)) { contexto.at_it_el_pa.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(Pregunta)) { contexto.Pregunta.Add(_nuevo); }
+                else if (_nuevo.GetType() == typeof(perfil_cargo)) { contexto.perfil_cargo.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(Respuesta)) { contexto.Respuesta.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(area)) { contexto.area.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(brigada_emergencia)) { contexto.brigada_emergencia.Add(_nuevo); }
@@ -56,7 +57,7 @@ namespace Capa_Datos
                 else if (_nuevo.GetType() == typeof(matriz_responsabilidad)) { contexto.matriz_responsabilidad.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(medida_sucursal)) { contexto.medida_sucursal.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(norma_sucursal)) { contexto.norma_sucursal.Add(_nuevo); }
-                else if (_nuevo.GetType() == typeof(obligacion)) {contexto.obligacion.Add(_nuevo);}
+                else if (_nuevo.GetType() == typeof(obligacion)) { contexto.obligacion.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(plan)) { contexto.plan.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(plan_trabajo)) { contexto.plan_trabajo.Add(_nuevo); }
                 else if (_nuevo.GetType() == typeof(politica_sst)) { contexto.politica_sst.Add(_nuevo); }
@@ -237,6 +238,12 @@ namespace Capa_Datos
                     var Eliminar = new Pregunta { id_pregunta = _id };
                     contexto.Pregunta.Attach(Eliminar);
                     contexto.Pregunta.Remove(Eliminar);
+                }
+                else if (tabla.GetType() == typeof(perfil_cargo))
+                {
+                    var Eliminar = new perfil_cargo { id_perfil_cargo = _id };
+                    contexto.perfil_cargo.Attach(Eliminar);
+                    contexto.perfil_cargo.Remove(Eliminar);
                 }
                 else if (tabla.GetType() == typeof(politica_sst))
                 {
@@ -775,7 +782,7 @@ namespace Capa_Datos
             return ObjUsuario.Error;
         }
 
-        public static bool Add_PuestoTrabajo(Model_UsuarioSistema ObjUsuario,String[] valores, FileUpload fuAnexo, ListBox ddlEpp)
+        public static bool Add_PuestoTrabajo(Model_UsuarioSistema ObjUsuario, String[] valores, FileUpload fuAnexo, ListBox ddlEpp)
         {
             string ruta = Utilidades.GuardarImagen(fuAnexo, valores[0] + "PuestoTrabajo", Paginas.Archivos_PuestoTrabajo.Value);
 
@@ -891,7 +898,7 @@ namespace Capa_Datos
             ObjUsuario.Error = Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             if (ObjUsuario.Error)
-            { 
+            {
                 int idTrabajador = GetterMax.Trabajador();
                 trabajador_estatus nuevoTE = new trabajador_estatus()
                 {
@@ -1093,7 +1100,7 @@ namespace Capa_Datos
             {
                 contexto.SaveChanges();
             }
-            catch 
+            catch
             {
                 DeleteSucursal(ObjUsuario, id_sucursal);
                 return false;
@@ -1160,7 +1167,7 @@ namespace Capa_Datos
                 cuerpo_pregunta = valores[1],
                 id_usuario = ObjUsuario.Id_usuario,
                 estatus = 0,
-                fecha = DateTime.Now                
+                fecha = DateTime.Now
             };
 
             return Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);

@@ -23,6 +23,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
+
         public DropDownList ListaAnho(DropDownList DropDownList1)
         {
             DateTime anho = DateTime.Now;
@@ -37,6 +38,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             return DropDownList1;
         }
+
         public void cargarPolitica()
         {
             int idPolitica = GetterMax.PoliticaSST(ObjUsuario.Id_empresa);
@@ -94,6 +96,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
+
         protected void btnSave_Click(object sender, EventArgs e)
         {
             politica_sst nuevo = new politica_sst()
@@ -112,6 +115,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Response.Redirect(Paginas.index_Politica_SST.Value);
             }
         }
+
         protected void GenerarDocumento(object sender, EventArgs e)
         {
             String[] valores = {

@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class index_Trabajador : System.Web.UI.Page
+    public partial class index_Trabajador : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
         protected static int id_enfermedad = 0, id_sistema = 0;

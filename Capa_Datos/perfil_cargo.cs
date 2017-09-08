@@ -24,6 +24,7 @@ namespace Capa_Datos
         public string descripcion { get; set; }
         public Nullable<int> id_cno { get; set; }
         public Nullable<int> id_empresa { get; set; }
+        public string nombre { get; set; }
     
         public virtual cno cno { get; set; }
         public virtual empresa empresa { get; set; }

@@ -34,7 +34,6 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void CargarUsuario()
         {
-
             int idTrabajador = Convert.ToInt32(ViewState["TrabajadorID"]);
             List<trabajador> ListaTrabajador = new List<trabajador>();
             ListaTrabajador = Getter.Trabajador(idTrabajador);

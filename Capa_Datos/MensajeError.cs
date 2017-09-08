@@ -80,6 +80,8 @@ namespace Capa_Datos
         { get { return new MensajeError("Se Actualizo el puesto de trabajo correctamente"); } }
         public static MensajeError Exito_Edit_Asistencia
         { get { return new MensajeError("Se Actualizó la Asistencia Correctamente"); } }
+        public static MensajeError Exito_Edit_PerfilCargo
+        { get { return new MensajeError("Se Actualizó el Perfil de Cargo Correctamente"); } }
 
         public static MensajeError Fallo_Edit_PuestoTrabajo
         { get { return new MensajeError("No se Actualizo el puesto de trabajo"); } }
@@ -91,6 +93,8 @@ namespace Capa_Datos
         { get { return new MensajeError("No se Actualizo el trabajador"); } }
         public static MensajeError Fallo_Edit_Asistencia
         { get { return new MensajeError("No se Actualizo la Asistencia"); } }
+        public static MensajeError Fallo_Edit_PerfilCargo
+        { get { return new MensajeError("No se Actualizo el Perfil de Cargo"); } }
 
         public static MensajeError Fallo_Delete_Area_Usuario
         { get { return new MensajeError("No puede eliminar esta área porque el usuario actual pertenece a ella."); } }

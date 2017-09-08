@@ -649,6 +649,7 @@
       <PropertyRef Name="id_perfil_cargo" />
     </Key>
     <Property Name="id_perfil_cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
     <Property Name="descripcion" Type="varchar(max)" />
     <Property Name="id_cno" Type="int" />
     <Property Name="id_empresa" Type="int" />
