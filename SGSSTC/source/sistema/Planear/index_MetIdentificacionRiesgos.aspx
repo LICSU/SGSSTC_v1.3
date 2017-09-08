@@ -42,12 +42,6 @@
 	<div class="row">
 
 		<CKEditor:CKEditorControl Height="1000" ID="txtIdentificacionRiesgos" BasePath="~/ckeditor/" runat="server">
-					<style>
-						tr, td, th {
-							position: relative;
-							padding: 10px;
-						}
-					</style>
 					<h3> Objetivo. </h3><br/>
 					La valoración de los riesgos derivados de las actividades laborales es la base para el Sistema de Gestión de Seguridad y Salud en el Trabajo, 
 					con la participación y compromiso de todos los niveles de la organización, es un proceso metódico donde el responsable del SG-SST debe identificar 

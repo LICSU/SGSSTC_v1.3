@@ -38,6 +38,7 @@ namespace Capa_Datos
         public static Model_Celda miCelda61 = new Model_Celda(1, "H4", "C", "0|1|1|1", 3, 1, "", "");
         public static Model_Celda miCelda11 = new Model_Celda(1, "H4", "C", "1|1|1|1", 3, 1, "azul", "");
         public static Model_Celda miCelda34 = new Model_Celda(1, "H4", "L", "1|1|1|1", 3, 1, "azul", "");
+
         public static Model_Celda miCelda46 = new Model_Celda(1, "H4", "L", "0|0|0|0", 3, 1, "azul", "");
 
         public static Model_Celda miCelda68 = new Model_Celda(1, "H3", "C", "1|1|1|1", 3, 1, "", "");
@@ -4318,6 +4319,19 @@ namespace Capa_Datos
                 miCelda41.Texto = cadenas[i];
                 DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda41));
             }
+            #endregion
+
+            ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
+        }
+
+        public static void PrintMetodologiaIR(string[] valores, Page _page)
+        {
+            Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(Convert.ToInt32(valores[0]),
+                                        "MetIdentificacionRiesgos_", "METODOLOGÍA DE RIESGOS", _page);
+
+            #region contenido
+            miCelda41.Texto = valores[1];
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda41));
             #endregion
 
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);

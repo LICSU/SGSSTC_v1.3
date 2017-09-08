@@ -81,7 +81,13 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GenerarDocumento(object sender, EventArgs e)
         {
+            Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursal);
+            String[] valores = {
+                string.Empty + IdEmpSuc.Item2,
+                txtIdentificacionRiesgos.Text
+            };
 
+            PrintFile.PrintMetodologiaIR(valores, this);
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
