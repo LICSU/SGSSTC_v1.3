@@ -9,237 +9,237 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class Update_MedidasMatrizRiesgos : System.Web.UI.Page
-    {
-        private  Utilidades objUtilidades = new Utilidades();
-        private Model_UsuarioSistema ObjUsuario;
-        protected static int idRiesgo;
-        protected static int IdSucursal;
+	public partial class Update_MedidasMatrizRiesgos : Page
+	{
+		private Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
+        private int idRiesgo;
+        private int IdSucursal;
 
-        #region metodos index
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+		#region metodos index
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
-            idRiesgo = objUtilidades.descifrarCadena(Request.QueryString["id"]);
-            IdSucursal = objUtilidades.descifrarCadena(Request.QueryString["suc"]);
+			idRiesgo = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+			IdSucursal = objUtilidades.descifrarCadena(Request.QueryString["suc"]);
 
-            Page.Form.Attributes.Add("enctype", "multipart/form-data");
-            if (!IsPostBack)
-            {
-                CargarDatos();
-            }
-        }
-        protected void CargarDatos()
-        {
-            List<identificacion_peligro> ListaRiesgos = new List<identificacion_peligro>();
-            ListaRiesgos = Getter.IdentificacionPeligro(Convert.ToInt32(idRiesgo));
+			Page.Form.Attributes.Add("enctype", "multipart/form-data");
+			if (!IsPostBack)
+			{
+				CargarDatos();
+			}
+		}
 
-            foreach (var itemRiesgos in ListaRiesgos)
-            {
-                foreach (var itemFacIde in itemRiesgos.factor_identificacion)
-                {
-                    lbTipoRiesgo.Text = itemFacIde.factor_riesgo.tipo_riesgo.nombre;
-                    lbFactorRiesgo.Text = itemFacIde.factor_riesgo.nombre;
-                }
-            }
+        private void CargarDatos()
+		{
+			List<identificacion_peligro> ListaRiesgos = new List<identificacion_peligro>();
+			ListaRiesgos = Getter.IdentificacionPeligro(Convert.ToInt32(idRiesgo));
 
-            CargarMedidas();
-        }
-        protected void CargarMedidas()
-        {
-            private  Utilidades objUtilidades = new Utilidades();
+			foreach (var itemRiesgos in ListaRiesgos)
+			{
+				foreach (var itemFacIde in itemRiesgos.factor_identificacion)
+				{
+					lbTipoRiesgo.Text = itemFacIde.factor_riesgo.tipo_riesgo.nombre;
+					lbFactorRiesgo.Text = itemFacIde.factor_riesgo.nombre;
+				}
+			}
 
-            List<identificacion_peligro> ListaRiesgos = new List<identificacion_peligro>();
-            ListaRiesgos = Getter.IdentificacionPeligro(Convert.ToInt32(idRiesgo));
+			CargarMedidas();
+		}
 
-            foreach (var itemRiesgos in ListaRiesgos)
-            {
-                string var1, var2, var3;
-                var1 = objUtilidades.cifrarCadena(Convert.ToString(itemRiesgos.id_identificacion_peligro));
-                var2 = objUtilidades.cifrarCadena(Convert.ToString(IdSucursal));
+        private void CargarMedidas()
+		{
+			List<identificacion_peligro> ListaRiesgos = new List<identificacion_peligro>();
+			ListaRiesgos = Getter.IdentificacionPeligro(Convert.ToInt32(idRiesgo));
 
-                foreach (var itemIdePuesto in itemRiesgos.identificacion_puesto)
-                {
-                    foreach (var itemEvaRiesgo in itemIdePuesto.evaluacion_riesgo)
-                    {
-                        lbestatus.Text = string.Empty + Convert.ToString(itemEvaRiesgo.porc_estatus);
+			foreach (var itemRiesgos in ListaRiesgos)
+			{
+				string var1, var2, var3;
+				var1 = objUtilidades.cifrarCadena(Convert.ToString(itemRiesgos.id_identificacion_peligro));
+				var2 = objUtilidades.cifrarCadena(Convert.ToString(IdSucursal));
 
-                        if (itemEvaRiesgo.control_medio != string.Empty)
-                        {
-                            var3 = objUtilidades.cifrarCadena(Convert.ToString("Ambiente"));
-                            ListItem itemMedida1 = new ListItem();
+				foreach (var itemIdePuesto in itemRiesgos.identificacion_puesto)
+				{
+					foreach (var itemEvaRiesgo in itemIdePuesto.evaluacion_riesgo)
+					{
+						lbestatus.Text = string.Empty + Convert.ToString(itemEvaRiesgo.porc_estatus);
 
-                            itemMedida1.Text =
-                                "<h4 class='text-muted text-left'>" +
-                                    "<strong>Medidas en el Ambiente:<strong/>" +
-                                "<h4/>" +
-                                "<br/>" +
-                                itemEvaRiesgo.control_medio +
-                                " <a href='../Hacer/Create_ObligacionRiesgo.aspx?id=" + var1 + "&suc=" + var2 + "&med=" + var3 + "'>" +
-                                "<img src ='../../../ico/seguimiento.png'>Seguimiento" +
-                                "</a>" +
-                                "<hr/>";
+						if (itemEvaRiesgo.control_medio != string.Empty)
+						{
+							var3 = objUtilidades.cifrarCadena(Convert.ToString("Ambiente"));
+							ListItem itemMedida1 = new ListItem();
 
-                            itemMedida1.Value = "A";
-                            if (itemEvaRiesgo.estatus_med_amb == "SI")
-                            {
-                                itemMedida1.Selected = true;
-                            }
-                            else
-                            {
-                                itemMedida1.Selected = false;
-                            }
-                            chkMedidas.Items.Add(itemMedida1);
-                        }
+							itemMedida1.Text =
+								"<h4 class='text-muted text-left'>" +
+									"<strong>Medidas en el Ambiente:<strong/>" +
+								"<h4/>" +
+								"<br/>" +
+								itemEvaRiesgo.control_medio +
+								" <a href='../Hacer/Create_ObligacionRiesgo.aspx?id=" + var1 + "&suc=" + var2 + "&med=" + var3 + "'>" +
+								"<img src ='../../../ico/seguimiento.png'>Seguimiento" +
+								"</a>" +
+								"<hr/>";
 
-                        if (itemEvaRiesgo.control_fuente != string.Empty)
-                        {
-                            var3 = objUtilidades.cifrarCadena(Convert.ToString("Fuente"));
-                            ListItem itemMedida2 = new ListItem();
+							itemMedida1.Value = "A";
+							if (itemEvaRiesgo.estatus_med_amb == "SI")
+							{
+								itemMedida1.Selected = true;
+							}
+							else
+							{
+								itemMedida1.Selected = false;
+							}
+							chkMedidas.Items.Add(itemMedida1);
+						}
 
-                            itemMedida2.Text =
-                                "<h4 class='text-muted text-left'>" +
-                                "<strong>Medidas en la Fuente:<strong/>" +
-                                "<h4/><br/> " +
-                                itemEvaRiesgo.control_fuente +
-                                "<a href='../Hacer/Create_ObligacionRiesgo.aspx?id=" + var1 + "&suc=" + var2 + "&med=" + var3 + "'>" +
-                                "<img src ='../../../ico/seguimiento.png'>Seguimiento" +
-                                "</a><hr/>";
+						if (itemEvaRiesgo.control_fuente != string.Empty)
+						{
+							var3 = objUtilidades.cifrarCadena(Convert.ToString("Fuente"));
+							ListItem itemMedida2 = new ListItem();
 
-                            itemMedida2.Value = "F";
-                            if (itemEvaRiesgo.estatus_med_fue == "SI")
-                            {
-                                itemMedida2.Selected = true;
-                            }
-                            else
-                            {
-                                itemMedida2.Selected = false;
-                            }
+							itemMedida2.Text =
+								"<h4 class='text-muted text-left'>" +
+								"<strong>Medidas en la Fuente:<strong/>" +
+								"<h4/><br/> " +
+								itemEvaRiesgo.control_fuente +
+								"<a href='../Hacer/Create_ObligacionRiesgo.aspx?id=" + var1 + "&suc=" + var2 + "&med=" + var3 + "'>" +
+								"<img src ='../../../ico/seguimiento.png'>Seguimiento" +
+								"</a><hr/>";
 
-                            chkMedidas.Items.Add(itemMedida2);
-                        }
+							itemMedida2.Value = "F";
+							if (itemEvaRiesgo.estatus_med_fue == "SI")
+							{
+								itemMedida2.Selected = true;
+							}
+							else
+							{
+								itemMedida2.Selected = false;
+							}
 
-                        if (itemEvaRiesgo.control_individuo != string.Empty)
-                        {
-                            var3 = objUtilidades.cifrarCadena(Convert.ToString("Trabajador"));
-                            ListItem itemMedida3 = new ListItem();
+							chkMedidas.Items.Add(itemMedida2);
+						}
 
-                            itemMedida3.Text =
-                                "<h4 class='text-muted text-left'>" +
-                                "<strong>Medidas en el Trabajador<strong/>:" +
-                                "<h4/><br/> " + itemEvaRiesgo.control_individuo +
-                                "<a href='../Hacer/Create_ObligacionRiesgo.aspx?id=" + var1 + "&suc=" + var2 + "&med=" + var3 + "'>" +
-                                "<img src ='../../../ico/seguimiento.png'>Seguimiento </a>";
+						if (itemEvaRiesgo.control_individuo != string.Empty)
+						{
+							var3 = objUtilidades.cifrarCadena(Convert.ToString("Trabajador"));
+							ListItem itemMedida3 = new ListItem();
 
-                            itemMedida3.Value = "T";
+							itemMedida3.Text =
+								"<h4 class='text-muted text-left'>" +
+								"<strong>Medidas en el Trabajador<strong/>:" +
+								"<h4/><br/> " + itemEvaRiesgo.control_individuo +
+								"<a href='../Hacer/Create_ObligacionRiesgo.aspx?id=" + var1 + "&suc=" + var2 + "&med=" + var3 + "'>" +
+								"<img src ='../../../ico/seguimiento.png'>Seguimiento </a>";
 
-                            if (itemEvaRiesgo.estatus_med_trab == "SI")
-                            {
-                                itemMedida3.Selected = true;
-                            }
-                            else
-                            {
-                                itemMedida3.Selected = false;
-                            }
+							itemMedida3.Value = "T";
 
-                            chkMedidas.Items.Add(itemMedida3);
-                        }
+							if (itemEvaRiesgo.estatus_med_trab == "SI")
+							{
+								itemMedida3.Selected = true;
+							}
+							else
+							{
+								itemMedida3.Selected = false;
+							}
 
-                    }
-                }
-            }
+							chkMedidas.Items.Add(itemMedida3);
+						}
 
-        }
+					}
+				}
+			}
 
-        protected void GuardarRegistro(object sender, EventArgs e)
-        {
-            string estatusAmb = string.Empty;
-            string estatusFue = string.Empty;
-            string estatusTrab = string.Empty;
+		}
 
-            #region actualizar estatus medida
-            foreach (ListItem itemActual in chkMedidas.Items)
-            {
-                if (itemActual.Value == "A")
-                {
-                    if (itemActual.Selected == true) { estatusAmb = "SI"; }
-                    if (itemActual.Selected == false) { estatusAmb = "NO"; }
-                }
-                else if (itemActual.Value == "F")
-                {
-                    if (itemActual.Selected == true) { estatusFue = "SI"; }
-                    if (itemActual.Selected == false) { estatusFue = "NO"; }
-                }
-                else if (itemActual.Value == "T")
-                {
-                    if (itemActual.Selected == true) { estatusTrab = "SI"; }
-                    if (itemActual.Selected == false) { estatusTrab = "NO"; }
-                }
-            }
+		protected void GuardarRegistro(object sender, EventArgs e)
+		{
+			string estatusAmb = string.Empty;
+			string estatusFue = string.Empty;
+			string estatusTrab = string.Empty;
 
-            GrupoLiEntities contexto = new GrupoLiEntities();
-            int _idRiesgo = Convert.ToInt32(idRiesgo);
-            identificacion_peligro ListaIdePeligro = contexto.identificacion_peligro.SingleOrDefault(x => x.id_identificacion_peligro == _idRiesgo);
+			#region actualizar estatus medida
+			foreach (ListItem itemActual in chkMedidas.Items)
+			{
+				if (itemActual.Value == "A")
+				{
+					if (itemActual.Selected == true) { estatusAmb = "SI"; }
+					if (itemActual.Selected == false) { estatusAmb = "NO"; }
+				}
+				else if (itemActual.Value == "F")
+				{
+					if (itemActual.Selected == true) { estatusFue = "SI"; }
+					if (itemActual.Selected == false) { estatusFue = "NO"; }
+				}
+				else if (itemActual.Value == "T")
+				{
+					if (itemActual.Selected == true) { estatusTrab = "SI"; }
+					if (itemActual.Selected == false) { estatusTrab = "NO"; }
+				}
+			}
 
-            foreach (var itemIdePuesto in ListaIdePeligro.identificacion_puesto)
-            {
-                foreach (var itemEvaRiesgo in itemIdePuesto.evaluacion_riesgo)
-                {
-                    if (itemEvaRiesgo != null)
-                    {
-                        itemEvaRiesgo.estatus_med_amb = estatusAmb;
-                        itemEvaRiesgo.estatus_med_fue = estatusFue;
-                        itemEvaRiesgo.estatus_med_trab = estatusTrab;
+			GrupoLiEntities contexto = new GrupoLiEntities();
+			int _idRiesgo = Convert.ToInt32(idRiesgo);
+			identificacion_peligro ListaIdePeligro = contexto.identificacion_peligro.SingleOrDefault(x => x.id_identificacion_peligro == _idRiesgo);
 
-                        ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+			foreach (var itemIdePuesto in ListaIdePeligro.identificacion_puesto)
+			{
+				foreach (var itemEvaRiesgo in itemIdePuesto.evaluacion_riesgo)
+				{
+					if (itemEvaRiesgo != null)
+					{
+						itemEvaRiesgo.estatus_med_amb = estatusAmb;
+						itemEvaRiesgo.estatus_med_fue = estatusFue;
+						itemEvaRiesgo.estatus_med_trab = estatusTrab;
 
-                    }
-                }
-            }
+						ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            #endregion
+					}
+				}
+			}
 
-            #region  actualizar porcentaje estatus riesgo
-            Double contMedidasTotal = 0;
-            Double contMedidasSelec = 0;
-            Double valor = 1.11;
-            Double estatus = 0.0;
+			#endregion
 
-            contMedidasTotal = chkMedidas.Items.Count;
+			#region  actualizar porcentaje estatus riesgo
+			Double contMedidasTotal = 0;
+			Double contMedidasSelec = 0;
+			Double valor = 1.11;
+			Double estatus = 0.0;
 
-            foreach (ListItem itemActual in chkMedidas.Items)
-            {
-                if (itemActual.Selected == true)
-                {
-                    contMedidasSelec++;
-                }
-            }
+			contMedidasTotal = chkMedidas.Items.Count;
 
-            valor = Math.Round(Convert.ToDouble((100 / (contMedidasTotal))), 2);
-            estatus = (contMedidasSelec) * valor;
-            estatus = Math.Round(Convert.ToDouble(estatus), 0);
+			foreach (ListItem itemActual in chkMedidas.Items)
+			{
+				if (itemActual.Selected == true)
+				{
+					contMedidasSelec++;
+				}
+			}
 
-            lbestatus.Text = string.Empty + estatus;
+			valor = Math.Round(Convert.ToDouble((100 / (contMedidasTotal))), 2);
+			estatus = (contMedidasSelec) * valor;
+			estatus = Math.Round(Convert.ToDouble(estatus), 0);
 
-            GrupoLiEntities contexto1 = new GrupoLiEntities();
-            identificacion_peligro Edit1 = contexto1.identificacion_peligro.SingleOrDefault(x => x.id_identificacion_peligro == _idRiesgo);
+			lbestatus.Text = string.Empty + estatus;
 
-            foreach (var itemIdePuesto in Edit1.identificacion_puesto)
-            {
-                foreach (var itemEvaRiesgo in itemIdePuesto.evaluacion_riesgo)
-                {
-                    if (itemEvaRiesgo != null)
-                    {
-                        itemEvaRiesgo.porc_estatus = Convert.ToInt32(estatus);
-                        ObjUsuario.Error = CRUD.Edit_Fila(contexto1, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-                    }
-                }
-            }
+			GrupoLiEntities contexto1 = new GrupoLiEntities();
+			identificacion_peligro Edit1 = contexto1.identificacion_peligro.SingleOrDefault(x => x.id_identificacion_peligro == _idRiesgo);
 
-            #endregion
-        }
+			foreach (var itemIdePuesto in Edit1.identificacion_puesto)
+			{
+				foreach (var itemEvaRiesgo in itemIdePuesto.evaluacion_riesgo)
+				{
+					if (itemEvaRiesgo != null)
+					{
+						itemEvaRiesgo.porc_estatus = Convert.ToInt32(estatus);
+						ObjUsuario.Error = CRUD.Edit_Fila(contexto1, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+					}
+				}
+			}
+
+			#endregion
+		}
 		
-        #endregion
-    }
+		#endregion
+	}
 }

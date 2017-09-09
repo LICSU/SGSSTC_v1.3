@@ -61,7 +61,6 @@ namespace SGSSTC.source.sistema.Hacer
         #endregion
 
         #region acciones
-
         protected void crearlistaGral(object sender, EventArgs e)
         {
         //    int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalGral);

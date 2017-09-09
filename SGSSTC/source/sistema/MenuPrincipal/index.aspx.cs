@@ -475,7 +475,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
 
         //Rellena los cuadros del index
-        protected void MostrarSusPreguntas()
+        private void MostrarSusPreguntas()
         {
             List<empresa_itemdivision> consulta = new List<empresa_itemdivision>();
             consulta = Getter.CodigoCiiu_Empresa(ObjUsuario.Id_empresa);
@@ -542,7 +542,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             ControlesDinamicos.CrearLiteral("</td><td></td><td></td></tr>", pSusPreguntas);
         }
 
-        protected void MostrarMisPreguntas()
+        private void MostrarMisPreguntas()
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
 
@@ -578,7 +578,6 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             ControlesDinamicos.CrearLiteral("</td><td></td><td></td></tr>", panelMisPreguntas);
 
         }
-
-
+        
     }
 }

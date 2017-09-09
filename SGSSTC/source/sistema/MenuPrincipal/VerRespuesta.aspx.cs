@@ -12,7 +12,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
         private  Utilidades objUtilidades = new Utilidades();
-        int IdRespuesta = 0;
+        private int IdRespuesta = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,6 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
-            IdRespuesta = objUtilidades.descifrarCadena(Request.QueryString["rs"]);
             if (!IsPostBack)
             {
                 CargarDatos();
@@ -29,6 +28,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
         private void CargarDatos()
         {
+            IdRespuesta = objUtilidades.descifrarCadena(Request.QueryString["rs"]);
             List<usuario> ListUsuario = new List<usuario>();
             ListUsuario = Getter.Usuario(ObjUsuario.Id_usuario);
             string nomUsuario = string.Empty;
@@ -73,7 +73,6 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             Modal.Validacion(this, ObjUsuario.Error, "Add");
             CargarDatos();
         }
-
 
     }
 }

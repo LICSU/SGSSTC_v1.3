@@ -9,9 +9,9 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_GestionLaboral : System.Web.UI.Page
+    public partial class index_GestionLaboral : Page
     {
-        private  Utilidades objUtilidades = new Utilidades();
+        private Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
 
@@ -126,7 +126,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         }
 
-        protected void Cargartrabajadores(int _id_sucursal)
+        private void Cargartrabajadores(int _id_sucursal)
         {
             List<sucursal> ListaSucursal = new List<sucursal>();
             ListaSucursal = Getter.Sucursal(_id_sucursal);
@@ -1013,7 +1013,6 @@ namespace SGSSTC.source.sistema.Hacer
                 phAsisEditCap.Visible = false;
             }
         }
-
         #endregion
 
         #region acividades
@@ -1038,7 +1037,6 @@ namespace SGSSTC.source.sistema.Hacer
                 phAsisAddAct.Visible = false;
             }
         }
-
 
         protected void ddlEmpEditAct_SelectedIndexChanged(object sender, EventArgs e)
         {

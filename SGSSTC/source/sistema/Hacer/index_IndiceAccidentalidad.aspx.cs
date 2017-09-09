@@ -12,12 +12,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     public partial class index_IndiceAccidentalidad : Page
     {
         private Model_UsuarioSistema ObjUsuario;
-        int IdEmpresa = 0;
-        DateTime fechaActual;
         private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones
-
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
@@ -28,13 +25,11 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             phEmpresa.Visible = BoolEmpSuc.Item1;
             phSucursal.Visible = BoolEmpSuc.Item2;
-            IdEmpresa = ObjUsuario.Id_empresa;
 
             if (!IsPostBack)
             {
-                fechaActual = DateTime.Now;
-                ViewState["Año"] = string.Empty + fechaActual.Year;
-                ViewState["MesActual"] = Convert.ToInt32(fechaActual.Month);
+                ViewState["Año"] = string.Empty + DateTime.Now.Year;
+                ViewState["MesActual"] = Convert.ToInt32(DateTime.Now.Month);
                 CargarListas();
             }
 
@@ -261,7 +256,6 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (ddlEmpresa.SelectedValue != string.Empty)
             {
                 Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
-                IdEmpresa = Convert.ToInt32(ddlEmpresa.SelectedValue);
             }
 
         }
@@ -279,12 +273,10 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             if (ddlAnho.SelectedValue != string.Empty)
             {
-                fechaActual = DateTime.Now;
-
-                if (Convert.ToInt32(ddlAnho.SelectedValue) == fechaActual.Year)
+                if (Convert.ToInt32(ddlAnho.SelectedValue) == DateTime.Now.Year)
                 {
                     ViewState["Año"] = ddlAnho.SelectedValue;
-                    ViewState["MesActual"] = string.Empty + fechaActual.Month;
+                    ViewState["MesActual"] = string.Empty + DateTime.Now.Month;
                 }
                 else
                 {

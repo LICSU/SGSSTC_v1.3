@@ -13,7 +13,6 @@ namespace SGSSTC.source.sistema.Hacer
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
         private  Utilidades objUtilidades = new Utilidades();
-        HyperLink HyperLink1;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -131,6 +130,8 @@ namespace SGSSTC.source.sistema.Hacer
                 ListSopRec = Getter.Soporte(Convert.ToInt32(hdSoporte.Value), "RecursosEconomicos");
 
                 ControlesDinamicos.CrearLiteral("<ul class='list-group'>", pAnexo);
+
+                HyperLink HyperLink1;
                 foreach (var item1 in ListSopRec)
                 {
                     contadorArchivos++;

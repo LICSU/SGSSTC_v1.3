@@ -1,6 +1,5 @@
 ﻿using System;
 using Capa_Datos;
-
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -8,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_MatrizLegal : System.Web.UI.Page
+    public partial class index_MatrizLegal : Page
     {
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
-        string estatus = "0";
+        private string estatus = "0";
         private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index

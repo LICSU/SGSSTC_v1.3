@@ -1,55 +1,49 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Plan_Emergencias.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_Plan_Emergencias" %>
 
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
-	PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
-
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+	<ol class="breadcrumb">
+		<li><a href="#">Fase: Hacer</a></li>
+		<li><a href="#">Plan De Emergencias</a></li>
+	</ol>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Fase: Hacer</a></li>
-        <li><a href="#">Plan De Emergencias</a></li>
-    </ol>
+	<div class="page-header">
+		<h3 class="text-center">Plan De Contingencias Y Atención De Emergencias</h3>
+	</div>
 
-    <div class="page-header">
-        <h3 class="text-center">Plan De Contingencias Y Atención De Emergencias</h3>
-    </div>
+	<div class="row form-group">
 
-    <div class="row form-group">
+		<asp:PlaceHolder runat="server" ID="phEmpresa">
+			<div class="col-md-4">
+				<h4 class="text-center">Empresa</h4>
+				<asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
+			</div>
+		</asp:PlaceHolder>
 
-        <asp:PlaceHolder runat="server" ID="phEmpresa">
-            <div class="col-md-4">
-                <h4 class="text-center">Empresa</h4>
-                <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
-            </div>
-        </asp:PlaceHolder>
+		<asp:PlaceHolder runat="server" ID="phSucursal">
+			<div class="col-md-4 col-md-offset-4">
+				<h4 class="text-center">Sucursal</h4>
+				<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
+					OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+				</asp:DropDownList>
 
-        <asp:PlaceHolder runat="server" ID="phSucursal">
-            <div class="col-md-4 col-md-offset-4">
-                <h4 class="text-center">Sucursal</h4>
-                <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
-                    OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
-                </asp:DropDownList>
+				<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+					Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
+					runat="server" ValidationGroup="ValidationAdd" />
+			</div>
+		</asp:PlaceHolder>
+	</div>
 
-                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
-                    Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
-                    runat="server" ValidationGroup="ValidationAdd" />
-            </div>
-        </asp:PlaceHolder>
-    </div>
+	<asp:PlaceHolder runat="server" ID="phCkeditor" Visible="false">
+		<div class="row">
 
-    <asp:PlaceHolder runat="server" ID="phCkeditor" Visible="false">
-        <div class="row">
-
-            <CKEditor:CKEditorControl Height="1000" ID="txtPlanEmergencia" BasePath="~/ckeditor/" runat="server">
+			<CKEditor:CKEditorControl Height="1000" ID="txtPlanEmergencia" BasePath="~/ckeditor/" runat="server">
 						<h3>Plan de Contingencias y Atención de Emergencias </h3>
 
 						<h3>Objetivo. </h3>
@@ -325,32 +319,32 @@
 						toda persona lesionada hasta que esta sea trasladada al centro asistencial, una vez que hayan llegado los 
 						funcionarios del servicio médico y la ambulancia, para efectuar el traslado de los lesionados a la 
 						respectiva EPS
-            </CKEditor:CKEditorControl>
+			</CKEditor:CKEditorControl>
 
-        </div>
+		</div>
 
-        <br />
+		<br />
 
-        <div class="row">
-            <div class="col-md-4 col-md-offset-2">
-                <asp:Button ID="btnPrint" runat="server" CssClass="btn btn-success"
-                    OnClick="GenerarDocumento" Text="Generar Documento" ValidationGroup="ValidationAdd" />
-            </div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-2">
+				<asp:Button ID="btnPrint" runat="server" CssClass="btn btn-success"
+					OnClick="GenerarDocumento" Text="Generar Documento" ValidationGroup="ValidationAdd" />
+			</div>
 
-            <div class="col-md-4">
-                <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary"
-                    OnClick="GuardarRegistro" Text="Guardar y/o Actualizar Datos" ValidationGroup="ValidationAdd" />
-            </div>
+			<div class="col-md-4">
+				<asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary"
+					OnClick="GuardarRegistro" Text="Guardar y/o Actualizar Datos" ValidationGroup="ValidationAdd" />
+			</div>
 
-        </div>
+		</div>
 
-    </asp:PlaceHolder>
+	</asp:PlaceHolder>
 
-    <asp:PlaceHolder runat="server" ID="phCkeditorNo">
-        <div class="row">
-            <h3 class="text-center">Debe seleccionar la sucursal para editar el plan de emergencias.
-            </h3>
-        </div>
-    </asp:PlaceHolder>
+	<asp:PlaceHolder runat="server" ID="phCkeditorNo">
+		<div class="row">
+			<h3 class="text-center">Debe seleccionar la sucursal para editar el plan de emergencias.
+			</h3>
+		</div>
+	</asp:PlaceHolder>
 
 </asp:Content>

@@ -13,6 +13,7 @@ namespace SGSSTC.source.sistema.Hacer
         private  Utilidades objUtilidades = new Utilidades();
         private Tuple<bool, bool> BoolEmpSuc;
 
+        #region acciones index
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
@@ -49,6 +50,7 @@ namespace SGSSTC.source.sistema.Hacer
             Modal.Validacion(this, ObjUsuario.Error, "Delete");
             LlenarGridView();
         }
+        #endregion
 
         #region  eventos del grid
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

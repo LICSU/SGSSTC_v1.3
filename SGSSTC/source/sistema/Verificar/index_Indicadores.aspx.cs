@@ -11,7 +11,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     public partial class index_Indicadores : Page
     {
         private Model_UsuarioSistema ObjUsuario;
-        int K = 240000;
+        private int K = 240000;
         private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index

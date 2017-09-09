@@ -9,6 +9,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Create_Empresa : Page
     {
+        private Utilidades objUtilidades = new Utilidades();
         private int IdEmpresa;
         private Model_UsuarioSistema ObjUsuario;
         private string nombreEmpresa;
@@ -232,7 +233,6 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         private void add_Usuario_Default(int id_sucursal)
         {
-            private  Utilidades objUtilidades = new Utilidades();
             string password = Membership.GeneratePassword(16, 1);
             password = objUtilidades.cifrarCadena(password);
 
@@ -265,7 +265,6 @@ namespace SGSSTC.source.sistema.GestionDatos
             if (CRUD.Add_TipoDocumento_Sucursal(ObjUsuario, valores))
             {
                 //Si llega aqui enviar el email.....
-                private  Utilidades objUtilidades = new Utilidades();
                 string clave = objUtilidades.descifrarCadena2(Convert.ToString(ViewState["clave"].ToString()));
                 Utilidades.enviarEmpresa(txtEmail.Text, txtNomEmpresa.Text, ViewState["login"].ToString(), clave);
 

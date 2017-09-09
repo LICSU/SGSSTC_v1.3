@@ -13,6 +13,7 @@ namespace SGSSTC.source.sistema.Hacer
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
 
+        #region acciones index
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
@@ -30,6 +31,7 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarListas();
             }
         }
+
         private void CargarListas()
         {
             Listas.Empresa(ddlEmpresa);
@@ -39,12 +41,14 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
             }
         }
+
         private void LlenarGridView()
         {
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
             Tabla.EvaluacionRiesgo(GridView1, IdSucursal);
         }
+        #endregion
 
         #region acciones grid
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

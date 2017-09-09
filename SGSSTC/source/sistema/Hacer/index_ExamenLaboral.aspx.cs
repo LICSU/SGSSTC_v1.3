@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_ExamenLaboral : System.Web.UI.Page
+    public partial class index_ExamenLaboral : Page
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
@@ -37,6 +37,7 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
+
         private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
@@ -51,6 +52,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
+
         private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
@@ -62,6 +64,14 @@ namespace SGSSTC.source.sistema.Hacer
                 string.Empty + ViewState["FechaInicio"],
                 string.Empty + ViewState["FechaFin"]);
 
+        }
+
+        protected void EliminarRegistro(object sender, EventArgs e)
+        {
+            historia_clinica_ocupacional tabla = new historia_clinica_ocupacional();
+            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            LlenarGridView();
         }
         #endregion
 
@@ -197,13 +207,5 @@ namespace SGSSTC.source.sistema.Hacer
             LlenarGridView();
         }
         #endregion
-
-        protected void EliminarRegistro(object sender, EventArgs e)
-        {
-            historia_clinica_ocupacional tabla = new historia_clinica_ocupacional();
-            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
-            LlenarGridView();
-        }
     }
 }

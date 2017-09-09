@@ -1453,7 +1453,6 @@
     <Content Include="source\sistema\MenuPrincipal\CerrarSesion.aspx" />
     <Content Include="source\sistema\MenuPrincipal\index.aspx" />
     <Content Include="source\sistema\MenuPrincipal\VerRespuesta.aspx" />
-    <Content Include="source\sistema\MenuPrincipal\VerRespuestasPares.aspx" />
     <Content Include="source\sistema\MenuPrincipal\ViewMisPreguntas.aspx" />
     <Content Include="source\sistema\MenuPrincipal\ViewPreguntasPares.aspx" />
     <Content Include="source\sistema\Registro\index.aspx" />
@@ -2345,13 +2344,6 @@
     </Compile>
     <Compile Include="source\sistema\MenuPrincipal\VerRespuesta.aspx.designer.cs">
       <DependentUpon>VerRespuesta.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="source\sistema\MenuPrincipal\VerRespuestasPares.aspx.cs">
-      <DependentUpon>VerRespuestasPares.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="source\sistema\MenuPrincipal\VerRespuestasPares.aspx.designer.cs">
-      <DependentUpon>VerRespuestasPares.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\MenuPrincipal\ViewMisPreguntas.aspx.cs">
       <DependentUpon>ViewMisPreguntas.aspx</DependentUpon>

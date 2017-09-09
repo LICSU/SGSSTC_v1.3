@@ -1,13 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_InventarioRecursos.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_InventarioRecursos" %>
 
-
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:Panel runat="server" ID="panel1">
-
 
         <ol class="breadcrumb">
             <li><a href="#">Fase: Hacer</a></li>

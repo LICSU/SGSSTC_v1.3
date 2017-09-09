@@ -35,6 +35,7 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
+
         private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));

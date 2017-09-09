@@ -9,15 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class Update_AsistenciaCapacitacion : System.Web.UI.Page
+    public partial class Update_AsistenciaCapacitacion : Page
     {
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
-        RadioButtonList miRadio;
-        ListItem itemAsis;
-        ListItem itemJust;
-        ListItem itemInjust;
-        ListItem item;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,8 +43,14 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
-        protected void CargarAsistencia()
+        private void CargarAsistencia()
         {
+            ListItem itemAsis;
+            ListItem itemJust;
+            ListItem itemInjust;
+            ListItem item;
+            RadioButtonList miRadio;
+
             ViewState["Id_gestion"] = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
             itemAsis = new ListItem();
@@ -125,6 +126,7 @@ namespace SGSSTC.source.sistema.Hacer
         protected void btPrintSave_Click(object sender, EventArgs e)
         {
             int contRadio = 0;
+            RadioButtonList miRadio;
 
             List<trabajador_gestion> ListaTrabajadorGest = new List<trabajador_gestion>();
             ListaTrabajadorGest = Getter.TrabajadorInGestion(0, Convert.ToInt32(string.Empty + ViewState["Id_gestion"]));

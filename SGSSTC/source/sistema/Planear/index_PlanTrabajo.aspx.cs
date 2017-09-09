@@ -11,12 +11,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_PlanTrabajo : System.Web.UI.Page
+    public partial class index_PlanTrabajo : Page
     {
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
-        DateTime anho = DateTime.Now;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -35,12 +34,11 @@ namespace SGSSTC.source.sistema.Hacer
             phSucursalAdd.Visible = BoolEmpSuc.Item2;
             phSucursalEdit.Visible = BoolEmpSuc.Item2;
 
-
             if (!IsPostBack)
             {
                 ListaAnho(ddlYear);
                 CargarListas();
-                ViewState["anho"] = string.Empty + Convert.ToInt32(anho.Year);
+                ViewState["anho"] = string.Empty + Convert.ToInt32(DateTime.Now.Year);
             }
         }
         private void CargarListas()
@@ -89,7 +87,7 @@ namespace SGSSTC.source.sistema.Hacer
         #region acciones
         private DropDownList ListaAnho(DropDownList DropDownList1)
         {
-            int anhoActual = Convert.ToInt32(anho.Year);
+            int anhoActual = Convert.ToInt32(DateTime.Now.Year);
 
             ViewState["anho"] = string.Empty + anhoActual;
 

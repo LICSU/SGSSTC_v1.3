@@ -27,6 +27,7 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarListas();
             }
         }
+
         private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
@@ -38,6 +39,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
             }
         }
+
         protected void btnCalculate_Onclick(object sender, EventArgs e)
         {
             phBtnPrint.Visible = true;

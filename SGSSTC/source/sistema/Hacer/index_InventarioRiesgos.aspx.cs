@@ -39,6 +39,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
             }
         }
+
         protected void GenerarDocumento(object sender, EventArgs e)
         {
             #region cuerpo

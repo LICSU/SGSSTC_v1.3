@@ -5,14 +5,12 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 
-
 namespace SGSSTC.source.sistema.Hacer
 {
     public partial class View_EvaluacionPuesto : Page
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
-        int id_EvaRiesgo;
         private  Utilidades objUtilidades = new Utilidades();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,9 +26,10 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarDatos();
             }
         }
+
         private void CargarDatos()
         {
-            id_EvaRiesgo = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+            int id_EvaRiesgo = objUtilidades.descifrarCadena(Request.QueryString["id"]);
             List<evaluacion_riesgo> Lista_EvaRiesgo = new List<evaluacion_riesgo>();
             Lista_EvaRiesgo = Getter.EvaluacionRiesgo(id_EvaRiesgo);
 

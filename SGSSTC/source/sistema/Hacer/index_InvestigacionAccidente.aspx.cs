@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Verificar
 {
-    public partial class index_InvestigacionAccidente : System.Web.UI.Page
+    public partial class index_InvestigacionAccidente : Page
     {
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;

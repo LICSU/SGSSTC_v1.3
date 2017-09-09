@@ -6,46 +6,40 @@ using System.Web.Security;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class View_Obligacion : System.Web.UI.Page
-    {
-        #region variables
-        private  Utilidades objUtilidades = new Utilidades();
-        private Model_UsuarioSistema ObjUsuario;
-        protected static int idObligacion;
+	public partial class View_Obligacion : System.Web.UI.Page
+	{
+		private Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
 
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
-        #endregion
+			if (!IsPostBack)
+			{
+				CargarUsuario();
+			}
+		}
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+		private void CargarUsuario()
+		{
+			string valor = Request.QueryString["idO"];
+			List<obligacion> ListaObligacion = new List<obligacion>();
+			ListaObligacion = Getter.Obligacion(Convert.ToInt32(objUtilidades.descifrarCadena(valor)));
 
-            string valor = Request.QueryString["idO"];
-            idObligacion = objUtilidades.descifrarCadena(valor);
-
-            if (!IsPostBack)
-            {
-                CargarUsuario();
-            }
-        }
-        protected void CargarUsuario()
-        {
-            List<obligacion> ListaObligacion = new List<obligacion>();
-            ListaObligacion = Getter.Obligacion(Convert.ToInt32(idObligacion));
-
-            foreach (var item in ListaObligacion)
-            {
-                txtFechaEntrega.Text = Convert.ToDateTime(item.fecha_entrega).ToString("yyyy-MM-dd");
-                txtResponsable.Text = item.usuario.login;
-                txtCategoria.Text = item.categoria.nombre;
-                txtPrioridad.Text = item.prioridad;
-                txtFrecuencia.Text = item.frecuencia_control.nombre;
-                txtDescripcion.Text = item.descripcion;
-                txtAcciones.Text = item.acciones;
-                txtEstatus.Text = item.estatus_obl;
-                txtActividad.Text = item.plan_trabajo.nombre;
-            }
-        }
+			foreach (var item in ListaObligacion)
+			{
+				txtFechaEntrega.Text = Convert.ToDateTime(item.fecha_entrega).ToString("yyyy-MM-dd");
+				txtResponsable.Text = item.usuario.login;
+				txtCategoria.Text = item.categoria.nombre;
+				txtPrioridad.Text = item.prioridad;
+				txtFrecuencia.Text = item.frecuencia_control.nombre;
+				txtDescripcion.Text = item.descripcion;
+				txtAcciones.Text = item.acciones;
+				txtEstatus.Text = item.estatus_obl;
+				txtActividad.Text = item.plan_trabajo.nombre;
+			}
+		}
 		
-    }
+	}
 }

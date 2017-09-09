@@ -38,7 +38,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             Modal.registrarModal("addModal", "AddModalScript", this);
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {

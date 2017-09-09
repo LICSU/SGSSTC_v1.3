@@ -66,9 +66,6 @@ namespace SGSSTC.source.sistema.Hacer
 
             PrintFile.PrintContingencias(valores, this);
         }
-
-
-
         protected void GuardarRegistro(object sender, EventArgs e)
         {
             int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);

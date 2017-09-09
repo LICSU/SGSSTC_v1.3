@@ -9,12 +9,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Verificar
 {
-	public partial class Update_Incidentes : System.Web.UI.Page
+	public partial class Update_Incidentes : Page
 	{
 		private Model_UsuarioSistema ObjUsuario;
-		Tuple<bool, bool> BoolEmpSuc;
+        private Tuple<bool, bool> BoolEmpSuc;
 		private  Utilidades objUtilidades = new Utilidades();
-		int idAccidente;
 
 		#region acciones index
 		protected void Page_Load(object sender, EventArgs e)
@@ -55,7 +54,7 @@ namespace SGSSTC.source.sistema.Verificar
 		}
 		private void CargarAccidente()
 		{
-			idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+			int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 			List<at_it_el_pa> ListAccidentes = new List<at_it_el_pa>();
 			ListAccidentes = Getter.Accidente(idAccidente);
 

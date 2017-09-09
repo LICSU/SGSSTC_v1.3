@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_MapaRiesgos : System.Web.UI.Page
+    public partial class index_MapaRiesgos : Page
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
@@ -227,7 +227,6 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursalEdit, Convert.ToInt32(ddlEmpresaEdit.SelectedValue));
             }
         }
-
         protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSucursal.SelectedValue != string.Empty)
@@ -241,7 +240,6 @@ namespace SGSSTC.source.sistema.Hacer
             }
             LlenarGridView();
         }
-
         protected void BuscarRegistro(object sender, EventArgs e)
         {
             if (txtSearch.Text != string.Empty)

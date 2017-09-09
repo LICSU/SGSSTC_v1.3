@@ -11,7 +11,7 @@ namespace SGSSTC.source.sistema.GestionDatos
     public partial class Enviando : Page
     {
         protected static Model_UsuarioSistema ObjUsuario;
-        protected static private  Utilidades objUtilidades = new Utilidades();
+        protected static Utilidades objUtilidades = new Utilidades();
         protected static int act1, act2, act3, IdEmpresa;
         protected static string nombreSucursal, password, nom_usuario;
         protected static int id_sucursal;
@@ -215,8 +215,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                     empresa = datos.nombre;
                     correo = datos.email;
                 }
-
-                private  Utilidades objUtilidades = new Utilidades();
+                
                 password = objUtilidades.descifrarCadena2(Convert.ToString(password));
                 Utilidades.enviarSucursal(correo, empresa, nombreSucursal, nom_usuario, password);
                 return MensajeError.Exito_Add_Sucursal.Value;

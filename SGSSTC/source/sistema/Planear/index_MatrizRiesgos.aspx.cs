@@ -7,12 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_MatrizRiesgos : System.Web.UI.Page
+    public partial class index_MatrizRiesgos : Page
     {
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
-        string estatus = "0";
-        protected static int IdSucursal;
+        private string estatus = "0";
+        private int IdSucursal;
         private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
@@ -38,7 +38,6 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
-
         private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));

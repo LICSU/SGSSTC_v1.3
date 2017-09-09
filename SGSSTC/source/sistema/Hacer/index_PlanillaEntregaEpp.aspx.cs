@@ -10,12 +10,12 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_PlanillaEntregaEpp : System.Web.UI.Page
+    public partial class index_PlanillaEntregaEpp : Page
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
-        static int IdSucursal = 0;
-        static int IdTrabajador = 0;
+        private static int IdSucursal = 0;
+        private static int IdTrabajador = 0;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)

@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_Obligaciones : System.Web.UI.Page
+    public partial class index_Obligaciones : Page
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
