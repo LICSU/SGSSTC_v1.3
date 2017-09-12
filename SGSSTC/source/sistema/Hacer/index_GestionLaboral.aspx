@@ -1674,7 +1674,7 @@
                                 <div class="row form-group">
                                     <label class="col-md-2 control-label">Archivo: </label>
                                     <div class="col-md-10">
-                                        <asp:FileUpload ID="flEscaneado" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
+                                        <asp:FileUpload ID="flEscaneado" runat="server" ClientIDMode="Static" ></asp:FileUpload>
 
                                     </div>
                                 </div>

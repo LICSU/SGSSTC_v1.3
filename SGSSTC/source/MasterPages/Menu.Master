@@ -176,17 +176,6 @@
 								</a>
 							</li>
 							<li>
-								<a href="../Hacer/index_MatrizLegal.aspx"><i class="fa fa-circle-o"></i>
-									<span>Matriz Legal</span>
-								</a>
-							</li>
-							<li>
-								<a href="../Hacer/index_MatrizRiesgos.aspx"><i class="fa fa-circle-o"></i>
-									<span>Matriz de Riesgos</span>
-								</a>
-							</li>
-
-							<li>
 								<a href="../EvaluacionInicial/index_AnalisisVulnerabilidad.aspx"><i class="fa fa-circle-o"></i>
 									<span>Análisis de vulnerabilidad</span>
 								</a>

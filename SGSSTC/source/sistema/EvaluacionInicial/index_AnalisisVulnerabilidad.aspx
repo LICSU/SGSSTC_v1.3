@@ -51,7 +51,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-md-offset-4">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
@@ -190,7 +190,7 @@
                                 <div>
                                     <label class="col-md-4 control-label">Archivo: </label>
                                     <div class="col-md-6">
-                                        <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
+                                        <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" ></asp:FileUpload>
                                         <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
                                             SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
                                             Font-Bold="true" ControlToValidate="flpArchivo" runat="server"

@@ -173,7 +173,7 @@
                                 <div>
                                     <label class="col-md-4 control-label">Documento Recursos Economicos: </label>
                                     <div class="col-md-6">
-                                        <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
+                                        <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" ></asp:FileUpload>
                                         <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
                                             SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
                                             Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
@@ -188,7 +188,7 @@
                                     <label class="col-md-4 control-label">Soporte (Facturas, Pagos, comprobntes, etc):</label>
                                     <div class="col-md-6">
                                         <asp:FileUpload ID="fuSoporte" runat="server" ClientIDMode="Static"
-                                            AllowMultiple="true" CssClass="form-control"></asp:FileUpload>
+                                            AllowMultiple="true" ></asp:FileUpload>
                                     </div>
                                 </div>
                             </div>

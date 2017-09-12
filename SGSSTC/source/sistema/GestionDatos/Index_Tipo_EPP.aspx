@@ -145,7 +145,7 @@
                                     <h4 class="text-center">Imagen Señal: </h4>
                                 </div>
                                 <div class="col-md-8">
-                                    <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
+                                    <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" ></asp:FileUpload>
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
                                         SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
                                         Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
@@ -251,7 +251,7 @@
                                     <h4 class="text-center">Imagen Señal: </h4>
                                 </div>
                                 <div class="col-md-8">
-                                    <asp:FileUpload ID="flpArchivoEdit" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:FileUpload>
+                                    <asp:FileUpload ID="flpArchivoEdit" runat="server" ClientIDMode="Static" ></asp:FileUpload>
                                 </div>
                             </div>
                             <br />

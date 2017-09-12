@@ -344,7 +344,7 @@
 								<label class="col-md-4 control-label">Soporte Comunicado: </label>
 								<div class="col-md-6">
 									<asp:FileUpload ID="fuComunicado" runat="server" ClientIDMode="Static"
-										CssClass="form-control"></asp:FileUpload>
+										></asp:FileUpload>
 								</div>
 							</div>
 							<br />
@@ -353,7 +353,7 @@
 								<label class="col-md-4 control-label">Soporte Reporte de Accidente: </label>
 								<div class="col-md-6">
 									<asp:FileUpload ID="fuReporte" runat="server" ClientIDMode="Static"
-										CssClass="form-control"></asp:FileUpload>
+										></asp:FileUpload>
 								</div>
 							</div>
 							<br />

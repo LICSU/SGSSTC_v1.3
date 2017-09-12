@@ -240,7 +240,7 @@
                                 <label class="col-md-4 control-label">Archivo: </label>
                                 <div class="col-md-6">
                                     <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static"
-                                        CssClass="form-control"></asp:FileUpload>
+                                        ></asp:FileUpload>
 
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
                                         SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
