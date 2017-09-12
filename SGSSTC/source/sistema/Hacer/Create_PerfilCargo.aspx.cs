@@ -40,7 +40,13 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void GenerarDocumento(object sender, EventArgs e)
         {
-
+            String[] valores = {
+                string.Empty + ObjUsuario.Id_sucursal,
+                txtNombre.Text,
+                ddlCargo.SelectedItem.Text,
+                txtDescripcion.Text
+            };
+            PrintFile.PrintPerfilCargo(valores, this);
         }
     }
 }

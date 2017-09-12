@@ -311,6 +311,8 @@
             </div>
 
         </ContentTemplate>
-        <Triggers></Triggers>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnPrint" />
+        </Triggers>
     </asp:UpdatePanel>
 </asp:Content>

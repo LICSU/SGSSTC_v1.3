@@ -416,14 +416,27 @@ namespace Capa_Datos
         /// <returns></returns>
         public static PdfPTable AddCeldaImage(PdfPTable tabla, Model_Celda _celda)
         {
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(HttpContext.Current.Server.MapPath(_celda.Texto));
-            logo.ScalePercent(100);
-            PdfPCell celda = new PdfPCell(logo);
-            celda = SetBorde(celda, _celda.Borde);
-            celda.Colspan = _celda.Colspan;
-            celda.Rowspan = _celda.Rowspan;
-            celda.HorizontalAlignment = GetAlineacion(_celda.Alinear);
-            tabla.AddCell(celda);
+            if (_celda.Texto.Length > 0)
+            {
+                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(HttpContext.Current.Server.MapPath(_celda.Texto));
+                logo.ScalePercent(100);
+                PdfPCell celda = new PdfPCell(logo);
+                celda = SetBorde(celda, _celda.Borde);
+                celda.Colspan = _celda.Colspan;
+                celda.Rowspan = _celda.Rowspan;
+                celda.HorizontalAlignment = GetAlineacion(_celda.Alinear);
+                tabla.AddCell(celda);
+            }
+            else
+            {
+                PdfPCell celda = new PdfPCell();
+                celda = SetBorde(celda, _celda.Borde);
+                celda.Colspan = _celda.Colspan;
+                celda.Rowspan = _celda.Rowspan;
+                celda.HorizontalAlignment = GetAlineacion(_celda.Alinear);
+                tabla.AddCell(celda);
+            }
+            
             return tabla;
         }
 

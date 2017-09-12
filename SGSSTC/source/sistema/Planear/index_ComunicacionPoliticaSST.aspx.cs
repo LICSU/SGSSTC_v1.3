@@ -1,5 +1,6 @@
 ﻿using Capa_Datos;
 using System;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -113,145 +114,93 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void crearlistaGral(object sender, EventArgs e)
         {
-            //int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalGral);
+            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalGral);
+            int idPolitica = GetterMax.PoliticaSST(ObjUsuario.Id_empresa);
 
-            //int idPolitica = GetterMax.PoliticaSST(ObjUsuario.Id_empresa);
+            List<politica_sst> ListaPolitica = new List<politica_sst>();
+            ListaPolitica = Getter.PoliticaSST(idPolitica);
 
-            //List<politica_sst> ListaPolitica = new List<politica_sst>();
-            //ListaPolitica = Getter.PoliticaSST(idPolitica);
+            string Compromisos = string.Empty;
+            string Objetivos = string.Empty;
+            string Anho = string.Empty;
 
-            //string Compromisos = string.Empty;
-            //string Objetivos = string.Empty;
-            //string Anho = string.Empty;
+            if (ListaPolitica.Count == 0)
+            {
+                Compromisos = "No existen compromisos agregados";
+                Objetivos = "No existen objetivos agregados";
+                Anho = "Sin anño";
+            }
+            else
+            {
+                foreach (var item in ListaPolitica)
+                {
+                    if (item.compromiso != null) { Compromisos = item.compromiso; }
+                    else { Compromisos = "No existen compromisos agregados"; }
 
-            //if (ListaPolitica.Count == 0)
-            //{
-            //    Compromisos = "No existen compromisos agregados";
-            //    Objetivos = "No existen objetivos agregados";
-            //    Anho = "Sin anño";
-            //}
-            //else
-            //{
-            //    foreach (var item in ListaPolitica)
-            //    {
-            //        if (item.compromiso != null) { Compromisos = item.compromiso; }
-            //        else { Compromisos = "No existen compromisos agregados"; }
+                    if (item.objetivos != null) { Objetivos = item.objetivos; }
+                    else { Objetivos = "No existen objetivos agregados"; }
 
-            //        if (item.objetivos != null) { Objetivos = item.objetivos; }
-            //        else { Objetivos = "No existen objetivos agregados"; }
-
-            //        Anho = Convert.ToString(item.anho);
-            //    }
-            //}
-
-
-            //List<sucursal> ListaSucursal = new List<sucursal>();
-            //List<trabajador> ListaTrabajador = new List<trabajador>();
-
-            //ListaSucursal = Getter.Sucursal(ObjUsuario.Id_sucursal);
-            //ListaTrabajador = Getter.Trabajador(0, 0, ObjUsuario.Id_sucursal);
-
-            //Document pdfDoc = ManageFiles.InicializarPDF(ListaSucursal, this, "PoliticaSST_", false);
-            //pdfDoc.Open();
+                    Anho = Convert.ToString(item.anho);
+                }
+            }
 
 
-            //foreach (var itemTrab in ListaTrabajador)
-            //{
-            //    PdfPTable tablaPDF = new PdfPTable(12);
-            //    tablaPDF.WidthPercentage = 100;
+            List<sucursal> ListaSucursal = new List<sucursal>();
+            List<trabajador> ListaTrabajador = new List<trabajador>();
 
-            //    ManageFiles.AddTitulo(pdfDoc, "C", "COMUNICADO POLITICA DE SST");
+            ListaSucursal = Getter.Sucursal(ObjUsuario.Id_sucursal);
+            ListaTrabajador = Getter.Trabajador(0, 0, ObjUsuario.Id_sucursal);
 
-            //    tablaPDF = ManageFiles.AddMembrete12(tablaPDF, ListaSucursal, ListaTrabajador.Count);
+            string[] valores = {
+                string.Empty + IdSucursal,
+                Anho,
+                Compromisos,
+                Objetivos,
+            }; 
 
-
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "AÑO");
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H3", "C", "1|1|1|1", 12, 1, "", Anho);
-
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "COMPROMISO DE LA EMPRESA");
-            //    tablaPDF = ManageFiles.AddCeldaHTML(tablaPDF, "1|1|1|1", 12, 1, Compromisos);
-
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "EN TAL SENTIDO AL EMPRESA SE COMPROMETE A");
-            //    tablaPDF = ManageFiles.AddCeldaHTML(tablaPDF, "1|1|1|1", 12, 1, Objetivos);
-
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "TRABAJADOR AL QUE FUE COMUNICADO");
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "FIRMA");
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|0|1", 5, 1, "", string.Empty + itemTrab.primer_nombre + " " + itemTrab.primer_apellido);
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|0|1", 5, 1, "", " ");
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "0|1|1|1", 5, 1, "", " ");
-            //    tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "0|1|1|1", 5, 1, "", " ");
-
-
-            //    tablaPDF = ManageFiles.Footer(tablaPDF, ListaTrabajador.Count);
-
-            //    pdfDoc.Add(tablaPDF);
-            //    pdfDoc.NewPage();
-            //}
-
-            //pdfDoc.Close();
-            //Response.Write(pdfDoc);
-            //Response.End();
+            PrintFile.PrintComunicacionPoliticaSST2(valores, ListaTrabajador, this);
         }
 
         protected void Guardar(object sender, EventArgs e)
         {
-            //int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
+            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalAdd);
+            int idPolitica = GetterMax.PoliticaSST(ObjUsuario.Id_empresa);
+            List<politica_sst> ListaPolitica = new List<politica_sst>();
+            ListaPolitica = Getter.PoliticaSST(idPolitica);
 
-            //int idPolitica = GetterMax.PoliticaSST(ObjUsuario.Id_empresa);
-            //List<politica_sst> ListaPolitica = new List<politica_sst>();
-            //ListaPolitica = Getter.PoliticaSST(idPolitica);
+            string Compromisos = string.Empty;
+            string Objetivos = string.Empty;
+            string Anho = string.Empty;
 
-            //string Compromisos = string.Empty;
-            //string Objetivos = string.Empty;
-            //string Anho = string.Empty;
+            if (ListaPolitica.Count == 0)
+            {
+                Compromisos = "No existen compromisos agregados";
+                Objetivos = "No existen objetivos agregados";
+                Anho = "Sin anño";
+            }
+            else
+            {
+                foreach (var item in ListaPolitica)
+                {
+                    if (item.compromiso != null) { Compromisos = item.compromiso; }
+                    else { Compromisos = "No existen compromisos agregados"; }
 
-            //if (ListaPolitica.Count == 0)
-            //{
-            //    Compromisos = "No existen compromisos agregados";
-            //    Objetivos = "No existen objetivos agregados";
-            //    Anho = "Sin anño";
-            //}
-            //else
-            //{
-            //    foreach (var item in ListaPolitica)
-            //    {
-            //        if (item.compromiso != null) { Compromisos = item.compromiso; }
-            //        else { Compromisos = "No existen compromisos agregados"; }
+                    if (item.objetivos != null) { Objetivos = item.objetivos; }
+                    else { Objetivos = "No existen objetivos agregados"; }
 
-            //        if (item.objetivos != null) { Objetivos = item.objetivos; }
-            //        else { Objetivos = "No existen objetivos agregados"; }
+                    Anho = Convert.ToString(item.anho);
+                }
+            }
+ 
+            String[] valores = {
+                string.Empty + IdSucursal,
+                Anho,
+                Compromisos,
+                Objetivos,
+                ddlTrabajadorEsp.SelectedItem.ToString()
+            };
+            PrintFile.PrintComunicacionPoliticaSST(valores, this);
 
-            //        Anho = Convert.ToString(item.anho);
-            //    }
-            //}
-
-            //Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
-            //    IdSucursal,
-            //    "PoliticaSST_",
-            //    "COMUNICADO POLITICA DE SST",
-            //    this);
-
-            //#region cuerpo
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "AÑO"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H3", "C", "1|1|1|1", 12, 1, "", Anho));
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "COMPROMISO DE LA EMPRESA"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, "1|1|1|1", 12, 1, Compromisos));
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 12, 1, "azul", "EN TAL SENTIDO AL EMPRESA SE COMPROMETE A"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, "1|1|1|1", 12, 1, Objetivos));
-
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "TRABAJADOR AL QUE FUE COMUNICADO"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "FIRMA"));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|0|1", 5, 1, "", string.Empty + ddlTrabajadorEsp.SelectedItem));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|0|1", 5, 1, "", " "));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "0|1|1|1", 5, 1, "", " "));
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "0|1|1|1", 5, 1, "", " "));
-            //#endregion
-
-
-            //ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, IdSucursal, this);
         }
 
         protected void btnSubirComunicado_OnClick(object sender, EventArgs e)
@@ -306,7 +255,7 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 ViewState["sucursal"] = "0";
             }
-            LlenarGridView();
+            //LlenarGridView();
         }
         protected void ddlTrabajador_SelectedIndexChanged(object sender, EventArgs e)
         {

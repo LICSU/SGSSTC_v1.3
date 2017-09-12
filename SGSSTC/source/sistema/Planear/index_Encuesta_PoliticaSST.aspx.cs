@@ -1,5 +1,6 @@
 ﻿using Capa_Datos;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -50,12 +51,16 @@ namespace SGSSTC.source.sistema.Hacer
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
-
+            string valor = string.Empty + ViewState["trabajador"];
+            int id_trabajador = 0;
+            if (!valor.Equals(string.Empty)) {
+                id_trabajador = Convert.ToInt32(string.Empty + ViewState["trabajador"]);
+            }
             Tabla.Encuesta_PoliticaSST(
                 GridView1,
                 IdEmpresa,
                 IdSucursal,
-                Convert.ToInt32(string.Empty + ViewState["trabajador"])
+                id_trabajador
                 );
         }
         #endregion
@@ -64,145 +69,73 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void crearlistaGral(object sender, EventArgs e)
         {
-        //    int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalGral);
+            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalGral);
 
-        //    List<sucursal> ListaSucursal = new List<sucursal>();
-        //    List<trabajador> ListaTrabajador = new List<trabajador>();
+            List<sucursal> ListaSucursal = new List<sucursal>();
+            List<trabajador> ListaTrabajador = new List<trabajador>();
 
-        //    ListaSucursal = Getter.Sucursal(ObjUsuario.Id_sucursal);
-        //    ListaTrabajador = Getter.Trabajador(0, 0, ObjUsuario.Id_sucursal);
+            ListaSucursal = Getter.Sucursal(ObjUsuario.Id_sucursal);
+            ListaTrabajador = Getter.Trabajador(0, 0, ObjUsuario.Id_sucursal);
 
-        //    Document pdfDoc = ManageFiles.InicializarPDF(ListaSucursal, this, "EncuestaPoliticaSST_", false);
-        //    pdfDoc.Open();
+            string[] valores = {
+            "¿Es de su Conocimiento la Política de Seguridad y Salud en el Trabajo de la Organización?",
+            "¿Está publicado en Cartelera o en medios electrónicos el documento de la Política de Seguridad y Salud en el Trabajo de la Organización?",
+            "¿Es concisa y está redactada con claridad?",
+            "¿Está fechada y firmada por el representante legal de la Empresa?",
+            "¿La Política es específica para la Empresa?",
+            "¿ Es apropiada para la naturaleza de los peligros y el tamaño de la organización?",
+            "¿Esta implícito en el Documento el compromiso de la alta dirección de la organización con la seguridad y la salud en el trabajo?",
+            "¿La organización se compromete a Proteger la seguridad y salud de todos los trabajadores, mediante la mejora continua del SG-SST?",
+            "¿Se compromete a cumplir la normatividad nacional vigente aplicable en materia de riesgos laborales?",
+            "¿Se Compromete a mantener el bienestar físico y mental de todos los trabajadores?",
+            "¿Se Compromete a establecer una cultura de prevención de Riesgos Laborales?",
+            "¿La Polìtica contempla  las normas y responsabilidades a todos los niveles de la organización?",
+            "¿Usted comprende las directrices descritas en la Política de Seguridad y Salud en el Trabajo?",
+            "¿Usted acata los lineamientos establecidos en la Política de Seguridad y Salud en el Trabajo?",
+            "¿Usted participa en la ejecución de la política de Seguridad y Salud en el Trabajo?",
+            "¿Usted Considera que la Política de Seguridad y Salud en el Trabajo complementa el logro de los objetivos de Seguridad y Salud en el Trabajo?",
+            "¿Se realizan grupos de trabajo para escuchar las opiniones de los trabajadores y las necesidades en materia de seguridad y salud en el trabajo? para posibles actualizaciones de la Política de Seguridad y Salud en el Trabajo",
+            "¿Es revisada como mínimo una vez al año y de ser necesario, actualizada con los cambios en materia de normatividad o por los requerimientos que surjan ?"
+        };
 
-        //    PdfPTable tablaPDF;
+            string[] valores2 = {
+                string.Empty + ObjUsuario.Id_sucursal
+            };
 
-        //    string[] valores = {
-        //    "¿Es de su Conocimiento la Política de Seguridad y Salud en el Trabajo de la Organización?",
-        //    "¿Está publicado en Cartelera o en medios electrónicos el documento de la Política de Seguridad y Salud en el Trabajo de la Organización?",
-        //    "¿Es concisa y está redactada con claridad?",
-        //    "¿Está fechada y firmada por el representante legal de la Empresa?",
-        //    "¿La Política es específica para la Empresa?",
-        //    "¿ Es apropiada para la naturaleza de los peligros y el tamaño de la organización?",
-        //    "¿Esta implícito en el Documento el compromiso de la alta dirección de la organización con la seguridad y la salud en el trabajo?",
-        //    "¿La organización se compromete a Proteger la seguridad y salud de todos los trabajadores, mediante la mejora continua del SG-SST?",
-        //    "¿Se compromete a cumplir la normatividad nacional vigente aplicable en materia de riesgos laborales?",
-        //    "¿Se Compromete a mantener el bienestar físico y mental de todos los trabajadores?",
-        //    "¿Se Compromete a establecer una cultura de prevención de Riesgos Laborales?",
-        //    "¿La Polìtica contempla  las normas y responsabilidades a todos los niveles de la organización?",
-        //    "¿Usted comprende las directrices descritas en la Política de Seguridad y Salud en el Trabajo?",
-        //    "¿Usted acata los lineamientos establecidos en la Política de Seguridad y Salud en el Trabajo?",
-        //    "¿Usted participa en la ejecución de la política de Seguridad y Salud en el Trabajo?",
-        //    "¿Usted Considera que la Política de Seguridad y Salud en el Trabajo complementa el logro de los objetivos de Seguridad y Salud en el Trabajo?",
-        //    "¿Se realizan grupos de trabajo para escuchar las opiniones de los trabajadores y las necesidades en materia de seguridad y salud en el trabajo? para posibles actualizaciones de la Política de Seguridad y Salud en el Trabajo",
-        //    "¿Es revisada como mínimo una vez al año y de ser necesario, actualizada con los cambios en materia de normatividad o por los requerimientos que surjan ?"
-        //};
+            PrintFile.PrintEncuestaPoliticaSST2(valores2, valores, ListaTrabajador, this);
 
-        //    foreach (var itemTrab in ListaTrabajador)
-        //    {
-        //        tablaPDF = new PdfPTable(12);
-        //        tablaPDF.WidthPercentage = 100;
-
-        //        ManageFiles.AddTitulo(pdfDoc, "C", "ENCUESTA SOBRE EL CONOCIMIENTO DE LA POLITICA DE SST");
-
-        //        tablaPDF = ManageFiles.AddMembrete12(tablaPDF, ListaSucursal, ListaTrabajador.Count);
-
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 1, 1, "azul", "N°");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 4, 1, "azul", "PREGUNTAS");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 1, 1, "azul", "SI");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 1, 1, "azul", "NO");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "OBSERVACIONES");
-
-        //        for (int i = 0; i < 18; i++)
-        //        {
-        //            tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 1, 1, "", string.Empty + (i + 1));
-        //            tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 4, 1, "", valores[i]);
-        //            tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 1, 1, "", " ");
-        //            tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 1, 1, "", " ");
-        //            tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 5, 1, "", " ");
-        //        }
-
-
-        //        #region firma
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "TRABAJADOR AL QUE FUE COMUNICADO");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "FIRMA");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|0|1", 5, 1, "", string.Empty + itemTrab.primer_nombre + " " + itemTrab.primer_apellido);
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "1|1|0|1", 5, 1, "", " ");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "0|1|1|1", 5, 1, "", " ");
-        //        tablaPDF = ManageFiles.AddCelda(tablaPDF, 1, "H4", "C", "0|1|1|1", 5, 1, "", " ");
-        //        #endregion
-
-
-        //        tablaPDF = ManageFiles.Footer(tablaPDF, ListaTrabajador.Count);
-
-        //        pdfDoc.Add(tablaPDF);
-        //        pdfDoc.NewPage();
-        //    }
-
-        //    pdfDoc.Close();
-        //    Response.Write(pdfDoc);
-        //    Response.End();
         }
 
         protected void Guardar(object sender, EventArgs e)
         {
-        //    int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalAdd);
-        //    Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
-        //        IdSucursal,
-        //        "EncuestaPoliticaSST_",
-        //        "ENCUESTA SOBRE EL CONOCIMIENTO DE LA POLITICA DE SST",
-        //        this);
+            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalAdd);
 
-        //    #region cuerpo
+            string[] valores2 = {
+                string.Empty + ObjUsuario.Id_sucursal,
+                ddlTrabajadorEsp.SelectedItem.ToString()
+            };
+            string[] valores = {
+                "¿Es de su Conocimiento la Política de Seguridad y Salud en el Trabajo de la Organización?",
+                "¿Está publicado en Cartelera o en medios electrónicos el documento de la Política de Seguridad y Salud en el Trabajo de la Organización?",
+                "¿Es concisa y está redactada con claridad?",
+                "¿Está fechada y firmada por el representante legal de la Empresa?",
+                "¿La Política es específica para la Empresa?",
+                "¿ Es apropiada para la naturaleza de los peligros y el tamaño de la organización?",
+                "¿Esta implícito en el Documento el compromiso de la alta dirección de la organización con la seguridad y la salud en el trabajo?",
+                "¿La organización se compromete a Proteger la seguridad y salud de todos los trabajadores, mediante la mejora continua del SG-SST?",
+                "¿Se compromete a cumplir la normatividad nacional vigente aplicable en materia de riesgos laborales?",
+                "¿Se Compromete a mantener el bienestar físico y mental de todos los trabajadores?",
+                "¿Se Compromete a establecer una cultura de prevención de Riesgos Laborales?",
+                "¿La Polìtica contempla  las normas y responsabilidades a todos los niveles de la organización?",
+                "¿Usted comprende las directrices descritas en la Política de Seguridad y Salud en el Trabajo?",
+                "¿Usted acata los lineamientos establecidos en la Política de Seguridad y Salud en el Trabajo?",
+                "¿Usted participa en la ejecución de la política de Seguridad y Salud en el Trabajo?",
+                "¿Usted Considera que la Política de Seguridad y Salud en el Trabajo complementa el logro de los objetivos de Seguridad y Salud en el Trabajo?",
+                "¿Se realizan grupos de trabajo para escuchar las opiniones de los trabajadores y las necesidades en materia de seguridad y salud en el trabajo? para posibles actualizaciones de la Política de Seguridad y Salud en el Trabajo",
+                "¿Es revisada como mínimo una vez al año y de ser necesario, actualizada con los cambios en materia de normatividad o por los requerimientos que surjan ?"
+            };
 
-        //    string[] valores = {
-        //    "¿Es de su Conocimiento la Política de Seguridad y Salud en el Trabajo de la Organización?",
-        //    "¿Está publicado en Cartelera o en medios electrónicos el documento de la Política de Seguridad y Salud en el Trabajo de la Organización?",
-        //    "¿Es concisa y está redactada con claridad?",
-        //    "¿Está fechada y firmada por el representante legal de la Empresa?",
-        //    "¿La Política es específica para la Empresa?",
-        //    "¿ Es apropiada para la naturaleza de los peligros y el tamaño de la organización?",
-        //    "¿Esta implícito en el Documento el compromiso de la alta dirección de la organización con la seguridad y la salud en el trabajo?",
-        //    "¿La organización se compromete a Proteger la seguridad y salud de todos los trabajadores, mediante la mejora continua del SG-SST?",
-        //    "¿Se compromete a cumplir la normatividad nacional vigente aplicable en materia de riesgos laborales?",
-        //    "¿Se Compromete a mantener el bienestar físico y mental de todos los trabajadores?",
-        //    "¿Se Compromete a establecer una cultura de prevención de Riesgos Laborales?",
-        //    "¿La Polìtica contempla  las normas y responsabilidades a todos los niveles de la organización?",
-        //    "¿Usted comprende las directrices descritas en la Política de Seguridad y Salud en el Trabajo?",
-        //    "¿Usted acata los lineamientos establecidos en la Política de Seguridad y Salud en el Trabajo?",
-        //    "¿Usted participa en la ejecución de la política de Seguridad y Salud en el Trabajo?",
-        //    "¿Usted Considera que la Política de Seguridad y Salud en el Trabajo complementa el logro de los objetivos de Seguridad y Salud en el Trabajo?",
-        //    "¿Se realizan grupos de trabajo para escuchar las opiniones de los trabajadores y las necesidades en materia de seguridad y salud en el trabajo? para posibles actualizaciones de la Política de Seguridad y Salud en el Trabajo",
-        //    "¿Es revisada como mínimo una vez al año y de ser necesario, actualizada con los cambios en materia de normatividad o por los requerimientos que surjan ?"
-        //};
-
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 1, 1, "azul", "N°"));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 4, 1, "azul", "PREGUNTAS"));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 1, 1, "azul", "SI"));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 1, 1, "azul", "NO"));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "OBSERVACIONES"));
-
-        //    for (int i = 0; i < 18; i++)
-        //    {
-        //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 1, 1, "", string.Empty + (i + 1)));
-        //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 4, 1, "", valores[i]));
-        //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 1, 1, "", " "));
-        //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 1, 1, "", " "));
-        //        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 5, 1, "", " "));
-        //    }
-
-        //    #region firma
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "TRABAJADOR AL QUE FUE COMUNICADO"));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|1|1", 5, 1, "azul", "FIRMA"));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|0|1", 5, 1, "", string.Empty + ddlTrabajadorEsp.SelectedItem));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "1|1|0|1", 5, 1, "", " "));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "0|1|1|1", 5, 1, "", " "));
-        //    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, 1, "H4", "C", "0|1|1|1", 5, 1, "", " "));
-        //    #endregion
-
-        //    #endregion
-
-        //    ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, IdSucursal, this);
+            PrintFile.PrintEncuestaPoliticaSST(valores2, valores, this);
         }
 
         protected void btnSubirArchivo(object sender, EventArgs e)

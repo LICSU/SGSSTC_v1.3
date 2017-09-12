@@ -1390,8 +1390,8 @@
     <Content Include="source\sistema\Hacer\Create_ConformacionCopasst.aspx" />
     <Content Include="source\sistema\Hacer\Create_DescripcionSocioDemografica.aspx" />
     <Content Include="source\sistema\Hacer\Create_DesignacionVigia.aspx" />
-    <Content Include="source\sistema\Hacer\Create_EncuestaPoliticaSST.aspx" />
-    <Content Include="source\sistema\Hacer\Create_Encuesta_ObjPoliticaSST.aspx" />
+    <Content Include="source\sistema\Planear\Create_EncuestaPoliticaSST.aspx" />
+    <Content Include="source\sistema\Planear\Create_Encuesta_ObjPoliticaSST.aspx" />
     <Content Include="source\sistema\Hacer\Create_EvaluacionRiesgos.aspx" />
     <Content Include="source\sistema\Hacer\Create_ExamenLaboral.aspx" />
     <Content Include="source\sistema\Hacer\Create_FormatoVotos.aspx" />
@@ -1911,18 +1911,18 @@
     <Compile Include="source\sistema\Hacer\Create_DesignacionVigia.aspx.designer.cs">
       <DependentUpon>Create_DesignacionVigia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_EncuestaPoliticaSST.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_EncuestaPoliticaSST.aspx.cs">
       <DependentUpon>Create_EncuestaPoliticaSST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_EncuestaPoliticaSST.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_EncuestaPoliticaSST.aspx.designer.cs">
       <DependentUpon>Create_EncuestaPoliticaSST.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_Encuesta_ObjPoliticaSST.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_Encuesta_ObjPoliticaSST.aspx.cs">
       <DependentUpon>Create_Encuesta_ObjPoliticaSST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_Encuesta_ObjPoliticaSST.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_Encuesta_ObjPoliticaSST.aspx.designer.cs">
       <DependentUpon>Create_Encuesta_ObjPoliticaSST.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\Create_EvaluacionRiesgos.aspx.cs">

@@ -248,7 +248,7 @@
 
                                     <div class="row">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <asp:Button ID="btnEspecifico" runat="server" Text="Crear" class="btn btn-block btn-info" OnClick="Guardar" ValidationGroup="ValidationAdd" />
+                                            <asp:Button ID="btnEspecifico" runat="server" Text="Crear" class="btn btn-block btn-info" OnClick="Guardar" />
                                         </div>
                                     </div>
                                 </div>

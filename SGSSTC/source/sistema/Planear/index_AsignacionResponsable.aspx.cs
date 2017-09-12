@@ -46,38 +46,33 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void GenerarDocumento(object sender, EventArgs e)
         {
+            Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursal);
 
-            //int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
-            //Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
-            //    IdSucursal, "ActaResponsabilidad_", "Acta de asignación del responsable del SGSST", this);
+            String texto =  " <p class='text-justify' style='padding-bottom:50px;'>" +
+                           "     La gerencia de la empresa " + lblEmpresa.Text + ", en cumplimiento " +
+                           "     con el artículo 8, numerales 2 y 10 del Decreto 1443 del 2012, delega para el " +
+                           "     desarrollo del sistema de gestión de seguridad y salud en el trabajo al " +
+                           "     empleado " + lblEmpleado.Text + " identificado con la CC N° " + lblCedula.Text + ", " +
+                           "     asignando la responsabilidad ejecutiva de asegurar la implementación y el mantenimiento de dicho sistema, " +
+                           "     para lo cual deberá planificar, organizar, dirigir, desarrollar y aplicar el SG-SST y como mínimo una vez " +
+                           "     al año realizar su evaluación, informar a la alta dirección sobre el funcionamiento y los resultados del SG-SST " +
+                           "     además será el responsable de coordinar con los jefes de las áreas la elaboración y actualización de la matriz " +
+                           "     de identificación de peligros, evaluación y valoración de riesgos y hacer la priorización para focalizar la intervención." +
+                           " </p>" ;
 
-            //#region cuerpo
+            String[] valores = {
+                string.Empty + IdEmpSuc.Item2,
+                "<p class='text-right' style='padding-bottom:30px;'><strong>" + lblFecha.Text + "</strong></p> ",
+                " <h4 class='text-center' style='padding-bottom:30px;'>ASIGNACION DEL RESPONSABLE DEL SGSST</h4>",
+                texto,
+                " <p class='text-center' style='padding-bottom:50px;'> " +
+                "     __________________________<br />" +
+                "     Gerente<br />" +
+                "    " + lblEmpresa.Text + " " +
+                " </p>"
+            };
 
-            //DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, "0|0|0|0", 12, 1,
-            //    "<p class='text-right' style='padding-bottom:30px;'><strong>" + lblFecha.Text + "</strong></p> " +
-            //       " <h4 class='text-center' style='padding-bottom:30px;'>ASIGNACION DEL RESPONSABLE DEL SGSST</h4>" +
-            //       " <p class='text-justify' style='padding-bottom:50px;'>" +
-            //       "     La gerencia de la empresa " + lblEmpresa.Text + ", en cumplimiento " +
-            //       "     con el artículo 8, numerales 2 y 10 del Decreto 1443 del 2012, delega para el " +
-            //       "     desarrollo del sistema de gestión de seguridad y salud en el trabajo al " +
-            //       "     empleado " + lblEmpleado.Text + " identificado con la CC N° " + lblCedula.Text + ", " +
-            //       "     asignando la responsabilidad ejecutiva de asegurar la implementación y el mantenimiento de dicho sistema, " +
-            //       "     para lo cual deberá planificar, organizar, dirigir, desarrollar y aplicar el SG-SST y como mínimo una vez " +
-            //       "     al año realizar su evaluación, informar a la alta dirección sobre el funcionamiento y los resultados del SG-SST " +
-            //       "     además será el responsable de coordinar con los jefes de las áreas la elaboración y actualización de la matriz " +
-            //       "     de identificación de peligros, evaluación y valoración de riesgos y hacer la priorización para focalizar la intervención." +
-            //       " </p>" +
-            //       " <p class='text-center' style='padding-bottom:50px;'> " +
-            //       "     __________________________<br />" +
-            //       "     Gerente<br />" +
-            //       "    " + lblEmpresa.Text + " " +
-            //       " </p>"));
-
-
-
-            //#endregion
-
-            //ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, ObjUsuario.Id_empresa, this);
+            PrintFile.PrintAsignacionResponsable(valores, this);
         }
 
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
