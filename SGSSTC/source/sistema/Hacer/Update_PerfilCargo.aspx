@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Update_PerfilCargo.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.Update_PerfilCargo" %>
-
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 
@@ -16,6 +15,7 @@
         <div ID="divAlerta" runat="server">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>            
             <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+            <asp:TextBox ID="txtAlerta" visible="false" runat="server"></asp:TextBox>
         </div>
     </asp:PlaceHolder>
 

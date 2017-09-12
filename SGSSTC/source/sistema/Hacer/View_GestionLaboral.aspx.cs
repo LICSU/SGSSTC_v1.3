@@ -6,78 +6,78 @@ using System.Web.Security;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class View_GestionLaboral : System.Web.UI.Page
-    {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        protected static int idGestion = 0;
+	public partial class View_GestionLaboral : System.Web.UI.Page
+	{
+		private  Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
+		private int idGestion = 0;
 
-        #region acciones index
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+		#region acciones index
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
-            idGestion = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+			idGestion = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
-            CargarGestion();
-        }
-        protected void CargarGestion()
-        {
-            List<gestion_laboral> ListaGestionLaboral = new List<gestion_laboral>();
-            ListaGestionLaboral = Getter.GestionLaboral(Convert.ToInt32(idGestion));
+			CargarGestion();
+		}
 
-            foreach (var itemGestionLaboral in ListaGestionLaboral)
-            {
-                int ContadorTrabajadores = 0;
+		private void CargarGestion()
+		{
+			List<gestion_laboral> ListaGestionLaboral = new List<gestion_laboral>();
+			ListaGestionLaboral = Getter.GestionLaboral(Convert.ToInt32(idGestion));
 
-                #region 1erbloque consulta
-                lbEmpresa.Text = Convert.ToString(itemGestionLaboral.usuario.trabajador.puesto_trabajo.area.sucursal.empresa.nombre);
+			foreach (var itemGestionLaboral in ListaGestionLaboral)
+			{
+				int ContadorTrabajadores = 0;
 
-                lbFecha.Text = Convert.ToString(itemGestionLaboral.fecha);
+				#region 1erbloque consulta
+				lbEmpresa.Text = Convert.ToString(itemGestionLaboral.usuario.trabajador.puesto_trabajo.area.sucursal.empresa.nombre);
 
-                lbDesc.Text = itemGestionLaboral.descripcion;
+				lbFecha.Text = Convert.ToString(itemGestionLaboral.fecha);
 
-                if (itemGestionLaboral.tipo_gestion == 2)
-                {
-                    phCapacitacion.Visible = true;
-                }
+				lbDesc.Text = itemGestionLaboral.descripcion;
 
-                lbHoras.Text = Convert.ToString(itemGestionLaboral.cant_horas);
+				if (itemGestionLaboral.tipo_gestion == 2)
+				{
+					phCapacitacion.Visible = true;
+				}
 
-                lbResponsable.Text = Convert.ToString(itemGestionLaboral.usuario.login);
+				lbHoras.Text = Convert.ToString(itemGestionLaboral.cant_horas);
 
-                hpSoporte.NavigateUrl = itemGestionLaboral.soporte;
+				lbResponsable.Text = Convert.ToString(itemGestionLaboral.usuario.login);
 
-                #endregion
+				hpSoporte.NavigateUrl = itemGestionLaboral.soporte;
 
-                #region 2do bloque consulta
-                List<trabajador_gestion> ListaTrabajadorGestion = Getter.TrabajadorInGestion(0, Convert.ToInt32(idGestion));
+				#endregion
 
-                ControlesDinamicos.CrearLiteral("<div class='row'>", pListaTrab);
-                foreach (var item in ListaTrabajadorGestion)
-                {
-                    string ruta = item.trabajador.foto;
-                    ruta = ruta.Replace("~/source", "../..");
+				#region 2do bloque consulta
+				List<trabajador_gestion> ListaTrabajadorGestion = Getter.TrabajadorInGestion(0, Convert.ToInt32(idGestion));
 
-                    ContadorTrabajadores++;
-                    ControlesDinamicos.CrearLiteral("" +
-                       "<div class='col-md-2'>" +
-                       "<img class='img-circle' src='" + ruta + "' width='128' height='128'/>" +
-                           "<h4 class='text-info text-left'>Trabajador " + ContadorTrabajadores + "</h4>" +
-                           "<div class='col-md-12 text'>" +
-                               "<h4>Nombre: </h4>" +
-                           "</div>" +
-                           "<div class='col-md-10 text'>" +
-                               "" + item.trabajador.primer_nombre + " " + item.trabajador.primer_apellido + "" +
-                           "</div>" +
-                       "</div>", pListaTrab);
-                }
-                ControlesDinamicos.CrearLiteral("</div>", pListaTrab);
-                #endregion
-            }
+				ControlesDinamicos.CrearLiteral("<div class='row'>", pListaTrab);
+				foreach (var item in ListaTrabajadorGestion)
+				{
+					string ruta = item.trabajador.foto;
+					ruta = ruta.Replace("~/source", "../..");
 
-        }
-		
-        #endregion
-    }
+					ContadorTrabajadores++;
+					ControlesDinamicos.CrearLiteral("" +
+					   "<div class='col-md-2'>" +
+					   "<img class='img-circle' src='" + ruta + "' width='128' height='128'/>" +
+						   "<h4 class='text-info text-left'>Trabajador " + ContadorTrabajadores + "</h4>" +
+						   "<div class='col-md-12 text'>" +
+							   "<h4>Nombre: </h4>" +
+						   "</div>" +
+						   "<div class='col-md-10 text'>" +
+							   "" + item.trabajador.primer_nombre + " " + item.trabajador.primer_apellido + "" +
+						   "</div>" +
+					   "</div>", pListaTrab);
+				}
+				ControlesDinamicos.CrearLiteral("</div>", pListaTrab);
+				#endregion
+			}
+
+		}		
+		#endregion
+	}
 }

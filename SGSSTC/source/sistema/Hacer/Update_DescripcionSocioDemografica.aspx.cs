@@ -4,61 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Update_DescripcionSocioDemografica : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        protected static int idPerfil;
-
-        #region string campos
-        string TrabajadorID = string.Empty;
-        string LugarNacimiento = string.Empty;
-        string NivelEscolaridad = string.Empty;
-        string AñosAprobados = string.Empty;
-        string CabezaFamilia = string.Empty;
-        string Hijos = string.Empty;
-        string Responsabilidad = string.Empty;
-        string Menores = string.Empty;
-        string Social = string.Empty;
-        string MotivoDes = string.Empty;
-        string Vivienda = string.Empty;
-        string Servicios = string.Empty;
-        string SeguridadSocial = string.Empty;
-        string Regimen = string.Empty;
-        string NivelSisBen = string.Empty;
-        string EPS = string.Empty;
-        string Pensiones = string.Empty;
-        string Fondo = string.Empty;
-        string Riesgos = string.Empty;
-        string ARP = string.Empty;
-        string Empresa1 = string.Empty;
-        string Empresa2 = string.Empty;
-        string Empresa3 = string.Empty;
-        string Area1 = string.Empty;
-        string Area2 = string.Empty;
-        string Area3 = string.Empty;
-        string Cargo1 = string.Empty;
-        string Cargo2 = string.Empty;
-        string Cargo3 = string.Empty;
-        string Años1 = string.Empty;
-        string Años2 = string.Empty;
-        string Años3 = string.Empty;
-        string Estrato = string.Empty;
-        string Meses1 = string.Empty;
-        string Meses2 = string.Empty;
-        string Meses3 = string.Empty;
-        string Enfermedad1 = string.Empty;
-        string Enfermedad2 = string.Empty;
-        string Enfermedad3 = string.Empty;
-        string TipoVivienda = string.Empty;
-        string Industria = string.Empty;
-        string Ruido = string.Empty;
-        string Contaminacion = string.Empty;
-        string Descripcion = string.Empty;
-        #endregion
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private int idPerfil;
+        private string NivelEscolaridad = string.Empty;
+        private string MotivoDes = string.Empty;
+        private string Vivienda = string.Empty;
+        private string Servicios = string.Empty;
+        private string TipoVivienda = string.Empty;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -74,7 +33,8 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarUsuario();
             }
         }
-        protected void CargarUsuario()
+
+        private void CargarUsuario()
         {
             List<desc_socio> ListaDescSocio = new List<desc_socio>();
             ListaDescSocio = Getter.DescripcionSociodemografica(Convert.ToInt32(idPerfil));
@@ -214,14 +174,13 @@ namespace SGSSTC.source.sistema.Hacer
         {
             bool resultado = true;
 
-            LugarNacimiento = txtLugar.Text;
-            NivelEscolaridad = string.Empty;
-            AñosAprobados = string.Empty;
+            string AñosAprobados = string.Empty;
 
             if (rblNivel.SelectedValue == "Otro")
             {
                 NivelEscolaridad = txtNivel.Text;
                 AñosAprobados = txtAnhosApro.Text;
+
                 if (NivelEscolaridad == string.Empty || AñosAprobados == string.Empty)
                 {
                     resultado = false;
@@ -241,11 +200,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
 
-            CabezaFamilia = rdlCabeza.SelectedValue;
-            Hijos = ddlHijos.SelectedValue;
-            Responsabilidad = rblResponsabilidad.SelectedValue;
-            Menores = ddlMenores.SelectedValue;
-            Social = rblCondicion.SelectedValue;
+            string Social = rblCondicion.SelectedValue;
 
             if (Social == "Desplazado")
             {
@@ -282,47 +237,21 @@ namespace SGSSTC.source.sistema.Hacer
                     Servicios += cblServicios.Items[i].Text + ",";
                 }
             }
-            SeguridadSocial = dblSeguridad.SelectedValue;
+
+
+            string SeguridadSocial =  dblSeguridad.SelectedValue;
 
             if (SeguridadSocial == "Si")
             {
-                Regimen = rblRegimen.SelectedValue;
-                if (Regimen == "Subsidiado")
-                {
-                    NivelSisBen = rblNivelSisben.SelectedValue;
-                }
-                EPS = ddlEps.SelectedValue;
-                if (EPS == string.Empty)
+                string Regimen = rblRegimen.SelectedValue;
+                
+                if (ddlEps.SelectedValue == string.Empty)
                 {
                     resultado = false;
                 }
             }
-            Pensiones = rblPensiones.SelectedValue;
+             
 
-            if (Pensiones == "Si")
-            {
-                Fondo = ddlFondo.SelectedValue;
-            }
-
-            Estrato = rblEstrato.SelectedValue;
-            Empresa1 = txtEmpresa1.Text;
-            Empresa2 = txtEmpresa2.Text;
-            Empresa3 = txtEmpresa3.Text;
-            Area1 = txtArea1.Text;
-            Area2 = txtArea2.Text;
-            Area3 = txtArea3.Text;
-            Cargo1 = txtCargo1.Text;
-            Cargo2 = txtCargo2.Text;
-            Cargo3 = txtCargo3.Text;
-            Años1 = txtAños1.Text;
-            Años2 = txtAños2.Text;
-            Años3 = txtAños3.Text;
-            Meses1 = txtMeses1.Text;
-            Meses2 = txtMeses2.Text;
-            Meses3 = txtMeses3.Text;
-            Enfermedad1 = txtEnfermadades1.Text;
-            Enfermedad2 = txtEnfermadades2.Text;
-            Enfermedad3 = txtEnfermadades3.Text;
             TipoVivienda = dblTipoVivienda.SelectedValue;
 
             if (TipoVivienda == "Otro")
@@ -332,26 +261,23 @@ namespace SGSSTC.source.sistema.Hacer
                 {
                     resultado = false;
                 }
-            }
-            Industria = rblIndustria.SelectedValue;
-            Ruido = rblRuido.SelectedValue;
-            Contaminacion = rblContaminacion.SelectedValue;
-            Descripcion = txtDescripcion.Text;
+            } 
 
             return resultado;
         }
+
         protected void EditarRegistro(object sender, EventArgs e)
         {
             if (validarCampos())
             {
                 int id_fondo = 0, id_eps = 0;
-                if (Fondo != string.Empty)
+                if (ddlFondo.SelectedValue != string.Empty)
                 {
-                    id_fondo = Convert.ToInt32(Fondo);
+                    id_fondo = Convert.ToInt32(ddlFondo.SelectedValue);
                 }
-                if (EPS != string.Empty)
+                if (ddlEps.SelectedValue != string.Empty)
                 {
-                    id_eps = Convert.ToInt32(EPS);
+                    id_eps = Convert.ToInt32(ddlEps.SelectedValue);
                 }
 
                 GrupoLiEntities contexto = new GrupoLiEntities();
@@ -359,35 +285,35 @@ namespace SGSSTC.source.sistema.Hacer
                 desc_socio Edit = contexto.desc_socio.SingleOrDefault(b => b.id_desc_socio == idPerfil);
                 if (Edit != null)
                 {
-                    Edit.lugar_nac = LugarNacimiento;
+                    Edit.lugar_nac = txtLugar.Text; 
                     Edit.nivel_escolaridad = NivelEscolaridad;
-                    Edit.años_aprob = AñosAprobados;
-                    Edit.cabeza_fam = CabezaFamilia;
-                    Edit.num_hijos = Hijos;
-                    Edit.repart_resp = Responsabilidad;
-                    Edit.menores_dep = Menores;
-                    Edit.cond_social = Social;
+                    Edit.años_aprob = txtAnhosApro.Text;
+                    Edit.cabeza_fam = rdlCabeza.SelectedValue;
+                    Edit.num_hijos = ddlHijos.SelectedValue;
+                    Edit.repart_resp = rblResponsabilidad.SelectedValue;
+                    Edit.menores_dep = ddlMenores.SelectedValue;
+                    Edit.cond_social = rblCondicion.SelectedValue;
                     Edit.mot_despl = MotivoDes;
                     Edit.tipo_vivienda = Vivienda;
                     Edit.serv_pub = Servicios;
-                    Edit.sist_seg_soc = SeguridadSocial;
-                    Edit.reg_afiliacion = Regimen;
-                    Edit.nivel_sisben = NivelSisBen;
+                    Edit.sist_seg_soc = dblSeguridad.SelectedValue;
+                    Edit.reg_afiliacion = rblRegimen.SelectedValue;
+                    Edit.nivel_sisben = rblNivelSisben.SelectedValue;
                     Edit.id_eps = id_eps;
-                    Edit.afi_sssp = Pensiones;
+                    Edit.afi_sssp = rblPensiones.SelectedValue;
                     Edit.id_afp = id_fondo;
-                    Edit.afi_riesgo = Riesgos;
-                    Edit.estrato = Estrato;
+                    Edit.estrato = rblEstrato.SelectedValue;
                     Edit.vivienda = TipoVivienda;
-                    Edit.industria = Industria;
-                    Edit.ruido = Ruido;
-                    Edit.contaminacion = Contaminacion;
-                    Edit.descripcion = Descripcion;
+                    Edit.industria = rblIndustria.SelectedValue;
+                    Edit.ruido = rblRuido.SelectedValue;
+                    Edit.contaminacion = rblContaminacion.SelectedValue;
+                    Edit.descripcion = txtDescripcion.Text;
                 }
 
                 ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-                Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                TextBox txtBuscar = new TextBox();
+                Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
                 if (ObjUsuario.Error)
                 {
@@ -405,6 +331,7 @@ namespace SGSSTC.source.sistema.Hacer
                         {
                             contador++;
                             string empresa = item.empresa;
+
                             if (contador == 1)
                             {
                                 #region empresa1
@@ -412,12 +339,12 @@ namespace SGSSTC.source.sistema.Hacer
                                 {
                                     empleo_anterior nuevo1 = new empleo_anterior()
                                     {
-                                        empresa = Empresa1,
-                                        area = Area1,
-                                        cargo = Cargo1,
-                                        años = Años1,
-                                        meses = Meses1,
-                                        enfermedades = Enfermedad1,
+                                        empresa = txtEmpresa1.Text,
+                                        area = txtArea1.Text,
+                                        cargo = txtCargo1.Text,
+                                        años = txtAños1.Text,
+                                        meses = txtMeses1.Text,
+                                        enfermedades = txtEnfermadades1.Text,
                                         id_desc_socio = Convert.ToInt32(ViewState["DescID"])
                                     };
                                     ObjUsuario.Error = CRUD.Add_Fila(nuevo1, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
@@ -429,12 +356,12 @@ namespace SGSSTC.source.sistema.Hacer
                                     empleo_anterior Edit1 = contexto.empleo_anterior.SingleOrDefault(b => b.id_empleos_ant == idEmpleoAnt);
                                     if (Edit != null)
                                     {
-                                        Edit1.empresa = Empresa1;
-                                        Edit1.area = Area1;
-                                        Edit1.cargo = Cargo1;
-                                        Edit1.años = Años1;
-                                        Edit1.meses = Meses1;
-                                        Edit1.enfermedades = Enfermedad1;
+                                        Edit1.empresa = txtEmpresa1.Text;
+                                        Edit1.area = txtArea1.Text;
+                                        Edit1.cargo = txtCargo1.Text;
+                                        Edit1.años = txtAños1.Text;
+                                        Edit1.meses = txtMeses1.Text;
+                                        Edit1.enfermedades = txtEnfermadades1.Text;
                                     }
                                     ObjUsuario.Error = CRUD.Edit_Fila(contexto1, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
                                 }
@@ -447,12 +374,12 @@ namespace SGSSTC.source.sistema.Hacer
                                 {
                                     empleo_anterior nuevo2 = new empleo_anterior()
                                     {
-                                        empresa = Empresa2,
-                                        area = Area2,
-                                        cargo = Cargo2,
-                                        años = Años2,
-                                        meses = Meses2,
-                                        enfermedades = Enfermedad2,
+                                        empresa = txtEmpresa2.Text,
+                                        area = txtArea2.Text,
+                                        cargo = txtCargo2.Text,
+                                        años = txtAños2.Text,
+                                        meses = txtMeses2.Text,
+                                        enfermedades = txtEnfermadades2.Text,
                                         id_desc_socio = Convert.ToInt32(ViewState["DescID"])
                                     };
                                     ObjUsuario.Error = CRUD.Add_Fila(nuevo2, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
@@ -464,12 +391,12 @@ namespace SGSSTC.source.sistema.Hacer
                                     empleo_anterior Edit1 = contexto.empleo_anterior.SingleOrDefault(b => b.id_empleos_ant == idEmpleoAnt);
                                     if (Edit != null)
                                     {
-                                        Edit1.empresa = Empresa2;
-                                        Edit1.area = Area2;
-                                        Edit1.cargo = Cargo2;
-                                        Edit1.años = Años2;
-                                        Edit1.meses = Meses2;
-                                        Edit1.enfermedades = Enfermedad2;
+                                        Edit1.empresa = txtEmpresa2.Text;
+                                        Edit1.area = txtArea2.Text;
+                                        Edit1.cargo = txtCargo2.Text;
+                                        Edit1.años = txtAños2.Text;
+                                        Edit1.meses = txtMeses2.Text;
+                                        Edit1.enfermedades = txtEnfermadades2.Text;
                                     }
                                     ObjUsuario.Error = CRUD.Edit_Fila(contexto1, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
                                 }
@@ -483,12 +410,12 @@ namespace SGSSTC.source.sistema.Hacer
                                 {
                                     empleo_anterior nuevo3 = new empleo_anterior()
                                     {
-                                        empresa = Empresa3,
-                                        area = Area3,
-                                        cargo = Cargo3,
-                                        años = Años3,
-                                        meses = Meses3,
-                                        enfermedades = Enfermedad3,
+                                        empresa = txtEmpresa3.Text,
+                                        area = txtArea3.Text,
+                                        cargo = txtCargo3.Text,
+                                        años = txtAños3.Text,
+                                        meses = txtMeses3.Text,
+                                        enfermedades = txtEnfermadades3.Text,
                                         id_desc_socio = Convert.ToInt32(ViewState["DescID"])
                                     };
                                     ObjUsuario.Error = CRUD.Add_Fila(nuevo3, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
@@ -500,12 +427,12 @@ namespace SGSSTC.source.sistema.Hacer
                                     empleo_anterior Edit1 = contexto.empleo_anterior.SingleOrDefault(b => b.id_empleos_ant == idEmpleoAnt);
                                     if (Edit != null)
                                     {
-                                        Edit1.empresa = Empresa3;
-                                        Edit1.area = Area3;
-                                        Edit1.cargo = Cargo3;
-                                        Edit1.años = Años3;
-                                        Edit1.meses = Meses3;
-                                        Edit1.enfermedades = Enfermedad3;
+                                        Edit1.empresa = txtEmpresa3.Text;
+                                        Edit1.area = txtArea3.Text;
+                                        Edit1.cargo = txtCargo3.Text;
+                                        Edit1.años = txtAños3.Text;
+                                        Edit1.meses = txtMeses3.Text;
+                                        Edit1.enfermedades = txtEnfermadades3.Text;
                                     }
                                     ObjUsuario.Error = CRUD.Edit_Fila(contexto1, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
                                 }
@@ -514,7 +441,7 @@ namespace SGSSTC.source.sistema.Hacer
                         }
                     }
 
-                    Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                    Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
                     limpiarCampos();
 
                     Response.Redirect(Paginas.index_DescripcionSocioDemografica.Value); 
@@ -522,6 +449,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
+
         private void limpiarCampos()
         {
             txtLugar.Text = string.Empty;

@@ -9,7 +9,7 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_Politica_SST : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         }
 
-        public DropDownList ListaAnho(DropDownList DropDownList1)
+        private DropDownList ListaAnho(DropDownList DropDownList1)
         {
             DateTime anho = DateTime.Now;
             int anhoActual = Convert.ToInt32(anho.Year);
@@ -39,7 +39,7 @@ namespace SGSSTC.source.sistema.Hacer
             return DropDownList1;
         }
 
-        public void cargarPolitica()
+        private void cargarPolitica()
         {
             int idPolitica = GetterMax.PoliticaSST(ObjUsuario.Id_empresa);
 

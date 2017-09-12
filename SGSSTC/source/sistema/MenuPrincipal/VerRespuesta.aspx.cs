@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.MenuPrincipal
 {
     public partial class VerRespuesta : System.Web.UI.Page
     {
-        Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        Utilidades objUtilidades = new Utilidades();
-        int IdRespuesta = 0;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private int IdRespuesta = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,15 +21,15 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
-            IdRespuesta = objUtilidades.descifrarCadena(Request.QueryString["rs"]);
             if (!IsPostBack)
             {
                 CargarDatos();
             }
         }
 
-        public void CargarDatos()
+        private void CargarDatos()
         {
+            IdRespuesta = objUtilidades.descifrarCadena(Request.QueryString["rs"]);
             List<usuario> ListUsuario = new List<usuario>();
             ListUsuario = Getter.Usuario(ObjUsuario.Id_usuario);
             string nomUsuario = string.Empty;
@@ -70,10 +71,10 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            TextBox txtBuscar = new TextBox();
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             CargarDatos();
         }
-
 
     }
 }

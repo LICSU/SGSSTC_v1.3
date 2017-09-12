@@ -7,7 +7,7 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Create_PerfilCargo : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,10 +32,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            if (ObjUsuario.Error)
-            {
-                Response.Redirect(Paginas.index_PerfilCargo.Value);
-            }
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre);
         }
 
         protected void GenerarDocumento(object sender, EventArgs e)

@@ -9,11 +9,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_GestionLaboral : System.Web.UI.Page
+    public partial class index_GestionLaboral : Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -126,7 +126,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         }
 
-        protected void Cargartrabajadores(int _id_sucursal)
+        private void Cargartrabajadores(int _id_sucursal)
         {
             List<sucursal> ListaSucursal = new List<sucursal>();
             ListaSucursal = Getter.Sucursal(_id_sucursal);
@@ -152,7 +152,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -197,7 +197,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         protected void btPrint_Click(object sender, EventArgs e)
@@ -271,6 +271,7 @@ namespace SGSSTC.source.sistema.Hacer
         #region  registro de los modales
         protected void cerrarModalIndex(object sender, EventArgs e)
         {
+            phAlerta.Visible = false;
             Modal.CerrarModal("IndexAddModal", "AddModalScript", this);
         }
         #endregion
@@ -322,7 +323,7 @@ namespace SGSSTC.source.sistema.Hacer
                     }
                 }
                 Modal.CerrarModal("AddEntrega", "AddModalScript", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
                 LlenarGridView();
             }
         }
@@ -374,7 +375,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
 
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -432,7 +433,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
                 #endregion
 
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
                 LlenarGridView();
             }
         }
@@ -488,7 +489,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
 
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -540,7 +541,7 @@ namespace SGSSTC.source.sistema.Hacer
                     }
                 }
                 #endregion
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
                 LlenarGridView();
             }
 
@@ -646,7 +647,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
                 #endregion
 
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
                 LlenarGridView();
             }
 
@@ -708,7 +709,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+        private void incializarExports()
         {
             GridView1.Columns[4].Visible = false;
             GridView1.Columns[5].Visible = false;
@@ -741,32 +742,38 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                string tipo = (gvrow.FindControl("tipo") as Label).Text;
 
                 foreach (ListItem item in chkTrabajadores.Items) { item.Selected = false; }
 
-                if ((gvrow.FindControl("tipo") as Label).Text == "Entrega de equipos")
+                if (tipo == ComandosGrid.Gestion_Entrega.Value)
                 {
-                    hdfEditEntregaID.Value = (gvrow.FindControl("id") as Label).Text;
+                    hdfEditEntregaID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                     Modal.registrarModal("EditEntrega", "EditModalScript", this);
+                    phAlerta.Visible = false;
                 }
-                else if ((gvrow.FindControl("tipo") as Label).Text == "Jornadas Examenes Laborales")
+                else if (tipo == ComandosGrid.Gestion_Jornada.Value)
                 {
-                    hdfEditJornadaID.Value = (gvrow.FindControl("id") as Label).Text;
+                    hdfEditJornadaID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                     Modal.registrarModal("EditJornada", "EditModalScript", this);
+                    phAlerta.Visible = false;
                 }
-                else if ((gvrow.FindControl("tipo") as Label).Text == "Actividades Recreativas")
+                else if (tipo == ComandosGrid.Gestion_Recreativa.Value)
                 {
-                    hdfEditActividadID.Value = (gvrow.FindControl("id") as Label).Text;
+                    hdfEditActividadID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                     Modal.registrarModal("EditActividad", "EditModalScript", this);
+                    phAlerta.Visible = false;
                 }
-                else if ((gvrow.FindControl("tipo") as Label).Text == "Capacitacion")
+                else if (tipo == ComandosGrid.Gestion_Capacitacion.Value)
                 {
-                    hdfEditCapacitacionID.Value = (gvrow.FindControl("id") as Label).Text;
+                    hdfEditCapacitacionID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
+                    
                     Modal.registrarModal("EditCapacitacion", "EditModalScript", this);
+                    phAlerta.Visible = false;
 
                     List<gestion_laboral> EditCapacitacion = new List<gestion_laboral>();
                     EditCapacitacion = Getter.GestionLaboral(Convert.ToInt32(hdfEditCapacitacionID.Value));
@@ -795,56 +802,44 @@ namespace SGSSTC.source.sistema.Hacer
 
                 }
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfIDDel.Value = (gvrow.FindControl("id") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("asistencia"))
+            else if (e.CommandName.Equals(ComandosGrid.Asistencia.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-
-                string idGestion = (gvrow.FindControl("id") as Label).Text;
+                phAlerta.Visible = false;
+                string idGestion = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 
                 Response.Redirect(Paginas.Update_AsistenciaCapacitacion.Value+"?id=" + objUtilidades.cifrarCadena(idGestion));
             }
-            else if (e.CommandName.Equals("Subir"))
+            else if (e.CommandName.Equals(ComandosGrid.Upload.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-
-                hdfIDEsc.Value = (gvrow.FindControl("id") as Label).Text;
+                hdfIDEsc.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("Imprimir"))
+            else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hImprimir.Value = (gvrow.FindControl("id") as Label).Text;
+                hImprimir.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 ViewState["Imprimir"] = string.Empty + hImprimir.Value;
 
                 Modal.registrarModal("PrintListaModal", "PrintListaModalScript", this);
+                phAlerta.Visible = false;
 
             }
-            else if (e.CommandName.Equals("Ver"))
+            else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-
-                hdfIDDel.Value = (gvrow.FindControl("id") as Label).Text;
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 hdfIDDel.Value = objUtilidades.cifrarCadena(Convert.ToString(hdfIDDel.Value));
-
                 Response.Redirect(Paginas.View_GestionLaboral.Value + "?id=" + hdfIDDel.Value);
             }
 
-        }
-        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
-        {
         }
         #endregion
 
@@ -913,9 +908,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["search"] = txtSearch.Text;
+                ViewState["search"] = txtBuscar.Text;
             }
             else
             {
@@ -1013,7 +1008,6 @@ namespace SGSSTC.source.sistema.Hacer
                 phAsisEditCap.Visible = false;
             }
         }
-
         #endregion
 
         #region acividades
@@ -1038,7 +1032,6 @@ namespace SGSSTC.source.sistema.Hacer
                 phAsisAddAct.Visible = false;
             }
         }
-
 
         protected void ddlEmpEditAct_SelectedIndexChanged(object sender, EventArgs e)
         {

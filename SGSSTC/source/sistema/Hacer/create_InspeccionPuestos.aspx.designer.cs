@@ -13,6 +13,33 @@ namespace SGSSTC.source.sistema.EvaluacionInicial {
     public partial class create_InspeccionPuestos {
         
         /// <summary>
+        /// Control phAlerta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phAlerta;
+        
+        /// <summary>
+        /// Control divAlerta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAlerta;
+        
+        /// <summary>
+        /// Control lbAlerta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbAlerta;
+        
+        /// <summary>
         /// Control phEmpresa.
         /// </summary>
         /// <remarks>
@@ -4342,13 +4369,13 @@ namespace SGSSTC.source.sistema.EvaluacionInicial {
         protected global::System.Web.UI.DataVisualization.Charting.Chart graficaPie;
         
         /// <summary>
-        /// Control btnGuardar.
+        /// Control btnGenerarResultados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnGuardar;
+        protected global::System.Web.UI.WebControls.ImageButton btnGenerarResultados;
         
         /// <summary>
         /// Control phDocumento.

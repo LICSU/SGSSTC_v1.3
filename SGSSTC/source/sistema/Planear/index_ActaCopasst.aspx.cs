@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_ActaCopasst : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -26,14 +26,14 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             Tabla.ReunionCopasst(GridView1, IdEmpresa, IdSucursal);
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
 
@@ -99,7 +99,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
         protected void EliminarRegistro(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace SGSSTC.source.sistema.Hacer
                 ObjUsuario.Id_usuario,
                 HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -120,9 +120,10 @@ namespace SGSSTC.source.sistema.Hacer
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_reunion");
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
+
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
         }

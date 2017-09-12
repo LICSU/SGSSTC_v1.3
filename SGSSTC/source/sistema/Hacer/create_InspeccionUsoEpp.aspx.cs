@@ -12,13 +12,12 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class create_InspeccionUsoEpp : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        List<Model_CEPP> eppTrab;
-        int intContInspecciones = 0;
-        Tuple<bool, bool> BoolEmpSuc;
-        static int IdSucursal = 0;
-        static int IdTrabajador = 0;
-        static int IdPuesto = 0;
+        private Model_UsuarioSistema ObjUsuario;
+        private List<Model_CEPP> eppTrab;
+        private Tuple<bool, bool> BoolEmpSuc;
+        private static int IdSucursal = 0;
+        private static int IdTrabajador = 0;
+        private static int IdPuesto = 0;
 
         #region Index
         protected void Page_Load(object sender, EventArgs e)
@@ -60,7 +59,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -84,7 +83,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             genereDocumento();
         }
 
-        protected void genereDocumento()
+        private void genereDocumento()
         {
             Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursal);
             String[] valores = {
@@ -105,6 +104,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         private void agregar_fila()
         {
+            int intContInspecciones = 0;
             intContInspecciones = Convert.ToInt32(cantInspecciones.Value);
             eppTrab = Getter.Epp(Convert.ToInt32(ddlPuesto.SelectedValue));
             ControlesDinamicos.Add_Fila_InspeccionUsoEpp(pnDatos, intContInspecciones, eppTrab);
@@ -120,6 +120,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador, IdPuesto);
             return listTrabajadores;
         }
+
         protected void btnBuscar_OnClick(object sender, EventArgs e)
         {
             if (IdTrabajador != 0)

@@ -10,10 +10,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_RecursosEconomicos : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        Utilidades objUtilidades = new Utilidades();
-        HyperLink HyperLink1;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -30,12 +29,12 @@ namespace SGSSTC.source.sistema.Hacer
                 CargarListas();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
             Listas.Sucursal(ddlSucursalSubir, ObjUsuario.Id_empresa);
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -95,7 +94,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
         protected void EliminarRegistro(object sender, EventArgs e)
@@ -108,7 +107,7 @@ namespace SGSSTC.source.sistema.Hacer
                 HttpContext.Current.Request.Url.AbsoluteUri
                 );
 
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -116,14 +115,14 @@ namespace SGSSTC.source.sistema.Hacer
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_rec_eco");
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
             if (e.CommandName.Equals("soporte"))
             {
-                hdSoporte.Value = Utilidades.GetIdFila(GridView1, e, "id_rec_eco");
+                hdSoporte.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 int contadorArchivos = 0;
 
@@ -131,6 +130,8 @@ namespace SGSSTC.source.sistema.Hacer
                 ListSopRec = Getter.Soporte(Convert.ToInt32(hdSoporte.Value), "RecursosEconomicos");
 
                 ControlesDinamicos.CrearLiteral("<ul class='list-group'>", pAnexo);
+
+                HyperLink HyperLink1;
                 foreach (var item1 in ListSopRec)
                 {
                     contadorArchivos++;

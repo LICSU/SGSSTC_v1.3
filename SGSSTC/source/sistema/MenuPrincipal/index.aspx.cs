@@ -10,9 +10,9 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 {
     public partial class index : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -467,7 +467,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             Modal.CerrarModal("addModal", "AddModalScript", this);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            //Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
 
             MostrarSusPreguntas();
             MostrarMisPreguntas();
@@ -475,7 +475,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
 
         //Rellena los cuadros del index
-        protected void MostrarSusPreguntas()
+        private void MostrarSusPreguntas()
         {
             List<empresa_itemdivision> consulta = new List<empresa_itemdivision>();
             consulta = Getter.CodigoCiiu_Empresa(ObjUsuario.Id_empresa);
@@ -542,7 +542,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             ControlesDinamicos.CrearLiteral("</td><td></td><td></td></tr>", pSusPreguntas);
         }
 
-        protected void MostrarMisPreguntas()
+        private void MostrarMisPreguntas()
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
 
@@ -578,7 +578,6 @@ namespace SGSSTC.source.sistema.MenuPrincipal
             ControlesDinamicos.CrearLiteral("</td><td></td><td></td></tr>", panelMisPreguntas);
 
         }
-
-
+        
     }
 }

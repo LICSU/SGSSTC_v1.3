@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_ProgramaInspecciones : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
-                cargarListas();
+                CargarListas();
                 if (BoolEmpSuc.Item2)
                 {
                     Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
@@ -34,7 +34,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
-        protected void cargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -62,7 +62,7 @@ namespace SGSSTC.source.sistema.Hacer
                 cargarPlan();
             }
         }
-        public void cargarPlan()
+        private void cargarPlan()
         {
             int idPlan = GetterMax.Plan(ObjUsuario.Id_sucursal);
 

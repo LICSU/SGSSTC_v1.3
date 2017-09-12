@@ -7,13 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_MatrizRiesgos : System.Web.UI.Page
+    public partial class index_MatrizRiesgos : Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        string estatus = "0";
-        protected static int IdSucursal;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private string estatus = "0";
+        private int IdSucursal;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -38,8 +38,7 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
-
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -48,7 +47,7 @@ namespace SGSSTC.source.sistema.Hacer
             Tabla.MatrizRiesgo(GridView1, IdSucursal, IdEmpresa, tipoRiesgo);
 
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {

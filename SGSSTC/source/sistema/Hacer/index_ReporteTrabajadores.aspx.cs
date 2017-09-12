@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class index_ReporteTrabajadores : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -48,23 +48,12 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
             Tabla.reportes(GridView1, string.Empty + ViewState["tipo"], IdEmpresa, IdSucursal);
-        }
-        #endregion
-
-        #region registrar modales
-        protected void MostrarModalAgregar(object sender, EventArgs e)
-        {
-            //Modal.registrarModal("addModal", "AddModalScript", this);
-        }
-        protected void MostrarModalCrear(object sender, EventArgs e)
-        {
-           // Modal.registrarModal("createModal", "CreateModalScript", this);
         }
         #endregion
 
@@ -80,7 +69,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             CRUD.AddReporteTrabajadores(IdEmpSuc, ObjUsuario, valores, flpArchivo);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
 
@@ -91,7 +80,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
 
@@ -114,9 +103,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_reportes");
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
         }

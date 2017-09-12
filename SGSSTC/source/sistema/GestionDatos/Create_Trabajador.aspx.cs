@@ -7,8 +7,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Create_Trabajador : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -63,13 +63,13 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-           
-             String NombreArchivo = string.Empty;
 
-             int id_trab = Getter.TrabajadorByCedula(txtCedula.Text);
-             if (id_trab == 0)
-             {
-                 String[] valores = {
+            String NombreArchivo = string.Empty;
+
+            int id_trab = Getter.TrabajadorByCedula(txtCedula.Text);
+            if (id_trab == 0)
+            {
+                String[] valores = {
                      txtCedula.Text,
                      txtNombre1.Text,
                      txtNombre2.Text,
@@ -98,20 +98,16 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                  };
 
-                 if (CRUD.Add_Trabajador(ObjUsuario, valores, fuFoto))
-                 {
-                    Modal.MostrarMsjModal(MensajeError.Exito_Add_Trabajador.Value, "ERR", this);
-                }
-                 else
-                 {
-                     Modal.MostrarMsjModal(MensajeError.Fallo_Add_Trabajador.Value, "ERR", this);
-                 }
-             }
-             else
-             {
-                 txtCedula.BorderColor = System.Drawing.Color.Red;
-                 Modal.MostrarMsjModal(MensajeError.Error_Existe_Trabajador_Cedula.Value, "ERR", this);
-             }
+                ObjUsuario.Error = CRUD.Add_Trabajador(ObjUsuario, valores, fuFoto);
+
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre1);
+
+            }
+            else
+            {
+                txtCedula.BorderColor = System.Drawing.Color.Red;
+                Modal.MostrarMsjModal(MensajeError.Error_Existe_Trabajador_Cedula.Value, "ERR", this);
+            }
 
         }
         #endregion
@@ -164,6 +160,6 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
         #endregion
-        
+
     }
 }

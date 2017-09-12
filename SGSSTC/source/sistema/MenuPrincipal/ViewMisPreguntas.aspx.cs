@@ -10,9 +10,9 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 {
     public partial class ViewMisPreguntas : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Utilidades objUtilidades = new Utilidades();
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones
 
@@ -34,7 +34,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 LlenarGridView();
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
 
             Tabla.MisPreguntas(GridView1, ObjUsuario.Id_usuario, string.Empty + ViewState["FechaInicio"], string.Empty + ViewState["FechaFin"]);
@@ -54,7 +54,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaInicio);
             LlenarGridView();
 
         }
@@ -64,7 +64,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfPreguntaIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaInicio);
             LlenarGridView();
         }
 
@@ -78,7 +78,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -154,7 +154,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
                 Modal.registrarModal("viewRespuestasModal", "viewRespuestasModalScript", this);
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];

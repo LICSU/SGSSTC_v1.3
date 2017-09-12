@@ -1,25 +1,21 @@
 ﻿using Capa_Datos;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class Create_ObligacionNorma : System.Web.UI.Page
+    public partial class Create_ObligacionNorma : Page
     {
-        #region variables
-        protected static Model_UsuarioSistema ObjUsuario;
-        int idMedidasSucursal = 0;
-        int IdSucursal = 0;
-        int IdNorma = 0;
-        int IdEmpresa;
-        Utilidades objUtilidades = new Utilidades();
-        #endregion
+        private Model_UsuarioSistema ObjUsuario;
+        private int idMedidasSucursal = 0;
+        private int IdSucursal = 0;
+        private int IdNorma = 0;
+        private int IdEmpresa;
+        private  Utilidades objUtilidades = new Utilidades();
 
-        #region acciones
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
@@ -46,7 +42,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void CargarDatos()
+        private void CargarDatos()
         {
             List<medida_sucursal> ListaMedidasSucursal = new List<medida_sucursal>();
             ListaMedidasSucursal = Getter.Medidas_Sucursal(Convert.ToInt32(idMedidasSucursal));
@@ -58,7 +54,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             Listas.Categorias(ddlCategoria, IdEmpresa);
             Listas.Frecuencia(ddlFrecuencia);
@@ -110,13 +106,9 @@ namespace SGSSTC.source.sistema.Hacer
                 ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             }
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
-
-            if (ObjUsuario.Error)
-            {
-                Modal.Redireccionar("index_Obligaciones.aspx", this);
-            }
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaFin);
+            
         }
-        #endregion
+
     }
 }

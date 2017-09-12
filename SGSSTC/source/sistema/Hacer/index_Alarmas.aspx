@@ -1,12 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Alarmas.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_Alarmas" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
@@ -20,9 +19,16 @@
                 <h1 class="text-center">Alarmas</h1>
             </div>
 
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
+
             <div class="row">
                 <div class="col-md-6 col-md-offset-2">
-                    <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese la alarma a buscar"></asp:TextBox>
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese la alarma a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -80,7 +86,7 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
+
 
                         <asp:GridView ID="GridView1"
                             class="table table-bordered table-hover dataTable"
@@ -90,34 +96,38 @@
                             PageSize="10"
                             OnRowCommand="GridView1_RowCommand"
                             OnPageIndexChanging="GridView1_PageIndexChanging"
-                            OnRowCreated="GridView1_RowCreated"
                             EmptyDataText="No existen Registros">
                             <RowStyle HorizontalAlign="Center" />
 
                             <Columns>
                                 <asp:TemplateField HeaderText="Id Alarma" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_alarmas") %>' /></ItemTemplate>
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_alarmas") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="Descripcion" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="descripcion" runat="server" Text='<%# Eval("descripcion") %>' /></ItemTemplate>
+                                        <asp:Label ID="descripcion" runat="server" Text='<%# Eval("descripcion") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="Fecha" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="fecha" runat="server" Text='<%# Eval("fecha","{0:dd/MM/yyyy}") %>' /></ItemTemplate>
+                                        <asp:Label ID="fecha" runat="server" Text='<%# Eval("fecha","{0:dd/MM/yyyy}") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="Prioridad" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="prioridad" runat="server" Text='<%# Eval("prioridad") %>' /></ItemTemplate>
+                                        <asp:Label ID="prioridad" runat="server" Text='<%# Eval("prioridad") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="Categoria" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="categoria" runat="server" Text='<%# Eval("categoria") %>' /></ItemTemplate>
+                                        <asp:Label ID="categoria" runat="server" Text='<%# Eval("categoria") %>' />
+                                    </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:TemplateField HeaderText="Empresa" Visible="false" HeaderStyle-CssClass="text-center">
@@ -283,9 +293,11 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnAdd" runat="server" Text="Agregar" class="btn btn-block btn-info" OnClick="Guardar" ValidationGroup="ValidationAdd" /></div>
+                                    <asp:Button ID="btnAdd" runat="server" Text="Agregar" class="btn btn-block btn-info" OnClick="Guardar" ValidationGroup="ValidationAdd" />
+                                </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
 
@@ -427,9 +439,11 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnEditar" runat="server" Text="Guardar" class="btn btn-block btn-info" OnClick="EditarRegistro" ValidationGroup="ValidationAEdit" /></div>
+                                    <asp:Button ID="btnEditar" runat="server" Text="Guardar" class="btn btn-block btn-info" OnClick="EditarRegistro" ValidationGroup="ValidationAEdit" />
+                                </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
                     </ContentTemplate>
@@ -463,9 +477,11 @@
                             <div class="row">
                                 <div class="col-md-2"></div>
                                 <div class="col-md-4">
-                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" OnClick="EliminarRegistro" /></div>
+                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" OnClick="EliminarRegistro" />
+                                </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                                 <div class="col-md-2"></div>
                             </div>
                         </div>
@@ -518,7 +534,8 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
 

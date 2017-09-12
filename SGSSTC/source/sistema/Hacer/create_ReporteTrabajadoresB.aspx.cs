@@ -3,15 +3,13 @@ using Capa_Datos;
 using System.Web;
 using System.Web.UI;
 using System.Web.Security;
-using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class create_ReporteTrabajadoresB : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        static GridView grid = new GridView();
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +26,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {

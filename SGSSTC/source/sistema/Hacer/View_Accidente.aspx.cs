@@ -8,12 +8,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Verificar
 {
-	public partial class View_Accidente : System.Web.UI.Page
+	public partial class View_Accidente : Page
 	{
-		Utilidades objUtilidades = new Utilidades();
-		protected static Model_UsuarioSistema ObjUsuario;
-		protected static int idAccidente;
-		HyperLink HyperLink1;
+		private  Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
+		private int idAccidente;
 
 		#region acciones index
 		protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +26,7 @@ namespace SGSSTC.source.sistema.Verificar
 			CargarData();
 		}
 
-		protected void CargarData()
+        private void CargarData()
 		{
 			idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 			List<at_it_el_pa> ListAccidentes = new List<at_it_el_pa>();
@@ -99,7 +98,9 @@ namespace SGSSTC.source.sistema.Verificar
 
 				int contadorArchivos = 0;
 				ControlesDinamicos.CrearLiteral("<ul>", pSoportes);
-				foreach (var item1 in item.soporte)
+
+                HyperLink HyperLink1;
+                foreach (var item1 in item.soporte)
 				{
 					contadorArchivos++;
 					ControlesDinamicos.CrearLiteral("<li>", pSoportes);
@@ -113,8 +114,7 @@ namespace SGSSTC.source.sistema.Verificar
 				ControlesDinamicos.CrearLiteral("</ ul > ", pSoportes);
 			}
 
-		}
-		
+		}		
 		#endregion
 
 	}

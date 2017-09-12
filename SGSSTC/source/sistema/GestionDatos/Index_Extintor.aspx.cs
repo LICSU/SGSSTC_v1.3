@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class Index_Extintor : System.Web.UI.Page
+    public partial class Index_Extintor : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +29,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 LlenarGridView();
             }
         }
-        protected void CargarControles()
+
+        private void CargarControles()
         {
             phAgregar.Visible = BoolEmpSuc.Item2;
 
@@ -46,7 +47,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 phAgregar.Visible = true;
             }
         }
-        protected void CargarListas()
+
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -69,7 +71,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Area_Sucursal(ddlAreasEdit, ObjUsuario.Id_sucursal);
             }
         }
-        protected void LlenarGridView()
+
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -83,10 +86,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void AgregarRegistroModal(object sender, EventArgs e)
         {
             Modal.registrarModal("addModal", "AddModalScript", this);
+            phAlerta.Visible = false;
         }
         protected void MostrarModalImprimir(object sender, EventArgs e)
         {
             Modal.registrarModal("printModal", "printModalScript", this);
+            phAlerta.Visible = false;
         }
 
         protected void AgregarRegistro(object sender, EventArgs e)
@@ -118,7 +123,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 if (ObjUsuario.Error)
                 {
                     Modal.CerrarModal("addModal", "AddModalScript", this);
-                    Modal.Validacion(this, ObjUsuario.Error, "Add");
+                    Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
                     LlenarGridView();
                 }
             }
@@ -142,7 +147,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("editModal", "EditModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
             CargarListas();
         }
@@ -151,7 +156,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             extintor tabla = new extintor();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfExtintorIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -161,10 +166,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+
+        private void incializarExports()
         {
             LlenarGridView();
         }
+
         protected void btnExportWord_Click(object sender, EventArgs e)
         {
             incializarExports();
@@ -185,11 +192,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hdfExtintorIDEdit.Value = (gvrow.FindControl("extintor_id") as Label).Text;
+                hdfExtintorIDEdit.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
+
 
                 List<extintor> ListaExtintor = new List<extintor>();
                 ListaExtintor = Getter.Extintor(Convert.ToInt32(hdfExtintorIDEdit.Value));
@@ -227,14 +235,18 @@ namespace SGSSTC.source.sistema.GestionDatos
                 }
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
+
+                phAlerta.Visible = false;
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfExtintorIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfExtintorIDDel.Value = (gvrow.FindControl("extintor_id") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -318,9 +330,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

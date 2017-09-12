@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
 
-
 namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Update_Empresa : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +27,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 }
             }
         }
+
         private void cargarDatos()
         {
             int IdEmpresa = Convert.ToInt32(ViewState["id_empresa"]);
@@ -51,6 +51,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
 
         }
+
         protected void EditarRegistro(object sender, EventArgs e)
         {
         }

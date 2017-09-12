@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_Alarmas : System.Web.UI.Page
+    public partial class index_Alarmas : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             DateTime fechaActual = DateTime.Now;
             ViewState["FechaInicio"] = fechaActual.ToString("dd-MM-yyy");
@@ -70,7 +70,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Usuario_Sucursal(ddlUsuEdit, ObjUsuario.Id_sucursal);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -155,10 +155,11 @@ namespace SGSSTC.source.sistema.Hacer
             };
             ObjUsuario.Error = CRUD.Add_Fila(nuevoAlarma, IdUsuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             CargarListas();
             LlenarGridView();
         }
+
         protected void EditarRegistro(object sender, EventArgs e)
         {
             int IdUsuario = 0;
@@ -185,15 +186,16 @@ namespace SGSSTC.source.sistema.Hacer
             }
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, IdUsuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             CargarListas();
             LlenarGridView();
         }
+
         protected void EliminarRegistro(object sender, EventArgs e)
         {
             alarma tabla = new alarma();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -203,7 +205,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+        private void incializarExports()
         {
             GridView1.Columns[5].Visible = false;
             GridView1.Columns[6].Visible = false;
@@ -234,9 +236,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                hdfEditID.Value = Utilidades.GetIdFila(GridView1, e, "id");
+                hdfEditID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 List<alarma> ListaAlarma = new List<alarma>();
                 ListaAlarma = Getter.Alarma(Convert.ToInt32(hdfEditID.Value));
@@ -251,15 +253,14 @@ namespace SGSSTC.source.sistema.Hacer
                 }
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
+                phAlerta.Visible = false;
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id");
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
-        }
-        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
-        {
         }
         #endregion
 
@@ -374,9 +375,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["search"] = txtSearch.Text;
+                ViewState["search"] = txtBuscar.Text;
             }
             else
             {

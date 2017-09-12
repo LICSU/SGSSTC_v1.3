@@ -8,8 +8,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class create_InspeccionMediosEscape : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region Index
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {

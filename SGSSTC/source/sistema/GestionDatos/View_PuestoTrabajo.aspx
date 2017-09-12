@@ -1,11 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="View_PuestoTrabajo.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.View_PuestoTrabajo" %>
 
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
-
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <asp:UpdatePanel ID="MyUpdatePanel" runat="server">
@@ -20,6 +18,7 @@
             <div class="page-header">
                 <h1 class="text-center">Ver Puesto de Trabajo</h1>
             </div>
+            
 
             <asp:PlaceHolder runat="server" ID="phEmpresa1">
                 <div class="row">

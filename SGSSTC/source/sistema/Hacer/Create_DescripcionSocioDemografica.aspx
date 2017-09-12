@@ -20,6 +20,13 @@
             <div class="page-header">
                 <h1 class="text-center">Nueva Descripción SocioDemográfica</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <!-- empresa y sucursal-->
             <div class="row">

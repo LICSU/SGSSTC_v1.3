@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class create_InspeccionCrono : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region Acciones
         protected void Page_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -92,7 +92,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #endregion
 
         #region campos dinamicos
-        public void crearCampos(int valor)
+        private void crearCampos(int valor)
         {
             cantInspecciones.Value = valor.ToString();
 
@@ -131,7 +131,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         }
 
-        public void CrearDropDownListArea(string id, Panel _panel)
+        private void CrearDropDownListArea(string id, Panel _panel)
         {
             int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
 
@@ -148,7 +148,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             _panel.Controls.Add(miDropDownList);
         }
 
-        public void CrearDropDownListTipo(string id, Panel _panel)
+        private void CrearDropDownListTipo(string id, Panel _panel)
         {
             DropDownList miDropDownList = new DropDownList();
 

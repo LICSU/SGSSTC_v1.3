@@ -9,10 +9,11 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_PerfilCargo : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Utilidades objUtilidades = new Utilidades();
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Tuple<bool, bool> BoolEmpSuc;
 
+        #region acciones index
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
@@ -29,7 +30,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 
@@ -46,9 +47,10 @@ namespace SGSSTC.source.sistema.Hacer
             perfil_cargo tabla = new perfil_cargo();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
+        #endregion
 
         #region  eventos del grid
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -58,16 +60,16 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                string idPerfil = Utilidades.GetIdFila(GridView1, e, "id");
+                string idPerfil = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 idPerfil = objUtilidades.cifrarCadena(Convert.ToString(idPerfil));
                 Response.Redirect("Update_PerfilCargo.aspx?id="+idPerfil);
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -103,9 +105,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

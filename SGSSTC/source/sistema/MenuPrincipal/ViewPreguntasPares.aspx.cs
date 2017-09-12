@@ -10,8 +10,8 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 {
     public partial class ViewPreguntasPares : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
                 LlenarGridView();
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             List<empresa_itemdivision> consulta = new List<empresa_itemdivision>();
             consulta = Getter.CodigoCiiu_Empresa(ObjUsuario.Id_empresa);

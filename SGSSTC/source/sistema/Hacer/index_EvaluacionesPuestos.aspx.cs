@@ -7,101 +7,99 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_EvaluacionesPuestos : System.Web.UI.Page
-    {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        int id_Puesto;
+	public partial class index_EvaluacionesPuestos : Page
+	{
+		private Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
+		private Tuple<bool, bool> BoolEmpSuc;
 
-        #region acciones index
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            Page.Form.Attributes.Add("enctype", "multipart/form-data");
+		#region acciones index
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
-            BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
+			BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
-            if (!IsPostBack)
-            {
-                LlenarGridView();
-            }
-        }
-        private void LlenarGridView()
-        {
-            id_Puesto = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+			if (!IsPostBack)
+			{
+				LlenarGridView();
+			}
+		} 
 
-            Tabla.EvaluacionPuesto(GridView1, id_Puesto);
-        }
+		private void LlenarGridView()
+		{
+			int id_Puesto = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
-        #endregion
+			Tabla.EvaluacionPuesto(GridView1, id_Puesto);
+		}
+		#endregion
 
-        #region acciones
-        protected void MostrarModalImprimir(object sender, EventArgs e)
-        {
-            Modal.registrarModal("printModal", "printModalScript", this);
-        }
+		#region acciones
+		protected void MostrarModalImprimir(object sender, EventArgs e)
+		{
+			phAlerta.Visible = false;
+			Modal.registrarModal("printModal", "printModalScript", this);
+		}
 
-        protected void btPrint_Click(object sender, EventArgs e)
-        {
-            String[] valores = {
-                "",
-                ViewState["Imprimir"].ToString(),
-            };
-            Modal.CerrarModal("printModal", "printModalScript", this);
-            PrintFile.PrintEvaluacionPuestos(valores, this);
-        }
-        protected void EliminarRegistro(object sender, EventArgs e)
-        {
-            evaluacion_riesgo tabla = new evaluacion_riesgo();
-            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            LlenarGridView();
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
-        }
+		protected void btPrint_Click(object sender, EventArgs e)
+		{
+			String[] valores = {
+				"",
+				ViewState["Imprimir"].ToString(),
+			};
+			Modal.CerrarModal("printModal", "printModalScript", this);
+			PrintFile.PrintEvaluacionPuestos(valores, this);
+		}
+
+		protected void EliminarRegistro(object sender, EventArgs e)
+		{
+			evaluacion_riesgo tabla = new evaluacion_riesgo();
+			ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+			LlenarGridView();
+			Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+		}
 		
-        #endregion
+		#endregion
 
-        #region acciones grid
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridView1.PageIndex = e.NewPageIndex;
-            LlenarGridView();
-        }
-        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
-        {
-        }
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName.Equals("Ver"))
-            {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                string id_EvaRiesgo = (gvrow.FindControl("id_evaluacion_riesgo") as Label).Text;
+		#region acciones grid
+		protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+		{
+			GridView1.PageIndex = e.NewPageIndex;
+			LlenarGridView();
+		}
+		protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+		{
+			if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
+			{
+				phAlerta.Visible = false;
 
-                id_EvaRiesgo = objUtilidades.cifrarCadena(id_EvaRiesgo);
+				string id_EvaRiesgo = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                Response.Redirect(Paginas.View_EvaluacionPuesto.Value + "?id=" + id_EvaRiesgo);
-            }
-            if (e.CommandName.Equals("Eliminar"))
-            {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hdfIDDel.Value = (gvrow.FindControl("id_evaluacion_riesgo") as Label).Text;
-                Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-            }
-            else if (e.CommandName.Equals("print"))
-            {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hImprimir.Value = (gvrow.FindControl("id_evaluacion_riesgo") as Label).Text;
-                ViewState["Imprimir"] = string.Empty + hImprimir.Value;
+				id_EvaRiesgo = objUtilidades.cifrarCadena(id_EvaRiesgo);
 
-                Modal.registrarModal("PrintListaModal", "PrintListaModalScript", this);
+				Response.Redirect(Paginas.View_EvaluacionPuesto.Value + "?id=" + id_EvaRiesgo);
+			}
+			else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
+			{
+				hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-            }
+				Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+				phAlerta.Visible = false;
+			}
+			else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
+			{
+				hImprimir.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-        }
-        #endregion
-    }
+				ViewState["Imprimir"] = string.Empty + hImprimir.Value;
+
+				Modal.registrarModal("PrintListaModal", "PrintListaModalScript", this);
+				phAlerta.Visible = false;
+
+			}
+
+		}
+		#endregion
+	}
 }

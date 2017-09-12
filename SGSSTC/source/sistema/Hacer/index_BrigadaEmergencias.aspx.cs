@@ -12,12 +12,11 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_BrigadaEmergencias : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        DropDownList miDropDownList;
-        int ContFilas = 0;
-        string NodoPrincipal = string.Empty;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private string NodoPrincipal = string.Empty;
+        private Tuple<bool, bool> BoolEmpSuc;
 
+        #region metodos index
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
@@ -30,7 +29,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (!IsPostBack)
             {
                 ViewState["contador"] = "2";
-                cargarListas();
+                CargarListas();
             }
             else
             {
@@ -70,7 +69,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
-        public void cargarBigrada()
+        private void cargarBigrada()
         {
             int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
             int idBrigada = GetterMax.BrigadaEmergencias(IdSucursal);
@@ -219,7 +218,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
-        public void cargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -236,10 +235,13 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Trabajadores_Sucursal(ddlTrabjador2, ObjUsuario.Id_sucursal);
             }
         }
+        #endregion
+
 
         #region campos dinamicos
-        public void crearCampos(int valor)
+        private void crearCampos(int valor)
         {
+            int ContFilas = 0;
             ContFilas = valor;
             int posicion = 3;
 
@@ -270,8 +272,9 @@ namespace SGSSTC.source.sistema.Hacer
             ViewState["contador"] = string.Empty + (Convert.ToInt32(ViewState["contador"]) + 1);
 
         }
-        public void CrearDropDownList(string id, Panel _panel)
+        private void CrearDropDownList(string id, Panel _panel)
         {
+            DropDownList miDropDownList;
             miDropDownList = new DropDownList();
             miDropDownList.ID = id;
             miDropDownList.CssClass = "form-control";
@@ -444,7 +447,7 @@ namespace SGSSTC.source.sistema.Hacer
             ltReporte.Text = Myscript;
             btnCalculate.Focus();
         }
-        public string[] CrearLista(List<List<NodosArbol>> groupedList, string _NodoPrincipal)
+        private string[] CrearLista(List<List<NodosArbol>> groupedList, string _NodoPrincipal)
         {
             int cont = 0;
             int posicion = -1;
@@ -467,7 +470,7 @@ namespace SGSSTC.source.sistema.Hacer
             return valores;
 
         }
-        public int GetPosicion(string[] ArrNodos, string nodo)
+        private int GetPosicion(string[] ArrNodos, string nodo)
         {
             int posicion = -2;
 

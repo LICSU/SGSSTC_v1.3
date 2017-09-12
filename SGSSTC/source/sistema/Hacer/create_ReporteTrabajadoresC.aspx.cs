@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class create_ReporteTrabajadoresC : Page
     {
-        public static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region index
         protected void Page_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {

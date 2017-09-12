@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_MatrizLegal.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_MatrizLegal" %>
-
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"   Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -22,7 +20,7 @@
             <!-- Buscar -->
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
-                    <asp:TextBox ID="txtSearch"
+                    <asp:TextBox ID="txtBuscar"
                         data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
                         runat="server" class="form-control" PlaceHolder="Ingrese la norma a buscar"></asp:TextBox>
                 </div>

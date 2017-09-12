@@ -1,11 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_EvaluacionRiesgo.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_EvaluacionRiesgo" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, 
-	PublicKeyToken=31bf3856ad364e35"
-	Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
-
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -13,7 +8,6 @@
 
 	<asp:UpdatePanel ID="updatePanelPrinicpal" runat="server">
 		<ContentTemplate>
-
 
 			<ol class="breadcrumb">
 				<li><a href="#">Fase: Hacer</a></li>
@@ -23,6 +17,13 @@
 			<div class="page-header">
 				<h1 class="text-center">Evaluación de Riesgos</h1>
 			</div>
+			
+			<asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+				<div id="divAlerta" runat="server">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+				</div>
+			</asp:PlaceHolder>
 
 			<div class="row">
 
@@ -53,7 +54,7 @@
 
 						<asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
 							AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
-							OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated"
+							OnPageIndexChanging="GridView1_PageIndexChanging"
 							EmptyDataText="No existen Registros">
 							<RowStyle HorizontalAlign="Center" />
 
@@ -83,12 +84,12 @@
 									</ItemTemplate>
 								</asp:TemplateField>
 
-								<asp:ButtonField HeaderText="Agregar Evaluación" CommandName="add" ButtonType="Image" HeaderStyle-CssClass="text-center"
+								<asp:ButtonField HeaderText="Agregar Evaluación" CommandName="Registrar" ButtonType="Image" HeaderStyle-CssClass="text-center"
 									ImageUrl="~\ico\agregar.png">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>
 
-								<asp:ButtonField HeaderText="Ver Evaluaciones" CommandName="Ver" ButtonType="Image" HeaderStyle-CssClass="text-center"
+								<asp:ButtonField HeaderText="Ver Evaluaciones" CommandName="Consultar" ButtonType="Image" HeaderStyle-CssClass="text-center"
 									ImageUrl="~\ico\view.png">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>

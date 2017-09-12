@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Trabajador.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Trabajador" %>
 
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -18,6 +17,13 @@
             <div class="page-header">
                 <h1 class="text-center">Trabajador</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
@@ -84,7 +90,7 @@
                                 <asp:TemplateField HeaderText="Cédula" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
                                         <asp:HiddenField ID="id_empresa" runat="server" Visible="false" Value='<%# Eval("empresa") %>' />
-                                        <asp:Label ID="id_trabajador" runat="server" Visible="false" Text='<%# Eval("id_trabajador") %>' />
+                                        <asp:Label ID="id" runat="server" Visible="false" Text='<%# Eval("id_trabajador") %>' />
                                         <asp:Label ID="cedula" runat="server" Text='<%# Eval("cedula") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -120,12 +126,12 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField CommandName="agregarReposo" HeaderText="Agregar Reposo" ButtonType="Image"
+                                <asp:ButtonField  HeaderText="Agregar Reposo" CommandName="AddReposo" ButtonType="Image"
                                     ImageUrl="~\ico\checklist.png" HeaderStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
-                                <asp:ButtonField HeaderText="Consultar" CommandName="Ver" ButtonType="Image"
+                                <asp:ButtonField HeaderText="Consultar" CommandName="Consultar" ButtonType="Image"
                                     ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>

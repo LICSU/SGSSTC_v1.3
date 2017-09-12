@@ -11,12 +11,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_PlanTrabajo : System.Web.UI.Page
+    public partial class index_PlanTrabajo : Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
-        DateTime anho = DateTime.Now;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -35,15 +34,14 @@ namespace SGSSTC.source.sistema.Hacer
             phSucursalAdd.Visible = BoolEmpSuc.Item2;
             phSucursalEdit.Visible = BoolEmpSuc.Item2;
 
-
             if (!IsPostBack)
             {
                 ListaAnho(ddlYear);
                 CargarListas();
-                ViewState["anho"] = string.Empty + Convert.ToInt32(anho.Year);
+                ViewState["anho"] = string.Empty + Convert.ToInt32(DateTime.Now.Year);
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -65,7 +63,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
@@ -87,9 +85,9 @@ namespace SGSSTC.source.sistema.Hacer
         #endregion
 
         #region acciones
-        public DropDownList ListaAnho(DropDownList DropDownList1)
+        private DropDownList ListaAnho(DropDownList DropDownList1)
         {
-            int anhoActual = Convert.ToInt32(anho.Year);
+            int anhoActual = Convert.ToInt32(DateTime.Now.Year);
 
             ViewState["anho"] = string.Empty + anhoActual;
 
@@ -169,7 +167,7 @@ namespace SGSSTC.source.sistema.Hacer
                 CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
                 Modal.CerrarModal("editModal", "EditModalScript", this);
-                //Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                //Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             }
             LlenarGridView();
         }
@@ -178,7 +176,7 @@ namespace SGSSTC.source.sistema.Hacer
             plan_trabajo tabla = new plan_trabajo();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            //Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            //Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         protected void GenerarDocumentoG(object sender, EventArgs e)
@@ -259,7 +257,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -298,7 +296,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Modal.registrarModal("editModal", "EditModalScript", this);
                 LlenarGridView();
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];

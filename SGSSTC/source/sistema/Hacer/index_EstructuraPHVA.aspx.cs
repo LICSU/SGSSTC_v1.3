@@ -8,7 +8,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_EstructuraPHVA : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
+        private Model_UsuarioSistema ObjUsuario;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);

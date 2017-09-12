@@ -9,10 +9,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
 	public partial class Create_EvaluacionRiesgos : Page
 	{
-		protected static Model_UsuarioSistema ObjUsuario;
-		Tuple<bool, bool> BoolEmpSuc;
-		int id_Ide_Puesto;
-		Utilidades objUtilidades = new Utilidades();
+		private Model_UsuarioSistema ObjUsuario;
+		private Tuple<bool, bool> BoolEmpSuc;
+		private  Utilidades objUtilidades = new Utilidades();
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -27,8 +26,10 @@ namespace SGSSTC.source.sistema.Hacer
 				CargarDatos();
 			}
 		}
+
 		private void CargarDatos()
 		{
+			int id_Ide_Puesto;
 			id_Ide_Puesto = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 			List<identificacion_puesto> Lista_Ide_Puesto = new List<identificacion_puesto>();
 			Lista_Ide_Puesto = Getter.IdentificacionPuesto(id_Ide_Puesto);
@@ -104,10 +105,7 @@ namespace SGSSTC.source.sistema.Hacer
 
 			ObjUsuario.Error = CRUD.Add_Fila(nuevoEvaRiesgo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-			if (ObjUsuario.Error)
-			{
-				Response.Redirect(Paginas.index_EvaluacionRiesgo.Value);
-			}
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtControlFuente);
 
 		}
 		
@@ -185,6 +183,7 @@ namespace SGSSTC.source.sistema.Hacer
 			txtInterpretacionNivelRiesgo.Text = "Sin Calcular";
 			ddlNivelConsecuencia.SelectedValue = "";
 		}
+
 		protected void CalculoNivelRiesgo_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
@@ -248,6 +247,7 @@ namespace SGSSTC.source.sistema.Hacer
 				txtAceptabilidadRiesgo.Text = AceptabilidadRiesgo;
 			}
 		}
+
 		protected void txtPersonalExpuesto_TextChanged(object sender, EventArgs e)
 		{
 			int valorPlanta = txtPlanta.Text == string.Empty ? 0 : Convert.ToInt32(txtPlanta.Text);

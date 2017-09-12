@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Mecanismos.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_Mecanismos" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <asp:UpdatePanel ID="updatePanelPrinicpal" runat="server">
@@ -18,6 +18,27 @@
             <div class="page-header">
                 <h1 class="text-center">Mecanismo para recibir, documentar y responder a las comunicaciones</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-3">
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
+                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                </div>
+
+                <div class="col-md-2">
+                    <asp:Button ID="btnSearch" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"
+                        data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar" />
+                </div>
+            </div>
+
+            <br />
 
             <asp:PlaceHolder runat="server" ID="phSucursal">
                 <div class="row">
@@ -50,7 +71,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Id Categoria" Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="Num" runat="server" Text='<%# Eval("id_tipo_documento") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_tipo_documento") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 

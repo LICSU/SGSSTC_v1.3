@@ -8,10 +8,9 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Create_Sucursal : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        protected static int act1, act2, act3, IdEmpresa;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +26,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -42,14 +41,15 @@ namespace SGSSTC.source.sistema.GestionDatos
             Listas.Reg_Dpto_Mcpio(ddlRegionAdd, "Region");
         }
 
-        protected void CargarControles()
+        private void CargarControles()
         {
             phEmpresaAdd.Visible = BoolEmpSuc.Item1;
         }
 
         protected void GuardarRegistro(object sender, EventArgs e)
         {
-            IdEmpresa = 0;
+            int act1=0, act2=0, act3=0, IdEmpresa=0;
+
             if (BoolEmpSuc.Item1)
             {
                 IdEmpresa = Convert.ToInt32(ddlEmpresaAdd.SelectedValue);

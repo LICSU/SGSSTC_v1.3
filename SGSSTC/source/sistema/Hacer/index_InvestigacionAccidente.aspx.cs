@@ -8,11 +8,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Verificar
 {
-    public partial class index_InvestigacionAccidente : System.Web.UI.Page
+    public partial class index_InvestigacionAccidente : Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace SGSSTC.source.sistema.Verificar
                 CargarListas();
             }
         }
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -55,7 +55,7 @@ namespace SGSSTC.source.sistema.Verificar
                 Listas.Area_Sucursal(ddlArea, ObjUsuario.Id_sucursal);
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
@@ -83,7 +83,7 @@ namespace SGSSTC.source.sistema.Verificar
             }
 
             LlenarGridView();
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
         }
         protected void btPrint_Click(object sender, EventArgs e)
         {
@@ -361,7 +361,7 @@ namespace SGSSTC.source.sistema.Verificar
 
                 Response.Redirect(Paginas.View_InvestigacionAccidente.Value + "?id=" + idAccidente); 
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -459,9 +459,9 @@ namespace SGSSTC.source.sistema.Verificar
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["search"] = txtSearch.Text;
+                ViewState["search"] = txtBuscar.Text;
             }
             else
             {

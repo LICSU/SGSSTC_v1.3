@@ -1,71 +1,73 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_ProgramaInspecciones.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_ProgramaInspecciones" %>
-
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
-
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+	<ol class="breadcrumb">
+		<li><a href="#">Fase: Hacer</a></li>
+		<li><a href="#">Programas de Inspecciones</a></li>
+	</ol>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Fase: Hacer</a></li>
-        <li><a href="#">Programas de Inspecciones</a></li>
-    </ol>
+	<div class="page-header">
+		<h1 class="text-center">PROGRAMA DE INSPECCIONES</h1>
+	</div>
 
-    <div class="page-header">
-        <h1 class="text-center">PROGRAMA DE INSPECCIONES</h1>
-    </div>
+    <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+        <div id="divAlerta" runat="server">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+        </div>
+    </asp:PlaceHolder>
 
-    <div class="row form-group">
+	<div class="row form-group">
 
-        <asp:PlaceHolder runat="server" ID="phEmpresa">
-            <div class="col-md-4">
-                <h4 class="text-center">Empresa</h4>
-                <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
-            </div>
-        </asp:PlaceHolder>
+		<asp:PlaceHolder runat="server" ID="phEmpresa">
+			<div class="col-md-4">
+				<h4 class="text-center">Empresa</h4>
+				<asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
+			</div>
+		</asp:PlaceHolder>
 
-        <asp:PlaceHolder runat="server" ID="phSucursal">
-            <div class="col-md-4">
-                <h4 class="text-center">Sucursal</h4>
-                <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
-                    OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
-                </asp:DropDownList>
+		<asp:PlaceHolder runat="server" ID="phSucursal">
+			<div class="col-md-4">
+				<h4 class="text-center">Sucursal</h4>
+				<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
+					OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+				</asp:DropDownList>
 
-                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
-                    Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
-                    runat="server" ValidationGroup="ValidationAdd" />
-            </div>
-        </asp:PlaceHolder>
-    </div>
+				<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+					Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="ddlSucursal"
+					runat="server" ValidationGroup="ValidationAdd" />
+			</div>
+		</asp:PlaceHolder>
+	</div>
 
-    <asp:PlaceHolder runat="server" ID="phCkeditor" Visible="false">
-        <div class="row" align="left">
-            <div class="col-md-12">
-                <h3>Objetivo. </h3>
-                <br />
-                Realizar inspecciones en cada una de las áreas de la Empresa, a fin de determinar las condiciones en las que se encuentran los puestos de trabajo, 
+	<asp:PlaceHolder runat="server" ID="phCkeditor" Visible="false">
+		<div class="row" align="left">
+			<div class="col-md-12">
+				<h3>Objetivo. </h3>
+				<br />
+				Realizar inspecciones en cada una de las áreas de la Empresa, a fin de determinar las condiciones en las que se encuentran los puestos de trabajo, 
 							los dispositivos de seguridad y el acatamiento de las normas y procedimientos seguros de trabajo. 
 					
 						<h3>Metas. </h3>
-                <br />
-                <ul>
-                    <li>Realizar periódicamente seguimiento de los procesos de trabajo en cada una de las áreas productivas de la organización.</li>
-                    <li>Involucrar a los trabajadores y a los supervisores en el desarrollo de las inspecciones en cada uno de los elementos a evaluar.</li>
-                    <li>Según los resultados obtenidos realizar medidas preventivas, para minimizar el riesgo de ocurrencia de accidentes de trabajo y enfermedades ocupacionales.</li>
-                </ul>
+				<br />
+				<ul>
+					<li>Realizar periódicamente seguimiento de los procesos de trabajo en cada una de las áreas productivas de la organización.</li>
+					<li>Involucrar a los trabajadores y a los supervisores en el desarrollo de las inspecciones en cada uno de los elementos a evaluar.</li>
+					<li>Según los resultados obtenidos realizar medidas preventivas, para minimizar el riesgo de ocurrencia de accidentes de trabajo y enfermedades ocupacionales.</li>
+				</ul>
 
-            </div>
-        </div>
+			</div>
+		</div>
 
-        <div class="row">
+		<div class="row">
 
-            <CKEditor:CKEditorControl Height="1000" ID="txtProgInspecciones" BasePath="/ckeditor/" runat="server">
+			<CKEditor:CKEditorControl Height="1000" ID="txtProgInspecciones" BasePath="/ckeditor/" runat="server">
 						<h3>Alcance. </h3><br/>
 							Aplica a inspecciones de los extintores portátiles, lámparas de emergencia, señalización, pasillos y vías de escape, botiquín de primeros auxilios, oficinas administrativas, 
 							áreas de producción, almacenes, depósitos de material, servicio sanitario y áreas comunes. 
@@ -169,30 +171,30 @@
 						construcción o remodelación de instalaciones o aparición de nuevos riesgos. <br />
 						Sobre cualquier inspección que se realice, se levantará un acta describiendo en detalle las condiciones y circunstancias verificadas, incluyendo las medidas correctivas de corto mediano y largo plazo según sea el caso. 
 						Esta acta deberá estar firmada por los participantes en la inspección.
-            </CKEditor:CKEditorControl>
+			</CKEditor:CKEditorControl>
 
-        </div>
+		</div>
 
-        <br />
+		<br />
 
-        <div class="row">
-            <div class="col-md-4 col-md-offset-2">
-                <asp:Button ID="btnPrint" runat="server" CssClass="btn btn-success"
-                    OnClick="GenerarDocumento" Text="Generar Documento" ValidationGroup="ValidationAdd" />
-            </div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-2">
+				<asp:Button ID="btnPrint" runat="server" CssClass="btn btn-success"
+					OnClick="GenerarDocumento" Text="Generar Documento" ValidationGroup="ValidationAdd" />
+			</div>
 
-            <div class="col-md-4">
-                <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary"
-                    OnClick="GuardarRegistro" Text="Guardar y/o Actualizar Datos" ValidationGroup="ValidationAdd" />
-            </div>
+			<div class="col-md-4">
+				<asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary"
+					OnClick="GuardarRegistro" Text="Guardar y/o Actualizar Datos" ValidationGroup="ValidationAdd" />
+			</div>
 
-        </div>
-    </asp:PlaceHolder>
+		</div>
+	</asp:PlaceHolder>
 
-    <asp:PlaceHolder runat="server" ID="phCkeditorno">
-        <div class="row">
-            <h4 class="text-center">Debe seleccionar la empresa y sucursal.</h4>
-        </div>
-    </asp:PlaceHolder>
+	<asp:PlaceHolder runat="server" ID="phCkeditorno">
+		<div class="row">
+			<h4 class="text-center">Debe seleccionar la empresa y sucursal.</h4>
+		</div>
+	</asp:PlaceHolder>
 
 </asp:Content>

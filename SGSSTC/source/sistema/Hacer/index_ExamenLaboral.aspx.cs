@@ -7,10 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_ExamenLaboral : System.Web.UI.Page
+    public partial class index_ExamenLaboral : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -33,11 +33,12 @@ namespace SGSSTC.source.sistema.Hacer
                 txtFechaInicio.Text = fechaActual.ToString("yyyy-MM-dd");
                 txtFechaFin.Text = fechaActual.AddMonths(1).ToString("yyyy-MM-dd");
 
-                Cargarlistas();
+                CargarListas();
                 LlenarGridView();
             }
         }
-        protected void Cargarlistas()
+
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -51,7 +52,8 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
-        protected void LlenarGridView()
+
+        private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 
@@ -62,6 +64,14 @@ namespace SGSSTC.source.sistema.Hacer
                 string.Empty + ViewState["FechaInicio"],
                 string.Empty + ViewState["FechaFin"]);
 
+        }
+
+        protected void EliminarRegistro(object sender, EventArgs e)
+        {
+            historia_clinica_ocupacional tabla = new historia_clinica_ocupacional();
+            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+            LlenarGridView();
         }
         #endregion
 
@@ -81,7 +91,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             /* Verifies that the control is rendered */
         }
-        public void incializarExports()
+        private void incializarExports()
         {
             LlenarGridView();
             GridView1.Columns[3].Visible = false;
@@ -112,11 +122,11 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 Modal.registrarModal("editModal", "EditModalScript", this);
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -186,9 +196,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["search"] = txtSearch.Text;
+                ViewState["search"] = txtBuscar.Text;
             }
             else
             {
@@ -197,13 +207,5 @@ namespace SGSSTC.source.sistema.Hacer
             LlenarGridView();
         }
         #endregion
-
-        protected void EliminarRegistro(object sender, EventArgs e)
-        {
-            historia_clinica_ocupacional tabla = new historia_clinica_ocupacional();
-            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
-            LlenarGridView();
-        }
     }
 }

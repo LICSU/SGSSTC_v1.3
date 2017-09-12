@@ -215,8 +215,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                     empresa = datos.nombre;
                     correo = datos.email;
                 }
-
-                Utilidades objUtilidades = new Utilidades();
+                
                 password = objUtilidades.descifrarCadena2(Convert.ToString(password));
                 Utilidades.enviarSucursal(correo, empresa, nombreSucursal, nom_usuario, password);
                 return MensajeError.Exito_Add_Sucursal.Value;

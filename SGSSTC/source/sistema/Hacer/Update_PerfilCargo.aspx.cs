@@ -8,9 +8,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class Update_PerfilCargo : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        int IDPerfil = 0;
-        protected static Model_UsuarioSistema ObjUsuario;
+        private  Utilidades objUtilidades = new Utilidades();
+        private int IDPerfil = 0;
+        private Model_UsuarioSistema ObjUsuario;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,7 +50,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error);
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre);
         }
     }
 }

@@ -1,9 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_AutoEvaluacion.aspx.cs" Inherits="SGSSTC.source.sistema.EvaluacionInicial.index_AutoEvaluacion" %>
-
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
-
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -20,6 +16,27 @@
             <div class="page-header">
                 <h1 class="text-center">Auto-Evaluación</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-3">
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
+                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                </div>
+
+                <div class="col-md-2">
+                    <asp:Button ID="btnSearch" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"
+                        data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar" />
+                </div>
+            </div>
+
+            <br />
 
             <div class="row">
 
@@ -36,6 +53,7 @@
                     </div>
                 </asp:PlaceHolder>
             </div>
+
             <br />
 
             <div class="row">
@@ -57,7 +75,7 @@
                             <Columns>
                                 <asp:TemplateField Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_autoevaluacion" runat="server" Text='<%# Eval("id_documento") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_documento") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -99,6 +117,7 @@
                     </div>
                 </div>
             </div>
+
             <br />
 
             <div class="row text-center">
@@ -282,8 +301,5 @@
             </div>
         </div>
     </div>
-
-
-
 
 </asp:Content>

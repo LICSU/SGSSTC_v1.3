@@ -9,12 +9,11 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Verificar
 {
-	public partial class Update_Accidentes : System.Web.UI.Page
+	public partial class Update_Accidentes : Page
 	{
-		Model_UsuarioSistema ObjUsuario;
-		Tuple<bool, bool> BoolEmpSuc;
-		Utilidades objUtilidades = new Utilidades();
-		int idAccidente;
+		private Model_UsuarioSistema ObjUsuario;
+		private Tuple<bool, bool> BoolEmpSuc;
+		private  Utilidades objUtilidades = new Utilidades();
 
 		#region acciones index
 		protected void Page_Load(object sender, EventArgs e)
@@ -34,7 +33,7 @@ namespace SGSSTC.source.sistema.Verificar
 				CargarAccidente();
 			}
 		}
-		public void CargarListas()
+		private void CargarListas()
 		{
 			if (BoolEmpSuc.Item1)
 			{
@@ -53,9 +52,9 @@ namespace SGSSTC.source.sistema.Verificar
 				Listas.PuestoTrabajo(ddlProcesoTrabajo, "Sucursal", ObjUsuario.Id_sucursal);
 			}
 		}
-		public void CargarAccidente()
+		private void CargarAccidente()
 		{
-			idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+			int idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 			List<at_it_el_pa> ListAccidentes = new List<at_it_el_pa>();
 			ListAccidentes = Getter.Accidente(idAccidente);
 
@@ -146,14 +145,8 @@ namespace SGSSTC.source.sistema.Verificar
 
 			ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-			if (ObjUsuario.Error)
-			{
-				Response.Redirect(Paginas.index_AccidenteLaboral.Value);
-			}
-			else
-			{
-				Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Accidente.Value, "ERR", this);
-			}
+
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaAcc);
 		}
 		
 		#endregion

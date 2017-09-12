@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_DescripcionSocioDemografica : System.Web.UI.Page
     {
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             Tabla.DescSocio(GridView1, string.Empty + ViewState["sWhere"]);
         }
@@ -48,7 +48,7 @@ namespace SGSSTC.source.sistema.Hacer
             desc_socio tabla = new desc_socio();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfPerfilIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         protected void crearPDF(string id_desc_socio)
@@ -179,31 +179,28 @@ namespace SGSSTC.source.sistema.Hacer
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                string id_trabajador = (gvrow.FindControl("id_desc_socio") as Label).Text;
+                phAlerta.Visible = false;
+                string id_trabajador = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 id_trabajador = objUtilidades.cifrarCadena(Convert.ToString(id_trabajador));
                 Response.Redirect(Paginas.Update_DescripcionSocioDemografica.Value+"?id=" + id_trabajador);
             }
-            if (e.CommandName.Equals("Ver"))
+            if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                string id_trabajador = (gvrow.FindControl("id_desc_socio") as Label).Text;
+                phAlerta.Visible = false;
+                string id_trabajador = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 id_trabajador = objUtilidades.cifrarCadena(Convert.ToString(id_trabajador));
                 
                 Response.Redirect(Paginas.View_DescripcionSocioDemografica.Value+"?id=" + id_trabajador);
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hdfPerfilIDDel.Value = (gvrow.FindControl("id_desc_socio") as Label).Text;
+                hdfPerfilIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

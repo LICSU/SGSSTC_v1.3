@@ -9,8 +9,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class index_Empresa : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void LlenarGridView()
+        private void LlenarGridView()
         {
             Tabla.Empresa(GridView1);
         }
@@ -70,14 +70,14 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region metodos grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
                 Response.Redirect(Paginas.Update_Empresa.Value + "?id=" + (gvrow.FindControl("id_empresa") as Label).Text);
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];

@@ -8,8 +8,8 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_PlanInduccion : System.Web.UI.Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
-                cargarListas();
+                CargarListas();
                 if (BoolEmpSuc.Item1)
                 {
                     Listas.Empresa(ddlEmpresa);
@@ -38,7 +38,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
 
-        protected void cargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -47,6 +47,25 @@ namespace SGSSTC.source.sistema.Hacer
             else
             {
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
+            }
+        }
+        private void cargarPlan()
+        {
+            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
+            int idPlan = GetterMax.Plan(IdSucursal);
+
+            if (idPlan != 0)
+            {
+                List<plan> consulta = new List<plan>();
+                consulta = Getter.Planes(idPlan);
+
+                if (consulta.Count > 0)
+                {
+                    foreach (var item in consulta)
+                    {
+                        txtPlanInduccion.Text = item.nombre;
+                    }
+                }
             }
         }
 
@@ -64,25 +83,6 @@ namespace SGSSTC.source.sistema.Hacer
                 phCkeditor.Visible = true;
                 phCkeditorno.Visible = false;
                 //cargarPlan();
-            }
-        }
-        public void cargarPlan()
-        {
-            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
-            int idPlan = GetterMax.Plan(IdSucursal);
-
-            if (idPlan != 0)
-            {
-                List<plan> consulta = new List<plan>();
-                consulta = Getter.Planes(idPlan);
-
-                if (consulta.Count > 0)
-                {
-                    foreach (var item in consulta)
-                    {
-                        txtPlanInduccion.Text = item.nombre;
-                    }
-                }
             }
         }
         protected void GenerarDocumento(object sender, EventArgs e)

@@ -8,10 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class index_Epp : System.Web.UI.Page
+    public partial class index_Epp : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             if (!IsPostBack)
             {
-                cargarLista();
+                CargarListas();
                 LlenarGridView();
             }
         }
@@ -36,9 +36,10 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void AgregarRegistroModal(object sender, EventArgs e)
         {
             Modal.registrarModal("addModal", "AddModalScript", this);
+            phAlerta.Visible = false;
         }
 
-        protected void cargarLista()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -53,7 +54,8 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             Listas.TipoEpp(ddlTipoEpp);
         }
-        protected void LlenarGridView()
+
+        private void LlenarGridView()
         {
             int Idempresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
 
@@ -63,6 +65,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 string.Empty + ViewState["puesto"],
                 string.Empty + ViewState["sWhere"]);
         }
+
         protected void AgregarRegistro(object sender, EventArgs e)
         {
             epp nuevo = new epp()
@@ -72,7 +75,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             };
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
 
         }
@@ -88,7 +91,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Edit.id_tipo_epp = Convert.ToInt32(ddlTipoEppEdit.SelectedValue);
             }
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
 
         }
@@ -96,7 +99,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             epp tabla = new epp();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDEppDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -109,24 +112,25 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfIDEppDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfIDEppDel.Value = (gvrow.FindControl("id_epp") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("Editar"))
+            else if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                hdfIdEppEdit.Value = (gvrow.FindControl("id_epp") as Label).Text;
+                hdfIdEppEdit.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 txtNombreEdit.Text = (gvrow.FindControl("nombre") as Label).Text;
-                ddlTipoEppEdit.SelectedValue = (gvrow.FindControl("id_tipo_epp") as Label).Text;
-                ddlEmpresaEdit.SelectedValue = (gvrow.FindControl("id_empresa") as Label).Text;
+
                 Modal.registrarModal("editModal", "EditModalScript", this);
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
@@ -137,9 +141,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region filtros
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {
@@ -171,7 +175,6 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             LlenarGridView();
         }
-
         #endregion
     }
 }

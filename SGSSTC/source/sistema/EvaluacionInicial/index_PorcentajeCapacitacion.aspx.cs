@@ -11,16 +11,13 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     public partial class index_PorcentajeCapacitacion : Page
     {
         #region variable
-        Utilidades objUtilidades = new Utilidades();
-        protected static Model_UsuarioSistema ObjUsuario;
-        Table _table;
-        int nroTrabajadores = 0;
-        int cantGestiones = 0;
-        DateTime fechaInicial;
-        DateTime fechaFinal;
-        int IdEmpresa = 0;
-        int IdSucursal = 0;
-        Tuple<bool, bool> BoolEmpSuc;
+        private  Utilidades objUtilidades = new Utilidades();
+        private Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private DateTime fechaInicial;
+        private DateTime fechaFinal;
+        private int IdEmpresa = 0;
+        private int IdSucursal = 0;
         #endregion
 
         #region Index
@@ -53,6 +50,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                         {
                             if (c.ClientID.Contains("ddlSucursal"))
                             {
+                                int nroTrabajadores = 0;
+                                int cantGestiones = 0;
                                 //Buscar cantidad de trabajadores para la empresa seleccionada.(Cantidad de filas)
                                 nroTrabajadores = GetterCantidad.Trabajadores_CantidadesByCapacidad(Convert.ToInt32(ddlSucursal.SelectedValue), fechaInicial, fechaFinal);
                                 //Cantidad de gestiones laborales de tipo capacitacion para el trimestre seleccionado (Cantidad de Columnas)
@@ -67,6 +66,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                                 {
                                     phAsistenciasLeyenda.Visible = false;
 
+                                    Table _table;
                                     _table = new Table();
                                     _table.ID = "tbCapacitacion";
                                     _table.CssClass = "table";
@@ -86,7 +86,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
         }
 
-        protected void CargarListas()
+        private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
             {
@@ -100,6 +100,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             if (!BoolEmpSuc.Item2)
             {
+                int nroTrabajadores = 0;
+                int cantGestiones = 0;
                 ViewState["sucursal"] = ObjUsuario.Id_sucursal;
                 cargarDatos();
 
@@ -116,6 +118,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 }
                 else
                 {
+                    Table _table;
                     _table = new Table();
                     _table.ID = "tbCapacitacion";
                     _table.CssClass = "table";
@@ -158,7 +161,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #endregion
 
         #region CargarDatos
-        protected void cargarDatos()
+        private void cargarDatos()
         {
             Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursal);
 
@@ -171,8 +174,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             phEncabezado.Visible = true;
         }
 
-        protected void crearTabla(int cantTrab, int cantGest)
+        private void crearTabla(int cantTrab, int cantGest)
         {
+            Table _table;
             #region variables
             _table = new Table();
             _table.ID = "tbCapacitacion";

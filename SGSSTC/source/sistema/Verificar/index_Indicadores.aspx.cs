@@ -10,9 +10,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 {
     public partial class index_Indicadores : Page
     {
-        protected static Model_UsuarioSistema ObjUsuario;
-        int K = 240000;
-        Tuple<bool, bool> BoolEmpSuc;
+        private Model_UsuarioSistema ObjUsuario;
+        private int K = 240000;
+        private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
 
         }
-        public void cargarDatos()
+        private void cargarDatos()
         {
             List<trabajador> ListaTrabajador = new List<trabajador>();
             if (!BoolEmpSuc.Item2)
@@ -89,7 +89,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ObjUsuario.Error = CRUD.AddIndicadores(IdEmpSuc, ObjUsuario, valores, flpArchivo);
 
             Modal.CerrarModal("printModal", "printModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            TextBox txtBuscar = new TextBox();
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
         }
 
         protected void ddlEmpresaAdd_SelectedIndexChanged(object sender, EventArgs e)
@@ -500,7 +501,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             #endregion
         }
 
-        public bool validacion(TextBox txt1, Label txt2, string msj1)
+        private bool validacion(TextBox txt1, Label txt2, string msj1)
         {
             bool resultado = true;
 
@@ -528,7 +529,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             return resultado;
         }
 
-        public bool validacion(TextBox txt1, TextBox txt2, string msj1)
+        private bool validacion(TextBox txt1, TextBox txt2, string msj1)
         {
             bool resultado = true;
             if (txt1.Text == string.Empty)

@@ -9,9 +9,10 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Create_Empresa : Page
     {
-        int IdEmpresa;
-        Model_UsuarioSistema ObjUsuario;
-        string nombreEmpresa;
+        private Utilidades objUtilidades = new Utilidades();
+        private int IdEmpresa;
+        private Model_UsuarioSistema ObjUsuario;
+        private string nombreEmpresa;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,7 +60,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         #region tablas default al agregar empresa
 
-        protected void add_CodigoCiiu()
+        private void add_CodigoCiiu()
         {
             String[] valores = {
                 ""+IdEmpresa,
@@ -79,7 +80,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_Categorias()
+        private void add_Categorias()
         {
             String[] valores = { "" + IdEmpresa };
 
@@ -94,7 +95,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_Estatus()
+        private void add_Estatus()
         {
             String[] valores = { "" + IdEmpresa };
 
@@ -109,7 +110,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_TipoEpp()
+        private void add_TipoEpp()
         {
             if (CRUD.Add_TipoEpp_Empresa(ObjUsuario))
             {
@@ -122,7 +123,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void addEpp()
+        private void addEpp()
         {
             if (CRUD.Add_Epp_Empresa(ObjUsuario))
             {
@@ -135,7 +136,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_SucursalPrincipal()
+        private void add_SucursalPrincipal()
         {
             String[] valores = {
                 "Sede Principal - " + nombreEmpresa,
@@ -161,7 +162,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #endregion
 
         #region tablas default al agregar sucursal
-        protected void add_Area_Default(int id_sucursal)
+        private void add_Area_Default(int id_sucursal)
         {
             String[] valores = {
                 "Área Default " + nombreEmpresa,
@@ -179,7 +180,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_PuestoTrabajo_Default(int id_sucursal)
+        private void add_PuestoTrabajo_Default(int id_sucursal)
         {
             String[] valores = {
                 nombreEmpresa
@@ -196,7 +197,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_Horario_Default(int id_sucursal)
+        private void add_Horario_Default(int id_sucursal)
         {
             String[] valores = {
                 nombreEmpresa
@@ -213,7 +214,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_Trabajador_Default(int id_sucursal)
+        private void add_Trabajador_Default(int id_sucursal)
         {
             String[] valores = {
                 nombreEmpresa
@@ -230,9 +231,8 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_Usuario_Default(int id_sucursal)
+        private void add_Usuario_Default(int id_sucursal)
         {
-            Utilidades objUtilidades = new Utilidades();
             string password = Membership.GeneratePassword(16, 1);
             password = objUtilidades.cifrarCadena(password);
 
@@ -256,7 +256,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void add_Tipo_Documento_Default(int id_sucursal)
+        private void add_Tipo_Documento_Default(int id_sucursal)
         {
             String[] valores = {
                 ""+id_sucursal
@@ -265,11 +265,10 @@ namespace SGSSTC.source.sistema.GestionDatos
             if (CRUD.Add_TipoDocumento_Sucursal(ObjUsuario, valores))
             {
                 //Si llega aqui enviar el email.....
-                Utilidades objUtilidades = new Utilidades();
                 string clave = objUtilidades.descifrarCadena2(Convert.ToString(ViewState["clave"].ToString()));
                 Utilidades.enviarEmpresa(txtEmail.Text, txtNomEmpresa.Text, ViewState["login"].ToString(), clave);
 
-                Modal.MostrarMsjModal(MensajeError.EXito_Add_Empresa.Value, "EXI", this);
+                Modal.MostrarMsjModal(MensajeError.Exito_Add_Empresa.Value, "EXI", this);
             }
             else
             {

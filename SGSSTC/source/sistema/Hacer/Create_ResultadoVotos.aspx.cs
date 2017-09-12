@@ -5,75 +5,74 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 
-
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class Create_ResultadoVotos : Page
-    {
-        protected static Model_UsuarioSistema ObjUsuario;
+	public partial class Create_ResultadoVotos : Page
+	{
+		private Model_UsuarioSistema ObjUsuario;
+		private Tuple<bool, bool> BoolEmpSuc;
 
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
-        Tuple<bool, bool> BoolEmpSuc;
+			BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+			phEmpresa.Visible = BoolEmpSuc.Item1;
+			phSucursal.Visible = BoolEmpSuc.Item2;
 
-            BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
+			List<empresa> ListaEmpresa = new List<empresa>();
+			ListaEmpresa = Getter.Empresa(ObjUsuario.Id_empresa);
 
-            phEmpresa.Visible = BoolEmpSuc.Item1;
-            phSucursal.Visible = BoolEmpSuc.Item2;
+			foreach (var item in ListaEmpresa)
+			{
+				//txtEmpresa.Text = item.nombre;
+			}
 
-            List<empresa> ListaEmpresa = new List<empresa>();
-            ListaEmpresa = Getter.Empresa(ObjUsuario.Id_empresa);
+			if (!IsPostBack)
+			{
+				CargarListas();
+			}
+		}
 
-            foreach (var item in ListaEmpresa)
-            {
-                //txtEmpresa.Text = item.nombre;
-            }
+		private void CargarListas()
+		{
+			if (BoolEmpSuc.Item1)
+			{
+				Listas.Empresa(ddlEmpresa);
+			}
+			else
+			{
+				Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
+			}
+		}
 
-            if (!IsPostBack)
-            {
-                CargarListas();
-            }
-        }
-        protected void CargarListas()
-        {
-            if (BoolEmpSuc.Item1)
-            {
-                Listas.Empresa(ddlEmpresa);
-            }
-            else
-            {
-                Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
-            }
-        }
-        protected void GenerarDocumento(object sender, EventArgs e)
-        {
-            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
-            String[] valores = {
-                string.Empty + IdSucursal,
-                Textbox1.Text,
-                Textbox2.Text,
-                Textbox3.Text,
-                Textbox4.Text,
-                Textbox5.Text,
-                Textbox6.Text,
-                Textbox7.Text,
-                Textbox8.Text,
-                Textbox9.Text,
-                Textbox10.Text,
-                Textbox61.Text
-            };
-            PrintFile.PrintResultadoVotos(valores, panel1, this);
-        }
+		protected void GenerarDocumento(object sender, EventArgs e)
+		{
+			int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursal);
+			String[] valores = {
+				string.Empty + IdSucursal,
+				Textbox1.Text,
+				Textbox2.Text,
+				Textbox3.Text,
+				Textbox4.Text,
+				Textbox5.Text,
+				Textbox6.Text,
+				Textbox7.Text,
+				Textbox8.Text,
+				Textbox9.Text,
+				Textbox10.Text,
+				Textbox61.Text
+			};
+			PrintFile.PrintResultadoVotos(valores, panel1, this);
+		}
 		
-        protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlEmpresa.SelectedValue != string.Empty)
-            {
-                Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
-            }
-        }
-    }
+		protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (ddlEmpresa.SelectedValue != string.Empty)
+			{
+				Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
+			}
+		}
+	}
 }
