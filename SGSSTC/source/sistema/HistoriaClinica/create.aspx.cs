@@ -65,7 +65,7 @@ namespace SGSSTC.source.sistema.HistoriaClinica
 
             /*ObjUsuario.Error = ObjUsuario.objModeloBD.Add_HistoriaClinica(ObjUsuario.Id_empresa, id_trabajador, id_tipo_exa,
                 fecha, doc_esc_paciente, doc_esc_medico, diagnostico, recomendaciones);*/
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            //Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
 
         }
         #endregion

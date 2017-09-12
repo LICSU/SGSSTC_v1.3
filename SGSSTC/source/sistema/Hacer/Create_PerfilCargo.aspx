@@ -10,14 +10,22 @@
         <ContentTemplate>
 
             <ol class="breadcrumb">
-                <li><a href="#">Fase: Hacer</a></li>                
-        <li><a href="index_PerfilCargo.aspx">index Perfil de Cargo</a></li>
+                <li><a href="#">Fase: Hacer</a></li>
+                <li><a href="index_PerfilCargo.aspx">index Perfil de Cargo</a></li>
                 <li><a href="#">Crear Perfil de Cargo</a></li>
             </ol>
 
             <div class="page-header">
                 <h1 class="text-center">Crear Perfil de Cargo</h1>
             </div>
+
+
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
 

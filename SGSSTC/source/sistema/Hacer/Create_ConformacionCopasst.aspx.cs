@@ -68,7 +68,6 @@ namespace SGSSTC.source.sistema.Hacer
             PrintFile.PrintConformacionCopasst(valores, this);
         }
 
-
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlEmpresa.SelectedValue != string.Empty)

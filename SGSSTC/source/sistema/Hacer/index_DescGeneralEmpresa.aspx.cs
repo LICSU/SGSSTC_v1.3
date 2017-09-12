@@ -148,7 +148,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Response.Redirect(Paginas.index_DescGeneralEmpresa.Value);
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, Textbox1);
         }
     }
 }

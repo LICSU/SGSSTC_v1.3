@@ -83,7 +83,7 @@ namespace SGSSTC.source.sistema.Verificar
             }
 
             LlenarGridView();
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
         }
         protected void btPrint_Click(object sender, EventArgs e)
         {
@@ -332,7 +332,7 @@ namespace SGSSTC.source.sistema.Verificar
 
                 Response.Redirect(Paginas.View_InvestigacionIncidente.Value + "?id=" + idAccidente);
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -430,9 +430,9 @@ namespace SGSSTC.source.sistema.Verificar
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["search"] = txtSearch.Text;
+                ViewState["search"] = txtBuscar.Text;
             }
             else
             {

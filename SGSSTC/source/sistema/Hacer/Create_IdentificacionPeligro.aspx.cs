@@ -153,7 +153,7 @@ namespace SGSSTC.source.sistema.Hacer
 				}
 
 			}
-			Response.Redirect(Paginas.index_IdentificacionRiesgos.Value);
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtPuestos);
 		}
 		protected void AddPeligro_Click(object sender, EventArgs e)
 		{
@@ -185,8 +185,6 @@ namespace SGSSTC.source.sistema.Hacer
 			contadorPuestos++;
 			ViewState["puestos"] = string.Empty + Convert.ToString(contadorPuestos);
 		}
-		
-
 		#endregion
 
 		#region eventos

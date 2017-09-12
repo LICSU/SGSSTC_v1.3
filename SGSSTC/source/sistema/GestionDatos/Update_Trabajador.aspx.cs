@@ -9,7 +9,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class Update_Trabajador : System.Web.UI.Page
     {
-        private  Utilidades objUtilidades = new Utilidades();
+        private Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
 
@@ -73,7 +73,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 Listas.PuestoTrabajo(ddlPuestoTrabajo, "Sucursal", itemTrabajador.puesto_trabajo.area.id_sucursal);
                 ddlPuestoTrabajo.SelectedValue = Convert.ToString(itemTrabajador.id_puesto_trabajo);
-                
+
                 Listas.Reg_Dpto_Mcpio(ddlRegion, "Region");
                 ddlRegion.SelectedValue = string.Empty + itemTrabajador.municipio.departamento.Region.id_region;
 
@@ -122,7 +122,9 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Edit.edo_civil = ddlEdoCivil.SelectedValue;
                 Edit.sexo = ddlSexo.SelectedValue;
                 if (ruta.Length > 0)
+                {
                     Edit.foto = ruta;
+                }
                 Edit.telefono_casa = txtTelCasa.Text;
                 Edit.telefono_movil = txtTelCelular.Text;
                 Edit.fecha_registro = Convert.ToDateTime(fechaActual.ToString("dd-MM-yyy"));
@@ -144,14 +146,8 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            if (ObjUsuario.Error)
-            {
-                Response.Redirect(Paginas.index_Trabajador.Value+"?eu=1");
-            }
-            else
-            {
-                Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Trabajador.Value, "ERR", this);
-            }
+
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre1);
         }
         #endregion
 

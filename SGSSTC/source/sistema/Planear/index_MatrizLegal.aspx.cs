@@ -168,9 +168,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["buscar"] = txtSearch.Text;
+                ViewState["buscar"] = txtBuscar.Text;
             }
             else
             {

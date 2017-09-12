@@ -84,12 +84,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfSucursalEditID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfSucursalEditID.Value = (gvrow.FindControl("id_sucursal") as Label).Text;
 
                 List<sucursal> ListaSucursal = new List<sucursal>();
                 ListaSucursal = Getter.Sucursal(Convert.ToInt32(hdfSucursalEditID.Value));
@@ -112,21 +112,22 @@ namespace SGSSTC.source.sistema.GestionDatos
                     ddlMcpioEdit.SelectedValue = Convert.ToString(item.id_municpio);
                 }
                 Modal.registrarModal("editModal", "EditModalScript", this);
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfSucursalIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfSucursalIDDel.Value = (gvrow.FindControl("id_sucursal") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("Ver"))
+            else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-
-                hdfSucursalID.Value = (gvrow.FindControl("id_sucursal") as Label).Text;
+                hdfSucursalID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 List<sucursal> ListaSucursal = new List<sucursal>();
                 ListaSucursal = Getter.Sucursal(Convert.ToInt32(hdfSucursalID.Value));
@@ -142,6 +143,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                     lblMovilView.Text = item.movil;
                 }
                 Modal.registrarModal("viewModal", "ViewModalScript", this);
+                phAlerta.Visible = false;
             }
         }
 
@@ -222,7 +224,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             Modal.CerrarModal("editModal", "EditModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
             CargarListas();
         }
@@ -240,7 +242,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 HttpContext.Current.Request.Url.AbsoluteUri);
 
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
             LlenarGridView();
         }
@@ -250,9 +252,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region filtro
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

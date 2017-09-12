@@ -17,10 +17,17 @@
             <div class="page-header">
                 <h1 class="text-center">Gestión Laboral</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
-                    <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese la Gestión Laboral a buscar"></asp:TextBox>
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese la Gestión Laboral a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -83,7 +90,7 @@
                         <asp:GridView ID="GridView1"
                             class="table table-bordered table-hover dataTable" runat="server" AutoGenerateColumns="false"
                             AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
-                            OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated"
+                            OnPageIndexChanging="GridView1_PageIndexChanging"
                             EmptyDataText="No existen Registros">
                             <RowStyle HorizontalAlign="Center" />
 
@@ -122,7 +129,8 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField HeaderText="Subir<br />Escaneado" CommandName="Subir" ButtonType="Image" ImageUrl="~\ico\upload.png" HeaderStyle-CssClass="text-center">
+                                <asp:ButtonField HeaderText="Subir<br />Escaneado" 
+                                    CommandName="Upload" ButtonType="Image" ImageUrl="~\ico\upload.png" HeaderStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
@@ -133,23 +141,28 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField HeaderText="Editar" HeaderStyle-CssClass="text-center" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
+                                <asp:ButtonField HeaderText="Editar" HeaderStyle-CssClass="text-center" 
+                                    CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
-                                <asp:ButtonField HeaderText="Ver" CommandName="Ver" HeaderStyle-CssClass="text-center" ButtonType="Image" ImageUrl="~\ico\view.png">
+                                <asp:ButtonField HeaderText="Consultar"  HeaderStyle-CssClass="text-center" 
+                                    CommandName="Consultar" ButtonType="Image" ImageUrl="~\ico\view.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
-                                <asp:ButtonField HeaderText="Eliminar" HeaderStyle-CssClass="text-center" CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
+                                <asp:ButtonField HeaderText="Eliminar" HeaderStyle-CssClass="text-center" 
+                                    CommandName="Eliminar" ButtonType="Image" ImageUrl="~\ico\delete.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
-                                <asp:ButtonField CommandName="Imprimir" HeaderStyle-CssClass="text-center" ButtonType="Image" ImageUrl="~\ico\print.png">
+                                <asp:ButtonField HeaderStyle-CssClass="text-center" ButtonType="Image" 
+                                    CommandName="Imprimir" ImageUrl="~\ico\print.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
-                                <asp:ButtonField HeaderText="Asistencia" HeaderStyle-CssClass="text-center" CommandName="asistencia" ButtonType="Image" ImageUrl="~\ico\checklist.png">
+                                <asp:ButtonField HeaderText="Asistencia" HeaderStyle-CssClass="text-center" 
+                                    CommandName="Asistencia" ButtonType="Image" ImageUrl="~\ico\checklist.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 

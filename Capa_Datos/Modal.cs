@@ -1,4 +1,5 @@
-﻿using System.Web.UI;
+﻿using System;
+using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
@@ -55,6 +56,7 @@ namespace Capa_Datos
             sb.Append(@"</script>");
             ScriptManager.RegisterClientScriptBlock(_page, typeof(Page), nombreScript, sb.ToString(), false);
         }
+
         public static void CerrarModal(string nombreModal, string nombreScript, Page _page)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -75,86 +77,59 @@ namespace Capa_Datos
             ScriptManager.RegisterClientScriptBlock(_page, typeof(Page), "ScriptRedirect", sb.ToString(), false);
         }
 
-        public static void ModalAddRegistroExito(Page _page)
-        {
-            MostrarMsjModal("Registro agregado con Éxito", "EXI", _page);
-        }
-        public static void ModalEditRegistroExito(Page _page)
-        {
-            MostrarMsjModal("Registro actualizado con Éxito", "EXI", _page);
-        }
-        public static void ModalDeleteRegistroExito(Page _page)
-        {
-            MostrarMsjModal("Registro eliminado con Éxito", "EXI", _page);
-        }
-
-        public static void ModalAddRegistroFallo(Page _page)
-        {
-            MostrarMsjModal("Error al insertar el registro", "ERR", _page);
-        }
-        public static void ModalEditRegistroFallo(Page _page)
-        {
-            MostrarMsjModal("Error al actualizar el registro", "ERR", _page);
-        }
-        public static void ModalDeleteRegistroFallo(Page _page)
-        {
-            MostrarMsjModal("Error al eliminar el registro", "ERR", _page);
-        }
-
-        public static void Validacion(Page _page, bool bError, string tipo)
-        {
-            if (tipo == "Add")
-            {
-                if (bError == true)
-                {
-                    ModalAddRegistroExito(_page);
-                }
-                else
-                {
-                    ModalAddRegistroFallo(_page);
-                }
-            }
-            else if (tipo == "Edit")
-            {
-                if (bError == true)
-                {
-                    ModalEditRegistroExito(_page);
-                }
-                else
-                {
-                    ModalEditRegistroFallo(_page);
-                }
-            }
-            else if (tipo == "Delete")
-            {
-                if (bError == true)
-                {
-                    ModalDeleteRegistroExito(_page);
-                }
-                else
-                {
-                    ModalDeleteRegistroFallo(_page);
-                }
-            }
-
-        }
-
-
-
-        public static void MostrarAlertaEdit(PlaceHolder phAlerta, HtmlGenericControl divAlerta, Label lbAlerta,bool bError)
+        public static void MostrarAlertaAdd(PlaceHolder phAlerta, HtmlGenericControl divAlerta, Label lbAlerta,bool bError, TextBox txtAlerta)
         {
             phAlerta.Visible = true;
 
             if (bError)
             {
                 divAlerta.Attributes.Add("class", "alert alert-dismissable alert-success fade in");
-                lbAlerta.Text = "Se actualizó el registro exitosamente";
+                lbAlerta.Text = "Se agregó el registro exitosamente a las "+DateTime.Now.ToString("HH:mm:ss");
+            }
+            else
+            {
+                divAlerta.Attributes.Add("class", "alert alert-dismissable alert-danger fade in");
+                lbAlerta.Text = "No Se agregó el registro";
+            }
+            txtAlerta.Focus();
+        }
+
+        public static void MostrarAlertaEdit(PlaceHolder phAlerta, HtmlGenericControl divAlerta, Label lbAlerta, bool bError, TextBox txtAlerta)
+        {
+            phAlerta.Visible = true;
+
+            if (bError)
+            {
+                divAlerta.Attributes.Add("class", "alert alert-dismissable alert-success fade in");
+                lbAlerta.Text = "Se actualizó el registro exitosamente a las " + DateTime.Now.ToString("HH:mm:ss");
             }
             else
             {
                 divAlerta.Attributes.Add("class", "alert alert-dismissable alert-danger fade in");
                 lbAlerta.Text = "No Se actualizó el registro";
             }
+            txtAlerta.Focus();
         }
+
+        public static void MostrarAlertaDelete(PlaceHolder phAlerta, HtmlGenericControl divAlerta, Label lbAlerta, bool bError,TextBox txtAlerta)
+        {
+            phAlerta.Visible = true;
+
+            if (bError)
+            {
+                divAlerta.Attributes.Add("class", "alert alert-dismissable alert-success fade in");
+                lbAlerta.Text = "Se eliminó el registro exitosamente a las " + DateTime.Now.ToString("HH:mm:ss");
+            }
+            else
+            {
+                divAlerta.Attributes.Add("class", "alert alert-dismissable alert-danger fade in");
+                lbAlerta.Text = "No Se eliminó el registro";
+            }
+            txtAlerta.Focus();
+        }
+
+
+
+
     }
 }

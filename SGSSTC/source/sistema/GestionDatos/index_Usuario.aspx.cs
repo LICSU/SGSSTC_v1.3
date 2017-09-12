@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.GestionDatos
 {
-    public partial class index_Usuario : System.Web.UI.Page
+    public partial class index_Usuario : Page
     {
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
@@ -89,6 +89,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "claveAdd", sb.ToString(), false);
 
             Modal.registrarModal("addModal", "AddModalScript", this);
+            phAlerta.Visible = false;
         }
 
         protected void AgregarRegistro(object sender, EventArgs e)
@@ -123,7 +124,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                         Utilidades.registroUsuario(destino, empresa, ddlTrabajadorAdd.SelectedItem.Text, txtLogin.Text, clave);
                 }
                 Modal.CerrarModal("addModal", "AddModalScript", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
                 LlenarGridView();
                 CargarListas();
             }
@@ -155,7 +156,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 }
                 Modal.CerrarModal("editModal", "EditModalScript", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
                 LlenarGridView();
                 CargarListas();
@@ -175,7 +176,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             {
                 ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfUsuarioIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
                 Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Delete");
+                Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
                 LlenarGridView();
             }
             else
@@ -226,11 +227,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hdfUsuarioID.Value = (gvrow.FindControl("id_usuario") as Label).Text;
+                hdfUsuarioID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
+
 
                 List<usuario> ListaUsuarios = new List<usuario>();
                 ListaUsuarios = Getter.Usuario(Convert.ToInt32(hdfUsuarioID.Value));
@@ -261,14 +263,17 @@ namespace SGSSTC.source.sistema.GestionDatos
                 ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "claveActual", sb.ToString(), false);
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
+                phAlerta.Visible = false;
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
+
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfUsuarioIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfUsuarioIDDel.Value = (gvrow.FindControl("id_usuario") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -335,9 +340,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

@@ -19,6 +19,14 @@
         <h1 class="text-center">Inspección de Uso de EPP</h1>
     </div>
 
+
+    <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+        <div id="divAlerta" runat="server">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+        </div>
+    </asp:PlaceHolder>
+
     <asp:UpdatePanel ID="MyUpdatePanel" runat="server" UpdateMode="Always">
         <ContentTemplate>
             <asp:HiddenField runat="server" ID="cantInspecciones" Value="0"></asp:HiddenField>

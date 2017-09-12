@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
@@ -311,7 +312,8 @@ namespace SGSSTC.source.sistema.Hacer
 
                 ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-                Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                TextBox txtBuscar = new TextBox();
+                Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
                 if (ObjUsuario.Error)
                 {
@@ -439,7 +441,7 @@ namespace SGSSTC.source.sistema.Hacer
                         }
                     }
 
-                    Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                    Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
                     limpiarCampos();
 
                     Response.Redirect(Paginas.index_DescripcionSocioDemografica.Value); 

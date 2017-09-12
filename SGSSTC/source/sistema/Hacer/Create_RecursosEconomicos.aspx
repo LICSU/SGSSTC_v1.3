@@ -18,6 +18,14 @@
 			<h3 class="text-center">Recursos Económicos Aprobados Por La Alta Gerencia</h3>
 		</div>
 
+
+		<asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+			<div id="divAlerta" runat="server">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+			</div>
+		</asp:PlaceHolder>
+
 		<div class="box">
 
 			<div class="row">

@@ -17,6 +17,13 @@
             <div class="page-header">
                 <h1 class="text-center">Descripción SocioDemográfica</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
@@ -49,7 +56,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="ID" HeaderStyle-CssClass="text-center" Visible="false" >
                                     <ItemTemplate>
-                                        <asp:Label ID="id_desc_socio" runat="server" Text='<%# Eval("id_desc_socio") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_desc_socio") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -71,7 +78,7 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField HeaderText="Ver" CommandName="Ver" ButtonType="Image" ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
+                                <asp:ButtonField HeaderText="Consultar" CommandName="Consultar" ButtonType="Image" ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 

@@ -6,8 +6,10 @@ namespace Capa_Datos
         private MensajeError(string value) { Value = value; }
 
         public string Value { get; set; }
-        
-        public static MensajeError EXito_Add_Empresa
+
+        public static MensajeError Exito_Add_Sucursal
+        { get { return new MensajeError("Se Agregó la Sucursal Correctamente"); } }
+        public static MensajeError Exito_Add_Empresa
         { get { return new MensajeError("Se Creó la Empresa correctamente"); } }
         public static MensajeError Error_Add_Empresa
         { get { return new MensajeError("Error al Crear Empresa"); } }
@@ -60,49 +62,6 @@ namespace Capa_Datos
         public static MensajeError Error_Add_Default_Lista_Actividades
         { get { return new MensajeError("Error al Crear la Lsita de Actividades de la sucursal"); } }
 
-
-
-        public static MensajeError Exito_Add_Trabajador
-        { get { return new MensajeError("Se Agregó el Trabajador Correctamente"); } }
-        public static MensajeError Exito_Add_PuestoTrabajo
-        { get { return new MensajeError("Se Agregó el Puesto de Trabajo Correctamente"); } }
-        public static MensajeError Exito_Add_Sucursal
-        { get { return new MensajeError("Se Agregó la Sucursal Correctamente"); } }
-
-        public static MensajeError Fallo_Add_PuestoTrabajo
-        { get { return new MensajeError("No se Agregó el Puesto de Trabajo Correctamente"); } }
-        public static MensajeError Fallo_Add_Trabajador
-        { get { return new MensajeError("No se Agregó el Trabajador Correctamente"); } }
-
-        public static MensajeError Exito_Edit_Trabajador
-        { get { return new MensajeError("Se Actualizó el trabajador Correctamente"); } }
-        public static MensajeError Exito_Edit_PuestoTrabajo
-        { get { return new MensajeError("Se Actualizo el puesto de trabajo correctamente"); } }
-        public static MensajeError Exito_Edit_Asistencia
-        { get { return new MensajeError("Se Actualizó la Asistencia Correctamente"); } }
-        public static MensajeError Exito_Edit_PerfilCargo
-        { get { return new MensajeError("Se Actualizó el Perfil de Cargo Correctamente"); } }
-
-        public static MensajeError Fallo_Edit_PuestoTrabajo
-        { get { return new MensajeError("No se Actualizo el puesto de trabajo"); } }
-        public static MensajeError Fallo_Edit_Incidente
-        { get { return new MensajeError("No se Actualizo el Incidente Laboral"); } }
-        public static MensajeError Fallo_Edit_Accidente
-        { get { return new MensajeError("No se Actualizo el Accidente Laboral"); } }
-        public static MensajeError Fallo_Edit_Trabajador
-        { get { return new MensajeError("No se Actualizo el trabajador"); } }
-        public static MensajeError Fallo_Edit_Asistencia
-        { get { return new MensajeError("No se Actualizo la Asistencia"); } }
-        public static MensajeError Fallo_Edit_PerfilCargo
-        { get { return new MensajeError("No se Actualizo el Perfil de Cargo"); } }
-
-        public static MensajeError Fallo_Delete_Area_Usuario
-        { get { return new MensajeError("No puede eliminar esta área porque el usuario actual pertenece a ella."); } }
-        public static MensajeError Fallo_Delete_Horario_Usuario
-        { get { return new MensajeError("No puede eliminar este horario porque el usuario actual pertenece al mismo."); } }
-        public static MensajeError Fallo_Delete_PuestoTrabajo_Usuario
-        { get { return new MensajeError("No se puede eliminar el puesto de trabajo porque el usuario actual pertenece a él"); } }
-        
         public static MensajeError Error_Existe_Puesto_Nombre
         { get { return new MensajeError("Ya existe un puesto de trabajo con ese nombre para la sucursal seleccionada."); } }
         public static MensajeError Error_Existe_Sucursal

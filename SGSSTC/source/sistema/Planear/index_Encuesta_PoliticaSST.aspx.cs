@@ -223,7 +223,7 @@ namespace SGSSTC.source.sistema.Hacer
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario,
                 HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
 
@@ -233,7 +233,7 @@ namespace SGSSTC.source.sistema.Hacer
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value),
                 ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
 
@@ -251,14 +251,14 @@ namespace SGSSTC.source.sistema.Hacer
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_encuesta");
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
             else if (e.CommandName.Equals("Subir"))
             {
-                hdfIDEsc.Value = Utilidades.GetIdFila(GridView1, e, "id_encuesta");
+                hdfIDEsc.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
             }
         }
@@ -319,9 +319,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

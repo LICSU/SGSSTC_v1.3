@@ -18,6 +18,7 @@
             <div class="page-header">
                 <h1 class="text-center">Ver Puesto de Trabajo</h1>
             </div>
+            
 
             <asp:PlaceHolder runat="server" ID="phEmpresa1">
                 <div class="row">

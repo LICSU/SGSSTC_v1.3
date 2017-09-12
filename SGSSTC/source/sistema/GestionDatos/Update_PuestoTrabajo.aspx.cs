@@ -159,14 +159,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 }
             }
 
-            if (ObjUsuario.Error)
-            {
-                Modal.MostrarMsjModal(MensajeError.Exito_Edit_PuestoTrabajo.Value, "EXI", this);
-            }
-            else
-            {
-                Modal.MostrarMsjModal(MensajeError.Fallo_Edit_PuestoTrabajo.Value, "ERR", this);
-            }
+
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre);
 
         }
 

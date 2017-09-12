@@ -18,10 +18,17 @@
             <div class="page-header">
                 <h1 class="text-center">Horario</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
-                    <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
                         runat="server" class="form-control" PlaceHolder="Ingrese el Horario a buscar"></asp:TextBox>
                 </div>
 
@@ -63,10 +70,7 @@
 
                                 <asp:TemplateField HeaderText="ID" Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="fecha_inicio" runat="server" Text='<%# Eval("fecha_inicio") %>' />
-                                        <asp:Label ID="fecha_fin" runat="server" Text='<%# Eval("fecha_fin") %>' />
-                                        <asp:Label ID="id_empresa" runat="server" Text='<%# Eval("id_empresa") %>' />
-                                        <asp:Label ID="id_horario" runat="server" Text='<%# Eval("id_horario") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_horario") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 

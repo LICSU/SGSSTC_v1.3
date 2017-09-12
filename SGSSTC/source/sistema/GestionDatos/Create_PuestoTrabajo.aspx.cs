@@ -86,15 +86,10 @@ namespace SGSSTC.source.sistema.GestionDatos
                     ddlArea.SelectedValue,
 
                 };
-                 
-                if (CRUD.Add_PuestoTrabajo(ObjUsuario,valores,fuAnexo,ddlEpp))
-                {
-                    Modal.MostrarMsjModal(MensajeError.Exito_Add_PuestoTrabajo.Value, "EXI", this);
-                }
-                else
-                {
-                    Modal.MostrarMsjModal(MensajeError.Fallo_Add_PuestoTrabajo.Value, "ERR", this);
-                }
+
+                ObjUsuario.Error = CRUD.Add_PuestoTrabajo(ObjUsuario, valores, fuAnexo, ddlEpp);
+
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre);
             }
             else
             {

@@ -19,6 +19,7 @@
         <h1 class="text-center">Plan de Capacitación</h1>
     </div>
 
+
     <asp:UpdatePanel ID="MyUpdatePanel" runat="server" UpdateMode="Always">
         <ContentTemplate>
             <div class="row form-group">

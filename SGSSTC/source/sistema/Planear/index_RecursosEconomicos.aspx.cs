@@ -94,7 +94,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
         protected void EliminarRegistro(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace SGSSTC.source.sistema.Hacer
                 HttpContext.Current.Request.Url.AbsoluteUri
                 );
 
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -115,14 +115,14 @@ namespace SGSSTC.source.sistema.Hacer
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_rec_eco");
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
             if (e.CommandName.Equals("soporte"))
             {
-                hdSoporte.Value = Utilidades.GetIdFila(GridView1, e, "id_rec_eco");
+                hdSoporte.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 int contadorArchivos = 0;
 

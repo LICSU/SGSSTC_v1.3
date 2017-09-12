@@ -268,7 +268,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 string clave = objUtilidades.descifrarCadena2(Convert.ToString(ViewState["clave"].ToString()));
                 Utilidades.enviarEmpresa(txtEmail.Text, txtNomEmpresa.Text, ViewState["login"].ToString(), clave);
 
-                Modal.MostrarMsjModal(MensajeError.EXito_Add_Empresa.Value, "EXI", this);
+                Modal.MostrarMsjModal(MensajeError.Exito_Add_Empresa.Value, "EXI", this);
             }
             else
             {

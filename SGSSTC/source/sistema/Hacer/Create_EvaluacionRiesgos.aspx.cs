@@ -105,10 +105,7 @@ namespace SGSSTC.source.sistema.Hacer
 
 			ObjUsuario.Error = CRUD.Add_Fila(nuevoEvaRiesgo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-			if (ObjUsuario.Error)
-			{
-				Response.Redirect(Paginas.index_EvaluacionRiesgo.Value);
-			}
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtControlFuente);
 
 		}
 		

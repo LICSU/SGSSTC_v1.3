@@ -16,6 +16,12 @@
             Consiste en un listado ordenado de personas y de elementos necesarios para atender con eficiencia una situación de Emergencia
         </div>
 
+        <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+            <div id="divAlerta" runat="server">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+            </div>
+        </asp:PlaceHolder>
 
         <div class="row form-group">
 

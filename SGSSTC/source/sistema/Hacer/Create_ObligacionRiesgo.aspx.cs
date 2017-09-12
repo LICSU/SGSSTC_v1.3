@@ -101,6 +101,8 @@ namespace SGSSTC.source.sistema.Hacer
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaFin);
+
             int IdUsuario = Convert.ToInt32(ddlResponsable.SelectedValue);
 
             if (ObjUsuario.Error)
@@ -115,9 +117,6 @@ namespace SGSSTC.source.sistema.Hacer
                 };
 
                 ObjUsuario.Error = CRUD.Add_Fila(nuevoalarma, IdUsuario, HttpContext.Current.Request.Url.AbsoluteUri);
-
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
-                Response.Redirect(Paginas.index_Obligaciones.Value);
             }
         }
 

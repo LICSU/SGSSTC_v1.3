@@ -164,11 +164,7 @@ namespace Capa_Datos
             Debug.WriteLine(msg);
             Debug.WriteLine("********************************************");
         }
-        public static string GetIdFila(GridView GridView1, GridViewCommandEventArgs e, string _control)
-        {
-            int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-            return (GridView1.Rows[RowIndex].FindControl(_control) as Label).Text;
-        }
+
 
 
         [ScriptMethod()]

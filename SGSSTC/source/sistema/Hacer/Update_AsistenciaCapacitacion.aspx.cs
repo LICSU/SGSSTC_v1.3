@@ -179,16 +179,8 @@ namespace SGSSTC.source.sistema.Hacer
 
             }
 
-            if (ObjUsuario.Error)
-            {
-                //Modal.MostrarMsjModal(MensajeError.Exito_Edit_Asistencia.Value, "EXI", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Edit");
-            }
-            else
-            {
-                //Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Asistencia.Value, "ERR", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Edit");
-            }
+            TextBox txtBuscar = new TextBox();
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
         }
     }

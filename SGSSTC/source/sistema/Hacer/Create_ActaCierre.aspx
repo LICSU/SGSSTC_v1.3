@@ -13,9 +13,15 @@
 	</ol>
 
 	<div class="page-header">
-		<h1 class="text-center">Acta de cierre de las votaciones para elección de los candidatos al comité 
-				paritario de seguridad y salud en el trabajo</h1>
+		<h1 class="text-center">Acta de cierre de las votaciones para elección de los candidatos al comité paritario de seguridad y salud en el trabajo</h1>
 	</div>
+
+	<asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+		<div id="divAlerta" runat="server">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+		</div>
+	</asp:PlaceHolder>
 
 	<div class="row">
 		<asp:PlaceHolder runat="server" ID="phEmpresa">

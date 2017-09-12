@@ -237,7 +237,7 @@ namespace SGSSTC.source.sistema.Hacer
                     #endregion
                 }
 
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtContactsSearch);
                 limpiarCampos();
                 Response.Redirect(Paginas.index_DescripcionSocioDemografica.Value);
             }

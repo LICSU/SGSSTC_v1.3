@@ -15,6 +15,7 @@
         <div ID="divAlerta" runat="server">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>            
             <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+            <asp:TextBox ID="txtAlerta" visible="false" runat="server"></asp:TextBox>
         </div>
     </asp:PlaceHolder>
 

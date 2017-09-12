@@ -92,14 +92,14 @@ namespace SGSSTC.source.sistema.Hacer
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
         protected void EliminarRegistro(object sender, EventArgs e)
         {
             documento tabla = new documento();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -107,7 +107,7 @@ namespace SGSSTC.source.sistema.Hacer
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 string valor = (GridView1.Rows[RowIndex].FindControl("id_entrega_epp") as Label).Text;

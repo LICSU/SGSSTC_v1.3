@@ -89,7 +89,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ObjUsuario.Error = CRUD.AddIndicadores(IdEmpSuc, ObjUsuario, valores, flpArchivo);
 
             Modal.CerrarModal("printModal", "printModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            TextBox txtBuscar = new TextBox();
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
         }
 
         protected void ddlEmpresaAdd_SelectedIndexChanged(object sender, EventArgs e)

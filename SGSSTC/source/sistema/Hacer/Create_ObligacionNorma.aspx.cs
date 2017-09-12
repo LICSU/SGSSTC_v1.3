@@ -106,12 +106,8 @@ namespace SGSSTC.source.sistema.Hacer
                 ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             }
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
-
-            if (ObjUsuario.Error)
-            {
-                Modal.Redireccionar("index_Obligaciones.aspx", this);
-            }
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaFin);
+            
         }
 
     }

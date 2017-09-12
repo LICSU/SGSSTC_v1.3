@@ -124,7 +124,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             ObjUsuario.Error = CRUD.AddInspeccion(IdEmpSuc, ObjUsuario, valores, flpArchivo);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
 
@@ -133,7 +133,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             documento tabla = new documento();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
 
@@ -145,7 +145,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 string valor = (GridView1.Rows[RowIndex].FindControl("id_documento") as Label).Text;

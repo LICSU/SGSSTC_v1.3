@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
-    public partial class index_IdentificacionPeligros : System.Web.UI.Page
+    public partial class index_IdentificacionPeligros : Page
     {
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
@@ -57,7 +57,7 @@ namespace SGSSTC.source.sistema.Hacer
             identificacion_peligro tabla = new identificacion_peligro();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             LlenarGridView();
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
         }
         protected void MostrarModalImprimir(object sender, EventArgs e)
         {
@@ -83,37 +83,34 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hdfIDDel.Value = (gvrow.FindControl("id_identificacion_peligro") as Label).Text;
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
+
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("Ver"))
+            else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                string idRiesgos = (gvrow.FindControl("id_identificacion_peligro") as Label).Text;
+                string idRiesgos = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 idRiesgos = objUtilidades.cifrarCadena(idRiesgos);
 
                 Response.Redirect(Paginas.View_IdentificacionPeligros.Value+"?id=" + idRiesgos);
             }
-            else if (e.CommandName.Equals("print"))
+            else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hImprimir.Value = (gvrow.FindControl("id_identificacion_peligro") as Label).Text;
+                phAlerta.Visible = false;
+
+                hImprimir.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
+
                 ViewState["Imprimir"] = string.Empty + hImprimir.Value;
 
                 Modal.registrarModal("PrintListaModal", "PrintListaModalScript", this);
 
             }
 
-        }
-        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
-        {
         }
         #endregion
 

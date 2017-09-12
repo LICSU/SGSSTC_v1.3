@@ -62,7 +62,9 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
+
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
 
         }
@@ -99,7 +101,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
 
             LlenarGridView();
         }
@@ -111,7 +113,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
             LlenarGridView();
         }

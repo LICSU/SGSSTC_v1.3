@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.MenuPrincipal
 {
@@ -70,7 +71,8 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            TextBox txtBuscar = new TextBox();
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             CargarDatos();
         }
 

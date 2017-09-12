@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.Verificar
 {
 	public partial class Create_InvestigacionIncidente : System.Web.UI.Page
 	{
-        private  Utilidades objUtilidades = new Utilidades();
+		private  Utilidades objUtilidades = new Utilidades();
 		private Model_UsuarioSistema ObjUsuario;
-        private Tuple<bool, bool> BoolEmpSuc;
+		private Tuple<bool, bool> BoolEmpSuc;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -133,6 +133,8 @@ namespace SGSSTC.source.sistema.Verificar
 			};
 
 			ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaEvento);
 
 			if (ObjUsuario.Error)
 			{

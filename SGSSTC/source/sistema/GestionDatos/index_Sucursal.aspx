@@ -2,8 +2,6 @@
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -17,13 +15,20 @@
         <h1 class="text-center">Sucursal</h1>
     </div>
 
+    <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+        <div id="divAlerta" runat="server">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+        </div>
+    </asp:PlaceHolder>
+
     <asp:PlaceHolder ID="phSucursal1" runat="server" Visible="false">
         <asp:UpdatePanel ID="updatePanelPrinicpal" runat="server">
 
             <ContentTemplate>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-3">
-                        <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
+                        <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
                             runat="server" class="form-control" PlaceHolder="Ingrese la sucursal a buscar"></asp:TextBox>
                     </div>
 
@@ -60,7 +65,7 @@
 
                                     <asp:TemplateField HeaderText="Sucursal" HeaderStyle-CssClass="text-center">
                                         <ItemTemplate>
-                                            <asp:Label ID="id_sucursal" runat="server" Visible="false" Text='<%# Eval("id_sucursal") %>' />
+                                            <asp:Label ID="id" runat="server" Visible="false" Text='<%# Eval("id_sucursal") %>' />
                                             <asp:Label ID="nombre" runat="server" Text='<%# Eval("nombre") %>' />
                                         </ItemTemplate>
                                     </asp:TemplateField>
@@ -77,11 +82,11 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:ButtonField CommandName="Ver" HeaderText="Acciones" ButtonType="Image" ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
+                                    <asp:ButtonField  HeaderText="Consultar" CommandName="Consultar" ButtonType="Image" ImageUrl="~\ico\view.png" HeaderStyle-CssClass="text-center">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
 
-                                    <asp:ButtonField HeaderText="Acciones" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+                                    <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
                                         <ControlStyle></ControlStyle>
                                     </asp:ButtonField>
 

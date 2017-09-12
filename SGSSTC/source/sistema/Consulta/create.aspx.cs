@@ -62,7 +62,7 @@ namespace SGSSTC.source.sistema.Consulta
                 /*  ObjUsuario.Error = ObjUsuario.objModeloBD.Add_Consultas(id, chkTipoConsulta.SelectedValue, txtServicioMedico.Text,
                       txtFecha.Text, txtMedico.Text, txtDiagnostico.Text, txtSugerencias.Text, ObjUsuario.Id_empresa);*/
 
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtDiagnostico);
 
                 if (ObjUsuario.Error)
                 {
@@ -85,7 +85,7 @@ namespace SGSSTC.source.sistema.Consulta
                 /* ObjUsuario.Error = ObjUsuario.objModeloBD.Add_Consultas(id, chkTipoConsulta.SelectedValue, txtServicioMedico.Text,
                      txtFecha.Text, txtMedico.Text, txtDiagnostico.Text, txtSugerencias.Text, ObjUsuario.Id_empresa);*/
 
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtDiagnostico);
 
                 if (ObjUsuario.Error)
                 {

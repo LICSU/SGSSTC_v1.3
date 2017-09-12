@@ -156,7 +156,8 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region filtro
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            TextBox txtBuscar = new TextBox();
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
         }
 
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)

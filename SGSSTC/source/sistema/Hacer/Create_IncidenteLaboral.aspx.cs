@@ -15,7 +15,7 @@ namespace SGSSTC.source.sistema.Verificar
 		private Model_UsuarioSistema ObjUsuario;
 		private Tuple<bool, bool> BoolEmpSuc;
 		private static int IdSucursal = 0;
-        private static int IdTrabajador = 0;
+		private static int IdTrabajador = 0;
 
 		#region acciones index
 		protected void Page_Load(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace SGSSTC.source.sistema.Verificar
 				}
 				#endregion
 
-				Response.Redirect(Paginas.index_IncidenteLaboral.Value);
+				Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaAcc);
 			}
 
 		}

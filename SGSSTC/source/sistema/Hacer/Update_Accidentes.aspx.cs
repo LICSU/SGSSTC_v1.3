@@ -145,14 +145,8 @@ namespace SGSSTC.source.sistema.Verificar
 
 			ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-			if (ObjUsuario.Error)
-			{
-				Response.Redirect(Paginas.index_AccidenteLaboral.Value);
-			}
-			else
-			{
-				Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Accidente.Value, "ERR", this);
-			}
+
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaAcc);
 		}
 		
 		#endregion

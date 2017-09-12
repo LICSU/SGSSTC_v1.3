@@ -415,9 +415,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            string script2 = @"<script type='text/javascript'>redireccionar();</script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "redireccionar", script2, false);
-            //Response.Redirect((index.aspx");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFecha);
         }
         #endregion
 
@@ -446,7 +444,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             if (e.CommandName.Equals("verDetalle"))
             {
-                string id = Utilidades.GetIdFila(GridView1, e, "id");
+                string id = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 id = objUtilidades.cifrarCadena(id);
 
                 string _open = "window.open('../IncidentesLaborales/ConsultarIncidente.aspx?id=" + id + "', '_blank');";
@@ -457,7 +455,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             if (e.CommandName.Equals("verDetalle"))
             {
-                string id = Utilidades.GetIdFila(GridView1, e, "id");
+                string id = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 string _open = "window.open('../IncidentesLaborales/ConsultarIncidente.aspx?id=" + id + "', '_blank');";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), Guid.NewGuid().ToString(), _open, true);
             }

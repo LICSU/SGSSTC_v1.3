@@ -69,6 +69,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void AgregarRegistro(object sender, EventArgs e)
         {
             Response.Redirect(Paginas.Create_PuestoTrabajo.Value);
+            phAlerta.Visible = false;
         }
         protected void EliminarRegistro(object sender, EventArgs e)
         {
@@ -79,20 +80,11 @@ namespace SGSSTC.source.sistema.GestionDatos
             {
                 IdPuesto = user.trabajador.id_puesto_trabajo;
             }
-            if (IdPuesto != Convert.ToInt32(hdfIDDel.Value))
-            {
-                ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-                Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Delete");
-                LlenarGridView();
-            }
-            else
-            {
-                Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
 
-                Modal.MostrarMsjModal(MensajeError.Fallo_Delete_PuestoTrabajo_Usuario.Value, "ERR", this);
-            }
-
+            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+            LlenarGridView();
         }
 
         #region  Exportar listas
@@ -131,31 +123,35 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
+                phAlerta.Visible = false;
+
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-                string idPuesto = (gvrow.FindControl("id") as Label).Text;
+                string idPuesto = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 idPuesto = objUtilidades.cifrarCadena(Convert.ToString(idPuesto));
                 Response.Redirect(Paginas.Update_PuestoTrabajo.Value+"?id=" + idPuesto);
             }
-            else if (e.CommandName.Equals("Ver"))
+            else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
+                phAlerta.Visible = false;
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-                string idPuesto = (gvrow.FindControl("id") as Label).Text;
+                string idPuesto = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 idPuesto = objUtilidades.cifrarCadena(Convert.ToString(idPuesto));
                 Response.Redirect(Paginas.View_PuestoTrabajo.Value+"?id=" + idPuesto);
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfIDDel.Value = (gvrow.FindControl("id") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
@@ -265,9 +261,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

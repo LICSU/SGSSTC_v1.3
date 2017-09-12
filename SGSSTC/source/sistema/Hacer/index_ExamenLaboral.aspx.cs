@@ -70,7 +70,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             historia_clinica_ocupacional tabla = new historia_clinica_ocupacional();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -122,11 +122,11 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 Modal.registrarModal("editModal", "EditModalScript", this);
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -196,9 +196,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["search"] = txtSearch.Text;
+                ViewState["search"] = txtBuscar.Text;
             }
             else
             {

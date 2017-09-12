@@ -58,8 +58,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Ver"))
+            if (e.CommandName.Equals(ComandosGrid.Consultar.Value ))
             {
+                phAlerta.Visible = false;
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 string id_puesto = (gvrow.FindControl("id_puesto") as Label).Text;
@@ -68,8 +69,9 @@ namespace SGSSTC.source.sistema.Hacer
 
                 Response.Redirect(Paginas.index_EvaluacionesPuestos.Value+"?id=" + id_puesto);
             }
-            else if (e.CommandName.Equals("add"))
+            else if (e.CommandName.Equals(ComandosGrid.Registrar.Value))
             {
+                phAlerta.Visible = false;
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 string id_ide_puesto = (gvrow.FindControl("id_ide_puesto") as Label).Text;
@@ -79,9 +81,6 @@ namespace SGSSTC.source.sistema.Hacer
                 Response.Redirect(Paginas.Create_EvaluacionRiesgos.Value +"? id=" + id_ide_puesto);
             }
 
-        }
-        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
-        {
         }
         #endregion
 

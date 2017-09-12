@@ -17,6 +17,25 @@
             <div class="page-header">
                 <h1 class="text-center">Planilla de Entrega de EPP</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
+            
+            <div class="row">
+                <div class="col-md-4 col-md-offset-3">
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
+                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                </div>
+
+                <div class="col-md-2">
+                    <asp:Button ID="btnSearch" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"
+                        data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar" />
+                </div>
+            </div>
 
             <div class="row">
                 <asp:PlaceHolder runat="server" ID="phEmpresa">

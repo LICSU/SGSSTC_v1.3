@@ -18,10 +18,17 @@
             <div class="page-header">
                 <h1 class="text-center">Usuario</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
-                    <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
                         runat="server" class="form-control" PlaceHolder="Ingrese el Usuario a buscar"></asp:TextBox>
                 </div>
 
@@ -70,7 +77,7 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
+
 
                         <asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
                             AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
@@ -82,7 +89,7 @@
 
                                 <asp:TemplateField HeaderText="ID" Visible="false" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_usuario" runat="server" Text='<%# Eval("id_usuario") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_usuario") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -488,8 +495,5 @@
             </div>
         </div>
     </div>
-
-
-
 
 </asp:Content>

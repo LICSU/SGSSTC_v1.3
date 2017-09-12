@@ -8,7 +8,8 @@ namespace Capa_Datos
         public static string DevolverIdRow(GridViewCommandEventArgs e, GridView GridView1)
         {
             int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-            return Utilidades.GetIdFila(GridView1, e, "id");
+            return (GridView1.Rows[RowIndex].FindControl("id") as Label).Text;
+
         }
     }
 }

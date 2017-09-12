@@ -15,7 +15,7 @@ namespace SGSSTC.source.sistema.Hacer
 		private Model_UsuarioSistema ObjUsuario;
 		private Tuple<bool, bool> BoolEmpSuc;
 		private static int IdSucursal = 0;
-        private static int IdTrabajador = 0;
+		private static int IdTrabajador = 0;
 
 		#region Index
 		protected void Page_Load(object sender, EventArgs e)
@@ -126,12 +126,12 @@ namespace SGSSTC.source.sistema.Hacer
 		}
 
 		private void agregar_fila()
-        {
-            TableCell _cell;
-            TableRow _row;
-            Label _label;
-            TextBox _textbox;
-            int id_puesto_trabajo = Getter.idPuestoTrabajador(Convert.ToInt32(IdTrabajador));
+		{
+			TableCell _cell;
+			TableRow _row;
+			Label _label;
+			TextBox _textbox;
+			int id_puesto_trabajo = Getter.idPuestoTrabajador(Convert.ToInt32(IdTrabajador));
 			List<Model_CEPP> epps = Getter.Epp(id_puesto_trabajo);
 			int cont = 0;
 			//Crear los elementos

@@ -12,7 +12,7 @@ namespace SGSSTC.source.sistema.Verificar
 	public partial class Update_Incidentes : Page
 	{
 		private Model_UsuarioSistema ObjUsuario;
-        private Tuple<bool, bool> BoolEmpSuc;
+		private Tuple<bool, bool> BoolEmpSuc;
 		private  Utilidades objUtilidades = new Utilidades();
 
 		#region acciones index
@@ -135,15 +135,9 @@ namespace SGSSTC.source.sistema.Verificar
 			}
 
 			ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-
-			if (ObjUsuario.Error)
-			{
-				Response.Redirect(Paginas.index_IncidenteLaboral.Value);
-			}
-			else
-			{
-				Modal.MostrarMsjModal(MensajeError.Fallo_Edit_Incidente.Value, "ERR", this);
-			}
+            
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaAcc);
+			
 		}
 		
 		#endregion

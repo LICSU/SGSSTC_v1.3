@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    
+	
 	<ol class="breadcrumb">
 		<li><a href="#">Fase: Hacer</a></li>
 		<li><a href="#">Descripción General De La Empresa</a></li>
@@ -15,6 +15,13 @@
 	<div class="page-header">
 		<h1 class="text-center">Descripción General De La Empresa</h1>
 	</div>
+
+	<asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+		<div id="divAlerta" runat="server">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+		</div>
+	</asp:PlaceHolder>
 
 	<div class="row text-center">
 		<div class="box">

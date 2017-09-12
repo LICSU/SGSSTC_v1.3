@@ -467,7 +467,7 @@ namespace SGSSTC.source.sistema.MenuPrincipal
 
             Modal.CerrarModal("addModal", "AddModalScript", this);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            //Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
 
             MostrarSusPreguntas();
             MostrarMisPreguntas();

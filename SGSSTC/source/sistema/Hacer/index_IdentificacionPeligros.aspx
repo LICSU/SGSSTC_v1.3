@@ -17,6 +17,27 @@
 			<div class="page-header">
 				<h1 class="text-center">Identificación de Peligros</h1>
 			</div>
+			
+			<asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+				<div id="divAlerta" runat="server">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+				</div>
+			</asp:PlaceHolder>
+			
+			<div class="row">
+				<div class="col-md-4 col-md-offset-3">
+					<asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
+						runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+				</div>
+
+				<div class="col-md-2">
+					<asp:Button ID="btnSearch" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro"
+						data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar" />
+				</div>
+			</div>
+
+			<br />
 
 			<div class="row">
 
@@ -47,14 +68,14 @@
 
 						<asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
 							AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
-							OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated"
+							OnPageIndexChanging="GridView1_PageIndexChanging"
 							EmptyDataText="No existen Registros">
 							<RowStyle HorizontalAlign="Center" />
 
 							<Columns>
 								<asp:TemplateField HeaderText="ID" Visible="false">
 									<ItemTemplate>
-										<asp:Label ID="id_identificacion_peligro" runat="server" Text='<%# Eval("id_identificacion_peligro") %>' />
+										<asp:Label ID="id" runat="server" Text='<%# Eval("id_identificacion_peligro") %>' />
 									</ItemTemplate>
 								</asp:TemplateField>
 
@@ -70,12 +91,12 @@
 									</ItemTemplate>
 								</asp:TemplateField>
 
-								<asp:ButtonField HeaderText="Imprimir" CommandName="print" ButtonType="Image" HeaderStyle-CssClass="text-center"
+								<asp:ButtonField HeaderText="Imprimir" CommandName="Imprimir" ButtonType="Image" HeaderStyle-CssClass="text-center"
 									ImageUrl="~\ico\print.png">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>
 
-								<asp:ButtonField HeaderText="Consultar" CommandName="Ver" ButtonType="Image" HeaderStyle-CssClass="text-center"
+								<asp:ButtonField HeaderText="Consultar" CommandName="Consultar" ButtonType="Image" HeaderStyle-CssClass="text-center"
 									ImageUrl="~\ico\view.png">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>

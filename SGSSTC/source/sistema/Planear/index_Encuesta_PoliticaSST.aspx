@@ -17,10 +17,17 @@
             <div class="page-header">
                 <h1 class="text-center">Encuesta sobre conocimiento de la politica de SST</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-2">
-                    <asp:TextBox ID="txtSearch" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese la encuesta a buscar"></asp:TextBox>
+                    <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar" runat="server" class="form-control" PlaceHolder="Ingrese la encuesta a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -68,7 +75,7 @@
                             <Columns>
                                 <asp:TemplateField Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_encuesta" runat="server" Text='<%# Eval("id_encuesta") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_encuesta") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 

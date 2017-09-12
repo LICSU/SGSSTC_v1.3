@@ -155,10 +155,11 @@ namespace SGSSTC.source.sistema.Hacer
             };
             ObjUsuario.Error = CRUD.Add_Fila(nuevoAlarma, IdUsuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             CargarListas();
             LlenarGridView();
         }
+
         protected void EditarRegistro(object sender, EventArgs e)
         {
             int IdUsuario = 0;
@@ -185,15 +186,16 @@ namespace SGSSTC.source.sistema.Hacer
             }
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, IdUsuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             CargarListas();
             LlenarGridView();
         }
+
         protected void EliminarRegistro(object sender, EventArgs e)
         {
             alarma tabla = new alarma();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         #endregion
@@ -234,9 +236,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                hdfEditID.Value = Utilidades.GetIdFila(GridView1, e, "id");
+                hdfEditID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 List<alarma> ListaAlarma = new List<alarma>();
                 ListaAlarma = Getter.Alarma(Convert.ToInt32(hdfEditID.Value));
@@ -251,15 +253,14 @@ namespace SGSSTC.source.sistema.Hacer
                 }
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
+                phAlerta.Visible = false;
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id");
+                hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
-        }
-        protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
-        {
         }
         #endregion
 
@@ -374,9 +375,9 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["search"] = txtSearch.Text;
+                ViewState["search"] = txtBuscar.Text;
             }
             else
             {

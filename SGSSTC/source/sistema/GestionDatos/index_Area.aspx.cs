@@ -84,6 +84,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones
         protected void AgregarRegistroModal(object sender, EventArgs e)
         {
+            phAlerta.Visible = false;
             Modal.registrarModal("addModal", "AddModalScript", this);
         }
 
@@ -121,7 +122,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 Modal.CerrarModal("addModal", "AddModalScript", this);
 
-                Modal.Validacion(this, ObjUsuario.Error, "Add");
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
 
                 limpiarCampos();
 
@@ -132,6 +133,8 @@ namespace SGSSTC.source.sistema.GestionDatos
                 txtNombre.BorderColor = Color.Red;
                 Modal.MostrarMsjModal(MensajeError.Error_Existe_Area_Nombre.Value, "ERR", this);
             }
+
+
         }
 
         protected void limpiarCampos()
@@ -184,7 +187,9 @@ namespace SGSSTC.source.sistema.GestionDatos
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             Modal.CerrarModal("editModal", "EditModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+
             LlenarGridView();
             CargarListas();
         }
@@ -198,18 +203,16 @@ namespace SGSSTC.source.sistema.GestionDatos
             {
                 idArea = user.trabajador.puesto_trabajo.area.id_area;
             }
+
             if (idArea != Convert.ToInt32(hdfAreaIDDel.Value))
             {
                 ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfAreaIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-                Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Delete");
-                LlenarGridView();
             }
-            else
-            {
-                Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-                Modal.MostrarMsjModal(MensajeError.Fallo_Delete_Area_Usuario.Value, "ERR", this);
-            }
+
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+
+            LlenarGridView();
         }
         #endregion
 
@@ -244,11 +247,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Editar"))
+            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
-                hdfAreaID.Value = (gvrow.FindControl("id_area") as Label).Text;
+
+                hdfAreaID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 phSeleccion.Visible = false;
                 Listas.Empresa(ddlEmpresaEdit);
@@ -281,12 +285,15 @@ namespace SGSSTC.source.sistema.GestionDatos
                 }
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
+
+                phAlerta.Visible = false;
             }
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                hdfAreaIDDel.Value = Utilidades.GetIdFila(GridView1, e, "id_area");
+                hdfAreaIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -434,9 +441,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

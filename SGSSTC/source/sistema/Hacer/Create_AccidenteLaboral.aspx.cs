@@ -111,7 +111,7 @@ namespace SGSSTC.source.sistema.Verificar
                 }
                 #endregion
 
-                Response.Redirect(Paginas.index_AccidenteLaboral.Value);
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtFechaAcc);
             }
 
         }

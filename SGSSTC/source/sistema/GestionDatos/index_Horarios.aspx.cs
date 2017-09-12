@@ -59,6 +59,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void AgregarRegistroModal(object sender, EventArgs e)
         {
             Modal.registrarModal("addModal", "AddModalScript", this);
+            phAlerta.Visible = false;
         }
 
         protected void AgregarRegistro(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("addModal", "AddModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
         protected void EditarRegistro(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("editModal", "EditModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Edit");
+            Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         protected void EliminarRegistro(object sender, EventArgs e)
@@ -109,20 +110,12 @@ namespace SGSSTC.source.sistema.GestionDatos
             {
                 IdHorario = Convert.ToInt32(user.trabajador.id_horario);
             }
-            if (IdHorario != Convert.ToInt32(hdfHorarioIDDel.Value))
-            {
-                ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfHorarioIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-                Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-                Modal.Validacion(this, ObjUsuario.Error, "Delete");
-                LlenarGridView();
-            }
-            else
-            {
-                Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
 
-                Modal.MostrarMsjModal(MensajeError.Fallo_Delete_Horario_Usuario.Value, "ERR", this);
-            }
+            ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfHorarioIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+            LlenarGridView();
         }
         #endregion
 
@@ -134,26 +127,27 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Eliminar"))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfHorarioIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfHorarioIDDel.Value = (gvrow.FindControl("id_horario") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("Editar"))
+            else if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfHorarioID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfHorarioID.Value = (gvrow.FindControl("id_horario") as Label).Text;
                 txtNombreEdit.Text = (gvrow.FindControl("nombre") as Label).Text;
                 txtFechaIniEdit.Text = (gvrow.FindControl("fecha_inicio") as Label).Text;
                 txtFechaFinEdit.Text = (gvrow.FindControl("fecha_fin") as Label).Text;
-                ddlEmpresaEdit.SelectedValue = (gvrow.FindControl("id_empresa") as Label).Text;
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
@@ -169,9 +163,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region filtros
         protected void BuscarRegistro(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty)
+            if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtSearch.Text;
+                ViewState["sWhere"] = txtBuscar.Text;
             }
             else
             {

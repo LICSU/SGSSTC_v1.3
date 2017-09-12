@@ -111,6 +111,8 @@
         </div>
     </div>
 
+
+
     <!-- actividades pendientes y finalizadas-->
     <div class="row">
 

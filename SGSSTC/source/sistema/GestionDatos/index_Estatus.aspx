@@ -1,11 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Estatus.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Estatus" %>
 
-
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
-
-
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -22,6 +17,13 @@
             <div class="page-header">
                 <h1 class="text-center">Estatus de los Trabajadores</h1>
             </div>
+            
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                </div>
+            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
@@ -64,7 +66,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="ID" Visible="false" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_estatus" runat="server" Text='<%# Eval("id_estatus") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_estatus") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Nombre" HeaderStyle-CssClass="text-center">
@@ -79,7 +81,6 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Empresa" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label Visible="false" ID="id_empresa" runat="server" Text='<%# Eval("id_empresa") %>' />
                                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("Empresa") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>

@@ -39,7 +39,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 LlenarGridView();
                 if (Request.QueryString["eu"] == "1")
                 {
-                    Modal.Validacion(this, ObjUsuario.Error, "Edit");
+                    Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
                 }
             }
 
@@ -76,47 +76,44 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones Grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals("Ver"))
+            if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfIdTrabajadorView.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfIdTrabajadorView.Value = (gvrow.FindControl("id_trabajador") as Label).Text;
                 ConsultarTrabajador(hdfIdTrabajadorView.Value);
                 Modal.registrarModal("viewModal", "ViewModalScript", this);
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("Editar"))
+            else if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
+                phAlerta.Visible = false;
+
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                string TrabajadorID = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                string TrabajadorID = (gvrow.FindControl("id_trabajador") as Label).Text;
                 TrabajadorID = objUtilidades.cifrarCadena(Convert.ToString(TrabajadorID));
                 Response.Redirect(Paginas.Update_Trabajador.Value + "?id=" + TrabajadorID);
             }
-            else if (e.CommandName.Equals("Eliminar"))
+            else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
+                hdfTrabajadorIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                hdfTrabajadorIDDel.Value = (gvrow.FindControl("id_trabajador") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
-            else if (e.CommandName.Equals("imprimir"))
-            {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
-
-                string id = (gvrow.FindControl("id_trabajador") as Label).Text;
-                Response.Redirect(Paginas.index_Trabajador.Value + "?r=print&id=" + id);
-            }
-            else if (e.CommandName.Equals("agregarReposo"))
+            else if (e.CommandName.Equals(ComandosGrid.AddReposo.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
                 hdfTrabajadorEstID.Value = (gvrow.FindControl("id_trabajador") as Label).Text;
                 Modal.registrarModal("agregarReposo", "EstatusModalScript", this);
+                phAlerta.Visible = false;
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -160,7 +157,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             trabajador tabla = new trabajador();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfTrabajadorIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, ObjUsuario.Error, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         protected void btDescargar_Click(object sender, EventArgs e)
@@ -265,7 +262,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, "GestionDatos/Trabajador.aspx");
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
 
         }

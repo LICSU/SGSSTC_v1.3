@@ -78,7 +78,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             ObjUsuario.Error = CRUD.AddAutoEvaluacion(IdEmpSuc, ObjUsuario, valores, flpArchivo);
 
-            Modal.Validacion(this, ObjUsuario.Error, "Add");
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
 
             LlenarGridView();
         }
@@ -88,7 +88,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             Boolean Operacion = CRUD.DeleteAutoEvaluacion(hdfIDDel.Value, ObjUsuario);
 
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            Modal.Validacion(this, Operacion, "Delete");
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
             LlenarGridView();
         }
@@ -106,6 +106,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             {
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
+                phAlerta.Visible = false;
             }
         }
 

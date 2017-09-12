@@ -16,6 +16,13 @@
 		<h3 class="text-center">Plan De Evacuación</h3>
 	</div>
 
+    <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+        <div id="divAlerta" runat="server">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+        </div>
+    </asp:PlaceHolder>
+
 	<div class="row form-group">
 		<asp:PlaceHolder runat="server" ID="phEmpresa">
 			<div class="col-md-4">

@@ -20,7 +20,7 @@
             <!-- Buscar -->
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
-                    <asp:TextBox ID="txtSearch"
+                    <asp:TextBox ID="txtBuscar"
                         data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
                         runat="server" class="form-control" PlaceHolder="Ingrese la norma a buscar"></asp:TextBox>
                 </div>
