@@ -18,7 +18,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -89,7 +89,7 @@ namespace SGSSTC.source.sistema.Hacer
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
 
-                phAlerta.Visible = false;
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
@@ -101,7 +101,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
             else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
             {
-                phAlerta.Visible = false;
+                
 
                 hImprimir.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 

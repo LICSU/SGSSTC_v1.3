@@ -143,7 +143,7 @@
 
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h4 class="text-center">Nombre</h4>
+                                    <h4>Nombre</h4>
 
                                     <asp:TextBox ID="txtNombreAdd" runat="server" ClientIDMode="Static" MaxLength="50"
                                         CssClass="form-control"
@@ -157,8 +157,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <h4 class="text-center">Hora Inicio</h4>
+                                <div class="col-md-4 col-md-offset-2">
+                                    <h4>Hora Inicio</h4>
 
                                     <asp:TextBox ID="txtFechaIni" TextMode="Time" runat="server" ClientIDMode="Static"
                                         CssClass="form-control"
@@ -172,8 +172,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <h4 class="text-center">Hora Fin</h4>
+                                <div class="col-md-4 col-md-offset-2">
+                                    <h4>Hora Fin</h4>
 
                                     <asp:TextBox ID="txtFechaFin" TextMode="Time" runat="server" ClientIDMode="Static"
                                         CssClass="form-control"
@@ -258,8 +258,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <h4 class="text-center">Hora Inicio</h4>
+                                <div class="col-md-4 col-md-offset-2">
+                                    <h4>Hora Inicio</h4>
 
                                     <asp:TextBox ID="txtFechaIniEdit" TextMode="Time" runat="server" ClientIDMode="Static"
                                         CssClass="form-control"
@@ -273,8 +273,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <h4 class="text-center">Hora Fin</h4>
+                                <div class="col-md-4 col-md-offset-2">
+                                    <h4>Hora Fin</h4>
 
                                     <asp:TextBox ID="txtFechaFinEdit" TextMode="Time" runat="server" ClientIDMode="Static"
                                         CssClass="form-control"
@@ -371,7 +371,5 @@
             </div>
         </div>
     </div>
-
-
 
 </asp:Content>

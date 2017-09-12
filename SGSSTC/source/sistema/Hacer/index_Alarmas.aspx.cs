@@ -19,7 +19,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -253,13 +253,13 @@ namespace SGSSTC.source.sistema.Hacer
                 }
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                
             }
         }
         #endregion

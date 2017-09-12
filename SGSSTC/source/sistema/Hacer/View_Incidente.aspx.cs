@@ -91,8 +91,8 @@ namespace SGSSTC.source.sistema.Verificar
 				int contadorArchivos = 0;
 				ControlesDinamicos.CrearLiteral("<ul>", pSoportes);
 
-                HyperLink HyperLink1;
-                foreach (var item1 in item.soporte)
+				HyperLink HyperLink1;
+				foreach (var item1 in item.soporte)
 				{
 					contadorArchivos++;
 					ControlesDinamicos.CrearLiteral("<li>", pSoportes);

@@ -17,7 +17,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -132,12 +132,14 @@ namespace SGSSTC.source.sistema.GestionDatos
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 hdfEditID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                txtNombreEdit.Text = (gvrow.FindControl("nombre") as Label).Text;
-                txtDescripcionEdit.Text = (gvrow.FindControl("descripcion") as Label).Text;
-                ddlEmpresaEdit.SelectedValue = (gvrow.FindControl("HFid_empresa") as HiddenField).Value;
+                var _Categoria = Getter.Categoria(Convert.ToInt32(hdfEditID.Value));
+
+                txtNombreEdit.Text = _Categoria.nombre;
+                txtDescripcionEdit.Text = _Categoria.descripcion;
+                ddlEmpresaEdit.SelectedValue = Convert.ToString(_Categoria.id_empresa);
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
@@ -145,20 +147,21 @@ namespace SGSSTC.source.sistema.GestionDatos
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-
-                Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                Modal.registrarModal("deleteModal", "DeleteModalScript", this);                
             }
 
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (ObjUsuario.isAdm_Sucursal() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isResponsable())
+            if (ObjUsuario != null)
             {
-                #region codigo
-                GridView1.Columns[4].Visible = false;
-                GridView1.Columns[5].Visible = false;
-                #endregion
+                if (ObjUsuario.isAdm_Sucursal() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isResponsable())
+                {
+                    #region codigo
+                    GridView1.Columns[4].Visible = false;
+                    GridView1.Columns[5].Visible = false;
+                    #endregion
+                }
             }
         }
         #endregion

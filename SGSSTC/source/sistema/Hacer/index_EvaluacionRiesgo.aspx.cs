@@ -18,7 +18,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -60,7 +60,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             if (e.CommandName.Equals(ComandosGrid.Consultar.Value ))
             {
-                phAlerta.Visible = false;
+                
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 string id_puesto = (gvrow.FindControl("id_puesto") as Label).Text;
@@ -71,7 +71,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
             else if (e.CommandName.Equals(ComandosGrid.Registrar.Value))
             {
-                phAlerta.Visible = false;
+                
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 string id_ide_puesto = (gvrow.FindControl("id_ide_puesto") as Label).Text;

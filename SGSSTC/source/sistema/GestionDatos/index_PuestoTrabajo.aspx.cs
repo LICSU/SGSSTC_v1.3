@@ -10,7 +10,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 {
     public partial class index_PuestoTrabajo : Page
     {
-        private  Utilidades objUtilidades = new Utilidades();
+        private Utilidades objUtilidades;
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
 
@@ -19,6 +19,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
+            objUtilidades = new Utilidades();
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
@@ -69,7 +70,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void AgregarRegistro(object sender, EventArgs e)
         {
             Response.Redirect(Paginas.Create_PuestoTrabajo.Value);
-            phAlerta.Visible = false;
+            
         }
         protected void EliminarRegistro(object sender, EventArgs e)
         {
@@ -82,9 +83,10 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
 
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+            LlenarGridView();
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
-            LlenarGridView();
+
         }
 
         #region  Exportar listas
@@ -125,7 +127,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                phAlerta.Visible = false;
+                
 
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -136,7 +138,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
-                phAlerta.Visible = false;
+                
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 string idPuesto = Utilidades_GridView.DevolverIdRow(e, GridView1);
@@ -151,38 +153,41 @@ namespace SGSSTC.source.sistema.GestionDatos
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                
             }
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdm_SucSeg())
+            if (ObjUsuario!=null)
             {
-                #region codigo
-                if (e.Row.RowType == DataControlRowType.Header)
+                if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdm_SucSeg())
                 {
-                    e.Row.Cells[8].Visible = false;
+                    #region codigo
+                    if (e.Row.RowType == DataControlRowType.Header)
+                    {
+                        e.Row.Cells[8].Visible = false;
+                    }
+                    if (e.Row.RowType == DataControlRowType.DataRow)
+                    {
+                        e.Row.Cells[8].Visible = false;
+                    }
+                    #endregion
                 }
-                if (e.Row.RowType == DataControlRowType.DataRow)
+                else if (ObjUsuario.isAdm_SucSalud() || ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isResponsable())//Adm Emp
                 {
-                    e.Row.Cells[8].Visible = false;
+                    #region codigo
+                    if (e.Row.RowType == DataControlRowType.Header)
+                    {
+                        e.Row.Cells[7].Visible = false;
+                        e.Row.Cells[8].Visible = false;
+                    }
+                    if (e.Row.RowType == DataControlRowType.DataRow)
+                    {
+                        e.Row.Cells[7].Visible = false;
+                        e.Row.Cells[8].Visible = false;
+                    }
+                    #endregion
                 }
-                #endregion
-            }
-            else if (ObjUsuario.isAdm_SucSalud() || ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isResponsable())//Adm Emp
-            {
-                #region codigo
-                if (e.Row.RowType == DataControlRowType.Header)
-                {
-                    e.Row.Cells[7].Visible = false;
-                    e.Row.Cells[8].Visible = false;
-                }
-                if (e.Row.RowType == DataControlRowType.DataRow)
-                {
-                    e.Row.Cells[7].Visible = false;
-                    e.Row.Cells[8].Visible = false;
-                }
-                #endregion
             }
         }
         #endregion

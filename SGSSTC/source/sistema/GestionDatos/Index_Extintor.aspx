@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Index_Extintor.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.Index_Extintor" %>
-
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-    Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -30,13 +28,11 @@
                 <div class="col-md-4 col-md-offset-3">
                     <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
                         runat="server" class="form-control" PlaceHolder="Ingrese el Extintor a buscar"></asp:TextBox>
-
                 </div>
 
                 <div class="col-md-2">
                     <asp:Button ID="btnSearch" data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar"
                         runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="BuscarRegistro" />
-
                 </div>
 
             </div>
@@ -55,7 +51,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-md-offset-3">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" class="form-control" AutoPostBack="true"
                             data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal"
@@ -77,8 +73,6 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
-
                         <asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
                             AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
                             OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated"
@@ -111,13 +105,13 @@
 
                                 <asp:TemplateField HeaderText="Area" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="area_id" runat="server" Text='<%# Eval("id_area") %>' Visible="false" />
                                         <asp:Label ID="area" runat="server" Text='<%# Eval("area") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
                                 <asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image"
-                                    ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
+                                    ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center" 
+                                    ItemStyle-CssClass="text-center">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
@@ -247,7 +241,6 @@
                                         Font-Bold="true" ControlToValidate="ddlAreaAdd" runat="server"
                                         ValidationGroup="ValidationAdd" />
                                 </div>
-
                             </div>
 
                             <div class="row">

@@ -11,7 +11,7 @@ namespace SGSSTC.source.sistema.Hacer
 	{
 		private Model_UsuarioSistema ObjUsuario;
 		private Tuple<bool, bool> BoolEmpSuc;
-		private  Utilidades objUtilidades = new Utilidades();
+		private Utilidades objUtilidades = new Utilidades();
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -28,8 +28,8 @@ namespace SGSSTC.source.sistema.Hacer
 		}
 
 		private void CargarDatos()
-        {
-            int id_IdentificacionPeligro = objUtilidades.descifrarCadena(Request.QueryString["id"]);
+		{
+			int id_IdentificacionPeligro = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
 			List<identificacion_peligro> List_IdePel = new List<identificacion_peligro>();
 

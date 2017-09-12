@@ -9,9 +9,9 @@ namespace SGSSTC.source.sistema.Verificar
 {
 	public partial class View_InvestigacionIncidente : Page
 	{
-		private  Utilidades objUtilidades = new Utilidades();
+		private Utilidades objUtilidades = new Utilidades();
 		private Model_UsuarioSistema ObjUsuario;
-        private Tuple<bool, bool> BoolEmpSuc;
+		private Tuple<bool, bool> BoolEmpSuc;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -105,6 +105,6 @@ namespace SGSSTC.source.sistema.Verificar
 				}
 			}
 		}
-		
+
 	}
 }

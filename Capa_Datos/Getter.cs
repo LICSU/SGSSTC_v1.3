@@ -313,12 +313,19 @@ namespace Capa_Datos
         #endregion
 
         #region Categorias
-
         public static List<categoria> Categoria(string nombre)
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             List<categoria> consulta = new List<categoria>();
             consulta = contexto.categoria.Where(x => x.nombre == nombre).ToList();
+            return consulta;
+        }
+
+        public static categoria Categoria(int _idCategoria)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            categoria consulta = new categoria();
+            consulta = contexto.categoria.Where(x => x.id_categorias == _idCategoria).SingleOrDefault();
             return consulta;
         }
         #endregion
@@ -526,12 +533,20 @@ namespace Capa_Datos
         #endregion
 
         #region horario
-
-        public static List<horario> Horario(int _id_empresa)
+        public static horario Horario(int _id_horario)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            horario consulta = new horario();
+            consulta = contexto.horario.Where(x => x.id_horario == _id_horario).SingleOrDefault();
+            return consulta;
+        }
+        public static List<horario> ListHorario(int _id_empresa)
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             List<horario> consulta = new List<horario>();
-            consulta = contexto.horario.Where(x => x.id_empresa == _id_empresa).ToList();
+
+            consulta = contexto.horario.Where(x => x.id_empresa == _id_empresa).ToList(); 
+
             return consulta;
         }
         #endregion
@@ -936,13 +951,13 @@ namespace Capa_Datos
         public static List<trabajador_gestion> Trabajadores_Capacitacion(int _id_trabajador, DateTime fechaIni, DateTime fechaFin)
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
-            
+
             List<trabajador_gestion> consulta = new List<trabajador_gestion>();
-            consulta = contexto.trabajador_gestion.Where(x => 
+            consulta = contexto.trabajador_gestion.Where(x =>
             x.id_trabajador == _id_trabajador &&
             x.gestion_laboral.fecha >= fechaIni &&
             x.gestion_laboral.fecha <= fechaFin &&
-            x.gestion_laboral.tipo_gestion == 2 
+            x.gestion_laboral.tipo_gestion == 2
             ).ToList();
 
             return consulta;
@@ -991,6 +1006,15 @@ namespace Capa_Datos
         #endregion
 
         #region trabajador_estatus
+        public static estatus Estatus(int _idEstatus)
+        {
+            GrupoLiEntities contexto = new GrupoLiEntities();
+            estatus consulta = new estatus();
+
+            consulta = contexto.estatus.Where(x => x.id_estatus == _idEstatus).SingleOrDefault();
+
+            return consulta;
+        }
 
         public static List<trabajador_estatus> HistorialTrabajador(int _id_trabajador)
         {
@@ -1024,7 +1048,7 @@ namespace Capa_Datos
         #endregion
 
         #region Usuario
-        public static List<usuario> Usuario(int _id_usuario = 0, int _idSucursal = 0, 
+        public static List<usuario> Usuario(int _id_usuario = 0, int _idSucursal = 0,
             string email = "", string _login = "", string _clave = "")
         {
             Utilidades objUtilidades = new Utilidades();
@@ -1169,7 +1193,7 @@ namespace Capa_Datos
         public static perfil_cargo PerfilCargo(int _id_perfil)
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
-            return contexto.perfil_cargo.Where(x => x.id_perfil_cargo == _id_perfil).SingleOrDefault();            
+            return contexto.perfil_cargo.Where(x => x.id_perfil_cargo == _id_perfil).SingleOrDefault();
         }
     }
 }

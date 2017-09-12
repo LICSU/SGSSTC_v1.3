@@ -15,7 +15,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -104,7 +104,7 @@ namespace SGSSTC.source.sistema.Hacer
                     ddlArp.SelectedValue = Convert.ToString(item.empresa.id_arl);
 
                     List<horario> ListaHorario = new List<horario>();
-                    ListaHorario = Getter.Horario(ObjUsuario.Id_empresa);
+                    ListaHorario = Getter.ListHorario(ObjUsuario.Id_empresa);
                     foreach (var item5 in ListaHorario)
                     {
                         ControlesDinamicos.CrearLiteral("<div class='col-md-6 '><label>" + item5.nombre + "</label></div>", pHorario);

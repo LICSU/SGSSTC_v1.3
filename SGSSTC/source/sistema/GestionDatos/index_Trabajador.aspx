@@ -50,7 +50,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-3 col-md-offset-1 text-center">
                         <label>Filtrar por sucursal</label>
                         <asp:DropDownList runat="server" ID="ddlSucursalFiltro" CssClass="form-control" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlSucursalFiltro_SelectedIndexChanged">
@@ -188,7 +188,7 @@
                             <asp:HiddenField ID="hdfTrabajadorEstID" runat="server" />
 
                             <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
+                                <div class="col-md-4 col-md-offset-2">
                                     <h4>¿Tuvo reposo?</h4>
                                     <asp:RadioButtonList ID="rblReposo" RepeatColumns="2" AutoPostBack="true" runat="server"
                                         data-toggle="tooltip" data-placement="bottom" title="Seleccione si hubo reposo"
@@ -197,10 +197,7 @@
                                         <asp:ListItem Text="No" Value="No"></asp:ListItem>
                                     </asp:RadioButtonList>
                                 </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
+                                <div class="col-md-4">
                                     <asp:PlaceHolder runat="server" ID="phDiasReposo" Visible="false">
                                         <h4>Días de Reposo</h4>
                                         <asp:TextBox runat="server" CssClass="form-control" TextMode="Number" min="1" Text="1"
@@ -654,8 +651,5 @@
             </div>
         </div>
     </div>
-
-
-
 
 </asp:Content>

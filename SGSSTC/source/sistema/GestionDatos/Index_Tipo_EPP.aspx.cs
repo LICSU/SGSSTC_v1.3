@@ -16,7 +16,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
             
@@ -51,7 +51,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones
         protected void AgregarRegistroModal(object sender, EventArgs e)
         {
-            phAlerta.Visible = false;
+            
             Modal.registrarModal("addModal", "AddModalScript", this);
         }
 
@@ -164,7 +164,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 hdfIDEppDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
@@ -177,7 +177,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 imgSenal.ImageUrl = (gvrow.FindControl("url_senal") as Label).Text;
                 ddlEmpresaEdit.SelectedValue = (gvrow.FindControl("id_empresa") as Label).Text;
                 Modal.registrarModal("editModal", "EditModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             else if (e.CommandName.Equals("verImagen"))
             {
@@ -190,7 +190,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
             
         }
         #endregion

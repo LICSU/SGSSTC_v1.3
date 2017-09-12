@@ -11,14 +11,13 @@ namespace SGSSTC.source.sistema.GestionDatos
     public partial class index_Trabajador : Page
     {
         private Model_UsuarioSistema ObjUsuario;
-        private  Utilidades objUtilidades = new Utilidades();
+        private Utilidades objUtilidades = new Utilidades();
         private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index    
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this); phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -84,11 +83,11 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 ConsultarTrabajador(hdfIdTrabajadorView.Value);
                 Modal.registrarModal("viewModal", "ViewModalScript", this);
-                phAlerta.Visible = false;
+
             }
             else if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                phAlerta.Visible = false;
+
 
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
@@ -104,16 +103,14 @@ namespace SGSSTC.source.sistema.GestionDatos
                 hdfTrabajadorIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+
             }
             else if (e.CommandName.Equals(ComandosGrid.AddReposo.Value))
             {
-                int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                hdfTrabajadorEstID.Value = (gvrow.FindControl("id_trabajador") as Label).Text;
+                hdfTrabajadorEstID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("agregarReposo", "EstatusModalScript", this);
-                phAlerta.Visible = false;
+
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -123,27 +120,26 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
-
-            if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+            if (ObjUsuario != null)
             {
-                if (e.Row.RowType == DataControlRowType.Header)
+                if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
                 {
-                    e.Row.Cells[6].Visible = false;
-                    e.Row.Cells[8].Visible = false;
-                    e.Row.Cells[9].Visible = false;
-                    e.Row.Cells[10].Visible = false;
-                }
-                if (e.Row.RowType == DataControlRowType.DataRow)
-                {
-                    e.Row.Cells[6].Visible = false;
-                    e.Row.Cells[8].Visible = false;
-                    e.Row.Cells[9].Visible = false;
-                    e.Row.Cells[10].Visible = false;
+                    if (e.Row.RowType == DataControlRowType.Header)
+                    {
+                        e.Row.Cells[6].Visible = false;
+                        e.Row.Cells[8].Visible = false;
+                        e.Row.Cells[9].Visible = false;
+                        e.Row.Cells[10].Visible = false;
+                    }
+                    if (e.Row.RowType == DataControlRowType.DataRow)
+                    {
+                        e.Row.Cells[6].Visible = false;
+                        e.Row.Cells[8].Visible = false;
+                        e.Row.Cells[9].Visible = false;
+                        e.Row.Cells[10].Visible = false;
+                    }
                 }
             }
-
-
         }
         #endregion
 
@@ -262,7 +258,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, "GestionDatos/Trabajador.aspx");
 
-            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
 
         }

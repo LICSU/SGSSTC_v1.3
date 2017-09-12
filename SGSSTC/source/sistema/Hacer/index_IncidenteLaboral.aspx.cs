@@ -19,7 +19,7 @@ namespace SGSSTC.source.sistema.Verificar
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -91,7 +91,7 @@ namespace SGSSTC.source.sistema.Verificar
         protected void MostrarModalImprimir(object sender, EventArgs e)
         {
             Modal.registrarModal("printModal", "printModalScript", this);
-            phAlerta.Visible = false;
+            
         }
         protected void btnSubirArchivo(object sender, EventArgs e)
         {
@@ -160,7 +160,7 @@ namespace SGSSTC.source.sistema.Verificar
         {
             if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
-                phAlerta.Visible = false;
+                
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 hdfIDDel.Value = objUtilidades.cifrarCadena(Convert.ToString(hdfIDDel.Value));
 
@@ -168,14 +168,14 @@ namespace SGSSTC.source.sistema.Verificar
             }
             else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
             {
-                phAlerta.Visible = false;
+                
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 hdfIDDel.Value = objUtilidades.cifrarCadena(Convert.ToString(hdfIDDel.Value));
                 Response.Redirect(Paginas.View_Accidente.Value+"?id=" + hdfIDDel.Value + "&Print=si");
             }
             else if (e.CommandName.Equals(ComandosGrid.Comunicado.Value))
             {
-                phAlerta.Visible = false;
+                
                 hImprimir.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 ViewState["Imprimir"] = string.Empty + hImprimir.Value;
@@ -185,19 +185,19 @@ namespace SGSSTC.source.sistema.Verificar
             }
             else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
-                phAlerta.Visible = false;
+                
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
             else if (e.CommandName.Equals(ComandosGrid.Upload.Value))
             {
-                phAlerta.Visible = false;
+                
                 hdfIDEsc.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
             }
             else if (e.CommandName.Equals(ComandosGrid.Scan.Value))
             {
-                phAlerta.Visible = false;
+                
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 hplComunicado.NavigateUrl = (GridView1.Rows[RowIndex].FindControl("lbComunicado") as Label).Text;
 
@@ -205,7 +205,7 @@ namespace SGSSTC.source.sistema.Verificar
             }
             else if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                phAlerta.Visible = false;
+                
                 string id = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 id = objUtilidades.cifrarCadena(id);
 

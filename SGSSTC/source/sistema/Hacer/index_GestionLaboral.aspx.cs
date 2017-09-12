@@ -19,7 +19,7 @@ namespace SGSSTC.source.sistema.Hacer
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -271,7 +271,7 @@ namespace SGSSTC.source.sistema.Hacer
         #region  registro de los modales
         protected void cerrarModalIndex(object sender, EventArgs e)
         {
-            phAlerta.Visible = false;
+            
             Modal.CerrarModal("IndexAddModal", "AddModalScript", this);
         }
         #endregion
@@ -754,26 +754,26 @@ namespace SGSSTC.source.sistema.Hacer
                 {
                     hdfEditEntregaID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                     Modal.registrarModal("EditEntrega", "EditModalScript", this);
-                    phAlerta.Visible = false;
+                    
                 }
                 else if (tipo == ComandosGrid.Gestion_Jornada.Value)
                 {
                     hdfEditJornadaID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                     Modal.registrarModal("EditJornada", "EditModalScript", this);
-                    phAlerta.Visible = false;
+                    
                 }
                 else if (tipo == ComandosGrid.Gestion_Recreativa.Value)
                 {
                     hdfEditActividadID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                     Modal.registrarModal("EditActividad", "EditModalScript", this);
-                    phAlerta.Visible = false;
+                    
                 }
                 else if (tipo == ComandosGrid.Gestion_Capacitacion.Value)
                 {
                     hdfEditCapacitacionID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                     
                     Modal.registrarModal("EditCapacitacion", "EditModalScript", this);
-                    phAlerta.Visible = false;
+                    
 
                     List<gestion_laboral> EditCapacitacion = new List<gestion_laboral>();
                     EditCapacitacion = Getter.GestionLaboral(Convert.ToInt32(hdfEditCapacitacionID.Value));
@@ -807,12 +807,12 @@ namespace SGSSTC.source.sistema.Hacer
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
-                phAlerta.Visible = false;
+                
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Asistencia.Value))
             {
-                phAlerta.Visible = false;
+                
                 string idGestion = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 
                 Response.Redirect(Paginas.Update_AsistenciaCapacitacion.Value+"?id=" + objUtilidades.cifrarCadena(idGestion));
@@ -821,7 +821,7 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 hdfIDEsc.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
             {
@@ -830,7 +830,7 @@ namespace SGSSTC.source.sistema.Hacer
                 ViewState["Imprimir"] = string.Empty + hImprimir.Value;
 
                 Modal.registrarModal("PrintListaModal", "PrintListaModalScript", this);
-                phAlerta.Visible = false;
+                
 
             }
             else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))

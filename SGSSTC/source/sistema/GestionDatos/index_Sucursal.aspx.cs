@@ -16,7 +16,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -112,7 +112,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                     ddlMcpioEdit.SelectedValue = Convert.ToString(item.id_municpio);
                 }
                 Modal.registrarModal("editModal", "EditModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
@@ -121,7 +121,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 hdfSucursalIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
@@ -143,7 +143,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                     lblMovilView.Text = item.movil;
                 }
                 Modal.registrarModal("viewModal", "ViewModalScript", this);
-                phAlerta.Visible = false;
+                
             }
         }
 
@@ -155,7 +155,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             if (ObjUsuario.isAdm_Sucursal())
             {

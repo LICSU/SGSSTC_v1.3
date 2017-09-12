@@ -19,7 +19,7 @@ namespace SGSSTC.source.sistema.Hacer
 		#region metodos index
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
 			idRiesgo = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 			IdSucursal = objUtilidades.descifrarCadena(Request.QueryString["suc"]);

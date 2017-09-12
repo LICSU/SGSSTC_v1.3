@@ -18,7 +18,7 @@ namespace SGSSTC.source.sistema.Hacer
 		{
 			Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
 			BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -39,7 +39,7 @@ namespace SGSSTC.source.sistema.Hacer
 		#region acciones
 		protected void MostrarModalImprimir(object sender, EventArgs e)
 		{
-			phAlerta.Visible = false;
+			
 			Modal.registrarModal("printModal", "printModalScript", this);
 		}
 
@@ -73,7 +73,7 @@ namespace SGSSTC.source.sistema.Hacer
 		{
 			if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
 			{
-				phAlerta.Visible = false;
+				
 
 				string id_EvaRiesgo = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
@@ -86,7 +86,7 @@ namespace SGSSTC.source.sistema.Hacer
 				hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
 				Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-				phAlerta.Visible = false;
+				
 			}
 			else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
 			{
@@ -95,7 +95,7 @@ namespace SGSSTC.source.sistema.Hacer
 				ViewState["Imprimir"] = string.Empty + hImprimir.Value;
 
 				Modal.registrarModal("PrintListaModal", "PrintListaModalScript", this);
-				phAlerta.Visible = false;
+				
 
 			}
 

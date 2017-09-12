@@ -45,19 +45,10 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
         }
 
-        protected void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Response.Redirect(Paginas.Create_PuestoTrabajo.Value);
-        }
-
-        protected void btnSalir_Click(object sender, EventArgs e)
-        {
-            Response.Redirect(Paginas.index_PuestoTrabajo.Value);
-        }
-
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             int IdSucursal = 0;
+
             if (BoolEmpSuc.Item1)
             {
                 IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
@@ -66,6 +57,7 @@ namespace SGSSTC.source.sistema.GestionDatos
             {
                 IdSucursal = ObjUsuario.Id_sucursal;
             }
+
             List<puesto_trabajo> puesto = Getter.PuestoTrabajo_Nom_Suc(txtNombre.Text, IdSucursal);
 
             if (puesto.Count == 0)
@@ -89,13 +81,14 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 ObjUsuario.Error = CRUD.Add_PuestoTrabajo(ObjUsuario, valores, fuAnexo, ddlEpp);
 
-                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre);
             }
             else
             {
                 txtNombre.BorderColor = Color.Red;
                 Modal.MostrarMsjModal(MensajeError.Error_Existe_Puesto_Nombre.Value, "ERR", this);
             }
+
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtNombre);
         }
 
         protected void ddlEmpresas_SelectedIndexChanged(object sender, EventArgs e)

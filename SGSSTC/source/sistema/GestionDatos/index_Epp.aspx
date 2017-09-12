@@ -55,7 +55,7 @@
 					</div>
 				</asp:PlaceHolder>
 
-				<div class="col-md-4">
+				<div class="col-md-4 col-md-offset-4">
 					<h4 class="text-center">Tipo EPP</h4>
 					<asp:DropDownList runat="server" AutoPostBack="true" ID="ddlTipoEpp" CssClass="form-control"
 						OnSelectedIndexChanged="ddlTipoEpp_SelectedIndexChanged">
@@ -66,12 +66,13 @@
 			<br />
 
 			<div class="row">
-				<div class="box-body">
+				<div class="box-body col-md-8 col-md-offset-2">
 					<div class="dataTables_wrapper form-inline dt-bootstrap">
 						
 						<asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
 							AutoGenerateColumns="false" AllowPaging="true" PageSize="10"
-							OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging"
+							OnRowCommand="GridView1_RowCommand" 
+							OnPageIndexChanging="GridView1_PageIndexChanging"
 							EmptyDataText="No existen Registros">
 							<RowStyle HorizontalAlign="Center" />
 							<Columns>

@@ -61,9 +61,6 @@
 							AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
 							OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated"
 							EmptyDataText="No existen Registros">
-
-
-
 							<Columns>
 								<asp:TemplateField HeaderText="Id Categoria" Visible="false" HeaderStyle-CssClass="text-center">
 									<ItemTemplate>

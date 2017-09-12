@@ -17,13 +17,14 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this); phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
 
             if (!IsPostBack)
             {
+                ViewState["area"] = "0";
                 CargarListas();
                 CargarControles();
                 LlenarGridView();
@@ -86,12 +87,12 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void AgregarRegistroModal(object sender, EventArgs e)
         {
             Modal.registrarModal("addModal", "AddModalScript", this);
-            phAlerta.Visible = false;
+
         }
         protected void MostrarModalImprimir(object sender, EventArgs e)
         {
             Modal.registrarModal("printModal", "printModalScript", this);
-            phAlerta.Visible = false;
+
         }
 
         protected void AgregarRegistro(object sender, EventArgs e)
@@ -123,7 +124,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 if (ObjUsuario.Error)
                 {
                     Modal.CerrarModal("addModal", "AddModalScript", this);
-                    Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
+                    Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
                     LlenarGridView();
                 }
             }
@@ -236,7 +237,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
 
-                phAlerta.Visible = false;
+
             }
             if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
@@ -246,7 +247,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
 
-                phAlerta.Visible = false;
+
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

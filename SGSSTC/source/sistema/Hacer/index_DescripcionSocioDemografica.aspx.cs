@@ -18,7 +18,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -181,7 +181,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
-                phAlerta.Visible = false;
+                
                 string id_trabajador = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 id_trabajador = objUtilidades.cifrarCadena(Convert.ToString(id_trabajador));
@@ -189,7 +189,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
             if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
-                phAlerta.Visible = false;
+                
                 string id_trabajador = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 id_trabajador = objUtilidades.cifrarCadena(Convert.ToString(id_trabajador));
                 
@@ -200,7 +200,7 @@ namespace SGSSTC.source.sistema.Hacer
                 hdfPerfilIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

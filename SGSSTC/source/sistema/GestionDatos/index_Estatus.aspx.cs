@@ -18,7 +18,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -69,12 +69,14 @@ namespace SGSSTC.source.sistema.GestionDatos
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 hdfEstatusID.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                txtNombreEdit.Text = (gvrow.FindControl("nombre") as Label).Text;
-                txtDescripcionEdit.Text = (gvrow.FindControl("descripcion") as Label).Text;
-                ddlEmpresaEdit.SelectedValue = (gvrow.FindControl("id_empresa") as Label).Text;
+                var _Estatus = Getter.Estatus(Convert.ToInt32(hdfEstatusID.Value));
+
+                txtNombreEdit.Text = _Estatus.nombre;
+                txtDescripcionEdit.Text = _Estatus.descripcion;
+                ddlEmpresaEdit.SelectedValue = Convert.ToString(_Estatus.id_empresa);
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
-                phAlerta.Visible = false;
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
@@ -82,8 +84,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
                 hdfEstatusIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
-                Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                Modal.registrarModal("deleteModal", "DeleteModalScript", this);                
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -93,15 +94,18 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdmEmp_DptoSalud())
+            if (ObjUsuario != null)
             {
-                GridView1.Columns[4].Visible = false;
-                GridView1.Columns[5].Visible = false;
-            }
-            if (ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
-            {
-                GridView1.Columns[4].Visible = false;
-                GridView1.Columns[5].Visible = false;
+                if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdmEmp_DptoSalud())
+                {
+                    GridView1.Columns[4].Visible = false;
+                    GridView1.Columns[5].Visible = false;
+                }
+                if (ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+                {
+                    GridView1.Columns[4].Visible = false;
+                    GridView1.Columns[5].Visible = false;
+                }
             }
 
         }

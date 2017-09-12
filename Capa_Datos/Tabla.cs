@@ -323,47 +323,33 @@ namespace Capa_Datos
             GridView1.DataBind();
         }
 
-        public static void Extintores(
-            GridView GridView1,
-            int id_empresa = 0,
-            int id_sucursal = 0,
-            string id_area = "0",
-            string buscar = "")
+        public static void Extintores(GridView GridView1, int id_empresa = 0, int id_sucursal = 0, string id_area = "0", string buscar = "")
         {
-            try
+            GrupoLiEntities contexto = new GrupoLiEntities();
+
+            var query = (
+            from E in contexto.extintor
+            select new
             {
-                using (GrupoLiEntities contexto = new GrupoLiEntities())
-                {
-                    var query = (
-                    from E in contexto.extintor
-                    select new
-                    {
-                        E.id_extintor,
-                        E.serial_extintor,
-                        E.fecha_proxima_recarga,
-                        E.fecha_ultima_recarga,
-                        area = E.area.nombre,
-                        E.area.sucursal.empresa.id_empresa,
-                        E.area.sucursal.id_sucursal,
-                        E.peso,
-                        E.tipo_extintor,
-                        E.presion,
-                        E.id_area,
-                        E.nombre_empresa
-                    }).ToList();
-                    if (id_empresa != 0) { query = query.Where(x => x.id_empresa == id_empresa).ToList(); }
-                    if (id_sucursal != 0) { query = query.Where(x => x.id_sucursal == id_sucursal).ToList(); }
-                    if (id_area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(id_area)).ToList(); }
-                    if (!string.IsNullOrEmpty(buscar)) { query = query.Where(x => x.serial_extintor.ToLower().Contains(buscar.ToLower())).ToList(); }
-                    GridView1.DataSource = query;
-                    GridView1.DataBind();
-                }
-            }
-            catch
-            {
-                GridView1.DataSource = null;
-                GridView1.DataBind();
-            }
+                E.id_extintor,
+                E.serial_extintor,
+                E.fecha_proxima_recarga,
+                E.fecha_ultima_recarga,
+                area = E.area.nombre,
+                E.area.sucursal.empresa.id_empresa,
+                E.area.sucursal.id_sucursal,
+                E.id_area,
+                E.nombre_empresa
+            }).ToList();
+
+            if (id_empresa != 0) { query = query.Where(x => x.id_empresa == id_empresa).ToList(); }
+            if (id_sucursal != 0) { query = query.Where(x => x.id_sucursal == id_sucursal).ToList(); }
+            if (id_area != "0") { query = query.Where(x => x.id_area == Convert.ToInt32(id_area)).ToList(); }
+            if (buscar != string.Empty) { query = query.Where(x => x.serial_extintor.ToLower().Contains(buscar.ToLower())).ToList(); }
+
+            GridView1.DataSource = query;
+            GridView1.DataBind();
+
         }
 
         public static void Empresa(GridView GridView1)

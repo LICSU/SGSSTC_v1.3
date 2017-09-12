@@ -52,7 +52,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-md-offset-1">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" AutoPostBack="true" ID="ddlSucursal"
                             data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal"

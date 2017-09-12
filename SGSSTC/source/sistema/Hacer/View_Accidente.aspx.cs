@@ -26,7 +26,7 @@ namespace SGSSTC.source.sistema.Verificar
 			CargarData();
 		}
 
-        private void CargarData()
+		private void CargarData()
 		{
 			idAccidente = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 			List<at_it_el_pa> ListAccidentes = new List<at_it_el_pa>();
@@ -99,8 +99,8 @@ namespace SGSSTC.source.sistema.Verificar
 				int contadorArchivos = 0;
 				ControlesDinamicos.CrearLiteral("<ul>", pSoportes);
 
-                HyperLink HyperLink1;
-                foreach (var item1 in item.soporte)
+				HyperLink HyperLink1;
+				foreach (var item1 in item.soporte)
 				{
 					contadorArchivos++;
 					ControlesDinamicos.CrearLiteral("<li>", pSoportes);

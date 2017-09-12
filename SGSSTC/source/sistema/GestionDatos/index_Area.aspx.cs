@@ -20,6 +20,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -84,7 +85,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region acciones
         protected void AgregarRegistroModal(object sender, EventArgs e)
         {
-            phAlerta.Visible = false;
+            
             Modal.registrarModal("addModal", "AddModalScript", this);
         }
 
@@ -286,14 +287,14 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
 
-                phAlerta.Visible = false;
+                
             }
             if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 hdfAreaIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
-                phAlerta.Visible = false;
+                
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -303,7 +304,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
             if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdmEmp_DptoSalud())
             {
                 GridView1.Columns[10].Visible = false;

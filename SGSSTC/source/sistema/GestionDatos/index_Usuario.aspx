@@ -53,7 +53,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-md-offset-3">
                         <h4 class="text-center">Sucursal</h4>
 
                         <asp:DropDownList runat="server" AutoPostBack="true" ID="ddlSucursal" data-toggle="tooltip"
@@ -77,11 +77,10 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-
-
                         <asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
-                            AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
-                            OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCreated="GridView1_RowCreated"
+                            AutoGenerateColumns="false" AllowPaging="true" PageSize="10" 
+                            OnRowCommand="GridView1_RowCommand"
+                            OnPageIndexChanging="GridView1_PageIndexChanging" 
                             EmptyDataText="No existen Registros">
                             <RowStyle HorizontalAlign="Center" />
 

@@ -21,7 +21,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             idRiesgo = objUtilidades.descifrarCadena(Request.QueryString["id"]);
             IdSucursal = objUtilidades.descifrarCadena(Request.QueryString["suc"]);

@@ -16,7 +16,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         #region metodos index
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -87,7 +87,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 ddlCcf.SelectedValue = string.Empty + itemTrabajador.id_ccf;
 
                 Listas.Cno(ddlCargo);
-                ddlCargo.SelectedValue = Convert.ToString(itemTrabajador.perfil_cargo.id_cno);
+                //ddlCargo.SelectedValue = Convert.ToString(itemTrabajador.perfil_cargo.id_cno);
 
                 ImgFoto.ImageUrl = itemTrabajador.foto;
                 ImgFoto.Width = 200; ImgFoto.Height = 200;
