@@ -7,8 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
 	<ol class="breadcrumb">
-		<li><a href="#">Fase: Hacer</a></li>
-		<li><a href="../Hacer/index_ActaCopasst.aspx">Actas Copasst</a></li>
+		<li><a href="#">Fase: Planear</a></li>
+		<li><a href="../Planear/index_ActaCopasst.aspx">Actas Copasst</a></li>
 		<li><a href="#">Crear Registro de Votantes</a></li>
 	</ol>
 

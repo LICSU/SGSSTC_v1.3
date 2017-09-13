@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.Hacer
 {
@@ -16,7 +17,8 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
             phEmpresa.Visible = BoolEmpSuc.Item1;
@@ -210,6 +212,9 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 cargarMatriz();
             }
+
+
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txt1);
         }
         protected void GenerarDocumento(object sender, EventArgs e)
         {

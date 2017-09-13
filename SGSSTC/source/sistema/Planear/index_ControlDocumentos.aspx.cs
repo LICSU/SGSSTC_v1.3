@@ -12,7 +12,7 @@ namespace SGSSTC.source.sistema.Hacer
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 		}		
 
 		protected void GenerarDocumento(object sender, EventArgs e)

@@ -1383,27 +1383,27 @@
     <Content Include="source\sistema\GestionDatos\Update_PuestoTrabajo.aspx" />
     <Content Include="source\sistema\GestionDatos\Update_Trabajador.aspx" />
     <Content Include="source\sistema\GestionDatos\View_PuestoTrabajo.aspx" />
-    <Content Include="source\sistema\Hacer\Create_ActaCierre.aspx" />
+    <Content Include="source\sistema\Planear\Create_ActaCierre.aspx" />
     <Content Include="source\sistema\Hacer\create_AnalisisVulnerabilidad.aspx" />
-    <Content Include="source\sistema\Hacer\Create_AperturaElecciones.aspx" />
-    <Content Include="source\sistema\Hacer\Create_ComunicadoElecciones.aspx" />
-    <Content Include="source\sistema\Hacer\Create_ConformacionCopasst.aspx" />
+    <Content Include="source\sistema\Planear\Create_AperturaElecciones.aspx" />
+    <Content Include="source\sistema\Planear\Create_ComunicadoElecciones.aspx" />
+    <Content Include="source\sistema\Planear\Create_ConformacionCopasst.aspx" />
     <Content Include="source\sistema\Hacer\Create_DescripcionSocioDemografica.aspx" />
-    <Content Include="source\sistema\Hacer\Create_DesignacionVigia.aspx" />
+    <Content Include="source\sistema\Planear\Create_DesignacionVigia.aspx" />
     <Content Include="source\sistema\Planear\Create_EncuestaPoliticaSST.aspx" />
     <Content Include="source\sistema\Planear\Create_Encuesta_ObjPoliticaSST.aspx" />
     <Content Include="source\sistema\Hacer\Create_EvaluacionRiesgos.aspx" />
     <Content Include="source\sistema\Hacer\Create_ExamenLaboral.aspx" />
-    <Content Include="source\sistema\Hacer\Create_FormatoVotos.aspx" />
+    <Content Include="source\sistema\Planear\Create_FormatoVotos.aspx" />
     <Content Include="source\sistema\Hacer\Create_IdentificacionPeligro.aspx" />
-    <Content Include="source\sistema\Hacer\Create_InscripcionCandidatos.aspx" />
+    <Content Include="source\sistema\Planear\Create_InscripcionCandidatos.aspx" />
     <Content Include="source\sistema\Hacer\Create_ObligacionNorma.aspx" />
     <Content Include="source\sistema\Hacer\Create_ObligacionRiesgo.aspx" />
     <Content Include="source\sistema\Hacer\create_PlanillaEntregaEpp.aspx" />
-    <Content Include="source\sistema\Hacer\Create_RecursosEconomicos.aspx" />
-    <Content Include="source\sistema\Hacer\Create_RegistroVotantes.aspx" />
-    <Content Include="source\sistema\Hacer\Create_ResultadoVotos.aspx" />
-    <Content Include="source\sistema\Hacer\Create_ReunionCopasst.aspx" />
+    <Content Include="source\sistema\Planear\Create_RecursosEconomicos.aspx" />
+    <Content Include="source\sistema\Planear\Create_RegistroVotantes.aspx" />
+    <Content Include="source\sistema\Planear\Create_ResultadoVotos.aspx" />
+    <Content Include="source\sistema\Planear\Create_ReunionCopasst.aspx" />
     <Content Include="source\sistema\Planear\index_ActaCopasst.aspx" />
     <Content Include="source\sistema\Hacer\index_Alarmas.aspx" />
     <Content Include="source\sistema\Planear\index_AsignacionResponsable.aspx" />
@@ -1861,11 +1861,11 @@
     <Compile Include="source\sistema\GestionDatos\View_PuestoTrabajo.aspx.designer.cs">
       <DependentUpon>View_PuestoTrabajo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ActaCierre.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_ActaCierre.aspx.cs">
       <DependentUpon>Create_ActaCierre.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ActaCierre.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_ActaCierre.aspx.designer.cs">
       <DependentUpon>Create_ActaCierre.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\create_AnalisisVulnerabilidad.aspx.cs">
@@ -1875,25 +1875,25 @@
     <Compile Include="source\sistema\Hacer\create_AnalisisVulnerabilidad.aspx.designer.cs">
       <DependentUpon>create_AnalisisVulnerabilidad.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_AperturaElecciones.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_AperturaElecciones.aspx.cs">
       <DependentUpon>Create_AperturaElecciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_AperturaElecciones.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_AperturaElecciones.aspx.designer.cs">
       <DependentUpon>Create_AperturaElecciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ComunicadoElecciones.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_ComunicadoElecciones.aspx.cs">
       <DependentUpon>Create_ComunicadoElecciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ComunicadoElecciones.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_ComunicadoElecciones.aspx.designer.cs">
       <DependentUpon>Create_ComunicadoElecciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ConformacionCopasst.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_ConformacionCopasst.aspx.cs">
       <DependentUpon>Create_ConformacionCopasst.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ConformacionCopasst.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_ConformacionCopasst.aspx.designer.cs">
       <DependentUpon>Create_ConformacionCopasst.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\Create_DescripcionSocioDemografica.aspx.cs">
@@ -1903,11 +1903,11 @@
     <Compile Include="source\sistema\Hacer\Create_DescripcionSocioDemografica.aspx.designer.cs">
       <DependentUpon>Create_DescripcionSocioDemografica.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_DesignacionVigia.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_DesignacionVigia.aspx.cs">
       <DependentUpon>Create_DesignacionVigia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_DesignacionVigia.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_DesignacionVigia.aspx.designer.cs">
       <DependentUpon>Create_DesignacionVigia.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Planear\Create_EncuestaPoliticaSST.aspx.cs">
@@ -1938,11 +1938,11 @@
     <Compile Include="source\sistema\Hacer\Create_ExamenLaboral.aspx.designer.cs">
       <DependentUpon>Create_ExamenLaboral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_FormatoVotos.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_FormatoVotos.aspx.cs">
       <DependentUpon>Create_FormatoVotos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_FormatoVotos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_FormatoVotos.aspx.designer.cs">
       <DependentUpon>Create_FormatoVotos.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\Create_IdentificacionPeligro.aspx.cs">
@@ -1952,11 +1952,11 @@
     <Compile Include="source\sistema\Hacer\Create_IdentificacionPeligro.aspx.designer.cs">
       <DependentUpon>Create_IdentificacionPeligro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_InscripcionCandidatos.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_InscripcionCandidatos.aspx.cs">
       <DependentUpon>Create_InscripcionCandidatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_InscripcionCandidatos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_InscripcionCandidatos.aspx.designer.cs">
       <DependentUpon>Create_InscripcionCandidatos.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\Create_ObligacionNorma.aspx.cs">
@@ -1980,32 +1980,32 @@
     <Compile Include="source\sistema\Hacer\create_PlanillaEntregaEpp.aspx.designer.cs">
       <DependentUpon>create_PlanillaEntregaEpp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_RecursosEconomicos.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_RecursosEconomicos.aspx.cs">
       <DependentUpon>Create_RecursosEconomicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_RecursosEconomicos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_RecursosEconomicos.aspx.designer.cs">
       <DependentUpon>Create_RecursosEconomicos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_RegistroVotantes.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_RegistroVotantes.aspx.cs">
       <DependentUpon>Create_RegistroVotantes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_RegistroVotantes.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_RegistroVotantes.aspx.designer.cs">
       <DependentUpon>Create_RegistroVotantes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ResultadoVotos.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_ResultadoVotos.aspx.cs">
       <DependentUpon>Create_ResultadoVotos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ResultadoVotos.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_ResultadoVotos.aspx.designer.cs">
       <DependentUpon>Create_ResultadoVotos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ReunionCopasst.aspx.cs">
+    <Compile Include="source\sistema\Planear\Create_ReunionCopasst.aspx.cs">
       <DependentUpon>Create_ReunionCopasst.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Hacer\Create_ReunionCopasst.aspx.designer.cs">
+    <Compile Include="source\sistema\Planear\Create_ReunionCopasst.aspx.designer.cs">
       <DependentUpon>Create_ReunionCopasst.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Planear\index_ActaCopasst.aspx.cs">

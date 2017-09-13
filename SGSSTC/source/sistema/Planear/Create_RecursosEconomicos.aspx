@@ -9,8 +9,8 @@
 	<asp:Panel runat="server" ID="panel1">
 
 		<ol class="breadcrumb">
-			<li><a href="#">Fase: Hacer</a></li>
-			<li><a href="../Hacer/index_RecursosEconomicos.aspx">Recursos Económicos Aprobados</a></li>
+			<li><a href="#">Fase: Planear</a></li>
+			<li><a href="../Planear/index_RecursosEconomicos.aspx">Recursos Económicos Aprobados</a></li>
 			<li><a href="#">Crear Documento</a></li>
 		</ol>
 
@@ -26,24 +26,26 @@
 			</div>
 		</asp:PlaceHolder>
 
+
+		<div class="row">
+
+			<asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
+				<div class="col-md-4 col-md-offset-4">
+					<h4 class="text-center">Sucursal</h4>
+					<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" 
+						title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
+
+					<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+						SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+						Font-Bold="true" ControlToValidate="ddlSucursal" runat="server"
+						ValidationGroup="ValidationAdd" />
+				</div>
+
+			</asp:PlaceHolder>
+		</div>
+		<br />
+
 		<div class="box">
-
-			<div class="row">
-
-				<asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
-					<div class="col-md-4 col-md-offset-4">
-						<h4 class="text-center">Sucursal</h4>
-						<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
-
-						<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-							SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-							Font-Bold="true" ControlToValidate="ddlSucursal" runat="server"
-							ValidationGroup="ValidationAdd" />
-					</div>
-
-				</asp:PlaceHolder>
-			</div>
-			<br />
 
 			<div class="box-body no-padding">
 				<table class="table table-condensed">
@@ -301,6 +303,7 @@
 			</div>
 
 			<br />
+
 			<div class="row text-center">
 
 				<div class="col-md-4">
@@ -321,5 +324,6 @@
 			</div>
 
 		</div>
+
 	</asp:Panel>
 </asp:Content>

@@ -14,11 +14,13 @@ namespace SGSSTC.source.sistema.Hacer
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
 
+        #region acciones index
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -35,13 +37,13 @@ namespace SGSSTC.source.sistema.Hacer
                 LlenarGridView();
             }
         }
-
         private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             Tabla.TipoDocumento(GridView1, IdSucursal, IdEmpresa);
         }
+        #endregion
 
         #region  aciones de editar insertar y eliminar
         protected void Guardar(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (e.CommandName.Equals(ComandosGrid.Editar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                hdfEditID.Value = (GridView1.Rows[RowIndex].FindControl("Num") as Label).Text;
+                hdfEditID.Value = (GridView1.Rows[RowIndex].FindControl("id") as Label).Text;
 
                 List<tipo_documento> ListaTipoDocumento = new List<tipo_documento>();
                 ListaTipoDocumento = Getter.TipoDocumento(Convert.ToInt32(hdfEditID.Value));
@@ -133,7 +135,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                string valor = (GridView1.Rows[RowIndex].FindControl("Num") as Label).Text;
+                string valor = (GridView1.Rows[RowIndex].FindControl("id") as Label).Text;
                 hdfIDDel.Value = valor;
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
@@ -142,6 +144,7 @@ namespace SGSSTC.source.sistema.Hacer
         }
         #endregion
 
+        #region filtros
         protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSucursal.SelectedValue != string.Empty)
@@ -154,6 +157,19 @@ namespace SGSSTC.source.sistema.Hacer
             }
             LlenarGridView();
         }
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["buscar"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["buscar"] = string.Empty;
+            }
+            LlenarGridView();
+        }
+        #endregion
 
     }
 }

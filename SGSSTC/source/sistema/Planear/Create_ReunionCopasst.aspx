@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="Create_ReunionCopasst.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.Create_ReunionCopasst" %>
+
 <%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
@@ -8,8 +9,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
 	<ol class="breadcrumb">
-		<li><a href="#">Fase: Hacer</a></li>
-		<li><a href="../Hacer/index_ActaCopasst.aspx">Actas Copasst</a></li>
+		<li><a href="#">Fase: Planear</a></li>
+		<li><a href="../Planear/index_ActaCopasst.aspx">Actas Copasst</a></li>
 		<li><a href="#">Crear Reunión Copasst</a></li>
 	</ol>
 
@@ -17,49 +18,50 @@
 		<h1 class="text-center">Formato de Reunión del Comité Paritario de Seguridad y Salud en el Trabajo</h1>
 	</div>
 
-    <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
-        <div id="divAlerta" runat="server">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
-        </div>
-    </asp:PlaceHolder>
+	<asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+		<div id="divAlerta" runat="server">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+		</div>
+	</asp:PlaceHolder>
+
+	<div class="row">
+
+		<asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
+			<div class="col-md-4 col-md-offset-4">
+				<h4 class="text-center">Sucursal</h4>
+				<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
+
+				<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+					SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+					Font-Bold="true" ControlToValidate="ddlSucursal" runat="server"
+					ValidationGroup="ValidationAdd" />
+			</div>
+		</asp:PlaceHolder>
+	</div>
+
+	<br />
+
+	<div class="row">
+		<div class="col-md-2 col-md-offset-3">
+			N° de Acta
+							<asp:TextBox ID="txtActa" type="number" step="0.01" runat="server" class="form-control"></asp:TextBox>
+		</div>
+		<div class="col-md-2">
+			Hora de Inicio
+							<asp:TextBox ID="txtHoraInicio" type="time" runat="server" class="form-control"></asp:TextBox>
+		</div>
+		<div class="col-md-2">
+			Hora de Finalización
+							<asp:TextBox ID="txtHoraFin" type="time" runat="server" class="form-control"></asp:TextBox>
+		</div>
+	</div>
+
+	<br />
 
 	<div class="row text-center">
 		<div class="box">
-
-			<div class="row">
-
-				<asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
-					<div class="col-md-4 col-md-offset-4">
-						<h4 class="text-center">Sucursal</h4>
-						<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
-
-						<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-							SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-							Font-Bold="true" ControlToValidate="ddlSucursal" runat="server"
-							ValidationGroup="ValidationAdd" />
-					</div>
-				</asp:PlaceHolder>
-			</div>
-			<br />
-
-			<div class="row">
-				<div class="col-md-2 col-md-offset-3">
-					N° de Acta
-							<asp:TextBox ID="txtActa" type="number" step="0.01" runat="server" class="form-control"></asp:TextBox>
-				</div>
-				<div class="col-md-2">
-					Hora de Inicio
-							<asp:TextBox ID="txtHoraInicio" type="time" runat="server" class="form-control"></asp:TextBox>
-				</div>
-				<div class="col-md-2">
-					Hora de Finalización
-							<asp:TextBox ID="txtHoraFin" type="time" runat="server" class="form-control"></asp:TextBox>
-				</div>
-			</div>
-			<br />
-			<br />
-
+			
 			<div class="panel-group" id="accordion">
 
 				<div class="panel panel-default">

@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
                     <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                        runat="server" class="form-control" PlaceHolder="Ingrese el registro a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -67,7 +67,7 @@
                             <Columns>
                                 <asp:TemplateField Visible="false">
                                     <ItemTemplate>
-                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_rec_eco") %>' />
+                                        <asp:Label ID="id" runat="server" Text='<%# Eval("id_documento") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
