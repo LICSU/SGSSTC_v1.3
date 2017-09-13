@@ -103,7 +103,7 @@
 					</td>
 					<td class="col-md-6">
 						<asp:TextBox ID="txtAnho1" placeholder="Año Inicio" min="2000" max="2100" runat="server" ClientIDMode="Static"
-							CssClass="form-control" type="number" Width="100"></asp:TextBox>
+							CssClass="form-control" type="number" step="0.01" Width="100"></asp:TextBox>
 						<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
 							Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="txtAnho1"
 							runat="server" ValidationGroup="ValidationAdd" />
@@ -115,7 +115,7 @@
 					</td>
 					<td class="col-md-4">
 						<asp:TextBox ID="txtAnho2" placeholder="Año Fin" min="2000" max="2100" runat="server" ClientIDMode="Static"
-							CssClass="form-control" type="number" Width="100"></asp:TextBox>
+							CssClass="form-control" type="number" step="0.01" Width="100"></asp:TextBox>
 						<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
 							Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="txtAnho2"
 							runat="server" ValidationGroup="ValidationAdd" />
@@ -137,7 +137,7 @@
 					<td class="col-md-11">
 						<h3>
 							<asp:TextBox ID="txtNumTrab" runat="server" ClientIDMode="Static" CssClass="form-control"
-								type="number" min="0" placeholder="(N° de trabajadores según resolución 2013 de 1986)"></asp:TextBox>
+								type="number" step="0.01" min="0" placeholder="(N° de trabajadores según resolución 2013 de 1986)"></asp:TextBox>
 							<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
 								Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true" ControlToValidate="txtNumTrab"
 								runat="server" ValidationGroup="ValidationAdd" />

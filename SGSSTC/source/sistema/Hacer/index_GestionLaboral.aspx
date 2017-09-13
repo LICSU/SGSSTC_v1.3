@@ -648,7 +648,7 @@
                                         <label>Cantidad de Horas:</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtHoras" type="number" runat="server" ClientIDMode="Static"
+                                        <asp:TextBox ID="txtHoras" type="number" step="0.01" runat="server" ClientIDMode="Static"
                                             CssClass="form-control"></asp:TextBox>
 
                                         <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
@@ -818,7 +818,7 @@
                                 <div class="row">
                                     <label class="col-md-6 control-label">Cantidad de Horas: </label>
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtHorasEditCapacitacion" type="number" runat="server"
+                                        <asp:TextBox ID="txtHorasEditCapacitacion" type="number" step="0.01" runat="server"
                                             ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
 
                                         <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"

@@ -83,11 +83,11 @@
 			<div class="row">
 				<div class="col-md-3">
 					<h4>Antigüedad en el puesto de trabajo:</h4>
-					<asp:TextBox ID="txtAntiguedad" type="number" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+					<asp:TextBox ID="txtAntiguedad" type="number" step="0.01" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Cargo:</h4>
-					<asp:TextBox ID="txtCargo" type="number" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+					<asp:TextBox ID="txtCargo" type="number" step="0.01" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Supervisor inmediato:</h4>

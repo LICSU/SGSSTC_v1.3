@@ -110,7 +110,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<h4>Antigüedad en el puesto:</h4>
-					<asp:TextBox ID="txtAntiguedad" type="number" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtAntiguedad" type="number" step="0.01" runat="server" CssClass="form-control"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Cargo:</h4>

@@ -160,7 +160,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de trabajadores que conocen la Política SST
-                                                                <asp:TextBox ID="Textbox1" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox1" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox1_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -200,7 +200,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de Trabajadores que conocen los Objetivos y Metas de seguridad informados por escrito
-                                                                <asp:TextBox ID="Textbox2" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox2" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox2_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -300,14 +300,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° total de Jefes con delegación de responsabilidad en SST
-                                                                <asp:TextBox ID="Textbox3" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox3" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox3_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Total de Jefes de la estructura
-                                                                <asp:TextBox ID="Textbox4" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox4" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox3_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -431,7 +431,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Reuniones ordinarias realizadas del Copasst
-                                                                <asp:TextBox ID="Textbox5" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox5" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox5_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -465,7 +465,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Resultado
-                                                                <asp:TextBox ID="resultado12" runat="server" class="form-control" type="number" placeholder="0"></asp:TextBox>
+                                                                <asp:TextBox ID="resultado12" runat="server" class="form-control" type="number" step="0.01" placeholder="0"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                 </tr>
@@ -492,14 +492,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Asignación de recursos aprobados para las necesidades contempladas por el SGSST
-                                                                <asp:TextBox ID="Textbox6" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox6" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox6_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Recursos Necesarios para cubrir el total de necesidades del SGSST
-                                                                <asp:TextBox ID="Textbox7" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox7" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox6_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -590,7 +590,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° de sedes con plan de emergencia
-                                                                <asp:TextBox ID="Textbox8" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox8" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox8_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -630,7 +630,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° de Áreas con plan de capacitación anual en SST
-                                                                <asp:TextBox ID="Textbox9" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox9" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox9_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -705,14 +705,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Criterios contemplados e implementados en el Formato de Evaluación Inicial
-                                                                <asp:TextBox ID="Textbox10" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox10" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox10_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de Criterios mínimos establecidos para la evaluación inicial en el decreto 1072<br />
-                                                            <asp:TextBox ID="Textbox11" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox11" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox10_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -746,14 +746,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° de Actividades Ejecutadas del Plan de Trabajo
-                                                                <asp:TextBox ID="Textbox12" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox12" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox12_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Actividades programadas en el Plan de Trabajo<br />
-                                                            <asp:TextBox ID="Textbox13" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox13" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox12_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -787,14 +787,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° Total De Riesgos Intervenidos en el Período
-                                                                <asp:TextBox ID="Textbox14" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox14" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox14_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Total De Riesgos Identificados en el Período<br />
-                                                            <asp:TextBox ID="Textbox15" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox15" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox14_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -828,14 +828,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° Total de Capacitaciones Ejecutadas en el período
-                                                                <asp:TextBox ID="Textbox16" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox16" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox16_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Capacitaciones programadas en el Plan de Capacitación para ese período<br />
-                                                            <asp:TextBox ID="Textbox17" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox17" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox16_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -869,14 +869,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Capacitaciones ejecutadas de autocuidado
-                                                                <asp:TextBox ID="Textbox18" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox18" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox18_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Capacitaciones programadas en autocuidado<br />
-                                                            <asp:TextBox ID="Textbox19" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox19" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox18_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -910,14 +910,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Acciones de Mejora implementadas en base a los Siniestros
-                                                                <asp:TextBox ID="Textbox20" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox20" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox20_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Acciones de Mejora Identificadas en dicho Siniestro<br />
-                                                            <asp:TextBox ID="Textbox21" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox21" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox20_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -951,14 +951,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Inspecciones realizadas por área
-                                                                <asp:TextBox ID="Textbox22" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox22" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox22_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Total de tipo de inspecciones del área<br />
-                                                            <asp:TextBox ID="Textbox23" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox23" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox22_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -992,14 +992,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° De Actividades Desarrolladas En La Intervención De Los Riesgos Prioritarios
-                                                                <asp:TextBox ID="Textbox24" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox24" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox24_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Actividades Propuestas Para La Intervención De Los Riesgos Prioritarios<br />
-                                                            <asp:TextBox ID="Textbox25" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox25" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox24_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1033,14 +1033,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° De Accidentes e Incidentes investigados
-                                                                <asp:TextBox ID="Textbox26" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox26" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox26_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nro. De Accidentes e Incidentes Reportados<br />
-                                                            <asp:TextBox ID="Textbox27" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox27" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox26_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1074,7 +1074,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Casos Musculo Esqueléticos reportados en la Vigilancia Epidemiológica
-                                                                <asp:TextBox ID="Textbox28" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox28" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox28_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1082,7 +1082,7 @@
                                                         <div class="external-event bg-green">
                                                             N° Investigación realizada al Puesto de trabajo respecto a los casos
                                                             <br />
-                                                            <asp:TextBox ID="Textbox29" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox29" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox28_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1116,14 +1116,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° De Simulacros Realizados
-                                                                <asp:TextBox ID="Textbox30" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox30" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox30_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nro. De Simulacros Programados<br />
-                                                            <asp:TextBox ID="Textbox31" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox31" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox30_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1193,14 +1193,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de accidentes de trabajo que se presentaron en el período "Z"
-                                                                <asp:TextBox ID="Textbox32" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox32" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox32_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Total de horas hombre trabajadas en el período "Z"<br />
-                                                            <asp:TextBox ID="Textbox33" runat="server" class="form-control" type="number" min="0"
+                                                            <asp:TextBox ID="Textbox33" runat="server" class="form-control" type="number" step="0.01" min="0"
                                                                 AutoPostBack="true" OnTextChanged="Textbox32_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1234,14 +1234,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de días de trabajo perdidos por accidente de trabajo en el período “Z” + número de días cargados en el período “Z”
-                                                                <asp:TextBox ID="Textbox34" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox34" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox34_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Horas hombre trabajadas en el período “Z”)<br />
-                                                            <asp:TextBox ID="Textbox35" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox35" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox34_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1275,14 +1275,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de accidentes de trabajo mortales que se presentaron en el período “Z”  
-                                                                <asp:TextBox ID="Textbox36" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox36" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox36_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Total de accidentes de trabajo que se presentaron en el período “Z”<br />
-                                                            <asp:TextBox ID="Textbox37" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox37" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox36_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1316,7 +1316,7 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° de Accidente de Trabajo Ocurridos en el Período  
-                                                                <asp:TextBox ID="Textbox38" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox38" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox38_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1356,14 +1356,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             N° Total de Horas de Ausentismo Justificado Medicamente en el Período
-                                                                <asp:TextBox ID="Textbox39" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox39" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox39_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Horas Hombre en el Período<br />
-                                                            <asp:TextBox ID="Textbox40" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox40" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox39_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1397,14 +1397,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Riesgos críticos gestionados
-                                                                <asp:TextBox ID="Textbox41" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox41" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox41_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Riesgos críticos identificados<br />
-                                                            <asp:TextBox ID="Textbox42" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox42" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox41_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1438,14 +1438,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de EPP entregados
-                                                                <asp:TextBox ID="Textbox43" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox43" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox43_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de EPP requeridos<br />
-                                                            <asp:TextBox ID="Textbox44" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox44" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox43_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1479,14 +1479,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Trabajadores que usan EPP en el período Laboral
-                                                                <asp:TextBox ID="Textbox45" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox45" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox45_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de EPP entregados<br />
-                                                            <asp:TextBox ID="Textbox46" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox46" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox45_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1520,14 +1520,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Deficiencias del SG-SST identificadas efectivamente gestionadas
-                                                                <asp:TextBox ID="Textbox47" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox47" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox47_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Deficiencias del SG-SST identificadas por los trabajadores<br />
-                                                            <asp:TextBox ID="Textbox48" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox48" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox47_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1561,14 +1561,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de Acciones correctivas implementadas
-                                                                <asp:TextBox ID="Textbox49" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox49" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox49_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de inconformidades encontradas<br />
-                                                            <asp:TextBox ID="Textbox50" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox50" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox49_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1602,14 +1602,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de condiciones mejoradas
-                                                                <asp:TextBox ID="Textbox51" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox51" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox51_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Nº de no conformidades encontradas<br />
-                                                            <asp:TextBox ID="Textbox52" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox52" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox51_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1643,14 +1643,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Requisitos cumplidos del decreto 1072 
-                                                                <asp:TextBox ID="Textbox53" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox53" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox53_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Totalidad de requisitos establecidos en el Decreto 1072<br />
-                                                            <asp:TextBox ID="Textbox54" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox54" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox53_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
@@ -1684,14 +1684,14 @@
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de días de ausencia por incapacidad laboral y común 
-                                                                <asp:TextBox ID="Textbox55" runat="server" class="form-control" type="number" min="0" max="100"
+                                                                <asp:TextBox ID="Textbox55" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                     AutoPostBack="true" OnTextChanged="Textbox55_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>
                                                     <th>
                                                         <div class="external-event bg-green">
                                                             Número de días de trabajo programados<br />
-                                                            <asp:TextBox ID="Textbox56" runat="server" class="form-control" type="number" min="0" max="100"
+                                                            <asp:TextBox ID="Textbox56" runat="server" class="form-control" type="number" step="0.01" min="0" max="100"
                                                                 AutoPostBack="true" OnTextChanged="Textbox55_TextChanged"></asp:TextBox>
                                                         </div>
                                                     </th>

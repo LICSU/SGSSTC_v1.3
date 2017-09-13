@@ -74,7 +74,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number1" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -99,7 +99,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number2" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -125,7 +125,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number3" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -153,7 +153,7 @@
                                                 <input id="Number4" maxlength="2" min="1" max="99" class="form-control"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %"
-                                                    placeholder="%" type="number" runat="server">
+                                                    placeholder="%" type="number" step="0.01" runat="server">
                                             </div>
 
                                             <div class="col-md-4">
@@ -180,7 +180,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number5" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -209,7 +209,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number6" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -236,7 +236,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number7" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -264,7 +264,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number8" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -291,7 +291,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number9" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -321,7 +321,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number10" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -348,7 +348,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number11" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -381,7 +381,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number12" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -411,7 +411,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number13" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>
@@ -439,7 +439,7 @@
 
                                             <div class="col-md-4">
                                                 <input id="Number14" maxlength="2" min="1" max="99" class="form-control"
-                                                    placeholder="%" type="number" runat="server"
+                                                    placeholder="%" type="number" step="0.01" runat="server"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="Ingrese el porcentaje de implementación (1 a 99) %">
                                             </div>

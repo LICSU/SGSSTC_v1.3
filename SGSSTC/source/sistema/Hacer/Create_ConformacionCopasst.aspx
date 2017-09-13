@@ -141,7 +141,7 @@
 					</td>
 					<td class="col-md-4">
 						<asp:TextBox ID="Textbox6" runat="server" ClientIDMode="Static" CssClass="form-control"
-							type="number" min="0"></asp:TextBox>
+							type="number" step="0.01" min="0"></asp:TextBox>
 
 						<asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
 							Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"

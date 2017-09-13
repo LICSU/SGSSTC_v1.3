@@ -213,7 +213,7 @@
                                 <div class="col-md-6">
                                     <h4>Año: </h4>
 
-                                    <asp:TextBox ID="txtYearAdd" runat="server" Text="2000" type="number" min="2000" max="2100"
+                                    <asp:TextBox ID="txtYearAdd" runat="server" Text="2000" type="number" step="0.01" min="2000" max="2100"
                                         ClientIDMode="Static" CssClass="form-control"
                                         data-toggle="tooltip" data-placement="bottom"
                                         title="Seleccione el año en que fue realizada el documento de Auto-Evaluación"></asp:TextBox>

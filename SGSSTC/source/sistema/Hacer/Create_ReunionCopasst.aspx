@@ -46,7 +46,7 @@
 			<div class="row">
 				<div class="col-md-2 col-md-offset-3">
 					N° de Acta
-							<asp:TextBox ID="txtActa" type="number" runat="server" class="form-control"></asp:TextBox>
+							<asp:TextBox ID="txtActa" type="number" step="0.01" runat="server" class="form-control"></asp:TextBox>
 				</div>
 				<div class="col-md-2">
 					Hora de Inicio

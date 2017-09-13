@@ -280,7 +280,7 @@
                 <h3 class="text-center">N° Personal Expuesto</h3>
                 <div class="col-md-4 col-md-offset-2">
                     <h4>Trabajadores</h4>
-                    <asp:TextBox ID="txtPlanta" type="number" CssClass="form-control" runat="server" AutoPostBack="true"
+                    <asp:TextBox ID="txtPlanta" type="number" step="0.01" CssClass="form-control" runat="server" AutoPostBack="true"
                         OnTextChanged="txtPersonalExpuesto_TextChanged"
                         data-toggle="tooltip" data-placement="bottom"
                         title="Ingrese el N° de trabajdores expuestos para este Riesgo"></asp:TextBox>
@@ -291,7 +291,7 @@
                 </div>
                 <div class="col-md-4">
                     <h4>Contratistas</h4>
-                    <asp:TextBox ID="txtContratistas" type="number" CssClass="form-control" runat="server" AutoPostBack="true"
+                    <asp:TextBox ID="txtContratistas" type="number" step="0.01" CssClass="form-control" runat="server" AutoPostBack="true"
                         OnTextChanged="txtPersonalExpuesto_TextChanged"
                         data-toggle="tooltip" data-placement="bottom"
                         title="Ingrese el N° de contratistas expuestos para este Riesgo"></asp:TextBox>
@@ -302,7 +302,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     <h4>Visitantes</h4>
-                    <asp:TextBox ID="txtVisitantes" type="number" CssClass="form-control" runat="server" AutoPostBack="true"
+                    <asp:TextBox ID="txtVisitantes" type="number" step="0.01" CssClass="form-control" runat="server" AutoPostBack="true"
                         OnTextChanged="txtPersonalExpuesto_TextChanged"
                         data-toggle="tooltip" data-placement="bottom"
                         title="Ingrese el N° de visitantes expuestos para este Riesgo"></asp:TextBox>

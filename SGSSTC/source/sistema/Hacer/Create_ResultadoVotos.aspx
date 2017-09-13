@@ -63,7 +63,7 @@
 								<asp:TextBox CssClass="form-control" runat="server" ID="Textbox1" placeholder="Candidato 1"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox CssClass="form-control" runat="server" ID="Textbox2" type="number" min="0"></asp:TextBox>
+								<asp:TextBox CssClass="form-control" runat="server" ID="Textbox2" type="number" step="0.01" min="0"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -71,7 +71,7 @@
 								<asp:TextBox CssClass="form-control" runat="server" ID="Textbox3" placeholder="Candidato 2"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox CssClass="form-control" runat="server" type="number" min="0" ID="Textbox4"></asp:TextBox>
+								<asp:TextBox CssClass="form-control" runat="server" type="number" step="0.01" min="0" ID="Textbox4"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -79,7 +79,7 @@
 								<asp:TextBox CssClass="form-control" runat="server" ID="Textbox5" placeholder="Candidato 3"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox CssClass="form-control" runat="server" type="number" min="0" ID="Textbox6"></asp:TextBox>
+								<asp:TextBox CssClass="form-control" runat="server" type="number" step="0.01" min="0" ID="Textbox6"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -87,7 +87,7 @@
 								<asp:TextBox CssClass="form-control" runat="server" ID="Textbox7" placeholder="Candidato 4"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox CssClass="form-control" runat="server" type="number" min="0" ID="Textbox8"></asp:TextBox>
+								<asp:TextBox CssClass="form-control" runat="server" type="number" step="0.01" min="0" ID="Textbox8"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -95,7 +95,7 @@
 								<h4>VOTOS EN BLANCO:</h4>
 							</td>
 							<td>
-								<asp:TextBox CssClass="form-control" runat="server" type="number" min="0" ID="Textbox9"></asp:TextBox>
+								<asp:TextBox CssClass="form-control" runat="server" type="number" step="0.01" min="0" ID="Textbox9"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -103,7 +103,7 @@
 								<h4>VOTOS ANULADOS:</h4>
 							</td>
 							<td>
-								<asp:TextBox CssClass="form-control" runat="server" type="number" min="0" ID="Textbox10"></asp:TextBox>
+								<asp:TextBox CssClass="form-control" runat="server" type="number" step="0.01" min="0" ID="Textbox10"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -111,7 +111,7 @@
 								<h4>RESULTADOS DE LOS VOTOS:</h4>
 							</td>
 							<td>
-								<asp:TextBox CssClass="form-control" runat="server" type="number" min="0" ID="Textbox61"></asp:TextBox>
+								<asp:TextBox CssClass="form-control" runat="server" type="number" step="0.01" min="0" ID="Textbox61"></asp:TextBox>
 							</td>
 						</tr>
 

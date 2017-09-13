@@ -72,16 +72,16 @@
 								<asp:TextBox ID="Textbox2" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox3" runat="server" type="number" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox3" runat="server" type="number" step="0.01" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox4" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox5" runat="server" type="number" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox5" runat="server" type="number" step="0.01" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox6" runat="server" type="number" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox6" runat="server" type="number" step="0.01" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -93,16 +93,16 @@
 								<asp:TextBox ID="Textbox8" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox9" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox9" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox10" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox11" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox11" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox12" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox12" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -114,16 +114,16 @@
 								<asp:TextBox ID="Textbox14" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox15" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox15" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox16" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox17" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox17" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox18" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox18" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -135,16 +135,16 @@
 								<asp:TextBox ID="Textbox20" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox21" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox21" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox22" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox23" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox23" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox24" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox24" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -156,16 +156,16 @@
 								<asp:TextBox ID="Textbox26" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox27" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox27" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox28" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox29" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox29" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox30" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox30" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -177,16 +177,16 @@
 								<asp:TextBox ID="Textbox32" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox33" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox33" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox34" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox35" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox35" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox36" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox36" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -198,16 +198,16 @@
 								<asp:TextBox ID="Textbox38" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox39" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox39" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox40" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox41" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox41" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox42" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox42" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -219,16 +219,16 @@
 								<asp:TextBox ID="Textbox44" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox45" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox45" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox46" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox47" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox47" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox48" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox48" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -240,16 +240,16 @@
 								<asp:TextBox ID="Textbox50" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox51" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox51" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox52" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox53" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox53" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox54" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox54" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 						<tr>
@@ -261,16 +261,16 @@
 								<asp:TextBox ID="Textbox56" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox57" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox57" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
 								<asp:TextBox ID="Textbox58" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox59" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox59" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 							<td>
-								<asp:TextBox ID="Textbox60" type="number" runat="server" class="col-md-12"></asp:TextBox>
+								<asp:TextBox ID="Textbox60" type="number" step="0.01" runat="server" class="col-md-12"></asp:TextBox>
 							</td>
 						</tr>
 

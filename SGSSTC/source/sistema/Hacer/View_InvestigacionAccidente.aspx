@@ -84,11 +84,11 @@
 			<div class="row">
 				<div class="col-md-3">
 					<h4>Antigüedad en el puesto de trabajo:</h4>
-					<asp:TextBox ID="txtAntiguedad" type="number" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+					<asp:TextBox ID="txtAntiguedad" type="number" step="0.01" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Cargo:</h4>
-					<asp:TextBox ID="txtCargo" type="number" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+					<asp:TextBox ID="txtCargo" type="number" step="0.01" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Supervisor inmediato:</h4>
@@ -140,7 +140,7 @@
 				</div>
 				<div class="col-md-4">
 					<h4>No. Días:</h4>
-					<asp:TextBox ID="txtNumDias" type="number" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+					<asp:TextBox ID="txtNumDias" type="number" step="0.01" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
 				</div>
 				<div class="col-md-4">
 					<h4>Fecha de reintegro:</h4>
