@@ -17,7 +17,8 @@ namespace SGSSTC.source.sistema.Hacer
 		{
 			Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+			phAlerta.Visible = false;
 
 			BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -105,7 +106,7 @@ namespace SGSSTC.source.sistema.Hacer
 
 			ObjUsuario.Error = CRUD.Add_Fila(nuevoEvaRiesgo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtControlFuente);
+			Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtResponsableSGSST);
 
 		}
 		

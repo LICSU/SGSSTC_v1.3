@@ -13,7 +13,8 @@ namespace SGSSTC.source.sistema.Hacer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -33,7 +34,6 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
-
         private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
@@ -43,21 +43,6 @@ namespace SGSSTC.source.sistema.Hacer
             else
             {
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
-            }
-        }
-
-        protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlEmpresa.SelectedValue != string.Empty)
-            {
-                Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
-            }
-        }
-        protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlSucursal.SelectedValue != string.Empty)
-            {
-                cargarPlan();
             }
         }
         private void cargarPlan()
@@ -79,6 +64,7 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
+
         protected void GenerarDocumento(object sender, EventArgs e)
         {
             Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursal);
@@ -107,6 +93,23 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 cargarPlan();
             }
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtIdentificacionRiesgos);
         }
+
+        protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlEmpresa.SelectedValue != string.Empty)
+            {
+                Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
+            }
+        }
+        protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlSucursal.SelectedValue != string.Empty)
+            {
+                cargarPlan();
+            }
+        }
+
     }
 }

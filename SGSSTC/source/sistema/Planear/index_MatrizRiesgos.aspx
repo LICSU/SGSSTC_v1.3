@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_MatrizRiesgos.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_MatrizRiesgos" %>
+
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
@@ -6,6 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <asp:UpdatePanel ID="updatePanelPrinicpal" runat="server">
+
         <ContentTemplate>
 
             <ol class="breadcrumb">
@@ -16,18 +18,11 @@
             <div class="page-header">
                 <h1 class="text-center">Matriz de Riesgos</h1>
             </div>
-            
-            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
-                <div id="divAlerta" runat="server">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
-                </div>
-            </asp:PlaceHolder>
 
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
                     <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                        runat="server" class="form-control" PlaceHolder="Ingrese el factor de riesgo a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -51,7 +46,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-md-offset-3">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" class="form-control" AutoPostBack="true"
                             data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal"
@@ -91,8 +86,6 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
-
                         <asp:GridView ID="GridView1" class="table table-bordered table-hover dataTable" runat="server"
                             AutoGenerateColumns="false" AllowPaging="true" PageSize="10"
                             OnRowCommand="GridView1_RowCommand" OnPageIndexChanging="GridView1_PageIndexChanging"
@@ -128,6 +121,7 @@
                                         <asp:HiddenField runat="server" ID="id_factor_riesgo" Value='<%# Eval("id_factor_riesgo") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
+
                                 <asp:TemplateField HeaderText="Medidas Existentes" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
                                         <asp:Label ID="Medidas" runat="server" Text='<%# Eval("Medidas") %>' />
@@ -146,11 +140,13 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:ButtonField HeaderText="Asignar Evaluación" HeaderStyle-CssClass="text-center" CommandName="asignar" ButtonType="Image" ImageUrl="~\ico\agregar.png">
+                                <asp:ButtonField HeaderText="Asignar Evaluación" HeaderStyle-CssClass="text-center" 
+                                    CommandName="asignar" ButtonType="Image" ImageUrl="~\ico\agregar.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
-                                <asp:ButtonField HeaderText="Medidas a Cumplir" HeaderStyle-CssClass="text-center" CommandName="seguimiento" ButtonType="Image" ImageUrl="~\ico\seguimiento.png">
+                                <asp:ButtonField HeaderText="Medidas a Cumplir" HeaderStyle-CssClass="text-center" 
+                                    CommandName="seguimiento" ButtonType="Image" ImageUrl="~\ico\seguimiento.png">
                                     <ControlStyle></ControlStyle>
                                 </asp:ButtonField>
 
@@ -167,11 +163,8 @@
             </div>
             <br />
 
-            </div>
-
         </ContentTemplate>
+
     </asp:UpdatePanel>
-
-
 
 </asp:Content>

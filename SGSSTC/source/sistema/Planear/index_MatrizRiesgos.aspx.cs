@@ -12,7 +12,6 @@ namespace SGSSTC.source.sistema.Hacer
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
         private string estatus = "0";
-        private int IdSucursal;
         private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
@@ -20,7 +19,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -96,31 +95,32 @@ namespace SGSSTC.source.sistema.Hacer
                 string id_ide_puesto = (gvrow.FindControl("id_ide_puesto") as Label).Text;
 
                 string idCifrado = objUtilidades.cifrarCadena(id_ide_puesto);
-                Response.Redirect(Paginas.Create_EvaluacionRiesgos.Value + "?id=" + idCifrado);
+                Response.Redirect("../Hacer/"+Paginas.Create_EvaluacionRiesgos.Value + "?id=" + idCifrado);
             }
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
-
-            if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
-            {
-                //GridView1.Columns[6].Visible = false;
-            }
         }
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 string Evaluacion = Convert.ToString(DataBinder.Eval(e.Row.DataItem, "Evaluacion"));
+                string Medidas = Convert.ToString(DataBinder.Eval(e.Row.DataItem, "Medidas"));
+
 
                 if (Evaluacion == "Sin Evaluación")
                 {
-                    e.Row.Cells[9].Controls.Clear();
+                    //e.Row.Cells[7].Controls.Clear();
                 }
                 else if (Evaluacion == "Con Evaluación")
                 {
-                    e.Row.Cells[8].Controls.Clear();
+                    //e.Row.Cells[7].Controls.Clear();
+                }
+
+                if (Medidas == "Sin Asignar")
+                {
+                    e.Row.Cells[8].Text = "Sin Asignar";
                 }
             }
         }
@@ -171,6 +171,18 @@ namespace SGSSTC.source.sistema.Hacer
             else
             {
                 ViewState["tipoRiesgo"] = string.Empty;
+            }
+            LlenarGridView();
+        }
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["sWhere"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["sWhere"] = string.Empty;
             }
             LlenarGridView();
         }

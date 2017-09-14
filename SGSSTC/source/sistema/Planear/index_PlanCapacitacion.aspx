@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_PlanCapacitacion.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_PlanCapacitacion" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -26,19 +25,26 @@
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
                     <div class="col-md-3">
                         <h4 class="text-center">Empresa</h4>
-                        <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom"
+                            title="Seleccione una Empresa" class="form-control" AutoPostBack="true"
+                            OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged">
+                        </asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
+
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-3">
+                    <div class="col-md-4 col-md-offset-4">
                         <h4 class="text-center">Sucursal</h4>
-                        <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom"
+                            title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
+                            OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+                        </asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
             </div>
 
             <asp:PlaceHolder runat="server" ID="phInformacion" Visible="False">
-                <div class="row table-responsive">
+                <div class="row table-responsive" style="width:2000px;overflow: auto;">
                     <div class="col-md-12">
                         <asp:Panel runat="server" ID="pnDatos">
                             <div class="panel-group" id="accordion">
@@ -4932,11 +4938,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Fin de Panel Padre-->
                             </div>
                         </asp:Panel>
                     </div>
                 </div>
+
                 <!--  Fin de Informacion -->
                 <div class="row text-center">
 
