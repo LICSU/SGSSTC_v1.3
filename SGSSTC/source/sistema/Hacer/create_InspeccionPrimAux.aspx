@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="create_InspeccionPrimAux.aspx.cs" Inherits="SGSSTC.source.sistema.EvaluacionInicial.create_InspeccionPrimAux" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"   Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
@@ -9,7 +9,6 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
-
 
     <ol class="breadcrumb">
         <li><a href="#">Fase: Hacer</a></li>
@@ -41,7 +40,7 @@
                     </div>
                 </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-md-offset-2">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                     </div>
@@ -77,11 +76,14 @@
                                 </asp:TableHeaderRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GASAS LIMPIAS PAQUETE" ID="lblAIns1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GASAS LIMPIAS PAQUETE" ID="lblAIns1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 20 Unidades" ID="lblAUni1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 20 Unidades" ID="lblAUni1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi1"></asp:TextBox>
                                     </asp:TableCell>
@@ -100,11 +102,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ESPARADRAPO DE TELA ROLLO de 4" ID="lblAIns2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ESPARADRAPO DE TELA ROLLO de 4" ID="lblAIns2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi2"></asp:TextBox>
                                     </asp:TableCell>
@@ -123,11 +128,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="BAJALENGUAS" ID="lblAIns3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="BAJALENGUAS" ID="lblAIns3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 20 Unidades" ID="lblAUni3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 20 Unidades" ID="lblAUni3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi3"></asp:TextBox>
                                     </asp:TableCell>
@@ -146,11 +154,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GUANTES DE LATEX PARA EXAMEN" ID="lblAIns4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GUANTES DE LATEX PARA EXAMEN" ID="lblAIns4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Caja por 100" ID="lblAUni4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Caja por 100" ID="lblAUni4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi4"></asp:TextBox>
                                     </asp:TableCell>
@@ -169,11 +180,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 2 X 5 YARDAS" ID="lblAIns5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 2 X 5 YARDAS" ID="lblAIns5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi5"></asp:TextBox>
                                     </asp:TableCell>
@@ -192,11 +206,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 3 X 5 YARDAS" ID="lblAIns6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 3 X 5 YARDAS" ID="lblAIns6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi6"></asp:TextBox>
                                     </asp:TableCell>
@@ -215,11 +232,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 5 X 5 YARDAS" ID="lblAIns7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 5 X 5 YARDAS" ID="lblAIns7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi7"></asp:TextBox>
                                     </asp:TableCell>
@@ -238,11 +258,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 3 X 5 YARDAS" ID="lblAIns8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 3 X 5 YARDAS" ID="lblAIns8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi8"></asp:TextBox>
                                     </asp:TableCell>
@@ -261,11 +284,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 3 X 5 YARDAS" ID="lblAIns9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 3 X 5 YARDAS" ID="lblAIns9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 20 Unidades" ID="lblAUni9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 20 Unidades" ID="lblAUni9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi9"></asp:TextBox>
                                     </asp:TableCell>
@@ -284,11 +310,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="YODOPOVIDONA (JABÓN QUIRÚRGICO)" ID="lblAIns10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="YODOPOVIDONA (JABÓN QUIRÚRGICO)" ID="lblAIns10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Frasco x 120 ml" ID="lblAUni10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Frasco x 120 ml" ID="lblAUni10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi10"></asp:TextBox>
                                     </asp:TableCell>
@@ -307,11 +336,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="SOLUCIÓN SALINA 250 cc ó 500 cc" ID="lblAIns11"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="SOLUCIÓN SALINA 250 cc ó 500 cc" ID="lblAIns11"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant11"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant11"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni11"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni11"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi11"></asp:TextBox>
                                     </asp:TableCell>
@@ -330,11 +362,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TERMÓMETRO DE MERCURIO O DIGITAL" ID="lblAIns12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TERMÓMETRO DE MERCURIO O DIGITAL" ID="lblAIns12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi12"></asp:TextBox>
                                     </asp:TableCell>
@@ -353,11 +388,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ALCOHOL ANTISÉPTICO FRASCO POR 275 ml" ID="lblAIns13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ALCOHOL ANTISÉPTICO FRASCO POR 275 ml" ID="lblAIns13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblACant13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblACant13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblAUni13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtAExi13"></asp:TextBox>
                                     </asp:TableCell>
@@ -383,10 +421,9 @@
                     <asp:TextBox class="col-md-12  " runat="server" ID="txtObsA" TextMode="Multiline" Rows="4"></asp:TextBox>
                 </div>
                 <div class="row">
-
-                    <div class="col-md-4 col-md-offset-2">
-                        <asp:Button runat="server" ID="btnDocumento" Text="Generar Documento" CssClass="btn btn-block btn-info"
-                            OnClick="GenerarDocumento" />
+                    <div class="col-md-2 col-md-offset-5">
+                        <asp:Button runat="server" ID="btnDocumento" Text="Generar Documento" 
+                            CssClass="btn btn-block btn-info" OnClick="GenerarDocumento" />
                     </div>
                 </div>
             </asp:PlaceHolder>
@@ -412,17 +449,23 @@
                                 </asp:TableHeaderRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GASAS LIMPIAS" ID="lblBIns1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GASAS LIMPIAS" ID="lblBIns1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 100" ID="lblBUni1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 100" ID="lblBUni1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" CssClass="form-control" ID="txtBExi1"></asp:TextBox></asp:TableCell>
+                                        <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" CssClass="form-control" ID="txtBExi1"></asp:TextBox>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox runat="server" Enabled="False" CssClass="form-control" ID="txtBDif1"></asp:TextBox></asp:TableCell>
+                                        <asp:TextBox runat="server" Enabled="False" CssClass="form-control" ID="txtBDif1"></asp:TextBox>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtBMot1"></asp:TextBox></asp:TableCell>
+                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtBMot1"></asp:TextBox>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:DropDownList runat="server" ID="ddlBRemp1" CssClass="form-control">
                                             <asp:ListItem Text="Si" Value="Si"></asp:ListItem>
@@ -432,11 +475,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GASAS ESTÉRILES" ID="lblBIns2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GASAS ESTÉRILES" ID="lblBIns2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="20" ID="lblBCant2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="20" ID="lblBCant2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 3" ID="lblBUni2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 3" ID="lblBUni2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi2"></asp:TextBox>
                                     </asp:TableCell>
@@ -455,11 +501,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="APÓSITO ó COMPRESAS NO ESTÉRILES" ID="lblBIns3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="APÓSITO ó COMPRESAS NO ESTÉRILES" ID="lblBIns3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi3"></asp:TextBox>
                                     </asp:TableCell>
@@ -478,11 +527,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ESPARADRAPO DE TELA ROLLO 4" ID="lblBIns4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ESPARADRAPO DE TELA ROLLO 4" ID="lblBIns4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblBCant4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblBCant4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi4"></asp:TextBox>
                                     </asp:TableCell>
@@ -501,11 +553,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="BAJALENGUAS" ID="lblBIns5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="BAJALENGUAS" ID="lblBIns5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblBCant5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblBCant5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 20" ID="lblBUni5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 20" ID="lblBUni5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi5"></asp:TextBox>
                                     </asp:TableCell>
@@ -524,11 +579,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 2 X 5 YARDAS" ID="lblBIns6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 2 X 5 YARDAS" ID="lblBIns6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblBCant6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblBCant6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi6"></asp:TextBox>
                                     </asp:TableCell>
@@ -547,11 +605,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 3 X 5 YARDAS" ID="lblBIns7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 3 X 5 YARDAS" ID="lblBIns7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblBCant7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblBCant7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi7"></asp:TextBox>
                                     </asp:TableCell>
@@ -570,11 +631,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 5 X 5 YARDAS" ID="lblBIns8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 5 X 5 YARDAS" ID="lblBIns8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblBCant8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblBCant8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi8"></asp:TextBox>
                                     </asp:TableCell>
@@ -593,11 +657,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="CLORHEXIDINA O YODOPOVIDONA (JABÓN QUIRÚRGICO)" ID="lblBIns9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="CLORHEXIDINA O YODOPOVIDONA (JABÓN QUIRÚRGICO)" ID="lblBIns9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Galón" ID="lblBUni9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Galón" ID="lblBUni9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi9"></asp:TextBox>
                                     </asp:TableCell>
@@ -616,11 +683,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="SOLUCIÓN SALINA 250 cc ó 500 cc" ID="lblBIns10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="SOLUCIÓN SALINA 250 cc ó 500 cc" ID="lblBIns10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="5" ID="lblBCant10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="5" ID="lblBCant10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi10"></asp:TextBox>
                                     </asp:TableCell>
@@ -639,11 +709,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GUANTES DE LÁTEX PARA EXAMEN" ID="lblBIns11"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GUANTES DE LÁTEX PARA EXAMEN" ID="lblBIns11"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant11"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant11"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Caja de 100" ID="Label1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Caja de 100" ID="Label1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi11"></asp:TextBox>
                                     </asp:TableCell>
@@ -662,11 +735,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TERMÓMETRO DE MERCURIO O DIGITAL" ID="lblBIns12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TERMÓMETRO DE MERCURIO O DIGITAL" ID="lblBIns12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi12"></asp:TextBox>
                                     </asp:TableCell>
@@ -685,11 +761,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ALCOHOL ANTISÉPTICO FRASCO POR 275 ml" ID="lblBIns13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ALCOHOL ANTISÉPTICO FRASCO POR 275 ml" ID="lblBIns13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi13"></asp:TextBox>
                                     </asp:TableCell>
@@ -708,11 +787,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TIJERAS" ID="lblBIns14"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TIJERAS" ID="lblBIns14"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant14"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant14"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni14"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni14"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi14"></asp:TextBox>
                                     </asp:TableCell>
@@ -731,11 +813,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="LINTERNA" ID="lblBIns15"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="LINTERNA" ID="lblBIns15"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant15"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant15"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni15"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni15"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi15"></asp:TextBox>
                                     </asp:TableCell>
@@ -754,11 +839,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="PILAS DE REPUESTO" ID="lblBIns16"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="PILAS DE REPUESTO" ID="lblBIns16"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblBCant16"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblBCant16"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Par" ID="lblBUni16"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Par" ID="lblBUni16"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi16"></asp:TextBox>
                                     </asp:TableCell>
@@ -777,11 +865,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TABLA ESPINAL LARGA" ID="lblBIns17"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TABLA ESPINAL LARGA" ID="lblBIns17"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant17"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant17"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni17"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni17"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi17"></asp:TextBox>
                                     </asp:TableCell>
@@ -800,11 +891,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="COLLAR CERVICAL" ID="lblBIns18"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="COLLAR CERVICAL" ID="lblBIns18"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblBCant18"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblBCant18"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni18"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni18"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi18"></asp:TextBox>
                                     </asp:TableCell>
@@ -823,11 +917,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="INMOVILIZADORES ó FÉRULA MIEMBROS SUPERIORES" ID="lblBIns19"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="INMOVILIZADORES ó FÉRULA MIEMBROS SUPERIORES" ID="lblBIns19"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant19"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant19"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni19"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni19"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi19"></asp:TextBox>
                                     </asp:TableCell>
@@ -846,11 +943,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VASOS DESECHABLES" ID="lblBIns20"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VASOS DESECHABLES" ID="lblBIns20"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant20"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant20"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 25" ID="lblBUni20"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 25" ID="lblBUni20"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi20"></asp:TextBox>
                                     </asp:TableCell>
@@ -869,11 +969,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TENSIÓMETRO" ID="lblBIns21"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TENSIÓMETRO" ID="lblBIns21"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant21"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant21"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni21"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni21"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi21"></asp:TextBox>
                                     </asp:TableCell>
@@ -892,11 +995,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="FONENDOSCOPIO" ID="lblBIns22"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="FONENDOSCOPIO" ID="lblBIns22"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant22"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant22"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni22"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni22"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi22"></asp:TextBox>
                                     </asp:TableCell>
@@ -915,11 +1021,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ACETAMINOFÉN TABLETAS POR 500 mg" ID="lblBIns23"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ACETAMINOFÉN TABLETAS POR 500 mg" ID="lblBIns23"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblBCant23"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblBCant23"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Sobre de 100" ID="lblBUni23"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Sobre de 100" ID="lblBUni23"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi23"></asp:TextBox>
                                     </asp:TableCell>
@@ -938,11 +1047,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="HIDRÓXIDO DE ALUMINIO TABLETAS" ID="lblBIns24"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="HIDRÓXIDO DE ALUMINIO TABLETAS" ID="lblBIns24"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant24"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant24"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblBUni24"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblBUni24"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi24"></asp:TextBox>
                                     </asp:TableCell>
@@ -961,11 +1073,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ASA TABLETAS POR 100 mg" ID="lblBIns25"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ASA TABLETAS POR 100 mg" ID="lblBIns25"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant25"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant25"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblBUni25"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblBUni25"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi25"></asp:TextBox>
                                     </asp:TableCell>
@@ -984,11 +1099,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ELEMENTO DE BARRERA ó MÁSCARA PARA RCP" ID="lblBIns26"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ELEMENTO DE BARRERA ó MÁSCARA PARA RCP" ID="lblBIns26"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblBCant26"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblBCant26"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni26"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblBUni26"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtBExi26"></asp:TextBox>
                                     </asp:TableCell>
@@ -1015,7 +1133,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-2">
+                    <div class="col-md-2 col-md-offset-5">
                         <asp:Button runat="server" ID="btnDocumen" Text="Generar Documento"
                             CssClass="btn btn-block btn-info" OnClick="GenerarDocumento" />
                     </div>
@@ -1044,11 +1162,14 @@
                                 </asp:TableHeaderRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GASAS LIMPIAS" ID="lblCIns1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GASAS LIMPIAS" ID="lblCIns1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 100" ID="lblCUni1"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 100" ID="lblCUni1"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi1"></asp:TextBox>
                                     </asp:TableCell>
@@ -1067,11 +1188,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GASAS ESTÉRILES" ID="lblCIns2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GASAS ESTÉRILES" ID="lblCIns2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="20" ID="lblCCant2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="20" ID="lblCCant2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 3" ID="lblCUni2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 3" ID="lblCUni2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi2"></asp:TextBox>
                                     </asp:TableCell>
@@ -1090,11 +1214,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="APÓSITO ó COMPRESAS NO ESTÉRILES" ID="lblCIns3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="APÓSITO ó COMPRESAS NO ESTÉRILES" ID="lblCIns3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="8" ID="lblCCant3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="8" ID="lblCCant3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni3"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni3"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi3"></asp:TextBox>
                                     </asp:TableCell>
@@ -1113,11 +1240,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ESPARADRAPO DE TELA ROLLO 4" ID="lblCIns4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ESPARADRAPO DE TELA ROLLO 4" ID="lblCIns4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni4"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni4"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi4"></asp:TextBox>
                                     </asp:TableCell>
@@ -1136,11 +1266,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="BAJALENGUAS" ID="lblCIns5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="BAJALENGUAS" ID="lblCIns5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 20" ID="lblCUni5"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 20" ID="lblCUni5"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi5"></asp:TextBox>
                                     </asp:TableCell>
@@ -1159,11 +1292,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 2 X 5 YARDAS" ID="lblCIns6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 2 X 5 YARDAS" ID="lblCIns6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni6"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni6"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi6"></asp:TextBox>
                                     </asp:TableCell>
@@ -1182,11 +1318,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 3 X 5 YARDAS" ID="lblCIns7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 3 X 5 YARDAS" ID="lblCIns7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni7"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni7"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi7"></asp:TextBox>
                                     </asp:TableCell>
@@ -1205,11 +1344,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 5 X 5 YARDAS" ID="lblCIns8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA ELÁSTICA 5 X 5 YARDAS" ID="lblCIns8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni8"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni8"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi8"></asp:TextBox>
                                     </asp:TableCell>
@@ -1228,11 +1370,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 3 X 5 YARDAS" ID="lblCIns9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 3 X 5 YARDAS" ID="lblCIns9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni9"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni9"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi9"></asp:TextBox>
                                     </asp:TableCell>
@@ -1251,11 +1396,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 5 X 5 YARDAS" ID="lblCIns10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VENDA DE ALGODÓN 5 X 5 YARDAS" ID="lblCIns10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni10"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni10"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi10"></asp:TextBox>
                                     </asp:TableCell>
@@ -1274,11 +1422,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="CLORHEXIDINA O YODOPOVIDONA (JABÓN QUIRÚRGICO)" ID="lblCIns11"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="CLORHEXIDINA O YODOPOVIDONA (JABÓN QUIRÚRGICO)" ID="lblCIns11"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant11"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant11"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Galón" ID="Label2"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Galón" ID="Label2"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi11"></asp:TextBox>
                                     </asp:TableCell>
@@ -1297,11 +1448,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="SOLUCIÓN SALINA 250 cc ó 500 cc" ID="lblCIns12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="SOLUCIÓN SALINA 250 cc ó 500 cc" ID="lblCIns12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="10" ID="lblCCant12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="10" ID="lblCCant12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni12"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni12"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi12"></asp:TextBox>
                                     </asp:TableCell>
@@ -1320,11 +1474,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="GUANTES DE LÁTEX PARA EXAMEN" ID="lblCIns13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="GUANTES DE LÁTEX PARA EXAMEN" ID="lblCIns13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Caja de 100" ID="lblCUni13"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Caja de 100" ID="lblCUni13"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi13"></asp:TextBox>
                                     </asp:TableCell>
@@ -1343,11 +1500,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TERMÓMETRO DE MERCURIO ó DIGITAL" ID="lblCIns14"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TERMÓMETRO DE MERCURIO ó DIGITAL" ID="lblCIns14"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant14"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant14"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni14"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni14"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi14"></asp:TextBox>
                                     </asp:TableCell>
@@ -1366,11 +1526,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ALCOHOL ANTISÉPTICO FRASCO POR 275 ml" ID="lblCIns15"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ALCOHOL ANTISÉPTICO FRASCO POR 275 ml" ID="lblCIns15"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant15"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant15"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni15"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni15"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi15"></asp:TextBox>
                                     </asp:TableCell>
@@ -1389,11 +1552,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TIJERAS" ID="lblCIns16"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TIJERAS" ID="lblCIns16"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant16"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant16"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni16"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni16"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi16"></asp:TextBox>
                                     </asp:TableCell>
@@ -1412,11 +1578,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="LINTERNA" ID="lblCIns17"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="LINTERNA" ID="lblCIns17"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant17"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant17"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni17"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni17"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi17"></asp:TextBox>
                                     </asp:TableCell>
@@ -1435,11 +1604,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="PILAS DE REPUESTO" ID="lblCIns18"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="PILAS DE REPUESTO" ID="lblCIns18"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant18"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant18"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Par" ID="lblCUni18"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Par" ID="lblCUni18"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi18"></asp:TextBox>
                                     </asp:TableCell>
@@ -1458,11 +1630,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TABLA ESPINAL LARGA" ID="lblCIns19"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TABLA ESPINAL LARGA" ID="lblCIns19"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="1" ID="lblCCant19"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="1" ID="lblCCant19"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni19"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni19"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi19"></asp:TextBox>
                                     </asp:TableCell>
@@ -1481,11 +1656,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="COLLAR CERVICAL" ID="lblCIns20"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="COLLAR CERVICAL" ID="lblCIns20"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant20"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant20"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni20"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni20"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi20"></asp:TextBox>
                                     </asp:TableCell>
@@ -1504,11 +1682,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="INMOVILIZADORES ó FÉRULA MIEMBROS SUPERIORES" ID="lblCIns21"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="INMOVILIZADORES ó FÉRULA MIEMBROS SUPERIORES" ID="lblCIns21"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant21"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant21"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni21"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni21"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi21"></asp:TextBox>
                                     </asp:TableCell>
@@ -1527,11 +1708,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="VASOS DESECHABLES" ID="lblCIns22"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="VASOS DESECHABLES" ID="lblCIns22"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant22"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant22"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Paquete de 25" ID="lblCUni22"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Paquete de 25" ID="lblCUni22"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi22"></asp:TextBox>
                                     </asp:TableCell>
@@ -1550,11 +1734,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="TENSIÓMETRO" ID="lblCIns23"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="TENSIÓMETRO" ID="lblCIns23"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant23"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant23"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni23"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni23"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi23"></asp:TextBox>
                                     </asp:TableCell>
@@ -1573,11 +1760,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="FONENDOSCOPIO" ID="lblCIns24"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="FONENDOSCOPIO" ID="lblCIns24"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant24"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant24"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni24"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni24"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi24"></asp:TextBox>
                                     </asp:TableCell>
@@ -1596,11 +1786,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ACETAMINOFÉN TABLETAS POR 500 mg" ID="lblCIns25"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ACETAMINOFÉN TABLETAS POR 500 mg" ID="lblCIns25"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant25"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant25"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblCUni25"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblCUni25"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi25"></asp:TextBox>
                                     </asp:TableCell>
@@ -1619,11 +1812,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="HIDRÓXIDO DE ALUMINIO TABLETAS" ID="lblCIns26"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="HIDRÓXIDO DE ALUMINIO TABLETAS" ID="lblCIns26"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="4" ID="lblCCant26"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="4" ID="lblCCant26"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblCUni26"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblCUni26"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi26"></asp:TextBox>
                                     </asp:TableCell>
@@ -1642,11 +1838,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ASA TABLETAS POR 100 mg" ID="lblCIns27"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ASA TABLETAS POR 100 mg" ID="lblCIns27"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant27"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant27"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblCUni27"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Sobre de 10" ID="lblCUni27"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi27"></asp:TextBox>
                                     </asp:TableCell>
@@ -1665,11 +1864,14 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="ELEMENTO DE BARRERA ó MÁSCARA PARA RCP" ID="lblCIns28"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="ELEMENTO DE BARRERA ó MÁSCARA PARA RCP" ID="lblCIns28"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="2" ID="lblCCant28"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="2" ID="lblCCant28"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni28"></asp:Label></asp:TableCell>
+                                        <asp:Label runat="server" Text="Unidad" ID="lblCUni28"></asp:Label>
+                                    </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="calcularDif" TextMode="Number" CssClass="form-control" ID="txtCExi28"></asp:TextBox>
                                     </asp:TableCell>
@@ -1697,13 +1899,13 @@
                 </div>
 
                 <div class="row">
-
-                    <div class="col-md-3 col-md-offset-4">
+                    <div class="col-md-2 col-md-offset-5">
                         <asp:Button runat="server" ID="Button1" Text="Generar Documento"
                             CssClass="btn btn-block btn-info" OnClick="GenerarDocumento" />
                     </div>
                 </div>
             </asp:PlaceHolder>
+
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnDocumento" />

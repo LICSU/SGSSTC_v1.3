@@ -1,11 +1,11 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="SGSSTC.source.MasterPages.Menu1" %>
-
 <%@ Register Src="~/source/WebUserControl/ucMsjModal.ascx" TagPrefix="ucm" TagName="ucMsjModal" %>
 <%@ Register Src="~/source/WebUserControl/pagination.ascx" TagPrefix="ucpag" TagName="pagination" %>
 
 <!DOCTYPE html>
 
 <html lang="es">
+
 <head runat="server">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta charset="utf-8">
@@ -420,10 +420,8 @@
 
 								<ul class="dropdown-menu">
 									<li>
-										<a href="../Hacer/index_GestionLaboral.aspx">
-											<i class="fa fa-files-o"></i>
-											<span>Gestiones Laborales   </span>
-											<span class="label bg-green">Fase Beta</span>
+										<a href="../Hacer/index_GestionLaboral.aspx"><i class="fa fa-files-o"></i>
+											<span>Gestiones Laborales</span>
 										</a>
 									</li>
 								</ul>
@@ -479,14 +477,6 @@
 								</a>
 
 								<ul class="dropdown-menu">
-
-									<li>
-										<a href="../Hacer/index_PlanTrabajo.aspx">
-											<i class="fa fa-circle-o"></i>
-											<span>Plan Anual de Trabajo</span>
-										</a>
-									</li>
-
 									<li>
 										<a href="#">
 											<i class="fa fa-circle-o"></i>

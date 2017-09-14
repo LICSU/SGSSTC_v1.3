@@ -161,6 +161,19 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
             LlenarGridView();
         }
+
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["sWhere"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["sWhere"] = string.Empty;
+            }
+            LlenarGridView();
+        }
         #endregion
     }
 }

@@ -45,23 +45,6 @@ namespace SGSSTC.source.sistema.Hacer
                 Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
             }
         }
-
-        protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlEmpresa.SelectedValue != string.Empty)
-            {
-                Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
-            }
-        }
-        protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlSucursal.SelectedValue != string.Empty)
-            {
-                phCkeditor.Visible = true;
-                phCkeditorno.Visible = false;
-                cargarPlan();
-            }
-        }
         private void cargarPlan()
         {
             int idPlan = GetterMax.Plan(ObjUsuario.Id_sucursal);
@@ -102,10 +85,23 @@ namespace SGSSTC.source.sistema.Hacer
                 nuevo,
                 ObjUsuario.Id_usuario,
                 HttpContext.Current.Request.Url.AbsoluteUri);
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtProgInspecciones);
+        }
 
-            if (ObjUsuario.Error)
+        protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlEmpresa.SelectedValue != string.Empty)
             {
-                Response.Redirect(Paginas.index_ProgramaInspecciones.Value);
+                Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
+            }
+        }
+        protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlSucursal.SelectedValue != string.Empty)
+            {
+                phCkeditor.Visible = true;
+                phCkeditorno.Visible = false;
+                cargarPlan();
             }
         }
     }

@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
                     <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                        runat="server" class="form-control" PlaceHolder="Ingrese la inspección a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -39,20 +39,20 @@
             <div class="row">
 
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <h4 class="text-center">Empresa</h4>
                         <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-4">
+                    <div class="col-md-3 col-md-offset-3">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h4 class="text-center">Tipo de Inspección</h4>
                     <asp:DropDownList runat="server" ID="ddlTipoInspeccion" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoInspeccion_SelectedIndexChanged">
                         <asp:ListItem Text="Seleccione un Valor" Value=""></asp:ListItem>
