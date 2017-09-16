@@ -165,7 +165,7 @@ namespace SGSSTC.source.sistema.Hacer
 				"Factor de Riesgo:" + ddlFactorRiesgo1.SelectedItem + "\n" +
 				"Posibles Efectos:" + txtconsecuencias1.Text + "\n" +
 				"Tiempo de Exposición:" + txtTiempoExposicion.Text + "\n" +
-				"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+				"-----------------------------------------------------------\n";
 
 			txtPeligros.Rows = txtPeligros.Rows + 4;
 			contadorPeligros++;
@@ -179,7 +179,7 @@ namespace SGSSTC.source.sistema.Hacer
 				"Puesto N°" + contadorPuestos + "\n" +
 				"Sucursal:" + ddlSucursal.SelectedItem + "\n" +
 				"Puesto de Trabajo:" + ddlPuestos.SelectedItem + "\n" +
-				"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+				"-----------------------------------------------------------\n";
 
 			txtPuestos.Rows = txtPuestos.Rows + 3;
 			contadorPuestos++;

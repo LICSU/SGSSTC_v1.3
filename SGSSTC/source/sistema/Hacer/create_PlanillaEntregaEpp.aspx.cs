@@ -134,7 +134,7 @@ namespace SGSSTC.source.sistema.Hacer
 			int id_puesto_trabajo = Getter.idPuestoTrabajador(Convert.ToInt32(IdTrabajador));
 			List<Model_CEPP> epps = Getter.Epp(id_puesto_trabajo);
 			int cont = 0;
-			//Crear los elementos
+
 			foreach (var epp in epps)
 			{
 				_row = new TableRow();
@@ -151,7 +151,7 @@ namespace SGSSTC.source.sistema.Hacer
 				_textbox.ID = "txtDet" + cont;
 				_textbox.CssClass = "form-control";
 				_textbox.TextMode = TextBoxMode.MultiLine;
-				_textbox.Rows = 4;
+				_textbox.Rows = 2;
 				_cell.Controls.Add(_textbox);
 				_row.Controls.Add(_cell);
 

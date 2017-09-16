@@ -78,7 +78,7 @@ namespace SGSSTC.source.sistema.Hacer
 
                 id_ide_puesto = objUtilidades.cifrarCadena(id_ide_puesto);
 
-                Response.Redirect(Paginas.Create_EvaluacionRiesgos.Value +"? id=" + id_ide_puesto);
+                Response.Redirect(Paginas.Create_EvaluacionRiesgos.Value +"?id=" + id_ide_puesto);
             }
 
         }

@@ -282,7 +282,6 @@
 
                             <asp:PlaceHolder runat="server" ID="phSucursalSubir">
                                 <div class="row">
-                                    <div>
                                         <label class="col-md-4 control-label">Sucursal: </label>
 
                                         <div class="col-md-6">
@@ -296,7 +295,7 @@
                                                 Font-Bold="true" ControlToValidate="ddlSucursalSubir" runat="server"
                                                 ValidationGroup="ValidationAdd" />
                                         </div>
-                                    </div>
+
                                 </div>
                             </asp:PlaceHolder>
                             <br />
@@ -320,7 +319,6 @@
                             <br />
 
                             <div class="row">
-                                <div>
                                     <label class="col-md-4 control-label">Archivo: </label>
                                     <div class="col-md-6">
                                         <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" ></asp:FileUpload>
@@ -329,7 +327,6 @@
                                             Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
                                             ValidationGroup="ValidationAdd" />
                                     </div>
-                                </div>
                             </div>
                             <br />
 

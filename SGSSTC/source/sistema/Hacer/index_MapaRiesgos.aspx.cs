@@ -68,7 +68,7 @@ namespace SGSSTC.source.sistema.Hacer
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                hdfPlanID.Value = (gvrow.FindControl("id_plan_mapa") as Label).Text;
+                hdfPlanID.Value = (gvrow.FindControl("id") as Label).Text;
                 txtNombreEdit.Text = (gvrow.FindControl("nombre") as Label).Text;
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
@@ -78,7 +78,7 @@ namespace SGSSTC.source.sistema.Hacer
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                hdfPlanIDDel.Value = (gvrow.FindControl("id_plan_mapa") as Label).Text;
+                hdfPlanIDDel.Value = (gvrow.FindControl("id") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
 
@@ -92,20 +92,23 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdmEmp_DptoSalud()
-                || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+			if (ObjUsuario != null)
             {
-                if (e.Row.RowType == DataControlRowType.Header)
-                {
-                    e.Row.Cells[6].Visible = false;
-                    e.Row.Cells[7].Visible = false;
-                }
-                if (e.Row.RowType == DataControlRowType.DataRow)
-                {
-                    e.Row.Cells[6].Visible = false;
-                    e.Row.Cells[7].Visible = false;
-                }
-            }
+				if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdmEmp_DptoSalud()
+					|| ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+				{
+					if (e.Row.RowType == DataControlRowType.Header)
+					{
+						e.Row.Cells[6].Visible = false;
+						e.Row.Cells[7].Visible = false;
+					}
+					if (e.Row.RowType == DataControlRowType.DataRow)
+					{
+						e.Row.Cells[6].Visible = false;
+						e.Row.Cells[7].Visible = false;
+					}
+				}
+			}
         }
         #endregion
 

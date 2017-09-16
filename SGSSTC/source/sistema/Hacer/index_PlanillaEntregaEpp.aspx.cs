@@ -110,7 +110,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
-                string valor = (GridView1.Rows[RowIndex].FindControl("id_entrega_epp") as Label).Text;
+                string valor = (GridView1.Rows[RowIndex].FindControl("id") as Label).Text;
                 hdfIDDel.Value = valor;
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
@@ -163,6 +163,18 @@ namespace SGSSTC.source.sistema.Hacer
                 ViewState["sucursal"] = "0";
 
             }
+        }
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["sWhere"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["sWhere"] = string.Empty;
+            }
+            LlenarGridView();
         }
         #endregion
 

@@ -189,7 +189,7 @@
 							<asp:Label ID="label24" runat="server" Text="Nº de Personas en Tránsito:" Font-Size="Smaller"></asp:Label>
 						</th>
 						<th class="col-md-8  text-left">
-							<asp:TextBox ID="Textbox11" runat="server" class="form-control" placeholder="(El tipo y el número de personas en tránsito diario como visitantes, usuarios o clientes de algún servicio, personal vinculado a término fijo)"></asp:TextBox>
+							<asp:TextBox ID="Textbox11" runat="server" class="form-control" type="number" placeholder="(El tipo y el número de personas en tránsito diario como visitantes, usuarios o clientes de algún servicio, personal vinculado a término fijo)"></asp:TextBox>
 						</th>
 					</tr>
 					<tr>

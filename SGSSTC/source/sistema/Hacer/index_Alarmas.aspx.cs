@@ -349,6 +349,18 @@ namespace SGSSTC.source.sistema.Hacer
             }
             LlenarGridView();
         }
+        protected void ddlCategoriaAdd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlCategoriaAdd.SelectedValue == "Otro")
+            {
+                phCatAddOtro.Visible = true;
+            }
+            else
+            {
+                phCatAddOtro.Visible = false;
+            }
+        }
+
         protected void txtFechaInicio_TextChanged(object sender, EventArgs e)
         {
             if (txtFechaInicio.Text != string.Empty)
@@ -385,19 +397,6 @@ namespace SGSSTC.source.sistema.Hacer
             }
             LlenarGridView();
         }
-
-        protected void ddlCategoriaAdd_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlCategoriaAdd.SelectedValue == "Otro")
-            {
-                phCatAddOtro.Visible = true;
-            }
-            else
-            {
-                phCatAddOtro.Visible = false;
-            }
-        }
-
         #endregion
     }
 }

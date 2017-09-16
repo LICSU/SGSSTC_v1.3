@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-md-4 col-md-offset-3">
 					<asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-						runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+						runat="server" class="form-control" PlaceHolder="Ingrese la identificación a buscar"></asp:TextBox>
 				</div>
 
 				<div class="col-md-2">
@@ -51,7 +51,7 @@
 				</asp:PlaceHolder>
 
 				<asp:PlaceHolder runat="server" ID="phSucursal">
-					<div class="col-md-3">
+					<div class="col-md-3 col-md-offset-4">
 						<h4>Seleccione una Sucursal</h4>
 						<asp:DropDownList runat="server" CssClass="form-control" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" AutoPostBack="true"
 							OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">

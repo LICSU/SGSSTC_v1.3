@@ -25,11 +25,12 @@
 					<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
 				</div>
 			</asp:PlaceHolder>
+
 			
 			<div class="row">
 				<div class="col-md-4 col-md-offset-3">
 					<asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-						runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+						runat="server" class="form-control" PlaceHolder="Ingrese la evaluacion a buscar"></asp:TextBox>
 				</div>
 
 				<div class="col-md-2">
@@ -37,6 +38,8 @@
 						data-toggle="tooltip" data-placement="bottom" title="Presione para Buscar" />
 				</div>
 			</div>
+
+			<br />
 
 			<div class="row" style="overflow: auto;">
 				<div class="box-body">

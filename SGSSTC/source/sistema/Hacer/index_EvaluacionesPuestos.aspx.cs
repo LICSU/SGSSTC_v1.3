@@ -101,5 +101,18 @@ namespace SGSSTC.source.sistema.Hacer
 
 		}
 		#endregion
+
+		protected void BuscarRegistro(object sender, EventArgs e)
+		{
+			if (txtBuscar.Text != string.Empty)
+			{
+				ViewState["sWhere"] = txtBuscar.Text;
+			}
+			else
+			{
+				ViewState["sWhere"] = string.Empty;
+			}
+			LlenarGridView();
+		}
 	}
 }

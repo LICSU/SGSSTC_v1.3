@@ -15,7 +15,7 @@
             <div class="page-header">
                 <h1 class="text-center">Plan de Trabajo Anual</h1>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-3 col-md-offset-3">
                     <h4 class="text-center">Año</h4>
@@ -844,93 +844,75 @@
                         <div class="modal-body form-group">
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Fecha de Entrega: </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewFecha" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    </div>
+                                <label class="col-md-4 control-label">Fecha de Entrega: </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewFecha" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Responsable:</label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewResp" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    </div>
+                                <label class="col-md-4 control-label">Responsable:</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewResp" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <asp:Label ID="lbMedida" class="col-md-4 control-label" runat="server" Text="Label" Font-Bold="True"></asp:Label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewMedida" runat="server" ClientIDMode="Static" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
-                                    </div>
+                                <asp:Label ID="lbMedida" class="col-md-4 control-label" runat="server" Text="Label" Font-Bold="True"></asp:Label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewMedida" runat="server" ClientIDMode="Static" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Categoria:</label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewCategoria" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    </div>
+                                <label class="col-md-4 control-label">Categoria:</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewCategoria" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Prioridad:</label>
+                                <label class="col-md-4 control-label">Prioridad:</label>
 
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewPrioridad" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    </div>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewPrioridad" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Frecuencia de Control:</label>
+                                <label class="col-md-4 control-label">Frecuencia de Control:</label>
 
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewFrecuencia" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    </div>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewFrecuencia" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Estatus:</label>
+                                <label class="col-md-4 control-label">Estatus:</label>
 
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewEstatus" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                    </div>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewEstatus" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Descripción</label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewDesc" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
-                                    </div>
+                                <label class="col-md-4 control-label">Descripción</label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewDesc" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Acciones: </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtViewAcciones" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
-                                    </div>
+                                <label class="col-md-4 control-label">Acciones: </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtViewAcciones" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
                                 </div>
                             </div>
                             <br />

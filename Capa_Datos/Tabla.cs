@@ -1861,6 +1861,7 @@ namespace Capa_Datos
                              PT.area.id_sucursal
                          }).FirstOrDefault().id_sucursal
                         ) == _id_sucursal
+                        orderby IPT.fecha_identificacion descending
                     select new
                     {
                         IPT.id_identificacion_peligro,

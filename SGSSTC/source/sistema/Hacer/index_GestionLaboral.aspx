@@ -89,7 +89,7 @@
                         <asp:GridView ID="GridView1"
                             class="table table-bordered table-hover dataTable" runat="server" AutoGenerateColumns="false"
                             AllowPaging="true" PageSize="10" OnRowCommand="GridView1_RowCommand"
-                            OnPageIndexChanging="GridView1_PageIndexChanging"  OnRowDataBound="GridView1_RowDataBound"
+                            OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDataBound="GridView1_RowDataBound"
                             EmptyDataText="No existen Registros">
                             <RowStyle HorizontalAlign="Center" />
 
@@ -138,7 +138,7 @@
 
                                 <asp:TemplateField HeaderText="Ver Escaneado" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:HyperLink ID="hlEscaneado" runat="server" ImageUrl="~\ico\viewFile.png" 
+                                        <asp:HyperLink ID="hlEscaneado" runat="server" ImageUrl="~\ico\viewFile.png"
                                             Target="_blank" NavigateUrl='<%# Eval("soporte") %>'>Ver Archivo </asp:HyperLink>
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -277,18 +277,16 @@
 
                             <asp:PlaceHolder runat="server" ID="phEmpAddEnt">
                                 <div class="row">
-                                    <div>
-                                        <div class="col-md-6 control-label">
-                                            <label>Empresa: </label>
-                                        </div>
+                                    <div class="col-md-6 control-label">
+                                        <label>Empresa: </label>
+                                    </div>
 
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlEmpAddEnt" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlEmpAddEnt_SelectedIndexChanged"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlEmpAddEnt" runat="server"
-                                                ValidationGroup="ValidationAddEnt" />
-                                        </div>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlEmpAddEnt" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlEmpAddEnt_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlEmpAddEnt" runat="server"
+                                            ValidationGroup="ValidationAddEnt" />
                                     </div>
                                 </div>
                                 <br />
@@ -296,19 +294,16 @@
 
                             <asp:PlaceHolder runat="server" ID="phSucAddEnt">
                                 <div class="row">
-                                    <div>
-                                        <div class="col-md-6 control-label">
-                                            <label>Sucursal: </label>
-                                        </div>
+                                    <div class="col-md-6 control-label">
+                                        <label>Sucursal: </label>
+                                    </div>
 
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlSucAddEnt" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlSucAddEnt_SelectedIndexChanged"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlSucAddEnt" runat="server"
-                                                ValidationGroup="ValidationAddEnt" />
-
-                                        </div>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlSucAddEnt" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlSucAddEnt_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlSucAddEnt" runat="server"
+                                            ValidationGroup="ValidationAddEnt" />
 
                                     </div>
                                 </div>
@@ -317,62 +312,53 @@
 
                             <asp:PlaceHolder runat="server" ID="phUsuAddEnt">
                                 <div class="row">
-                                    <div>
-                                        <div class="col-md-6 control-label">
-                                            <label>Responsable: </label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlUsuAddEnt" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlUsuAddEnt" runat="server"
-                                                ValidationGroup="ValidationAddEnt" />
-                                        </div>
+                                    <div class="col-md-6 control-label">
+                                        <label>Responsable: </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlUsuAddEnt" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlUsuAddEnt" runat="server"
+                                            ValidationGroup="ValidationAddEnt" />
                                     </div>
                                 </div>
                                 <br />
                             </asp:PlaceHolder>
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-6 control-label">
-                                        Fecha de la Actividad: 
+                                <label class="col-md-6 control-label">
+                                    Fecha de la Actividad: 
 
-                                    </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtFechaEntrega" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="txtFechaEntrega" runat="server"
-                                            ValidationGroup="ValidationAddEnt" />
-                                    </div>
+                                </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtFechaEntrega" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="txtFechaEntrega" runat="server"
+                                        ValidationGroup="ValidationAddEnt" />
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-6 control-label">Descripción: </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtDescEntrega" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="multiline" class="form-control" Rows="3"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="txtDescEntrega" runat="server"
-                                            ValidationGroup="ValidationAddEnt" />
-                                    </div>
+                                <label class="col-md-6 control-label">Descripción: </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtDescEntrega" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="multiline" class="form-control" Rows="3"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="txtDescEntrega" runat="server"
+                                        ValidationGroup="ValidationAddEnt" />
                                 </div>
                             </div>
                             <br />
 
                             <asp:PlaceHolder runat="server" ID="phAsisAddEnt">
                                 <div class="row">
-                                    <div>
-                                        <label class="col-md-6 control-label">Seleccione los trabajadores que asistiran a la Actividad: </label>
-                                        <div class="col-md-6">
-                                            <asp:Button ID="Button1" runat="server" Text="Lista de Trabajadores"
-                                                class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal" />
-                                        </div>
-
+                                    <label class="col-md-6 control-label">Seleccione los trabajadores que asistiran a la Actividad: </label>
+                                    <div class="col-md-6">
+                                        <asp:Button ID="Button1" runat="server" Text="Lista de Trabajadores"
+                                            class="btn btn-block btn-success" data-toggle="modal" data-target="#listaModal" />
                                     </div>
                                 </div>
                             </asp:PlaceHolder>
@@ -394,7 +380,6 @@
             </div>
         </div>
     </div>
-
     <!-- Edit Entrega Modal -->
     <div id="EditEntrega" class="modal fade">
         <div class="modal-dialog">
@@ -524,9 +509,7 @@
         </div>
     </div>
 
-
     <!-- Capacitacion -->
-
     <!-- AddCapacitacion -->
     <div id="AddCapacitacion" class="modal fade">
         <div class="modal-dialog">
@@ -700,7 +683,6 @@
             </div>
         </div>
     </div>
-
     <!-- EditCapacitacion -->
     <div id="EditCapacitacion" class="modal fade">
         <div class="modal-dialog">
@@ -868,7 +850,6 @@
         </div>
     </div>
 
-
     <!-- Actividades Recreativas -->
 
     <!-- Add Actividad Modal-->
@@ -1028,7 +1009,6 @@
             </div>
         </div>
     </div>
-
     <!-- Edit Actividad Modal -->
     <div id="EditActividad" class="modal fade">
         <div class="modal-dialog">
@@ -1344,7 +1324,6 @@
             </div>
         </div>
     </div>
-
     <!-- Edit Jornada Modal -->
     <div id="EditJornada" class="modal fade">
         <div class="modal-dialog">

@@ -327,17 +327,15 @@
 
                             <asp:PlaceHolder runat="server" ID="phEmpEdit">
                                 <div class="row">
-                                    <div>
-                                        <div class="col-md-4 control-label">
-                                            <label>Empresa: </label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlEmpEdit" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlEmpEdit_SelectedIndexChanged"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlEmpEdit" runat="server"
-                                                ValidationGroup="ValidationAEdit" />
-                                        </div>
+                                    <div class="col-md-4 control-label">
+                                        <label>Empresa: </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlEmpEdit" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlEmpEdit_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlEmpEdit" runat="server"
+                                            ValidationGroup="ValidationAEdit" />
                                     </div>
                                 </div>
                                 <br />
@@ -345,17 +343,15 @@
 
                             <asp:PlaceHolder runat="server" ID="phSucEdit">
                                 <div class="row">
-                                    <div>
-                                        <div class="col-md-4 control-label">
-                                            <label>Sucursal: </label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlSucEdit" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlSucEdit_SelectedIndexChanged"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlSucEdit" runat="server"
-                                                ValidationGroup="ValidationAEdit" />
-                                        </div>
+                                    <div class="col-md-4 control-label">
+                                        <label>Sucursal: </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlSucEdit" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control" OnSelectedIndexChanged="ddlSucEdit_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlSucEdit" runat="server"
+                                            ValidationGroup="ValidationAEdit" />
                                     </div>
                                 </div>
                                 <br />
@@ -363,74 +359,64 @@
 
                             <asp:PlaceHolder runat="server" ID="phUsuEdit">
                                 <div class="row">
-                                    <div>
-                                        <div class="col-md-4 control-label">
-                                            <label>Responsable: </label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlUsuEdit" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlUsuEdit" runat="server"
-                                                ValidationGroup="ValidationAEdit" />
-                                        </div>
+                                    <div class="col-md-4 control-label">
+                                        <label>Responsable: </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlUsuEdit" AutoPostBack="true" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlUsuEdit" runat="server"
+                                            ValidationGroup="ValidationAEdit" />
                                     </div>
                                 </div>
                                 <br />
                             </asp:PlaceHolder>
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Descripcion: </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtDescripcionEdit" runat="server" ClientIDMode="Static" CssClass="form-control" MaxLength="100"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="txtDescripcionEdit" runat="server"
-                                            ValidationGroup="ValidationAEdit" />
-                                    </div>
+                                <label class="col-md-4 control-label">Descripcion: </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtDescripcionEdit" runat="server" ClientIDMode="Static" CssClass="form-control" MaxLength="100"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="txtDescripcionEdit" runat="server"
+                                        ValidationGroup="ValidationAEdit" />
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Fecha: </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtFechaEdit" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="txtFechaEdit" runat="server"
-                                            ValidationGroup="ValidationAEdit" />
-                                    </div>
+                                <label class="col-md-4 control-label">Fecha: </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtFechaEdit" runat="server" ClientIDMode="Static" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="txtFechaEdit" runat="server"
+                                        ValidationGroup="ValidationAEdit" />
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Prioridad: </label>
-                                    <div class="col-md-6">
-                                        <asp:DropDownList ID="ddlPrioridadEdit" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="ddlPrioridadEdit" runat="server"
-                                            ValidationGroup="ValidationAEdit" />
-                                    </div>
+                                <label class="col-md-4 control-label">Prioridad: </label>
+                                <div class="col-md-6">
+                                    <asp:DropDownList ID="ddlPrioridadEdit" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="ddlPrioridadEdit" runat="server"
+                                        ValidationGroup="ValidationAEdit" />
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Categoria: </label>
-                                    <div class="col-md-6">
-                                        <asp:DropDownList ID="ddlCategoriaEdit" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="ddlCategoriaEdit" runat="server"
-                                            ValidationGroup="ValidationAEdit" />
-                                    </div>
+                                <label class="col-md-4 control-label">Categoria: </label>
+                                <div class="col-md-6">
+                                    <asp:DropDownList ID="ddlCategoriaEdit" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="ddlCategoriaEdit" runat="server"
+                                        ValidationGroup="ValidationAEdit" />
                                 </div>
                             </div>
                             <br />
@@ -549,5 +535,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

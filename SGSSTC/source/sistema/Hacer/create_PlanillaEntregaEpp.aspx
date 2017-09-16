@@ -19,7 +19,6 @@
         <h1 class="text-center">Planilla de Entrega de EPP</h1>
     </div>
 
-
     <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
         <div id="divAlerta" runat="server">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -33,7 +32,6 @@
 
             <div class="row form-group">
 
-
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
                     <div class="col-md-3">
                         <h4 class="text-center">Empresa</h4>
@@ -44,7 +42,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-md-offset-1">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
@@ -64,28 +62,31 @@
                         CompletionListHighlightedItemCssClass="itemHighlighted">
                     </cc1:AutoCompleteExtender>
                 </div>
+
                 <div class="col-md-3">
                     <h4 class="text-center">&nbsp;</h4>
-                    <asp:Button runat="server" ID="btnBuscar" data-toggle="tooltip" data-placement="bottom" title="Presione para buscar" Text="Generar" CssClass="btn btn-default" OnClick="btnGenerar_OnClick" />
+                    <asp:Button runat="server" ID="btnBuscar" data-toggle="tooltip" data-placement="bottom" 
+                        title="Presione para buscar" Text="Generar" CssClass="btn btn-primary" 
+                        OnClick="btnGenerar_OnClick" />
                 </div>
             </div>
 
             <asp:PlaceHolder runat="server" ID="phInformacion" Visible="False">
+
                 <div class="row">
                     <div class="col-md-12">
                         <asp:Panel runat="server" ID="pnDatos">
                             <asp:Table runat="server" ID="tb_datos" CssClass="table">
                                 <asp:TableHeaderRow>
-                                    <asp:TableHeaderCell>Dotación Entregada</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Detalles de la Dotación</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Cantidad</asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>Fecha de Entrega</asp:TableHeaderCell>
+                                    <asp:TableHeaderCell CssClass="col-md-2">Dotación Entregada</asp:TableHeaderCell>
+                                    <asp:TableHeaderCell CssClass="col-md-7">Detalles de la Dotación</asp:TableHeaderCell>
+                                    <asp:TableHeaderCell CssClass="col-md-1">Cantidad</asp:TableHeaderCell>
+                                    <asp:TableHeaderCell CssClass="col-md-2">Fecha de Entrega</asp:TableHeaderCell>
                                 </asp:TableHeaderRow>
                             </asp:Table>
                         </asp:Panel>
                     </div>
                 </div>
-                <!--  Fin de Informacion -->
 
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
@@ -110,6 +111,5 @@
             <asp:PostBackTrigger ControlID="btnDocumento" />
         </Triggers>
     </asp:UpdatePanel>
-
 
 </asp:Content>

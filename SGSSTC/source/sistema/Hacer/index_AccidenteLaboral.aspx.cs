@@ -403,13 +403,16 @@ namespace SGSSTC.source.sistema.Verificar
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (ObjUsuario.isAdm_Sucursal() || ObjUsuario.isAdm_Empresa())//Adm Emp
+            if (ObjUsuario != null)
             {
-                GridView1.Columns[12].Visible = false;
-            }
-            if (ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdmEmp_DptoSeg())//Dpto Seg
-            {
-                GridView1.Columns[12].Visible = false;
+                if (ObjUsuario.isAdm_Sucursal() || ObjUsuario.isAdm_Empresa())//Adm Emp
+                {
+                    GridView1.Columns[12].Visible = false;
+                }
+                if (ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdmEmp_DptoSeg())//Dpto Seg
+                {
+                    GridView1.Columns[12].Visible = false;
+                }
             }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
