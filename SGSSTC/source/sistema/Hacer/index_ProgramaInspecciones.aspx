@@ -33,7 +33,7 @@
 		</asp:PlaceHolder>
 
 		<asp:PlaceHolder runat="server" ID="phSucursal">
-			<div class="col-md-4">
+			<div class="col-md-4 col-md-offset-4">
 				<h4 class="text-center">Sucursal</h4>
 				<asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
 					OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
@@ -47,14 +47,15 @@
 	</div>
 
 	<asp:PlaceHolder runat="server" ID="phCkeditor" Visible="false">
-		<div class="row" align="left">
+		<div class="row text-left">
 			<div class="col-md-12">
-				<h3>Objetivo. </h3>
+				<h3>Objetivo.</h3>
 				<br />
-				Realizar inspecciones en cada una de las áreas de la Empresa, a fin de determinar las condiciones en las que se encuentran los puestos de trabajo, 
-							los dispositivos de seguridad y el acatamiento de las normas y procedimientos seguros de trabajo. 
-					
-						<h3>Metas. </h3>
+				Realizar inspecciones en cada una de las áreas de la Empresa, a fin de determinar las condiciones en las 
+                que se encuentran los puestos de trabajo, los dispositivos de seguridad y el acatamiento de las normas y 
+                procedimientos seguros de trabajo. 
+                
+                <h3>Metas. </h3>
 				<br />
 				<ul>
 					<li>Realizar periódicamente seguimiento de los procesos de trabajo en cada una de las áreas productivas de la organización.</li>

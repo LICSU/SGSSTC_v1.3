@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_VigilanciaEpidemiologica.aspx.cs" Inherits="SGSSTC.source.sistema.EvaluacionInicial.index_VigilanciaEpidemiologica" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -16,18 +17,18 @@
             <div class="page-header">
                 <h1 class="text-center">Vigilancia Epidemiológica</h1>
             </div>
-            
+
             <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
                 <div id="divAlerta" runat="server">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
                 </div>
             </asp:PlaceHolder>
-            
+
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
                     <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                        runat="server" class="form-control" PlaceHolder="Ingrese la vigilancia a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -40,14 +41,14 @@
 
             <div class="row">
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
-                    <div class="col-md-4 col-md-offset-4">
+                    <div class="col-md-4">
                         <h4 class="text-center">Empresa</h4>
                         <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
-                    <div class="col-md-4">
+                    <div class="col-md-3 col-md-offset-4">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                     </div>
@@ -58,7 +59,7 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
+
                         <asp:GridView
                             ID="GridView1"
                             class="table table-bordered table-hover dataTable"
@@ -145,59 +146,51 @@
 
                         <div class="modal-body form-group">
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Nombre: </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtNombre" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="txtNombre" runat="server"
-                                            ValidationGroup="ValidationAdd" />
-                                    </div>
+                                <label class="col-md-4 control-label">Nombre: </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtNombre" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="txtNombre" runat="server"
+                                        ValidationGroup="ValidationAdd" />
                                 </div>
                             </div>
                             <br />
 
                             <asp:PlaceHolder runat="server" ID="phEmpresaAdd">
                                 <div class="row form-group">
-                                    <div>
-                                        <label class="col-md-4 control-label">Empresa: </label>
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlEmpresaAdd" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" runat="server" ClientIDMode="Static" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresaAdd_SelectedIndexChanged"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlEmpresaAdd" runat="server"
-                                                ValidationGroup="ValidationAdd" />
-                                        </div>
+                                    <label class="col-md-4 control-label">Empresa: </label>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlEmpresaAdd" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" runat="server" ClientIDMode="Static" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresaAdd_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlEmpresaAdd" runat="server"
+                                            ValidationGroup="ValidationAdd" />
                                     </div>
                                 </div>
                             </asp:PlaceHolder>
 
                             <asp:PlaceHolder runat="server" ID="phSucursalAdd">
                                 <div class="row form-group">
-                                    <div>
-                                        <label class="col-md-4 control-label">Sucursal: </label>
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlSucursalAdd" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlSucursalAdd" runat="server"
-                                                ValidationGroup="ValidationAdd" />
-                                        </div>
+                                    <label class="col-md-4 control-label">Sucursal: </label>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlSucursalAdd" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlSucursalAdd" runat="server"
+                                            ValidationGroup="ValidationAdd" />
                                     </div>
                                 </div>
                             </asp:PlaceHolder>
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Archivo: </label>
-                                    <div class="col-md-6">
-                                        <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" ></asp:FileUpload>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
-                                            ValidationGroup="ValidationAdd" />
-                                    </div>
+                                <label class="col-md-4 control-label">Archivo: </label>
+                                <div class="col-md-6">
+                                    <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static"></asp:FileUpload>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
+                                        ValidationGroup="ValidationAdd" />
                                 </div>
                             </div>
                             <br />
@@ -206,9 +199,11 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnAdd" runat="server" Text="Agregar" class="btn btn-block btn-info" OnClick="Guardar" ValidationGroup="ValidationAdd" /></div>
+                                    <asp:Button ID="btnAdd" runat="server" Text="Agregar" class="btn btn-block btn-info" OnClick="Guardar" ValidationGroup="ValidationAdd" />
+                                </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
 
@@ -244,9 +239,11 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" OnClick="EliminarRegistro" /></div>
+                                    <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-block btn-info" OnClick="EliminarRegistro" />
+                                </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
                     </ContentTemplate>

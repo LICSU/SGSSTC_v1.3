@@ -80,13 +80,16 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (ObjUsuario.isAdm_Sucursal() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isResponsable())
+			if (ObjUsuario != null)
             {
-                #region codigo
-                GridView1.Columns[4].Visible = false;
-                GridView1.Columns[5].Visible = false;
-                #endregion
-            }
+				if (ObjUsuario.isAdm_Sucursal() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isResponsable())
+				{
+					#region codigo
+					GridView1.Columns[4].Visible = false;
+					GridView1.Columns[5].Visible = false;
+					#endregion
+				}
+			}
         }
         #endregion
 

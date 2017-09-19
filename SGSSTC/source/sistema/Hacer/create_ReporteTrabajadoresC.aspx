@@ -1,58 +1,56 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="create_ReporteTrabajadoresC.aspx.cs" Inherits="SGSSTC.source.sistema.EvaluacionInicial.create_ReporteTrabajadoresC" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral,   PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral,PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+    <ol class="breadcrumb">
+        <li><a href="#">Fase: Hacer</a></li>
+        <li><a href="../Hacer/index_ReporteTrabajadores.aspx">Reporte de Trabajadores</a></li>
+        <li><a href="#">Crear Reporte de Condiciones de Trabajo</a></li>
+    </ol>
+
+    <div class="page-header">
+        <h1 class="text-center">Reporte De Condiciones De Trabajo</h1>
+    </div>
+
+    <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+        <div id="divAlerta" runat="server">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+        </div>
+    </asp:PlaceHolder>
+
+    <div class="row form-group">
+
+        <asp:PlaceHolder runat="server" ID="phEmpresa">
+            <div class="col-md-4">
+                <h4 class="text-center">Empresa</h4>
+                <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true"
+                    OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged">
+                </asp:DropDownList>
+            </div>
+        </asp:PlaceHolder>
+
+        <asp:PlaceHolder runat="server" ID="phSucursal">
+            <div class="col-md-3 col-md-offset-4">
+                <h4 class="text-center">Sucursal</h4>
+                <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
+                    OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+                </asp:DropDownList>
+
+                <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+                    Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
+                    ControlToValidate="ddlSucursal" runat="server" ValidationGroup="ValidationAdd" />
+            </div>
+        </asp:PlaceHolder>
+    </div>
+
     <div class="row text-center">
         <div class="box">
-
-            <ol class="breadcrumb">
-                <li><a href="#">Fase: Hacer</a></li>
-                <li><a href="../Hacer/index_ReporteTrabajadores.aspx">Reporte de Trabajadores</a></li>
-                <li><a href="#">Crear Reporte de Condiciones de Trabajo</a></li>
-            </ol>
-
-            <div class="page-header">
-                <h1 class="text-center">Reporte De Condiciones De Trabajo</h1>
-            </div>
-
-            
-            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
-                <div id="divAlerta" runat="server">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
-                </div>
-            </asp:PlaceHolder>
-
-            <div class="row form-group">
-
-                <asp:PlaceHolder runat="server" ID="phEmpresa">
-                    <div class="col-md-4 col-md-offset-4">
-                        <h4 class="text-center">Empresa</h4>
-                        <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true"
-                            OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged">
-                        </asp:DropDownList>
-                    </div>
-                </asp:PlaceHolder>
-
-                <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-4">
-                        <h4 class="text-center">Sucursal</h4>
-                        <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true"
-                            OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
-                        </asp:DropDownList>
-
-                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
-                            Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
-                            ControlToValidate="ddlSucursal" runat="server" ValidationGroup="ValidationAdd" />
-                    </div>
-                </asp:PlaceHolder>
-            </div>
-
             <div class="box-body no-padding">
                 <table class="table table-condensed">
                     <tbody>

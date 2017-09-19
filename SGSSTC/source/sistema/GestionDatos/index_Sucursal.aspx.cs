@@ -155,8 +155,6 @@ namespace SGSSTC.source.sistema.GestionDatos
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
-
             if (ObjUsuario.isAdm_Sucursal())
             {
                 #region codigo

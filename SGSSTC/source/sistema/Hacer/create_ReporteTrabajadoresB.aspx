@@ -28,14 +28,14 @@
         <div class="row form-group">
 
             <asp:PlaceHolder runat="server" ID="phEmpresa">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-4">
                     <h4 class="text-center">Empresa</h4>
                     <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresa_SelectedIndexChanged"></asp:DropDownList>
                 </div>
             </asp:PlaceHolder>
 
             <asp:PlaceHolder runat="server" ID="phSucursal">
-                <div class="col-md-4">
+                <div class="col-md-3 col-md-offset-4">
                     <h4 class="text-center">Sucursal</h4>
                     <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control"></asp:DropDownList>
                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
@@ -2798,7 +2798,7 @@
         </div>
 
         <div class="row text-center">
-            <div class="col-md-3">
+            <div class="col-md-3 col-md-offset-1">
                 <asp:ImageButton alt="-" ID="btnGuardar" runat="server" ImageUrl="~\ico\calculator.png" OnClick="Guardar" />
                 <h4>Generar Resultados</h4>
             </div>

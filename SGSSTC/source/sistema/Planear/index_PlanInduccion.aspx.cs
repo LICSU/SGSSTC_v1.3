@@ -14,6 +14,7 @@ namespace SGSSTC.source.sistema.Hacer
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -113,6 +114,8 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 cargarPlan();
             }
+
+            Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtPlanInduccion);
         }
     }
 }

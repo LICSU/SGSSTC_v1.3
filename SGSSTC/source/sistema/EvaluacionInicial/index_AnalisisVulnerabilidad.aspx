@@ -156,7 +156,6 @@
                             <br />
                             <asp:PlaceHolder runat="server" ID="phEmpresaAdd">
                                 <div class="row">
-                                    <div>
                                         <label class="col-md-4 control-label">Empresa: </label>
                                         <div class="col-md-6">
                                             <asp:DropDownList ID="ddlEmpresaAdd" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" runat="server" ClientIDMode="Static" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlEmpresaAdd_SelectedIndexChanged"></asp:DropDownList>
@@ -165,14 +164,12 @@
                                                 Font-Bold="true" ControlToValidate="ddlEmpresaAdd" runat="server"
                                                 ValidationGroup="ValidationAdd" />
                                         </div>
-                                    </div>
                                 </div>
                                 <br />
                             </asp:PlaceHolder>
 
                             <asp:PlaceHolder runat="server" ID="phSucursalAdd">
                                 <div class="row">
-                                    <div>
                                         <label class="col-md-4 control-label">Sucursal: </label>
                                         <div class="col-md-6">
                                             <asp:DropDownList ID="ddlSucursalAdd" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
@@ -181,13 +178,11 @@
                                                 Font-Bold="true" ControlToValidate="ddlSucursalAdd" runat="server"
                                                 ValidationGroup="ValidationAdd" />
                                         </div>
-                                    </div>
                                 </div>
                                 <br />
                             </asp:PlaceHolder>
 
                             <div class="row">
-                                <div>
                                     <label class="col-md-4 control-label">Archivo: </label>
                                     <div class="col-md-6">
                                         <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" ></asp:FileUpload>
@@ -196,7 +191,6 @@
                                             Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
                                             ValidationGroup="ValidationAdd" />
                                     </div>
-                                </div>
                             </div>
 
 

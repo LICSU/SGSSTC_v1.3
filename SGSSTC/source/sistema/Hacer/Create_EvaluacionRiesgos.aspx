@@ -26,6 +26,33 @@
                 </div>
             </asp:PlaceHolder>
 
+            
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <h4>Responsable del SGSST</h4>
+                    <asp:TextBox ID="txtResponsableSGSST" CssClass="form-control" runat="server"
+                        data-toggle="tooltip" data-placement="bottom"
+                        title="Ingrese el responsable de la evaluacion de este Riesgo"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+                        Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
+                        ControlToValidate="txtResponsableSGSST" runat="server" ValidationGroup="ValidationAdd" />
+
+                </div>
+
+                <div class="col-md-3">
+                    <h4>Fecha de Evaluación</h4>
+                    <asp:TextBox ID="txtFechaEvaluacion" type="date" CssClass="form-control" runat="server"
+                        data-toggle="tooltip" data-placement="bottom"
+                        title="Ingrese la fecha de la evaluacion de este Riesgo"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
+                        Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
+                        ControlToValidate="txtFechaEvaluacion" runat="server" ValidationGroup="ValidationAdd" />
+                </div>
+            </div>
+            <br />
+
             <div class="row">
                 <div class="col-md-4 col-md-offset-2">
                     <h4>Sucursal</h4>
@@ -114,32 +141,6 @@
                     <asp:TextBox ID="txtControlIndividuo" MaxLength="5000" runat="server" TextMode="multiline" class="form-control"
                         Rows="8" data-toggle="tooltip" data-placement="bottom"
                         title="Ingrese las medidas en el individuo para este Riesgo"></asp:TextBox>
-                </div>
-            </div>
-            <br />
-
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2">
-                    <h4>Responsable del SGSST</h4>
-                    <asp:TextBox ID="txtResponsableSGSST" CssClass="form-control" runat="server"
-                        data-toggle="tooltip" data-placement="bottom"
-                        title="Ingrese el responsable de la evaluacion de este Riesgo"></asp:TextBox>
-
-                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
-                        Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
-                        ControlToValidate="txtResponsableSGSST" runat="server" ValidationGroup="ValidationAdd" />
-
-                </div>
-
-                <div class="col-md-4">
-                    <h4>Fecha de Evaluación</h4>
-                    <asp:TextBox ID="txtFechaEvaluacion" type="date" CssClass="form-control" runat="server"
-                        data-toggle="tooltip" data-placement="bottom"
-                        title="Ingrese la fecha de la evaluacion de este Riesgo"></asp:TextBox>
-
-                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
-                        Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
-                        ControlToValidate="txtFechaEvaluacion" runat="server" ValidationGroup="ValidationAdd" />
                 </div>
             </div>
             <br />
@@ -278,7 +279,7 @@
 
             <div class="row">
                 <h3 class="text-center">N° Personal Expuesto</h3>
-                <div class="col-md-4 col-md-offset-2">
+                <div class="col-md-2 col-md-offset-2">
                     <h4>Trabajadores</h4>
                     <asp:TextBox ID="txtPlanta" type="number" step="0.01" CssClass="form-control" runat="server" AutoPostBack="true"
                         OnTextChanged="txtPersonalExpuesto_TextChanged"
@@ -289,18 +290,14 @@
                         Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
                         ControlToValidate="txtPlanta" runat="server" ValidationGroup="ValidationAdd" />
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <h4>Contratistas</h4>
                     <asp:TextBox ID="txtContratistas" type="number" step="0.01" CssClass="form-control" runat="server" AutoPostBack="true"
                         OnTextChanged="txtPersonalExpuesto_TextChanged"
                         data-toggle="tooltip" data-placement="bottom"
                         title="Ingrese el N° de contratistas expuestos para este Riesgo"></asp:TextBox>
-
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2">
+                <div class="col-md-2">
                     <h4>Visitantes</h4>
                     <asp:TextBox ID="txtVisitantes" type="number" step="0.01" CssClass="form-control" runat="server" AutoPostBack="true"
                         OnTextChanged="txtPersonalExpuesto_TextChanged"
@@ -309,13 +306,14 @@
 
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <h4>Total</h4>
                     <asp:Label ID="txtTotalPersonalExpuesto" runat="server" Text="Sin Calcular"
                         data-toggle="tooltip" data-placement="bottom"
                         title="Este es el totoal de personas expuestas de este Riesgo"></asp:Label>
                 </div>
             </div>
+
             <br />
 
             <div class="row">
@@ -409,4 +407,5 @@
             <br />
         </ContentTemplate>
     </asp:UpdatePanel>
+
 </asp:Content>

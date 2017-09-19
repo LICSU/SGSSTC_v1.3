@@ -54,12 +54,14 @@ namespace SGSSTC.source.sistema.Hacer
             phAsisEditJor.Visible = !BoolEmpSuc.Item1;
             #endregion
 
-            DateTime fechaActual = DateTime.Now;
-            ViewState["FechaInicio"] = fechaActual.ToString("dd-MM-yyy");
-            ViewState["FechaFin"] = fechaActual.AddMonths(1).ToString("dd-MM-yyy");
-
             if (!IsPostBack)
             {
+
+                DateTime fechaActual = DateTime.Now;
+                ViewState["FechaInicio"] = fechaActual.ToString("dd-MM-yyy");
+                ViewState["FechaFin"] = fechaActual.AddMonths(1).ToString("dd-MM-yyy");
+                ViewState["TipoGestion"] = "0";
+
                 txtFechaInicio.Text = fechaActual.ToString("yyyy-MM-dd");
                 txtFechaFin.Text = fechaActual.AddMonths(1).ToString("yyyy-MM-dd");
                 LlenarGridView();
@@ -83,7 +85,6 @@ namespace SGSSTC.source.sistema.Hacer
                 }
             }
         }
-
         private void CargarListas()
         {
             if (BoolEmpSuc.Item1)
@@ -125,7 +126,6 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
-
         private void Cargartrabajadores(int _id_sucursal)
         {
             List<sucursal> ListaSucursal = new List<sucursal>();
@@ -151,7 +151,6 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
-
         private void LlenarGridView()
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
@@ -271,8 +270,7 @@ namespace SGSSTC.source.sistema.Hacer
 
         #region  registro de los modales
         protected void cerrarModalIndex(object sender, EventArgs e)
-        {
-            
+        {            
             Modal.CerrarModal("IndexAddModal", "AddModalScript", this);
         }
         #endregion
@@ -843,6 +841,18 @@ namespace SGSSTC.source.sistema.Hacer
             }
 
         }
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                string Comunicado = Convert.ToString(DataBinder.Eval(e.Row.DataItem, "soporte"));
+
+                if (Comunicado == "")
+                {
+                    e.Row.Cells[7].Controls.Clear();
+                }
+            }
+        }
         #endregion
 
         #region filtros
@@ -880,7 +890,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
             else
             {
-                ViewState["TipoGestion"] = string.Empty;
+                ViewState["TipoGestion"] = "0";
             }
             LlenarGridView();
         }

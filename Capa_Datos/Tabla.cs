@@ -619,7 +619,7 @@ namespace Capa_Datos
                         GL.id_ges_lab,
                         GL.fecha,
                         GL.descripcion,
-                        GL.soporte,
+                        soporte = GL.soporte == "" ? "Sin Comunicado" : GL.soporte,
                         GL.id_usuario,
                         GL.usuario.trabajador.puesto_trabajo.area.sucursal.id_sucursal,
                         Responsable = (from US in contexto.usuario where US.id_usuario == GL.id_usuario select US.login).FirstOrDefault(),
@@ -1863,6 +1863,7 @@ namespace Capa_Datos
                              PT.area.id_sucursal
                          }).FirstOrDefault().id_sucursal
                         ) == _id_sucursal
+                        orderby IPT.fecha_identificacion descending
                     select new
                     {
                         IPT.id_identificacion_peligro,

@@ -40,7 +40,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-md-offset-1">
                         <h4 class="text-center">Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                     </div>
@@ -69,7 +69,7 @@
                 <div class="row text-center">
 
                     <asp:PlaceHolder runat="server" ID="phGenerarDocumento" Visible="False">
-                        <div class="col-md-3 col-md-offset-1">
+                        <div class="col-md-3 col-md-offset-3">
                             <asp:ImageButton alt="-" ID="btnDocumento" runat="server" ImageUrl="~\ico\print.png"
                                 OnClick="GenerarDocumento" />
                             <h4>Generar Documento</h4>

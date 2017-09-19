@@ -304,17 +304,19 @@ namespace SGSSTC.source.sistema.GestionDatos
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
-            if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdmEmp_DptoSalud())
+            if (ObjUsuario != null)
             {
-                GridView1.Columns[10].Visible = false;
-                GridView1.Columns[11].Visible = false;
-            }
-            else if (ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
-            {
-                GridView1.Columns[10].Visible = false;
-                GridView1.Columns[11].Visible = false;
-            }
+				if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdmEmp_DptoSalud())
+				{
+					GridView1.Columns[10].Visible = false;
+					GridView1.Columns[11].Visible = false;
+				}
+				else if (ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+				{
+					GridView1.Columns[10].Visible = false;
+					GridView1.Columns[11].Visible = false;
+				}
+			}
         }
         #endregion
 

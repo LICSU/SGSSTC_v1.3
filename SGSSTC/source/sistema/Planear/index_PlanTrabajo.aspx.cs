@@ -213,55 +213,59 @@ namespace SGSSTC.source.sistema.Hacer
         #region metodos grid
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.Header)
+			if (ObjUsuario != null)
             {
-                #region codigo
-                GridView HeaderGrid = (GridView)sender;
-                GridViewRow HeaderGridRow = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Insert);
+				
+				if (e.Row.RowType == DataControlRowType.Header)
+				{
+					#region codigo
+					GridView HeaderGrid = (GridView)sender;
+					GridViewRow HeaderGridRow = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Insert);
 
-                TableCell HeaderCell = new TableCell();
-                HeaderCell.Text = string.Empty;
-                HeaderCell.ColumnSpan = 7;
-                HeaderGridRow.Cells.Add(HeaderCell);
-                bool bandera = false;
+					TableCell HeaderCell = new TableCell();
+					HeaderCell.Text = string.Empty;
+					HeaderCell.ColumnSpan = 7;
+					HeaderGridRow.Cells.Add(HeaderCell);
+					bool bandera = false;
 
-                for (int i = 1; i <= 52; i++)
-                {
-                    HeaderCell = new TableCell();
-                    HeaderCell.Text = "SEMANA " + i;
-                    HeaderGridRow.Cells.Add(HeaderCell);
+					for (int i = 1; i <= 52; i++)
+					{
+						HeaderCell = new TableCell();
+						HeaderCell.Text = "SEMANA " + i;
+						HeaderGridRow.Cells.Add(HeaderCell);
 
 
-                    if (bandera)
-                    {
-                        HeaderCell.HorizontalAlign = HorizontalAlign.Center;
-                        HeaderCell.BackColor = System.Drawing.ColorTranslator.FromHtml("#00c0ef");
-                        HeaderCell.ForeColor = System.Drawing.Color.White;
-                    }
-                    if (i % 4 == 0)
-                    {
-                        bandera = !bandera;
-                    }
+						if (bandera)
+						{
+							HeaderCell.HorizontalAlign = HorizontalAlign.Center;
+							HeaderCell.BackColor = System.Drawing.ColorTranslator.FromHtml("#00c0ef");
+							HeaderCell.ForeColor = System.Drawing.Color.White;
+						}
+						if (i % 4 == 0)
+						{
+							bandera = !bandera;
+						}
 
-                }
+					}
 
-                GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
-                #endregion
+					GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
+					#endregion
 
-                Int32 idx = 0;
-                foreach (TableCell cell in e.Row.Cells)
-                {
-                    idx++;
-                    if (idx > 7 && idx < 60)
-                    {
-                        DateTime fechaini = FirstDateOfWeekISO8601(Convert.ToInt32(ViewState["anho"]), Convert.ToInt32(cell.Text));
-                        DateTime fechafin = fechaini.AddDays(6);
+					Int32 idx = 0;
+					foreach (TableCell cell in e.Row.Cells)
+					{
+						idx++;
+						if (idx > 7 && idx < 60)
+						{
+							DateTime fechaini = FirstDateOfWeekISO8601(Convert.ToInt32(ViewState["anho"]), Convert.ToInt32(cell.Text));
+							DateTime fechafin = fechaini.AddDays(6);
 
-                        cell.Text = String.Format("{0:m} al {1:m}", fechaini, fechafin);
-                    }
-                }
-            }
-
+							cell.Text = String.Format("{0:m} al {1:m}", fechaini, fechafin);
+						}
+					}
+				}
+				
+			}
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)

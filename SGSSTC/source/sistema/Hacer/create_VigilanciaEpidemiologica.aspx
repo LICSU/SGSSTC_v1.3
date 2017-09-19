@@ -12,8 +12,8 @@
     <div class="container" style="width: 100%;">
 
         <ol class="breadcrumb">
-            <li><a href="#">Fase: Evaluación Inicial</a></li>
-            <li><a href="../EvaluacionInicial/index_VigilanciaEpidemiologica.aspx">Vigilancia Epidemiológica</a></li>
+            <li><a href="#">Fase: Hacer</a></li>
+            <li><a href="../Hacer/index_VigilanciaEpidemiologica.aspx">Vigilancia Epidemiológica</a></li>
             <li><a href="#">Crear Vigilancia Epidemiológica</a></li>
         </ol>
 

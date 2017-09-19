@@ -4,6 +4,7 @@
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
@@ -19,7 +20,6 @@
         <h1 class="text-center">Inspección de Uso de EPP</h1>
     </div>
 
-
     <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
         <div id="divAlerta" runat="server">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -31,8 +31,7 @@
         <ContentTemplate>
             <asp:HiddenField runat="server" ID="cantInspecciones" Value="0"></asp:HiddenField>
 
-            <div class="row form-group">
-
+            <div class="row">
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
                     <div class="col-md-3">
                         <h4 class="text-center">Empresa</h4>
@@ -69,11 +68,17 @@
                         CompletionListHighlightedItemCssClass="itemHighlighted">
                     </cc1:AutoCompleteExtender>
                 </div>
-                <div class="col-md-3">
+            </div>
+            
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5">
                     <h4 class="text-center">&nbsp;</h4>
-                    <asp:Button runat="server" ID="btnBuscar" data-toggle="tooltip" data-placement="bottom" title="Presione para buscar" Text="Buscar" CssClass="btn btn-default" OnClick="btnBuscar_OnClick" />
+                    <asp:Button runat="server" ID="btnBuscar" data-toggle="tooltip" data-placement="bottom" 
+                        title="Presione para buscar" Text="Buscar" CssClass="btn btn-primary" OnClick="btnBuscar_OnClick" />
                 </div>
             </div>
+
+            <hr />
 
             <asp:PlaceHolder runat="server" ID="phInformacion" Visible="False">
                 <div class="row">

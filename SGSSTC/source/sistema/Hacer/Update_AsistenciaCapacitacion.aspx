@@ -26,12 +26,12 @@
                 </div>
             </asp:PlaceHolder>
 
-            <div class="row">
-                <div class="col-md-5">
+            <div class="row col-md-offset-2">
+                <div class="col-md-4">
                     <label>Trabajador:</label><br />
                     <asp:BulletedList ID="chkAsistencia" runat="server"></asp:BulletedList>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-4">
                     <label>Asistencia:</label><br />
                     <asp:Panel ID="panelAsistencia" runat="server"></asp:Panel>
                 </div>
@@ -53,8 +53,5 @@
         <Triggers>
         </Triggers>
     </asp:UpdatePanel>
-
-
-
 
 </asp:Content>

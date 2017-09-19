@@ -6,8 +6,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
 	<ol class="breadcrumb">
-		<li><a href="#">Fase: Hacer</a></li>
-		<li><a href="../Hacer/index_MatrizLegal.aspx">Matriz Legal</a></li>
+		<li><a href="#">Fase: Planear</a></li>
+		<li><a href="../Planear/index_MatrizLegal.aspx">Matriz Legal</a></li>
 		<li><a href="#">Seguimiento de Medidas de la Norma</a></li>
 	</ol>
 
@@ -15,27 +15,27 @@
 		<h1 class="text-center">Seguimiento de las Medidas de la Norma</h1>
 	</div>
 
-    <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
-        <div id="divAlerta" runat="server">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
-        </div>
-    </asp:PlaceHolder>
+	<asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+		<div id="divAlerta" runat="server">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+		</div>
+	</asp:PlaceHolder>
 
-    <div class="row">
-        <h2 class="text-info text-left">Documento:</h2>
-        <h3 class="text-left">
-            <asp:Label runat="server" Text="estatus" ID="lbDocumento"></asp:Label>
+	<div class="row">
+		<h2 class="text-info text-left">Documento:</h2>
+		<h3 class="text-left">
+			<asp:Label runat="server" Text="estatus" ID="lbDocumento"></asp:Label>
 
-        </h3>
+		</h3>
 
 
-        <h2 class="text-info text-left">Tema:</h2>
-        <h3 class="text-left">
-            <asp:Label runat="server" Text="estatus" ID="lbTemaEspecifico"></asp:Label>
-        </h3>
+		<h2 class="text-info text-left">Tema:</h2>
+		<h3 class="text-left">
+			<asp:Label runat="server" Text="estatus" ID="lbTemaEspecifico"></asp:Label>
+		</h3>
 
-    </div>
+	</div>
 
 	<br />
 

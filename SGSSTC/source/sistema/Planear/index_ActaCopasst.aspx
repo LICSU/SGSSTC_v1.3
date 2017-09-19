@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_ActaCopasst.aspx.cs" Inherits="SGSSTC.source.sistema.Hacer.index_ActaCopasst" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -52,7 +53,7 @@
             <div class="row">
                 <div class="box-body">
                     <div class="dataTables_wrapper form-inline dt-bootstrap">
-                        
+
                         <asp:GridView
                             ID="GridView1"
                             class="table table-bordered table-hover dataTable"
@@ -223,15 +224,13 @@
                         <div class="modal-body form-group">
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Nombre: </label>
-                                    <div class="col-md-6">
-                                        <asp:TextBox ID="txtNombreSubir" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="txtNombreSubir" runat="server"
-                                            ValidationGroup="ValidationAdd" />
-                                    </div>
+                                <label class="col-md-4 control-label">Nombre: </label>
+                                <div class="col-md-6">
+                                    <asp:TextBox ID="txtNombreSubir" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="txtNombreSubir" runat="server"
+                                        ValidationGroup="ValidationAdd" />
                                 </div>
                             </div>
                             <br />
@@ -239,32 +238,28 @@
 
                             <asp:PlaceHolder runat="server" ID="phSucursalSubir">
                                 <div class="row">
-                                    <div>
-                                        <label class="col-md-4 control-label">Sucursal: </label>
+                                    <label class="col-md-4 control-label">Sucursal: </label>
 
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlSucursalSubir" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                    <div class="col-md-6">
+                                        <asp:DropDownList ID="ddlSucursalSubir" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
 
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlSucursalSubir" runat="server"
-                                                ValidationGroup="ValidationAdd" />
-                                        </div>
+                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                            Font-Bold="true" ControlToValidate="ddlSucursalSubir" runat="server"
+                                            ValidationGroup="ValidationAdd" />
                                     </div>
                                 </div>
                             </asp:PlaceHolder>
                             <br />
 
                             <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Archivo: </label>
-                                    <div class="col-md-6">
-                                        <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static" ></asp:FileUpload>
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
-                                            ValidationGroup="ValidationAdd" />
-                                    </div>
+                                <label class="col-md-4 control-label">Archivo: </label>
+                                <div class="col-md-6">
+                                    <asp:FileUpload ID="flpArchivo" runat="server" ClientIDMode="Static"></asp:FileUpload>
+                                    <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
+                                        SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
+                                        Font-Bold="true" ControlToValidate="flpArchivo" runat="server"
+                                        ValidationGroup="ValidationAdd" />
                                 </div>
                             </div>
                             <br />
@@ -333,5 +328,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

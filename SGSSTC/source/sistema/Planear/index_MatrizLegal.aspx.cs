@@ -96,9 +96,11 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
-            {
-                GridView1.Columns[7].Visible = false;
+            if (ObjUsuario != null) {
+                if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+                {
+                    GridView1.Columns[7].Visible = false;
+                }
             }
         }
         #endregion
