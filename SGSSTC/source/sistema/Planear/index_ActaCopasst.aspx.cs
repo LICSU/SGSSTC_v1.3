@@ -112,6 +112,7 @@ namespace SGSSTC.source.sistema.Hacer
                 ObjUsuario.Id_usuario,
                 HttpContext.Current.Request.Url.AbsoluteUri);
 
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }

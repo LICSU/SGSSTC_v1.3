@@ -34,6 +34,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
+                ViewState["buscar"] = "";
                 LlenarGridView();
             }
         }
@@ -41,7 +42,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
-            Tabla.TipoDocumento(GridView1, IdSucursal, IdEmpresa);
+            Tabla.TipoDocumento(GridView1, IdSucursal, IdEmpresa, string.Empty + ViewState["buscar"]);
         }
         #endregion
 
@@ -63,7 +64,7 @@ namespace SGSSTC.source.sistema.Hacer
                 estatus = ddlEstatusAdd.SelectedValue
             };
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-
+            Modal.CerrarModal("addModal", "AddModalScript", this);
             Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
             LlenarGridView();
         }
@@ -73,11 +74,12 @@ namespace SGSSTC.source.sistema.Hacer
             int idDocumento = Convert.ToInt32(hdfEditID.Value);
 
             tipo_documento Edit = contexto.tipo_documento.SingleOrDefault(b => b.id_tipo_documento == idDocumento);
+            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalAdd);
 
             if (Edit != null)
             {
                 Edit.nombre = txtNombreEdit.Text;
-                Edit.id_sucursal = Convert.ToInt32(ddlSucursalEdit.SelectedValue);
+                Edit.id_sucursal = IdSucursal;
                 Edit.dirigida = txtDirigidaEdit.Text;
                 Edit.modalidad = txtModalidadEdit.Text;
                 Edit.fecha = Convert.ToDateTime(txtFechaEdit.Text);
@@ -88,7 +90,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
             ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
-
+            Modal.CerrarModal("editModal", "EditModalScript", this);
             Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
@@ -96,6 +98,8 @@ namespace SGSSTC.source.sistema.Hacer
         {
             tipo_documento tabla = new tipo_documento();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }

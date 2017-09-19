@@ -65,9 +65,17 @@
                                 <asp:Label class="col-md-2 col-md-offset-3" runat="server" Text="TRABAJADOR" Font-Bold="True"></asp:Label>
 
                                 <div class="col-md-4">
-                                    <asp:DropDownList ID="ddlTrabajador" CssClass="form-control" runat="server"
-                                        AutoPostBack="true" OnSelectedIndexChanged="ddlTrabajador_SelectedIndexChanged">
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="txtTrabajador" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:hiddenfield id="hdnValue" onvaluechanged="hdnValue_ValueChanged" runat="server"/>
+                                    <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1"
+                                        CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                        TargetControlID="txtTrabajador" ID="AutoCompleteExtender1" runat="server"
+                                        FirstRowSelected="false"
+                                        CompletionListCssClass="completionList"
+                                        OnClientItemSelected="OnContactSelected"
+                                        CompletionListItemCssClass="listItem"
+                                        CompletionListHighlightedItemCssClass="itemHighlighted">
+                                    </cc1:AutoCompleteExtender>
                                 </div>
                             </td>
                         </tr>
@@ -264,5 +272,15 @@
         </asp:PlaceHolder>
 
     </div>
+
+    <script>
+        function OnContactSelected(source, eventArgs) {
+        
+            var hdnValueID = "<%= hdnValue.ClientID %>";
+
+            document.getElementById(hdnValueID).value = eventArgs.get_value();
+            __doPostBack(hdnValueID, "");
+        } 
+    </script>
 
 </asp:Content>

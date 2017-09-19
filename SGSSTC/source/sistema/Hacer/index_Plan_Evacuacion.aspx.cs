@@ -46,7 +46,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (idPlan != 0)
             {
                 List<plan> ListaPlanes = new List<plan>();
-                ListaPlanes = Getter.Planes(idPlan);
+                ListaPlanes = Getter.Planes(idPlan, "Evacuacion");
 
                 if (ListaPlanes.Count > 0)
                 {
@@ -76,7 +76,8 @@ namespace SGSSTC.source.sistema.Hacer
             plan nuevo = new plan()
             {
                 id_sucursal = IdSucursal,
-                nombre = txtPlanEvacuacion.Text
+                nombre = txtPlanEvacuacion.Text,
+                tipo = "Evacuacion"
             };
             ObjUsuario.Error = CRUD.Add_Fila(nuevo,
                 ObjUsuario.Id_usuario,
@@ -84,7 +85,8 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (ObjUsuario.Error)
             {
-                Response.Redirect(Paginas.index_Plan_Evacuacion.Value);
+                cargarPlan();
+                Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             }
         }
 

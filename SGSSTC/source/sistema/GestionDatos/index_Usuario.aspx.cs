@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Security;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,6 +17,9 @@ namespace SGSSTC.source.sistema.GestionDatos
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
+        private static int IdSucursal = 0, IdSucursalEsp = 0;
+        private static int IdTrabajador = 0, IdTrabajadorEsp = 0;
+        private static int IdPuesto = 0, IdPuestoEsp = 0;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -64,12 +69,11 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Sucursal(ddlSucursal, Convert.ToInt32(ObjUsuario.Id_empresa));
                 Listas.Sucursal(ddlSucursalAdd, Convert.ToInt32(ObjUsuario.Id_empresa));
                 Listas.Sucursal(ddlSucursalEdit, Convert.ToInt32(ObjUsuario.Id_empresa));
-                Listas.Trabajadores_Empresa(ddlTrabajadorAdd, ObjUsuario.Id_empresa);
             }
 
             if (!BoolEmpSuc.Item2)
             {
-                Listas.Trabajadores_Sucursal(ddlTrabajadorAdd, ObjUsuario.Id_sucursal);
+                IdSucursal = Convert.ToInt32(ObjUsuario.Id_sucursal);
                 Listas.Rol_AdmSucursal(ddlRolAdd);
                 Listas.Rol_AdmSucursal(ddlRolEdit);
                 Listas.Rol(ddlRol1);
@@ -103,12 +107,12 @@ namespace SGSSTC.source.sistema.GestionDatos
                 {
                     login = txtLogin.Text,
                     clave = clave,
-                    id_trabajador = Convert.ToInt32(ddlTrabajadorAdd.SelectedValue),
+                    id_trabajador = IdTrabajador,
                     id_rol = Convert.ToInt32(ddlRolAdd.SelectedValue)
                 };
 
                 ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
-                List<trabajador> trab = Getter.Trabajador(Convert.ToInt32(ddlTrabajadorAdd.SelectedValue));
+                List<trabajador> trab = Getter.Trabajador(Convert.ToInt32(IdTrabajador));
                 string destino = string.Empty;
                 string empresa = string.Empty;
                 foreach (var _trabajador in trab)
@@ -121,7 +125,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 {
                     clave = objUtilidades.descifrarCadena2(clave);
                     if (Utilidades.EmailValido(destino))
-                        Utilidades.registroUsuario(destino, empresa, ddlTrabajadorAdd.SelectedItem.Text, txtLogin.Text, clave);
+                        Utilidades.registroUsuario(destino, empresa, txtTrabajador.Text, txtLogin.Text, clave);
                 }
                 Modal.CerrarModal("addModal", "AddModalScript", this);
                 Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
@@ -149,7 +153,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                     {
                         Edit.login = txtLoginEdit.Text;
                         Edit.clave = clave;
-                        Edit.id_trabajador = Convert.ToInt32(ddlTrabajadorEdit.SelectedValue);
+                        Edit.id_trabajador = Convert.ToInt32(IdTrabajadorEsp);
                         Edit.id_rol = Convert.ToInt32(ddlRolEdit.SelectedValue);
                     }
                     ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
@@ -249,9 +253,9 @@ namespace SGSSTC.source.sistema.GestionDatos
                     Listas.Sucursal(ddlSucursalEdit, Convert.ToInt32(ddlEmpresaEdit.SelectedValue));
                     ddlSucursalEdit.SelectedValue = Convert.ToString(itemUsuarios.trabajador.puesto_trabajo.area.id_sucursal);
 
-                    Listas.Trabajadores_Sucursal(ddlTrabajadorEdit, Convert.ToInt32(ddlSucursalEdit.SelectedValue));
-                    ddlTrabajadorEdit.SelectedValue = Convert.ToString(itemUsuarios.id_trabajador);
-
+                    IdSucursalEsp = Convert.ToInt32(ddlSucursalEdit.SelectedValue);
+                    IdTrabajadorEsp = Convert.ToInt32(itemUsuarios.id_trabajador);
+                    txtTrabajadorEsp.Text = itemUsuarios.trabajador.primer_nombre + ' ' + itemUsuarios.trabajador.primer_apellido + ' ' + itemUsuarios.trabajador.cedula;
                 }
 
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -293,7 +297,7 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void ddlSucursalAdd_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSucursalAdd.SelectedValue != string.Empty)
-                Listas.Trabajadores_Sucursal(ddlTrabajadorAdd, Convert.ToInt32(ddlSucursalAdd.SelectedValue));
+                IdSucursal = Convert.ToInt32(ddlSucursalAdd.SelectedValue);
         }
 
         protected void ddlEmpresaEdit_SelectedIndexChanged(object sender, EventArgs e)
@@ -304,7 +308,11 @@ namespace SGSSTC.source.sistema.GestionDatos
         protected void ddlSucursalEdit_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSucursalEdit.SelectedValue != string.Empty)
-                Listas.Trabajadores_Sucursal(ddlTrabajadorEdit, Convert.ToInt32(ddlSucursalEdit.SelectedValue));
+            {
+                txtTrabajadorEsp.Text = "";
+                IdSucursalEsp = Convert.ToInt32(ddlSucursalEdit.SelectedValue);
+            }
+                
         }
         #endregion
 
@@ -346,6 +354,24 @@ namespace SGSSTC.source.sistema.GestionDatos
             }
             LlenarGridView();
 
+        }
+        #endregion
+
+        #region AutoCompletar
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajador(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador, IdPuesto);
+            return listTrabajadores;
+        }
+
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajadorEsp(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursalEsp, ref IdTrabajadorEsp, IdPuestoEsp);
+            return listTrabajadores;
         }
         #endregion
     }

@@ -24,6 +24,14 @@
 
 <body>
 	<style>
+     
+        .table table > tbody > tr > td > span {
+            background-color: transparent !important;
+            border-color: transparent !important;
+            color: #337ab7 !important;
+        }
+        
+
 		.dropdown-submenu {
 			position: relative;
 		}
@@ -234,7 +242,7 @@
 									</li>
 
 									<li>
-										<a href="#">
+										<a href="../Planear/index_EncuestaObjetivosSST.aspx">
 											<i class="fa fa-circle-o"></i>
 											<span>Encuesta de Conocimiento de los Objetivos de SST</span>
 										</a>

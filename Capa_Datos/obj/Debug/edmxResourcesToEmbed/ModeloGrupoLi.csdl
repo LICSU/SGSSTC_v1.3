@@ -768,6 +768,7 @@
     <Property Name="id_sucursal" Type="Int32" />
     <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="sucursal" Relationship="Self.FK_planes_sucursal" FromRole="plan" ToRole="sucursal" />
+    <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="plan_trabajo">
     <Key>
@@ -951,16 +952,6 @@
     <NavigationProperty Name="norma_sucursal" Relationship="Self.FK_normas_sucursal_sucursal1" FromRole="sucursal" ToRole="norma_sucursal" />
     <NavigationProperty Name="plan" Relationship="Self.FK_planes_sucursal" FromRole="sucursal" ToRole="plan" />
     <NavigationProperty Name="tipo_documento" Relationship="Self.FK_tipo_documento_sucursal" FromRole="sucursal" ToRole="tipo_documento" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="tipo_documento">
     <Key>
@@ -2306,7 +2297,6 @@
     <EntitySet Name="sistema" EntityType="Self.sistema" />
     <EntitySet Name="soporte" EntityType="Self.soporte" />
     <EntitySet Name="sucursal" EntityType="Self.sucursal" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
     <EntitySet Name="tipo_epp" EntityType="Self.tipo_epp" />
     <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" />

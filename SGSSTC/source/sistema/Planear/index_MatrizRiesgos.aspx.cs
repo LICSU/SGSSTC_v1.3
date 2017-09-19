@@ -33,6 +33,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
+                ViewState["buscar"] = string.Empty;
                 CargarListas();
                 LlenarGridView();
             }
@@ -43,7 +44,7 @@ namespace SGSSTC.source.sistema.Hacer
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             string tipoRiesgo = string.Empty + ViewState["tipoRiesgo"];
 
-            Tabla.MatrizRiesgo(GridView1, IdSucursal, IdEmpresa, tipoRiesgo);
+            Tabla.MatrizRiesgo(GridView1, IdSucursal, IdEmpresa, tipoRiesgo, string.Empty + ViewState["buscar"]);
 
         }
         private void CargarListas()
@@ -95,32 +96,32 @@ namespace SGSSTC.source.sistema.Hacer
                 string id_ide_puesto = (gvrow.FindControl("id_ide_puesto") as Label).Text;
 
                 string idCifrado = objUtilidades.cifrarCadena(id_ide_puesto);
-                Response.Redirect("../Hacer/"+Paginas.Create_EvaluacionRiesgos.Value + "?id=" + idCifrado);
+                Response.Redirect(Paginas.Create_EvaluacionRiesgos.Value + "?id=" + idCifrado);
             }
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
+            if (ObjUsuario != null)
+            {
+                if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+                {
+                    //GridView1.Columns[6].Visible = false;
+                }
+            }
         }
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 string Evaluacion = Convert.ToString(DataBinder.Eval(e.Row.DataItem, "Evaluacion"));
-                string Medidas = Convert.ToString(DataBinder.Eval(e.Row.DataItem, "Medidas"));
-
 
                 if (Evaluacion == "Sin Evaluación")
                 {
-                    //e.Row.Cells[7].Controls.Clear();
+                    e.Row.Cells[9].Controls.Clear();
                 }
                 else if (Evaluacion == "Con Evaluación")
                 {
-                    //e.Row.Cells[7].Controls.Clear();
-                }
-
-                if (Medidas == "Sin Asignar")
-                {
-                    e.Row.Cells[8].Text = "Sin Asignar";
+                    e.Row.Cells[8].Controls.Clear();
                 }
             }
         }
@@ -178,11 +179,11 @@ namespace SGSSTC.source.sistema.Hacer
         {
             if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtBuscar.Text;
+                ViewState["buscar"] = txtBuscar.Text;
             }
             else
             {
-                ViewState["sWhere"] = string.Empty;
+                ViewState["buscar"] = string.Empty;
             }
             LlenarGridView();
         }

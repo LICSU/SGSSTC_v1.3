@@ -193,13 +193,22 @@ namespace SGSSTC.source.sistema.GestionDatos {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursalAdd;
         
         /// <summary>
-        /// Control ddlTrabajadorAdd.
+        /// Control txtTrabajador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajadorAdd;
+        protected global::System.Web.UI.WebControls.TextBox txtTrabajador;
+        
+        /// <summary>
+        /// Control AutoCompleteExtender2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender2;
         
         /// <summary>
         /// Control ddlRolAdd.
@@ -301,13 +310,22 @@ namespace SGSSTC.source.sistema.GestionDatos {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursalEdit;
         
         /// <summary>
-        /// Control ddlTrabajadorEdit.
+        /// Control txtTrabajadorEsp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajadorEdit;
+        protected global::System.Web.UI.WebControls.TextBox txtTrabajadorEsp;
+        
+        /// <summary>
+        /// Control AutoCompleteExtender1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
         
         /// <summary>
         /// Control ddlRolEdit.

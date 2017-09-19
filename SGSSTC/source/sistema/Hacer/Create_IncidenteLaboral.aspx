@@ -29,7 +29,7 @@
 
             <div class="row">
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-md-offset-2">
                         <h4>Empresa</h4>
 
                         <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" CssClass="form-control" AutoPostBack="true"
@@ -44,7 +44,7 @@
 
                 <asp:PlaceHolder runat="server" ID="phSucursal" Visible="false">
 
-                    <div class="col-md-4 col-md-offset-2">
+                    <div class="col-md-4">
                         <h4>Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" CssClass="form-control" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
@@ -955,9 +955,9 @@
 
             <!-- Magnitud del evento -->
             <div class="row">
-                <h3>Magnitud del Evento</h3>
+                <h3 class="col-md-offset-2">Magnitud del Evento</h3>
 
-                <div class="col-md-3 col-md-2">
+                <div class="col-md-4 col-md-offset-2">
                     <h5>Días de incapacidad.</h5>
                     <asp:TextBox ID="txtDiasIncapacidad" runat="server" ClientIDMode="Static" CssClass="form-control"
                         TextMode="number" min="0"></asp:TextBox>

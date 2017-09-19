@@ -158,6 +158,10 @@ namespace SGSSTC.source.sistema.Verificar
 			}
 
 		}
-		
-	}
+
+        protected void Volver_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }

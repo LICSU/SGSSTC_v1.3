@@ -9,7 +9,7 @@ namespace SGSSTC.source.sistema.Hacer
 {
     public partial class index_IdentificacionPeligros : Page
     {
-        private Utilidades objUtilidades = new Utilidades();
+        private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
 
@@ -18,7 +18,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this); phAlerta.Visible = false;
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -27,6 +27,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
+                ViewState["sWhere"] = string.Empty;
                 LlenarGridView();
                 CargarListas();
             }
@@ -35,7 +36,10 @@ namespace SGSSTC.source.sistema.Hacer
         {
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
-            Tabla.IdentificacionPeligro(GridView1, IdSucursal);
+            Tabla.IdentificacionPeligro(
+                GridView1,
+                IdSucursal,
+                string.Empty + ViewState["sWhere"]);
         }
         private void CargarListas()
         {
@@ -47,7 +51,7 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
         protected void AgregarRegistro(object sender, EventArgs e)
-        {
+        {            
             Response.Redirect(Paginas.Create_IdentificacionPeligro.Value);
         }
         protected void EliminarRegistro(object sender, EventArgs e)
@@ -55,6 +59,7 @@ namespace SGSSTC.source.sistema.Hacer
             identificacion_peligro tabla = new identificacion_peligro();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             LlenarGridView();
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
         }
         protected void MostrarModalImprimir(object sender, EventArgs e)
@@ -68,8 +73,9 @@ namespace SGSSTC.source.sistema.Hacer
                 string.Empty + IdEmpSuc.Item2,
                 ViewState["Imprimir"].ToString()
             };
-            PrintFile.PrintPlanInduccion(valores, this);
             Modal.CerrarModal("printModal", "printModalScript", this);
+            PrintFile.PrintIdentificacionPeligro(valores, this);
+            
         }
         #endregion
 
@@ -87,7 +93,7 @@ namespace SGSSTC.source.sistema.Hacer
 
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
 
-
+                
             }
             else if (e.CommandName.Equals(ComandosGrid.Consultar.Value))
             {
@@ -95,11 +101,11 @@ namespace SGSSTC.source.sistema.Hacer
 
                 idRiesgos = objUtilidades.cifrarCadena(idRiesgos);
 
-                Response.Redirect(Paginas.View_IdentificacionPeligros.Value + "?id=" + idRiesgos);
+                Response.Redirect(Paginas.View_IdentificacionPeligros.Value+"?id=" + idRiesgos);
             }
             else if (e.CommandName.Equals(ComandosGrid.Imprimir.Value))
             {
-
+                
 
                 hImprimir.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
 

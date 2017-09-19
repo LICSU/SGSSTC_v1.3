@@ -259,7 +259,12 @@
                             <div class="row form-group">
                                 <label class="col-md-4 control-label">Prioridad: </label>
                                 <div class="col-md-6">
-                                    <asp:DropDownList ID="ddlPrioridadAdd" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlPrioridadAdd" runat="server" ClientIDMode="Static" CssClass="form-control">
+                                        <asp:ListItem Text="Seleccione un Valor" Value=""></asp:ListItem>
+                                        <asp:ListItem Text="Alta" Value="Alta"></asp:ListItem>
+                                        <asp:ListItem Text="Media" Value="Media"></asp:ListItem>
+                                        <asp:ListItem Text="Baja" Value="Baja"></asp:ListItem>
+                                    </asp:DropDownList>
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
                                         SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
                                         Font-Bold="true" ControlToValidate="ddlPrioridadAdd" runat="server"

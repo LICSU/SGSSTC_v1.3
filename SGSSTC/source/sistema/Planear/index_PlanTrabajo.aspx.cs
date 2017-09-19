@@ -21,6 +21,7 @@ namespace SGSSTC.source.sistema.Hacer
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -128,7 +129,12 @@ namespace SGSSTC.source.sistema.Hacer
                     recursos_aprobados = Convert.ToInt32(txtRecursosAdd.Text),
                     id_responsable = Convert.ToInt32(ddlResponsable.SelectedValue)
                 };
-                CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+                ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+
+                Modal.CerrarModal("addModal", "AddModalScript", this);
+
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+
                 LlenarGridView();
             }
         }
@@ -164,10 +170,11 @@ namespace SGSSTC.source.sistema.Hacer
                     Edit.id_responsable = Convert.ToInt32(ddlResponsableEdit.SelectedValue);
                 }
 
-                CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+                ObjUsuario.Error = CRUD.Edit_Fila(contexto, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
                 Modal.CerrarModal("editModal", "EditModalScript", this);
-                //Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+
+                Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             }
             LlenarGridView();
         }
@@ -175,8 +182,10 @@ namespace SGSSTC.source.sistema.Hacer
         {
             plan_trabajo tabla = new plan_trabajo();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+
             Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
-            //Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
+
+            Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }
         protected void GenerarDocumentoG(object sender, EventArgs e)

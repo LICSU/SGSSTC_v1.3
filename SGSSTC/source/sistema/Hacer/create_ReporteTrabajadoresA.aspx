@@ -2780,7 +2780,7 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <asp:Literal ID="ltReporte" runat="server"></asp:Literal>
-                            <div id="piechart" runat="server"></div>
+                            <div id="piechart"></div>
                         </div>
                         <asp:PlaceHolder runat="server" Visible="false">
                             <asp:Image alt="-" ID="ImgChart" runat="server" />

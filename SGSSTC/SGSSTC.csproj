@@ -1355,6 +1355,7 @@
     <Content Include="source\sistema\EvaluacionInicial\index_AutoEvaluacion.aspx" />
     <Content Include="source\sistema\Hacer\index_PerfilCargo.aspx" />
     <Content Include="source\sistema\Hacer\Update_PerfilCargo.aspx" />
+    <Content Include="source\sistema\Planear\index_Encuesta_ObjetivosSST.aspx" />
     <Content Include="source\sistema\Verificar\index_Indicadores.aspx" />
     <Content Include="source\sistema\Hacer\index_Inspecciones.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\index_PorcentajeCapacitacion.aspx" />
@@ -1712,6 +1713,13 @@
     </Compile>
     <Compile Include="source\sistema\Hacer\Update_PerfilCargo.aspx.designer.cs">
       <DependentUpon>Update_PerfilCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="source\sistema\Planear\index_Encuesta_ObjetivosSST.aspx.cs">
+      <DependentUpon>index_Encuesta_ObjetivosSST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="source\sistema\Planear\index_Encuesta_ObjetivosSST.aspx.designer.cs">
+      <DependentUpon>index_Encuesta_ObjetivosSST.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Verificar\index_Indicadores.aspx.cs">
       <DependentUpon>index_Indicadores.aspx</DependentUpon>

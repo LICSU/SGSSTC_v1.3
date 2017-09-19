@@ -142,10 +142,10 @@ namespace Capa_Datos
             var consulta = new documento();
             int id = 0;
 
-            if (contexto.documento.Where(x => x.id_tabla == _id_sucursal && x.tipo == "RecursosEco").Count() != 0)
+            if (contexto.documento.Where(x => x.id_tabla == _id_sucursal && x.tipo == "RecursosEconomicos").Count() != 0)
             {
                 id = contexto.documento
-                    .Where(x => x.id_tabla == _id_sucursal && x.tipo == "RecursosEco")
+                    .Where(x => x.id_tabla == _id_sucursal && x.tipo == "RecursosEconomicos")
                     .Max(x => x.id_documento);
             }
 

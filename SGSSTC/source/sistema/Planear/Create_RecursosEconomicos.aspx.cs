@@ -33,8 +33,8 @@ namespace SGSSTC.source.sistema.Hacer
 
             for (int i = 5; i <= 59; i = i + 6)
             {
-                TextBox miTextbox1 = (TextBox)Master.FindControl("Textbox" + (i));
-                TextBox miTextbox2 = (TextBox)Master.FindControl("Textbox" + (i + 1));
+                TextBox miTextbox1 = (TextBox)panel1.FindControl("Textbox" + (i));
+                TextBox miTextbox2 = (TextBox)panel1.FindControl("Textbox" + (i + 1));
 
                 if (miTextbox1.Text == string.Empty) { miTextbox1.Text = "0"; }
                 if (miTextbox2.Text == string.Empty) { miTextbox2.Text = "0"; }

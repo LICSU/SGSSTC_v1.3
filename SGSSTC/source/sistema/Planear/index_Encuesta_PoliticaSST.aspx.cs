@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Security;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,6 +15,9 @@ namespace SGSSTC.source.sistema.Hacer
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
+        private static int IdSucursal = 0, IdSucursalEsp = 0, IdSucursalSub = 0;
+        private static int IdTrabajador = 0, IdTrabajadorEsp = 0, IdTrabajadorSub = 0;
+        private static int IdPuesto = 0, IdPuestoEsp = 0, IdPuestoSub = 0;
 
         #region index principal
         protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +31,8 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
-                //LlenarGridView();
+                ViewState["sWhere"] = "";
+                LlenarGridView();
                 CargarListas();
             }
         }
@@ -38,13 +44,13 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 Listas.Sucursal(ddlSucursalAdd, ObjUsuario.Id_empresa);
                 Listas.Sucursal(ddlSucursalGral, ObjUsuario.Id_empresa);
-                Listas.Sucursal(ddlSucursalSubir, ObjUsuario.Id_empresa);
             }
 
             if (!BoolEmpSuc.Item2)
             {
-                Listas.Trabajadores_Sucursal(ddlTrabajadorEsp, ObjUsuario.Id_sucursal);
-                Listas.Trabajadores_Sucursal(ddlTrabajador, ObjUsuario.Id_sucursal);
+                IdSucursal = Convert.ToInt32(ObjUsuario.Id_sucursal);
+                IdSucursalEsp = Convert.ToInt32(ObjUsuario.Id_sucursal);
+                IdSucursalSub = Convert.ToInt32(ObjUsuario.Id_sucursal);
             }
         }
         private void LlenarGridView()
@@ -60,7 +66,8 @@ namespace SGSSTC.source.sistema.Hacer
                 GridView1,
                 IdEmpresa,
                 IdSucursal,
-                id_trabajador
+                id_trabajador,
+                string.Empty + ViewState["sWhere"].ToString()
                 );
         }
         #endregion
@@ -111,7 +118,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             string[] valores2 = {
                 string.Empty + ObjUsuario.Id_sucursal,
-                ddlTrabajadorEsp.SelectedItem.ToString()
+                txtTrabajadorEsp.Text
             };
             string[] valores = {
                 "¿Es de su Conocimiento la Política de Seguridad y Salud en el Trabajo de la Organización?",
@@ -140,9 +147,8 @@ namespace SGSSTC.source.sistema.Hacer
         protected void btnSubirArchivo(object sender, EventArgs e)
         {
             int IdEmpresa = ObjUsuario.Id_empresa;
-            int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalSubir);
 
-            string _ruta = Utilidades.GuardarArchivo(flpArchivo, IdEmpresa + "_Encuesta_" + ddlTrabajadorSubir.SelectedValue, "~/source/archivos/encuesta_politicasst/");
+            string _ruta = Utilidades.GuardarArchivo(flpArchivo, IdEmpresa + "_Encuesta_" + IdTrabajadorSub, "~/source/archivos/encuesta_politicasst/");
 
             GrupoLiEntities contexto = new GrupoLiEntities();
             int idEncuesta = Convert.ToInt32(hdfIDEsc.Value);
@@ -230,7 +236,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (ddlSucursal.SelectedValue != string.Empty)
             {
                 ViewState["sucursal"] = ddlSucursal.SelectedValue;
-                Listas.Trabajadores_Sucursal(ddlTrabajador, Convert.ToInt32(ddlSucursal.SelectedValue));
+                IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
             }
             else
             {
@@ -240,14 +246,7 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void ddlTrabajador_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ddlTrabajador.SelectedValue != string.Empty)
-            {
-                ViewState["trabajador"] = ddlTrabajador.SelectedValue;
-            }
-            else
-            {
-                ViewState["trabajador"] = string.Empty;
-            }
+            ViewState["trabajador"] = IdTrabajador.ToString();
             LlenarGridView();
         }
         protected void BuscarRegistro(object sender, EventArgs e)
@@ -266,15 +265,39 @@ namespace SGSSTC.source.sistema.Hacer
         {
             if (ddlSucursalAdd.SelectedValue != string.Empty)
             {
-                Listas.Trabajadores_Sucursal(ddlTrabajadorEsp, Convert.ToInt32(ddlSucursalAdd.SelectedValue));
+                IdSucursalEsp = Convert.ToInt32(ddlSucursalAdd.SelectedValue);
             }
         }
-        protected void ddlSucursalSubir_SelectedIndexChanged(object sender, EventArgs e)
+        
+        #endregion
+
+        protected void hdnValue_ValueChanged(object sender, EventArgs e)
         {
-            if (ddlSucursalSubir.SelectedValue != string.Empty)
-            {
-                Listas.Trabajadores_Sucursal(ddlTrabajadorSubir, Convert.ToInt32(ddlSucursalSubir.SelectedValue));
-            }
+            ViewState["trabajador"] = IdTrabajador.ToString();
+            LlenarGridView();
+        }
+
+        #region AutoCompletar
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajador(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador, IdPuesto);
+            return listTrabajadores;
+        }
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajadorEsp(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursalEsp, ref IdTrabajadorEsp, IdPuestoEsp);
+            return listTrabajadores;
+        }
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajadorSub(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursalSub, ref IdTrabajadorSub, IdPuestoSub);
+            return listTrabajadores;
         }
         #endregion
     }

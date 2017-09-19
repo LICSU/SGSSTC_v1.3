@@ -30,6 +30,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             if (!IsPostBack)
             {
+                ViewState["sWhere"] = string.Empty;
                 LlenarGridView();
                 CargarListas();
             }
@@ -53,7 +54,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
-            Tabla.vigilancia_epidemiologica(GridView1, IdEmpresa, IdSucursal);
+            Tabla.vigilancia_epidemiologica(GridView1, IdEmpresa, IdSucursal, string.Empty + ViewState["sWhere"]);
         }
         #endregion
 
@@ -148,6 +149,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             }
             LlenarGridView();
         }
+
         protected void BuscarRegistro(object sender, EventArgs e)
         {
             if (txtBuscar.Text != string.Empty)

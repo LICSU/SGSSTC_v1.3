@@ -115,7 +115,7 @@ namespace SGSSTC.source.sistema.Hacer
                 Convert.ToInt32(hdfObligacionIDDel.Value),
                 ObjUsuario.Id_usuario,
                 HttpContext.Current.Request.Url.AbsoluteUri);
-
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }

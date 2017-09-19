@@ -48,7 +48,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
             Listas.Reg_Dpto_Mcpio(ddlRegion, "Region");
             Listas.Ccf(ddlCcf);
-            Listas.Cno(ddlCargo);
+            Listas.PerfilCargo(ddlCargo);
         }
 
         protected void btnNuevo_Click(object sender, EventArgs e)

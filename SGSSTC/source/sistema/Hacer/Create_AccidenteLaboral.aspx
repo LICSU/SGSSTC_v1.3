@@ -38,7 +38,7 @@
 
             <div class="row">
                 <asp:PlaceHolder runat="server" ID="phEmpresa">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-md-offset-2">
                         <h4>Empresa</h4>
 
                         <asp:DropDownList runat="server" ID="ddlEmpresa" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Empresa" CssClass="form-control" AutoPostBack="true"
@@ -52,7 +52,7 @@
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder runat="server" ID="phSucursal">
-                    <div class="col-md-4 col-md-offset-4">
+                    <div class="col-md-4">
                         <h4>Sucursal</h4>
                         <asp:DropDownList runat="server" ID="ddlSucursal" data-toggle="tooltip" data-placement="bottom" title="Seleccione una Sucursal" CssClass="form-control" AutoPostBack="true"
                             OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">

@@ -32,6 +32,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (!IsPostBack)
             {
                 ViewState["tipo"] = "Insp";
+                ViewState["buscar"] = "";
                 LlenarGridView();
                 CargarListas();
             }
@@ -57,7 +58,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             string tipo = string.Empty + ViewState["tipo"];
 
-            Tabla.inspecciones(GridView1, tipo, IdSucursal, IdEmpresa);
+            Tabla.inspecciones(GridView1, tipo, IdSucursal, IdEmpresa, string.Empty + ViewState["buscar"]);
         }
         #endregion
 
@@ -212,11 +213,11 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             if (txtBuscar.Text != string.Empty)
             {
-                ViewState["sWhere"] = txtBuscar.Text;
+                ViewState["buscar"] = txtBuscar.Text;
             }
             else
             {
-                ViewState["sWhere"] = string.Empty;
+                ViewState["buscar"] = string.Empty;
             }
             LlenarGridView();
         }

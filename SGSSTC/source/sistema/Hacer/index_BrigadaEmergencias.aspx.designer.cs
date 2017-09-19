@@ -40,6 +40,15 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.Label lbAlerta;
         
         /// <summary>
+        /// Control txtBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
+        
+        /// <summary>
         /// Control phEmpresa.
         /// </summary>
         /// <remarks>
@@ -101,15 +110,6 @@ namespace SGSSTC.source.sistema.Hacer {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::CKEditor.NET.CKEditorControl txtFuncBrig;
-        
-        /// <summary>
-        /// Control collapse3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapse3;
         
         /// <summary>
         /// Control txtBrigCom.

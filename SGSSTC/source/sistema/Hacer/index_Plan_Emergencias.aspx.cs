@@ -45,7 +45,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (idPlan != 0)
             {
                 List<plan> ListaPlanes = new List<plan>();
-                ListaPlanes = Getter.Planes(idPlan);
+                ListaPlanes = Getter.Planes(idPlan, "Emergencias");
 
                 if (ListaPlanes.Count > 0)
                 {
@@ -76,13 +76,15 @@ namespace SGSSTC.source.sistema.Hacer
             plan nuevo = new plan()
             {
                 id_sucursal = IdSucursal,
-                nombre = txtPlanEmergencia.Text
+                nombre = txtPlanEmergencia.Text,
+                tipo = "Emergencias"
             };
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             if (ObjUsuario.Error)
             {
                 cargarPlan();
+                Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             }
         }
         protected void ddlEmpresa_SelectedIndexChanged(object sender, EventArgs e)

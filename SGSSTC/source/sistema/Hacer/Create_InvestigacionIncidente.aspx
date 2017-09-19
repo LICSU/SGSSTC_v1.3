@@ -398,6 +398,10 @@
 					<asp:Button runat="server" ID="btPrintSave" Text="Guardar" class="btn btn-block btn-info"
 						OnClick="btPrintSave_Click" ValidationGroup="ValidationAdd"></asp:Button>
 				</div>
+
+				<div class="col-md-2">
+					<asp:Button runat="server" ID="Volver" Text="Volver" class="btn btn-block btn-default" OnClick="Volver_Click"></asp:Button>
+				</div>
 			</div>
 
 		</ContentTemplate>

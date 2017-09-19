@@ -730,11 +730,12 @@ namespace Capa_Datos
         #endregion
 
         #region planes
-        public static List<plan> Planes(int _id_plan)
+        public static List<plan> Planes(int _id_plan, string _tipo = "", string _nombre ="")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             List<plan> consulta = new List<plan>();
-            consulta = contexto.plan.Where(x => x.id_plan == _id_plan).ToList();
+            consulta = contexto.plan.Where(x => x.id_plan == _id_plan && x.tipo == _tipo
+                                            && x.nombre.ToUpper().Contains(_nombre.ToUpper())).ToList();
             return consulta;
         }
 

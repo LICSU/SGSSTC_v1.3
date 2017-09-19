@@ -86,7 +86,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 Listas.Ccf(ddlCcf);
                 ddlCcf.SelectedValue = string.Empty + itemTrabajador.id_ccf;
 
-                Listas.Cno(ddlCargo);
+                Listas.PerfilCargo(ddlCargo);
                 //ddlCargo.SelectedValue = Convert.ToString(itemTrabajador.perfil_cargo.id_cno);
 
                 ImgFoto.ImageUrl = itemTrabajador.foto;

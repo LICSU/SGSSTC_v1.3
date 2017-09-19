@@ -62,9 +62,17 @@
 
 					<tr>
 						<td>
-							<asp:DropDownList runat="server" ID="ddlTrabajador1" class="form-control"
-								AutoPostBack="true" OnSelectedIndexChanged="ddlTrabajador1_SelectedIndexChanged">
-							</asp:DropDownList>
+                            <asp:TextBox ID="txtTrabajador" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:hiddenfield id="hdnValue" onvaluechanged="hdnValue_ValueChanged" runat="server"/>
+                            <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1"
+                                CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                TargetControlID="txtTrabajador" ID="AutoCompleteExtender1" runat="server"
+                                FirstRowSelected="false"
+                                CompletionListCssClass="completionList"
+                                OnClientItemSelected="OnContactSelected"
+                                CompletionListItemCssClass="listItem"
+                                CompletionListHighlightedItemCssClass="itemHighlighted">
+                            </cc1:AutoCompleteExtender>
 						</td>
 
 						<td>
@@ -74,9 +82,17 @@
 					</tr>
 					<tr>
 						<td>
-							<asp:DropDownList runat="server" ID="ddlTrabajador2" class="form-control"
-								AutoPostBack="true" OnSelectedIndexChanged="ddlTrabajador2_SelectedIndexChanged">
-							</asp:DropDownList>
+							<asp:TextBox ID="txtTrabajador2" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:hiddenfield id="hdnValue2" onvaluechanged="hdnValue2_ValueChanged" runat="server"/>
+                            <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador2" MinimumPrefixLength="1"
+                                CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                TargetControlID="txtTrabajador2" ID="AutoCompleteExtender2" runat="server"
+                                FirstRowSelected="false"
+                                CompletionListCssClass="completionList"
+                                OnClientItemSelected="OnContactSelected2"
+                                CompletionListItemCssClass="listItem"
+                                CompletionListHighlightedItemCssClass="itemHighlighted">
+                            </cc1:AutoCompleteExtender>
 						</td>
 
 						<td>
@@ -86,9 +102,17 @@
 					</tr>
 					<tr>
 						<td>
-							<asp:DropDownList runat="server" ID="ddlTrabajador3" class="form-control"
-								AutoPostBack="true" OnSelectedIndexChanged="ddlTrabajador3_SelectedIndexChanged">
-							</asp:DropDownList>
+							<asp:TextBox ID="txtTrabajador3" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:hiddenfield id="hdnValue3" onvaluechanged="hdnValue3_ValueChanged" runat="server"/>
+                            <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador3" MinimumPrefixLength="1"
+                                CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                TargetControlID="txtTrabajador3" ID="AutoCompleteExtender3" runat="server"
+                                FirstRowSelected="false"
+                                CompletionListCssClass="completionList"
+                                OnClientItemSelected="OnContactSelected3"
+                                CompletionListItemCssClass="listItem"
+                                CompletionListHighlightedItemCssClass="itemHighlighted">
+                            </cc1:AutoCompleteExtender>
 						</td>
 
 						<td>
@@ -98,9 +122,17 @@
 					</tr>
 					<tr>
 						<td>
-							<asp:DropDownList runat="server" ID="ddlTrabajador4" class="form-control"
-								AutoPostBack="true" OnSelectedIndexChanged="ddlTrabajador4_SelectedIndexChanged">
-							</asp:DropDownList>
+							<asp:TextBox ID="txtTrabajador4" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:hiddenfield id="hdnValue4" onvaluechanged="hdnValue4_ValueChanged" runat="server"/>
+                            <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador4" MinimumPrefixLength="1"
+                                CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                TargetControlID="txtTrabajador4" ID="AutoCompleteExtender4" runat="server"
+                                FirstRowSelected="false"
+                                CompletionListCssClass="completionList"
+                                OnClientItemSelected="OnContactSelected4"
+                                CompletionListItemCssClass="listItem"
+                                CompletionListHighlightedItemCssClass="itemHighlighted">
+                            </cc1:AutoCompleteExtender>
 						</td>
 
 						<td>
@@ -122,5 +154,34 @@
 			<h4>Generar Documento</h4>
 		</div>
 	</div>
+     <script>
+        function OnContactSelected(source, eventArgs) {
+        
+            var hdnValueID = "<%= hdnValue.ClientID %>";
 
+            document.getElementById(hdnValueID).value = eventArgs.get_value();
+            __doPostBack(hdnValueID, "");
+         }  
+         function OnContactSelected2(source, eventArgs) {
+
+             var hdnValueID = "<%= hdnValue2.ClientID %>";
+
+             document.getElementById(hdnValueID).value = eventArgs.get_value();
+             __doPostBack(hdnValueID, "");
+         }  
+         function OnContactSelected3(source, eventArgs) {
+
+             var hdnValueID = "<%= hdnValue3.ClientID %>";
+
+             document.getElementById(hdnValueID).value = eventArgs.get_value();
+             __doPostBack(hdnValueID, "");
+         }  
+         function OnContactSelected4(source, eventArgs) {
+
+             var hdnValueID = "<%= hdnValue4.ClientID %>";
+
+             document.getElementById(hdnValueID).value = eventArgs.get_value();
+             __doPostBack(hdnValueID, "");
+         }  
+    </script>
 </asp:Content>

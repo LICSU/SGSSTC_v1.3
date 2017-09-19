@@ -29,6 +29,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             if (!IsPostBack)
             {
+                ViewState["sWhere"] = "";
                 LlenarGridView();
                 CargarListas();
             }
@@ -54,7 +55,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
-            Tabla.autoevaluacion(GridView1, IdSucursal, IdEmpresa);
+            Tabla.autoevaluacion(GridView1, IdSucursal, IdEmpresa, ViewState["sWhere"].ToString());
         }
         #endregion
 
@@ -102,7 +103,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region acciones grid
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Equals(ComandosGrid.Editar.Value))
+            if (e.CommandName.Equals(ComandosGrid.Eliminar.Value))
             {
                 hdfIDDel.Value = Utilidades_GridView.DevolverIdRow(e, GridView1);
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);

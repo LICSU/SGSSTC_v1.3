@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Usuario.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Usuario" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -200,14 +201,22 @@
                                 <div class="col-md-8 col-md-offset-2">
                                     <h4>Trabajador</h4>
 
-                                    <asp:DropDownList ID="ddlTrabajadorAdd" runat="server" ClientIDMode="Static"
-                                        CssClass="form-control" data-toggle="tooltip" data-placement="bottom"
-                                        title="Seleccione el trabajador asociado al usuario">
-                                    </asp:DropDownList>
+                                   <asp:TextBox ID="txtTrabajador" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <div ID="ListDivisor">
+                                        <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1"
+                                            CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                            TargetControlID="txtTrabajador" ID="AutoCompleteExtender2" runat="server"
+                                            FirstRowSelected="false"
+                                            CompletionListCssClass="completionList"
+                                            CompletionListItemCssClass="listItem"
+                                            CompletionListElementID="ListDivisor" 
+                                            CompletionListHighlightedItemCssClass="itemHighlighted">
+                                        </cc1:AutoCompleteExtender>
+                                    </div>
 
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
                                         Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
-                                        ControlToValidate="ddlTrabajadorAdd" runat="server" ValidationGroup="ValidationAdd" />
+                                        ControlToValidate="txtTrabajador" runat="server" ValidationGroup="ValidationAdd" />
 
                                 </div>
 
@@ -348,14 +357,22 @@
                                 <div class="col-md-8 col-md-offset-2">
                                     <h4>Trabajador</h4>
 
-                                    <asp:DropDownList ID="ddlTrabajadorEdit" runat="server" ClientIDMode="Static"
-                                        CssClass="form-control"
-                                        data-toggle="tooltip" data-placement="bottom" title="Seleccione el trabajador asociado al usuario">
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="txtTrabajadorEsp" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <div ID="ListDivisor2">
+                                        <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajadorEsp" MinimumPrefixLength="1"
+                                            CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                            TargetControlID="txtTrabajadorEsp" ID="AutoCompleteExtender1" runat="server"
+                                            FirstRowSelected="false"
+                                            CompletionListCssClass="completionList"
+                                            CompletionListItemCssClass="listItem"
+                                            CompletionListElementID="ListDivisor2" 
+                                            CompletionListHighlightedItemCssClass="itemHighlighted">
+                                        </cc1:AutoCompleteExtender>
+                                    </div>
 
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>" SetFocusOnError="true"
                                         Display="Dynamic" ForeColor="#B50128" Font-Size="10" Font-Bold="true"
-                                        ControlToValidate="ddlTrabajadorEdit" runat="server" ValidationGroup="ValidationEdit" />
+                                        ControlToValidate="txtTrabajadorEsp" runat="server" ValidationGroup="ValidationEdit" />
                                 </div>
                             </div>
 

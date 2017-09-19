@@ -68,8 +68,13 @@ namespace SGSSTC.source.sistema.Hacer
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                hdfPlanID.Value = (gvrow.FindControl("id") as Label).Text;
+                hdfPlanID.Value = (gvrow.FindControl("id_plan_mapa") as Label).Text;
                 txtNombreEdit.Text = (gvrow.FindControl("nombre") as Label).Text;
+                int id_empresa = Convert.ToInt32((gvrow.FindControl("id_empresa") as Label).Text);
+                int id_sucursal = Convert.ToInt32((gvrow.FindControl("id_sucursal") as Label).Text);
+                ddlEmpresaEdit.SelectedValue = id_empresa.ToString();
+                Listas.Sucursal(ddlSucursalEdit, id_empresa);
+                ddlSucursalEdit.SelectedValue = id_sucursal.ToString();
 
                 Modal.registrarModal("editModal", "EditModalScript", this);
             }
@@ -78,37 +83,33 @@ namespace SGSSTC.source.sistema.Hacer
                 int RowIndex = Convert.ToInt32((e.CommandArgument).ToString());
                 GridViewRow gvrow = GridView1.Rows[RowIndex];
 
-                hdfPlanIDDel.Value = (gvrow.FindControl("id") as Label).Text;
+                hdfPlanIDDel.Value = (gvrow.FindControl("id_plan_mapa") as Label).Text;
                 Modal.registrarModal("deleteModal", "DeleteModalScript", this);
             }
 
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
-
             GridView1.PageIndex = e.NewPageIndex;
             LlenarGridView();
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-			if (ObjUsuario != null)
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
+            if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdmEmp_DptoSalud()
+                || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
             {
-				if (ObjUsuario.isAdmEmp_DptoSeg() || ObjUsuario.isAdm_SucSeg() || ObjUsuario.isAdmEmp_DptoSalud()
-					|| ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
-				{
-					if (e.Row.RowType == DataControlRowType.Header)
-					{
-						e.Row.Cells[6].Visible = false;
-						e.Row.Cells[7].Visible = false;
-					}
-					if (e.Row.RowType == DataControlRowType.DataRow)
-					{
-						e.Row.Cells[6].Visible = false;
-						e.Row.Cells[7].Visible = false;
-					}
-				}
-			}
+                if (e.Row.RowType == DataControlRowType.Header)
+                {
+                    e.Row.Cells[5].Visible = false;
+                    e.Row.Cells[6].Visible = false;
+                }
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    e.Row.Cells[5].Visible = false;
+                    e.Row.Cells[6].Visible = false;
+                }
+            }
         }
         #endregion
 
@@ -173,6 +174,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             documento tabla = new documento();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfPlanIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }

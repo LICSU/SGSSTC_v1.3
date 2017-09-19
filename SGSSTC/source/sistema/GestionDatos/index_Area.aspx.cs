@@ -123,7 +123,7 @@ namespace SGSSTC.source.sistema.GestionDatos
 
                 Modal.CerrarModal("addModal", "AddModalScript", this);
 
-                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
+                Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
 
                 limpiarCampos();
 
