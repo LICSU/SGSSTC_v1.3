@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Security;
+using System.Web.Services;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace SGSSTC.source.sistema.EvaluacionInicial
 {
@@ -11,13 +14,16 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
+        private static int IdSucursal = 0;
+        private static int IdTrabajador = 0;
+        private static int IdPuesto = 0;
 
         #region index
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this); phAlerta.Visible = false;
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -69,7 +75,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
                 PrintFile.GetRadioValue(radio1),
                 PrintFile.GetRadioValue(radio2),
                 Textbox9.Text,
-                Textbox7.Text,               
+                Textbox7.Text,
                 PrintFile.GetRadioValue(radio3),
                 PrintFile.GetRadioValue(radio4),
                 Textbox8.Text,
@@ -108,40 +114,45 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             if (ddlSucursal.SelectedValue != string.Empty)
             {
-                Listas.Trabajadores_Sucursal(ddlTrabajador, Convert.ToInt32(ddlSucursal.SelectedValue));
+                IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
             }
         }
 
-        protected void ddlTrabajador_SelectedIndexChanged(object sender, EventArgs e)
+        protected void hdnValue_ValueChanged(object sender, EventArgs e)
         {
-            if (ddlTrabajador.SelectedValue != string.Empty)
+            List<trabajador> ListaTrabajador = new List<trabajador>();
+            int idTrabajador = Convert.ToInt32(IdTrabajador);
+            ListaTrabajador = Getter.Trabajador(idTrabajador);
+
+            foreach (var itemTrabajador in ListaTrabajador)
             {
-                List<trabajador> ListaTrabajador = new List<trabajador>();
-                int idTrabajador = Convert.ToInt32(ddlTrabajador.SelectedValue);
-                ListaTrabajador = Getter.Trabajador(idTrabajador);
+                lbPrimerApellido.Text = itemTrabajador.primer_apellido;
+                lbSegundoApellido.Text = itemTrabajador.segundo_apellido;
+                lbNombres.Text = itemTrabajador.primer_nombre + " " + itemTrabajador.segundo_nombre;
+                lbCedula.Text = itemTrabajador.cedula;
 
-                foreach (var itemTrabajador in ListaTrabajador)
-                {
-                    lbPrimerApellido.Text = itemTrabajador.primer_apellido;
-                    lbSegundoApellido.Text = itemTrabajador.segundo_apellido;
-                    lbNombres.Text = itemTrabajador.primer_nombre + " " + itemTrabajador.segundo_nombre;
-                    lbCedula.Text = itemTrabajador.cedula;
+                lbSexo.Text = itemTrabajador.sexo;
 
-                    lbSexo.Text = itemTrabajador.sexo;
+                DateTime nacimiento = Convert.ToDateTime(string.Empty + itemTrabajador.fecha_nacimiento);
+                int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
+                lbEdad.Text = string.Empty + edad;
+                lbEdoCivil.Text = itemTrabajador.edo_civil;
+                lbCCF.Text = itemTrabajador.ccf.nombre;
 
-                    DateTime nacimiento = Convert.ToDateTime(string.Empty + itemTrabajador.fecha_nacimiento);
-                    int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
-                    lbEdad.Text = string.Empty + edad;
-                    lbEdoCivil.Text = itemTrabajador.edo_civil;
-                    lbCCF.Text = itemTrabajador.ccf.nombre;
-
-                    lbArea.Text = itemTrabajador.puesto_trabajo.area.nombre;
-                    lbPuesto.Text = itemTrabajador.puesto_trabajo.nombre;
-                }
+                lbArea.Text = itemTrabajador.puesto_trabajo.area.nombre;
+                lbPuesto.Text = itemTrabajador.puesto_trabajo.nombre;
             }
-
         }
         #endregion
-        
+
+        #region AutoCompletar
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajador(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador, IdPuesto);
+            return listTrabajadores;
+        }
+        #endregion
     }
 }

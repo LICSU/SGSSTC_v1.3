@@ -27,6 +27,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
+                ViewState["sWhere"] = string.Empty;
                 LlenarGridView();
                 CargarListas();
             }
@@ -37,7 +38,8 @@ namespace SGSSTC.source.sistema.Hacer
 
             Tabla.IdentificacionPeligro(
                 GridView1,
-                IdSucursal);
+                IdSucursal,
+                string.Empty + ViewState["sWhere"]);
         }
         private void CargarListas()
         {
@@ -57,6 +59,7 @@ namespace SGSSTC.source.sistema.Hacer
             identificacion_peligro tabla = new identificacion_peligro();
             ObjUsuario.Error = CRUD.Delete_Fila(tabla, Convert.ToInt32(hdfIDDel.Value), ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
             LlenarGridView();
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
         }
         protected void MostrarModalImprimir(object sender, EventArgs e)
@@ -70,8 +73,9 @@ namespace SGSSTC.source.sistema.Hacer
                 string.Empty + IdEmpSuc.Item2,
                 ViewState["Imprimir"].ToString()
             };
-            PrintFile.PrintPlanInduccion(valores, this);
             Modal.CerrarModal("printModal", "printModalScript", this);
+            PrintFile.PrintIdentificacionPeligro(valores, this);
+            
         }
         #endregion
 
@@ -131,6 +135,18 @@ namespace SGSSTC.source.sistema.Hacer
             else
             {
                 ViewState["sucursal"] = "0";
+            }
+            LlenarGridView();
+        }
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["sWhere"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["sWhere"] = string.Empty;
             }
             LlenarGridView();
         }

@@ -31,10 +31,18 @@
 
             <div class="col-md-4">
                 <h4 class="text-center">Trabajador</h4>
-                <asp:DropDownList runat="server" ID="ddlTrabajador" class="form-control"></asp:DropDownList>
+                <asp:TextBox ID="txtTrabajador" runat="server" CssClass="form-control"></asp:TextBox>
+                <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1"
+                    CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                    TargetControlID="txtTrabajador" ID="AutoCompleteExtender1" runat="server"
+                    FirstRowSelected="false"
+                    CompletionListCssClass="completionList"
+                    CompletionListItemCssClass="listItem"
+                    CompletionListHighlightedItemCssClass="itemHighlighted">
+                </cc1:AutoCompleteExtender>
                 <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
                     SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                    Font-Bold="true" ControlToValidate="ddlTrabajador" runat="server"
+                    Font-Bold="true" ControlToValidate="txtTrabajador" runat="server"
                     ValidationGroup="ValidationAdd" />
             </div>
         </div>
@@ -412,7 +420,7 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <asp:Literal ID="ltReporte" runat="server"></asp:Literal>
-                        <div id="piechart" runat="server"></div>
+                        <div id="piechart"></div>
                     </div>
                     <asp:PlaceHolder runat="server" Visible="false">
                         <asp:Image alt="-" ID="ImgChart" runat="server" />

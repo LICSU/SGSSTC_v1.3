@@ -118,7 +118,7 @@
 				</div>
 				<div class="col-md-3">
 					<h4>Supervisor inmediato:</h4>
-					<asp:TextBox ID="txtSupervisor" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtSupervisor" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Fecha de ingreso:</h4>
@@ -128,7 +128,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<h4>Tiempo en el cargo:</h4>
-					<asp:TextBox ID="txtTiempoCargo" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtTiempoCargo" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Salario devengado:</h4>
@@ -136,7 +136,7 @@
 				</div>
 				<div class="col-md-6">
 					<h4>Actividad que realizaba:</h4>
-					<asp:TextBox ID="txtActRealizaba" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtActRealizaba" runat="server" CssClass="form-control" MaxLength="500"></asp:TextBox>
 				</div>
 
 			</div>
@@ -146,23 +146,23 @@
 				<h3>DATOS DE EVALUACIÓN DEL MÉDICO</h3>
 				<div class="col-md-6">
 					<h4>Naturaleza de la lesión: </h4>
-					<asp:TextBox ID="txtNaturalezaLesion" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtNaturalezaLesion" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
 				</div>
 				<div class="col-md-6">
 					<h4>Gravedad: </h4>
-					<asp:TextBox ID="txtGravedad" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtGravedad" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<h4>DESCRIPCIÓN DE LA LESIÓN</h4>
-					<asp:TextBox ID="txtDescLesion" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtDescLesion" runat="server" CssClass="form-control" MaxLength="5000"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
 					<h4>Reposo:</h4>
-					<asp:TextBox ID="txtReposo" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtReposo" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
 				</div>
 				<div class="col-md-4">
 					<h4>No. Días:</h4>
@@ -187,7 +187,7 @@
 			<div class="row">
 				<h3>ADIESTRAMIENTO RECIBIDO POR EL TRABAJADOR</h3>
 				<div class="col-md-12">
-					<asp:TextBox ID="txtAdiestramiento" TextMode="multiline" Rows="3" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtAdiestramiento" TextMode="multiline" Rows="3" runat="server" CssClass="form-control" MaxLength="5000"></asp:TextBox>
 				</div>
 			</div>
 
@@ -196,41 +196,41 @@
 				<h3>COSTOS</h3>
 				<div class="col-md-6">
 					<h4>Transporte:</h4>
-					<asp:TextBox ID="txtCostoTransporte" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoTransporte" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 				<div class="col-md-6">
 					<h4>Reemplazo:</h4>
-					<asp:TextBox ID="txtCostoReemplazo" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoReemplazo" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<h4>Atención médica:</h4>
-					<asp:TextBox ID="txtCostoAtencionMedica" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoAtencionMedica" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 				<div class="col-md-6">
 					<h4>Reposo médico :</h4>
-					<asp:TextBox ID="txtCostoReposoMedico" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoReposoMedico" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<h4>Tratamiento:</h4>
-					<asp:TextBox ID="txtCostoTratamiento" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoTratamiento" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 				<div class="col-md-6">
 					<h4>Daños materiales:</h4>
-					<asp:TextBox ID="txtCostoDanhosMateriales" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoDanhosMateriales" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<h4>Indemnización:</h4>
-					<asp:TextBox ID="txtCostoIndemnización" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoIndemnización" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 				<div class="col-md-6">
 					<h4>Producción diferida:</h4>
-					<asp:TextBox ID="txtCostoProdDiferida" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtCostoProdDiferida" runat="server" CssClass="form-control" MaxLength="100"></asp:TextBox>
 				</div>
 			</div>
 
@@ -248,43 +248,43 @@
 				<h3>IDENTIFICACIÓN DE POSIBLES CAUSAS DEL ACCIDENTE: </h3>
 				<div class="col-md-6">
 					<h4>PREGUNTAS</h4>
-					<asp:TextBox ID="txtPorque1" runat="server" CssClass="form-control">¿Por qué ....?</asp:TextBox>
+					<asp:TextBox ID="txtPorque1" runat="server" CssClass="form-control" MaxLength="500">¿Por qué ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
 					<h4>RESPUESTAS</h4>
-					<asp:TextBox ID="txtRespuesta1" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtRespuesta1" runat="server" CssClass="form-control" MaxLength="500"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<asp:TextBox ID="txtPorque2" runat="server" CssClass="form-control">¿Por qué ....?</asp:TextBox>
+					<asp:TextBox ID="txtPorque2" runat="server" CssClass="form-control" MaxLength="500">¿Por qué ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
-					<asp:TextBox ID="txtRespuesta2" runat="server" CssClass="form-control"></asp:TextBox>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<asp:TextBox ID="txtPorque3" runat="server" CssClass="form-control">¿Por qué ....?</asp:TextBox>
-				</div>
-				<div class="col-md-6">
-					<asp:TextBox ID="txtRespuesta3" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtRespuesta2" runat="server" CssClass="form-control" MaxLength="500"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<asp:TextBox ID="txtPorque4" runat="server" CssClass="form-control">¿Por qué ....?</asp:TextBox>
+					<asp:TextBox ID="txtPorque3" runat="server" CssClass="form-control" MaxLength="500">¿Por qué ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
-					<asp:TextBox ID="txtRespuesta4" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtRespuesta3" runat="server" CssClass="form-control" MaxLength="500"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<asp:TextBox ID="txtPorque5" runat="server" CssClass="form-control">¿Por qué ....?</asp:TextBox>
+					<asp:TextBox ID="txtPorque4" runat="server" CssClass="form-control" MaxLength="500">¿Por qué ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
-					<asp:TextBox ID="txtRespuesta5" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtRespuesta4" runat="server" CssClass="form-control" MaxLength="500"></asp:TextBox>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<asp:TextBox ID="txtPorque5" runat="server" CssClass="form-control" MaxLength="500">¿Por qué ....?</asp:TextBox>
+				</div>
+				<div class="col-md-6">
+					<asp:TextBox ID="txtRespuesta5" runat="server" CssClass="form-control" MaxLength="500"></asp:TextBox>
 				</div>
 			</div>
 
@@ -293,59 +293,59 @@
 				<h3>RECONOCER CAUSAS GENERADORAS DEL ACCIDENTE: </h3>
 				<div class="col-md-6">
 					<h4>PREGUNTAS</h4>
-					<asp:TextBox ID="txtQue" runat="server" CssClass="form-control">¿Qué Sucedio ...?</asp:TextBox>
+					<asp:TextBox ID="txtQue" runat="server" CssClass="form-control" MaxLength="500">¿Qué Sucedio ...?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
 					<h4>RESPUESTAS</h4>
-					<asp:TextBox ID="txtRespuestaQue" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtRespuestaQue" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<asp:TextBox ID="txtPorque" runat="server" CssClass="form-control">¿Por qué sucedio ....?</asp:TextBox>
+					<asp:TextBox ID="txtPorque" runat="server" CssClass="form-control" MaxLength="500">¿Por qué sucedio ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
-					<asp:TextBox ID="txtRespuestaPorque" runat="server" CssClass="form-control"></asp:TextBox>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<asp:TextBox ID="txtQuien" runat="server" CssClass="form-control">¿Quien fue el afectado ....?</asp:TextBox>
-				</div>
-				<div class="col-md-6">
-					<asp:TextBox ID="txtrespuestaQuien" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtRespuestaPorque" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<asp:TextBox ID="txtDonde" runat="server" CssClass="form-control">¿Dónde sucedio ....?</asp:TextBox>
+					<asp:TextBox ID="txtQuien" runat="server" CssClass="form-control" MaxLength="500">¿Quien fue el afectado ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
-					<asp:TextBox ID="txtrespuestaDonde" runat="server" CssClass="form-control"></asp:TextBox>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<asp:TextBox ID="txtCuando" runat="server" CssClass="form-control">¿Cuando sucedio ....?</asp:TextBox>
-				</div>
-				<div class="col-md-6">
-					<asp:TextBox ID="txtrespuestaCuando" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtrespuestaQuien" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<asp:TextBox ID="txtComo" runat="server" CssClass="form-control">¿Cómo sucedió....?</asp:TextBox>
+					<asp:TextBox ID="txtDonde" runat="server" CssClass="form-control" MaxLength="500">¿Dónde sucedio ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
-					<asp:TextBox ID="txtrespuestaComo" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtrespuestaDonde" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<asp:TextBox ID="txtCuanto" runat="server" CssClass="form-control">¿Cuanto es el costo de ....?</asp:TextBox>
+					<asp:TextBox ID="txtCuando" runat="server" CssClass="form-control" MaxLength="500">¿Cuando sucedio ....?</asp:TextBox>
 				</div>
 				<div class="col-md-6">
-					<asp:TextBox ID="txtrespuestaCuanto" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtrespuestaCuando" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<asp:TextBox ID="txtComo" runat="server" CssClass="form-control" MaxLength="500">¿Cómo sucedió....?</asp:TextBox>
+				</div>
+				<div class="col-md-6">
+					<asp:TextBox ID="txtrespuestaComo" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<asp:TextBox ID="txtCuanto" runat="server" CssClass="form-control" MaxLength="500">¿Cuanto es el costo de ....?</asp:TextBox>
+				</div>
+				<div class="col-md-6">
+					<asp:TextBox ID="txtrespuestaCuanto" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
 				</div>
 			</div>
 
@@ -429,11 +429,11 @@
 				<h3>MEDIDAS A ADOPTAR</h3>
 				<div class="col-md-7">
 					<h4>Acción</h4>
-					<asp:TextBox ID="txtAccion1" TextMode="multiline" Rows="3" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtAccion1" TextMode="multiline" Rows="3" runat="server" CssClass="form-control" MaxLength="5000"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Responsable</h4>
-					<asp:TextBox ID="txtResponsable1" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtResponsable1" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
 				</div>
 				<div class="col-md-2">
 					<h4>Fecha</h4>
@@ -443,11 +443,11 @@
 			<div class="row">
 				<div class="col-md-7">
 					<h4>Acción</h4>
-					<asp:TextBox ID="txtAccion2" TextMode="multiline" Rows="3" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtAccion2" TextMode="multiline" Rows="3" runat="server" CssClass="form-control" MaxLength="5000"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Responsable</h4>
-					<asp:TextBox ID="txtResponsable2" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtResponsable2" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
 				</div>
 				<div class="col-md-2">
 					<h4>Fecha</h4>
@@ -457,11 +457,11 @@
 			<div class="row">
 				<div class="col-md-7">
 					<h4>Acción</h4>
-					<asp:TextBox ID="txtAccion3" TextMode="multiline" Rows="3" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtAccion3" TextMode="multiline" Rows="3" runat="server" CssClass="form-control" MaxLength="5000"></asp:TextBox>
 				</div>
 				<div class="col-md-3">
 					<h4>Responsable</h4>
-					<asp:TextBox ID="txtResponsable3" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtResponsable3" runat="server" CssClass="form-control" MaxLength="50"></asp:TextBox>
 				</div>
 				<div class="col-md-2">
 					<h4>Fecha</h4>
@@ -471,7 +471,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h4>Nota</h4>
-					<asp:TextBox ID="txtNota" TextMode="multiline" Rows="3" runat="server" CssClass="form-control"></asp:TextBox>
+					<asp:TextBox ID="txtNota" TextMode="multiline" Rows="3" runat="server" CssClass="form-control" MaxLength="1000"></asp:TextBox>
 				</div>
 			</div>
 
@@ -492,7 +492,7 @@
 				</div>
 
 				<div class="col-md-2">
-					<asp:Button runat="server" ID="Button1" Text="Volver" class="btn btn-block btn-default" OnClick="Volver"></asp:Button>
+					<asp:Button runat="server" ID="Volver" Text="Volver" class="btn btn-block btn-default" OnClick="Volver_Click"></asp:Button>
 				</div>
 			</div>
 

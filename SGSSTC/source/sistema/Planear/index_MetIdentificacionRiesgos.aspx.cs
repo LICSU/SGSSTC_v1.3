@@ -23,6 +23,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (!IsPostBack)
             {
                 CargarListas();
+                ViewState["search"] = string.Empty;
                 if (BoolEmpSuc.Item2)
                 {
                     Listas.Sucursal(ddlSucursal, ObjUsuario.Id_empresa);
@@ -68,7 +69,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (idPlan != 0)
             {
                 List<plan> consulta = new List<plan>();
-                consulta = Getter.Planes(idPlan);
+                consulta = Getter.Planes(idPlan, "", string.Empty + ViewState["search"]);
 
                 if (consulta.Count > 0)
                 {
@@ -107,6 +108,19 @@ namespace SGSSTC.source.sistema.Hacer
             {
                 cargarPlan();
             }
+        }
+
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["search"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["search"] = string.Empty;
+            }
+            cargarPlan(); 
         }
     }
 }

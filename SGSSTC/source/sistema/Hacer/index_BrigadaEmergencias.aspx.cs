@@ -42,12 +42,12 @@ namespace SGSSTC.source.sistema.Hacer
                         {
                             if (c.ClientID.Contains("btnAgregarFila"))
                             {
-                                collapse3.Attributes.Add("class", "panel-collapse collapse in");
+                                //collapse3.Attributes.Add("class", "panel-collapse collapse in");
                                 crearCampos(Convert.ToInt32(ViewState["contador"]));
                             }
                             if (c.ClientID.Contains("btnCalculate"))
                             {
-                                collapse3.Attributes.Add("class", "panel-collapse collapse in");
+                                //collapse3.Attributes.Add("class", "panel-collapse collapse in");
                                 int valor = Convert.ToInt32(ViewState["contador"]) - 1;
                                 ViewState["contador"] = string.Empty + valor;
                                 crearCampos(Convert.ToInt32(ViewState["contador"]));
@@ -363,7 +363,9 @@ namespace SGSSTC.source.sistema.Hacer
 
                 if (ObjUsuario.Error)
                 {
-                    Response.Redirect(Paginas.index_BrigadaEmergencias.Value);
+                    //Response.Redirect(Paginas.index_BrigadaEmergencias.Value);
+                    cargarBigrada();
+                    Modal.MostrarAlertaEdit(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
                 }
             }
         }

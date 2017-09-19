@@ -706,15 +706,6 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.Literal ltReporte;
         
         /// <summary>
-        /// Control piechart.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl piechart;
-        
-        /// <summary>
         /// Control ImgChart.
         /// </summary>
         /// <remarks>

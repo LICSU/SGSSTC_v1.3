@@ -400,7 +400,7 @@
 				</div>
 
 				<div class="col-md-2">
-					<asp:Button runat="server" ID="Button1" Text="Volver" class="btn btn-block btn-default" OnClick="Volver"></asp:Button>
+					<asp:Button runat="server" ID="Volver" Text="Volver" class="btn btn-block btn-default" OnClick="Volver_Click"></asp:Button>
 				</div>
 			</div>
 

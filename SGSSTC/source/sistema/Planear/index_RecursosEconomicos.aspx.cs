@@ -39,7 +39,7 @@ namespace SGSSTC.source.sistema.Hacer
             int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
 
-            Tabla.RecursosEconomicos(GridView1, IdEmpresa, IdSucursal);
+            Tabla.RecursosEconomicos(GridView1, IdEmpresa, IdSucursal, string.Empty + ViewState["sWhere"]);
 
         }
         #endregion
@@ -51,7 +51,6 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void btnSubir_Click(object sender, EventArgs e)
         {
-            //Modal.registrarModal("EscaneadoModal", "EscaneadoModalScript", this);
         }
         protected void btnSubirArchivo(object sender, EventArgs e)
         {
@@ -107,6 +106,7 @@ namespace SGSSTC.source.sistema.Hacer
                 HttpContext.Current.Request.Url.AbsoluteUri
                 );
 
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             Modal.MostrarAlertaDelete(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error, txtBuscar);
             LlenarGridView();
         }

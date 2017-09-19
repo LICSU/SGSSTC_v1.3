@@ -22,7 +22,7 @@
 			<asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
 		</div>
 	</asp:PlaceHolder>
-
+     <asp:TextBox ID="txtBuscar" runat="server" Visible="false"></asp:TextBox>
 	<div class="row form-group">
 
 		<asp:PlaceHolder runat="server" ID="phEmpresa">
@@ -140,7 +140,7 @@
 					<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">BRIGADA DE COMUNICACIÓN</a></h4>
 				</div>
 
-				<div id="collapse3" runat="server" class="panel-collapse collapse">
+				<div id="collapse3" class="panel-collapse collapse">
 					<div class="panel-body">
 
 						<h3 class="box-title">FUNCIONES, ACTIVIDADES Y PROCEDIMIENTO DE COMUNICACIÓN</h3>

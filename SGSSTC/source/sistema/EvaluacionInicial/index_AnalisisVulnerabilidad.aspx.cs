@@ -11,6 +11,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
     {
         private Model_UsuarioSistema ObjUsuario;
         private Tuple<bool, bool> BoolEmpSuc;
+        private static int IdEmpresa = 0, IdSucursal = 0;
 
         #region acciones index
         protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +29,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
             if (!IsPostBack)
             {
+                ViewState["sWhere"] = "";
                 LlenarGridView();
                 CargarListas();
             }
@@ -49,10 +51,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
 
         private void LlenarGridView()
         {
-            int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
-            int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
-
-            Tabla.analisis_vulnerabilidad(GridView1, IdEmpresa, IdSucursal);
+            Tabla.analisis_vulnerabilidad(GridView1, IdEmpresa, IdSucursal, ViewState["sWhere"].ToString());
         }
         #endregion
 
@@ -85,7 +84,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         #region acciones 
         protected void Guardar(object sender, EventArgs e)
         {
-            Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresa, ddlSucursalAdd);
+            Tuple<int, int> IdEmpSuc = Getter.Get_IdEmpresa_IdSucursal(ObjUsuario, ddlEmpresaAdd, ddlSucursalAdd);
             int IdEmpresa = IdEmpSuc.Item1;
             int IdSucursal = IdEmpSuc.Item2;
 
@@ -129,6 +128,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
         {
             if (ddlEmpresa.SelectedValue != string.Empty)
             {
+                IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ddlEmpresa.SelectedValue));
                 Listas.Sucursal(ddlSucursal, Convert.ToInt32(ddlEmpresa.SelectedValue));
             }
         }
@@ -146,6 +146,7 @@ namespace SGSSTC.source.sistema.EvaluacionInicial
             if (ddlSucursal.SelectedValue != string.Empty)
             {
                 ViewState["sucursal"] = ddlSucursal.SelectedValue;
+                IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             }
             else
             {

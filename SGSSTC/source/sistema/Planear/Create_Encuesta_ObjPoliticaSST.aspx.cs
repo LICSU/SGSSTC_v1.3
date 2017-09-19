@@ -1,8 +1,11 @@
 ﻿using Capa_Datos;
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Security;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -14,8 +17,11 @@ namespace SGSSTC.source.sistema.Hacer
 		protected static Model_UsuarioSistema ObjUsuario;
 		static GridView grid = new GridView();
 		Tuple<bool, bool> BoolEmpSuc;
+        private static int IdSucursal = 0;
+        private static int IdTrabajador = 0;
+        private static int IdPuesto = 0;
 
-		protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
 		{
 			ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
@@ -35,7 +41,7 @@ namespace SGSSTC.source.sistema.Hacer
 
 			if (!BoolEmpSuc.Item2)
 			{
-				Listas.Trabajadores_Sucursal(ddlTrabajador, ObjUsuario.Id_sucursal);
+                IdTrabajador = Convert.ToInt32(ObjUsuario.Id_sucursal);
 			}
 		}
 		protected void btnGenerar_Onclick(object sender, EventArgs e)
@@ -128,7 +134,7 @@ namespace SGSSTC.source.sistema.Hacer
 
 			encuesta_politica nuevo = new encuesta_politica()
 			{
-				id_trabajador = Convert.ToInt32(ddlTrabajador.SelectedValue),
+				id_trabajador = IdTrabajador,
 				fecha = DateTime.Now,
 				si = (100 - porcentaje),
 				no = porcentaje,
@@ -147,8 +153,18 @@ namespace SGSSTC.source.sistema.Hacer
 		{
 			if (ddlSucursal.SelectedValue != string.Empty)
 			{
-				Listas.Trabajadores_Sucursal(ddlTrabajador, Convert.ToInt32(ddlSucursal.SelectedValue));
-			}
+                IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
+            }
 		}
-	}
+
+        #region AutoCompletar
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajador(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador, IdPuesto);
+            return listTrabajadores;
+        }
+        #endregion
+    }
 }

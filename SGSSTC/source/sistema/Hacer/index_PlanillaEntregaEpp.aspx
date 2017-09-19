@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
                     <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-                        runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+                        runat="server" class="form-control" PlaceHolder="Ingrese el Nombre a buscar"></asp:TextBox>
                 </div>
 
                 <div class="col-md-2">
@@ -68,7 +68,8 @@
                 </div>
                 <div class="col-md-3">
                     <h4 class="text-center">&nbsp;</h4>
-                    <asp:Button runat="server" ID="btnBuscar" data-toggle="tooltip" data-placement="bottom" title="Presione para buscar" Text="Buscar" CssClass="btn btn-default" OnClick="btnGenerar_OnClick" />
+                    <asp:Button runat="server" ID="btnBuscar" data-toggle="tooltip" data-placement="bottom" title="Presione para buscar" Text="Buscar" 
+                        CssClass="btn btn-default" OnClick="btnGenerar_OnClick" />
                 </div>
             </div>
             <br />
@@ -92,7 +93,7 @@
                             <Columns>
                                 <asp:TemplateField Visible="false" HeaderStyle-CssClass="text-center">
                                     <ItemTemplate>
-                                        <asp:Label ID="id_entrega_epp" runat="server" Text='<%# Eval("id_entrega_epp") %>' />
+                                        <asp:Label ID="id_entrega_epp" runat="server" Text='<%# Eval("id_documento") %>' />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -189,7 +190,7 @@
                             <br />
 
                             <asp:PlaceHolder runat="server" ID="phEmpresaAdd">
-                                <div class="row">
+                                <div class="row form-group">
                                     <div>
                                         <label class="col-md-4 control-label">Empresa: </label>
                                         <div class="col-md-6">
@@ -204,7 +205,7 @@
                             </asp:PlaceHolder>
 
                             <asp:PlaceHolder runat="server" ID="phSucursalAdd">
-                                <div class="row">
+                                <div class="row form-group">
                                     <div>
                                         <label class="col-md-4 control-label">Sucursal: </label>
                                         <div class="col-md-6">

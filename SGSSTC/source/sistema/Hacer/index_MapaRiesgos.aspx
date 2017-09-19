@@ -72,7 +72,7 @@
 							<Columns>
 								<asp:TemplateField HeaderText="Id Plan" Visible="false" HeaderStyle-CssClass="text-center">
 									<ItemTemplate>
-										<asp:Label ID="id_plan_mapa" runat="server" Text='<%# Eval("id_plan_mapa") %>' /></ItemTemplate>
+										<asp:Label ID="id_plan_mapa" runat="server" Text='<%# Eval("id_documento") %>' /></ItemTemplate>
 								</asp:TemplateField>
 
 								<asp:TemplateField HeaderText="Nombre del Plan" HeaderStyle-CssClass="text-center">
@@ -80,19 +80,16 @@
 										<asp:Label ID="nombre" runat="server" Text='<%# Eval("nombre") %>' /></ItemTemplate>
 								</asp:TemplateField>
 
-								<asp:TemplateField HeaderText="Descripcion" HeaderStyle-CssClass="text-center">
-									<ItemTemplate>
-										<asp:Label ID="descripcion" runat="server" Text='<%# Eval("descripcion") %>' /></ItemTemplate>
-								</asp:TemplateField>
-
 								<asp:TemplateField HeaderText="Sucursal" HeaderStyle-CssClass="text-center">
 									<ItemTemplate>
-										<asp:Label ID="Label1" runat="server" Text='<%# Eval("Sucursal") %>' />
+										<asp:Label ID="id_sucursal" Visible="false" runat="server" Text='<%# Eval("id_sucursal") %>' />
+										<asp:Label ID="sucursal" runat="server" Text='<%# Eval("Sucursal") %>' />
 									</ItemTemplate>
 								</asp:TemplateField>
 
 								<asp:TemplateField HeaderText="Empresa" HeaderStyle-CssClass="text-center">
 									<ItemTemplate>
+										<asp:Label ID="id_empresa" Visible="false" runat="server" Text='<%# Eval("id_empresa") %>' />
 										<asp:Label ID="empresa" runat="server" Text='<%# Eval("Empresa") %>' />
 									</ItemTemplate>
 								</asp:TemplateField>
@@ -103,7 +100,7 @@
 									</ItemTemplate>
 								</asp:TemplateField>
 
-								<asp:ButtonField HeaderText="Acciones" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
+								<asp:ButtonField HeaderText="Editar" CommandName="Editar" ButtonType="Image" ImageUrl="~\ico\editar.png" HeaderStyle-CssClass="text-center">
 									<ControlStyle></ControlStyle>
 								</asp:ButtonField>
 
@@ -181,7 +178,7 @@
 							<br />
 
 							<asp:PlaceHolder runat="server" ID="phEmpresaAdd">
-								<div class="row">
+								<div class="row form-group">
 									<div>
 										<label class="col-md-4 control-label">Empresa: </label>
 										<div class="col-md-6">
@@ -196,7 +193,7 @@
 							</asp:PlaceHolder>
 
 							<asp:PlaceHolder runat="server" ID="phSucursalAdd">
-								<div class="row">
+								<div class="row form-group">
 									<div>
 										<label class="col-md-4 control-label">Sucursal: </label>
 										<div class="col-md-6">
@@ -287,7 +284,7 @@
 							<br />
 
 							<asp:PlaceHolder runat="server" ID="phEmpresaEdit">
-								<div class="row">
+								<div class="row form-group">
 									<div>
 										<label class="col-md-4 control-label">Empresa: </label>
 										<div class="col-md-6">
@@ -302,7 +299,7 @@
 							</asp:PlaceHolder>
 
 							<asp:PlaceHolder runat="server" ID="phSucursalEdit">
-								<div class="row">
+								<div class="row form-group">
 									<div>
 										<label class="col-md-4 control-label">Sucursal: </label>
 										<div class="col-md-6">

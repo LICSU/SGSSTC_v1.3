@@ -27,9 +27,13 @@ namespace Capa_Datos
         public static Model_Celda miCelda43 = new Model_Celda(1, "H4", "C", "0|0|0|0", 1, 1, "azul", "");
         public static Model_Celda miCelda55 = new Model_Celda(1, "H3", "C", "1|1|1|1", 1, 1, "azul", "");
 
+        public static Model_Celda miCelda77 = new Model_Celda(1, "H3", "C", "1|1|1|1", 1, 2, "azul", "");
+
         public static Model_Celda miCelda2  = new Model_Celda(1, "H4", "C", "1|1|1|1", 2, 1, "", "");
         public static Model_Celda miCelda15 = new Model_Celda(0, "H4", "C", "1|1|1|1", 2, 1, "", "");
         public static Model_Celda miCelda13 = new Model_Celda(1, "H4", "C", "1|1|1|1", 2, 1, "azul", "");
+        public static Model_Celda miCelda74 = new Model_Celda(1, "H4", "C", "0|0|1|1", 2, 1, "verde", "");
+        public static Model_Celda miCelda75 = new Model_Celda(1, "H4", "C", "0|0|1|0", 2, 1, "amarillo", "");
         public static Model_Celda miCelda45 = new Model_Celda(1, "H4", "C", "0|0|0|0", 2, 1, "azul", "");
         public static Model_Celda miCelda8  = new Model_Celda(1, "H4", "C", "1|1|1|1", 2, 2, "azul", "");
 
@@ -46,6 +50,7 @@ namespace Capa_Datos
         public static Model_Celda miCelda67 = new Model_Celda(1, "H3", "C", "0|0|0|0", 3, 1, "azul", "");
 
         public static Model_Celda miCelda9  = new Model_Celda(1, "H4", "C", "1|1|1|1", 3, 2, "azul", "");
+        public static Model_Celda miCelda76  = new Model_Celda(1, "H4", "C", "1|1|1|1", 3, 2, "", "");
 
         public static Model_Celda miCelda4  = new Model_Celda(1, "H4", "C", "1|1|1|1", 4, 1, "", "");
         public static Model_Celda miCelda16 = new Model_Celda(0, "H4", "C", "1|1|1|1", 4, 1, "", "");
@@ -54,10 +59,10 @@ namespace Capa_Datos
         public static Model_Celda miCelda22 = new Model_Celda(1, "H4", "C", "1|1|0|1", 4, 1, "", "");
         public static Model_Celda miCelda23 = new Model_Celda(1, "H4", "C", "0|1|0|1", 4, 1, "", "");
         public static Model_Celda miCelda24 = new Model_Celda(1, "H4", "C", "0|1|1|1", 4, 1, "", "");
-        public static Model_Celda miCelda52 = new Model_Celda(1, "H3", "J", "0|0|0|0", 4, 1, "", "");
-        public static Model_Celda miCelda54 = new Model_Celda(1, "H3", "J", "0|0|0|0", 4, 1, "azul", "");
+        public static Model_Celda miCelda52 = new Model_Celda(1, "H3", "J", "1|1|1|1", 4, 1, "", "");
+        public static Model_Celda miCelda54 = new Model_Celda(1, "H3", "J", "1|1|1|1", 4, 1, "azul", "");
         public static Model_Celda miCelda56 = new Model_Celda(1, "H3", "C", "1|1|1|1", 4, 1, "azul", "");
-        public static Model_Celda miCelda44 = new Model_Celda(1, "H4", "C", "0|0|0|0", 4, 1, "azul", "");
+        public static Model_Celda miCelda44 = new Model_Celda(1, "H4", "C", "1|1|1|1", 4, 1, "azul", "");
         public static Model_Celda miCelda10 = new Model_Celda(1, "H4", "C", "1|1|1|1", 4, 2, "azul", "");
 
         public static Model_Celda miCelda38 = new Model_Celda(1, "H4", "C", "1|1|1|1", 5, 1, "", "");
@@ -78,7 +83,7 @@ namespace Capa_Datos
         public static Model_Celda miCelda21 = new Model_Celda(1, "H4", "C", "1|1|1|1", 7, 1, "", "");
 
         public static Model_Celda miCelda30 = new Model_Celda(1, "H4", "L", "1|1|1|1", 8, 1, "", "");
-        public static Model_Celda miCelda53 = new Model_Celda(1, "H3", "J", "0|0|0|0", 8, 1, "", "");
+        public static Model_Celda miCelda53 = new Model_Celda(1, "H3", "J", "1|1|1|1", 8, 1, "", "");
 
         public static Model_Celda miCelda62 = new Model_Celda(1, "H3", "C", "0|0|0|0", 8, 1, "azul", "");
 
@@ -97,10 +102,435 @@ namespace Capa_Datos
         public static Model_Celda miCelda42 = new Model_Celda(1, "H4", "C", "0|0|0|0", 12, 1, "azul", "");
         public static Model_Celda miCelda29 = new Model_Celda(1, "H4", "L", "1|1|1|1", 12, 1, "", "");
         public static Model_Celda miCelda41 = new Model_Celda(1, "", "", "0|0|0|0", 12, 1, "", "");
-        public static Model_Celda miCelda51 = new Model_Celda(1, "H3", "J", "0|0|0|0", 12, 1, "", "");
-        public static Model_Celda miCelda69 = new Model_Celda(1, "H3", "C", "0|0|0|0", 12, 1, "", "");
+        public static Model_Celda miCelda51 = new Model_Celda(1, "H3", "C", "0|0|0|0", 12, 1, "", "");
+        public static Model_Celda miCelda73 = new Model_Celda(1, "H3", "J", "1|1|1|1", 12, 1, "", "");
+        public static Model_Celda miCelda69 = new Model_Celda(1, "H3", "C", "1|1|1|1", 12, 1, "", "");
         public static Model_Celda miCelda72 = new Model_Celda(1, "H3", "R", "0|0|0|0", 12, 1, "", "");
 
+        public static Model_Celda miCelda78 = new Model_Celda(1, "H4", "C", "1|1|1|1", 1, 13, "", "");
+        public static Model_Celda miCelda79 = new Model_Celda(1, "H4", "C", "1|1|1|1", 1, 5, "", "");
+        public static Model_Celda miCelda80 = new Model_Celda(1, "H4", "C", "1|1|1|1", 1, 14, "", "");
+        public static Model_Celda miCelda81 = new Model_Celda(1, "H4", "C", "1|1|1|1", 1, 4, "", "");
+        public static Model_Celda miCelda82 = new Model_Celda(1, "H4", "C", "1|1|1|1", 1, 51, "", "");
+        public static Model_Celda miCelda83 = new Model_Celda(1, "H4", "C", "1|1|1|1", 1, 26, "", "");
+        public static Model_Celda miCelda84 = new Model_Celda(1, "H4", "C", "1|1|1|1", 1, 11, "", "");
+
+        public static void PrintPlanCapacitacion(String[] valores, Panel pnDatos, Page _page)
+        {
+            Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
+                Convert.ToInt32(valores[0]),
+                "PlanCapacitacion_",
+                "PLAN DE CAPACITACION",
+                _page);
+
+            miCelda77.Texto = "N°";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "TIPO DE RIESGO DE ACUERDO CON LAS CARACTERISTICAS DE LA EMPRESA";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "TEMA DE CAPACITACIÓN";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "DURACIÓN";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "POBLACIÓN OBJETO";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "PONENTE O INSTRUCTOR";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "DOCUMENTO DE  SOPORTE";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "FECHA PROGRAMADA";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda13.Texto = "ESTATUS DE CUMPLIMIENTO";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
+            miCelda77.Texto = "LUGAR O SITIO";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+            miCelda77.Texto = "OBSERVACIONES";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda77));
+
+            miCelda20.Texto = "SI";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda20));
+            miCelda20.Texto = "NO";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda20));
+
+            TableCell _cell;
+            TextBox _textbox;
+            RadioButton _radio;
+            string _valor = string.Empty;
+            bool band = true;
+
+            #region Mecanicos (1 al 13)
+            for (int pregunta = 1; pregunta <= 13; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda78.Texto = "Mecánicos";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda78));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("pobP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            band = true;
+            #region Físicos (14 al 18)
+            for (int pregunta = 14; pregunta <= 18; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda79.Texto = "Físicos";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda79));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("pobP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            band = true;
+            #region Disergonómicos (19 al 32)
+            for (int pregunta = 19; pregunta <= 32; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda80.Texto = "Disergonómicos";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda80));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("pobP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            band = true;
+            #region Químicos (33 al 43)
+            for (int pregunta = 33; pregunta <= 43; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda84.Texto = "Quimicos";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda84));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("pobP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            band = true;
+            #region Eléctricos (44 al 47)
+            for (int pregunta = 44; pregunta <= 47; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda81.Texto = "Eléctricos";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda81));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            band = true;
+            #region Psicosocial Desarrollo Conductual (48 al 98)
+            for (int pregunta = 48; pregunta <= 98; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda82.Texto = "Psicosocial Desarrollo Conductual";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda82));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("pobP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            band = true;
+            #region Prevención de Emergencias (99 al 124)
+            for (int pregunta = 99; pregunta <= 124; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda83.Texto = "Prevención de Emergencias";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda83));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("pobP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            band = true;
+            #region Generales (125 al 150)
+            for (int pregunta = 125; pregunta <= 150; pregunta++)
+            {
+                miCelda1.Texto = "" + pregunta;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                if (band)
+                {
+                    miCelda83.Texto = "Generales";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda83));
+                    band = false;
+                }
+                _cell = (TableCell)pnDatos.FindControl("preg" + pregunta);
+                miCelda1.Texto = _cell.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("durP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("pobP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ponP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("docP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("fecP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("siP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _radio = (RadioButton)pnDatos.FindControl("noP" + pregunta);
+                if (_radio.Checked) { _valor = "X"; } else { _valor = string.Empty; }
+                miCelda1.Texto = _valor;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("lugP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                _textbox = (TextBox)pnDatos.FindControl("ObsP" + pregunta);
+                miCelda1.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+            }
+            #endregion
+
+            ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
+        }
 
         public static void PrintAutoevaluacion(String[] valores, Page _page)
         {
@@ -482,6 +912,45 @@ namespace Capa_Datos
             #endregion
         }
 
+        public static void PrintCrontolDocumentos(String[] valores, String[] tipoDoc, String[] Responsable, String[] Revisado, String[] Aprobado, Page _page)
+        {
+            Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
+                Convert.ToInt32(valores[0]),
+                "ControlDocumentos_",
+                "CONTROL DE DOCUMENTOS",
+                _page);
+
+            #region cuerpo
+
+            miCelda20.Texto = "N°";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda20));
+            miCelda50.Texto = "TIPO DE DOCUMENTO";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda50));
+            miCelda13.Texto = "RESPONSABLE";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
+            miCelda13.Texto = "REVISADO POR";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
+            miCelda13.Texto = "APROBADO POR";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
+
+            for (int i = 0; i < 40; i++)
+            {
+                miCelda1.Texto = "" + (i + 1);
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                miCelda38.Texto = tipoDoc[i];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
+                miCelda2.Texto = Responsable[i];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
+                miCelda2.Texto = Revisado[i];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
+                miCelda2.Texto = Aprobado[i];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
+            }
+
+            ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
+            #endregion
+        }
+
         public static void PrintDocumento_InspeccionEPP(Panel _Panel, DropDownList ddlArea, DropDownList ddlPuesto )
         {
             RadioButton _radio;
@@ -546,10 +1015,7 @@ namespace Capa_Datos
             miCelda12.Texto = _txtArea.Text;
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda12));
 
-            miCelda12.Texto = "Objeto y alcance de la Evaluación";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
-
-            miCelda12.Texto = "Objeto";
+            miCelda12.Texto = "Objetivo y alcance de la Evaluación";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
             miCelda12.Texto = _txtObjetivo.Text;
@@ -1862,17 +2328,29 @@ namespace Capa_Datos
 
             #endregion
 
-            miCelda51.Texto = "TOTAL: "+total;
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda14.Texto = "TOTAL ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
 
-            miCelda51.Texto = "CONCLUSIONES: " + conclusiones;
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda30.Texto = total.ToString();
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda30));
 
-            miCelda51.Texto = "FORTALEZAS: " + fortalezas;
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda14.Texto = "CONCLUSIONES ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
 
-            miCelda51.Texto = "DEBILIDADES: " + debilidades;
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda30.Texto = conclusiones.ToString();
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda30));
+
+            miCelda14.Texto = "FORTALEZAS ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+            miCelda30.Texto = fortalezas.ToString();
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda30));
+
+            miCelda14.Texto = "DEBILIDADES ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+            miCelda30.Texto = debilidades.ToString();
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda30));
 
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
         }
@@ -1967,8 +2445,574 @@ namespace Capa_Datos
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
         }
 
+        public static void PrintInvestigacionAccidentes(String[] valores, Page _page)
+        {
+            #region cuerpo
+            List<investigacion_ac_in> ListaInvestigacionAccidente = new List<investigacion_ac_in>();
+            ListaInvestigacionAccidente = Getter.InvestigacionAccidente(Convert.ToInt32(valores[0]));
 
-        public static void PrintInspeccionPuestos(String[] valores, String[] titulos, String[] valoressi, String[] valoresno, String[] textos, String[] encabezado, Page _page)
+            foreach (var itemInvestigacionAccidente in ListaInvestigacionAccidente)
+            {
+                List<at_it_el_pa> ListaAccidente = new List<at_it_el_pa>();
+                ListaAccidente = Getter.Accidente(Convert.ToInt32(itemInvestigacionAccidente.id_at_it_el_pa));
+
+                foreach (var itemAccidente in ListaAccidente)
+                {
+                    int IdSucursal = Convert.ToInt32(itemAccidente.trabajador.puesto_trabajo.area.id_sucursal);
+                    Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
+                        Convert.ToInt32(itemAccidente.trabajador.puesto_trabajo.area.id_sucursal),
+                        "InvestigacionAccidente_",
+                        "INVESTIGACION DE ACCIDENTE",
+                        _page);
+                    #region datos del evento
+                    miCelda12.Texto = "DATOS DEL EVENTO";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda14.Texto = "Fecha: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Hora: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Día de la semana: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                    miCelda4.Texto = Convert.ToDateTime(itemInvestigacionAccidente.fecha_evento).ToString("yyyy-MM-dd");
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = Convert.ToDateTime(itemInvestigacionAccidente.hora_evento).ToString("HH:mm:ss tt");
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = itemInvestigacionAccidente.dia_semana;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                    miCelda25.Texto = "Lugar donde ocurrió:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Tipo de suceso:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+
+                    miCelda27.Texto = itemAccidente.sitio;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.tipo;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    #endregion
+
+                    #region datos del accidentado
+                    miCelda12.Texto = "DATOS DEL ACCIDENTADO";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda25.Texto = "Nombre completo:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Cédula de Ciudadanía:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemAccidente.trabajador.primer_nombre + " " + itemAccidente.trabajador.primer_apellido;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemAccidente.trabajador.cedula;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda25.Texto = "Mano dominante:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Antigüedad en el puesto de trabajo:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemAccidente.trabajador.mano_dominante;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.antiguedad.ToString();
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda25.Texto = "Cargo:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Supervisor inmediato:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemAccidente.trabajador.perfil_cargo.cno.ocupacion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.supervisor;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda14.Texto = "Fecha de ingreso: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Tiempo en el cargo: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Salario devengado: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                    miCelda4.Texto = Convert.ToDateTime(itemAccidente.trabajador.fecha_ingreso).ToString("yyyy-MM-dd");
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = itemInvestigacionAccidente.tiempo_cargo;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = itemAccidente.trabajador.salario.ToString();
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                    miCelda12.Texto = "Actividad que realizaba";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                    miCelda49.Texto = itemInvestigacionAccidente.actividad_realizaba;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+                    #endregion
+
+                    #region DATOS DE EVALUACIÓN DEL MÉDICO
+                    miCelda12.Texto = "DATOS DE EVALUACIÓN DEL MÉDICO";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda25.Texto = "Naturaleza de la lesión:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Gravedad:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemInvestigacionAccidente.naturaleza_lesion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.gravedad_lesion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda12.Texto = "DESCRIPCIÓN DE LA LESIÓN";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                    miCelda49.Texto = itemInvestigacionAccidente.descripcion_lesion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                    miCelda14.Texto = "Reposo: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "N°. Días: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Fecha de reintegro: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                    miCelda4.Texto = itemInvestigacionAccidente.reposo;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = Convert.ToString(itemInvestigacionAccidente.dias_reposo);
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = Convert.ToDateTime(itemInvestigacionAccidente.fecha_reintegro).ToString("yyyy-MM-dd");
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    #endregion
+
+                    miCelda12.Texto = "DESCRIPCIÓN DEL ACCIDENTE";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                    miCelda49.Texto = itemAccidente.descripcion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                    miCelda12.Texto = "ADIESTRAMIENTO RECIBIDO POR EL TRABAJADOR";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                    miCelda49.Texto = itemInvestigacionAccidente.adiestramiento;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                    #region COSTOS
+                    miCelda12.Texto = "COSTOS";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda25.Texto = "Transporte:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Reemplazo:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_transporte;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_reemplazo;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda25.Texto = "Atención médica:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Reposo médico:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_atencion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_reposo;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda25.Texto = "Tratamiento:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Daños materiales:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_tratamiento;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_materiales;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda25.Texto = "Indemnización:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda25.Texto = "Producción diferida:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_indemizacion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.costo_produccion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    #endregion
+
+                    #region ANÁLISIS DEL ACCIDENTE
+                    miCelda12.Texto = "ANÁLISIS DEL ACCIDENTE";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                    miCelda49.Texto = itemInvestigacionAccidente.actividad;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                    miCelda12.Texto = "IDENTIFICACIÓN DE POSIBLES CAUSAS DEL ACCIDENTE:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda27.Texto = itemInvestigacionAccidente.porque1;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta1;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.porque2;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta2;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.porque3;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta3;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.porque4;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta4;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.porque5;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta5;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda12.Texto = "RECONOCER CAUSAS GENERADORAS DEL ACCIDENTE:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda27.Texto = itemInvestigacionAccidente.que;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta_que;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.porque;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta_porque;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.quien;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta_quien;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.donde;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta_donde;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.cuando;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta_cuando;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.como;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta_como;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.cuanto;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    miCelda27.Texto = itemInvestigacionAccidente.respuesta_cuanto;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                    miCelda11.Texto = "Tipo de Accidente: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                    miCelda11.Texto = "Tipo de lesión: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                    miCelda11.Texto = "Agente de lesión: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                    miCelda11.Texto = "Parte del cuerpo afectada: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+
+                    miCelda3.Texto = itemInvestigacionAccidente.tipo_accidente;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = itemInvestigacionAccidente.tipo_lesion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = itemInvestigacionAccidente.agente_lesion;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = itemInvestigacionAccidente.parte_cuerpo;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+
+                    miCelda12.Texto = "MEDIDAS A ADOPTAR: ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda14.Texto = "Acción ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Responsable ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Fecha ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                    miCelda4.Texto = itemInvestigacionAccidente.medida1;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = itemInvestigacionAccidente.responsable1;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida1).ToString("yyyy-MM-dd");
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                    if (itemInvestigacionAccidente.medida2 != string.Empty)
+                    {
+                        miCelda4.Texto = itemInvestigacionAccidente.medida2;
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                        miCelda4.Texto = itemInvestigacionAccidente.responsable2;
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                        miCelda4.Texto = Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida2).ToString("yyyy-MM-dd");
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    }
+
+                    if (itemInvestigacionAccidente.medida3 != string.Empty)
+                    {
+                        miCelda4.Texto = itemInvestigacionAccidente.medida3;
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                        miCelda4.Texto = itemInvestigacionAccidente.responsable3;
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                        miCelda4.Texto = Convert.ToDateTime(itemInvestigacionAccidente.fecha_medida3).ToString("yyyy-MM-dd");
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    }
+
+                    miCelda25.Texto = "Nota:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = itemInvestigacionAccidente.nota;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                    #endregion
+
+                    #region FIRMA DE LOS INVOLUCRADOS
+                    miCelda12.Texto = "FIRMA DE LOS INVOLUCRADOS";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                    miCelda11.Texto = "Persona";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                    miCelda11.Texto = "Nombre";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                    miCelda11.Texto = "Cédula";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+                    miCelda11.Texto = "Firma";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+
+                    miCelda76.Texto = "Accidentado:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda76));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+
+                    miCelda76.Texto = "Sup. Inmediato:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda76));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+
+                    miCelda76.Texto = "Responsable de la Investigación:";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda76));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    miCelda3.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                    #endregion
+
+                    #region SOPORTES
+                    miCelda12.Texto = "SOPORTES";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                    foreach (var itemSoporte in itemAccidente.soporte)
+                    {
+                        miCelda49.Texto = itemSoporte.url;
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+                    }
+                    #endregion
+
+                    ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
+                }
+            }
+
+            
+
+            #endregion 
+        }
+
+        public static void PrintAccidenteLaboral(String[] valores, Page _page)
+        {
+            List<at_it_el_pa> ListAccidentes = new List<at_it_el_pa>();
+            ListAccidentes = Getter.Accidente(Convert.ToInt32(valores[0]));
+
+            #region contenido
+            foreach (var item in ListAccidentes)
+            {
+                int IdSucursal = item.trabajador.puesto_trabajo.area.id_sucursal;
+                Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(
+                    IdSucursal,
+                    "ComunicadoAccidente_",
+                    "",
+                    _page);
+
+                miCelda14.Texto = "Sucursal";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Fecha Accidente";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Hora Accidente";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                miCelda4.Texto = item.trabajador.puesto_trabajo.area.sucursal.nombre;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = item.fecha_accidente.Value.ToString("yyyy-MM-dd");
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = item.hora_accidente.Value.ToString("hh:mm:ss");
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                miCelda14.Texto = "Trabajador";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Área";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Puesto de Trabajo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                miCelda14.Texto = item.trabajador.primer_nombre + " " + item.trabajador.primer_apellido;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                if (item.id_area == 0)
+                {
+                    miCelda14.Texto = "Ninguno";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                }
+                else
+                {
+                    miCelda14.Texto = item.area.nombre;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                }
+                if (item.id_puesto == 0)
+                {
+                    miCelda14.Texto = "Ninguno";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                }
+                else
+                {
+                    miCelda14.Texto = item.puesto_trabajo.nombre;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                }
+
+                miCelda25.Texto = "Sitio donde se presentó el caso";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda25.Texto = "Breve descripción de los hechos";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                miCelda27.Texto = item.sitio;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                miCelda27.Texto = item.descripcion;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+
+                miCelda12.Texto = "CAUSAS INMEDIATAS - Condiciones Inseguras";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                miCelda49.Texto = item.condiciones_inseguras;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                miCelda12.Texto = "CAUSAS INMEDIATAS - Actos Inseguros";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                miCelda49.Texto = item.actos_inseguros;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                miCelda12.Texto = "CAUSAS BÁSICAS - Factores del Trabajo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                miCelda49.Texto = item.factores_inseguros;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                miCelda12.Texto = "CAUSAS BÁSICAS - Factores Personales";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+                miCelda49.Texto = item.factores_personales;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+
+                miCelda12.Texto = "Magnitud del Evento";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                if (item.fecha_muerte != null)
+                {
+                    miCelda25.Texto = "Fecha de Muerte (Si la Hubiere)";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
+                    miCelda27.Texto = item.fecha_muerte.Value.ToString("yyyy-MM-dd");
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
+                }
+
+                miCelda14.Texto = "Días de incapacidad";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Días cargados.";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Días perdidos por ausencia del trabajo";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                miCelda4.Texto = string.Empty + item.dias_incapacidad;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = string.Empty + item.dias_cargados;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = string.Empty + item.dias_perdidos_ausencia;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                miCelda14.Texto = "Días perdidos por actividad restringida";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Sin Tiempo Perdido";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                miCelda14.Texto = "Tipo de enfermedad";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                miCelda4.Texto = string.Empty + item.dias_perdidos_restingido;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                if (Convert.ToString(item.dias_no_perdidos) == "true")
+                {
+                    miCelda4.Texto = "Si";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                }
+                else
+                {
+                    miCelda4.Texto = "No";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                }
+
+                string tipoEnf = "";
+                if (Convert.ToString(item.tipo_enfermedad) == "A") { tipoEnf = "Enfermedades en la piel"; }
+                else if (Convert.ToString(item.tipo_enfermedad) == "B") { tipoEnf = "Enfermedades respiratorias"; }
+                else if (Convert.ToString(item.tipo_enfermedad) == "C") { tipoEnf = "Envenenamiento"; }
+                else if (Convert.ToString(item.tipo_enfermedad) == "D") { tipoEnf = "Enfermedades debidas a agentes físicos"; }
+                else if (Convert.ToString(item.tipo_enfermedad) == "E") { tipoEnf = "Enfermedades producidas por traumas repetitivos"; }
+                else if (Convert.ToString(item.tipo_enfermedad) == "F") { tipoEnf = "Otras enfermedades osteomusculares"; }
+                else if (Convert.ToString(item.tipo_enfermedad) == "G") { tipoEnf = "Demás enfermedades profesionales"; }
+
+                miCelda4.Texto = tipoEnf;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                miCelda12.Texto = "COMUNICADO A TRABAJADORES";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
+
+                List<trabajador> ListaTrabajador = new List<trabajador>();
+                ListaTrabajador = Getter.Trabajador(0, 0, IdSucursal);
+
+                foreach (var item1 in ListaTrabajador)
+                {
+                    miCelda14.Texto = "Nombre y Apellido";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Cedula";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+                    miCelda14.Texto = "Firma";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+
+                    miCelda4.Texto = item1.primer_nombre + " " + item1.primer_apellido;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = item1.cedula;
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+
+                    miCelda4.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                    miCelda4.Texto = " ";
+                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                }
+
+                ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, IdSucursal, _page);
+            }
+            #endregion
+
+        }
+
+
+            public static void PrintInspeccionPuestos(String[] valores, String[] titulos, String[] valoressi, String[] valoresno, String[] textos, String[] encabezado, Page _page)
         {
             Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(Convert.ToInt32(valores[0]),
                                         "InspeccionDePuestos_", "INSPECCIÓN DE LOS PUESTOS DE TRABAJO", _page);
@@ -3199,7 +4243,7 @@ namespace Capa_Datos
         public static void PrintInventarioRecursos(String[] valores, String[] titulos, Panel _panel, Page _page)
         {
             Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(Convert.ToInt32(valores[0]),
-                                        "InventarioRiesgos_", "INVENTARIO DE RIESGOS", _page);
+                                        "InventarioRecursos_", "INVENTARIO DE RECURSOS", _page);
             #region contenido
             int posicion = 1;
             for (int i = 0; i < 36; i++)
@@ -3658,10 +4702,10 @@ namespace Capa_Datos
             #region contenido
             miCelda13.Texto = "N° de Acta";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
-            miCelda33.Texto = "HORA DE INICIO";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda33));
-            miCelda33.Texto = "HORA DE FINALIZACIÓN";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda33));
+            miCelda50.Texto = "HORA DE INICIO";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda50));
+            miCelda50.Texto = "HORA DE FINALIZACIÓN";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda50));
             miCelda2.Texto = valores[1];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
             miCelda38.Texto = valores[2];
@@ -3672,22 +4716,22 @@ namespace Capa_Datos
             miCelda12.Texto = "MIEMBROS PRINCIPALES DEL COMITÉ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
             miCelda49.Texto = valores[4];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "INVITADOS";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
             miCelda49.Texto = valores[5];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "SOLICITUDES DEL DÍA";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
             miCelda49.Texto = valores[6];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "ESTATUS DE LAS SOLICITUDES";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
             miCelda49.Texto = valores[7];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda49));
 
             miCelda50.Texto = "REPRESENTANTES DEL EMPLEADOR";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda50));
@@ -3794,49 +4838,49 @@ namespace Capa_Datos
                                         "FormatoVotos_", "Formato de Votos", _page);
 
             #region contenido
-            miCelda51.Texto = "Votos por Candidatos Individuales";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
-            miCelda54.Texto = "Candidato";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda54));
-            miCelda54.Texto = "Foto";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda54));
-            miCelda54.Texto = "Campo de Votación";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda54));
+            miCelda73.Texto = "Votos por Candidatos Individuales";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda73));
+            miCelda56.Texto = "Candidato";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda56));
+            miCelda56.Texto = "Foto";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda56));
+            miCelda56.Texto = "Campo de Votación";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda56));
             if (valores[1] != string.Empty)
             {
-                miCelda52.Texto = valores[9];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = valores[5];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = " ";
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+                miCelda4.Texto = valores[9];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = valores[5];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = " ";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
             }
             if (valores[2] != string.Empty)
             {
-                miCelda52.Texto = valores[10];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = valores[6];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = " ";
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+                miCelda4.Texto = valores[10];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = valores[6];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = " ";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
             }
             if (valores[3] != string.Empty)
             {
-                miCelda52.Texto = valores[11];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = valores[7];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = " ";
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+                miCelda4.Texto = valores[11];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = valores[7];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = " ";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
             }
             if (valores[4] != string.Empty)
             {
-                miCelda52.Texto = valores[12];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = valores[8];
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda52));
-                miCelda52.Texto = " ";
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+                miCelda4.Texto = valores[12];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = valores[8];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaFotos(DocumentoPDF.Item2, miCelda4));
+                miCelda4.Texto = " ";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
             }
             #endregion
 
@@ -3937,16 +4981,16 @@ namespace Capa_Datos
 
             miCelda10.Texto = "NOMBRE:";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda10));
-            miCelda9.Texto = "OFICIO:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda9));
-            miCelda9.Texto = "SECCIÓN:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda9));
-            miCelda13.Texto = "CATEGORÍA:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
-            miCelda63.Texto = "PRINCIPAL:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda63));
-            miCelda6.Texto = "SUPLENTE:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda6));
+            miCelda8.Texto = "OFICIO:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda8));
+            miCelda8.Texto = "SECCIÓN:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda8));
+            miCelda14.Texto = "CATEGORÍA:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
+            miCelda74.Texto = "PRINCIPAL:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda74));
+            miCelda75.Texto = "SUPLENTE:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda75));
             int valor = 11;
             TextBox _texbox = new TextBox();
             for (int i = 0; i < 10; i++)
@@ -3956,20 +5000,20 @@ namespace Capa_Datos
                 DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
                 valor++;
                 _texbox = (TextBox)_panel.FindControl("Textbox" + valor);
-                miCelda3.Texto = _texbox.Text;
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda2.Texto = _texbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
                 valor++;
                 _texbox = (TextBox)_panel.FindControl("Textbox" + valor);
-                miCelda3.Texto = _texbox.Text;
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda2.Texto = _texbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
                 valor++;
                 _texbox = (TextBox)_panel.FindControl("Textbox" + valor);
-                miCelda1.Texto = _texbox.Text;
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                miCelda2.Texto = _texbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
                 valor++;
                 _texbox = (TextBox)_panel.FindControl("Textbox" + valor);
-                miCelda1.Texto = _texbox.Text;
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda2.Texto = _texbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
                 valor++;
             }
 
@@ -4089,24 +5133,24 @@ namespace Capa_Datos
                                         "ActaApertura_", "Acta de Apertura", _page);
 
             #region contenido
-            miCelda69.Texto = "Acta de apertura de elecciones de los candidatos al comité paritario de seguridad y salud en el trabajo";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = "Acta de apertura de elecciones de los candidatos al comité paritario de seguridad y salud en el trabajo";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
-            miCelda52.Texto = "Empresa ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+            miCelda54.Texto = "Empresa ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda54));
             miCelda53.Texto = valores[1];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda53));
 
-            miCelda52.Texto = "Período ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+            miCelda54.Texto = "Período ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda54));
             miCelda53.Texto = valores[2];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda53));
 
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
             miCelda69.Texto = "Siendo las " + valores[3] + " de la fecha " + valores[4] + ",  se dio apertura al proceso de votación para " +
                                 "la elección de los candidatos al  COMITÉ PARITARIO DE SEGURIDAD Y SALUD EN EL TRABAJO  para el período que va " +
@@ -4127,21 +5171,21 @@ namespace Capa_Datos
             miCelda69.Texto = valores[11];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
 
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
-            miCelda69.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = "______________________________________________________";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = "______________________________________________________";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = "______________________________________________________";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = "______________________________________________________";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
             #endregion
 
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
@@ -4153,24 +5197,24 @@ namespace Capa_Datos
                                         "ActaCierre_", "Acta de Cierre", _page);
 
             #region contenido
-            miCelda69.Texto = "Acta de cierre de las votaciones para elección de los candidatos al comité paritario de seguridad y salud en el trabajo";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = "Acta de cierre de las votaciones para elección de los candidatos al comité paritario de seguridad y salud en el trabajo";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
-            miCelda52.Texto = "Empresa ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+            miCelda54.Texto = "Empresa ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda54));
             miCelda53.Texto = valores[1];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda53));
 
-            miCelda52.Texto = "Período ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda52));
+            miCelda54.Texto = "Período ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda54));
             miCelda53.Texto = valores[2];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda53));
 
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
             miCelda69.Texto = "Siendo las " + valores[3] + " de la fecha " + valores[4] + ",  se dio por finalizado el proceso de " +
                                 "votación para elección de los candidatos al COMITÉ PARITARIO DE SEGURIDAD Y SALUD EN EL TRABAJO  para el " +
                                 "período  que va de " + valores[5] + " a " + valores[6] + ".";
@@ -4190,21 +5234,21 @@ namespace Capa_Datos
             miCelda69.Texto = valores[11];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
 
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
-            miCelda69.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = "______________________________________________________";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = "______________________________________________________";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
-            miCelda69.Texto = " ";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = "______________________________________________________";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = "______________________________________________________";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda51.Texto = " ";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
             #endregion
 
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
@@ -4216,8 +5260,8 @@ namespace Capa_Datos
                                         "ConformacionCopasst_", "Conformacion Copasst", _page);
 
             #region contenido
-            miCelda69.Texto = "Acta de conformación del comité paritario de seguridad y salud en el trabajo o vigía de seguridad y salud en el trabajo";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
+            miCelda51.Texto = "Acta de conformación del comité paritario de seguridad y salud en el trabajo o vigía de seguridad y salud en el trabajo";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
             miCelda69.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
@@ -4235,13 +5279,13 @@ namespace Capa_Datos
             miCelda51.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
-            miCelda51.Texto = "El día " + valores[3] + " se eligió el Comité Paritario de Seguridad y Salud en el Trabajo o el vigía de " +
+            miCelda69.Texto = "El día " + valores[3] + " se eligió el Comité Paritario de Seguridad y Salud en el Trabajo o el vigía de " +
                               "seguridad y salud en el trabajo dando así cumplimiento a las exigencias de la Resolución  2013 de 1986,  al " +
                               "Decreto 1295 de 1994 y a la División de Salud Ocupacional del Ministerio de Protección Social.";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
 
-            miCelda51.Texto = "Como jurados de mesa estuvieron presentes los señores (as):";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            miCelda69.Texto = "Como jurados de mesa estuvieron presentes los señores (as):";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
 
             miCelda51.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
@@ -4255,21 +5299,21 @@ namespace Capa_Datos
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
 
             miCelda69.Texto = valores[5];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
             miCelda69.Texto = valores[6];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
             miCelda69.Texto = valores[7];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
             miCelda69.Texto = valores[8];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
             miCelda69.Texto = valores[9];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
 
             miCelda69.Texto = valores[10];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
             miCelda69.Texto = "El representante legal de la empresa designa a :" +valores[12] + " Como presidente del comité y por votación del comité se nombra a " +
                              valores[12] + " Como secretario (a) del mismo.";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda51));
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
 
             miCelda69.Texto = "Nombre y Firma del Coordinador de la mesa de votación:";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda69));
@@ -4325,6 +5369,19 @@ namespace Capa_Datos
                 miCelda41.Texto = cadenas[i];
                 DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda41));
             }
+            #endregion
+
+            ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
+        }
+
+        public static void PrintIdentificacionPeligro(String[] valores, Page _page)
+        {
+            Tuple<Document, PdfPTable> DocumentoPDF = ManageFiles.PdfParte1(Convert.ToInt32(valores[0]),
+                                        "IdentificacionPeligro_", "IDENTIFICACIÓN DE PELIGRO", _page);
+
+            #region contenido
+            miCelda41.Texto = valores[1];
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda41));
             #endregion
 
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
@@ -4719,8 +5776,14 @@ namespace Capa_Datos
                                         "MetIdentificacionRiesgos_", "METODOLOGÍA DE RIESGOS", _page);
 
             #region contenido
-            miCelda41.Texto = valores[1];
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda41));
+            string cadena = valores[1];
+            string[] delimitadores = { "#NOBORRAR#" };
+            string[] cadenas = cadena.Split(delimitadores, StringSplitOptions.None);
+            for (int i = 0; i < cadenas.Length; i++)
+            {
+                miCelda41.Texto = cadenas[i];
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCeldaHTML(DocumentoPDF.Item2, miCelda41));
+            }
             #endregion
 
             ManageFiles.PdfPart2(DocumentoPDF.Item1, DocumentoPDF.Item2, Convert.ToInt32(valores[0]), _page);
@@ -5046,12 +6109,12 @@ namespace Capa_Datos
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
             miCelda11.Texto = "DETALLES DE LA DOTACIÓN";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
-            miCelda20.Texto = "CANTIDAD";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda20));
+            miCelda13.Texto = "CANTIDAD";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
             miCelda13.Texto = "FECHA DE ENTREGA";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
-            miCelda11.Texto = "FIRMA DE RECIBIDO";
-            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda11));
+            miCelda13.Texto = "FIRMA DE RECIBIDO";
+            DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda13));
 
             int id_puesto_trabajo = Getter.idPuestoTrabajador(Convert.ToInt32(valores[2]));
             List<Model_CEPP> epps = Getter.Epp(id_puesto_trabajo);
@@ -5065,13 +6128,13 @@ namespace Capa_Datos
                 miCelda3.Texto = _textbox.Text;
                 DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
                 _textbox = (TextBox)pnDatos.FindControl("txtCant" + cont);
-                miCelda1.Texto = _textbox.Text;
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                miCelda2.Texto = _textbox.Text;
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
                 _textbox = (TextBox)pnDatos.FindControl("txtFech" + cont);
                 miCelda2.Texto = _textbox.Text;
                 DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
-                miCelda3.Texto = "FIRMA DE RECIBIDO";
-                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda3));
+                miCelda2.Texto = " ";
+                DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
                 cont++;
             }
             #endregion
@@ -5241,20 +6304,34 @@ namespace Capa_Datos
                 }
                 else
                 {
-                    HtmlInputRadioButton miradio1 = (HtmlInputRadioButton)_panel.FindControl("radio" + (posicionfila + 1));
-                    HtmlInputRadioButton miradio2 = (HtmlInputRadioButton)_panel.FindControl("radio" + (posicionfila + 2));
+                    if (i == 1)
+                    {
+     
+                        miCelda38.Texto = columna1[i];
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
+                        miCelda1.Texto = " ";
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                        miCelda1.Texto = " ";
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                        miCelda38.Texto = " ";
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
+                    }
+                    else
+                    {
+                        HtmlInputRadioButton miradio1 = (HtmlInputRadioButton)_panel.FindControl("radio" + (posicionfila + 1));
+                        HtmlInputRadioButton miradio2 = (HtmlInputRadioButton)_panel.FindControl("radio" + (posicionfila + 2));
 
-                    TextBox mitextbox = (TextBox)_panel.FindControl("txtf" + posicionTextbox);
+                        TextBox mitextbox = (TextBox)_panel.FindControl("txtf" + posicionTextbox);
 
-                    miCelda38.Texto = columna1[posicionfila / 2];
-                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
-                    miCelda1.Texto = miradio1.Checked == true ? "X" : "";
-                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
-                    miCelda1.Texto = miradio2.Checked == true ? "X" : "";
-                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
-                    miCelda38.Texto = mitextbox.Text;
-                    DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
-
+                        miCelda38.Texto = columna1[posicionfila / 2];
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
+                        miCelda1.Texto = miradio1.Checked == true ? "X" : "";
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                        miCelda1.Texto = miradio2.Checked == true ? "X" : "";
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
+                        miCelda38.Texto = mitextbox.Text;
+                        DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
+                    }
                     posicionfila = posicionfila + 2;
                     posicionTextbox++;
                 }
@@ -5495,7 +6572,7 @@ namespace Capa_Datos
             miCelda49.Texto = valores[8];
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
-            miCelda25.Texto = "AZUL";
+            miCelda25.Texto = "ÁREA";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
 
             miCelda25.Texto = "PUESTO DE TRABAJO";
@@ -5628,16 +6705,16 @@ namespace Capa_Datos
             miCelda14.Texto = "N° DE IDENTIFICACIÓN";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
 
-            miCelda2.Texto = "";
+            miCelda2.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
 
-            miCelda2.Texto = "";
+            miCelda2.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda2));
 
-            miCelda4.Texto = "";
+            miCelda4.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
 
-            miCelda4.Texto = "";
+            miCelda4.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
 
             miCelda14.Texto = "SEXO";
@@ -5649,61 +6726,61 @@ namespace Capa_Datos
             miCelda14.Texto = "EDO CIVIL";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda14));
 
-            miCelda4.Texto = "";
+            miCelda4.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
 
-            miCelda4.Texto = "";
+            miCelda4.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
 
-            miCelda4.Texto = "";
+            miCelda4.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda4));
 
             miCelda12.Texto = "CCF";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
-            miCelda25.Texto = "AZUL";
+            miCelda25.Texto = "ÁREA";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
 
             miCelda25.Texto = "PUESTO DE TRABAJO";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda25));
 
-            miCelda27.Texto = "";
+            miCelda27.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
 
-            miCelda27.Texto = "";
+            miCelda27.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda27));
 
             miCelda12.Texto = "¿Qué equipos opera?";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "¿Actualmente presenta alguna enfermedad o esta en tratamiento médico? Explique";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "Describa que síntoma(s) físico(s) o emocional(es) percibe y el tiempo de evolución";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "¿Considera que tiene alguna relación estos síntomas con su trabajo? Explique";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "¿Considera que tiene alguna relación éste síntoma con sus actividades fuera del trabajo? Explique";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
             miCelda50.Texto = "¿Ha consultado a su servicio de salud por estos síntomas?";
@@ -5718,16 +6795,16 @@ namespace Capa_Datos
             miCelda50.Texto = "¿Porqué?";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda50));
 
-            miCelda38.Texto = "";
+            miCelda38.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
 
-            miCelda1.Texto = "";
+            miCelda1.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
 
-            miCelda1.Texto = "";
+            miCelda1.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
 
-            miCelda38.Texto = "";
+            miCelda38.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
 
             miCelda50.Texto = "¿Durante el último año ha sido incapacitado por esta causa?";
@@ -5742,34 +6819,34 @@ namespace Capa_Datos
             miCelda50.Texto = "¿Porqué?";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda50));
 
-            miCelda38.Texto = "";
+            miCelda38.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
 
-            miCelda1.Texto = "";
+            miCelda1.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
 
-            miCelda1.Texto = "";
+            miCelda1.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda1));
 
-            miCelda38.Texto = "";
+            miCelda38.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda38));
 
             miCelda12.Texto = "¿Cuantos días de incapacidad médica?";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "¿Tiene Ud. algún hobbie, o practica algún deporte? ¿Cual(es)? ¿Qué tiempo le dedica a cada uno?";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
-
-            miCelda49.Texto = "";
+             
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
 
             miCelda12.Texto = "SUGERENCIAS Y RECOMENDACIONES PARA EL MEJORAMIENTO DE LAS CONDICIONES DE SALUD";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda12));
 
-            miCelda49.Texto = "";
+            miCelda49.Texto = " ";
             DocumentoPDF = Tuple.Create(DocumentoPDF.Item1, ManageFiles.AddCelda(DocumentoPDF.Item2, miCelda49));
             #endregion
 

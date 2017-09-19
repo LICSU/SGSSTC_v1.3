@@ -17,6 +17,7 @@ namespace Capa_Datos
         public int id_plan { get; set; }
         public Nullable<int> id_sucursal { get; set; }
         public string nombre { get; set; }
+        public string tipo { get; set; }
     
         public virtual sucursal sucursal { get; set; }
     }

@@ -49,9 +49,17 @@
 
                 <div class="col-md-4">
                     <h4 class="text-center">Trabajador</h4>
-                    <asp:DropDownList runat="server" ID="ddlTrabajador" class="form-control" AutoPostBack="true"
-                        OnSelectedIndexChanged="ddlTrabajador_SelectedIndexChanged">
-                    </asp:DropDownList>
+                    <asp:TextBox ID="txtTrabajador" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:hiddenfield id="hdnValue" onvaluechanged="hdnValue_ValueChanged" runat="server"/>
+                    <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajador" MinimumPrefixLength="1"
+                        CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                        TargetControlID="txtTrabajador" ID="AutoCompleteExtender1" runat="server"
+                        FirstRowSelected="false"
+                        CompletionListCssClass="completionList"
+                        CompletionListItemCssClass="listItem"
+                        OnClientItemSelected="OnContactSelected"
+                        CompletionListHighlightedItemCssClass="itemHighlighted">
+                    </cc1:AutoCompleteExtender>
                 </div>
 
             </div>
@@ -137,14 +145,9 @@
 
             <div class="row text-center">
 
-                <div class="col-md-4">
+                <div class="col-md-4 col-md-offset-4">
                     <asp:ImageButton alt="-" ID="btnAgregar" runat="server" ImageUrl="~\ico\agregar.png" OnClick="AgregarRegistro" />
                     <h4>Crear Encuesta Conocimiento Politica SST</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <asp:ImageButton alt="-" runat="server" ImageUrl="~\ico\agregar.png" OnClick="btnAgregarObj_Click" />
-                    <h4>Crear Encuesta Conocimiento Objetivos Politica SST</h4>
                 </div>
 
                 <div class="col-md-4">
@@ -238,10 +241,22 @@
                                     </asp:PlaceHolder>
 
                                     <h4>Trabajador: </h4>
-                                    <asp:DropDownList ID="ddlTrabajadorEsp" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:DropDownList>
+                                    <asp:TextBox ID="txtTrabajadorEsp" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <div ID="ListDivisor2">
+                                        <cc1:AutoCompleteExtender ServiceMethod="SearchTrabajadorEsp" MinimumPrefixLength="1"
+                                            CompletionInterval="100" EnableCaching="false" CompletionSetCount="10"
+                                            TargetControlID="txtTrabajadorEsp" ID="AutoCompleteExtender2" runat="server"
+                                            FirstRowSelected="false"
+                                            CompletionListCssClass="completionList"
+                                            CompletionListItemCssClass="listItem"
+                                            CompletionListElementID="ListDivisor2" 
+                                            CompletionListHighlightedItemCssClass="itemHighlighted">
+                                        </cc1:AutoCompleteExtender>
+                                    </div>
+
                                     <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
                                         SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                        Font-Bold="true" ControlToValidate="ddlTrabajadorEsp" runat="server"
+                                        Font-Bold="true" ControlToValidate="txtTrabajadorEsp" runat="server"
                                         ValidationGroup="ValidationAdd" />
                                           
                                     <br />
@@ -279,45 +294,6 @@
 
                         <div class="modal-body form-group">
                             <asp:HiddenField ID="hdfIDEsc" runat="server" />
-
-                            <asp:PlaceHolder runat="server" ID="phSucursalSubir">
-                                <div class="row">
-                                    <div>
-                                        <label class="col-md-4 control-label">Sucursal: </label>
-
-                                        <div class="col-md-6">
-                                            <asp:DropDownList ID="ddlSucursalSubir" runat="server" ClientIDMode="Static"
-                                                CssClass="form-control" AutoPostBack="true"
-                                                OnSelectedIndexChanged="ddlSucursalSubir_SelectedIndexChanged">
-                                            </asp:DropDownList>
-
-                                            <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                                SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                                Font-Bold="true" ControlToValidate="ddlSucursalSubir" runat="server"
-                                                ValidationGroup="ValidationAdd" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </asp:PlaceHolder>
-                            <br />
-
-                            <div class="row">
-                                <div>
-                                    <label class="col-md-4 control-label">Trabajador: </label>
-
-                                    <div class="col-md-6">
-                                        <asp:DropDownList ID="ddlTrabajadorSubir" runat="server" ClientIDMode="Static"
-                                            CssClass="form-control">
-                                        </asp:DropDownList>
-
-                                        <asp:RequiredFieldValidator ErrorMessage="<p>Campo Obligatorio!</p>"
-                                            SetFocusOnError="true" Display="Dynamic" ForeColor="#B50128" Font-Size="10"
-                                            Font-Bold="true" ControlToValidate="ddlTrabajadorSubir" runat="server"
-                                            ValidationGroup="ValidationAdd" />
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
 
                             <div class="row">
                                 <div>
@@ -398,5 +374,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function OnContactSelected(source, eventArgs) {
+        
+            var hdnValueID = "<%= hdnValue.ClientID %>";
 
+            document.getElementById(hdnValueID).value = eventArgs.get_value();
+            __doPostBack(hdnValueID, "");
+        } 
+    </script>
 </asp:Content>

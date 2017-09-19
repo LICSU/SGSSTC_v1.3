@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" CodeBehind="index_Area.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Area" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/source/MasterPages/Menu.Master" AutoEventWireup="true" EnableEventValidation = "false" CodeBehind="index_Area.aspx.cs" Inherits="SGSSTC.source.sistema.GestionDatos.index_Area" %>
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server"></asp:Content>
@@ -512,40 +512,47 @@
                     <h3>Descargar Lista</h3>
                 </div>
 
-                <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                     <ContentTemplate>
 
                         <div class="modal-body form-group">
 
                             <div class="row">
+
                                 <div class="col-md-6 col-md-offset-3">
-                                    <asp:Button ID="btnPrintWord" runat="server" Text="Imprimir en Word" class="btn btn-block btn-primary" OnClick="btnExportWord_Click"></asp:Button>
+                                    <asp:Button ID="btnPrintWord" runat="server" Text="Imprimir en Word" class="btn btn-block btn-primary"
+                                        OnClick="btnExportWord_Click"></asp:Button>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
+
                                 <div class="col-md-6 col-md-offset-3">
-                                    <asp:Button ID="btnPrintExcel" runat="server" Text="Imprimir en Excel" class="btn btn-block btn-success" OnClick="btnExportExcel_Click"></asp:Button>
+                                    <asp:Button ID="btnPrintExcel" runat="server" Text="Imprimir en Excel"
+                                        class="btn btn-block btn-success" OnClick="btnExportExcel_Click"></asp:Button>
                                 </div>
                             </div>
                             <br />
 
                             <div class="row">
+
                                 <div class="col-md-6 col-md-offset-3">
-                                    <asp:Button ID="btnPrintPdf" runat="server" Text="Imprimir en PDF" class="btn btn-block btn-danger" OnClick="btnExportPDF_Click"></asp:Button>
+                                    <asp:Button ID="btnPrintPdf" runat="server" Text="Imprimir en PDF" class="btn btn-block btn-danger"
+                                        OnClick="btnExportPDF_Click"></asp:Button>
                                 </div>
                             </div>
                             <br />
+
                         </div>
 
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-4">
-                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button></div>
+                                    <button class="btn btn-block btn-default" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                </div>
                             </div>
                         </div>
-
                     </ContentTemplate>
                     <Triggers>
                         <asp:PostBackTrigger ControlID="btnPrintWord" />
@@ -553,6 +560,7 @@
                         <asp:PostBackTrigger ControlID="btnPrintPdf" />
                     </Triggers>
                 </asp:UpdatePanel>
+
             </div>
         </div>
     </div>

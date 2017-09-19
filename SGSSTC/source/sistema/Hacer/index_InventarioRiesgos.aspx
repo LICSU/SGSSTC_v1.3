@@ -85,7 +85,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio1" type="radio" name="rbf1" value="1" runat="server">
 										</div>
@@ -111,7 +111,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio4" type="radio" name="rbf2" value="1" runat="server">
 										</div>
@@ -137,7 +137,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio7" type="radio" name="rbf3" value="1" runat="server">
 										</div>
@@ -163,7 +163,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio10" type="radio" name="rbf4" value="1" runat="server">
 										</div>
@@ -189,7 +189,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio13" type="radio" name="rbf5" value="1" runat="server">
 										</div>
@@ -215,7 +215,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio16" type="radio" name="rbf6" value="1" runat="server">
 										</div>
@@ -241,7 +241,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio19" type="radio" name="rbf7" value="1" runat="server">
 										</div>
@@ -295,7 +295,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio22" type="radio" name="rbf8" value="1" runat="server">
 										</div>
@@ -321,7 +321,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio25" type="radio" name="rbf9" value="1" runat="server">
 										</div>
@@ -347,7 +347,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio28" type="radio" name="rbf10" value="1" runat="server">
 										</div>
@@ -373,7 +373,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio31" type="radio" name="rbf11" value="1" runat="server">
 										</div>
@@ -399,7 +399,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio34" type="radio" name="rbf12" value="1" runat="server">
 										</div>
@@ -425,7 +425,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio37" type="radio" name="rbf13" value="1" runat="server">
 										</div>
@@ -479,7 +479,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio40" type="radio" name="rbf14" value="1" runat="server">
 										</div>
@@ -505,7 +505,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio43" type="radio" name="rbf15" value="1" runat="server">
 										</div>
@@ -531,7 +531,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio46" type="radio" name="rbf16" value="1" runat="server">
 										</div>
@@ -557,7 +557,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio49" type="radio" name="rbf17" value="1" runat="server">
 										</div>
@@ -583,7 +583,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio52" type="radio" name="rbf18" value="1" runat="server">
 										</div>
@@ -609,7 +609,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio55" type="radio" name="rbf19" value="1" runat="server">
 										</div>
@@ -635,7 +635,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio58" type="radio" name="rbf20" value="1" runat="server">
 										</div>
@@ -689,7 +689,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio61" type="radio" name="rbf21" value="1" runat="server">
 										</div>
@@ -715,7 +715,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio64" type="radio" name="rbf22" value="1" runat="server">
 										</div>
@@ -741,7 +741,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio67" type="radio" name="rbf23" value="1" runat="server">
 										</div>
@@ -767,7 +767,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio70" type="radio" name="rbf24" value="1" runat="server">
 										</div>
@@ -793,7 +793,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio73" type="radio" name="rbf25" value="1" runat="server">
 										</div>
@@ -819,7 +819,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio76" type="radio" name="rbf26" value="1" runat="server">
 										</div>
@@ -873,7 +873,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio79" type="radio" name="rbf27" value="1" runat="server">
 										</div>
@@ -899,7 +899,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio82" type="radio" name="rbf28" value="1" runat="server">
 										</div>
@@ -925,7 +925,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio85" type="radio" name="rbf29" value="1" runat="server">
 										</div>
@@ -951,7 +951,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio88" type="radio" name="rbf30" value="1" runat="server">
 										</div>
@@ -977,7 +977,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio91" type="radio" name="rbf31" value="1" runat="server">
 										</div>
@@ -1003,7 +1003,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio94" type="radio" name="rbf32" value="1" runat="server">
 										</div>
@@ -1029,7 +1029,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio97" type="radio" name="rbf33" value="1" runat="server">
 										</div>
@@ -1083,7 +1083,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio100" type="radio" name="rbf34" value="1" runat="server">
 										</div>
@@ -1109,7 +1109,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio103" type="radio" name="rbf35" value="1" runat="server">
 										</div>
@@ -1135,7 +1135,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio106" type="radio" name="rbf36" value="1" runat="server">
 										</div>
@@ -1161,7 +1161,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio109" type="radio" name="rbf37" value="1" runat="server">
 										</div>
@@ -1187,7 +1187,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio112" type="radio" name="rbf38" value="1" runat="server">
 										</div>
@@ -1213,7 +1213,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio115" type="radio" name="rbf39" value="1" runat="server">
 										</div>
@@ -1267,7 +1267,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio118" type="radio" name="rbf40" value="1" runat="server">
 										</div>
@@ -1293,7 +1293,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio121" type="radio" name="rbf41" value="1" runat="server">
 										</div>
@@ -1319,7 +1319,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio124" type="radio" name="rbf42" value="1" runat="server">
 										</div>
@@ -1345,7 +1345,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio127" type="radio" name="rbf43" value="1" runat="server">
 										</div>
@@ -1371,7 +1371,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio130" type="radio" name="rbf44" value="1" runat="server">
 										</div>
@@ -1397,7 +1397,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio133" type="radio" name="rbf45" value="1" runat="server">
 										</div>
@@ -1423,7 +1423,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio136" type="radio" name="rbf46" value="1" runat="server">
 										</div>
@@ -1449,7 +1449,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio139" type="radio" name="rbf47" value="1" runat="server">
 										</div>
@@ -1503,7 +1503,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio142" type="radio" name="rbf48" value="1" runat="server">
 										</div>
@@ -1529,7 +1529,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio145" type="radio" name="rbf49" value="1" runat="server">
 										</div>
@@ -1555,7 +1555,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio148" type="radio" name="rbf50" value="1" runat="server">
 										</div>
@@ -1581,7 +1581,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio151" type="radio" name="rbf51" value="1" runat="server">
 										</div>
@@ -1607,7 +1607,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio154" type="radio" name="rbf52" value="1" runat="server">
 										</div>
@@ -1633,7 +1633,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio157" type="radio" name="rbf53" value="1" runat="server">
 										</div>
@@ -1687,7 +1687,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio160" type="radio" name="rbf54" value="1" runat="server">
 										</div>
@@ -1713,7 +1713,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio163" type="radio" name="rbf55" value="1" runat="server">
 										</div>
@@ -1739,7 +1739,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio166" type="radio" name="rbf56" value="1" runat="server">
 										</div>
@@ -1765,7 +1765,7 @@
 										</asp:DropDownList>
 									</td>
 
-									<td>
+									<td class="text-center">
 										<div class="col-md-4">
 											<input id="radio169" type="radio" name="rbf57" value="1" runat="server">
 										</div>
@@ -1826,7 +1826,7 @@
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<asp:Literal ID="ltReporte" runat="server"></asp:Literal>
-					<div id="piechart" runat="server"></div>
+					<div id="piechart"></div>
 				</div>
 
 				<asp:PlaceHolder runat="server" Visible="false">

@@ -1598,6 +1598,7 @@ namespace Capa_Datos
                         PM.nombre,
                         PM.ruta,
                         PM.sucursal.id_empresa,
+                        PM.sucursal.id_sucursal,
                         Empresa = PM.sucursal.empresa.nombre,
                         Sucursal = PM.sucursal.nombre,
                         PM.id_tabla,
@@ -1660,7 +1661,7 @@ namespace Capa_Datos
         #endregion
 
         #region MatrizRiesgos
-        public static void MatrizRiesgo(GridView GridView1, int _id_sucursal = 0, int _id_empresa = 0, string _tipo_riesgo = "")
+        public static void MatrizRiesgo(GridView GridView1, int _id_sucursal = 0, int _id_empresa = 0, string _tipo_riesgo = "", string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
 
@@ -1697,6 +1698,7 @@ namespace Capa_Datos
             if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
             if (_tipo_riesgo != string.Empty) { query = query.Where(x => x.tipoRiesgo.ToLower().Contains(_tipo_riesgo.ToLower())).ToList(); }
+            if (nombre != string.Empty) { query = query.Where(x => x.FactorRiesgo.ToLower().Contains(nombre.ToLower())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -1846,7 +1848,7 @@ namespace Capa_Datos
             GridView1.DataSource = query;
             GridView1.DataBind();
         }
-        public static void IdentificacionPeligro(GridView GridView1, int _id_sucursal)
+        public static void IdentificacionPeligro(GridView GridView1, int _id_sucursal, string _fecha = "" )
         {
             if (_id_sucursal != 0)
             {
@@ -1868,6 +1870,7 @@ namespace Capa_Datos
                         NumPuestos = IPT.identificacion_puesto.Count
                     }).ToList();
 
+                if (_fecha != string.Empty) { query = query.Where(x => x.fecha_identificacion <= Convert.ToDateTime(_fecha)).ToList(); }
 
                 GridView1.DataSource = query;
                 GridView1.DataBind();
@@ -1894,7 +1897,7 @@ namespace Capa_Datos
                 GridView1.DataBind();
             }
         }
-        public static void EvaluacionPuesto(GridView GridView1, int _id_puesto)
+        public static void EvaluacionPuesto(GridView GridView1, int _id_puesto, string _fecha = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
 
@@ -1909,6 +1912,7 @@ namespace Capa_Datos
                     ER.aceptabilidad_riesgo
                 }).ToList();
 
+            if (_fecha != string.Empty) { query = query.Where(x => x.fecha_evaluacion <= Convert.ToDateTime(_fecha)).ToList(); }
             GridView1.DataSource = query;
             GridView1.DataBind();
         }
@@ -1919,7 +1923,8 @@ namespace Capa_Datos
         public static void autoevaluacion(
             GridView GridView1,
             int _id_sucursal = 0,
-            int _id_empresa = 0)
+            int _id_empresa = 0,
+            string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -1939,6 +1944,7 @@ namespace Capa_Datos
 
             if (_id_sucursal != 0) { query = query.Where(x => x.id_tabla == _id_sucursal).ToList(); }
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
+            if (nombre != "") { query = query.Where(x => x.nombre.ToLower().Contains(nombre.ToLower())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -1949,7 +1955,8 @@ namespace Capa_Datos
         public static void vigilancia_epidemiologica(
             GridView GridView1,
             int _id_empresa = 0,
-            int _id_sucursal = 0)
+            int _id_sucursal = 0,
+            string _nombre ="")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -1968,6 +1975,7 @@ namespace Capa_Datos
 
             if (_id_sucursal != 0) { query = query.Where(x => x.id_tabla == _id_sucursal).ToList(); }
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
+            if (_nombre != "") { query = query.Where(x => x.nombre.ToUpper().Contains(_nombre.ToUpper())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -1975,7 +1983,7 @@ namespace Capa_Datos
         #endregion
 
         #region inspecciones
-        public static void inspecciones(GridView GridView1, string _tipo, int _id_sucursal = 0, int _id_empresa = 0)
+        public static void inspecciones(GridView GridView1, string _tipo, int _id_sucursal = 0, int _id_empresa = 0, string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -1997,6 +2005,7 @@ namespace Capa_Datos
             if (_id_sucursal != 0) { query = query.Where(x => x.id_tabla == _id_sucursal).ToList(); }
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
             if (_tipo != "Insp") { query = query.Where(x => x.tipo.Contains(_tipo)).ToList(); }
+            if (nombre != "") { query = query.Where(x => x.nombre.ToUpper().Contains(nombre.ToUpper())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -2004,15 +2013,13 @@ namespace Capa_Datos
         #endregion
 
         #region analisis vulnerabilidad
-        public static void analisis_vulnerabilidad(GridView GridView1, int _id_empresa = 0, int _id_sucursal = 0)
+        public static void analisis_vulnerabilidad(GridView GridView1, int _id_empresa = 0, int _id_sucursal = 0, string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
 
-            if (_id_sucursal != 0)
-            {
-                var query = (
+            var query = (
                     from AT in contexto.documento
-                    where AT.id_tabla == _id_sucursal && AT.tipo == "AnalisisVulnerabilidad"
+                    where AT.tipo == "AnalisisVulnerabilidad"
                     select new
                     {
                         AT.id_documento,
@@ -2024,27 +2031,14 @@ namespace Capa_Datos
                         AT.nombre
                     }).ToList();
 
-                GridView1.DataSource = query;
-            }
-            else
-            {
-                var query = (
-                    from AT in contexto.documento
-                    where AT.sucursal.id_empresa == _id_empresa && AT.tipo == "AnalisisVulnerabilidad"
-                    select new
-                    {
-                        AT.id_documento,
-                        AT.id_tabla,
-                        AT.sucursal.id_empresa,
-                        Sucursal = AT.sucursal.nombre,
-                        Empresa = AT.sucursal.empresa.nombre,
-                        AT.ruta,
-                        AT.nombre
-                    }).ToList();
-                GridView1.DataSource = query;
-            }
 
+            if (_id_sucursal != 0) { query = query.Where(x => x.id_tabla == _id_sucursal).ToList(); }
+            if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
+            if (nombre != "") { query = query.Where(x => x.nombre.ToLower().Contains(nombre.ToLower())).ToList(); }
+
+            GridView1.DataSource = query;
             GridView1.DataBind();
+            
         }
         #endregion
 
@@ -2053,7 +2047,8 @@ namespace Capa_Datos
             GridView GridView1,
             string _tipo = "Rep",
             int _id_empresa = 0,
-            int _id_sucursal = 0)
+            int _id_sucursal = 0,
+            string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -2075,6 +2070,7 @@ namespace Capa_Datos
             if (_tipo != "Rep") { query = query.Where(x => x.tipo.ToLower().Contains(_tipo.ToLower())).ToList(); }
             if (_id_sucursal != 0) { query = query.Where(x => x.id_tabla == _id_sucursal).ToList(); }
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
+            if (nombre != "") { query = query.Where(x => x.nombre.ToUpper().Contains(nombre.ToUpper())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -2167,7 +2163,8 @@ namespace Capa_Datos
             GridView GridView1,
             int _id_empresa,
             int _id_sucursal = 0,
-            int _id_trabajador = 0)
+            int _id_trabajador = 0,
+            string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -2189,6 +2186,7 @@ namespace Capa_Datos
 
             if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
             if (_id_trabajador != 0) { query = query.Where(x => x.id_trabajador == _id_trabajador).ToList(); }
+            if (nombre != "") { query = query.Where(x => x.NomTrabajador.ToUpper().Contains(nombre.ToUpper())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -2228,7 +2226,7 @@ namespace Capa_Datos
         #endregion
 
         #region TipoDocumento
-        public static void TipoDocumento(GridView GridView1, int _id_sucursal = 0, int _id_empresa = 0)
+        public static void TipoDocumento(GridView GridView1, int _id_sucursal = 0, int _id_empresa = 0, string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -2251,6 +2249,7 @@ namespace Capa_Datos
 
             if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
             if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
+            if (nombre != "") { query = query.Where(x => x.nombre.ToUpper().Contains(nombre.ToUpper())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -2258,7 +2257,7 @@ namespace Capa_Datos
         #endregion
 
         #region recursos economicos
-        public static void RecursosEconomicos(GridView GridView1, int _id_empresa, int _id_sucursal = 0)
+        public static void RecursosEconomicos(GridView GridView1, int _id_empresa, int _id_sucursal = 0, string nombre = "")
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -2270,10 +2269,11 @@ namespace Capa_Datos
                     I.ruta,
                     I.id_tabla,
                     sucursal = I.sucursal.nombre,
-                    archivo = I.nombre == null ? "No se ha subido" : "" + I.nombre
+                    archivo = I.nombre == null ? "No se ha subido" : "" + I.nombre,
                 }).ToList();
 
             if (_id_sucursal != 0) { query = query.Where(x => x.id_tabla == _id_sucursal).ToList(); }
+            if (nombre != "") { query = query.Where(x => x.archivo.ToUpper().Contains(nombre.ToUpper())).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();
@@ -2281,7 +2281,7 @@ namespace Capa_Datos
         #endregion
 
         #region entrega epp
-        public static void entrega_epp(GridView GridView1, int _id_empresa = 0, int _id_sucursal = 0)
+        public static void entrega_epp(GridView GridView1, string _id_empresa = "", string _id_sucursal = "", string _nombre = "", int _id_trabajador = 0)
         {
             GrupoLiEntities contexto = new GrupoLiEntities();
             var query = (
@@ -2298,11 +2298,14 @@ namespace Capa_Datos
                     I.ruta,
                     I.nombre,
                     trabajador = I.trabajador.primer_nombre + " " + I.trabajador.primer_apellido,
+                    id_trabajador = I.trabajador.id_trabajador,
                     I.fecha_subida
                 }).ToList();
 
-            if (_id_sucursal != 0) { query = query.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
-            if (_id_empresa != 0) { query = query.Where(x => x.id_empresa == _id_empresa).ToList(); }
+            if (_id_sucursal != "") { query = query.Where(x => x.id_sucursal == Convert.ToInt32( _id_sucursal)).ToList(); }
+            if (_id_empresa != "") { query = query.Where(x => x.id_empresa == Convert.ToInt32(_id_empresa)).ToList(); }
+            if (_nombre != "") { query = query.Where(x => x.nombre.ToUpper().Contains(_nombre.ToUpper())).ToList(); }
+            if (_id_trabajador != 0) { query = query.Where(x => x.id_trabajador == _id_trabajador).ToList(); }
 
             GridView1.DataSource = query;
             GridView1.DataBind();

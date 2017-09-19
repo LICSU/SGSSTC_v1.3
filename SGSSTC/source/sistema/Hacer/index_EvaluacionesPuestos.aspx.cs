@@ -24,7 +24,8 @@ namespace SGSSTC.source.sistema.Hacer
 
 			if (!IsPostBack)
 			{
-				LlenarGridView();
+                ViewState["sWhere"] = string.Empty;
+                LlenarGridView();
 			}
 		} 
 
@@ -32,14 +33,13 @@ namespace SGSSTC.source.sistema.Hacer
 		{
 			int id_Puesto = objUtilidades.descifrarCadena(Request.QueryString["id"]);
 
-			Tabla.EvaluacionPuesto(GridView1, id_Puesto);
+			Tabla.EvaluacionPuesto(GridView1, id_Puesto, string.Empty + ViewState["sWhere"]);
 		}
 		#endregion
 
 		#region acciones
 		protected void MostrarModalImprimir(object sender, EventArgs e)
 		{
-			
 			Modal.registrarModal("printModal", "printModalScript", this);
 		}
 
@@ -49,8 +49,10 @@ namespace SGSSTC.source.sistema.Hacer
 				"",
 				ViewState["Imprimir"].ToString(),
 			};
-			Modal.CerrarModal("printModal", "printModalScript", this);
+			
 			PrintFile.PrintEvaluacionPuestos(valores, this);
+            Modal.CerrarModal("printModal", "printModalScript", this);
+            LlenarGridView();
 		}
 
 		protected void EliminarRegistro(object sender, EventArgs e)
@@ -100,6 +102,19 @@ namespace SGSSTC.source.sistema.Hacer
 			}
 
 		}
-		#endregion
-	}
+        #endregion
+
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["sWhere"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["sWhere"] = string.Empty;
+            }
+            LlenarGridView();
+        }
+    }
 }

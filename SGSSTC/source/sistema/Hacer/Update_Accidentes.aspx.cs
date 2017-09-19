@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Security;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,9 +16,12 @@ namespace SGSSTC.source.sistema.Verificar
 		private Model_UsuarioSistema ObjUsuario;
 		private Tuple<bool, bool> BoolEmpSuc;
 		private  Utilidades objUtilidades = new Utilidades();
+        private static int IdSucursal = 0;
+        private static int IdTrabajador = 0;
+        private static int IdPuesto = 0;
 
-		#region acciones index
-		protected void Page_Load(object sender, EventArgs e)
+        #region acciones index
+        protected void Page_Load(object sender, EventArgs e)
 		{
 			Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
@@ -47,7 +52,6 @@ namespace SGSSTC.source.sistema.Verificar
 
 			if (!BoolEmpSuc.Item2)
 			{
-				Listas.Trabajadores_Sucursal(ddlTrabajador, ObjUsuario.Id_sucursal);
 				Listas.Area_Sucursal(ddlArea, ObjUsuario.Id_sucursal);
 				Listas.PuestoTrabajo(ddlProcesoTrabajo, "Sucursal", ObjUsuario.Id_sucursal);
 			}
@@ -60,14 +64,19 @@ namespace SGSSTC.source.sistema.Verificar
 
 			foreach (var item in ListAccidentes)
 			{
-				int IdSucursal = Convert.ToInt32(item.trabajador.puesto_trabajo.area.id_sucursal);
-				ddlSucursal.SelectedValue = string.Empty + IdSucursal;
+				IdSucursal = Convert.ToInt32(item.trabajador.puesto_trabajo.area.id_sucursal);
+                int IDEmpresa = Convert.ToInt32(item.trabajador.puesto_trabajo.area.sucursal.id_empresa);
+                
+                ddlEmpresa.SelectedValue = IDEmpresa.ToString();
+                Listas.Sucursal(ddlSucursal, IDEmpresa);
+
+				ddlSucursal.SelectedValue = IdSucursal.ToString();
 
 				txtFechaAcc.Text = item.fecha_accidente.Value.ToString("yyyy-MM-dd");
 				txtHoraAcc.Text = item.hora_accidente.Value.ToString("hh:mm:ss");
 
-				Listas.Trabajadores_Sucursal(ddlTrabajador, IdSucursal);
-				ddlTrabajador.SelectedValue = Convert.ToString(item.id_trabajador);
+                txtTrabajador.Text = item.trabajador.primer_nombre + ' ' + item.trabajador.primer_apellido + ' ' + item.trabajador.cedula;
+                IdTrabajador = Convert.ToInt32(item.id_trabajador);
 
 				Listas.Area_Sucursal(ddlArea, IdSucursal, "Ninguna");
 				ddlArea.SelectedValue = Convert.ToString(item.id_area);
@@ -124,7 +133,7 @@ namespace SGSSTC.source.sistema.Verificar
 			{
 				Edit.fecha_accidente = Convert.ToDateTime(txtFechaAcc.Text);
 				Edit.hora_accidente = Convert.ToDateTime(txtHoraAcc.Text);
-				Edit.id_trabajador = Convert.ToInt32(ddlTrabajador.SelectedValue);
+				Edit.id_trabajador = Convert.ToInt32(IdTrabajador);
 				Edit.id_area = Convert.ToInt32(ddlArea.SelectedValue);
 				Edit.id_puesto = Convert.ToInt32(ddlProcesoTrabajo.Text);
 				Edit.sitio = txtSitioAccidente.Text;
@@ -164,8 +173,8 @@ namespace SGSSTC.source.sistema.Verificar
 		{
 			if (ddlSucursal.SelectedValue != string.Empty)
 			{
-				Listas.Trabajadores_Sucursal(ddlTrabajador, Convert.ToInt32(ddlSucursal.SelectedValue));
-				Listas.Area_Sucursal(ddlArea, Convert.ToInt32(ddlSucursal.SelectedValue), "Ninguna");
+                IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
+                Listas.Area_Sucursal(ddlArea, Convert.ToInt32(ddlSucursal.SelectedValue), "Ninguna");
 				Listas.PuestoTrabajo(ddlProcesoTrabajo, "Sucursal", Convert.ToInt32(ddlSucursal.SelectedValue), "Ninguno");
 			}
 
@@ -269,6 +278,16 @@ namespace SGSSTC.source.sistema.Verificar
 			miDDl.SelectedValue = string.Empty;
 
 		}
-		#endregion
-	}
+        #endregion
+
+        #region AutoCompletar
+        [ScriptMethod()]
+        [WebMethod]
+        public static List<string> SearchTrabajador(string prefixText, int count)
+        {
+            List<string> listTrabajadores = Utilidades.SearchTrabajador(prefixText, count, IdSucursal, ref IdTrabajador, IdPuesto);
+            return listTrabajadores;
+        }
+        #endregion
+    }
 }

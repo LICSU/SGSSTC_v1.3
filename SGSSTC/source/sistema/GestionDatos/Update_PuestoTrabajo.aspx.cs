@@ -50,6 +50,7 @@ namespace SGSSTC.source.sistema.GestionDatos
                 txtProductos.Text = itemPuestos.productos;
                 txtDesechos.Text = itemPuestos.desechos;
                 ImgFoto.ImageUrl = itemPuestos.foto;
+                ViewState["url"] = itemPuestos.foto;
 
                 Listas.Empresa(ddlEmpresa);
                 ddlEmpresa.SelectedValue = Convert.ToString(itemPuestos.area.sucursal.id_empresa);
@@ -100,7 +101,10 @@ namespace SGSSTC.source.sistema.GestionDatos
         {
             int idPuestos = 0;
             idPuestos = objUtilidades.descifrarCadena(Request.QueryString["id"]);
-            string ruta = Utilidades.GuardarImagen(fuAnexo, txtNombre.Text + "PuestoTrabajo", "~/source/archivos/puesto_trabajo/");
+            string ruta = ViewState["url"].ToString();
+
+            if (fuAnexo.HasFile)
+                ruta = Utilidades.GuardarImagen(fuAnexo, txtNombre.Text + "PuestoTrabajo", "~/source/archivos/puesto_trabajo/");
 
             GrupoLiEntities contextoEdit = new GrupoLiEntities();
             puesto_trabajo Edit = contextoEdit.puesto_trabajo.SingleOrDefault(b => b.id_puesto_trabajo == idPuestos);

@@ -22,7 +22,7 @@
                     <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
                 </div>
             </asp:PlaceHolder>
-
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="false">
             <div class="row">
                 <div class="col-md-4 col-md-offset-3">
                     <asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
@@ -36,6 +36,7 @@
             </div>
 
             <br />
+    </asp:PlaceHolder>
 
 	<div class="row form-group">
 
@@ -69,7 +70,7 @@
 					los riesgos garantizando la intervención y comunicación por parte de los trabajadores acerca de los peligros asociados a su actividad laboral. 
 					El objetivo es establecer una metodología que permita valorar los riesgos en las diferentes áreas de trabajo, en base a la Norma Técnica Colombiana
 					NTC-45 de 2012
-					
+					<a style="opacity:1;">#NOBORRAR#</a>
 					<h3>Alcance. </h3><br/>
 					El presente procedimiento aplica para todas las áreas, procesos y servicios de la empresa.. 
 

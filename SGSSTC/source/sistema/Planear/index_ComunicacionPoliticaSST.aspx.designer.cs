@@ -85,13 +85,31 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
         
         /// <summary>
-        /// Control ddlTrabajador.
+        /// Control txtTrabajador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajador;
+        protected global::System.Web.UI.WebControls.TextBox txtTrabajador;
+        
+        /// <summary>
+        /// Control hdnValue.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnValue;
+        
+        /// <summary>
+        /// Control AutoCompleteExtender1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
         
         /// <summary>
         /// Control GridView1.
@@ -193,13 +211,22 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursalAdd;
         
         /// <summary>
-        /// Control ddlTrabajadorEsp.
+        /// Control txtTrabajadorEsp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajadorEsp;
+        protected global::System.Web.UI.WebControls.TextBox txtTrabajadorEsp;
+        
+        /// <summary>
+        /// Control AutoCompleteExtender2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender2;
         
         /// <summary>
         /// Control btnEspecifico.
@@ -256,13 +283,22 @@ namespace SGSSTC.source.sistema.Hacer {
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursalSubir;
         
         /// <summary>
-        /// Control ddlTrabajadorSubir.
+        /// Control txtTrabajadorSub.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTrabajadorSubir;
+        protected global::System.Web.UI.WebControls.TextBox txtTrabajadorSub;
+        
+        /// <summary>
+        /// Control AutoCompleteExtender3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender3;
         
         /// <summary>
         /// Control flpArchivo.

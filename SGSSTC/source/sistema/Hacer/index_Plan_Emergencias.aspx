@@ -24,6 +24,7 @@
             <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
         </div>
     </asp:PlaceHolder>
+    <asp:TextBox ID="txtBuscar" runat="server" Visible="false"></asp:TextBox>
 
 	<div class="row form-group">
 

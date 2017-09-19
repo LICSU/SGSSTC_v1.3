@@ -36,6 +36,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
+                ViewState["sWhere"] = string.Empty;
                 LlenarGridView();
                 CargarListas();
             }
@@ -55,10 +56,7 @@ namespace SGSSTC.source.sistema.Hacer
         }
         private void LlenarGridView()
         {
-            int IdEmpresa = Getter.Set_IdEmpresa(ObjUsuario, Convert.ToInt32(ViewState["empresa"]));
-            int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
-
-            Tabla.entrega_epp(GridView1, IdEmpresa, IdSucursal);
+            Tabla.entrega_epp(GridView1, string.Empty + ViewState["empresa"], string.Empty + ViewState["sucursal"], string.Empty + ViewState["sWhere"], IdTrabajador);
         }
         #endregion
 
@@ -77,7 +75,7 @@ namespace SGSSTC.source.sistema.Hacer
         protected void Guardar(object sender, EventArgs e)
         {
             int IdSucursal = Getter.Set_IdSucursalDDl(ObjUsuario, ddlSucursalAdd);
-            int IdEmpresa = Getter.Set_IdEmpresaDDl(ObjUsuario, ddlEmpresa);
+            int IdEmpresa = Getter.Set_IdEmpresaDDl(ObjUsuario, ddlEmpresaAdd);
 
             string ruta = Utilidades.GuardarArchivo(flpArchivo, IdEmpresa + txtNombre.Text, "~/source/archivos/entregasepp/");
 
@@ -93,6 +91,7 @@ namespace SGSSTC.source.sistema.Hacer
             ObjUsuario.Error = CRUD.Add_Fila(nuevo, ObjUsuario.Id_usuario, HttpContext.Current.Request.Url.AbsoluteUri);
 
             Modal.MostrarAlertaAdd(phAlerta, divAlerta, lbAlerta, ObjUsuario.Error,txtBuscar);
+            Modal.CerrarModal("deleteModal", "DeleteModalScript", this);
             LlenarGridView();
         }
         protected void EliminarRegistro(object sender, EventArgs e)
@@ -156,6 +155,7 @@ namespace SGSSTC.source.sistema.Hacer
             if (ddlSucursal.SelectedValue != string.Empty)
             {
                 ViewState["sucursal"] = ddlSucursal.SelectedValue;
+                txtTrabajador.Text = "";
                 IdSucursal = Convert.ToInt32(ddlSucursal.SelectedValue);
             }
             else
@@ -188,5 +188,18 @@ namespace SGSSTC.source.sistema.Hacer
             }
         }
         #endregion
+
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["sWhere"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["sWhere"] = string.Empty;
+            }
+            LlenarGridView();
+        }
     }
 }

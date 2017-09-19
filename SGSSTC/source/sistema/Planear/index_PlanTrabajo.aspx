@@ -16,6 +16,14 @@
                 <h1 class="text-center">Plan de Trabajo Anual</h1>
             </div>
             
+            <asp:PlaceHolder ID="phAlerta" runat="server" Visible="false">
+                <div id="divAlerta" runat="server">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <asp:Label ID="lbAlerta" runat="server" Text="Label"></asp:Label>
+                    <asp:TextBox ID="txtBuscar" runat="server" Visible="false"></asp:TextBox>
+                </div>
+            </asp:PlaceHolder>
+
             <div class="row">
                 <div class="col-md-3 col-md-offset-3">
                     <h4 class="text-center">Año</h4>

@@ -34,6 +34,7 @@ namespace SGSSTC.source.sistema.Hacer
 
             if (!IsPostBack)
             {
+                ViewState["buscar"] = string.Empty;
                 CargarListas();
                 LlenarGridView();
             }
@@ -44,7 +45,7 @@ namespace SGSSTC.source.sistema.Hacer
             int IdSucursal = Getter.Set_IdSucursal(ObjUsuario, Convert.ToInt32(ViewState["sucursal"]));
             string tipoRiesgo = string.Empty + ViewState["tipoRiesgo"];
 
-            Tabla.MatrizRiesgo(GridView1, IdSucursal, IdEmpresa, tipoRiesgo);
+            Tabla.MatrizRiesgo(GridView1, IdSucursal, IdEmpresa, tipoRiesgo, string.Empty + ViewState["buscar"]);
 
         }
         private void CargarListas()
@@ -171,6 +172,18 @@ namespace SGSSTC.source.sistema.Hacer
             else
             {
                 ViewState["tipoRiesgo"] = string.Empty;
+            }
+            LlenarGridView();
+        }
+        protected void BuscarRegistro(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != string.Empty)
+            {
+                ViewState["buscar"] = txtBuscar.Text;
+            }
+            else
+            {
+                ViewState["buscar"] = string.Empty;
             }
             LlenarGridView();
         }

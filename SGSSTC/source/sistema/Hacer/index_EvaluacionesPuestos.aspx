@@ -28,8 +28,8 @@
 			
 			<div class="row">
 				<div class="col-md-4 col-md-offset-3">
-					<asp:TextBox ID="txtBuscar" data-toggle="tooltip" data-placement="bottom" title="Ingrese Texto a Buscar"
-						runat="server" class="form-control" PlaceHolder="Ingrese el Area a buscar"></asp:TextBox>
+					<asp:TextBox ID="txtBuscar" data-toggle="tooltip" TextMode="Date" data-placement="bottom" title="Ingrese Texto a Buscar"
+						runat="server" class="form-control" PlaceHolder="Ingrese la fecha"></asp:TextBox>
 				</div>
 
 				<div class="col-md-2">
