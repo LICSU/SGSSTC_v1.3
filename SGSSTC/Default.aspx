@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="splash/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="splash/css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="splash/css/style.css" />
+
     <script src="splash/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>

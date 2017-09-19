@@ -6,7 +6,6 @@ using System.Web.Security;
 
 namespace SGSSTC
 {
-
     public partial class Default : System.Web.UI.Page
     {
         string sErr = string.Empty;
@@ -92,5 +91,6 @@ namespace SGSSTC
                 }
             }
         }
+
     }
 }

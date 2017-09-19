@@ -1472,9 +1472,48 @@
     <Content Include="source\sistema\Hacer\View_InvestigacionIncidente.aspx" />
     <Content Include="source\WebUserControl\pagination.ascx" />
     <Content Include="source\WebUserControl\ucMsjModal.ascx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="splash\css\animate.css" />
+    <Content Include="splash\css\bootstrap.css" />
+    <Content Include="splash\css\icomoon.css" />
+    <Content Include="splash\css\magnific-popup.css" />
+    <Content Include="splash\css\owl.carousel.min.css" />
+    <Content Include="splash\css\owl.theme.default.min.css" />
+    <Content Include="splash\css\style.css" />
+    <Content Include="splash\css\themify-icons.css" />
+    <Content Include="splash\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="splash\fonts\icomoon\icomoon.svg" />
+    <Content Include="splash\fonts\themify-icons\themify.svg" />
+    <Content Include="splash\images\img_1.jpg" />
+    <Content Include="splash\images\img_2.jpg" />
+    <Content Include="splash\images\img_3.jpg" />
+    <Content Include="splash\images\img_4.jpg" />
+    <Content Include="splash\images\img_5.jpg" />
+    <Content Include="splash\images\img_6.jpg" />
+    <Content Include="splash\images\img_bg_1.jpg" />
+    <Content Include="splash\images\img_bg_2.jpg" />
+    <Content Include="splash\images\img_bg_3.jpg" />
+    <Content Include="splash\images\iphone.png" />
+    <Content Include="splash\images\loader.gif" />
+    <Content Include="splash\images\macbook.png" />
+    <Content Include="splash\images\noticias\noticia1.jpg" />
+    <Content Include="splash\images\noticias\noticia2.jpg" />
+    <Content Include="splash\images\noticias\noticia3.jpg" />
+    <Content Include="splash\images\noticias\noticia4.jpg" />
+    <Content Include="splash\images\person_1.jpg" />
+    <Content Include="splash\images\person_2.jpg" />
+    <Content Include="splash\images\person_3.jpg" />
+    <Content Include="splash\js\bootstrap.min.js" />
+    <Content Include="splash\js\jquery.countTo.js" />
+    <Content Include="splash\js\jquery.easing.1.3.js" />
+    <Content Include="splash\js\jquery.magnific-popup.min.js" />
+    <Content Include="splash\js\jquery.min.js" />
+    <Content Include="splash\js\jquery.stellar.min.js" />
+    <Content Include="splash\js\jquery.waypoints.min.js" />
+    <Content Include="splash\js\magnific-popup-options.js" />
+    <Content Include="splash\js\main.js" />
+    <Content Include="splash\js\modernizr-2.6.2.min.js" />
+    <Content Include="splash\js\owl.carousel.min.js" />
+    <Content Include="splash\js\respond.min.js" />
     <Content Include="source\archivos\autoevaluacion\18analisis 201720-02-2017.pdf" />
     <Content Include="source\archivos\autoevaluacion\18analisismedellin.pdf" />
     <Content Include="source\archivos\autoevaluacion\18analsis 201720-02-2017.pdf" />
@@ -1500,6 +1539,15 @@
     <Content Include="source\archivos\recursos_economicos\Soporte_doc2_211-05-2017.doc" />
     <Content Include="vwd.webinfo" />
     <Content Include="website.publishproj" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -2518,12 +2566,98 @@
     <Content Include="source\MasterPages\Menu.Master" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="splash\css\.DS_Store" />
+    <Content Include="splash\css\bootstrap.css.map" />
+    <Content Include="splash\css\style.css.map" />
+    <Content Include="splash\fonts\.DS_Store" />
+    <Content Include="splash\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="splash\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="splash\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="splash\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="splash\fonts\icomoon\icomoon.eot" />
+    <Content Include="splash\fonts\icomoon\icomoon.ttf" />
+    <Content Include="splash\fonts\icomoon\icomoon.woff" />
+    <Content Include="splash\fonts\themify-icons\themify.eot" />
+    <Content Include="splash\fonts\themify-icons\themify.ttf" />
+    <Content Include="splash\fonts\themify-icons\themify.woff" />
+    <Content Include="splash\images\.DS_Store" />
+    <Content Include="splash\js\.DS_Store" />
+    <Content Include="splash\sass\.DS_Store" />
+    <Content Include="splash\sass\bootstrap.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_image.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_size.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="splash\sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="splash\sass\bootstrap\_alerts.scss" />
+    <Content Include="splash\sass\bootstrap\_badges.scss" />
+    <Content Include="splash\sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="splash\sass\bootstrap\_button-groups.scss" />
+    <Content Include="splash\sass\bootstrap\_buttons.scss" />
+    <Content Include="splash\sass\bootstrap\_carousel.scss" />
+    <Content Include="splash\sass\bootstrap\_close.scss" />
+    <Content Include="splash\sass\bootstrap\_code.scss" />
+    <Content Include="splash\sass\bootstrap\_component-animations.scss" />
+    <Content Include="splash\sass\bootstrap\_dropdowns.scss" />
+    <Content Include="splash\sass\bootstrap\_forms.scss" />
+    <Content Include="splash\sass\bootstrap\_glyphicons.scss" />
+    <Content Include="splash\sass\bootstrap\_grid.scss" />
+    <Content Include="splash\sass\bootstrap\_input-groups.scss" />
+    <Content Include="splash\sass\bootstrap\_jumbotron.scss" />
+    <Content Include="splash\sass\bootstrap\_labels.scss" />
+    <Content Include="splash\sass\bootstrap\_list-group.scss" />
+    <Content Include="splash\sass\bootstrap\_media.scss" />
+    <Content Include="splash\sass\bootstrap\_mixins.scss" />
+    <Content Include="splash\sass\bootstrap\_modals.scss" />
+    <Content Include="splash\sass\bootstrap\_navbar.scss" />
+    <Content Include="splash\sass\bootstrap\_navs.scss" />
+    <Content Include="splash\sass\bootstrap\_normalize.scss" />
+    <Content Include="splash\sass\bootstrap\_pager.scss" />
+    <Content Include="splash\sass\bootstrap\_pagination.scss" />
+    <Content Include="splash\sass\bootstrap\_panels.scss" />
+    <Content Include="splash\sass\bootstrap\_popovers.scss" />
+    <Content Include="splash\sass\bootstrap\_print.scss" />
+    <Content Include="splash\sass\bootstrap\_progress-bars.scss" />
+    <Content Include="splash\sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="splash\sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="splash\sass\bootstrap\_scaffolding.scss" />
+    <Content Include="splash\sass\bootstrap\_tables.scss" />
+    <Content Include="splash\sass\bootstrap\_theme.scss" />
+    <Content Include="splash\sass\bootstrap\_thumbnails.scss" />
+    <Content Include="splash\sass\bootstrap\_tooltip.scss" />
+    <Content Include="splash\sass\bootstrap\_type.scss" />
+    <Content Include="splash\sass\bootstrap\_utilities.scss" />
+    <Content Include="splash\sass\bootstrap\_variables.scss" />
+    <Content Include="splash\sass\bootstrap\_wells.scss" />
+    <Content Include="splash\sass\style.scss" />
+    <Content Include="splash\sass\_bootstrap-compass.scss" />
+    <Content Include="splash\sass\_bootstrap-mincer.scss" />
+    <Content Include="splash\sass\_bootstrap-sprockets.scss" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
