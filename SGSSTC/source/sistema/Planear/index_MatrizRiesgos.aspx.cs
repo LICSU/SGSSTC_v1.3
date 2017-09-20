@@ -12,7 +12,6 @@ namespace SGSSTC.source.sistema.Hacer
         private  Utilidades objUtilidades = new Utilidades();
         private Model_UsuarioSistema ObjUsuario;
         private string estatus = "0";
-        private int IdSucursal;
         private Tuple<bool, bool> BoolEmpSuc;
 
         #region acciones index
@@ -20,7 +19,7 @@ namespace SGSSTC.source.sistema.Hacer
         {
             Page.Form.Attributes.Add("enctype", "multipart/form-data");
 
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
+            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);
 
             BoolEmpSuc = Getter.Get_Empresa_Sucursal(ObjUsuario);
 
@@ -102,11 +101,12 @@ namespace SGSSTC.source.sistema.Hacer
         }
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
-            ObjUsuario = Utilidades.ValidarSesion(HttpContext.Current.User.Identity as FormsIdentity, this);phAlerta.Visible = false;
-
-            if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+            if (ObjUsuario != null)
             {
-                //GridView1.Columns[6].Visible = false;
+                if (ObjUsuario.isAdmEmp_DptoSalud() || ObjUsuario.isAdm_SucSalud() || ObjUsuario.isResponsable())
+                {
+                    //GridView1.Columns[6].Visible = false;
+                }
             }
         }
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
