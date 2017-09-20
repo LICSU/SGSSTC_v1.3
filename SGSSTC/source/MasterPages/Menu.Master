@@ -85,7 +85,8 @@
 					<a href="../MenuPrincipal/index.aspx" class="navbar-brand">SGSSTC</a>
 				</div>
 
-				<ul class="nav navbar-nav">
+                <asp:PlaceHolder runat="server" ID="menuPrin">
+				    <ul class="nav navbar-nav">
 
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa  fa-gears"></i>
@@ -1013,7 +1014,7 @@
 						</ul>
 					</li>
 				</ul>
-
+                </asp:PlaceHolder>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<div class="user-panel">
