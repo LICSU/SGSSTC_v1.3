@@ -49,3 +49,4 @@ C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\bin\Debug\EntityFramework.xm
 C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\obj\Debug\Capa_Datos.dll
 C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\obj\Debug\Capa_Datos.pdb
+C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\obj\Debug\Capa_Datos.csprojResolveAssemblyReference.cache
