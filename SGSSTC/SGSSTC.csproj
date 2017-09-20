@@ -1441,8 +1441,8 @@
     <Content Include="source\sistema\Planear\index_RecursosEconomicos.aspx" />
     <Content Include="source\sistema\Hacer\Update_AsistenciaCapacitacion.aspx" />
     <Content Include="source\sistema\Hacer\Update_DescripcionSocioDemografica.aspx" />
-    <Content Include="source\sistema\Planear\Update_MedidasMatrizLegal.aspx" />
-    <Content Include="source\sistema\Planear\Update_MedidasMatrizRiesgos.aspx" />
+    <Content Include="source\sistema\Hacer\Update_MedidasMatrizLegal.aspx" />
+    <Content Include="source\sistema\Hacer\Update_MedidasMatrizRiesgos.aspx" />
     <Content Include="source\sistema\Hacer\View_DescripcionSocioDemografica.aspx" />
     <Content Include="source\sistema\Hacer\View_EvaluacionPuesto.aspx" />
     <Content Include="source\sistema\Hacer\View_GestionLaboral.aspx" />
@@ -2268,18 +2268,16 @@
     <Compile Include="source\sistema\Hacer\Update_DescripcionSocioDemografica.aspx.designer.cs">
       <DependentUpon>Update_DescripcionSocioDemografica.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Planear\Update_MedidasMatrizLegal.aspx.cs">
-      <DependentUpon>Update_MedidasMatrizLegal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="source\sistema\Planear\Update_MedidasMatrizLegal.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Update_MedidasMatrizLegal.aspx.cs">
       <DependentUpon>Update_MedidasMatrizLegal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="source\sistema\Planear\Update_MedidasMatrizRiesgos.aspx.cs">
+    <Compile Include="source\sistema\Hacer\Update_MedidasMatrizLegal.aspx.designer.cs">
+      <DependentUpon>Update_MedidasMatrizLegal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="source\sistema\Hacer\Update_MedidasMatrizRiesgos.aspx.cs">
       <DependentUpon>Update_MedidasMatrizRiesgos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="source\sistema\Planear\Update_MedidasMatrizRiesgos.aspx.designer.cs">
+    <Compile Include="source\sistema\Hacer\Update_MedidasMatrizRiesgos.aspx.designer.cs">
       <DependentUpon>Update_MedidasMatrizRiesgos.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\View_DescripcionSocioDemografica.aspx.cs">
