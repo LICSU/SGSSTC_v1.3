@@ -30,8 +30,6 @@ C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\bin\De
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\obj\Debug\Capa_Datos.dll
 C:\Users\Jezuz\.Nimi Places\Containers\Repositorio\SGSSTC v1.3\Capa_Datos\obj\Debug\Capa_Datos.pdb
-C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\EntityFramework.xml
-C:\Users\rober\Documents\GitHub\SGSSTC_v1.3\Capa_Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\bin\Debug\Capa_Datos.dll.config
 C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\bin\Debug\Capa_Datos.dll
 C:\Users\Jezuz\Desktop\Repository\SGSSTC\Capa_Datos\bin\Debug\Capa_Datos.pdb
