@@ -283,6 +283,7 @@
     <NavigationProperty Name="perfil_cargo" Relationship="Self.FK_perfil_cargo_empresa" FromRole="empresa" ToRole="perfil_cargo" />
     <NavigationProperty Name="politica_sst" Relationship="Self.FK_politica_sst_empresa1" FromRole="empresa" ToRole="politica_sst" />
     <NavigationProperty Name="sucursal" Relationship="Self.FK_sucursal_empresa" FromRole="empresa" ToRole="sucursal" />
+    <NavigationProperty Name="rol" Relationship="GrupoLiModel.FK__rol__id_empresa__5AB9788F" FromRole="empresa" ToRole="rol" />
   </EntityType>
   <EntityType Name="empresa_itemdivision">
     <Key>
@@ -896,6 +897,8 @@
     <Property Name="id_rol" Type="Int32" Nullable="false" />
     <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="usuario" Relationship="Self.FK_usuario_rol" FromRole="rol" ToRole="usuario" />
+    <Property Name="id_empresa" Type="Int32" />
+    <NavigationProperty Name="empresa" Relationship="GrupoLiModel.FK__rol__id_empresa__5AB9788F" FromRole="rol" ToRole="empresa" />
   </EntityType>
   <EntityType Name="seccionCiiu">
     <Key>
@@ -2663,5 +2666,21 @@
       <End Role="trabajador" EntitySet="trabajador" />
       <End Role="usuario" EntitySet="usuario" />
     </AssociationSet>
+    <AssociationSet Name="FK__rol__id_empresa__5AB9788F" Association="GrupoLiModel.FK__rol__id_empresa__5AB9788F">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="rol" EntitySet="rol" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK__rol__id_empresa__5AB9788F">
+    <End Type="GrupoLiModel.empresa" Role="empresa" Multiplicity="0..1" />
+    <End Type="GrupoLiModel.rol" Role="rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="id_empresa" />
+      </Principal>
+      <Dependent Role="rol">
+        <PropertyRef Name="id_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

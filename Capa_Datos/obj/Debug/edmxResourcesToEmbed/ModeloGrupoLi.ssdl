@@ -770,6 +770,7 @@
     </Key>
     <Property Name="id_rol" Type="int" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="id_empresa" Type="int" />
   </EntityType>
   <EntityType Name="seccionCiiu">
     <Key>
@@ -974,6 +975,18 @@
       </Principal>
       <Dependent Role="puesto_trabajo_epp">
         <PropertyRef Name="id_puesto_trabajo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__rol__id_empresa__5AB9788F">
+    <End Role="empresa" Type="Self.empresa" Multiplicity="0..1" />
+    <End Role="rol" Type="Self.rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="id_empresa" />
+      </Principal>
+      <Dependent Role="rol">
+        <PropertyRef Name="id_empresa" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2158,6 +2171,10 @@
     <AssociationSet Name="FK__puesto_tr__id_pu__69C6B1F5" Association="Self.FK__puesto_tr__id_pu__69C6B1F5">
       <End Role="puesto_trabajo" EntitySet="puesto_trabajo" />
       <End Role="puesto_trabajo_epp" EntitySet="puesto_trabajo_epp" />
+    </AssociationSet>
+    <AssociationSet Name="FK__rol__id_empresa__5AB9788F" Association="Self.FK__rol__id_empresa__5AB9788F">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="rol" EntitySet="rol" />
     </AssociationSet>
     <AssociationSet Name="FK_alarmas_categorias" Association="Self.FK_alarmas_categorias">
       <End Role="categoria" EntitySet="categoria" />

@@ -775,6 +775,7 @@
           </Key>
           <Property Name="id_rol" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="id_empresa" Type="int" />
         </EntityType>
         <EntityType Name="seccionCiiu">
           <Key>
@@ -979,6 +980,18 @@
             </Principal>
             <Dependent Role="puesto_trabajo_epp">
               <PropertyRef Name="id_puesto_trabajo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rol__id_empresa__5AB9788F">
+          <End Role="empresa" Type="Self.empresa" Multiplicity="0..1" />
+          <End Role="rol" Type="Self.rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="rol">
+              <PropertyRef Name="id_empresa" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2164,6 +2177,10 @@
             <End Role="puesto_trabajo" EntitySet="puesto_trabajo" />
             <End Role="puesto_trabajo_epp" EntitySet="puesto_trabajo_epp" />
           </AssociationSet>
+          <AssociationSet Name="FK__rol__id_empresa__5AB9788F" Association="Self.FK__rol__id_empresa__5AB9788F">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="rol" EntitySet="rol" />
+          </AssociationSet>
           <AssociationSet Name="FK_alarmas_categorias" Association="Self.FK_alarmas_categorias">
             <End Role="categoria" EntitySet="categoria" />
             <End Role="alarma" EntitySet="alarma" />
@@ -2785,6 +2802,7 @@
           <NavigationProperty Name="perfil_cargo" Relationship="Self.FK_perfil_cargo_empresa" FromRole="empresa" ToRole="perfil_cargo" />
           <NavigationProperty Name="politica_sst" Relationship="Self.FK_politica_sst_empresa1" FromRole="empresa" ToRole="politica_sst" />
           <NavigationProperty Name="sucursal" Relationship="Self.FK_sucursal_empresa" FromRole="empresa" ToRole="sucursal" />
+          <NavigationProperty Name="rol" Relationship="GrupoLiModel.FK__rol__id_empresa__5AB9788F" FromRole="empresa" ToRole="rol" />
         </EntityType>
         <EntityType Name="empresa_itemdivision">
           <Key>
@@ -3398,6 +3416,8 @@
           <Property Name="id_rol" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="usuario" Relationship="Self.FK_usuario_rol" FromRole="rol" ToRole="usuario" />
+          <Property Name="id_empresa" Type="Int32" />
+          <NavigationProperty Name="empresa" Relationship="GrupoLiModel.FK__rol__id_empresa__5AB9788F" FromRole="rol" ToRole="empresa" />
         </EntityType>
         <EntityType Name="seccionCiiu">
           <Key>
@@ -5165,7 +5185,23 @@
             <End Role="trabajador" EntitySet="trabajador" />
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
+          <AssociationSet Name="FK__rol__id_empresa__5AB9788F" Association="GrupoLiModel.FK__rol__id_empresa__5AB9788F">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="rol" EntitySet="rol" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK__rol__id_empresa__5AB9788F">
+          <End Type="GrupoLiModel.empresa" Role="empresa" Multiplicity="0..1" />
+          <End Type="GrupoLiModel.rol" Role="rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="rol">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5997,6 +6033,7 @@
           <EntitySetMapping Name="rol">
             <EntityTypeMapping TypeName="GrupoLiModel.rol">
               <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
                 <ScalarProperty Name="id_rol" ColumnName="id_rol" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>

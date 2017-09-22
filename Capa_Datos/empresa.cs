@@ -24,6 +24,7 @@ namespace Capa_Datos
             this.perfil_cargo = new HashSet<perfil_cargo>();
             this.politica_sst = new HashSet<politica_sst>();
             this.sucursal = new HashSet<sucursal>();
+            this.rol = new HashSet<rol>();
         }
     
         public int id_empresa { get; set; }
@@ -61,5 +62,7 @@ namespace Capa_Datos
         public virtual ICollection<politica_sst> politica_sst { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sucursal> sucursal { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<rol> rol { get; set; }
     }
 }
