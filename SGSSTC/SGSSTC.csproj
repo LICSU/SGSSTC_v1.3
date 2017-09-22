@@ -1338,6 +1338,7 @@
     <Content Include="source\css\custom1.css" />
     <Content Include="source\sistema\Consulta\create.aspx" />
     <Content Include="source\sistema\EvaluacionInicial\create_AutoEvaluacion.aspx" />
+    <Content Include="source\sistema\GestionDatos\index_Rol.aspx" />
     <Content Include="source\sistema\Hacer\create_InspeccionCrono.aspx" />
     <Content Include="source\sistema\Hacer\create_InspeccionEPP.aspx" />
     <Content Include="source\sistema\Hacer\create_InspeccionExtintores.aspx" />
@@ -1592,6 +1593,13 @@
     </Compile>
     <Compile Include="source\sistema\EvaluacionInicial\create_AutoEvaluacion.aspx.designer.cs">
       <DependentUpon>create_AutoEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="source\sistema\GestionDatos\index_Rol.aspx.cs">
+      <DependentUpon>index_Rol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="source\sistema\GestionDatos\index_Rol.aspx.designer.cs">
+      <DependentUpon>index_Rol.aspx</DependentUpon>
     </Compile>
     <Compile Include="source\sistema\Hacer\create_InspeccionCrono.aspx.cs">
       <DependentUpon>create_InspeccionCrono.aspx</DependentUpon>
