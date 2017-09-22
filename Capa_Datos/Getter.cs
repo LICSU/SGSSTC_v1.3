@@ -879,8 +879,8 @@ namespace Capa_Datos
             List<sucursal> consulta = new List<sucursal>();
 
             if (_id_sucursal != 0) { consulta = contexto.sucursal.Where(x => x.id_sucursal == _id_sucursal).ToList(); }
-            if (_id_empresa != 0) { consulta = contexto.sucursal.Where(x => x.id_empresa == _id_empresa).ToList(); }
-            if (_nombre != "") { consulta = contexto.sucursal.Where(x => x.nombre == _nombre).ToList(); }
+            else if (_id_empresa != 0) { consulta = contexto.sucursal.Where(x => x.id_empresa == _id_empresa).ToList(); }
+            else if (_nombre != "") { consulta = contexto.sucursal.Where(x => x.nombre == _nombre).ToList(); }
 
             return consulta;
         }

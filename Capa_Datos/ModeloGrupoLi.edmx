@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GrupoLiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="GrupoLiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="afp">
           <Key>
             <PropertyRef Name="id_afp" />
@@ -816,6 +816,16 @@
           <Property Name="actividad_ppal" Type="int" />
           <Property Name="actividad_sec" Type="int" />
           <Property Name="actividad_otra" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="tipo_documento">
           <Key>
@@ -1715,7 +1725,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_planes_sucursal">
-          <End Role="sucursal" Type="Self.sucursal" Multiplicity="0..1" />
+          <End Role="sucursal" Type="Self.sucursal" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="plan" Type="Self.plan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sucursal">
@@ -2130,6 +2142,7 @@
           <EntitySet Name="sistema" EntityType="Self.sistema" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="soporte" EntityType="Self.soporte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_epp" EntityType="Self.tipo_epp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" Schema="dbo" store:Type="Tables" />
@@ -2484,7 +2497,8 @@
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GrupoLiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3240,13 +3254,13 @@
             <PropertyRef Name="id_perfil_cargo" />
           </Key>
           <Property Name="id_perfil_cargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="id_cno" Type="Int32" />
           <Property Name="id_empresa" Type="Int32" />
           <NavigationProperty Name="cno" Relationship="Self.FK_perfil_cargo_cno" FromRole="perfil_cargo" ToRole="cno" />
           <NavigationProperty Name="empresa" Relationship="Self.FK_perfil_cargo_empresa" FromRole="perfil_cargo" ToRole="empresa" />
           <NavigationProperty Name="trabajador" Relationship="Self.FK_trabajador_perfil_cargo" FromRole="perfil_cargo" ToRole="trabajador" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="plan">
           <Key>
@@ -3255,8 +3269,8 @@
           <Property Name="id_plan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_sucursal" Type="Int32" />
           <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="sucursal" Relationship="Self.FK_planes_sucursal" FromRole="plan" ToRole="sucursal" />
           <Property Name="tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="sucursal" Relationship="Self.FK_planes_sucursal" FromRole="plan" ToRole="sucursal" />
         </EntityType>
         <EntityType Name="plan_trabajo">
           <Key>
@@ -3440,6 +3454,16 @@
           <NavigationProperty Name="norma_sucursal" Relationship="Self.FK_normas_sucursal_sucursal1" FromRole="sucursal" ToRole="norma_sucursal" />
           <NavigationProperty Name="plan" Relationship="Self.FK_planes_sucursal" FromRole="sucursal" ToRole="plan" />
           <NavigationProperty Name="tipo_documento" Relationship="Self.FK_tipo_documento_sucursal" FromRole="sucursal" ToRole="tipo_documento" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tipo_documento">
           <Key>
@@ -4560,7 +4584,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_planes_sucursal">
-          <End Role="sucursal" Type="Self.sucursal" Multiplicity="0..1" />
+          <End Role="sucursal" Type="Self.sucursal" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="plan" Type="Self.plan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sucursal">
@@ -4785,6 +4811,7 @@
           <EntitySet Name="sistema" EntityType="Self.sistema" />
           <EntitySet Name="soporte" EntityType="Self.soporte" />
           <EntitySet Name="sucursal" EntityType="Self.sucursal" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
           <EntitySet Name="tipo_epp" EntityType="Self.tipo_epp" />
           <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" />
@@ -5839,8 +5866,8 @@
           <EntitySetMapping Name="perfil_cargo">
             <EntityTypeMapping TypeName="GrupoLiModel.perfil_cargo">
               <MappingFragment StoreEntitySet="perfil_cargo">
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="id_perfil_cargo" ColumnName="id_perfil_cargo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="id_cno" ColumnName="id_cno" />
                 <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
@@ -5850,10 +5877,10 @@
           <EntitySetMapping Name="plan">
             <EntityTypeMapping TypeName="GrupoLiModel.plan">
               <MappingFragment StoreEntitySet="plan">
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="id_plan" ColumnName="id_plan" />
                 <ScalarProperty Name="id_sucursal" ColumnName="id_sucursal" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6017,6 +6044,17 @@
                 <ScalarProperty Name="actividad_ppal" ColumnName="actividad_ppal" />
                 <ScalarProperty Name="actividad_sec" ColumnName="actividad_sec" />
                 <ScalarProperty Name="actividad_otra" ColumnName="actividad_otra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GrupoLiModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

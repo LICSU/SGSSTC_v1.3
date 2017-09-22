@@ -812,6 +812,16 @@
     <Property Name="actividad_sec" Type="int" />
     <Property Name="actividad_otra" Type="int" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="tipo_documento">
     <Key>
       <PropertyRef Name="id_tipo_documento" />
@@ -1710,7 +1720,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_planes_sucursal">
-    <End Role="sucursal" Type="Self.sucursal" Multiplicity="0..1" />
+    <End Role="sucursal" Type="Self.sucursal" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="plan" Type="Self.plan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="sucursal">
@@ -2125,6 +2137,7 @@
     <EntitySet Name="sistema" EntityType="Self.sistema" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="soporte" EntityType="Self.soporte" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_epp" EntityType="Self.tipo_epp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" Schema="dbo" store:Type="Tables" />
